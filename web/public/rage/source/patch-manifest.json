@@ -67,7 +67,7 @@
   {
     "path": "engine/src/C4Browser.cpp",
     "originalSha256": null,
-    "portedSha256": "ab373dddf5216eb6daa3082aef93366ca1901d06a737abd1a9a02d264cc17665"
+    "portedSha256": "bb6271e4b1af0c7f13858c78318b89874450fd23b86f5c515bd8b8b821fc77c5"
   },
   {
     "path": "engine/src/C4BrowserAudio.cpp",
@@ -207,7 +207,7 @@
   {
     "path": "engine/src/C4Viewport.cpp",
     "originalSha256": "9e7e64ff8ceb21b7dba836177522d667cc1fb4c73eddc883d873ed3f67aa3e69",
-    "portedSha256": "08b3165de0e18c3526442d5238d2cc0ad49c80910808400717b9c4891ba42b65"
+    "portedSha256": "4b9a4954e6df9d3de253cb0482d065eb4d1809d3b8e336ed35115284f0bac074"
   },
   {
     "path": "engine/src/C4WinMain.cpp",
@@ -267,7 +267,7 @@
   {
     "path": "standard/src/StdGL.cpp",
     "originalSha256": "53780afd4ce972ead9bec07940a057a883722acf3508252799f56e7797ef46e8",
-    "portedSha256": "eb6100d76d6240ea6e79bf84129760c3f6f928adfeedc15da73149fc2cdce0c3"
+    "portedSha256": "beeaa8a4da3a914afed5552b3dfb706cbbb088a536bd3a76d48fbd1aa773f856"
   },
   {
     "path": "standard/src/StdGLCtx.cpp",

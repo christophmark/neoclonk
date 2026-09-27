@@ -30,9 +30,10 @@ for browser in ['chromium','webkit']:
  report=root/f'web/outputs/usability/{browser}-report.json'
  if report.exists() and not json.loads(report.read_text()).get('failure'):
   shutil.copy2(report,provenance/f'usability-{browser}.json')
-camera_report=port/'outputs/view/report.json'
-if camera_report.exists() and not json.loads(camera_report.read_text()).get('errors'):
- shutil.copy2(camera_report,provenance/'browser-view-report.json')
+for directory,name in [('view','browser-view-report.json'),('view-webkit','browser-view-webkit-report.json')]:
+ camera_report=port/'outputs'/directory/'report.json'
+ if camera_report.exists() and not json.loads(camera_report.read_text()).get('errors'):
+  shutil.copy2(camera_report,provenance/name)
 # Current expansion evidence: publish successful real-engine reports only.
 for relative,name in [
  ('rage-port/outputs/rtc-room/report.json','rtc-goldmine.json'),

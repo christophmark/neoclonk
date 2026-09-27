@@ -31,7 +31,7 @@
 <div id="game-header" aria-label="Game controls" hidden>
 <button id="main-menu" class="logo-menu-button" type="button" aria-label="Main menu" title="Main menu"></button>
 <button id="game-save" class="small-button board-button" type="button" title="Save this round">Save</button>
-<label id="zoom-control" for="zoom"><span id="zoom-label">Zoom</span><input id="zoom" type="range" min="0.5" max="8" step="0.05" value="1" aria-label="World zoom"></label>
+<label id="zoom-control" for="zoom"><span id="zoom-label">Zoom</span><input id="zoom" type="range" min="0.25" max="8" step="0.05" value="1" aria-label="World zoom"></label>
 <p id="save-feedback" role="status" aria-live="polite"></p>
 </div>
 <section id="cover" aria-labelledby="title">
@@ -77,9 +77,9 @@
 <section id="help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden><div><button id="help-close" class="small-button" type="button">Close</button><h2 id="help-title">Classic controls</h2><table><tr><td>Q · Previous</td><td>W · Select</td><td>E · Next</td></tr><tr><td>A · Throw</td><td>S · Up / jump</td><td>D · Dig</td></tr><tr><td>Y / Z · Left</td><td>X · Stop / down</td><td>C · Right</td></tr></table><p>Press a direction, then D. Your Clonk keeps digging diagonally downwards after you release the keys. X stops him. Solid rock and gold require explosives.</p><p>Each scenario keeps its original goals. Read the selected adventure’s description and follow its in-game objectives.</p><p>In solo play, Save records the current round on this device. Load it from the main menu next time. Zoom changes how much of the world you see.</p><p>Pause pauses the original engine. Escape opens its abort dialog. Y (German QWERTZ) and Z (English QWERTY) both move left.</p></div></section>
 <pre id="debug" hidden></pre>
 </main>
-<script src="scenario-library.js?v=scenarios-rtc-1"></script>
-<script src="multiplayer.js?v=scenarios-rtc-1"></script>
-<script src="game.js?v=scenarios-rtc-1"></script>
-<script src="gallery.js?v=scenarios-rtc-1"></script>
+<script src="scenario-library.js?v=scenarios-zoom-2"></script>
+<script src="multiplayer.js?v=scenarios-zoom-2"></script>
+<script src="game.js?v=scenarios-zoom-2"></script>
+<script src="gallery.js?v=scenarios-zoom-2"></script>
 </body>
 </html>

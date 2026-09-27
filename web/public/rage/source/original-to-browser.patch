@@ -322,7 +322,7 @@
 +EMSCRIPTEN_KEEPALIVE int nc_browser_view(int width,int height,double zoom,int ox,int oy,int ow,int oh)
 +{
 +  if(!Game.IsRunning || !lpDDraw || width<240 || height<160 || width>4096 || height>4096 ||
-+     !(zoom>=0.5 && zoom<=8.0) || ow<0 || oh<0)return -1;
++     !(zoom>=0.25 && zoom<=8.0) || ow<0 || oh<0)return -1;
 +  if((Config.Graphics.ResX!=width || Config.Graphics.ResY!=height) && !Application.SetResolution(width,height))return -2;
 +  Game.GraphicsSystem.RecalculateViewports();
 +  C4Rect occlusion(ox,oy,ow,oh);
@@ -375,7 +375,7 @@
 +    C4Object *cursor=player?player->Cursor:NULL;
 +    BrowserResult.AppendFormat("{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"worldX\":%d,\"worldY\":%d,\"worldWidth\":%d,\"worldHeight\":%d,\"zoom\":%.4f,\"requestedZoom\":%.4f,\"minZoom\":%.4f,\"headerHeight\":%d,\"clonkScreenX\":%d,\"clonkScreenY\":%d,\"occlusion\":{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}}",
 +      rect.x,rect.y,rect.Wdt,rect.Hgt,view->ViewX,view->ViewY,view->BrowserWorldWidth(),view->BrowserWorldHeight(),
-+      static_cast<double>(view->BrowserZoom),BrowserRequestedZoom,Max(0.5,Max(double(rect.Wdt)/Max(1,Game.Landscape.Width),double(rect.Hgt)/Max(1,Game.Landscape.Height))),
++      static_cast<double>(view->BrowserZoom),BrowserRequestedZoom,0.25,
 +      C4UpperBoardHeight,cursor?view->BrowserScreenX(cursor->x):-1,cursor?view->BrowserScreenY(cursor->y):-1,
 +      view->BrowserOcclusion.x,view->BrowserOcclusion.y,view->BrowserOcclusion.Wdt,view->BrowserOcclusion.Hgt);
 +  }
@@ -1795,7 +1795,7 @@
  		}
  	// Fullscreen menu
  	if (FullScreen.pMenu && FullScreen.pMenu->IsActive())
-@@ -1007,6 +1015,16 @@
+@@ -1007,6 +1015,17 @@
  #ifdef USE_CONSOLE
  	// No drawing in console mode
  	return;
@@ -1808,11 +1808,12 @@
 +		ViewWdt=BrowserWorldWidth(); ViewHgt=BrowserWorldHeight();
 +		cgo.Wdt=ViewWdt; cgo.Hgt=ViewHgt;
 +		pGL->SetBrowserWorldZoom(BrowserZoom, DrawX, DrawY);
++		Application.DDraw->SetPrimaryClipper(DrawX,DrawY,DrawX+ViewWdt-1,DrawY+ViewHgt-1);
 +	}
  #endif
  
  	// landscape mod by FoW
-@@ -1073,12 +1091,21 @@
+@@ -1073,12 +1092,21 @@
  	lpDDraw->SetClrModMapEnabled(false);
  
  	// now restore complete cgo range for overlay drawing
@@ -1834,7 +1835,7 @@
  
  	// draw custom GUI objects
  	Game.ForeObjects.DrawIfCategory(cgo, Player, C4D_Parallax, false);
-@@ -1150,6 +1177,32 @@
+@@ -1150,6 +1178,33 @@
  
  void C4Viewport::AdjustPosition()
  	{
@@ -1852,10 +1853,11 @@
 +		const int my=int((ViewHgt-safeH)/BrowserZoom);
 +		int tx=player->ViewX-int(safeW/(2*BrowserZoom));
 +		int ty=player->ViewY-int(safeH/(2*BrowserZoom));
-+		// Lower-right controls only need extra camera space at the right/bottom
-+		// map edges. Negative origins would add avoidable left/top border bands.
-+		tx=BoundBy(tx, 0, Max(0,GBackWdt-w+mx));
-+		ty=BoundBy(ty, 0, Max(0,GBackHgt-h+my));
++		// Keep tracking within the landscape when it fills the usable area.
++		// At overview zoom, center a smaller landscape in the area clear of
++		// the touch controls; the original border renderer fills the margins.
++		tx=(w-mx>GBackWdt) ? (GBackWdt-(w-mx))/2 : BoundBy(tx, 0, Max(0,GBackWdt-w+mx));
++		ty=(h-my>GBackHgt) ? (GBackHgt-(h-my))/2 : BoundBy(ty, 0, Max(0,GBackHgt-h+my));
 +		const int smooth=BoundBy<int32_t>(Config.General.ScrollSmooth,1,50);
 +		if (dViewX==-31337 || dViewY==-31337) { dViewX=itofix(tx); dViewY=itofix(ty); }
 +		else { dViewX+=(itofix(tx)-dViewX)/smooth; dViewY+=(itofix(ty)-dViewY)/smooth; }
@@ -1867,7 +1869,7 @@
  	int32_t ViewportScrollBorder = fIsNoOwnerViewport ? 0 : C4ViewportScrollBorder;
  	// View position
  	if (PlayerLock && ValidPlr(Player))
-@@ -1228,6 +1281,13 @@
+@@ -1228,6 +1283,13 @@
  
  void C4Viewport::UpdateViewPosition()
  	{
@@ -1881,14 +1883,14 @@
  	int32_t ViewportScrollBorder = Application.isFullScreen ? C4ViewportScrollBorder : 0;
  	// no-owner viewports should not scroll outside viewing area
  	if(fIsNoOwnerViewport)
-@@ -1258,8 +1318,24 @@
+@@ -1258,8 +1320,24 @@
  	BorderBottom = Max<int32_t>(ViewHgt - GBackHgt + ViewY, 0);
  	}
  
 +#ifdef __EMSCRIPTEN__
 +void C4Viewport::SetBrowserView(float zoom, const C4Rect &occlusion)
 +{
-+	float minimum=Max(0.5f,Max(float(ViewWdt)/Max(1,GBackWdt),float(ViewHgt)/Max(1,GBackHgt)));
++	const float minimum=0.25f;
 +	BrowserZoom=BoundBy(zoom,minimum,8.0f); BrowserOcclusion=occlusion;
 +	// A layout/zoom change centers immediately; subsequent tracking is smooth.
 +	dViewX=dViewY=-31337;
@@ -2283,7 +2285,25 @@
  int ForEachFile(const char *szDirName, bool (*fnCallback)(const char *)) {
 --- a/standard/src/StdGL.cpp
 +++ b/standard/src/StdGL.cpp
-@@ -83,7 +83,16 @@
+@@ -72,8 +72,17 @@
+ 	// no render target? do nothing
+ 	if (!RenderTarget || !Active) return true;
+ 	// negative/zero?
++#ifdef __EMSCRIPTEN__
++	// Clip in the same coordinates as the world projection. At zoom < 1,
++	// visible world coordinates extend beyond the framebuffer's pixel size.
++	int logicalRight=BrowserZoomX+int((RenderTarget->Wdt-BrowserZoomX)/BrowserWorldZoom)-1;
++	int logicalBottom=BrowserZoomY+int((RenderTarget->Hgt-BrowserZoomY)/BrowserWorldZoom)-1;
++	int iWdt=Min(ClipX2, logicalRight)-ClipX1+1;
++	int iHgt=Min(ClipY2, logicalBottom)-ClipY1+1;
++#else
+ 	int iWdt=Min(ClipX2, RenderTarget->Wdt-1)-ClipX1+1;
+ 	int iHgt=Min(ClipY2, RenderTarget->Hgt-1)-ClipY1+1;
++#endif
+ 	int iX=ClipX1; if (iX<0) { iWdt+=iX; iX=0; }
+ 	int iY=ClipY1; if (iY<0) { iHgt+=iY; iY=0; }
+ 	if (iWdt<=0 || iHgt<=0)
+@@ -83,7 +92,16 @@
  		}
  	ClipAll=false;
  	// set it
@@ -2300,7 +2320,7 @@
  	glMatrixMode(GL_PROJECTION);
  	glLoadIdentity();
  	gluOrtho2D((GLdouble) iX, (GLdouble) (iX+iWdt), (GLdouble) (iY+iHgt), (GLdouble) iY);
-@@ -155,6 +164,7 @@
+@@ -155,6 +173,7 @@
  		}
  	// reset MOD2 for completely black modulations
  	if (fMod2 && !fAnyModNotBlack) fMod2 = 0;
@@ -2308,7 +2328,7 @@
  	if (shader)
  		{
  		glEnable(GL_FRAGMENT_SHADER_ATI);
-@@ -190,7 +200,9 @@
+@@ -190,7 +209,9 @@
  			}
  		}
  	// modulated blit
@@ -2319,7 +2339,7 @@
  		{
  		if (fMod2 || ((dwModClr>>24 || dwModMask) && !DDrawCfg.NoAlphaAdd))
  			{
-@@ -250,7 +262,13 @@
+@@ -250,7 +271,13 @@
  	}
  	
  	// draw polygon
@@ -2333,7 +2353,7 @@
  	for (i=0; i<rBltData.byNumVertices; ++i)
  		{
  		if (fModClr) glColorDw(rBltData.vtVtx[i].dwModClr | dwModMask);
-@@ -259,6 +277,7 @@
+@@ -259,6 +286,7 @@
  		}
  	glEnd();
  	glLoadIdentity();
@@ -2341,7 +2361,7 @@
  	if (shader)
  		{
  		glDisable(GL_FRAGMENT_SHADER_ATI);
-@@ -267,6 +286,7 @@
+@@ -267,6 +295,7 @@
  		{
  		glDisable(GL_FRAGMENT_PROGRAM_ARB);
  		}
@@ -2349,7 +2369,7 @@
  	if (!fExact && !DDrawCfg.PointFiltering)
  		{
  		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-@@ -277,6 +297,11 @@
+@@ -277,6 +306,11 @@
  void CStdGL::BlitLandscape(SURFACE sfcSource, SURFACE sfcSource2, SURFACE sfcLiquidAnimation, int fx, int fy, 
  								SURFACE sfcTarget, int tx, int ty, int wdt, int hgt)
  	{
@@ -2361,7 +2381,7 @@
  	// safety
  	if (!sfcSource || !sfcTarget || !wdt || !hgt) return;
  	assert(sfcTarget->IsRenderTarget());
-@@ -347,6 +372,7 @@
+@@ -347,6 +381,7 @@
  		glActiveTexture(GL_TEXTURE0);
  		}
  	DWORD dwModMask = 0;
@@ -2369,7 +2389,7 @@
  	if (shader)
  		{
  		glEnable(GL_FRAGMENT_SHADER_ATI);
-@@ -407,6 +433,7 @@
+@@ -407,6 +442,7 @@
  		}
  	// texture environment
  	else
@@ -2377,7 +2397,7 @@
  		{
  		if (DDrawCfg.NoAlphaAdd)
  			{
-@@ -456,7 +483,13 @@
+@@ -456,7 +492,13 @@
  				}
  
  			// draw polygon
@@ -2392,7 +2412,7 @@
  			// get current blitting offset in texture (beforing any last-tex-size-changes)
  			int iBlitX=iTexSize*iX;
  			int iBlitY=iTexSize*iY;
-@@ -511,14 +544,17 @@
+@@ -511,14 +553,17 @@
  				glColorDw(fdwModClr[i] | dwModMask);
  				//glMultiTexCoord2f(GL_TEXTURE0_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
  				glTexCoord2f((tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
@@ -2410,7 +2430,7 @@
  	if (shader)
  		{
  		glDisable(GL_FRAGMENT_SHADER_ATI);
-@@ -527,6 +563,7 @@
+@@ -527,6 +572,7 @@
  		{
  		glDisable(GL_FRAGMENT_PROGRAM_ARB);
  		}
@@ -2418,7 +2438,7 @@
  	if (sfcSource2)
  		{
  		glActiveTexture(GL_TEXTURE1);
-@@ -653,7 +690,13 @@
+@@ -653,7 +699,13 @@
  	int iAdditive = dwBlitMode & C4GFXBLIT_ADDITIVE;
  	glBlendFunc(GL_ONE_MINUS_SRC_ALPHA, iAdditive ? GL_ONE : GL_SRC_ALPHA);
  	// draw two triangles
@@ -2432,7 +2452,7 @@
  	glColorDw(dwClr1); glVertex2f(ipVtx[0]+DDrawCfg.fBlitOff, ipVtx[1]+DDrawCfg.fBlitOff);
  	glColorDw(dwClr2); glVertex2f(ipVtx[2]+DDrawCfg.fBlitOff, ipVtx[3]+DDrawCfg.fBlitOff);
  	glColorDw(dwClr3); glVertex2f(ipVtx[4]+DDrawCfg.fBlitOff, ipVtx[5]+DDrawCfg.fBlitOff);
-@@ -722,6 +765,12 @@
+@@ -722,6 +774,12 @@
  			ModulateClr(dwClr, pClrModMap->GetModAt((int)x2, (int)y2));
  			glColorDw(InvertRGBAAlpha(dwClr));
  			}
@@ -2445,7 +2465,7 @@
  		glVertex2f(x2 + 0.5f, y2 + 0.5f);
  		glEnd();
  		}
-@@ -763,6 +812,7 @@
+@@ -763,6 +821,7 @@
  	return fSuccess && RestoreDeviceObjects();
  	}
  
@@ -2453,7 +2473,7 @@
  static void DefineShaderARB(const char * p, GLuint & s)
  	{
  	glBindProgramARB (GL_FRAGMENT_PROGRAM_ARB, s);
-@@ -775,8 +825,13 @@
+@@ -775,8 +834,13 @@
  		}
  	}
  
@@ -2467,7 +2487,7 @@
  	// safety
  	if (!lpPrimary) return false;
  	// delete any previous objects
-@@ -797,6 +852,7 @@
+@@ -797,6 +861,7 @@
  	// reset blit states
  	dwBlitMode = 0;
  
@@ -2475,7 +2495,7 @@
  	if(!DDrawCfg.Shader)
  		{
  		}
-@@ -1011,6 +1067,7 @@
+@@ -1011,6 +1076,7 @@
  		"MOV result.color, tmp;\n"
  		"END\n", shaders[4]);
  		}
@@ -2483,7 +2503,7 @@
  	// done
  	return Active;
  	}
-@@ -1027,11 +1084,13 @@
+@@ -1027,11 +1093,13 @@
  	// invalidate font objects
  	// invalidate primary surfaces
  	if (lpPrimary) lpPrimary->Clear();

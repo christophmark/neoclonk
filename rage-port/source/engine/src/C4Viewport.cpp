@@ -1024,6 +1024,7 @@ void C4Viewport::Draw(C4FacetEx &cgo, bool fDrawOverlay)
 		ViewWdt=BrowserWorldWidth(); ViewHgt=BrowserWorldHeight();
 		cgo.Wdt=ViewWdt; cgo.Hgt=ViewHgt;
 		pGL->SetBrowserWorldZoom(BrowserZoom, DrawX, DrawY);
+		Application.DDraw->SetPrimaryClipper(DrawX,DrawY,DrawX+ViewWdt-1,DrawY+ViewHgt-1);
 	}
 #endif
 
@@ -1191,10 +1192,11 @@ void C4Viewport::AdjustPosition()
 		const int my=int((ViewHgt-safeH)/BrowserZoom);
 		int tx=player->ViewX-int(safeW/(2*BrowserZoom));
 		int ty=player->ViewY-int(safeH/(2*BrowserZoom));
-		// Lower-right controls only need extra camera space at the right/bottom
-		// map edges. Negative origins would add avoidable left/top border bands.
-		tx=BoundBy(tx, 0, Max(0,GBackWdt-w+mx));
-		ty=BoundBy(ty, 0, Max(0,GBackHgt-h+my));
+		// Keep tracking within the landscape when it fills the usable area.
+		// At overview zoom, center a smaller landscape in the area clear of
+		// the touch controls; the original border renderer fills the margins.
+		tx=(w-mx>GBackWdt) ? (GBackWdt-(w-mx))/2 : BoundBy(tx, 0, Max(0,GBackWdt-w+mx));
+		ty=(h-my>GBackHgt) ? (GBackHgt-(h-my))/2 : BoundBy(ty, 0, Max(0,GBackHgt-h+my));
 		const int smooth=BoundBy<int32_t>(Config.General.ScrollSmooth,1,50);
 		if (dViewX==-31337 || dViewY==-31337) { dViewX=itofix(tx); dViewY=itofix(ty); }
 		else { dViewX+=(itofix(tx)-dViewX)/smooth; dViewY+=(itofix(ty)-dViewY)/smooth; }
@@ -1321,7 +1323,7 @@ void C4Viewport::UpdateViewPosition()
 #ifdef __EMSCRIPTEN__
 void C4Viewport::SetBrowserView(float zoom, const C4Rect &occlusion)
 {
-	float minimum=Max(0.5f,Max(float(ViewWdt)/Max(1,GBackWdt),float(ViewHgt)/Max(1,GBackHgt)));
+	const float minimum=0.25f;
 	BrowserZoom=BoundBy(zoom,minimum,8.0f); BrowserOcclusion=occlusion;
 	// A layout/zoom change centers immediately; subsequent tracking is smooth.
 	dViewX=dViewY=-31337;

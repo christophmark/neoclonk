@@ -93,7 +93,7 @@ extern "C" {
 EMSCRIPTEN_KEEPALIVE int nc_browser_view(int width,int height,double zoom,int ox,int oy,int ow,int oh)
 {
   if(!Game.IsRunning || !lpDDraw || width<240 || height<160 || width>4096 || height>4096 ||
-     !(zoom>=0.5 && zoom<=8.0) || ow<0 || oh<0)return -1;
+     !(zoom>=0.25 && zoom<=8.0) || ow<0 || oh<0)return -1;
   if((Config.Graphics.ResX!=width || Config.Graphics.ResY!=height) && !Application.SetResolution(width,height))return -2;
   Game.GraphicsSystem.RecalculateViewports();
   C4Rect occlusion(ox,oy,ow,oh);
@@ -146,7 +146,7 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_state()
     C4Object *cursor=player?player->Cursor:NULL;
     BrowserResult.AppendFormat("{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"worldX\":%d,\"worldY\":%d,\"worldWidth\":%d,\"worldHeight\":%d,\"zoom\":%.4f,\"requestedZoom\":%.4f,\"minZoom\":%.4f,\"headerHeight\":%d,\"clonkScreenX\":%d,\"clonkScreenY\":%d,\"occlusion\":{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}}",
       rect.x,rect.y,rect.Wdt,rect.Hgt,view->ViewX,view->ViewY,view->BrowserWorldWidth(),view->BrowserWorldHeight(),
-      static_cast<double>(view->BrowserZoom),BrowserRequestedZoom,Max(0.5,Max(double(rect.Wdt)/Max(1,Game.Landscape.Width),double(rect.Hgt)/Max(1,Game.Landscape.Height))),
+      static_cast<double>(view->BrowserZoom),BrowserRequestedZoom,0.25,
       C4UpperBoardHeight,cursor?view->BrowserScreenX(cursor->x):-1,cursor?view->BrowserScreenY(cursor->y):-1,
       view->BrowserOcclusion.x,view->BrowserOcclusion.y,view->BrowserOcclusion.Wdt,view->BrowserOcclusion.Hgt);
   }

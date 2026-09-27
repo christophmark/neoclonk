@@ -126,9 +126,11 @@ browser compiler failure. All other script warnings remain subject to review.
 `nc_browser_view(width, height, zoom, occlusionX, occlusionY, occlusionWidth,
 occlusionHeight)` accepts CSS pixels, returning 1 on success. It changes the
 original display resolution and a world-only OpenGL projection. The original
-HUD, menus and pointer regions keep their pixel sizes. Zoom is bounded by the
-scale needed to fill the finite landscape and a maximum of 8. Camera tracking
-uses the largest clear rectangle above or left of the touch controls.
+HUD, menus and pointer regions keep their pixel sizes. Zoom ranges from 0.25
+to 8, with the existing 1.5 default. Camera tracking uses the largest clear
+rectangle above or left of the touch controls. When the landscape is smaller
+than that area at overview zoom, it is centered there and the original border
+art fills the surrounding space.
 
 The read-only `nc_browser_state().viewport` reports screen and world dimensions,
 effective `zoom`, `requestedZoom`, `minZoom`, the 64-pixel browser header,
@@ -140,8 +142,9 @@ because the original graphics groups have already closed by this stage.
 `GAME_URL=http://127.0.0.1:3902/ node rage-port/tests/browser-view.mjs` checks
 world zoom, opaque header pixels, responsive dimensions, camera occlusion and
 unchanged frame/object/terrain state. The final camera run passed desktop zoom,
-opaque header pixel invariance, exact portrait and landscape occlusion, positive
-camera origins and simulation invariance. The test waits for the requested
+opaque header pixel invariance, exact portrait and landscape occlusion,
+camera bounds and simulation invariance. The slider checks exercise 0.25 zoom
+in both mobile orientations, with the Clonk on screen and clear of the pad. The test waits for the requested
 configuration after the host's ResizeObserver settles. World mouse picking is
 reported as untested when the original keyboard-only round does not route DOM
 mouse events to world control (screen/world coordinates remain zero). See the

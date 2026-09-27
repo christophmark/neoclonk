@@ -72,8 +72,17 @@ bool CStdGL::UpdateClipper()
 	// no render target? do nothing
 	if (!RenderTarget || !Active) return true;
 	// negative/zero?
+#ifdef __EMSCRIPTEN__
+	// Clip in the same coordinates as the world projection. At zoom < 1,
+	// visible world coordinates extend beyond the framebuffer's pixel size.
+	int logicalRight=BrowserZoomX+int((RenderTarget->Wdt-BrowserZoomX)/BrowserWorldZoom)-1;
+	int logicalBottom=BrowserZoomY+int((RenderTarget->Hgt-BrowserZoomY)/BrowserWorldZoom)-1;
+	int iWdt=Min(ClipX2, logicalRight)-ClipX1+1;
+	int iHgt=Min(ClipY2, logicalBottom)-ClipY1+1;
+#else
 	int iWdt=Min(ClipX2, RenderTarget->Wdt-1)-ClipX1+1;
 	int iHgt=Min(ClipY2, RenderTarget->Hgt-1)-ClipY1+1;
+#endif
 	int iX=ClipX1; if (iX<0) { iWdt+=iX; iX=0; }
 	int iY=ClipY1; if (iY<0) { iHgt+=iY; iY=0; }
 	if (iWdt<=0 || iHgt<=0)

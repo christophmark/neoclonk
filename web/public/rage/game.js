@@ -10,7 +10,7 @@
  let indexedSaves=[],savedMetadata=new Map();
  const zoom=$('zoom');
  const setting=(name,fallback)=>{try{return localStorage.getItem(name)||fallback;}catch{return fallback;}};
- zoom.value=String(Math.max(.5,Math.min(8,Number(setting('neoclonk.zoom','1.5'))||1.5)));
+ zoom.value=String(Math.max(.25,Math.min(8,Number(setting('neoclonk.zoom','1.5'))||1.5)));
  function phase(value){state.phase=value;document.body.dataset.phase=value;$('game-header').hidden=value!=='playing';window.dispatchEvent(new CustomEvent('neoclonk-phase',{detail:{phase:value}}));}
  function setStatus(message){state.lastStatus=String(message||'');$('status').textContent=state.lastStatus;}
  function storageStatus(message){if($('storage-status'))$('storage-status').textContent=message;}

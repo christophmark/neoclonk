@@ -43,9 +43,10 @@ transparent buttons. Tap the original central logo to open the paused menu,
 then **Resume game**, **New game**, or load an earlier round.
 
 `nc_browser_view` applies responsive resolution and world-only zoom, keeping
-native HUD text and controls at the same size. Minimum zoom fits the finite
-landscape to the viewport. The camera uses the largest clear rectangle above
-or left of the touch pad to keep the controlled Clonk visible. Browser mouse
+native HUD text and controls at the same size. Zoom ranges from 0.25 to 8,
+with the existing 1.5 default. The camera uses the largest clear rectangle above
+or left of the touch pad to keep the controlled Clonk visible, centering smaller
+landscapes in that area when zoomed out. Browser mouse
 coordinates are transformed back to original world coordinates. This changes
 presentation only; digging, physics, scripts and simulation speed are unchanged.
 

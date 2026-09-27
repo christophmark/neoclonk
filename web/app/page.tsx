@@ -4,7 +4,7 @@ export default async function Page({ searchParams }: {
 }) {
   const values = (await searchParams) ?? {};
   const query = new URLSearchParams();
-  query.set('v', 'scenarios-rtc-1');
+  query.set('v', 'scenarios-zoom-2');
   for (const key of ['debug', 'touch', 'replay', 'play', 'load', 'host', 'join']) {
     if (values[key] === '1') query.set(key, '1');
   }
