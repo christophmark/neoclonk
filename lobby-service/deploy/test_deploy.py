@@ -39,6 +39,13 @@ class DeploymentTest(unittest.TestCase):
             self.assertIn('proxy_set_header X-Forwarded-For $remote_addr;', nginx)
             self.assertNotIn('$proxy_add_x_forwarded_for', nginx)
             self.assertIn('127.0.0.1:5348 send-proxy-v2', (target / 'haproxy.cfg').read_text())
+            proxy = (target / 'haproxy.cfg').read_text()
+            self.assertIn('bind 0.0.0.0:3478', proxy)
+            self.assertIn('bind 0.0.0.0:5349 ssl crt ', proxy)
+            self.assertIn('bind 127.0.0.1:5347 accept-proxy ssl crt ', proxy)
+            self.assertIn('server tls 127.0.0.1:5347 send-proxy-v2', proxy)
+            self.assertIn('no-tls\n', turn)
+            self.assertNotIn('pkey=', turn)
             with self.assertRaises(ValueError):
                 renderer.render(settings, source / 'secrets', source)
             settings['lobby_domain'] = 'bad; config injection'

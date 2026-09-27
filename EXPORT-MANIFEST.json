@@ -9,8 +9,8 @@
       "sha256": "4016f9cbe1186439969dc85c3ee8bfba38d35e7b2f6ed7b17d8b1fcfba8336d5"
     },
     "README.md": {
-      "bytes": 11309,
-      "sha256": "11bf19440d0c2ae2b97135b9c74bd84aba9d83503e901ade28c2531ae4fa1c4f"
+      "bytes": 11664,
+      "sha256": "c587b8fa9aab897083cb95d2a06a6fb4dee0c8cff85d4e0de946a03ded17ce34"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5821,8 +5821,8 @@
       "sha256": "d28dda6ef19c49ab0bb4ba0c376438b4658870ce7936a5b38d45bf21aebcf669"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 11309,
-      "sha256": "11bf19440d0c2ae2b97135b9c74bd84aba9d83503e901ade28c2531ae4fa1c4f"
+      "bytes": 11664,
+      "sha256": "c587b8fa9aab897083cb95d2a06a6fb4dee0c8cff85d4e0de946a03ded17ce34"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -5889,8 +5889,8 @@
       "sha256": "42870e7ce7b11d0d714384bc8402a9b0f40fb1638ce8a61895388b815a74b2d2"
     },
     "lobby-service/deploy/test_deploy.py": {
-      "bytes": 3179,
-      "sha256": "9bcfe0740d765176c27ca67b29b97a1c7ed9fd4b799cbb73ad71ff2c253865c8"
+      "bytes": 3595,
+      "sha256": "649572edbcf5874cc31214c36b30c4ef517695743a5e2fad5863ab6e279bffd2"
     },
     "lobby-service/deploy/traffic-guard.py": {
       "bytes": 4049,
@@ -6869,8 +6869,8 @@
       "sha256": "de2c58363193452b0c66bb103380b91d0686d088c45505b571d13cbf5d5808ff"
     },
     "rage-port/scripts/install-web.py": {
-      "bytes": 7456,
-      "sha256": "b92c0c44d41bb9b8007cde72f3d9453381ec11925254091ff0b4c4d3e8281c50"
+      "bytes": 7529,
+      "sha256": "aaf352f763e16f72bfe722d20cdf8784f572c94bbf61e53459e840b674f03df4"
     },
     "rage-port/scripts/patch-emscripten.py": {
       "bytes": 6977,
@@ -13885,8 +13885,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10841754,
-      "sha256": "ad27164d2d7af1dba3f2ddfd2e9816852ff1824169781e355cecb702e8d265cd"
+      "bytes": 10841873,
+      "sha256": "18f19bc80bef59744aabb63c036fb7c13127bd582a626e6b9960b8edb76b4a8e"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
@@ -13911,6 +13911,10 @@
     "web/public/rage/source/discovery-browser.json": {
       "bytes": 6652,
       "sha256": "5a6e68fae5cd510ff8056ada1f16520635f02047db9ce27b73d10bb5338a6a83"
+    },
+    "web/public/rage/source/discovery-live.json": {
+      "bytes": 1997,
+      "sha256": "6212e26b4d7b30c7d61ca852952cdefb08318fe7920c36f4d90001dcd817c5af"
     },
     "web/public/rage/source/discovery-relay.json": {
       "bytes": 1997,

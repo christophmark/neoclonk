@@ -4,6 +4,8 @@
 
 > Unofficial, noncommercial browser adaptation of [Clonk Rage](https://www.clonk.de/) © RedWolf Design / Matthes Bender and contributors. Original content: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); engine: [ISC](cr_source/licenses/clonk_source_license.txt). Browser code and presentation have been modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement is implied. Provided **as-is, without warranties**, to the extent permitted by law. See [licenses, attribution and changes](#licenses-attribution-and-changes) before redistributing.
 
+**[Play Project Neoclonk](https://christophmark.github.io/neoclonk/)**
+
 An unofficial, noncommercial browser adaptation of **Clonk Rage 4.9.10.7 [330]**. The original C++ engine runs through Emscripten/WebAssembly, with the original scenario scripts, sprites, materials and sound. The earlier Three.js simulation has been replaced.
 
 The catalog includes all 80 official scenarios (53 base and 27 from Knights, Far Worlds, Fantasy and Western). The original Gold Mine has been exercised in the browser and checked against a native original-engine replay. The bounded acceptance scope and report links are documented below.
@@ -29,6 +31,7 @@ Release reports are published with the checked-in browser build:
 - Direct-room checks: [Gold Mine](web/public/rage/source/rtc-goldmine.json), [Knights](web/public/rage/source/rtc-knights.json), and [Desert](web/public/rage/source/rtc-desert.json).
 - [Chromium host ↔ WebKit guest](web/public/rage/source/rtc-cross-browser.json): production invitation/reply exchange, player input, synchronization at frame 120, terrain agreement and shared pause passed.
 - [Discovery and real TURN relay](web/public/rage/source/discovery-relay.json): original Gold Mine synchronized through frame 120 over both direct WebRTC and a real local coturn relay. Direct connections requested no TURN credentials; both modes stopped lobby requests during gameplay. This is a local integration check, not a claim about every carrier/firewall.
+- [Live Lightsail multiplayer](web/public/rage/source/discovery-live.json): two browsers ran Gold Mine through direct and forced relay connections to the deployed service, with matching simulation and terrain at frame 120, working guest input, and no lobby requests during gameplay.
 - Native exit/save persistence: [Chromium](web/public/rage/source/native-exit-persistence.json) and [WebKit](web/public/rage/source/native-exit-persistence-webkit.json).
 - [Touch access to original menus](web/public/rage/source/touch-menus.json) and [original native replay parity](web/public/rage/source/native-replay-verification.json).
 

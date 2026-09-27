@@ -1,0 +1,118 @@
+{
+  "modes": [
+    {
+      "mode": "direct",
+      "discovery": {
+        "configured": true,
+        "active": true,
+        "code": "WQEU4Z2R",
+        "host": true,
+        "started": false,
+        "connections": [
+          {
+            "slot": 1,
+            "generation": 0,
+            "connected": true,
+            "kind": "direct",
+            "failed": false
+          }
+        ]
+      },
+      "turnRequests": 0,
+      "verifiedFrame": 120,
+      "sync": {
+        "frame": 122,
+        "fields": [
+          122,
+          0,
+          122,
+          0,
+          0,
+          47,
+          6,
+          0,
+          0,
+          76,
+          178,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          170,
+          2,
+          171,
+          2,
+          82,
+          4,
+          0,
+          194,
+          94,
+          132,
+          107
+        ],
+        "terrain": 1400689194
+      },
+      "gameplayLobbyRequests": 0
+    },
+    {
+      "mode": "relay",
+      "discovery": {
+        "configured": true,
+        "active": true,
+        "code": "YCH6X96Y",
+        "host": true,
+        "started": false,
+        "connections": [
+          {
+            "slot": 1,
+            "generation": 1,
+            "connected": true,
+            "kind": "relay",
+            "failed": false
+          }
+        ]
+      },
+      "turnRequests": 2,
+      "verifiedFrame": 120,
+      "sync": {
+        "frame": 122,
+        "fields": [
+          122,
+          0,
+          122,
+          0,
+          0,
+          64,
+          7,
+          0,
+          0,
+          132,
+          130,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          171,
+          2,
+          172,
+          2,
+          83,
+          4,
+          0,
+          152,
+          24,
+          41,
+          72
+        ],
+        "terrain": -1550266085
+      },
+      "gameplayLobbyRequests": 0
+    }
+  ],
+  "passed": true,
+  "errors": []
+}
