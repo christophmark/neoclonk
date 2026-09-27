@@ -1,0 +1,17 @@
+.toolchains/
+node_modules/
+**/node_modules/
+**/.env*
+**/.wrangler/
+**/.next/
+**/__pycache__/
+**/*.pyc
+**/*.tsbuildinfo
+rage-port/build/
+rage-port/dist/
+rage-port/outputs/
+rage-port/deps/openssl-*/
+rage-port/deps/*.tar.gz
+web/dist/
+web/outputs/
+github-source/

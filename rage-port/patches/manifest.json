@@ -1,0 +1,232 @@
+[
+  {
+    "path": "engine/inc/C4Constants.h",
+    "originalSha256": "fc7c81056e347bc01394445adbb08ce6a3fc6db7ca97dbf6c31f0f5d6d2fb2f9",
+    "portedSha256": "993a57528a98328117b819afb73210219a11f3c27b6683c863c6011f2217782e"
+  },
+  {
+    "path": "engine/inc/C4Gui.h",
+    "originalSha256": "8853c5f1bc625d84c5135ef0d23d26e5346658a26fff85a4f176be90b8d5bec9",
+    "portedSha256": "04bbf58931f74eec8e0d29dbf261fb40b984d742755fdb8aad6541c1455c8a35"
+  },
+  {
+    "path": "engine/inc/C4Include.h",
+    "originalSha256": "5a4a0dab20a36209401b45b970f8ad1a1c3c9eb128bf0234d17108e1dea837fc",
+    "portedSha256": "88dfc248c0642ece3baa7745cb20bd9f30685141ec1af95ea9b8434d1605f977"
+  },
+  {
+    "path": "engine/inc/C4InputValidation.h",
+    "originalSha256": "f0a6afe7d6b0c81b58007bf5ad5c2bfd6a6adfb857040ccbfa6557265c9bb4dd",
+    "portedSha256": "c41f823487fe1841a31bb6a51376d250876cf35720c1db3d5ff62cebc365bb98"
+  },
+  {
+    "path": "engine/inc/C4MouseControl.h",
+    "originalSha256": "1e44a5784290926efb64a5b15b9116cd0778bea2058f91b39215be3c6c76e0ad",
+    "portedSha256": "f2c4f02c9c49affd2a524bd4ee803bc46661dbadf500a1618d0f4c03dcd33097"
+  },
+  {
+    "path": "engine/inc/C4NetIO.h",
+    "originalSha256": "0627a4a8a406674897bdd15a6b3c4c997f59477d9796d70f60a679aca6c2a377",
+    "portedSha256": "6167f5b5566efb061b85f3db85132803c34b19911b5f51252f31fcc4bfe97a1b"
+  },
+  {
+    "path": "engine/inc/C4StartupPlrSelDlg.h",
+    "originalSha256": "bc6d80d634e6358c34bc40cdde42891375a7dd91ccfe5ca0b7b09a24f557616b",
+    "portedSha256": "5d2e549709f6107c98215982efead8c70255e475794019b654ba2a10db2c1c5f"
+  },
+  {
+    "path": "engine/inc/C4Viewport.h",
+    "originalSha256": "21105219d3324b2c922814a9523d6ab6d52b0d914040fdc0bf82cccedfeca6e7",
+    "portedSha256": "0330dc40c91efa928ed8cf8dbf9bbd2b8701848c768422048e30170c2be02966"
+  },
+  {
+    "path": "engine/inc/C4Wrappers.h",
+    "originalSha256": "cf33dd85352a5e0d4c2372e09e9429bf65bf2c8060683fdb533206cd797386f8",
+    "portedSha256": "3191fb1b22eb6c0b9de3462bc7611a14980496e3ac7e68a95427e7743402bdec"
+  },
+  {
+    "path": "engine/src/C4Browser.cpp",
+    "originalSha256": null,
+    "portedSha256": "03ec0718366fa22e7bb57491cd0ebd095751b6c8ac0da4a6b5838e4192b1ed0e"
+  },
+  {
+    "path": "engine/src/C4BrowserAudio.cpp",
+    "originalSha256": null,
+    "portedSha256": "d8627fdd9521c9d0d4d76eb5e7deecf58cfa28e0a616920860e0a17b9aec24b0"
+  },
+  {
+    "path": "engine/src/C4BrowserSave.cpp",
+    "originalSha256": null,
+    "portedSha256": "edc6564ab7680bca41a9f330dd57379d866fba6f7203af6e6fb18b55b252032f"
+  },
+  {
+    "path": "engine/src/C4Config.cpp",
+    "originalSha256": "711d67045e4330b9b254e85739876cb2724d063155a6c9342d4132fa9f0c7b92",
+    "portedSha256": "31ee00db88dcbf5837773d756c17bd7fac2b9afafa9794fb97c637a845cab94c"
+  },
+  {
+    "path": "engine/src/C4Game.cpp",
+    "originalSha256": "475eb44b3ff3ebc735d31162a1b6abe3092a02fa455100c3fb512afa84ebe69c",
+    "portedSha256": "6c3d6b832622528ea82094f53db141d74807669223ce99348b49a084963c7f82"
+  },
+  {
+    "path": "engine/src/C4GameMessage.cpp",
+    "originalSha256": "fb550915d132157e27a9e0e15dae11517622ecb19abeeda28fc68b906d19afe9",
+    "portedSha256": "d0e04ad3d852ebbe6ea64801cc9686f8e9c12199dae63cd274dc6e659f94412b"
+  },
+  {
+    "path": "engine/src/C4GraphicsSystem.cpp",
+    "originalSha256": "e9c351ff64069950db02460e39a9951bd1ac719a05002a0ebe902de425e4e2c8",
+    "portedSha256": "460f5fe9e9419cc9f89d33643edd903881f4beac7a07f253b55c507bfc8a7201"
+  },
+  {
+    "path": "engine/src/C4GroupSet.cpp",
+    "originalSha256": "873b7e75c7ab7681d747c526f2edf9fdf2c37f0f33192b04e2e6c5b0d310599a",
+    "portedSha256": "3691269732f418b7ebb35ec5d8792ff39da02aa970acd2819b23b987fb1cb5cc"
+  },
+  {
+    "path": "engine/src/C4Gui.cpp",
+    "originalSha256": "b7b51003f3815c3071e1fc4e365f3746e0ca74e74cc2b3aedb5002e76048166f",
+    "portedSha256": "f5d71168dba0954b7575cbe95dbd919b060ca55f99dddf8ed66370952e049ff9"
+  },
+  {
+    "path": "engine/src/C4GuiDialogs.cpp",
+    "originalSha256": "a1fa0056b6691b75e1817b709271341efd92d6be27a72217db29e7ff605f3ba3",
+    "portedSha256": "d473a1d274cf1c70f10c7b0e8a8cf34db89a6dadbeb39829c640ca65665c543b"
+  },
+  {
+    "path": "engine/src/C4KeyboardInput.cpp",
+    "originalSha256": "9c610c4106963d3deaecfa088cd935ea3b8c773212960d8099abba0d54fec999",
+    "portedSha256": "0b1221aa830009cd5063fc7e9a2ad34a15a3f998eda2ee4a4bc748eb23bb562e"
+  },
+  {
+    "path": "engine/src/C4MouseControl.cpp",
+    "originalSha256": "c677cdfd4917733eebabea77c67b9f605c12294190a55e21e8cb11c224f37b99",
+    "portedSha256": "103bf2513104c34c722299b11b3ea6a961ea493af59514d1a3665ffc1ffcc28b"
+  },
+  {
+    "path": "engine/src/C4MusicFile.cpp",
+    "originalSha256": "26d75ef96f77bb5a19b817d888fff83265f4542ca5bff54a1a16093cb29921de",
+    "portedSha256": "e0089c5ae431a71365179e6d4f697984a49df378c5b45de912ecc9d1a32b9364"
+  },
+  {
+    "path": "engine/src/C4MusicSystem.cpp",
+    "originalSha256": "9801cbc9f9bee9912478debc4bfdcc61d24bb410e94dd6ed3a430bcbb2662d8d",
+    "portedSha256": "6062b3fe7babc46d5a5619cb44b26459c652a9dec61d97599f0a3ea307142a4d"
+  },
+  {
+    "path": "engine/src/C4ObjectInfoList.cpp",
+    "originalSha256": "58469ef2ab55460a46176fbdc1010306792de6bcdcbceb00675a4ac614434327",
+    "portedSha256": "5f29f69794b5a7caaee823bdf08d992ea64619115fc3b8e634701eb9c22703b4"
+  },
+  {
+    "path": "engine/src/C4Player.cpp",
+    "originalSha256": "76705a320a01d599adc109dea3eec1ee364c2717c8396fc9e33ce60a21d01a4a",
+    "portedSha256": "fa725b88796edb9ef17c4ca4b9211829fea2a87a3ae02eef00b5ec9c5088392e"
+  },
+  {
+    "path": "engine/src/C4Script.cpp",
+    "originalSha256": "75d57ede47f970ce36a6d30a791b0adc7c142c9992fbb0a9026eac26cdc8cf60",
+    "portedSha256": "055fbededc00898e6bfaa7f215034396e3e2bf4fdce6b86addb995a827f302f2"
+  },
+  {
+    "path": "engine/src/C4SoundSystem.cpp",
+    "originalSha256": "edbed1eacc87f2ccf46d2ca399399c03fbf65c837d7a3dd3c0e43c55f6d05166",
+    "portedSha256": "ca697e157af8c1937f1e5af804712155c65cf9215bf9d99976af63440ea53fe4"
+  },
+  {
+    "path": "engine/src/C4StartupMainDlg.cpp",
+    "originalSha256": "cbe86a6526be0158afdc12fa97fc383a30255a543239d1a205ef7902a79b7357",
+    "portedSha256": "5ec677b6224c9e409215b340dfd86df5f1f52a4d76aa4b17de1ba56b5c08a577"
+  },
+  {
+    "path": "engine/src/C4Teams.cpp",
+    "originalSha256": "fd735744f9272c894932ac508bd0ddb2bb332cdbc5cd3193b269d9997dabfe5c",
+    "portedSha256": "121c89129bf466b93df5a244c5f79ca9b7d9b3b016cdae7b465bd9e1b9bb9936"
+  },
+  {
+    "path": "engine/src/C4UpperBoard.cpp",
+    "originalSha256": "33b6996dec07c89a4ff067a5ae280426b17a5bb24b3cadb1625a57fe152dda50",
+    "portedSha256": "793e8f5c84a4888d5c592b5ab510d1e1e88315057c5dd3c8918c83473f292157"
+  },
+  {
+    "path": "engine/src/C4Viewport.cpp",
+    "originalSha256": "9e7e64ff8ceb21b7dba836177522d667cc1fb4c73eddc883d873ed3f67aa3e69",
+    "portedSha256": "c6e3e0b9a6b09379199dee9b5709026847230d9af25355cc79c3f83217b14ddf"
+  },
+  {
+    "path": "engine/src/C4WinMain.cpp",
+    "originalSha256": "4321c17781f3202523665fb3926af658aa69672c3f9d9dac2d9a4881e23c09ad",
+    "portedSha256": "82af9929c3b6aa4f1575bdc270cd8e664c4ea78eb1b554d1d14a204bed5ef339"
+  },
+  {
+    "path": "engine/src/C4Wrappers.cpp",
+    "originalSha256": "0b77e2b3a37b19494de7150bbd8288fb6a3f47bc65fb2f7de08c7916905072af",
+    "portedSha256": "7d1aa06a5c0b4d5a7d53b63a34ed706513be199f1f255b9c5c825158143863f2"
+  },
+  {
+    "path": "standard/inc/StdAdaptors.h",
+    "originalSha256": "5cfbf8bd136b736ea353aec96cb4d98513841f02298b18418ce7d190c3394c26",
+    "portedSha256": "a94cab81a5a13bb3f5de2302d2f415340764cb0ae9ea72df50a72ebae5566264"
+  },
+  {
+    "path": "standard/inc/StdBuf.h",
+    "originalSha256": "c88bb68cd7f5bc59d7d9cea0726f404b9764479d427f365aac1c0744d26c240e",
+    "portedSha256": "2adf81c11b51c2f4fc781b0d1ecf8e210fe77a9edfbc723184f0d252b066b243"
+  },
+  {
+    "path": "standard/inc/StdCompiler.h",
+    "originalSha256": "a087b57554de5b0c59065fe6865b3532f6a6a2c0d293517e2f8425245e90d7a0",
+    "portedSha256": "5a773b835b8ca6d0f9a41abcfdec36ae8cd6bca23d79718cba97ef893adc75bc"
+  },
+  {
+    "path": "standard/inc/StdEmscriptenGL.h",
+    "originalSha256": null,
+    "portedSha256": "39f69db587a1573e530b0b0177f6155577ce80386966c2168ee315679a17e80c"
+  },
+  {
+    "path": "standard/inc/StdGL.h",
+    "originalSha256": "a587a76287a801e5ef3e1672b498073307db436ea84e5a11c82736fe96e4ac59",
+    "portedSha256": "70c8412be9ce665c1da15dddd07113db694f3be99cf59f640a3d6310468032cb"
+  },
+  {
+    "path": "standard/inc/StdSurface2.h",
+    "originalSha256": "a1a8447415a9295dc2fe9fa2dec27b94f30143275fc8bb708e5a3253e3a1be71",
+    "portedSha256": "e18f57cde8e0583b0bde02ac8354f31ecc2d5cb05846350a56466e057808f415"
+  },
+  {
+    "path": "standard/inc/StdWindow.h",
+    "originalSha256": "d7adab73307b758b7c37fe5ca336fafbccc0074ca13851f8cc102afaa17a941b",
+    "portedSha256": "621a91f43e39672618faf91a4a1570107dd06e5a95a2f3e1442344ee8973702c"
+  },
+  {
+    "path": "standard/src/StdEmscriptenGL.cpp",
+    "originalSha256": null,
+    "portedSha256": "a4f442377c136fcfb15b56a3ea705c1aa9c432f78c6735fcccea31512a0db2e4"
+  },
+  {
+    "path": "standard/src/StdFile.cpp",
+    "originalSha256": "960678b880a1b20554c684413421c07b34b4f93f4f5bda963bdd9f27466a5471",
+    "portedSha256": "f48bd6a90ee9910abee176b868915c655ffa37dc2cfda9425aeefebd35540f52"
+  },
+  {
+    "path": "standard/src/StdGL.cpp",
+    "originalSha256": "53780afd4ce972ead9bec07940a057a883722acf3508252799f56e7797ef46e8",
+    "portedSha256": "eb6100d76d6240ea6e79bf84129760c3f6f928adfeedc15da73149fc2cdce0c3"
+  },
+  {
+    "path": "standard/src/StdGLCtx.cpp",
+    "originalSha256": "d8cb2eed3b24ba081f77a715d50154c5a86229621df70f26918d215deeb09945",
+    "portedSha256": "5f2919a9fd492a31de824d22d67c3d99a1190c85de02b1b4e4b57c3fc18b1065"
+  },
+  {
+    "path": "standard/src/StdSDLApp.cpp",
+    "originalSha256": "5bb87141ab0ff68775e0bf9c8530c8c96b08f67ab051feb5bd2ea072e374979d",
+    "portedSha256": "2f409b3a7faf9e3787b5c5ccd73282315a8129e036c5b4ed96a06cec714dfdbd"
+  },
+  {
+    "path": "standard/src/StdSDLWindow.cpp",
+    "originalSha256": "0f8f2be53af0ffd14d2de146ef279391d16b3cb66b8972355f81842d12a46397",
+    "portedSha256": "77f1b29052674789270f6f998b07491dc126d0790812ad09bf06b8b132a875aa"
+  }
+]

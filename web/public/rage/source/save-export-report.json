@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "saves": [
+    {
+      "requestId": 1,
+      "status": "saved",
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-121857-1.c4s",
+      "frame": 3,
+      "paused": true,
+      "bytes": 72197,
+      "error": ""
+    },
+    {
+      "requestId": 2,
+      "status": "saved",
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-121900-2.c4s",
+      "frame": 3,
+      "paused": true,
+      "bytes": 72240,
+      "error": ""
+    },
+    {
+      "requestId": 3,
+      "status": "saved",
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-121903-3.c4s",
+      "frame": 4,
+      "paused": false,
+      "bytes": 72213,
+      "error": ""
+    }
+  ],
+  "errors": []
+}

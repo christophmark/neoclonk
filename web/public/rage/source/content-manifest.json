@@ -1,0 +1,100 @@
+{
+  "format": "neoclonk-browser-original-content-v1",
+  "engineVersion": "4.9.10.7 [330]",
+  "originalArchiveSha256": "b1415d5323590028c285aab20eb1e822f452013694e6aadc0a6c240becc73a4c",
+  "sourceUrl": "http://www.clonkx.de/rage/cr_game_linux.tar.bz2",
+  "contentLicense": "CC-BY-NC-4.0",
+  "attribution": "Original Clonk Rage game content by RedWolf Design / Matthes Bender. Clonk is a registered trademark of Matthes Bender. No endorsement implied.",
+  "modifications": "Original packs and licenses unchanged. New browser.cfg/Browser.c4p are runtime/player settings; verification/NativeGoldmine.c4s is an original-engine recording.",
+  "cwd": "/data",
+  "thisProgram": "/data/clonk",
+  "arguments": [
+    "/config:/data/home/browser.cfg",
+    "/fullscreen",
+    "/nosplash",
+    "/data/home/players/Browser.c4p",
+    "Worlds.c4f/Goldmine.c4s"
+  ],
+  "files": [
+    {
+      "path": "Graphics.c4g",
+      "bytes": 5749519,
+      "sha256": "75e3472296a2280c6590c0eb24b9c1a841087b05304d207b353db871c619da6c",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "Material.c4g",
+      "bytes": 853439,
+      "sha256": "ddccbd0e3ed8516caa90764d0b0045a6a3cb0780c11334cf1e1b9b46e9e6dac2",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "Music.c4g",
+      "bytes": 6786841,
+      "sha256": "25e8270f6ed7416164e5fffae3b32055b2a0d3828fb9fd7a17c7b2c6c918580e",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "Objects.c4d",
+      "bytes": 6924109,
+      "sha256": "ded9762fcfb36d551f341ba88b266e18190a08560cdfaaffbf1ffc60aafd6347",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "Sound.c4g",
+      "bytes": 1461737,
+      "sha256": "80b16fc9d4da6d213ce84e9f2191cc2a8e0f315b2f4d4fdbda10a3f93da38eb9",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "System.c4g",
+      "bytes": 102112,
+      "sha256": "2a73c38864b533b39e4d74ee210a9efa9cbcb9777ee0b444add5162de8fc3003",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "Worlds.c4f",
+      "bytes": 1965190,
+      "sha256": "5c6d9c301b368be3c7ef8328d5ebae6fc86ec7e7283cd50a7a6ec11cc09fdd00",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "browser.cfg",
+      "bytes": 581,
+      "sha256": "30df37a283c2e57235512aa73ba556f85b4788b6418cf3362296aa06e15dcdfc",
+      "originalReleaseFile": false
+    },
+    {
+      "path": "clonk_content_license.txt",
+      "bytes": 820,
+      "sha256": "1fdabd2b3ebfbcd988a9d47e3fb1f593fd4e33a09d3da2307b00325ef618da30",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "clonk_source_license.txt",
+      "bytes": 1650,
+      "sha256": "ec9faf5a1031b4716574056752f1867043387f7a162391c5903a5616f7e243ff",
+      "originalReleaseFile": false
+    },
+    {
+      "path": "clonk_trademark_license.txt",
+      "bytes": 956,
+      "sha256": "120b12d087f370363454dea559eac028bcb375ea6d274d770f3f1724332b4d34",
+      "originalReleaseFile": true
+    },
+    {
+      "path": "verification/NativeGoldmine.c4s",
+      "bytes": 73190,
+      "sha256": "3c7510120d599433418ea26436402792d20f0c383caa7674389ced8d6bf27028",
+      "originalReleaseFile": false
+    },
+    {
+      "path": "Browser.c4p",
+      "bytes": 158,
+      "sha256": "e5f31ca3afce2b370e26d1ba7fdbae9611955ca513fc6ddd169c8e117bedfd66",
+      "originalReleaseFile": false,
+      "provenance": "Fresh classic-control browser profile, packed with published C4Group format; no trained crew."
+    }
+  ],
+  "totalBytes": 23920302
+}

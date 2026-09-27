@@ -1,0 +1,1595 @@
+{
+  "format": "neoclonk-original-goldmine-v1",
+  "source": {
+    "releasePage": "http://www.clonk.de/cr.php?lng=en",
+    "download": "http://www.clonkx.de/rage/cr_game_linux.tar.bz2",
+    "archiveSha256": "b1415d5323590028c285aab20eb1e822f452013694e6aadc0a6c240becc73a4c",
+    "engineVersion": "4.9.10.7 [330]",
+    "versionEvidence": "Embedded strings in official clonk64 binary; matches user-supplied engine source."
+  },
+  "license": {
+    "content": "CC-BY-NC-4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "originalPublisher": "RedWolf Design / Matthes Bender",
+    "preservation": "All extracted asset and script bytes are unchanged. Extraction and this manifest are the only additions.",
+    "files": [
+      "licenses/clonk_content_license.txt",
+      "licenses/clonk_trademark_license.txt"
+    ]
+  },
+  "scenario": {
+    "path": "Worlds.c4f/Goldmine.c4s",
+    "configuration": {
+      "Head": {
+        "Icon": "15",
+        "Title": "Goldmine",
+        "Loader": "LoaderGoldmine*",
+        "Version": "4,9,8,2",
+        "Difficulty": "5",
+        "Access": "1",
+        "MaxPlayer": "8",
+        "Origin": "Worlds.c4f\\Goldmine.c4s"
+      },
+      "Definitions": {
+        "Definition1": "Objects.c4d"
+      },
+      "Game": {
+        "StructNeedEnergy": "0",
+        "Goals": "GLDM=1"
+      },
+      "Player1": {
+        "Wealth": "50,0,0,250",
+        "Crew": "CLNK=1",
+        "Buildings": "HUT2=1",
+        "Material": "FLAG=1",
+        "Knowledge": "FLNT=1;TFLN=1;SFLN=1;LORY=1;HUT2=1;ELEV=1;WRKS=1;SAWM=1;CHEM=1",
+        "HomeBaseMaterial": "CNKT=5;LNKT=3;LOAM=6;WOOD=4;METL=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;FLAG=3;CLNK=3;LORY=2;CATA=1",
+        "HomeBaseProduction": "CNKT=5;LNKT=2;LOAM=6;WOOD=5;METL=3;CNCR=5;FLNT=5;TFLN=5;SFLN=1;SPHR=2;BARL=5;CLNK=2;LORY=1",
+        "Magic": "MWP2=0;MFFA=0;MVLC=0;MWND=0;MQKE=0;CMFG=0;RMMG=0;MBRG=0;EXTG=0;ETFL=0;MGHL=0;MGUP=0;MGWP=0;MMTR=0;MFFS=0;FRFS=0;MLGT=0;RVLT=0;MINV=0;MGDW=0;MFFW=0"
+      },
+      "Player2": {
+        "Wealth": "50,0,0,250",
+        "Crew": "CLNK=1",
+        "Buildings": "HUT2=1",
+        "Material": "FLAG=1",
+        "Knowledge": "FLNT=1;TFLN=1;SFLN=1;LORY=1;HUT2=1;ELEV=1;WRKS=1;SAWM=1;CHEM=1",
+        "HomeBaseMaterial": "CNKT=5;LNKT=3;LOAM=6;WOOD=4;METL=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;FLAG=3;CLNK=3;LORY=2;CATA=1",
+        "HomeBaseProduction": "CNKT=5;LNKT=2;LOAM=6;WOOD=5;METL=3;CNCR=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;CLNK=2;LORY=1",
+        "Magic": "MWP2=0;MFFA=0;MVLC=0;MWND=0;MQKE=0;CMFG=0;RMMG=0;MBRG=0;EXTG=0;ETFL=0;MGHL=0;MGUP=0;MGWP=0;MMTR=0;MFFS=0;FRFS=0;MLGT=0;RVLT=0;MINV=0;MGDW=0;MFFW=0"
+      },
+      "Player3": {
+        "Wealth": "50,0,0,250",
+        "Crew": "CLNK=1",
+        "Buildings": "HUT2=1",
+        "Material": "FLAG=1",
+        "Knowledge": "FLNT=1;TFLN=1;SFLN=1;LORY=1;HUT2=1;ELEV=1;WRKS=1;SAWM=1;CHEM=1",
+        "HomeBaseMaterial": "CNKT=5;LNKT=3;LOAM=6;WOOD=4;METL=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;FLAG=3;CLNK=3;LORY=2;CATA=1",
+        "HomeBaseProduction": "CNKT=5;LNKT=2;LOAM=6;WOOD=5;METL=3;CNCR=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;CLNK=2;LORY=1",
+        "Magic": "MWP2=0;MFFA=0;MVLC=0;MWND=0;MQKE=0;CMFG=0;RMMG=0;MBRG=0;EXTG=0;ETFL=0;MGHL=0;MGUP=0;MGWP=0;MMTR=0;MFFS=0;FRFS=0;MLGT=0;RVLT=0;MINV=0;MGDW=0;MFFW=0"
+      },
+      "Player4": {
+        "Wealth": "50,0,0,250",
+        "Crew": "CLNK=1",
+        "Buildings": "HUT2=1",
+        "Material": "FLAG=1",
+        "Knowledge": "FLNT=1;TFLN=1;SFLN=1;LORY=1;HUT2=1;ELEV=1;WRKS=1;SAWM=1;CHEM=1",
+        "HomeBaseMaterial": "CNKT=5;LNKT=3;LOAM=6;WOOD=4;METL=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;FLAG=3;CLNK=3;LORY=2;CATA=1",
+        "HomeBaseProduction": "CNKT=5;LNKT=2;LOAM=6;WOOD=5;METL=3;CNCR=5;FLNT=5;TFLN=5;SFLN=1;SPHR=3;BARL=5;CLNK=2;LORY=1",
+        "Magic": "MWP2=0;MFFA=0;MVLC=0;MWND=0;MQKE=0;CMFG=0;RMMG=0;MBRG=0;EXTG=0;ETFL=0;MGHL=0;MGUP=0;MGWP=0;MMTR=0;MFFS=0;FRFS=0;MLGT=0;RVLT=0;MINV=0;MGDW=0;MFFW=0"
+      },
+      "Landscape": {
+        "Vegetation": "TRE1=1;TRE2=2;TRE3=1;TRE4=1",
+        "VegetationLevel": "100,0,0,100",
+        "InEarth": "ROCK=1;GOLD=1;FLNT=1;LOAM=1",
+        "InEarthLevel": "65,0,0,100",
+        "Sky": "Clouds2",
+        "MapWidth": "80,0,64,250",
+        "MapHeight": "60,0,40,250",
+        "Amplitude": "10,10,0,100",
+        "Phase": "50,50,0,100",
+        "Period": "10,10,0,100",
+        "Random": "20,20,0,100",
+        "Liquid": "Water-Smooth",
+        "LiquidLevel": "20,30,0,100",
+        "MapPlayerExtend": "1",
+        "Layers": "Rock=7;Rock-Ridge=7;Gold=8;Granite=4;Water-Smooth=5;Earth-Rough=50;Earth-Smooth2=50;Ore=3;Coal-Swirl=4;Sulphur-Swirl=5",
+        "SkyScrollMode": "2"
+      },
+      "Weather": {
+        "Climate": "40,10,0,100",
+        "YearSpeed": "20,10,0,100",
+        "Wind": "1,100,-100,100"
+      },
+      "Environment": {
+        "Objects": "EGLN=1;EGRS=1"
+      }
+    },
+    "fixedMap": false,
+    "customScript": false,
+    "generation": "Original C4MapCreator/C4Landscape and engine RNG using Scenario.txt; there is no canonical fixed Goldmine bitmap.",
+    "fulfillment": {
+      "solidGoldPixelsLessThan": 150,
+      "looseGoldObjectsEqual": 0,
+      "source": "Objects.c4d/Goals.c4d/Goldmine.c4d/Script.c",
+      "sellingSource": "Objects.c4d/Goals.c4d/Oremine.c4d/Script.c"
+    },
+    "files": [
+      {
+        "path": "Worlds.c4f/Goldmine.c4s/DescDE.rtf",
+        "bytes": 686,
+        "sha256": "e4b95e6385898cece10c7caeec5e8d5af2af902f9f768d323b53b345d2f2fe1d"
+      },
+      {
+        "path": "Worlds.c4f/Goldmine.c4s/DescUS.rtf",
+        "bytes": 620,
+        "sha256": "11da9fcd2ffc41c0160bada8d524829059037d66d277b91b4bac42796e3dc39b"
+      },
+      {
+        "path": "Worlds.c4f/Goldmine.c4s/Scenario.txt",
+        "bytes": 2983,
+        "sha256": "4382f6b61a3b053cd136080cb9ba43baf8b896066164002ce986d4c0db5638da"
+      },
+      {
+        "path": "Worlds.c4f/Goldmine.c4s/Title.png",
+        "bytes": 70809,
+        "sha256": "fc835e14a96b7e729080bd745030304f1af5e5b9324d1d0991b417465c7a1253"
+      },
+      {
+        "path": "Worlds.c4f/Goldmine.c4s/Title.txt",
+        "bytes": 25,
+        "sha256": "0a690c40529c4a6a0d64ed6aab980a6b9d2ad9047fd5ba327406edf016882269"
+      }
+    ]
+  },
+  "requiredRuntimeGroups": [
+    "Objects.c4d",
+    "Material.c4g",
+    "Graphics.c4g",
+    "System.c4g",
+    "Sound.c4g",
+    "Music.c4g",
+    "Worlds.c4f"
+  ],
+  "packs": [
+    {
+      "path": "release/cr_game_linux/Graphics.c4g",
+      "bytes": 5749519,
+      "sha256": "75e3472296a2280c6590c0eb24b9c1a841087b05304d207b353db871c619da6c"
+    },
+    {
+      "path": "release/cr_game_linux/LGPL.txt",
+      "bytes": 26527,
+      "sha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861"
+    },
+    {
+      "path": "release/cr_game_linux/Material.c4g",
+      "bytes": 853439,
+      "sha256": "ddccbd0e3ed8516caa90764d0b0045a6a3cb0780c11334cf1e1b9b46e9e6dac2"
+    },
+    {
+      "path": "release/cr_game_linux/Melees.c4f",
+      "bytes": 1054667,
+      "sha256": "9894685d340f0ef44e221720e7ad8e9d3478ac132b9ec7425031118a0b9aa2a4"
+    },
+    {
+      "path": "release/cr_game_linux/Missions.c4f",
+      "bytes": 2596985,
+      "sha256": "3a04c490140d42e6a80a9c08d626263f8f5d8e4b41356ffd5817fb00359e98cc"
+    },
+    {
+      "path": "release/cr_game_linux/Music.c4g",
+      "bytes": 6786841,
+      "sha256": "25e8270f6ed7416164e5fffae3b32055b2a0d3828fb9fd7a17c7b2c6c918580e"
+    },
+    {
+      "path": "release/cr_game_linux/Objects.c4d",
+      "bytes": 6924109,
+      "sha256": "ded9762fcfb36d551f341ba88b266e18190a08560cdfaaffbf1ffc60aafd6347"
+    },
+    {
+      "path": "release/cr_game_linux/OpenSSL.txt",
+      "bytes": 6406,
+      "sha256": "76c71f37c27433cd9f13aea1ffa8648192416874c4ae12f890b1ff6a82f3c56e"
+    },
+    {
+      "path": "release/cr_game_linux/Races.c4f",
+      "bytes": 861975,
+      "sha256": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72"
+    },
+    {
+      "path": "release/cr_game_linux/Sound.c4g",
+      "bytes": 1461737,
+      "sha256": "80b16fc9d4da6d213ce84e9f2191cc2a8e0f315b2f4d4fdbda10a3f93da38eb9"
+    },
+    {
+      "path": "release/cr_game_linux/System.c4g",
+      "bytes": 102112,
+      "sha256": "2a73c38864b533b39e4d74ee210a9efa9cbcb9777ee0b444add5162de8fc3003"
+    },
+    {
+      "path": "release/cr_game_linux/Tutorial.c4f",
+      "bytes": 13330033,
+      "sha256": "64ec0f3ad74133eab2eac07d7d8e26c2271a5049d71555b42e72acb96f98549a"
+    },
+    {
+      "path": "release/cr_game_linux/Worlds.c4f",
+      "bytes": 1965190,
+      "sha256": "5c6d9c301b368be3c7ef8328d5ebae6fc86ec7e7283cd50a7a6ec11cc09fdd00"
+    },
+    {
+      "path": "release/cr_game_linux/c4group",
+      "bytes": 897528,
+      "sha256": "9a8d0b4fc335c8e6d4100bed625c324e4d3f9d6c3ccd05017866686c0a181898"
+    },
+    {
+      "path": "release/cr_game_linux/c4group64",
+      "bytes": 1010944,
+      "sha256": "d1be0cf3fac9d2686bf2adf95bdca57ecb9be25da3406fe67a7ef5c99bbaf5c5"
+    },
+    {
+      "path": "release/cr_game_linux/clonk",
+      "bytes": 3567672,
+      "sha256": "61d36b0b1a6038de763f7d499cb2886287953afa1f8d92e7fe5dd6d5890693bf"
+    },
+    {
+      "path": "release/cr_game_linux/clonk64",
+      "bytes": 4165672,
+      "sha256": "a242fd21e6415ae0f4ba26fa37b32fb066cc88f49c6a80d4c6e2da39f8f85bc7"
+    },
+    {
+      "path": "release/cr_game_linux/clonk_content_license.txt",
+      "bytes": 820,
+      "sha256": "1fdabd2b3ebfbcd988a9d47e3fb1f593fd4e33a09d3da2307b00325ef618da30"
+    },
+    {
+      "path": "release/cr_game_linux/clonk_trademark_license.txt",
+      "bytes": 956,
+      "sha256": "120b12d087f370363454dea559eac028bcb375ea6d274d770f3f1724332b4d34"
+    },
+    {
+      "path": "release/cr_game_linux/install.sh",
+      "bytes": 3308,
+      "sha256": "110e327f72e1a41437e44eb90539b93db5136d258c0368f3c721a0492fc1db53"
+    },
+    {
+      "path": "release/cr_game_linux/uninstall.sh",
+      "bytes": 1145,
+      "sha256": "4ed75e9e3bf5e8aaa7ee83d1bd68fc8af88ea887301171fb061c227531140e88"
+    }
+  ],
+  "keyDefinitions": {
+    "CLNK": {
+      "path": "Objects.c4d/Crew.c4d/Clonk.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "CLNK",
+          "Version": "4,9,8,8",
+          "Name": "Clonk",
+          "Category": "C4D_Living|C4D_SelectHomebase",
+          "MaxUserSelect": "10",
+          "Width": "16",
+          "Height": "20",
+          "Offset": "-8,-10",
+          "Vertices": "7",
+          "VertexX": "0,0,0,-2,2,-4,4",
+          "VertexY": "2,-7,9,-3,-3,3,3",
+          "VertexCNAT": "0,4,8,1,2,1,2",
+          "VertexFriction": "300,300,100,300,300,300,300",
+          "Value": "25",
+          "Mass": "50",
+          "Components": "CLNK=1",
+          "Picture": "192,100,32,40",
+          "Collection": "-8,-10,16,27",
+          "ContactIncinerate": "1",
+          "Prey": "1",
+          "CrewMember": "1",
+          "Float": "1",
+          "ColorByOwner": "1",
+          "BorderBound": "1",
+          "StretchGrowth": "1",
+          "NoBurnDecay": "1",
+          "IncompleteActivity": "1",
+          "Oversize": "1"
+        },
+        "Physical": {
+          "Energy": "50000",
+          "Breath": "50000",
+          "Walk": "70000",
+          "Jump": "40000",
+          "Scale": "30000",
+          "Hangle": "30000",
+          "Dig": "40000",
+          "Swim": "60000",
+          "Throw": "50000",
+          "Push": "40000",
+          "Fight": "50000",
+          "CanDig": "1",
+          "CanConstruct": "1",
+          "CanChop": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Walk",
+          "Procedure": "WALK",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "15",
+          "Facet": "0,0,16,20",
+          "NextAction": "Walk",
+          "StartCall": "None",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Scale",
+          "Procedure": "SCALE",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "15",
+          "Facet": "0,20,16,20",
+          "NextAction": "Scale",
+          "StartCall": "Scaling"
+        },
+        {
+          "Name": "ScaleDown",
+          "Procedure": "SCALE",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "15",
+          "Facet": "0,20,16,20",
+          "Reverse": "1",
+          "NextAction": "ScaleDown",
+          "StartCall": "Scaling"
+        },
+        {
+          "Name": "Tumble",
+          "Procedure": "FLIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "1",
+          "Facet": "0,40,16,20",
+          "NextAction": "Tumble",
+          "ObjectDisabled": "1",
+          "InLiquidAction": "Swim",
+          "EndCall": "CheckStuck"
+        },
+        {
+          "Name": "Dig",
+          "Procedure": "DIG",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "15",
+          "Facet": "0,60,16,20",
+          "NextAction": "Dig",
+          "StartCall": "Digging",
+          "DigFree": "11",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Bridge",
+          "Procedure": "BRIDGE",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "1",
+          "Facet": "0,60,16,20",
+          "NextAction": "Bridge",
+          "StartCall": "Digging",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Swim",
+          "Procedure": "SWIM",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "16",
+          "Delay": "15",
+          "Facet": "0,80,16,20",
+          "NextAction": "Swim"
+        },
+        {
+          "Name": "Hangle",
+          "Procedure": "HANGLE",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "11",
+          "Delay": "16",
+          "Facet": "0,100,16,20",
+          "NextAction": "Hangle",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Jump",
+          "Procedure": "FLIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "3",
+          "Facet": "0,120,16,20",
+          "NextAction": "Hold",
+          "InLiquidAction": "Swim",
+          "PhaseCall": "CheckStuck"
+        },
+        {
+          "Name": "KneelDown",
+          "Procedure": "KNEEL",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "4",
+          "Delay": "1",
+          "Facet": "0,140,16,20",
+          "NextAction": "KneelUp",
+          "StartCall": "None"
+        },
+        {
+          "Name": "KneelUp",
+          "Procedure": "KNEEL",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "4",
+          "Delay": "1",
+          "Facet": "64,140,16,20",
+          "NextAction": "Walk",
+          "StartCall": "None"
+        },
+        {
+          "Name": "Dive",
+          "Procedure": "FLIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "4",
+          "Facet": "0,160,16,20",
+          "NextAction": "Hold",
+          "StartCall": "None",
+          "ObjectDisabled": "1",
+          "InLiquidAction": "Swim",
+          "PhaseCall": "CheckStuck"
+        },
+        {
+          "Name": "FlatUp",
+          "Procedure": "KNEEL",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "1",
+          "Facet": "0,180,16,20",
+          "NextAction": "KneelUp",
+          "ObjectDisabled": "1"
+        },
+        {
+          "Name": "Throw",
+          "Procedure": "THROW",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "1",
+          "Facet": "0,200,16,20",
+          "NextAction": "Walk",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Punch",
+          "Procedure": "FIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "2",
+          "Facet": "0,220,16,20",
+          "NextAction": "Fight",
+          "EndCall": "Punching",
+          "ObjectDisabled": "1"
+        },
+        {
+          "Name": "Dead",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Facet": "0,240,16,20",
+          "Length": "6",
+          "Delay": "3",
+          "NextAction": "Hold",
+          "NoOtherAction": "1",
+          "ObjectDisabled": "1"
+        },
+        {
+          "Name": "Ride",
+          "Procedure": "ATTACH",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "4",
+          "Delay": "3",
+          "Facet": "128,120,16,20",
+          "NextAction": "Ride",
+          "StartCall": "Riding",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "RideStill",
+          "Procedure": "ATTACH",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "1",
+          "Delay": "10",
+          "Facet": "128,120,16,20",
+          "NextAction": "RideStill",
+          "StartCall": "Riding",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Push",
+          "Procedure": "PUSH",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "15",
+          "Facet": "128,140,16,20",
+          "NextAction": "Push",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Chop",
+          "Procedure": "CHOP",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "3",
+          "Facet": "128,160,16,20",
+          "NextAction": "Chop",
+          "StartCall": "Chopping",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Fight",
+          "Procedure": "FIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "7",
+          "Delay": "4",
+          "Facet": "128,180,16,20",
+          "NextAction": "Fight",
+          "StartCall": "Fighting",
+          "ObjectDisabled": "1"
+        },
+        {
+          "Name": "GetPunched",
+          "Procedure": "FIGHT",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "3",
+          "Facet": "128,200,16,20",
+          "NextAction": "Fight",
+          "ObjectDisabled": "1"
+        },
+        {
+          "Name": "Build",
+          "Procedure": "BUILD",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "2",
+          "Facet": "128,220,16,20",
+          "NextAction": "Build",
+          "StartCall": "Building",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "RideThrow",
+          "Procedure": "ATTACH",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "1",
+          "Facet": "128,240,16,20",
+          "NextAction": "Ride",
+          "StartCall": "Throwing",
+          "InLiquidAction": "Swim"
+        },
+        {
+          "Name": "Process",
+          "Procedure": "THROW",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "3",
+          "Facet": "0,260,16,20",
+          "NextAction": "Process",
+          "EndCall": "Processing"
+        },
+        {
+          "Name": "Drink",
+          "Procedure": "THROW",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "8",
+          "Delay": "3",
+          "Facet": "128,260,16,20",
+          "NextAction": "Walk"
+        }
+      ]
+    },
+    "EGLN": {
+      "path": "Objects.c4d/Environment.c4d/Glint.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "EGLN",
+          "Version": "4,9,8",
+          "Name": "GlintingMaterials",
+          "Category": "C4D_StaticBack|C4D_Environment",
+          "MaxUserSelect": "10",
+          "Timer": "1",
+          "TimerCall": "Twinkle",
+          "Width": "1",
+          "Height": "1",
+          "Value": "1",
+          "Picture": "0,0,64,64"
+        }
+      },
+      "actions": []
+    },
+    "EGRS": {
+      "path": "Objects.c4d/Environment.c4d/Grass.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "EGRS",
+          "Version": "4,9,8",
+          "Name": "EnvironmentGrass",
+          "Category": "C4D_StaticBack|C4D_Environment",
+          "MaxUserSelect": "1",
+          "Value": "1",
+          "Picture": "0,0,64,64"
+        }
+      },
+      "actions": []
+    },
+    "GOAL": {
+      "path": "Objects.c4d/Goals.c4d/Goal.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "GOAL",
+          "Version": "4,9,8",
+          "Name": "GoalControl",
+          "Category": "C4D_StaticBack",
+          "MaxUserSelect": "1",
+          "Timer": "250",
+          "TimerCall": "CheckTime",
+          "Width": "1",
+          "Height": "1",
+          "Value": "100",
+          "Picture": "0,0,64,64"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Init",
+          "Procedure": "NONE",
+          "Delay": "10",
+          "Length": "1",
+          "EndCall": "PostInit",
+          "NextAction": "Idle"
+        },
+        {
+          "Name": "Wait4End",
+          "Procedure": "NONE",
+          "Delay": "30",
+          "Length": "1",
+          "EndCall": "RoundOver",
+          "NextAction": "Idle"
+        }
+      ]
+    },
+    "GLDM": {
+      "path": "Objects.c4d/Goals.c4d/Goldmine.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "GLDM",
+          "Version": "4,9,8",
+          "Name": "Goldmine",
+          "Category": "C4D_StaticBack|C4D_Goal",
+          "MaxUserSelect": "1",
+          "Width": "1",
+          "Height": "1",
+          "Value": "100",
+          "Picture": "0,0,64,64"
+        }
+      },
+      "actions": []
+    },
+    "OREM": {
+      "path": "Objects.c4d/Goals.c4d/Oremine.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "OREM",
+          "Version": "4,9,8",
+          "Name": "Oremine",
+          "Category": "C4D_StaticBack|C4D_Goal",
+          "MaxUserSelect": "1",
+          "Width": "1",
+          "Height": "1",
+          "Value": "100",
+          "Picture": "0,0,64,64"
+        }
+      },
+      "actions": []
+    },
+    "FLAG": {
+      "path": "Objects.c4d/Items.c4d/Equipment.c4d/Flag.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "FLAG",
+          "Version": "4,9,8",
+          "Name": "Flag",
+          "Category": "C4D_Object|C4D_SelectMaterial|C4D_SelectHomebase",
+          "MaxUserSelect": "3",
+          "Width": "24",
+          "Height": "12",
+          "Offset": "-12,-6",
+          "Vertices": "2",
+          "VertexX": "-1,-1",
+          "VertexY": "5,-6",
+          "VertexFriction": "50,50",
+          "Value": "100",
+          "Mass": "2",
+          "Components": "FLAG=1",
+          "Picture": "144,0,64,64",
+          "PictureFE": "144,64,64,64",
+          "Rebuy": "1",
+          "Collectible": "1",
+          "Float": "1",
+          "ColorByOwner": "1",
+          "BorderBound": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "FlyBase",
+          "Procedure": "ATTACH",
+          "Directions": "9",
+          "Length": "6",
+          "Delay": "3",
+          "Facet": "0,12,24,12",
+          "NextAction": "FlyBase",
+          "StartCall": "Flying",
+          "AbortCall": "ResetCategory"
+        }
+      ]
+    },
+    "GOLD": {
+      "path": "Objects.c4d/Items.c4d/Materials.c4d/Gold.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "GOLD",
+          "Version": "4,9,8",
+          "Name": "Gold",
+          "Category": "C4D_Object|C4D_SelectInEarth",
+          "MaxUserSelect": "10",
+          "Width": "6",
+          "Height": "6",
+          "Offset": "-3,-3",
+          "Vertices": "1",
+          "VertexY": "1",
+          "VertexFriction": "20",
+          "Value": "5",
+          "Mass": "15",
+          "Components": "IGOL=3",
+          "Picture": "0,6,64,64",
+          "Collectible": "1"
+        }
+      },
+      "actions": []
+    },
+    "FLNT": {
+      "path": "Objects.c4d/Items.c4d/Weapons.c4d/Flint.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "FLNT",
+          "Version": "4,9,8",
+          "Name": "Flint",
+          "Category": "C4D_Object|C4D_SelectMaterial|C4D_SelectKnowledge|C4D_SelectHomebase|C4D_SelectInEarth",
+          "MaxUserSelect": "10",
+          "Width": "6",
+          "Height": "6",
+          "Offset": "-3,-3",
+          "Vertices": "1",
+          "VertexY": "1",
+          "VertexFriction": "20",
+          "Value": "5",
+          "Mass": "10",
+          "Components": "SPHR=1",
+          "Picture": "0,6,64,64",
+          "Rebuy": "1",
+          "Collectible": "1",
+          "Fragile": "1",
+          "Explosive": "1",
+          "Projectile": "1"
+        }
+      },
+      "actions": []
+    },
+    "SFLN": {
+      "path": "Objects.c4d/Items.c4d/Weapons.c4d/SuperFlint.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "SFLN",
+          "Version": "4,9,8",
+          "Name": "Super-Flint",
+          "Category": "C4D_Object|C4D_SelectMaterial|C4D_SelectKnowledge|C4D_SelectHomebase",
+          "MaxUserSelect": "3",
+          "Width": "6",
+          "Height": "6",
+          "Offset": "-3,-3",
+          "Vertices": "1",
+          "VertexY": "1",
+          "VertexFriction": "20",
+          "Value": "10",
+          "Mass": "15",
+          "Components": "FLNT=1;SPHR=1",
+          "Picture": "0,6,64,64",
+          "Rebuy": "1",
+          "Collectible": "1",
+          "Fragile": "1",
+          "Explosive": "1",
+          "Projectile": "1"
+        }
+      },
+      "actions": []
+    },
+    "TFLN": {
+      "path": "Objects.c4d/Items.c4d/Weapons.c4d/TFlint.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "TFLN",
+          "Version": "4,9,8",
+          "Name": "T-Flint",
+          "Category": "C4D_Object|C4D_SelectMaterial|C4D_SelectKnowledge|C4D_SelectHomebase",
+          "MaxUserSelect": "15",
+          "Width": "6",
+          "Height": "6",
+          "Offset": "-3,-3",
+          "Vertices": "1",
+          "VertexY": "1",
+          "VertexFriction": "20",
+          "Value": "4",
+          "Mass": "10",
+          "Components": "FLNT=1;SPHR=1",
+          "Picture": "0,12,64,64",
+          "Rebuy": "1",
+          "Collectible": "1",
+          "Fragile": "1",
+          "Explosive": "1",
+          "Projectile": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Activated",
+          "Delay": "60",
+          "Facet": "0,6,6,6",
+          "NextAction": "TimeOver",
+          "Sound": "Fusing"
+        },
+        {
+          "Name": "TimeOver",
+          "FacetBase": "1",
+          "StartCall": "BlowUp"
+        }
+      ]
+    },
+    "CHEM": {
+      "path": "Objects.c4d/Structures.c4d/Chemical.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "CHEM",
+          "Version": "4,9,8",
+          "Name": "ChemicalFactory",
+          "Category": "C4D_Structure|C4D_SelectBuilding|C4D_SelectKnowledge",
+          "MaxUserSelect": "1",
+          "Timer": "20",
+          "TimerCall": "CheckBuild",
+          "Width": "48",
+          "Height": "57",
+          "Offset": "-24,-28",
+          "Vertices": "4",
+          "VertexX": "-18,15,-23,22",
+          "VertexY": "-10,-11,28,28",
+          "VertexFriction": "50,50,100,100",
+          "Value": "200",
+          "Mass": "2500",
+          "Components": "ROCK=5;METL=3",
+          "Picture": "0,0,48,57",
+          "Entrance": "-8,12,16,16",
+          "Collection": "7,-5,16,11",
+          "Exclusive": "1",
+          "BlastIncinerate": "100",
+          "BurnTo": "CHMB",
+          "LineConnect": "C4D_PowerInput|C4D_PowerOutput|C4D_PowerConsumer",
+          "Construction": "1",
+          "ContainBlast": "1",
+          "AutoContextMenu": "1"
+        },
+        "Physical": {
+          "Energy": "100000"
+        }
+      },
+      "actions": [
+        {
+          "Name": "OpenDoor",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,57,14,17,18,40",
+          "FacetBase": "1",
+          "NextAction": "DoorOpen",
+          "StartCall": "SoundOpenDoor"
+        },
+        {
+          "Name": "DoorOpen",
+          "Delay": "20",
+          "Facet": "126,57,14,17,18,40",
+          "FacetBase": "1",
+          "NextAction": "CloseDoor",
+          "StartCall": "OpenEntrance",
+          "EndCall": "CloseEntrance"
+        },
+        {
+          "Name": "CloseDoor",
+          "Length": "7",
+          "Delay": "1",
+          "Facet": "0,57,14,17,18,40",
+          "FacetBase": "1",
+          "NextAction": "Idle",
+          "StartCall": "SoundCloseDoor",
+          "EndCall": "DoorClosed",
+          "Reverse": "1"
+        },
+        {
+          "Name": "Build",
+          "Procedure": "BUILD",
+          "Length": "4",
+          "Delay": "2",
+          "FacetBase": "1",
+          "NextAction": "Build",
+          "StartCall": "Smoking",
+          "Sound": "Gear",
+          "EnergyUsage": "500"
+        }
+      ]
+    },
+    "ELEV": {
+      "path": "Objects.c4d/Structures.c4d/Elevator.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "ELEV",
+          "Version": "4,9,8",
+          "Name": "Elevator",
+          "Category": "C4D_Structure|C4D_SelectBuilding|C4D_SelectKnowledge",
+          "MaxUserSelect": "2",
+          "Width": "28",
+          "Height": "56",
+          "Offset": "-14,-28",
+          "Vertices": "4",
+          "VertexX": "-11,10,-14,13",
+          "VertexY": "-28,-28,27,27",
+          "VertexFriction": "50,50,100,100",
+          "Value": "50",
+          "Mass": "900",
+          "Components": "WOOD=4;METL=2",
+          "TopFace": "28,0,28,56,0,0",
+          "Picture": "0,0,28,56",
+          "Exclusive": "1",
+          "BlastIncinerate": "50",
+          "BurnTo": "ELVB",
+          "LineConnect": "C4D_PowerInput|C4D_PowerOutput|C4D_PowerConsumer",
+          "Construction": "1",
+          "HorizontalFix": "1",
+          "LiftTop": "20"
+        },
+        "Physical": {
+          "Energy": "100000"
+        }
+      },
+      "actions": [
+        {
+          "Name": "LiftCase",
+          "Procedure": "NONE",
+          "Facet": "58,5,2,4,13",
+          "FacetBase": "1",
+          "FacetTargetStretch": "1",
+          "NextAction": "LiftCase",
+          "EnergyUsage": "0"
+        }
+      ]
+    },
+    "HUT2": {
+      "path": "Objects.c4d/Structures.c4d/Hut2.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "HUT2",
+          "Version": "4,9,8",
+          "Name": "Holzh\u00fctte",
+          "Category": "C4D_Structure|C4D_SelectBuilding|C4D_SelectKnowledge",
+          "MaxUserSelect": "3",
+          "Width": "60",
+          "Height": "50",
+          "Offset": "-30,-25",
+          "Vertices": "4",
+          "VertexX": "13,-29,-24,25",
+          "VertexY": "-17,-1,24,24",
+          "VertexFriction": "50,50,100,100",
+          "Value": "35",
+          "Mass": "1000",
+          "Components": "WOOD=4;ROCK=1",
+          "Picture": "0,0,60,50",
+          "Entrance": "-18,8,16,17",
+          "Exclusive": "1",
+          "BlastIncinerate": "45",
+          "BurnTo": "HTB2",
+          "Base": "1",
+          "LineConnect": "C4D_LiquidInput",
+          "Construction": "1",
+          "Float": "1",
+          "ContainBlast": "1",
+          "AutoContextMenu": "1"
+        },
+        "Physical": {
+          "Energy": "100000"
+        }
+      },
+      "actions": [
+        {
+          "Name": "OpenDoor",
+          "Procedure": "NONE",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,50,10,16,15,34",
+          "FacetBase": "1",
+          "NextAction": "DoorOpen",
+          "StartCall": "SoundOpenDoor"
+        },
+        {
+          "Name": "DoorOpen",
+          "Procedure": "NONE",
+          "Delay": "20",
+          "Facet": "90,50,10,16,15,34",
+          "FacetBase": "1",
+          "NextAction": "CloseDoor",
+          "StartCall": "OpenEntrance",
+          "EndCall": "CloseEntrance"
+        },
+        {
+          "Name": "CloseDoor",
+          "Procedure": "NONE",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,50,10,16,15,34",
+          "FacetBase": "1",
+          "NextAction": "Idle",
+          "StartCall": "SoundCloseDoor",
+          "Reverse": "1"
+        }
+      ]
+    },
+    "SAWM": {
+      "path": "Objects.c4d/Structures.c4d/Sawmill.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "SAWM",
+          "Version": "4,9,8",
+          "Name": "Sawmill",
+          "Category": "C4D_Structure|C4D_SelectBuilding|C4D_SelectKnowledge",
+          "MaxUserSelect": "2",
+          "TimerCall": "ContentsCheck",
+          "Width": "72",
+          "Height": "55",
+          "Offset": "-36,-27",
+          "Vertices": "4",
+          "VertexX": "-26,10,-33,31",
+          "VertexY": "-12,-23,27,27",
+          "VertexFriction": "50,50,100,100",
+          "Value": "100",
+          "Mass": "3000",
+          "Components": "WOOD=6;METL=2",
+          "Picture": "0,0,72,55",
+          "Entrance": "-1,3,20,25",
+          "Exclusive": "1",
+          "BlastIncinerate": "85",
+          "BurnTo": "SWMB",
+          "LineConnect": "C4D_PowerInput|C4D_PowerOutput|C4D_PowerConsumer",
+          "Construction": "1",
+          "Float": "1",
+          "ContainBlast": "1",
+          "AutoContextMenu": "1"
+        },
+        "Physical": {
+          "Energy": "100000"
+        }
+      },
+      "actions": [
+        {
+          "Name": "OpenDoor",
+          "Procedure": "NONE",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,55,21,23,35,32",
+          "FacetBase": "1",
+          "NextAction": "DoorOpen",
+          "StartCall": "SoundOpenDoor"
+        },
+        {
+          "Name": "DoorOpen",
+          "Procedure": "NONE",
+          "Delay": "20",
+          "Facet": "189,55,21,23,35,32",
+          "FacetBase": "1",
+          "NextAction": "CloseDoor",
+          "StartCall": "OpenEntrance",
+          "EndCall": "CloseEntrance"
+        },
+        {
+          "Name": "CloseDoor",
+          "Procedure": "NONE",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,55,21,23,35,32",
+          "FacetBase": "1",
+          "NextAction": "Idle",
+          "StartCall": "SoundCloseDoor",
+          "Reverse": "1"
+        },
+        {
+          "Name": "Saw",
+          "Procedure": "NONE",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,78,26,9,23,11",
+          "FacetBase": "1",
+          "NextAction": "Saw",
+          "StartCall": "Sawing",
+          "EnergyUsage": "500",
+          "PhaseCall": "SawingDust"
+        }
+      ]
+    },
+    "WRKS": {
+      "path": "Objects.c4d/Structures.c4d/Workshop.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "WRKS",
+          "Version": "4,9,8",
+          "Name": "Workshop",
+          "Category": "C4D_Structure|C4D_SelectBuilding|C4D_SelectKnowledge",
+          "MaxUserSelect": "2",
+          "Timer": "20",
+          "TimerCall": "CheckBuild",
+          "Width": "72",
+          "Height": "50",
+          "Offset": "-36,-25",
+          "Vertices": "4",
+          "VertexX": "-21,14,-33,30",
+          "VertexY": "-19,-19,24,24",
+          "VertexFriction": "50,50,100,100",
+          "Value": "200",
+          "Mass": "4500",
+          "Components": "WOOD=6;METL=3",
+          "Picture": "0,0,72,50",
+          "Entrance": "0,5,20,20",
+          "Exclusive": "1",
+          "BlastIncinerate": "100",
+          "BurnTo": "WRKB",
+          "LineConnect": "C4D_PowerInput|C4D_PowerOutput|C4D_PowerConsumer",
+          "Construction": "1",
+          "Rotate": "1",
+          "ContainBlast": "1",
+          "AutoContextMenu": "1"
+        },
+        "Physical": {
+          "Energy": "100000"
+        }
+      },
+      "actions": [
+        {
+          "Name": "OpenDoor",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,50,19,19,36,31",
+          "FacetBase": "1",
+          "NextAction": "DoorOpen",
+          "StartCall": "SoundOpenDoor"
+        },
+        {
+          "Name": "DoorOpen",
+          "Delay": "20",
+          "Facet": "171,50,19,19,36,31",
+          "FacetBase": "1",
+          "NextAction": "CloseDoor",
+          "StartCall": "OpenEntrance",
+          "EndCall": "CloseEntrance"
+        },
+        {
+          "Name": "CloseDoor",
+          "Length": "10",
+          "Delay": "1",
+          "Facet": "0,50,19,19,36,31",
+          "FacetBase": "1",
+          "NextAction": "Idle",
+          "StartCall": "SoundCloseDoor",
+          "EndCall": "DoorClosed",
+          "Reverse": "1"
+        },
+        {
+          "Name": "Build",
+          "Procedure": "BUILD",
+          "Length": "20",
+          "Delay": "4",
+          "Facet": "0,69,8,11,11,24",
+          "FacetBase": "1",
+          "NextAction": "Build",
+          "PhaseCall": "Smoking",
+          "Sound": "Gear",
+          "EnergyUsage": "500"
+        }
+      ]
+    },
+    "TRE1": {
+      "path": "Objects.c4d/Vegetation.c4d/Tree1.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "TRE1",
+          "Version": "4,9,8",
+          "Name": "Tree1",
+          "Category": "C4D_StaticBack|C4D_SelectVegetation",
+          "MaxUserSelect": "10",
+          "Timer": "350",
+          "TimerCall": "Seed",
+          "Width": "73",
+          "Height": "71",
+          "Offset": "-36,-36",
+          "Vertices": "3",
+          "VertexX": "-2,-10,10",
+          "VertexY": "29,-26,-26",
+          "VertexFriction": "50,50,50",
+          "FireTop": "10",
+          "Value": "5",
+          "Mass": "400",
+          "Components": "WOOD=7",
+          "Picture": "0,0,73,71",
+          "ContactIncinerate": "2",
+          "BlastIncinerate": "10",
+          "BurnTo": "TRB1",
+          "Growth": "1",
+          "Grab": "1",
+          "Rotate": "1",
+          "Chop": "1",
+          "Float": "1",
+          "StretchGrowth": "1",
+          "IncompleteActivity": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Initialize",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "1",
+          "FacetBase": "1",
+          "NextAction": "Still",
+          "PhaseCall": "Initializing"
+        },
+        {
+          "Name": "Still",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "10",
+          "Delay": "4",
+          "Facet": "0,0,73,73",
+          "FacetBase": "0",
+          "NextAction": "StillSlow",
+          "StartCall": "Still"
+        },
+        {
+          "Name": "StillSlow",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "2",
+          "Delay": "5",
+          "Facet": "730,0,73,73",
+          "FacetBase": "0",
+          "NextAction": "StillSlower"
+        },
+        {
+          "Name": "StillSlower",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "2",
+          "Delay": "7",
+          "Facet": "876,0,73,73",
+          "FacetBase": "0",
+          "NextAction": "StillSlowBack"
+        },
+        {
+          "Name": "StillSlowBack",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "4",
+          "Delay": "7",
+          "Facet": "730,0,73,73",
+          "Reverse": "1",
+          "FacetBase": "0",
+          "NextAction": "StillBack"
+        },
+        {
+          "Name": "StillBack",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "10",
+          "Delay": "4",
+          "Facet": "0,0,73,73",
+          "Reverse": "1",
+          "FacetBase": "0",
+          "NextAction": "Still"
+        },
+        {
+          "Name": "Breeze",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "2",
+          "Facet": "0,0,73,73",
+          "FacetBase": "0",
+          "NextAction": "Breeze",
+          "StartCall": "Breeze"
+        }
+      ]
+    },
+    "TRE2": {
+      "path": "Objects.c4d/Vegetation.c4d/Tree2.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "TRE2",
+          "Version": "4,9,8",
+          "Name": "Tree2",
+          "Category": "C4D_StaticBack|C4D_SelectVegetation",
+          "MaxUserSelect": "10",
+          "Timer": "350",
+          "TimerCall": "Seed",
+          "Width": "40",
+          "Height": "56",
+          "Offset": "-20,-28",
+          "Vertices": "3",
+          "VertexX": "2,-5,5",
+          "VertexY": "22,-23,-23",
+          "VertexFriction": "50,50,50",
+          "FireTop": "20",
+          "Value": "3",
+          "Mass": "300",
+          "Components": "WOOD=5",
+          "Picture": "0,0,40,56",
+          "ContactIncinerate": "2",
+          "BlastIncinerate": "10",
+          "BurnTo": "TRB2",
+          "Growth": "2",
+          "Grab": "1",
+          "Rotate": "1",
+          "Chop": "1",
+          "Float": "1",
+          "StretchGrowth": "1",
+          "IncompleteActivity": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Initialize",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "1",
+          "FacetBase": "1",
+          "NextAction": "Still",
+          "PhaseCall": "Initializing"
+        },
+        {
+          "Name": "Still",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "10",
+          "Facet": "0,0,40,56",
+          "FacetBase": "0",
+          "NextAction": "Still",
+          "StartCall": "Still"
+        },
+        {
+          "Name": "Breeze",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "2",
+          "Facet": "0,0,40,56",
+          "FacetBase": "0",
+          "NextAction": "Breeze",
+          "StartCall": "Breeze"
+        }
+      ]
+    },
+    "TRE3": {
+      "path": "Objects.c4d/Vegetation.c4d/Tree3.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "TRE3",
+          "Version": "4,9,8",
+          "Name": "Tree3",
+          "Category": "C4D_StaticBack|C4D_SelectVegetation",
+          "MaxUserSelect": "10",
+          "Timer": "350",
+          "TimerCall": "Seed",
+          "Width": "52",
+          "Height": "75",
+          "Offset": "-26,-37",
+          "Vertices": "3",
+          "VertexX": "-14,9,-2",
+          "VertexY": "-26,-26,31",
+          "VertexFriction": "50,50,50",
+          "FireTop": "30",
+          "Value": "5",
+          "Mass": "350",
+          "Components": "WOOD=5",
+          "Picture": "0,0,52,75",
+          "ContactIncinerate": "2",
+          "BlastIncinerate": "10",
+          "BurnTo": "TRB3",
+          "Growth": "2",
+          "Grab": "1",
+          "Rotate": "1",
+          "Chop": "1",
+          "Float": "1",
+          "StretchGrowth": "1",
+          "IncompleteActivity": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Initialize",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "1",
+          "FacetBase": "1",
+          "NextAction": "Still",
+          "PhaseCall": "Initializing"
+        },
+        {
+          "Name": "Still",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "10",
+          "Facet": "0,0,52,75",
+          "FacetBase": "0",
+          "NextAction": "Still",
+          "StartCall": "Still"
+        },
+        {
+          "Name": "Breeze",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "40",
+          "Delay": "2",
+          "Facet": "0,0,52,75",
+          "FacetBase": "0",
+          "NextAction": "Breeze",
+          "StartCall": "Breeze"
+        }
+      ]
+    },
+    "TRE4": {
+      "path": "Objects.c4d/Vegetation.c4d/Tree4.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "TRE4",
+          "Version": "4,9,8",
+          "Name": "Coniferous",
+          "Category": "C4D_StaticBack|C4D_SelectVegetation",
+          "MaxUserSelect": "10",
+          "Timer": "350",
+          "TimerCall": "Seed",
+          "Width": "40",
+          "Height": "56",
+          "Offset": "-20,-28",
+          "Vertices": "3",
+          "VertexX": "-4,-2,4",
+          "VertexY": "20,-15,15",
+          "VertexFriction": "50,50,50",
+          "FireTop": "5",
+          "Value": "4",
+          "Mass": "350",
+          "Components": "WOOD=3",
+          "Picture": "0,0,40,56",
+          "ContactIncinerate": "2",
+          "BlastIncinerate": "10",
+          "BurnTo": "TRB4",
+          "Growth": "2",
+          "Grab": "1",
+          "Rotate": "1",
+          "Chop": "1",
+          "Float": "1",
+          "StretchGrowth": "1",
+          "IncompleteActivity": "1"
+        }
+      },
+      "actions": [
+        {
+          "Name": "Initialize",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "20",
+          "Delay": "1",
+          "FacetBase": "1",
+          "NextAction": "Still",
+          "PhaseCall": "Initializing"
+        },
+        {
+          "Name": "Still",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "1",
+          "Delay": "50",
+          "Facet": "0,0,40,56",
+          "FacetBase": "0",
+          "NextAction": "Still",
+          "StartCall": "Still"
+        },
+        {
+          "Name": "Breeze",
+          "Directions": "2",
+          "FlipDir": "1",
+          "Length": "20",
+          "Delay": "5",
+          "Facet": "0,0,40,56",
+          "FacetBase": "0",
+          "NextAction": "Breeze",
+          "StartCall": "Breeze"
+        }
+      ]
+    },
+    "LORY": {
+      "path": "Objects.c4d/Vehicles.c4d/Lorry.c4d",
+      "definition": {
+        "DefCore": {
+          "id": "LORY",
+          "Version": "4,9,8",
+          "Name": "Lorry",
+          "Category": "C4D_Vehicle|C4D_SelectVehicle|C4D_SelectKnowledge|C4D_SelectHomebase",
+          "MaxUserSelect": "5",
+          "ContactCalls": "1",
+          "Width": "24",
+          "Height": "20",
+          "Offset": "-12,-10",
+          "Vertices": "4",
+          "VertexX": "-8,7,-8,7",
+          "VertexY": "-6,-6,9,9",
+          "VertexCNAT": "5,6,9,10",
+          "VertexFriction": "80,80,10,10",
+          "Value": "20",
+          "Mass": "75",
+          "Components": "METL=2",
+          "Picture": "24,0,50,40",
+          "Collection": "-12,-10,24,12",
+          "CollectionLimit": "51",
+          "Rebuy": "1",
+          "Grab": "1",
+          "GrabPutGet": "C4D_GrabGet|C4D_GrabPut",
+          "Rotate": "30",
+          "UprightAttach": "8"
+        }
+      },
+      "actions": []
+    }
+  },
+  "completeFileInventory": "import/manifest.json",
+  "note": "The generic import manifest flattens repeated INI Action sections. Use original ActMap.txt or this manifest keyDefinitions actions list, which retains every section."
+}

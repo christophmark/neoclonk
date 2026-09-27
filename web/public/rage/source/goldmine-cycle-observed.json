@@ -1,0 +1,63 @@
+{
+  "evidence": "Observed original browser engine states from pilot execution at 12:41:44; summarized from captured terminal output. This is not a clean automated test PASS or full scenario victory.",
+  "scenario": "Original Worlds.c4f/Goldmine.c4s",
+  "controls": "Original queued player commands and classic keyboard dispatcher; no state editing",
+  "clonk": "Zwirbel",
+  "steps": [
+    {
+      "label": "initial",
+      "frame": 3,
+      "goldPixels": 7368,
+      "goldObjects": 17,
+      "wealth": 50,
+      "energy": 50000
+    },
+    {
+      "label": "bought-superflint",
+      "frame": 44,
+      "wealth": 40
+    },
+    {
+      "label": "dug-beneath-seam",
+      "frame": 572,
+      "x": 409,
+      "y": 451,
+      "energy": 50000
+    },
+    {
+      "label": "original-superflint-blast",
+      "frame": 594,
+      "goldPixels": 7018,
+      "goldObjects": 21,
+      "energy": 21000
+    },
+    {
+      "label": "picked-new-gold",
+      "frame": 670,
+      "x": 407,
+      "y": 455,
+      "contents": [
+        155
+      ],
+      "energy": 15000
+    },
+    {
+      "label": "returned-to-hut-and-sold",
+      "frame": 1031,
+      "x": 561,
+      "y": 235,
+      "goldObjects": 20,
+      "wealth": 40,
+      "energy": 27000,
+      "contents": []
+    },
+    {
+      "label": "original-base-healing-complete",
+      "frame": 1071,
+      "goldObjects": 20,
+      "wealth": 40,
+      "energy": 50000
+    }
+  ],
+  "testLimitation": "Old narrow wealth-increase assertion failed: original auto-sale +5 and original base-energy purchase -5 correctly yield net0. Assertion was corrected; subsequent randomized pilot runs encountered real route-planning limitations. Full autonomous mission not completed."
+}

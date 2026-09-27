@@ -1,0 +1,8 @@
+{
+  "engine": "chromium",
+  "checks": [
+    "Slow download: startup, reload persistence, mobile Pause",
+    "Storage denied: playable in memory"
+  ],
+  "errors": []
+}

@@ -1,0 +1,256 @@
+{
+  "format": "neoclonk-native-browser-replay-verification-v1",
+  "result": "passed",
+  "engine": "4.9.10.7 [330]",
+  "nativeRecord": "game/Records.c4f/004-Goldmine.c4s",
+  "recordSha256": "3c7510120d599433418ea26436402792d20f0c383caa7674389ced8d6bf27028",
+  "seed": 1790505353,
+  "checkedFrames": [
+    2,
+    100,
+    680
+  ],
+  "originalSyncChecksEnabled": true,
+  "syncErrors": [],
+  "javascriptErrors": [],
+  "finalState": {
+    "running": true,
+    "paused": true,
+    "frame": 680,
+    "gameOver": false,
+    "evaluated": false,
+    "scenario": "verification/NativeGoldmine.c4s",
+    "randomHold": 810474379,
+    "randomCount": 3650,
+    "landscape": {
+      "width": 800,
+      "height": 600,
+      "mapWidth": 80,
+      "mapHeight": 60,
+      "mapZoom": 10
+    },
+    "weather": {
+      "wind": -58,
+      "temperature": -15,
+      "season": 93
+    },
+    "materials": [
+      {
+        "index": 0,
+        "name": "Acid",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 1,
+        "name": "Ashes",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 2,
+        "name": "Coal",
+        "pixels": 1151,
+        "effectivePixels": 1151
+      },
+      {
+        "index": 3,
+        "name": "Crystal",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 4,
+        "name": "DuroLava",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 5,
+        "name": "Earth",
+        "pixels": 222349,
+        "effectivePixels": 222349
+      },
+      {
+        "index": 6,
+        "name": "FlyAshes",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 7,
+        "name": "FlySand",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 8,
+        "name": "Gold",
+        "pixels": 3285,
+        "effectivePixels": 3285
+      },
+      {
+        "index": 9,
+        "name": "Granite",
+        "pixels": 4298,
+        "effectivePixels": 4298
+      },
+      {
+        "index": 10,
+        "name": "Ice",
+        "pixels": 151,
+        "effectivePixels": 151
+      },
+      {
+        "index": 11,
+        "name": "Lava",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 12,
+        "name": "Oil",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 13,
+        "name": "Ore",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 14,
+        "name": "Rock",
+        "pixels": 10448,
+        "effectivePixels": 10448
+      },
+      {
+        "index": 15,
+        "name": "Sand",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 16,
+        "name": "Snow",
+        "pixels": 0,
+        "effectivePixels": 0
+      },
+      {
+        "index": 17,
+        "name": "Sulphur",
+        "pixels": 2863,
+        "effectivePixels": 2863
+      },
+      {
+        "index": 18,
+        "name": "Tunnel",
+        "pixels": 2277,
+        "effectivePixels": 2277
+      },
+      {
+        "index": 19,
+        "name": "Vehicle",
+        "pixels": 466,
+        "effectivePixels": 466
+      },
+      {
+        "index": 20,
+        "name": "Water",
+        "pixels": 4026,
+        "effectivePixels": 4026
+      }
+    ],
+    "goldObjects": 13,
+    "objectCount": 152,
+    "players": [
+      {
+        "number": 0,
+        "name": "Reference",
+        "local": false,
+        "eliminated": false,
+        "controlStyle": 0,
+        "keyboardSet": 0,
+        "wealth": 50,
+        "lastCommand": 0,
+        "commandDelay": 0,
+        "pressedCommands": 82,
+        "menu": false,
+        "cursor": {
+          "number": 153,
+          "id": "CLNK",
+          "name": "Newton",
+          "x": 181,
+          "y": 356,
+          "fixedX": 11862016,
+          "fixedY": 23330816,
+          "vx": 0,
+          "vy": 0,
+          "owner": 0,
+          "controller": 0,
+          "energy": 50000,
+          "breath": 50000,
+          "construction": 100000,
+          "selected": true,
+          "inLiquid": false,
+          "contained": 0,
+          "procedure": 0,
+          "action": "Walk",
+          "commandDirection": 0,
+          "facing": 0,
+          "phase": 0,
+          "phaseDelay": 0,
+          "actionTime": 16,
+          "actionData": 0,
+          "contact": 0,
+          "attachment": 8,
+          "contents": [
+            43
+          ],
+          "menu": null,
+          "commands": []
+        },
+        "crew": [
+          {
+            "number": 153,
+            "id": "CLNK",
+            "name": "Newton",
+            "x": 181,
+            "y": 356,
+            "fixedX": 11862016,
+            "fixedY": 23330816,
+            "vx": 0,
+            "vy": 0,
+            "owner": 0,
+            "controller": 0,
+            "energy": 50000,
+            "breath": 50000,
+            "construction": 100000,
+            "selected": true,
+            "inLiquid": false,
+            "contained": 0,
+            "procedure": 0,
+            "action": "Walk",
+            "commandDirection": 0,
+            "facing": 0,
+            "phase": 0,
+            "phaseDelay": 0,
+            "actionTime": 16,
+            "actionData": 0,
+            "contact": 0,
+            "attachment": 8,
+            "contents": [
+              43
+            ],
+            "menu": null,
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "nativeScreenshot": "screenshots/packed-clean-dig.png",
+  "browserScreenshot": "screenshots/browser-replay-frame-680.png",
+  "limits": "One original Goldmine recording through frame680; not complete cross-scenario or pixel-identical rendering certification."
+}

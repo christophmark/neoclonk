@@ -1,0 +1,193 @@
+{
+  "packs": [
+    {
+      "filename": "Fantasy.c4d",
+      "sourcePath": "original-content/addons/release/Fantasy.c4d",
+      "bytes": 4133760,
+      "sha256": "7e8fe792abdaaec166df717cf5d4397b46f535f0a650e83cf76bb589397c575c",
+      "url": "packs/Fantasy.c4d",
+      "embedded": false
+    },
+    {
+      "filename": "Fantasy.c4f",
+      "sourcePath": "original-content/addons/release/Fantasy.c4f",
+      "bytes": 1433835,
+      "sha256": "335ac7cb7683ad5e4654e935318d4dc0e350eeb215f736e8270007b7a77c9274",
+      "url": "packs/Fantasy.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "FarWorlds.c4d",
+      "sourcePath": "original-content/addons/release/FarWorlds.c4d",
+      "bytes": 4727584,
+      "sha256": "3819609536d86f4a8717172784e5fd79a661a9f9e79a9e71b1050a3c67eeca51",
+      "url": "packs/FarWorlds.c4d",
+      "embedded": false
+    },
+    {
+      "filename": "FarWorlds.c4f",
+      "sourcePath": "original-content/addons/release/FarWorlds.c4f",
+      "bytes": 775230,
+      "sha256": "8bbe4237ce010bfc898e851d6a397f8343064ca449b5416dc3331c79018f499e",
+      "url": "packs/FarWorlds.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Graphics.c4g",
+      "sourcePath": "original-content/release/cr_game_linux/Graphics.c4g",
+      "bytes": 5749519,
+      "sha256": "75e3472296a2280c6590c0eb24b9c1a841087b05304d207b353db871c619da6c",
+      "url": "packs/Graphics.c4g",
+      "embedded": true
+    },
+    {
+      "filename": "Knights.c4d",
+      "sourcePath": "original-content/addons/release/Knights.c4d",
+      "bytes": 5552746,
+      "sha256": "c98d486d771d7860014d0d0e38d05c847202a57506e9dc8d10932c662128ec87",
+      "url": "packs/Knights.c4d",
+      "embedded": false
+    },
+    {
+      "filename": "Knights.c4f",
+      "sourcePath": "original-content/addons/release/Knights.c4f",
+      "bytes": 8897200,
+      "sha256": "a8ca6b113974ae12d5cc928a988a8e4cb6c14d79dc4c9bce9b6fc574a9e838bb",
+      "url": "packs/Knights.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Material.c4g",
+      "sourcePath": "original-content/release/cr_game_linux/Material.c4g",
+      "bytes": 853439,
+      "sha256": "ddccbd0e3ed8516caa90764d0b0045a6a3cb0780c11334cf1e1b9b46e9e6dac2",
+      "url": "packs/Material.c4g",
+      "embedded": true
+    },
+    {
+      "filename": "Melees.c4f",
+      "sourcePath": "original-content/release/cr_game_linux/Melees.c4f",
+      "bytes": 1054667,
+      "sha256": "9894685d340f0ef44e221720e7ad8e9d3478ac132b9ec7425031118a0b9aa2a4",
+      "url": "packs/Melees.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Missions.c4f",
+      "sourcePath": "original-content/release/cr_game_linux/Missions.c4f",
+      "bytes": 2596985,
+      "sha256": "3a04c490140d42e6a80a9c08d626263f8f5d8e4b41356ffd5817fb00359e98cc",
+      "url": "packs/Missions.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Music.c4g",
+      "sourcePath": "original-content/release/cr_game_linux/Music.c4g",
+      "bytes": 6786841,
+      "sha256": "25e8270f6ed7416164e5fffae3b32055b2a0d3828fb9fd7a17c7b2c6c918580e",
+      "url": "packs/Music.c4g",
+      "embedded": true
+    },
+    {
+      "filename": "Objects.c4d",
+      "sourcePath": "original-content/release/cr_game_linux/Objects.c4d",
+      "bytes": 6924109,
+      "sha256": "ded9762fcfb36d551f341ba88b266e18190a08560cdfaaffbf1ffc60aafd6347",
+      "url": "packs/Objects.c4d",
+      "embedded": true
+    },
+    {
+      "filename": "Races.c4f",
+      "sourcePath": "original-content/release/cr_game_linux/Races.c4f",
+      "bytes": 861975,
+      "sha256": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72",
+      "url": "packs/Races.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Sound.c4g",
+      "sourcePath": "original-content/release/cr_game_linux/Sound.c4g",
+      "bytes": 1461737,
+      "sha256": "80b16fc9d4da6d213ce84e9f2191cc2a8e0f315b2f4d4fdbda10a3f93da38eb9",
+      "url": "packs/Sound.c4g",
+      "embedded": true
+    },
+    {
+      "filename": "System.c4g",
+      "sourcePath": "original-content/release/cr_game_linux/System.c4g",
+      "bytes": 102112,
+      "sha256": "2a73c38864b533b39e4d74ee210a9efa9cbcb9777ee0b444add5162de8fc3003",
+      "url": "packs/System.c4g",
+      "embedded": true
+    },
+    {
+      "filename": "Tutorial.c4f",
+      "sourcePath": "original-content/release/cr_game_linux/Tutorial.c4f",
+      "bytes": 13330033,
+      "sha256": "64ec0f3ad74133eab2eac07d7d8e26c2271a5049d71555b42e72acb96f98549a",
+      "url": "packs/Tutorial.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Western.c4d",
+      "sourcePath": "original-content/addons/release/Western.c4d",
+      "bytes": 11721765,
+      "sha256": "ae265915464da0e517c842ff6941247126c4a3a12e1377c7e439a2505854942e",
+      "url": "packs/Western.c4d",
+      "embedded": false
+    },
+    {
+      "filename": "Western.c4f",
+      "sourcePath": "original-content/addons/release/Western.c4f",
+      "bytes": 8408569,
+      "sha256": "dabf604de2661d24982a09f7738c8434a98984654c44d43f9b780188bd7099c4",
+      "url": "packs/Western.c4f",
+      "embedded": false
+    },
+    {
+      "filename": "Worlds.c4f",
+      "sourcePath": "original-content/release/cr_game_linux/Worlds.c4f",
+      "bytes": 1965190,
+      "sha256": "5c6d9c301b368be3c7ef8328d5ebae6fc86ec7e7283cd50a7a6ec11cc09fdd00",
+      "url": "packs/Worlds.c4f",
+      "embedded": true
+    }
+  ],
+  "archives": [
+    {
+      "filename": "cr_game_linux.tar.bz2",
+      "sourcePath": "original-content/downloads/cr_game_linux.tar.bz2",
+      "bytes": 45974374,
+      "sha256": "b1415d5323590028c285aab20eb1e822f452013694e6aadc0a6c240becc73a4c",
+      "publisherUrl": "http://www.clonkx.de/rage/cr_game_linux.tar.bz2"
+    },
+    {
+      "filename": "cr_knights.zip",
+      "sourcePath": "original-content/downloads/cr_knights.zip",
+      "bytes": 14451802,
+      "sha256": "c1b0e09ac3ab2d4d93597d5044602e1a407d634651555769726f083c564349e1",
+      "publisherUrl": "http://www.clonkx.de/rage/cr_knights.zip"
+    },
+    {
+      "filename": "cr_farworlds.zip",
+      "sourcePath": "original-content/downloads/cr_farworlds.zip",
+      "bytes": 5503663,
+      "sha256": "e2166c6bb950daf4e3c3804cc13f0881fc8d1420cb572b2cc6d2e6efee43a496",
+      "publisherUrl": "http://www.clonkx.de/rage/cr_farworlds.zip"
+    },
+    {
+      "filename": "cr_fantasy.zip",
+      "sourcePath": "original-content/downloads/cr_fantasy.zip",
+      "bytes": 5568606,
+      "sha256": "36837f1efcd9ca640a5c32818465b5f6e30f27aadbf066cb555564c5c23f2064",
+      "publisherUrl": "http://www.clonkx.de/rage/cr_fantasy.zip"
+    },
+    {
+      "filename": "cr_western.zip",
+      "sourcePath": "original-content/downloads/cr_western.zip",
+      "bytes": 20130742,
+      "sha256": "e25d290ece874205fb94ad248158d022f7ed042652bfbfed7ef63f22be879776",
+      "publisherUrl": "http://www.clonkx.de/rage/cr_western.zip"
+    }
+  ]
+}

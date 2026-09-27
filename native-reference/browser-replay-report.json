@@ -1,0 +1,969 @@
+{
+  "shell": {
+    "phase": "playing",
+    "lastStatus": "",
+    "error": null,
+    "persistence": "ready",
+    "lastSync": "2026-09-27T10:41:11.085Z",
+    "replay": true,
+    "ready": true,
+    "logs": [
+      "Downloading original engine and content…",
+      "[engine] WARNING: using emscripten GL emulation. This is a collection of limited workarounds, do not expect it to work.",
+      "Preparing original game files (0/1)…",
+      "Downloading data...",
+      "Downloading data... (1972224/23928602)",
+      "Downloading data... (2077696/23928602)",
+      "Downloading data... (2097152/23928602)",
+      "Downloading data... (2162688/23928602)",
+      "Downloading data... (2379776/23928602)",
+      "Downloading data... (2786304/23928602)",
+      "Downloading data... (4116268/23928602)",
+      "Downloading data... (4194304/23928602)",
+      "Downloading data... (4220610/23928602)",
+      "Downloading data... (4351682/23928602)",
+      "Downloading data... (4521560/23928602)",
+      "Downloading data... (5057924/23928602)",
+      "Downloading data... (5698630/23928602)",
+      "Downloading data... (5934044/23928602)",
+      "Downloading data... (6169458/23928602)",
+      "Downloading data... (6291456/23928602)",
+      "Downloading data... (6535944/23928602)",
+      "Downloading data... (6732340/23928602)",
+      "Downloading data... (7925476/23928602)",
+      "Downloading data... (8388608/23928602)",
+      "Downloading data... (10022628/23928602)",
+      "Downloading data... (10485760/23928602)",
+      "Downloading data... (12582912/23928602)",
+      "Downloading data... (14680064/23928602)",
+      "Downloading data... (15728640/23928602)",
+      "Downloading data... (16777216/23928602)",
+      "Downloading data... (17825792/23928602)",
+      "Downloading data... (18874368/23928602)",
+      "Downloading data... (19464192/23928602)",
+      "Downloading data... (20971520/23928602)",
+      "Downloading data... (22085632/23928602)",
+      "Downloading data... (22740992/23928602)",
+      "Downloading data... (22872064/23928602)",
+      "Downloading data... (22937600/23928602)",
+      "Downloading data... (23003136/23928602)",
+      "Starting Clonk Rage…",
+      "Preparing original game files (0/1)…",
+      "Preparing original game files (0/2)…",
+      "Preparing original game files (0/3)…",
+      "Preparing original game files (0/4)…",
+      "Preparing original game files (0/5)…",
+      "Preparing original game files (0/6)…",
+      "Preparing original game files (0/7)…",
+      "Preparing original game files (0/8)…",
+      "Preparing original game files (0/9)…",
+      "Preparing original game files (0/10)…",
+      "Preparing original game files (0/11)…",
+      "Preparing original game files (0/12)…",
+      "Preparing original game files (0/13)…",
+      "Preparing original game files (0/14)…",
+      "Preparing original game files (0/15)…",
+      "Preparing original game files (0/16)…",
+      "Preparing original game files (0/17)…",
+      "Downloading data... (23068672/23928602)",
+      "Downloading data... (23928602/23928602)",
+      "Preparing original game files (1/17)…",
+      "Preparing original game files (2/17)…",
+      "Preparing original game files (3/17)…",
+      "Preparing original game files (4/17)…",
+      "Preparing original game files (5/17)…",
+      "Preparing original game files (6/17)…",
+      "Preparing original game files (7/17)…",
+      "Preparing original game files (8/17)…",
+      "Preparing original game files (9/17)…",
+      "Preparing original game files (10/17)…",
+      "Preparing original game files (11/17)…",
+      "Preparing original game files (12/17)…",
+      "Preparing original game files (13/17)…",
+      "Preparing original game files (14/17)…",
+      "Preparing original game files (15/17)…",
+      "Preparing original game files (16/17)…",
+      "Starting Clonk Rage…",
+      "Running...",
+      "Initializing original Goldmine…",
+      "[12:40:59] No valid key file found.",
+      "[12:40:59] Command line: ",
+      "[12:40:59] \"/config:/data/home/browser.cfg\" \"/fullscreen\" \"/nosplash\" \"/data/home/players/Browser.c4p\" \"verification/NativeGoldmine.c4s\" \"\"",
+      "[12:40:59] Clonk Rage ",
+      "[12:40:59] Version: 4.9.10.7 [330]  NONETWORK browser",
+      "[12:40:59] No valid key file found.",
+      "[12:40:59]   Using OpenGL...",
+      "[engine] WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports",
+      "[engine] TODO: glShadeModel",
+      "[12:41:01] Loading graphics...",
+      "[12:41:02] SDL_mixer Web Audio compatibility version is 1.2.12 (compiled with 1.2.12)",
+      "[12:41:02] Scenario: verification/NativeGoldmine.c4s",
+      "[12:41:02] Scenario uses specified object definitions.",
+      "[12:41:02] Loading extras...",
+      "[12:41:03] Loading graphics...",
+      "[12:41:04] Loading object definitions:",
+      "[12:41:04] Objects.c4d...",
+      "[12:41:07]    345 definitions loaded.",
+      "[12:41:07] NativeGoldmine.c4s...",
+      "[12:41:07]    0 definitions loaded.",
+      "[12:41:08] C4AulScriptEngine linked - 23988 lines, 0 warnings, 0 errors",
+      "[12:41:08] Texture table holds 48 entries.",
+      "[12:41:08] 21 textures loaded.",
+      "[12:41:08] 21 materials loaded.",
+      "[12:41:08] Creating landscape...",
+      "[12:41:09] Placing environment objects...",
+      "[12:41:10] Music: Sloping Off.ogg",
+      "[12:41:10] Game started.",
+      "[12:41:10] Player join: Reference"
+    ],
+    "canvas": {
+      "width": 960,
+      "height": 720
+    }
+  },
+  "states": [
+    {
+      "running": true,
+      "paused": true,
+      "frame": 2,
+      "gameOver": false,
+      "evaluated": false,
+      "scenario": "verification/NativeGoldmine.c4s",
+      "randomHold": 1418974244,
+      "randomCount": 509,
+      "landscape": {
+        "width": 800,
+        "height": 600,
+        "mapWidth": 80,
+        "mapHeight": 60,
+        "mapZoom": 10
+      },
+      "weather": {
+        "wind": -58,
+        "temperature": 4,
+        "season": 91
+      },
+      "materials": [
+        {
+          "index": 0,
+          "name": "Acid",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 1,
+          "name": "Ashes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 2,
+          "name": "Coal",
+          "pixels": 1151,
+          "effectivePixels": 1151
+        },
+        {
+          "index": 3,
+          "name": "Crystal",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 4,
+          "name": "DuroLava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 5,
+          "name": "Earth",
+          "pixels": 224333,
+          "effectivePixels": 224333
+        },
+        {
+          "index": 6,
+          "name": "FlyAshes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 7,
+          "name": "FlySand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 8,
+          "name": "Gold",
+          "pixels": 3285,
+          "effectivePixels": 3285
+        },
+        {
+          "index": 9,
+          "name": "Granite",
+          "pixels": 4298,
+          "effectivePixels": 4298
+        },
+        {
+          "index": 10,
+          "name": "Ice",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 11,
+          "name": "Lava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 12,
+          "name": "Oil",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 13,
+          "name": "Ore",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 14,
+          "name": "Rock",
+          "pixels": 10448,
+          "effectivePixels": 10448
+        },
+        {
+          "index": 15,
+          "name": "Sand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 16,
+          "name": "Snow",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 17,
+          "name": "Sulphur",
+          "pixels": 2863,
+          "effectivePixels": 2863
+        },
+        {
+          "index": 18,
+          "name": "Tunnel",
+          "pixels": 293,
+          "effectivePixels": 293
+        },
+        {
+          "index": 19,
+          "name": "Vehicle",
+          "pixels": 466,
+          "effectivePixels": 466
+        },
+        {
+          "index": 20,
+          "name": "Water",
+          "pixels": 4177,
+          "effectivePixels": 4177
+        }
+      ],
+      "goldObjects": 13,
+      "objectCount": 152,
+      "players": [
+        {
+          "number": 0,
+          "name": "Reference",
+          "local": false,
+          "eliminated": false,
+          "controlStyle": 0,
+          "keyboardSet": 0,
+          "wealth": 50,
+          "lastCommand": 0,
+          "commandDelay": 0,
+          "pressedCommands": 0,
+          "menu": false,
+          "cursor": {
+            "number": 153,
+            "id": "CLNK",
+            "name": "Newton",
+            "x": 300,
+            "y": 294,
+            "fixedX": 19660800,
+            "fixedY": 19267584,
+            "vx": 0,
+            "vy": 0,
+            "owner": 0,
+            "controller": 0,
+            "energy": 50000,
+            "breath": 50000,
+            "construction": 100000,
+            "selected": true,
+            "inLiquid": false,
+            "contained": 150,
+            "procedure": 0,
+            "action": "Walk",
+            "commandDirection": 0,
+            "facing": 1,
+            "phase": 0,
+            "phaseDelay": 0,
+            "actionTime": 2,
+            "actionData": 0,
+            "contact": 0,
+            "attachment": 8,
+            "contents": [],
+            "menu": null,
+            "commands": [
+              {
+                "id": 4,
+                "name": "Exit",
+                "x": 0,
+                "y": 0,
+                "target": 0,
+                "target2": 0,
+                "data": 0,
+                "finished": false,
+                "failures": 0
+              }
+            ]
+          },
+          "crew": [
+            {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Newton",
+              "x": 300,
+              "y": 294,
+              "fixedX": 19660800,
+              "fixedY": 19267584,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 150,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 1,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 2,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": [
+                {
+                  "id": 4,
+                  "name": "Exit",
+                  "x": 0,
+                  "y": 0,
+                  "target": 0,
+                  "target2": 0,
+                  "data": 0,
+                  "finished": false,
+                  "failures": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "running": true,
+      "paused": true,
+      "frame": 100,
+      "gameOver": false,
+      "evaluated": false,
+      "scenario": "verification/NativeGoldmine.c4s",
+      "randomHold": 3290840002,
+      "randomCount": 995,
+      "landscape": {
+        "width": 800,
+        "height": 600,
+        "mapWidth": 80,
+        "mapHeight": 60,
+        "mapZoom": 10
+      },
+      "weather": {
+        "wind": -58,
+        "temperature": 2,
+        "season": 91
+      },
+      "materials": [
+        {
+          "index": 0,
+          "name": "Acid",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 1,
+          "name": "Ashes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 2,
+          "name": "Coal",
+          "pixels": 1151,
+          "effectivePixels": 1151
+        },
+        {
+          "index": 3,
+          "name": "Crystal",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 4,
+          "name": "DuroLava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 5,
+          "name": "Earth",
+          "pixels": 224333,
+          "effectivePixels": 224333
+        },
+        {
+          "index": 6,
+          "name": "FlyAshes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 7,
+          "name": "FlySand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 8,
+          "name": "Gold",
+          "pixels": 3285,
+          "effectivePixels": 3285
+        },
+        {
+          "index": 9,
+          "name": "Granite",
+          "pixels": 4298,
+          "effectivePixels": 4298
+        },
+        {
+          "index": 10,
+          "name": "Ice",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 11,
+          "name": "Lava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 12,
+          "name": "Oil",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 13,
+          "name": "Ore",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 14,
+          "name": "Rock",
+          "pixels": 10448,
+          "effectivePixels": 10448
+        },
+        {
+          "index": 15,
+          "name": "Sand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 16,
+          "name": "Snow",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 17,
+          "name": "Sulphur",
+          "pixels": 2863,
+          "effectivePixels": 2863
+        },
+        {
+          "index": 18,
+          "name": "Tunnel",
+          "pixels": 293,
+          "effectivePixels": 293
+        },
+        {
+          "index": 19,
+          "name": "Vehicle",
+          "pixels": 466,
+          "effectivePixels": 466
+        },
+        {
+          "index": 20,
+          "name": "Water",
+          "pixels": 4177,
+          "effectivePixels": 4177
+        }
+      ],
+      "goldObjects": 13,
+      "objectCount": 152,
+      "players": [
+        {
+          "number": 0,
+          "name": "Reference",
+          "local": false,
+          "eliminated": false,
+          "controlStyle": 0,
+          "keyboardSet": 0,
+          "wealth": 50,
+          "lastCommand": 0,
+          "commandDelay": 0,
+          "pressedCommands": 0,
+          "menu": false,
+          "cursor": {
+            "number": 153,
+            "id": "CLNK",
+            "name": "Newton",
+            "x": 290,
+            "y": 309,
+            "fixedX": 19005440,
+            "fixedY": 20250624,
+            "vx": 0,
+            "vy": 0,
+            "owner": 0,
+            "controller": 0,
+            "energy": 50000,
+            "breath": 50000,
+            "construction": 100000,
+            "selected": true,
+            "inLiquid": false,
+            "contained": 0,
+            "procedure": 0,
+            "action": "Walk",
+            "commandDirection": 0,
+            "facing": 1,
+            "phase": 0,
+            "phaseDelay": 0,
+            "actionTime": 100,
+            "actionData": 0,
+            "contact": 0,
+            "attachment": 8,
+            "contents": [],
+            "menu": null,
+            "commands": []
+          },
+          "crew": [
+            {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Newton",
+              "x": 290,
+              "y": 309,
+              "fixedX": 19005440,
+              "fixedY": 20250624,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 1,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 100,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "running": true,
+      "paused": true,
+      "frame": 680,
+      "gameOver": false,
+      "evaluated": false,
+      "scenario": "verification/NativeGoldmine.c4s",
+      "randomHold": 810474379,
+      "randomCount": 3650,
+      "landscape": {
+        "width": 800,
+        "height": 600,
+        "mapWidth": 80,
+        "mapHeight": 60,
+        "mapZoom": 10
+      },
+      "weather": {
+        "wind": -58,
+        "temperature": -15,
+        "season": 93
+      },
+      "materials": [
+        {
+          "index": 0,
+          "name": "Acid",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 1,
+          "name": "Ashes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 2,
+          "name": "Coal",
+          "pixels": 1151,
+          "effectivePixels": 1151
+        },
+        {
+          "index": 3,
+          "name": "Crystal",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 4,
+          "name": "DuroLava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 5,
+          "name": "Earth",
+          "pixels": 222349,
+          "effectivePixels": 222349
+        },
+        {
+          "index": 6,
+          "name": "FlyAshes",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 7,
+          "name": "FlySand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 8,
+          "name": "Gold",
+          "pixels": 3285,
+          "effectivePixels": 3285
+        },
+        {
+          "index": 9,
+          "name": "Granite",
+          "pixels": 4298,
+          "effectivePixels": 4298
+        },
+        {
+          "index": 10,
+          "name": "Ice",
+          "pixels": 151,
+          "effectivePixels": 151
+        },
+        {
+          "index": 11,
+          "name": "Lava",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 12,
+          "name": "Oil",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 13,
+          "name": "Ore",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 14,
+          "name": "Rock",
+          "pixels": 10448,
+          "effectivePixels": 10448
+        },
+        {
+          "index": 15,
+          "name": "Sand",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 16,
+          "name": "Snow",
+          "pixels": 0,
+          "effectivePixels": 0
+        },
+        {
+          "index": 17,
+          "name": "Sulphur",
+          "pixels": 2863,
+          "effectivePixels": 2863
+        },
+        {
+          "index": 18,
+          "name": "Tunnel",
+          "pixels": 2277,
+          "effectivePixels": 2277
+        },
+        {
+          "index": 19,
+          "name": "Vehicle",
+          "pixels": 466,
+          "effectivePixels": 466
+        },
+        {
+          "index": 20,
+          "name": "Water",
+          "pixels": 4026,
+          "effectivePixels": 4026
+        }
+      ],
+      "goldObjects": 13,
+      "objectCount": 152,
+      "players": [
+        {
+          "number": 0,
+          "name": "Reference",
+          "local": false,
+          "eliminated": false,
+          "controlStyle": 0,
+          "keyboardSet": 0,
+          "wealth": 50,
+          "lastCommand": 0,
+          "commandDelay": 0,
+          "pressedCommands": 82,
+          "menu": false,
+          "cursor": {
+            "number": 153,
+            "id": "CLNK",
+            "name": "Newton",
+            "x": 181,
+            "y": 356,
+            "fixedX": 11862016,
+            "fixedY": 23330816,
+            "vx": 0,
+            "vy": 0,
+            "owner": 0,
+            "controller": 0,
+            "energy": 50000,
+            "breath": 50000,
+            "construction": 100000,
+            "selected": true,
+            "inLiquid": false,
+            "contained": 0,
+            "procedure": 0,
+            "action": "Walk",
+            "commandDirection": 0,
+            "facing": 0,
+            "phase": 0,
+            "phaseDelay": 0,
+            "actionTime": 16,
+            "actionData": 0,
+            "contact": 0,
+            "attachment": 8,
+            "contents": [
+              43
+            ],
+            "menu": null,
+            "commands": []
+          },
+          "crew": [
+            {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Newton",
+              "x": 181,
+              "y": 356,
+              "fixedX": 11862016,
+              "fixedY": 23330816,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 16,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [
+                43
+              ],
+              "menu": null,
+              "commands": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "messages": [
+    "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+    "log: [Clonk] Downloading original engine and content…",
+    "log: [Clonk] [engine] WARNING: using emscripten GL emulation. This is a collection of limited workarounds, do not expect it to work.",
+    "log: [Clonk] Preparing original game files (0/1)…",
+    "log: [Clonk] Downloading data...",
+    "log: [Clonk] Downloading data... (1972224/23928602)",
+    "log: [Clonk] Downloading data... (2077696/23928602)",
+    "log: [Clonk] Downloading data... (2097152/23928602)",
+    "log: [Clonk] Downloading data... (2162688/23928602)",
+    "log: [Clonk] Downloading data... (2379776/23928602)",
+    "log: [Clonk] Downloading data... (2786304/23928602)",
+    "log: [Clonk] Downloading data... (4116268/23928602)",
+    "log: [Clonk] Downloading data... (4194304/23928602)",
+    "log: [Clonk] Downloading data... (4220610/23928602)",
+    "log: [Clonk] Downloading data... (4351682/23928602)",
+    "log: [Clonk] Downloading data... (4521560/23928602)",
+    "log: [Clonk] Downloading data... (5057924/23928602)",
+    "log: [Clonk] Downloading data... (5698630/23928602)",
+    "log: [Clonk] Downloading data... (5934044/23928602)",
+    "log: [Clonk] Downloading data... (6169458/23928602)",
+    "log: [Clonk] Downloading data... (6291456/23928602)",
+    "log: [Clonk] Downloading data... (6535944/23928602)",
+    "log: [Clonk] Downloading data... (6732340/23928602)",
+    "log: [Clonk] Downloading data... (7925476/23928602)",
+    "log: [Clonk] Downloading data... (8388608/23928602)",
+    "log: [Clonk] Downloading data... (10022628/23928602)",
+    "log: [Clonk] Downloading data... (10485760/23928602)",
+    "log: [Clonk] Downloading data... (12582912/23928602)",
+    "log: [Clonk] Downloading data... (14680064/23928602)",
+    "log: [Clonk] Downloading data... (15728640/23928602)",
+    "log: [Clonk] Downloading data... (16777216/23928602)",
+    "log: [Clonk] Downloading data... (17825792/23928602)",
+    "log: [Clonk] Downloading data... (18874368/23928602)",
+    "log: [Clonk] Downloading data... (19464192/23928602)",
+    "log: [Clonk] Downloading data... (20971520/23928602)",
+    "log: [Clonk] Downloading data... (22085632/23928602)",
+    "log: [Clonk] Downloading data... (22740992/23928602)",
+    "log: [Clonk] Downloading data... (22872064/23928602)",
+    "log: [Clonk] Downloading data... (22937600/23928602)",
+    "log: [Clonk] Downloading data... (23003136/23928602)",
+    "log: [Clonk] Starting Clonk Rage…",
+    "log: [Clonk] Preparing original game files (0/1)…",
+    "log: [Clonk] Preparing original game files (0/2)…",
+    "log: [Clonk] Preparing original game files (0/3)…",
+    "log: [Clonk] Preparing original game files (0/4)…",
+    "log: [Clonk] Preparing original game files (0/5)…",
+    "log: [Clonk] Preparing original game files (0/6)…",
+    "log: [Clonk] Preparing original game files (0/7)…",
+    "log: [Clonk] Preparing original game files (0/8)…",
+    "log: [Clonk] Preparing original game files (0/9)…",
+    "log: [Clonk] Preparing original game files (0/10)…",
+    "log: [Clonk] Preparing original game files (0/11)…",
+    "log: [Clonk] Preparing original game files (0/12)…",
+    "log: [Clonk] Preparing original game files (0/13)…",
+    "log: [Clonk] Preparing original game files (0/14)…",
+    "log: [Clonk] Preparing original game files (0/15)…",
+    "log: [Clonk] Preparing original game files (0/16)…",
+    "log: [Clonk] Preparing original game files (0/17)…",
+    "log: [Clonk] Downloading data... (23068672/23928602)",
+    "log: [Clonk] Downloading data... (23928602/23928602)",
+    "log: [Clonk] Preparing original game files (1/17)…",
+    "log: [Clonk] Preparing original game files (2/17)…",
+    "log: [Clonk] Preparing original game files (3/17)…",
+    "log: [Clonk] Preparing original game files (4/17)…",
+    "log: [Clonk] Preparing original game files (5/17)…",
+    "log: [Clonk] Preparing original game files (6/17)…",
+    "log: [Clonk] Preparing original game files (7/17)…",
+    "log: [Clonk] Preparing original game files (8/17)…",
+    "log: [Clonk] Preparing original game files (9/17)…",
+    "log: [Clonk] Preparing original game files (10/17)…",
+    "log: [Clonk] Preparing original game files (11/17)…",
+    "log: [Clonk] Preparing original game files (12/17)…",
+    "log: [Clonk] Preparing original game files (13/17)…",
+    "log: [Clonk] Preparing original game files (14/17)…",
+    "log: [Clonk] Preparing original game files (15/17)…",
+    "log: [Clonk] Preparing original game files (16/17)…",
+    "log: [Clonk] Starting Clonk Rage…",
+    "log: [Clonk] Running...",
+    "log: [Clonk] Initializing original Goldmine…",
+    "log: [Clonk] [12:40:59] No valid key file found.",
+    "log: [Clonk] [12:40:59] Command line: ",
+    "log: [Clonk] [12:40:59] \"/config:/data/home/browser.cfg\" \"/fullscreen\" \"/nosplash\" \"/data/home/players/Browser.c4p\" \"verification/NativeGoldmine.c4s\" \"\"",
+    "log: [Clonk] [12:40:59] Clonk Rage ",
+    "log: [Clonk] [12:40:59] Version: 4.9.10.7 [330]  NONETWORK browser",
+    "log: [Clonk] [12:40:59] No valid key file found.",
+    "log: [Clonk] [12:40:59]   Using OpenGL...",
+    "log: [Clonk] [engine] WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports",
+    "log: [Clonk] [engine] TODO: glShadeModel",
+    "log: [Clonk] [12:41:01] Loading graphics...",
+    "log: [Clonk] [12:41:02] SDL_mixer Web Audio compatibility version is 1.2.12 (compiled with 1.2.12)",
+    "log: [Clonk] [12:41:02] Scenario: verification/NativeGoldmine.c4s",
+    "log: [Clonk] [12:41:02] Scenario uses specified object definitions.",
+    "log: [Clonk] [12:41:02] Loading extras...",
+    "log: [Clonk] [12:41:03] Loading graphics...",
+    "log: [Clonk] [12:41:04] Loading object definitions:",
+    "log: [Clonk] [12:41:04] Objects.c4d...",
+    "log: [Clonk] [12:41:07]    345 definitions loaded.",
+    "log: [Clonk] [12:41:07] NativeGoldmine.c4s...",
+    "log: [Clonk] [12:41:07]    0 definitions loaded.",
+    "log: [Clonk] [12:41:08] C4AulScriptEngine linked - 23988 lines, 0 warnings, 0 errors",
+    "log: [Clonk] [12:41:08] Texture table holds 48 entries.",
+    "log: [Clonk] [12:41:08] 21 textures loaded.",
+    "log: [Clonk] [12:41:08] 21 materials loaded.",
+    "log: [Clonk] [12:41:08] Creating landscape...",
+    "log: [Clonk] [12:41:09] Placing environment objects...",
+    "log: [Clonk] [12:41:10] Music: Sloping Off.ogg",
+    "log: [Clonk] [12:41:10] Game started.",
+    "warning: [.WebGL-0x37c00154200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): Running out of reserved outsideRenderPass queueSerial. ending renderPass now.",
+    "warning: [.WebGL-0x37c00154200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): Running out of reserved outsideRenderPass queueSerial. ending renderPass now.",
+    "warning: [.WebGL-0x37c00154200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): Running out of reserved outsideRenderPass queueSerial. ending renderPass now.",
+    "warning: [.WebGL-0x37c00154200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): Running out of reserved outsideRenderPass queueSerial. ending renderPass now. (this message will no longer repeat)",
+    "log: [Clonk] [12:41:10] Player join: Reference",
+    "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+  ]
+}

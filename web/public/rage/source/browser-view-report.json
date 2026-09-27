@@ -1,0 +1,1334 @@
+{
+  "trace": [
+    {
+      "name": "desktop-1x",
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 41,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1218106933,
+        "randomCount": 684,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -22,
+          "temperature": 9,
+          "season": 19
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 203620,
+            "effectivePixels": 203620
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 13235,
+            "effectivePixels": 13235
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 1185,
+            "effectivePixels": 1185
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 20148,
+            "effectivePixels": 20148
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 2629,
+            "effectivePixels": 2629
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 14,
+            "effectivePixels": 14
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 0,
+            "effectivePixels": 0
+          }
+        ],
+        "goldObjects": 20,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Kummerog",
+              "x": 20,
+              "y": 288,
+              "fixedX": 1310720,
+              "fixedY": 18874368,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 41,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Kummerog",
+                "x": 20,
+                "y": 288,
+                "fixedX": 1310720,
+                "fixedY": 18874368,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 41,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 65,
+          "worldWidth": 800,
+          "worldHeight": 446,
+          "zoom": 1.6,
+          "requestedZoom": 1,
+          "minZoom": 1.6,
+          "headerHeight": 64,
+          "clonkScreenX": 32,
+          "clonkScreenY": 420,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "desktop-2x",
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 41,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1218106933,
+        "randomCount": 684,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -22,
+          "temperature": 9,
+          "season": 19
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 203620,
+            "effectivePixels": 203620
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 13235,
+            "effectivePixels": 13235
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 1185,
+            "effectivePixels": 1185
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 20148,
+            "effectivePixels": 20148
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 2629,
+            "effectivePixels": 2629
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 14,
+            "effectivePixels": 14
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 0,
+            "effectivePixels": 0
+          }
+        ],
+        "goldObjects": 20,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Kummerog",
+              "x": 20,
+              "y": 288,
+              "fixedX": 1310720,
+              "fixedY": 18874368,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 41,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Kummerog",
+                "x": 20,
+                "y": 288,
+                "fixedX": 1310720,
+                "fixedY": 18874368,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 41,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 177,
+          "worldWidth": 400,
+          "worldHeight": 223,
+          "zoom": 3.2,
+          "requestedZoom": 3.2,
+          "minZoom": 1.6,
+          "headerHeight": 64,
+          "clonkScreenX": 64,
+          "clonkScreenY": 419,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "mouse-picking",
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 41,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1218106933,
+        "randomCount": 684,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -22,
+          "temperature": 9,
+          "season": 19
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 203620,
+            "effectivePixels": 203620
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 13235,
+            "effectivePixels": 13235
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 1185,
+            "effectivePixels": 1185
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 20148,
+            "effectivePixels": 20148
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 2629,
+            "effectivePixels": 2629
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 14,
+            "effectivePixels": 14
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 0,
+            "effectivePixels": 0
+          }
+        ],
+        "goldObjects": 20,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Kummerog",
+              "x": 20,
+              "y": 288,
+              "fixedX": 1310720,
+              "fixedY": 18874368,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 41,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Kummerog",
+                "x": 20,
+                "y": 288,
+                "fixedX": 1310720,
+                "fixedY": 18874368,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 41,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 177,
+          "worldWidth": 400,
+          "worldHeight": 223,
+          "zoom": 3.2,
+          "requestedZoom": 3.2,
+          "minZoom": 1.6,
+          "headerHeight": 64,
+          "clonkScreenX": 64,
+          "clonkScreenY": 419,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "portrait-safe-camera",
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 41,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1218106933,
+        "randomCount": 684,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -22,
+          "temperature": 9,
+          "season": 19
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 203620,
+            "effectivePixels": 203620
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 13235,
+            "effectivePixels": 13235
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 1185,
+            "effectivePixels": 1185
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 20148,
+            "effectivePixels": 20148
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 2629,
+            "effectivePixels": 2629
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 14,
+            "effectivePixels": 14
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 0,
+            "effectivePixels": 0
+          }
+        ],
+        "goldObjects": 20,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Kummerog",
+              "x": 20,
+              "y": 288,
+              "fixedX": 1310720,
+              "fixedY": 18874368,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 41,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Kummerog",
+                "x": 20,
+                "y": 288,
+                "fixedX": 1310720,
+                "fixedY": 18874368,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 41,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 758,
+          "worldX": 0,
+          "worldY": 149,
+          "worldWidth": 195,
+          "worldHeight": 379,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 1.2633,
+          "headerHeight": 64,
+          "clonkScreenX": 40,
+          "clonkScreenY": 342,
+          "occlusion": {
+            "x": 222,
+            "y": 638,
+            "width": 160,
+            "height": 198
+          }
+        }
+      }
+    },
+    {
+      "name": "landscape-safe-camera",
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 41,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1218106933,
+        "randomCount": 684,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -22,
+          "temperature": 9,
+          "season": 19
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 203620,
+            "effectivePixels": 203620
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 13235,
+            "effectivePixels": 13235
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 1185,
+            "effectivePixels": 1185
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 20148,
+            "effectivePixels": 20148
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 2629,
+            "effectivePixels": 2629
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 14,
+            "effectivePixels": 14
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 0,
+            "effectivePixels": 0
+          }
+        ],
+        "goldObjects": 20,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Kummerog",
+              "x": 20,
+              "y": 288,
+              "fixedX": 1310720,
+              "fixedY": 18874368,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 41,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Kummerog",
+                "x": 20,
+                "y": 288,
+                "fixedX": 1310720,
+                "fixedY": 18874368,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 41,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 896,
+          "height": 328,
+          "worldX": 0,
+          "worldY": 206,
+          "worldWidth": 448,
+          "worldHeight": 164,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 1.12,
+          "headerHeight": 64,
+          "clonkScreenX": 40,
+          "clonkScreenY": 228,
+          "occlusion": {
+            "x": 718,
+            "y": 230,
+            "width": 170,
+            "height": 176
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "coverage": {
+    "mousePicking": "not exercised: original Classic keyboard round did not route the DOM mouse event to world control; coordinates remained zero",
+    "cameraBounds": "passed: final portrait and landscape world origins >=0 and clonk outside exact requested touch rectangles"
+  }
+}

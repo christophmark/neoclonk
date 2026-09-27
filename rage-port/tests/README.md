@@ -1,0 +1,38 @@
+# Original gameplay regression probe
+
+Run from the repository root:
+
+```sh
+python3 rage-port/tests/build_gameplay_probe.py
+node rage-port/tests/gameplay-parity.mjs
+```
+
+The build script extracts **verbatim** original source from the unchanged `cr_source` tree and compiles the same C++ natively with GCC and to WebAssembly with the already-installed WASI SDK. The probe uses original `Fixed.h`, original `ValByPhysical`, original classic walking/digging control switch branches, the original digging action branch, original `ObjectActionDig`, and original `C4Player::InCom` / `ExecuteControl`. SHA-256 provenance is recorded under `build/source-manifest.json`.
+
+The native runner first asserts observed original semantics, then produces an oracle trace. The WebAssembly runner compares every exported operation against that trace. Current coverage produces 40,329 matching operations across delayed single presses, double activation, release persistence, steering, direction limits, downward 45-degree components, upward half slope, material request toggle and seven physical capability levels in both facing directions.
+
+This is a **focused original-code unit probe**, not a second implementation of the playable engine and not a substitute for a full engine comparison. Fixture boundaries deliberately exclude original terrain collision, attachment computation, scripts, menu handling, object creation and scenario initialization. The attachment fixture provides a true/false input; it does not simulate collision. Functions outside the selected branches are call-boundary fixtures. `Fixed.h`'s serialization adapter exists only to compile the unused serialization member; arithmetic is original.
+
+The production port must compile the full original gameplay path. Its separate reference gate must compare original landscape/object/material/script state tick by tick and complete the actual original Gold Mine goal. See [the audit](../../docs/ORIGINAL_GAMEPLAY_AUDIT.md).
+
+Original source license: [Clonk ISC license](../../cr_source/licenses/clonk_source_license.txt).
+
+### Original tunnel exit and ceiling hanging
+
+`node rage-port/tests/tunnel-controls.mjs` digs a natural Gold Mine tunnel with
+real touch buttons, demonstrates that Left rotates Dig rather than cancelling
+it, then tests X → Z → S and follows the original Scale/Hangle actions out.
+It only uses original inputs and paused ticks; the random landscape can obstruct
+the chosen route, so inspect its trace before treating a failure as a regression.
+Observed passing run: bottom (406,375), Hangle (352,312), exit (288,270).
+Evidence: `rage-port/outputs/tunnel-controls.json` and `.png`.
+
+### Responsive interface and original saves
+
+`GAME_URL=http://127.0.0.1:3902/ node rage-port/tests/browser-view.mjs`
+checks world zoom, original HUD pixels, unchanged paused simulation and terrain,
+responsive dimensions and touch occlusion. `browser-save-export.mjs` checks
+unique original QuickSave groups, preservation of earlier saves and pause state.
+
+The end-to-end menu/header/storage/rotation tests live in
+`web/tests/usability-browser.mjs`; run `npm run test:browser` from `web/`.

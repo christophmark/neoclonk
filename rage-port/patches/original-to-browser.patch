@@ -1,0 +1,2029 @@
+--- a/engine/inc/C4Constants.h
++++ b/engine/inc/C4Constants.h
+@@ -62,7 +62,11 @@
+ 
+ const int C4SymbolSize			 = 35,
+ 					C4SymbolBorder		 = 5,
++#ifdef __EMSCRIPTEN__
++					C4UpperBoardHeight = 64,
++#else
+ 					C4UpperBoardHeight = 50,
++#endif
+ 					C4PictureSize      = 64,
+ 					C4MaxPictureSize   = 150,
+ 					C4MaxBigIconSize   = 64;
+--- a/engine/inc/C4Gui.h
++++ b/engine/inc/C4Gui.h
+@@ -1618,7 +1618,7 @@
+ 			virtual void ElementPosChanged(Element *pOfElement);  // called when an element position is changed
+ 			virtual void UpdateSize();
+ 
+-			virtual Control *IsFocusElement() { return false; }; // no focus element for now, because there's nothing to do (2do: scroll?)
++			virtual Control *IsFocusElement() { return NULL; }; // no focus element for now, because there's nothing to do (2do: scroll?)
+ 
+ 		public:
+ 			TextWindow(C4Rect &rtBounds, size_t iPicWdt=0, size_t iPicHgt=0, size_t iPicPadding=0, size_t iMaxLines=100, size_t iMaxTextLen=4096, const char *szIndentChars="    ", bool fAutoGrow=false, const C4Facet *pOverlayPic=NULL, int iOverlayBorder=0, bool fMarkup=false); // ctor
+--- a/engine/inc/C4Include.h
++++ b/engine/inc/C4Include.h
+@@ -15,7 +15,9 @@
+ #include <config.h>
+ #endif //HAVE_CONFIG_H
+ 
+-#ifdef _WIN32
++#if defined(__EMSCRIPTEN__)
++	#define C4_OS "browser"
++#elif defined(_WIN32)
+ 	#define C4_OS "win32"
+ #elif defined(__linux__)
+ 	#define C4_OS "linux"
+--- a/engine/inc/C4InputValidation.h
++++ b/engine/inc/C4InputValidation.h
+@@ -48,6 +48,7 @@
+   ALLOW_TEMP_TO_REF(C4StrValAdapt)
+ };
+ template <class T> inline C4StrValAdapt<T> mkStrValAdapt(T &rValue, C4InVal::ValidationOption eValType) { return C4StrValAdapt<T>(rValue, eValType); }
++template <class T> inline C4StrValAdapt<T> mkStrValAdapt(T &&rValue, C4InVal::ValidationOption eValType) { return C4StrValAdapt<T>(rValue, eValType); }
+ 
+ // StdStrBuf that validates on compilation
+ struct ValidatedStdCopyStrBufBase : public StdCopyStrBuf
+--- a/engine/inc/C4MouseControl.h
++++ b/engine/inc/C4MouseControl.h
+@@ -81,6 +81,12 @@
+ 		void SetOwnedMouse(bool fToVal) { fMouseOwned = fToVal; }
+ 		bool IsMouseOwned() { return fMouseOwned; }
+ 		bool IsActive() { return !!Active; }
++#ifdef __EMSCRIPTEN__
++		int BrowserWorldX() const { return X; }
++		int BrowserWorldY() const { return Y; }
++		int BrowserScreenX() const { return VpX; }
++		int BrowserScreenY() const { return VpY; }
++#endif
+ 	protected:
+ 		void SendPlayerSelectNext();
+ 		void UpdateFogOfWar();
+--- a/engine/inc/C4NetIO.h
++++ b/engine/inc/C4NetIO.h
+@@ -129,6 +129,7 @@
+ 	C4NetIOPacket(const void *pnData, size_t inSize, bool fCopy = false, const C4NetIO::addr_t &naddr = C4NetIO::addr_t());
+ 	// construct from buffer (takes data, if possible)
+ 	explicit C4NetIOPacket(StdBuf &Buf, const C4NetIO::addr_t &naddr = C4NetIO::addr_t());
++	C4NetIOPacket(StdBuf &&Buf, const C4NetIO::addr_t &naddr = C4NetIO::addr_t()) : C4NetIOPacket(Buf,naddr) {}
+ 	// construct from status byte + buffer (copies data)
+ 	C4NetIOPacket(uint8_t cStatusByte, const char *pnData, size_t inSize, const C4NetIO::addr_t &naddr = C4NetIO::addr_t()); 
+ 	
+--- a/engine/inc/C4StartupPlrSelDlg.h
++++ b/engine/inc/C4StartupPlrSelDlg.h
+@@ -73,6 +73,7 @@
+ 					{
+ 					public:
+ 						LoadError(StdStrBuf &rTakeFrom) { Take(rTakeFrom); }
++                                                LoadError(StdStrBuf &&rTakeFrom) { Take(rTakeFrom); }
+ 					}; // class thrown off load function if load failed
+ 			};
+ 
+--- a/engine/inc/C4Viewport.h
++++ b/engine/inc/C4Viewport.h
+@@ -68,6 +68,15 @@
+ 		int32_t BorderLeft, BorderTop, BorderRight, BorderBottom;
+ 		int32_t ViewOffsX, ViewOffsY;
+ 		int32_t DrawX,DrawY;
++#ifdef __EMSCRIPTEN__
++		float BrowserZoom = 1.0f;
++		C4Rect BrowserOcclusion;
++		int BrowserWorldWidth() const { return Max(1, int(ViewWdt / BrowserZoom + 0.5f)); }
++		int BrowserWorldHeight() const { return Max(1, int(ViewHgt / BrowserZoom + 0.5f)); }
++		int BrowserScreenX(int worldX) const { return DrawX + int((worldX-ViewX)*BrowserZoom); }
++		int BrowserScreenY(int worldY) const { return DrawY + int((worldY-ViewY)*BrowserZoom); }
++		void SetBrowserView(float zoom, const C4Rect &occlusion);
++#endif
+ 		bool fIsNoOwnerViewport; // this viewport is found for searches of NO_OWNER-viewports; even if it has a player assigned (for network obs)
+ 		void Default();
+ 		void Clear();
+--- a/engine/inc/C4Wrappers.h
++++ b/engine/inc/C4Wrappers.h
+@@ -198,7 +198,7 @@
+ void StdCompilerWarnCallback(void *pData, const char *szPosition, const char *szError);
+ 
+ template <class CompT, class StructT>
+-	bool CompileFromBuf_Log(StructT &TargetStruct, const typename CompT::InT &SrcBuf, const char *szName)
++	bool CompileFromBuf_Log(StructT &&TargetStruct, const typename CompT::InT &SrcBuf, const char *szName)
+ 	{
+ 		try
+ 		{
+@@ -213,7 +213,7 @@
+ 		}
+ 	}
+ template <class CompT, class StructT>
+-	bool CompileFromBuf_LogWarn(StructT &TargetStruct, const typename CompT::InT &SrcBuf, const char *szName)
++	bool CompileFromBuf_LogWarn(StructT &&TargetStruct, const typename CompT::InT &SrcBuf, const char *szName)
+ 	{
+ 		try
+ 		{
+@@ -234,7 +234,7 @@
+ 		}
+ 	}
+ template <class CompT, class StructT>
+-	bool DecompileToBuf_Log(StructT &TargetStruct, typename CompT::OutT *pOut, const char *szName)
++	bool DecompileToBuf_Log(StructT &&TargetStruct, typename CompT::OutT *pOut, const char *szName)
+ 	{
+ 		if(!pOut) return false;
+ 		try
+--- /dev/null
++++ b/engine/src/C4Browser.cpp
+@@ -0,0 +1,279 @@
++/* Browser inspection and automation boundary for the original Clonk Rage engine.
++   Scheduling and input only: this file does not implement gameplay or mutate
++   terrain, object positions, inventories, materials, scripts, or objectives. */
++#include <C4Include.h>
++#include <C4Game.h>
++#include <C4Object.h>
++#include <C4Player.h>
++#include <C4Config.h>
++#include <C4Random.h>
++#include <C4KeyboardInput.h>
++#include <C4ObjectMenu.h>
++#include <C4Command.h>
++#include <C4Control.h>
++#include <C4Application.h>
++#include <C4Viewport.h>
++#include <C4GraphicsSystem.h>
++#include <C4MouseControl.h>
++#include <emscripten/emscripten.h>
++
++namespace {
++StdStrBuf BrowserResult;
++bool BrowserStepping = false;
++double BrowserRequestedZoom = 1.0;
++
++// Original content strings use an 8-bit character set. Escaping bytes outside
++// ASCII keeps the inspection payload valid JSON without changing engine text.
++void JsonString(StdStrBuf &out, const char *value)
++{
++  out.AppendChar('"');
++  if (value) for (const unsigned char *p = reinterpret_cast<const unsigned char *>(value); *p; ++p)
++  {
++    if (*p == '"' || *p == '\\') { out.AppendChar('\\'); out.AppendChar(*p); }
++    else if (*p < 32 || *p >= 127) out.AppendFormat("\\u%04x", static_cast<unsigned>(*p));
++    else out.AppendChar(*p);
++  }
++  out.AppendChar('"');
++}
++
++void ObjectJson(StdStrBuf &out, C4Object *object)
++{
++  if (!object || !object->Status) { out.Append("null"); return; }
++  char id[5]; GetC4IdText(object->id, id);
++  out.AppendFormat("{\"number\":%d,\"id\":", object->Number); JsonString(out,id);
++  out.Append(",\"name\":"); JsonString(out,object->GetName());
++  out.AppendFormat(",\"x\":%d,\"y\":%d,\"fixedX\":%d,\"fixedY\":%d,\"vx\":%d,\"vy\":%d,\"owner\":%d,\"controller\":%d,\"energy\":%d,\"breath\":%d,\"construction\":%d,\"selected\":%s,\"inLiquid\":%s,\"contained\":%d,\"procedure\":%d,\"action\":",
++    object->x, object->y, object->fix_x.val, object->fix_y.val,
++    object->xdir.val, object->ydir.val, object->Owner, object->Controller,
++    object->Energy, object->Breath, object->GetCon(), object->Select?"true":"false",
++    object->InLiquid?"true":"false",object->Contained?object->Contained->Number:0,object->GetProcedure());
++  JsonString(out, object->Action.Act > ActIdle && object->Def && object->Def->ActMap ? object->Def->ActMap[object->Action.Act].Name : "Idle");
++  out.AppendFormat(",\"commandDirection\":%d,\"facing\":%d,\"phase\":%d,\"phaseDelay\":%d,\"actionTime\":%d,\"actionData\":%d,\"contact\":%u,\"attachment\":%d,\"contents\":[",
++    object->Action.ComDir,object->Action.Dir,object->Action.Phase,object->Action.PhaseDelay,
++    object->Action.Time,object->Action.Data,object->t_contact,object->Action.t_attach);
++  bool comma=false;
++  for(C4ObjectLink *link=object->Contents.First;link;link=link->Next) if(link->Obj && link->Obj->Status)
++  { if(comma)out.AppendChar(','); comma=true; out.AppendFormat("%d",link->Obj->Number); }
++  out.Append("],\"menu\":");
++  if (object->Menu && object->Menu->IsActive()) {
++    out.AppendFormat("{\"id\":%d,\"selected\":%d,\"items\":[",object->Menu->GetIdentification(),object->Menu->GetSelection());
++    for (int i=0;i<object->Menu->GetItemCount();++i) {
++      if(i)out.AppendChar(',');
++      char itemId[5]; GetC4IdText(object->Menu->GetItem(i)->GetC4ID(),itemId); JsonString(out,itemId);
++    }
++    out.Append("]}");
++  } else out.Append("null");
++  out.Append(",\"commands\":[");
++  bool commandComma=false;
++  for(C4Command *command=object->Command;command;command=command->Next)
++  {
++    if(commandComma)out.AppendChar(',');commandComma=true;
++    out.AppendFormat("{\"id\":%d,\"name\":",command->Command);JsonString(out,CommandName(command->Command));
++    out.AppendFormat(",\"x\":%d,\"y\":%d,\"target\":%d,\"target2\":%d,\"data\":%d,\"finished\":%s,\"failures\":%d}",
++      command->Tx._getInt(),command->Ty,command->Target?command->Target->Number:0,
++      command->Target2?command->Target2->Number:0,command->Data,command->Finished?"true":"false",command->Failures);
++  }
++  out.Append("]}");
++}
++
++int MaterialCount(int material, bool effective)
++{
++  if(material < 0 || material >= Game.Material.Num) return -1;
++  return static_cast<int>(effective && Game.Material.Map[material].MinHeightCount ? Game.Landscape.EffectiveMatCount[material] : Game.Landscape.MatCount[material]);
++}
++}
++
++extern "C" {
++
++// Presentation only: browser dimensions and touch occlusion are CSS pixels.
++// Simulation coordinates, materials and object state are never changed here.
++EMSCRIPTEN_KEEPALIVE int nc_browser_view(int width,int height,double zoom,int ox,int oy,int ow,int oh)
++{
++  if(!Game.IsRunning || !lpDDraw || width<240 || height<160 || width>4096 || height>4096 ||
++     !(zoom>=0.5 && zoom<=8.0) || ow<0 || oh<0)return -1;
++  if((Config.Graphics.ResX!=width || Config.Graphics.ResY!=height) && !Application.SetResolution(width,height))return -2;
++  Game.GraphicsSystem.RecalculateViewports();
++  C4Rect occlusion(ox,oy,ow,oh);
++  BrowserRequestedZoom=zoom;
++  for(C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();view;view=view->GetNext())
++    view->SetBrowserView(static_cast<float>(zoom),occlusion);
++  return 1;
++}
++
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_state()
++{
++  BrowserResult.Format("{\"running\":%s,\"paused\":%s,\"frame\":%d,\"gameOver\":%s,\"evaluated\":%s,\"scenario\":",
++    Game.IsRunning?"true":"false",Game.IsPaused()?"true":"false",Game.FrameCounter,
++    Game.GameOver?"true":"false",Game.Evaluated?"true":"false");
++  JsonString(BrowserResult,Game.ScenarioFilename);
++  BrowserResult.AppendFormat(",\"randomHold\":%u,\"randomCount\":%d,\"landscape\":{\"width\":%d,\"height\":%d,\"mapWidth\":%d,\"mapHeight\":%d,\"mapZoom\":%d},\"weather\":{\"wind\":%d,\"temperature\":%d,\"season\":%d},\"materials\":[",
++    RandomHold,RandomCount,Game.Landscape.Width,Game.Landscape.Height,
++    Game.Landscape.MapWidth,Game.Landscape.MapHeight,Game.Landscape.MapZoom,
++    Game.Weather.Wind,Game.Weather.Temperature,Game.Weather.Season);
++  if(Game.IsRunning) for(int i=0;i<Game.Material.Num;++i)
++  {
++    if(i) BrowserResult.AppendChar(',');
++    BrowserResult.AppendFormat("{\"index\":%d,\"name\":",i); JsonString(BrowserResult,Game.Material.Map[i].Name);
++    BrowserResult.AppendFormat(",\"pixels\":%d,\"effectivePixels\":%d}",MaterialCount(i,false),MaterialCount(i,true));
++  }
++  BrowserResult.AppendFormat("],\"goldObjects\":%d,\"objectCount\":%d,\"players\":[",
++    Game.IsRunning?Game.Objects.ObjectCount(C4ID_Gold):0,Game.IsRunning?Game.Objects.ObjectCount():0);
++  bool comma=false;
++  if(Game.IsRunning) for(C4Player *player=Game.Players.First;player;player=player->Next)
++  {
++    if(comma)BrowserResult.AppendChar(',');comma=true;
++    BrowserResult.AppendFormat("{\"number\":%d,\"name\":",player->Number);JsonString(BrowserResult,player->Name.getData());
++    BrowserResult.AppendFormat(",\"local\":%s,\"eliminated\":%s,\"controlStyle\":%d,\"keyboardSet\":%d,\"wealth\":%d,\"lastCommand\":%d,\"commandDelay\":%d,\"pressedCommands\":%d,\"menu\":%s,\"cursor\":",
++      player->LocalControl?"true":"false",player->Eliminated?"true":"false",player->ControlStyle,
++      player->Control,player->Wealth,player->LastCom,player->LastComDelay,player->PressedComs,
++      player->Menu.IsActive()?"true":"false");
++    ObjectJson(BrowserResult,player->Cursor);BrowserResult.Append(",\"crew\":[");
++    bool crewComma=false;
++    for(C4ObjectLink *link=player->Crew.First;link;link=link->Next) if(link->Obj && link->Obj->Status)
++    {if(crewComma)BrowserResult.AppendChar(',');crewComma=true;ObjectJson(BrowserResult,link->Obj);}
++    BrowserResult.Append("]}");
++  }
++  BrowserResult.AppendFormat("],\"mouse\":{\"active\":%s,\"screenX\":%d,\"screenY\":%d,\"worldX\":%d,\"worldY\":%d},\"viewport\":",
++    Game.MouseControl.IsActive()?"true":"false",Game.MouseControl.BrowserScreenX(),Game.MouseControl.BrowserScreenY(),Game.MouseControl.BrowserWorldX(),Game.MouseControl.BrowserWorldY());
++  C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();
++  if(!view)BrowserResult.Append("null");
++  else {
++    C4Rect rect=view->GetOutputRect();
++    C4Player *player=Game.Players.Get(view->GetPlayer());
++    C4Object *cursor=player?player->Cursor:NULL;
++    BrowserResult.AppendFormat("{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"worldX\":%d,\"worldY\":%d,\"worldWidth\":%d,\"worldHeight\":%d,\"zoom\":%.4f,\"requestedZoom\":%.4f,\"minZoom\":%.4f,\"headerHeight\":%d,\"clonkScreenX\":%d,\"clonkScreenY\":%d,\"occlusion\":{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}}",
++      rect.x,rect.y,rect.Wdt,rect.Hgt,view->ViewX,view->ViewY,view->BrowserWorldWidth(),view->BrowserWorldHeight(),
++      static_cast<double>(view->BrowserZoom),BrowserRequestedZoom,Max(0.5,Max(double(rect.Wdt)/Max(1,Game.Landscape.Width),double(rect.Hgt)/Max(1,Game.Landscape.Height))),
++      C4UpperBoardHeight,cursor?view->BrowserScreenX(cursor->x):-1,cursor?view->BrowserScreenY(cursor->y):-1,
++      view->BrowserOcclusion.x,view->BrowserOcclusion.y,view->BrowserOcclusion.Wdt,view->BrowserOcclusion.Hgt);
++  }
++  BrowserResult.Append("}");return BrowserResult.getData();
++}
++
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_object(int number)
++{
++  BrowserResult.Clear();ObjectJson(BrowserResult,Game.IsRunning?Game.Objects.SafeObjectPointer(number):NULL);
++  return BrowserResult.getData();
++}
++
++// radius=0 lists all live objects; otherwise restrict by distance to the supplied center.
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_objects(int x,int y,int radius)
++{
++  BrowserResult.Copy("[");bool comma=false;
++  if(Game.IsRunning && radius>=0) for(C4ObjectLink *link=Game.Objects.First;link;link=link->Next)
++  {
++    C4Object *object=link->Obj;if(!object || !object->Status)continue;
++    const int64_t dx=static_cast<int64_t>(object->x)-x,dy=static_cast<int64_t>(object->y)-y;
++    if(radius && (dx>radius || dx<-static_cast<int64_t>(radius) || dy>radius || dy<-static_cast<int64_t>(radius)))continue;
++    if(radius && dx*dx>static_cast<int64_t>(radius)*radius-dy*dy)continue;
++    if(comma)BrowserResult.AppendChar(',');comma=true;ObjectJson(BrowserResult,object);
++  }
++  BrowserResult.AppendChar(']');return BrowserResult.getData();
++}
++
++EMSCRIPTEN_KEEPALIVE int nc_browser_material(int x,int y)
++{
++  if(!Game.IsRunning || x<0 || y<0 || x>=Game.Landscape.Width || y>=Game.Landscape.Height)return -1;
++  return Game.Landscape.GetMat(x,y);
++}
++
++// Read-only material grid, row-major, bounded to a million cells per call.
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_terrain(int x,int y,int width,int height)
++{
++  if(!Game.IsRunning || x<0 || y<0 || width<1 || height<1 ||
++     static_cast<int64_t>(x)+width>Game.Landscape.Width ||
++     static_cast<int64_t>(y)+height>Game.Landscape.Height ||
++     static_cast<int64_t>(width)*height>1048576)
++  {BrowserResult.Copy("{\"error\":\"Invalid or unavailable terrain rectangle\"}");return BrowserResult.getData();}
++  BrowserResult.Format("{\"frame\":%d,\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"materials\":[",Game.FrameCounter,x,y,width,height);
++  bool comma=false;
++  for(int row=0;row<height;++row)for(int column=0;column<width;++column)
++  {if(comma)BrowserResult.AppendChar(',');comma=true;BrowserResult.AppendFormat("%d",Game.Landscape.GetMat(x+column,y+row));}
++  BrowserResult.Append("]}");return BrowserResult.getData();
++}
++
++// FNV-1a over original texture/IFT bytes, for before/after and parity checks.
++EMSCRIPTEN_KEEPALIVE unsigned nc_browser_landscape_hash()
++{
++  if(!Game.IsRunning)return 0;
++  uint32_t hash=2166136261u;
++  for(int y=0;y<Game.Landscape.Height;++y)for(int x=0;x<Game.Landscape.Width;++x)
++    hash=(hash^Game.Landscape.GetPix(x,y))*16777619u;
++  return hash;
++}
++
++// keyCode is the original SDL1.2 key value. modifiers: 1=alt, 2=ctrl, 4=shift.
++EMSCRIPTEN_KEEPALIVE int nc_browser_key(int keyCode,int pressed,int modifiers,int repeated)
++{
++  if(!Game.IsRunning || BrowserStepping)return -1;
++  return Game.DoKeyboardInput(keyCode,pressed?KEYEV_Down:KEYEV_Up,
++    !!(modifiers&1),!!(modifiers&2),!!(modifiers&4),!!repeated)?1:0;
++}
++
++// Routes a configured control key through the same original keyboard dispatcher.
++// Indices 0..8 are the nine classic controls; 9..11 are menu/special keys.
++EMSCRIPTEN_KEEPALIVE int nc_browser_control(int playerNumber,int control,int pressed,int repeated)
++{
++  if(!Game.IsRunning || BrowserStepping || control<0 || control>=C4MaxKey)return -1;
++  C4Player *player=Game.Players.Get(playerNumber);
++  if(!player || !player->LocalControl || player->Eliminated)return -2;
++  if(player->Control<C4P_Control_Keyboard1 || player->Control>C4P_Control_Keyboard4)return -3;
++  return nc_browser_key(Config.Controls.Keyboard[player->Control][control],pressed,0,repeated);
++}
++
++// Original mouse-control packet path. Only ordinary player commands are exposed.
++// append=0 replaces the selected crew command stack; append=1 appends normally.
++EMSCRIPTEN_KEEPALIVE int nc_browser_command(int playerNumber,int command,int targetNumber,
++                                           int x,int y,int target2Number,int data,int append)
++{
++  if(!Game.IsRunning || BrowserStepping || Game.Network.isEnabled())return -1;
++  C4Player *player=Game.Players.Get(playerNumber);
++  if(!player || !player->LocalControl || player->Eliminated)return -2;
++  switch(command)
++  {
++    case C4CMD_Follow: case C4CMD_MoveTo: case C4CMD_Enter: case C4CMD_Exit:
++    case C4CMD_Grab: case C4CMD_Build: case C4CMD_Throw: case C4CMD_Chop:
++    case C4CMD_UnGrab: case C4CMD_Jump: case C4CMD_Wait: case C4CMD_Get:
++    case C4CMD_Put: case C4CMD_Drop: case C4CMD_Dig: case C4CMD_Activate:
++    case C4CMD_PushTo: case C4CMD_Construct: case C4CMD_Buy: case C4CMD_Sell:
++    case C4CMD_Home: case C4CMD_Take: case C4CMD_Take2: break;
++    default: return -3;
++  }
++  if(append!=0 && append!=1)return -3;
++  C4Object *target=targetNumber?Game.Objects.SafeObjectPointer(targetNumber):NULL;
++  C4Object *target2=target2Number?Game.Objects.SafeObjectPointer(target2Number):NULL;
++  if((targetNumber && !target) || (target2Number && !target2))return -4;
++  Game.Input.Add(CID_PlrCommand,new C4ControlPlayerCommand(playerNumber,command,x,y,
++    target,target2,data,append?C4P_Command_Append:C4P_Command_Set));
++  return 1;
++}
++
++EMSCRIPTEN_KEEPALIVE int nc_browser_pause(int paused)
++{
++  if(!Game.IsRunning || BrowserStepping || Game.Network.isEnabled())return -1;
++  if(!paused && Game.HaltCount>1)return -2;
++  if(paused && !Game.IsPaused())Game.Pause();
++  if(!paused && Game.IsPaused())Game.Unpause();
++  return Game.IsPaused()?1:0;
++}
++
++// Runs the complete original tick, including control queue, objects, materials,
++// scripts and goals. Never bypass an initialization/multiple-halt or network pause.
++EMSCRIPTEN_KEEPALIVE int nc_browser_step(int ticks)
++{
++  if(ticks<1 || ticks>512)return -1;
++  if(!Game.IsRunning || Game.GameOver || Game.Network.isEnabled() || BrowserStepping)return -2;
++  if(!Game.IsPaused() || Game.HaltCount!=1)return -3;
++  struct StepGuard {
++    StepGuard(){BrowserStepping=true;Game.Unpause();}
++    ~StepGuard(){if(Game.IsRunning)Game.Pause();BrowserStepping=false;}
++  } guard;
++  const int before=Game.FrameCounter;
++  for(int i=0;i<ticks && Game.IsRunning && !Game.GameOver;++i)
++  {
++    const int frame=Game.FrameCounter;Game.Execute();
++    if(Game.FrameCounter==frame)break; // Original control preparation may defer a tick.
++  }
++  return Game.FrameCounter-before;
++}
++}
+--- /dev/null
++++ b/engine/src/C4BrowserAudio.cpp
+@@ -0,0 +1,117 @@
++// Compatibility boundary for Emscripten's SDL1/Web Audio mixer emulation.
++#include <cstddef>
++#include <cstdint>
++#include <cstring>
++#include <climits>
++#ifndef C4_BROWSER_AUDIO_PARSER_ONLY
++#include <C4Include.h>
++#include <C4Application.h>
++#include <C4MusicSystem.h>
++#include <SDL_mixer.h>
++#include <emscripten/emscripten.h>
++
++static bool BrowserMixerOpen = false;
++extern "C" void C4BrowserAudioOpened(int value) { BrowserMixerOpen = value != 0; }
++
++extern "C" const SDL_version * SDLCALL Mix_Linked_Version(void)
++{
++  // API compatibility level of the SDL_mixer headers used by the emulation;
++  // there is no native dynamically linked SDL_mixer library in the browser.
++  static const SDL_version compatibility = {
++    SDL_MIXER_MAJOR_VERSION, SDL_MIXER_MINOR_VERSION, SDL_MIXER_PATCHLEVEL
++  };
++  return &compatibility;
++}
++
++extern "C" int SDLCALL Mix_QuerySpec(int *frequency, Uint16 *format, int *channels)
++{
++  if (!BrowserMixerOpen) return 0;
++  return EM_ASM_INT({
++    if (typeof SDL === 'undefined' || !SDL.audioContext) return 0;
++    if ($0) HEAP32[$0 >> 2] = SDL.mixerFrequency;
++    if ($1) HEAPU16[$1 >> 1] = SDL.mixerFormat;
++    if ($2) HEAP32[$2 >> 2] = SDL.mixerNumChannels;
++    return 1;
++  }, frequency, format, channels);
++}
++
++#endif // platform mixer bindings
++
++namespace {
++uint16_t AudioU16(const unsigned char *p) { return uint16_t(p[0]) | uint16_t(p[1]) << 8; }
++uint32_t AudioU32(const unsigned char *p) { return uint32_t(p[0]) | uint32_t(p[1]) << 8 | uint32_t(p[2]) << 16 | uint32_t(p[3]) << 24; }
++uint64_t AudioU64(const unsigned char *p) { return uint64_t(AudioU32(p)) | uint64_t(AudioU32(p+4)) << 32; }
++bool AudioDuration(uint64_t units, uint32_t unitsPerSecond, uint32_t rate, int *milliseconds, int *sampleRate, int *legacyLength)
++{
++  if (!unitsPerSecond || !rate || rate > INT_MAX || units > UINT64_MAX / 1000) return false;
++  const uint64_t duration = units * 1000 / unitsPerSecond;
++  if (!duration || duration > INT_MAX) return false;
++  *milliseconds = static_cast<int>(duration); *sampleRate = static_cast<int>(rate);
++  // Preserve Rage's SDL backend lifetime calculation (including its historical
++  // stereo factor): 1000 * convertedChunkBytes / (44100 * 2). Browser decoding
++  // has no C Mix_Chunk; derive the 44100Hz/stereo/S16 converted byte count.
++  const uint64_t mixerFrames = (units / unitsPerSecond) * 44100u + (units % unitsPerSecond) * 44100u / unitsPerSecond;
++  const uint32_t mixerBytes = static_cast<uint32_t>(mixerFrames * 4u);
++  *legacyLength = static_cast<int>((mixerBytes * uint32_t(1000)) / (44100u * 2u));
++  return true;
++}
++}
++
++// Read duration from the original encoded bytes before asynchronous Web Audio
++// decoding. SDL1's browser Mix_Chunk is a JS handle, not a C struct to dereference.
++extern "C" int C4BrowserSoundInfo(const unsigned char *data, size_t size, int *milliseconds, int *sampleRate, int *legacyLength)
++{
++  if (!data || !milliseconds || !sampleRate || !legacyLength) return 0;
++  *milliseconds=0;*sampleRate=0;*legacyLength=0;
++  if (size>=12 && !memcmp(data,"RIFF",4) && !memcmp(data+8,"WAVE",4))
++  {
++    const uint32_t riffSize=AudioU32(data+4);
++    if (riffSize<4 || riffSize>size-8) return 0;
++    const size_t end=static_cast<size_t>(riffSize)+8;
++    uint32_t rate=0,byteRate=0,factSamples=0;uint16_t encoding=0;uint64_t dataBytes=0;
++    for (size_t pos=12;pos<=end && end-pos>=8;)
++    {
++      const uint32_t length=AudioU32(data+pos+4);const size_t body=pos+8;
++      if (length>end-body) return 0;
++      if (!memcmp(data+pos,"fmt ",4))
++      {
++        if(length<16)return 0;
++        encoding=AudioU16(data+body);rate=AudioU32(data+body+4);byteRate=AudioU32(data+body+8);
++        if(!AudioU16(data+body+2) || !AudioU16(data+body+12))return 0;
++      }
++      else if(!memcmp(data+pos,"data",4))dataBytes+=length;
++      else if(!memcmp(data+pos,"fact",4) && length>=4)factSamples=AudioU32(data+body);
++      pos=body+length+(length&1u);
++    }
++    if(factSamples)return AudioDuration(factSamples,rate,rate,milliseconds,sampleRate,legacyLength);
++    if(encoding!=1 && encoding!=3 && encoding!=0xfffe)return 0;
++    return AudioDuration(dataBytes,byteRate,rate,milliseconds,sampleRate,legacyLength);
++  }
++  if(size>=27 && !memcmp(data,"OggS",4))
++  {
++    uint32_t rate=0,serial=0;uint64_t samples=0;bool ended=false;
++    for(size_t pos=0;pos<size;)
++    {
++      if(size-pos<27 || memcmp(data+pos,"OggS",4) || data[pos+4]!=0)return 0;
++      const size_t segments=data[pos+26],header=27+segments;
++      if(header>size-pos)return 0;
++      size_t bodySize=0;for(size_t i=0;i<segments;++i)bodySize+=data[pos+27+i];
++      if(bodySize>size-pos-header)return 0;
++      const unsigned char *body=data+pos+header;
++      const uint32_t pageSerial=AudioU32(data+pos+14);
++      if(!rate && bodySize>=16 && body[0]==1 && !memcmp(body+1,"vorbis",6))
++      {rate=AudioU32(body+12);serial=pageSerial;}
++      if(rate && pageSerial==serial)
++      {
++        const uint64_t granule=AudioU64(data+pos+6);
++        if(granule!=UINT64_MAX && granule>samples)samples=granule;
++        if(data[pos+5]&4)ended=true;
++      }
++      pos+=header+bodySize;
++    }
++    // Shipped sound effects are single Vorbis streams. Require a complete stream
++    // so a truncated effect cannot silently receive a guessed playback length.
++    return ended && AudioDuration(samples,rate,rate,milliseconds,sampleRate,legacyLength);
++  }
++  return 0;
++}
+--- /dev/null
++++ b/engine/src/C4BrowserSave.cpp
+@@ -0,0 +1,129 @@
++// Browser save-button boundary: original QuickSave and original .c4s groups.
++// No serializer, simulation changes, script evaluation, or overwrite slots here.
++#include <C4Include.h>
++#include <C4Game.h>
++#include <C4Config.h>
++#include <C4Player.h>
++#include <C4Group.h>
++#include <C4Components.h>
++#include <emscripten/emscripten.h>
++#include <sys/stat.h>
++#include <cerrno>
++#include <ctime>
++#include <climits>
++#include <cstdio>
++
++namespace {
++StdStrBuf SaveStatusJson, SavePath, SaveError;
++const char *SaveState = "idle";
++int SaveRequest = 0, SaveFrame = 0;
++unsigned SaveSequence = 0;
++bool SaveBusy = false, SaveWasPaused = false;
++long long SaveBytes = 0;
++
++void SaveJsonString(StdStrBuf &out, const char *value)
++{
++  out.AppendChar('"');
++  if(value)for(const unsigned char *p=reinterpret_cast<const unsigned char *>(value);*p;++p)
++  {
++    if(*p=='"' || *p=='\\'){out.AppendChar('\\');out.AppendChar(*p);}
++    else if(*p<32 || *p>=127)out.AppendFormat("\\u%04x",static_cast<unsigned>(*p));
++    else out.AppendChar(*p);
++  }
++  out.AppendChar('"');
++}
++
++bool CanBrowserSave()
++{
++  // Frame > 0 and an initialized player exclude the early IsRunning startup
++  // interval. The browser port currently provides a local single-player game.
++  return Game.IsRunning && Game.FrameCounter>0 && Game.Players.First &&
++         !Game.Network.isEnabled() && !Game.Control.isReplay() && Game.CanQuickSave();
++}
++
++void SaveFailed(const char *message)
++{
++  SaveError.Copy(message);SaveState="error";SaveBusy=false;
++}
++
++void SaveAtBrowserBoundary(void *)
++{
++  if(!SaveBusy)return;
++  if(!CanBrowserSave()){SaveFailed("The original game is not available for saving.");return;}
++  SaveState="saving";SaveFrame=Game.FrameCounter;SaveWasPaused=Game.IsPaused();
++  // The callback runs after the initiating JS/WASM call has returned. Browser
++  // engine execution is single-threaded; no gameplay tick can interleave with
++  // this synchronous original save. Preserve even a pre-existing multiple halt.
++  struct PreservePause {
++    bool pausedHere;
++    PreservePause():pausedHere(!Game.IsPaused()){if(pausedHere)Game.Pause();}
++    ~PreservePause(){if(pausedHere && Game.IsRunning && Game.HaltCount==1)Game.Unpause();}
++  } preservePause;
++
++  const char *folder=Config.General.SaveGameFolder.getData();
++  if(!folder || !*folder){SaveFailed("The original save folder is unavailable.");return;}
++  StdStrBuf absoluteFolder;
++  if(folder[0]=='/')absoluteFolder.Copy(folder);
++  else absoluteFolder.Format("%s%s",Config.General.ExePath,folder);
++
++  const time_t now=time(NULL);struct tm utc;
++  if(!gmtime_r(&now,&utc)){SaveFailed("Could not create a save timestamp.");return;}
++  StdStrBuf filename;struct stat info;
++  bool unique=false;
++  for(unsigned attempt=0;attempt<10000;++attempt)
++  {
++    if(++SaveSequence==0)++SaveSequence;
++    filename.Format("Neoclonk-%04d%02d%02d-%02d%02d%02d-%u.c4s",
++      utc.tm_year+1900,utc.tm_mon+1,utc.tm_mday,utc.tm_hour,utc.tm_min,utc.tm_sec,SaveSequence);
++    SavePath.Format("%s/%s",absoluteFolder.getData(),filename.getData());
++    // lstat recognizes files, directories and symlinks. QuickSave's original
++    // save routine replaces its target, so it must only receive a new path.
++    if(lstat(SavePath.getData(),&info)==0)continue;
++    if(errno!=ENOENT){SaveFailed("Could not check the destination save path.");return;}
++    unique=true;break;
++  }
++  if(!unique){SaveFailed("Could not allocate a new save filename.");return;}
++
++  // Same entry point as C4MainMenu's Save:Game command. This invokes original
++  // C4GameSaveSavegame::OnSaving, including SynchronizeLocalFiles, and writes
++  // the original full scenario/runtime/player/material representation.
++  if(!Game.QuickSave(filename.getData(),Game.ScenarioTitle.getData()))
++  {SaveFailed("The original engine could not save this game.");return;}
++
++  // QuickSave logs completion after closing its original group. Verify the
++  // resulting group is readable before advertising success to the host.
++  C4Group saved;
++  if(!saved.Open(SavePath.getData()) || !saved.FindEntry(C4CFN_ScenarioCore) || !saved.FindEntry(C4CFN_Game))
++  {SaveFailed("The saved original game could not be verified.");return;}
++  saved.Close();
++  if(lstat(SavePath.getData(),&info)==0)SaveBytes=static_cast<long long>(info.st_size);
++  SaveState="saved";SaveBusy=false;
++}
++}
++
++extern "C" {
++// Positive request ID means accepted, not persisted. Poll status, then perform
++// FS.syncfs(false) in the host and report IndexedDB success separately.
++EMSCRIPTEN_KEEPALIVE int nc_browser_save()
++{
++  if(SaveBusy)return -2;
++  if(!CanBrowserSave())return -1;
++  SaveRequest=SaveRequest==INT_MAX?1:SaveRequest+1;
++  SaveState="pending";SavePath.Clear();SaveError.Clear();SaveBytes=0;
++  SaveFrame=Game.FrameCounter;SaveWasPaused=Game.IsPaused();SaveBusy=true;
++  emscripten_async_call(SaveAtBrowserBoundary,NULL,0);
++  return SaveRequest;
++}
++
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_save_status()
++{
++  SaveStatusJson.Format("{\"requestId\":%d,\"status\":",SaveRequest);SaveJsonString(SaveStatusJson,SaveState);
++  SaveStatusJson.Append(",\"path\":");SaveJsonString(SaveStatusJson,SavePath.getData());
++  // The original safe-format validator predates the ll length modifier.
++  char bytesText[32];snprintf(bytesText,sizeof(bytesText),"%lld",SaveBytes);
++  SaveStatusJson.AppendFormat(",\"frame\":%d,\"paused\":%s,\"bytes\":%s,\"error\":",
++    SaveFrame,SaveWasPaused?"true":"false",bytesText);
++  SaveJsonString(SaveStatusJson,SaveError.getData());SaveStatusJson.AppendChar('}');
++  return SaveStatusJson.getData();
++}
++}
+--- a/engine/src/C4Config.cpp
++++ b/engine/src/C4Config.cpp
+@@ -4,6 +4,13 @@
+ 
+ #include <C4Include.h>
+ #include <C4Config.h>
++#ifdef __EMSCRIPTEN__
++#include <unistd.h>
++// SDL 1.2 international key constants omitted by the browser SDL headers.
++#define SDLK_WORLD_2 162
++#define SDLK_WORLD_3 163
++#define SDLK_WORLD_4 164
++#endif
+ 
+ #ifndef BIG_C4INCLUDE
+ #include <C4Log.h>
+--- a/engine/src/C4Game.cpp
++++ b/engine/src/C4Game.cpp
+@@ -2757,7 +2757,7 @@
+ 			iX=Random(GBackWdt); iY=Random(GBackHgt);
+ 			if (!FindSurfaceLiquid(iX,iY,pDef->Shape.Wdt,pDef->Shape.Hgt))
+ 				if (!FindLiquid(iX,iY,pDef->Shape.Wdt,pDef->Shape.Hgt))
+-					return FALSE;
++					return NULL;
+ 			iY+=pDef->Shape.Hgt/2;
+ 			break;
+ 		// Floating in air
+@@ -3820,6 +3820,12 @@
+ 		InitFullscreenComponents(!!IsRunning);
+ 	// note that this may fail if the gfx groups are closed already (runtime resolution change)
+ 	// doesn't matter; old gfx are kept in this case
++#ifdef __EMSCRIPTEN__
++	// Browser resizing preserves the existing pixel-sized HUD/cursors. The
++	// original asset groups are closed during play, so reloading here would
++	// only emit missing-resource errors while retaining these same surfaces.
++	if (!IsRunning)
++#endif
+ 	GraphicsResource.ReloadResolutionDependantFiles();
+ 	}
+ 
+--- a/engine/src/C4GameMessage.cpp
++++ b/engine/src/C4GameMessage.cpp
+@@ -4,6 +4,10 @@
+ 
+ #include <C4Include.h>
+ #include <C4GameMessage.h>
++#ifdef __EMSCRIPTEN__
++#include <C4Viewport.h>
++#include <C4GraphicsSystem.h>
++#endif
+ 
+ #ifndef BIG_C4INCLUDE
+ #include <C4Object.h>
+@@ -180,6 +184,15 @@
+ 				}
+ 			else
+ 				{ iMsgX=X; iMsgY=Y; }
++#ifdef __EMSCRIPTEN__
++			// Text remains HUD-sized, but labels attached to world objects follow
++			// their zoomed position. Script-created screen/parallax GUI is unchanged.
++			C4Viewport *view=Game.GraphicsSystem.GetViewport(iPlayer);
++			if (view && (!Target || !(Target->Category&C4D_Parallax))) {
++				iMsgX=cgo.TargetX+int((iMsgX-cgo.TargetX)*view->BrowserZoom);
++				iMsgY=cgo.TargetY+int((iMsgY-cgo.TargetY)*view->BrowserZoom);
++			}
++#endif
+ 			// check output bounds
+ 			if (Inside(iMsgX-cgo.TargetX,0,cgo.Wdt-1))
+ 				if (Inside(iMsgY-cgo.TargetY,0,cgo.Hgt-1))
+@@ -374,4 +387,3 @@
+ 	for (cmsg=First; cmsg; cmsg=cmsg->Next)
+ 		cmsg->Draw(cgo,iPlayer);
+ 	}
+-
+--- a/engine/src/C4GraphicsSystem.cpp
++++ b/engine/src/C4GraphicsSystem.cpp
+@@ -448,6 +448,12 @@
+ 				}
+ 			int32_t coViewWdt=cViewWdt-cOffWdt; if (coViewWdt>GBackWdt+2*ViewportScrollBorder) { coViewWdt=GBackWdt+2*ViewportScrollBorder; }
+ 			int32_t coViewHgt=cViewHgt-cOffHgt; if (coViewHgt>GBackHgt+2*ViewportScrollBorder) { coViewHgt=GBackHgt+2*ViewportScrollBorder; }
++#ifdef __EMSCRIPTEN__
++			// Browser canvas follows its container; map dimensions must not add
++			// an aspect-ratio frame around the original viewport.
++			cOffX=ViewportArea.X; cOffY=ViewportArea.Y;
++			coViewWdt=cViewWdt-cOffWdt; coViewHgt=cViewHgt-cOffHgt;
++#endif
+ 			C4Rect rcOut(cOffX+cViewX*cViewWdt, cOffY+cViewH*cViewHgt, coViewWdt, coViewHgt);
+ 			cvp->SetOutputSize(rcOut.x,rcOut.y,rcOut.x,rcOut.y,rcOut.Wdt,rcOut.Hgt);
+ 			cvp=cvp->Next;
+--- a/engine/src/C4GroupSet.cpp
++++ b/engine/src/C4GroupSet.cpp
+@@ -320,14 +320,14 @@
+ 				if (!pGroup->OpenAsChild(pParentGroup, szParentfolder+iPos))
+ 					{
+ 					LogFatal(FormatString("%s: %s", LoadResStr("IDS_PRC_FILENOTFOUND"), szParentfolder+iPos).getData());
+-					delete pGroup; return FALSE;
++					delete pGroup; return NULL;
+ 					}
+ 				}
+ 			else
+ 				if (!pGroup->Open(szParentfolder+iPos))
+ 					{
+ 					LogFatal(FormatString("%s: %s", LoadResStr("IDS_PRC_FILENOTFOUND"), szParentfolder+iPos).getData());
+-					delete pGroup; return FALSE;
++					delete pGroup; return NULL;
+ 					}
+ 			// set this group as new parent
+ 			pParentGroup=pGroup;
+@@ -338,7 +338,7 @@
+ 			else
+ 				iContentsMask = C4GSCnt_Directory;
+ 			if (!RegisterGroup(*pParentGroup, true, C4GSPrio_Folder+iGroupIndex++, iContentsMask))
+-				{ delete pParentGroup; LogFatal ("RegGrp: internal error"); return FALSE; }
++				{ delete pParentGroup; LogFatal ("RegGrp: internal error"); return NULL; }
+ 			// advance by file name length
+ 			iPos+=SLen(szParentfolder+iPos);
+ 			}
+--- a/engine/src/C4Gui.cpp
++++ b/engine/src/C4Gui.cpp
+@@ -964,7 +964,7 @@
+ 				if (pDlg->IsFullscreenDialog())
+ 					if (fIncludeFading || !pDlg->IsFading())
+ 						return pDlg;
+-	return false;
++	return NULL;
+ 	}
+ 
+ void Screen::UpdateGamepadGUIControlEnabled()
+--- a/engine/src/C4GuiDialogs.cpp
++++ b/engine/src/C4GuiDialogs.cpp
+@@ -1108,7 +1108,7 @@
+ 	// create progress dlg
+ 	ProgressDialog *pDlg = new ProgressDialog(szMessage, szCaption, iMaxProgress, iInitialProgress, icoIcon);
+ 	// show it
+-	if (!pDlg->Show(this, true)) { delete pDlg; return false; }
++	if (!pDlg->Show(this, true)) { delete pDlg; return NULL; }
+ 	// do not return invalid pointer if GUI got deleted (whil eshowing the progress bar Dlg; maybe some stupid stuff in OnShow)
+ 	if (!IsGUIValid()) return NULL;
+ 	// return dlg pointer
+--- a/engine/src/C4KeyboardInput.cpp
++++ b/engine/src/C4KeyboardInput.cpp
+@@ -9,7 +9,7 @@
+ #include <C4Wrappers.h>
+ #endif
+ 
+-#ifndef _WIN32
++#if !defined(_WIN32) && !defined(__EMSCRIPTEN__)
+ #include <X11/Xlib.h>
+ #endif
+ 
+@@ -18,7 +18,9 @@
+ #include <string>
+ #include <vector>
+ 
++#ifndef __EMSCRIPTEN__
+ #include <SDL/SDL_keysym.h>
++#endif
+ 
+ namespace 
+ {
+@@ -552,7 +554,7 @@
+ 	{
+ 	// remove all instances from list
+ 	CBVec::iterator i;
+-	while ((i = std::find_if(vecCallbacks.begin(), vecCallbacks.end(), std::bind2nd(std::ptr_fun(&C4KeyboardCallbackInterfaceHasOriginalKey), pOfKey))) != vecCallbacks.end())
++	while ((i = std::find_if(vecCallbacks.begin(), vecCallbacks.end(), [pOfKey](C4KeyboardCallbackInterface *callback) { return C4KeyboardCallbackInterfaceHasOriginalKey(callback, pOfKey); })) != vecCallbacks.end())
+ 		{
+ 		C4KeyboardCallbackInterface *pItfc = *i;
+ 		vecCallbacks.erase(i);
+--- a/engine/src/C4MouseControl.cpp
++++ b/engine/src/C4MouseControl.cpp
+@@ -3,6 +3,9 @@
+ /* Mouse input */
+ 
+ #include <C4Include.h>
++#ifdef __EMSCRIPTEN__
++#include <StdGL.h>
++#endif
+ #include <C4MouseControl.h>
+ 
+ #ifndef BIG_C4INCLUDE
+@@ -204,6 +207,9 @@
+ 	// get view position
+ 	C4Rect rcViewport = Viewport->GetOutputRect();
+ 	fctViewport.Set(NULL, rcViewport.x, rcViewport.y, rcViewport.Wdt, rcViewport.Hgt);
++#ifdef __EMSCRIPTEN__
++	fctViewport.Wdt=Viewport->BrowserWorldWidth(); fctViewport.Hgt=Viewport->BrowserWorldHeight();
++#endif
+ 	ViewX=Viewport->ViewX; ViewY=Viewport->ViewY; 
+ 	// First time viewport attachment: center mouse
+ #ifdef _WIN32
+@@ -243,7 +249,10 @@
+ 		{
+ 		if (iButton != C4MC_Button_Wheel)	
+ 			{
+-			VpX=iX; VpY=iY; X=ViewX+VpX; Y=ViewY+VpY;	
++			VpX=iX; VpY=iY; X=ViewX+VpX; Y=ViewY+VpY;
++#ifdef __EMSCRIPTEN__
++			X=ViewX+int(VpX/Viewport->BrowserZoom); Y=ViewY+int(VpY/Viewport->BrowserZoom);
++#endif
+ 			}
+ 		UpdateTargetRegion();
+ 		UpdateScrolling();
+@@ -256,7 +265,10 @@
+ 	if (iButton != C4MC_Button_Wheel)	
+ 		{
+ 		// Position
+-		VpX=iX; VpY=iY; X=ViewX+VpX; Y=ViewY+VpY;	
++		VpX=iX; VpY=iY; X=ViewX+VpX; Y=ViewY+VpY;
++#ifdef __EMSCRIPTEN__
++		X=ViewX+int(VpX/Viewport->BrowserZoom); Y=ViewY+int(VpY/Viewport->BrowserZoom);
++#endif
+ 		// Control state
+ 		ControlDown=false; if (dwKeyFlags & MK_CONTROL) ControlDown=true;
+ 		ShiftDown=false; if (dwKeyFlags & MK_SHIFT) ShiftDown=true;
+@@ -318,13 +330,28 @@
+ 
+ void C4MouseControl::Draw(C4FacetEx &cgo)
+ 	{
++	float positionScale=1.0f;
++#ifdef __EMSCRIPTEN__
++	if (Viewport) positionScale=Viewport->BrowserZoom;
++#endif
+ 	int32_t iOffsetX,iOffsetY;
+ 
+ 	// Hidden
+ 	if (!Visible || !fMouseOwned) return;
+ 
+ 	// Draw selection
++#ifdef __EMSCRIPTEN__
++	if (!IsPassive() && Viewport) {
++		C4FacetEx world=cgo; world.Wdt=Viewport->BrowserWorldWidth(); world.Hgt=Viewport->BrowserWorldHeight();
++		pGL->SetBrowserWorldZoom(positionScale,cgo.X,cgo.Y);
++		lpDDraw->SetPrimaryClipper(cgo.X,cgo.Y,cgo.X+world.Wdt-1,cgo.Y+world.Hgt-1);
++		Selection.DrawSelectMark(world);
++		pGL->SetBrowserWorldZoom(1.0f,0,0);
++		lpDDraw->SetPrimaryClipper(cgo.X,cgo.Y,cgo.X+cgo.Wdt-1,cgo.Y+cgo.Hgt-1);
++	}
++#else
+ 	if (!IsPassive()) Selection.DrawSelectMark(cgo);
++#endif
+ 
+ 	// Draw control
+ 	switch (Drag)
+@@ -388,8 +415,8 @@
+ 			// Point
+ 			if ((ShowPointX!=-1) && (ShowPointY!=-1))
+ 				GfxR->fctMouseCursor.Draw( cgo.Surface,
+-																	 cgo.X+ShowPointX-cgo.TargetX-GfxR->fctMouseCursor.Wdt/2,
+-																	 cgo.Y+ShowPointY-cgo.TargetY-GfxR->fctMouseCursor.Hgt/2,
++																	 cgo.X+int((ShowPointX-cgo.TargetX)*positionScale)-GfxR->fctMouseCursor.Wdt/2,
++																	 cgo.Y+int((ShowPointY-cgo.TargetY)*positionScale)-GfxR->fctMouseCursor.Hgt/2,
+ 																	 C4MC_Cursor_Point );
+ 			// Add mark
+ 			if (fAddMark)
+@@ -404,8 +431,8 @@
+ 			Application.DDraw->DrawFrame( cgo.Surface, 
+ 															cgo.X+VpX,
+ 															cgo.Y+VpY,
+-															DownX+cgo.X-cgo.TargetX,
+-															DownY+cgo.Y-cgo.TargetY,
++															cgo.X+int((DownX-cgo.TargetX)*positionScale),
++															cgo.Y+int((DownY-cgo.TargetY)*positionScale),
+ 															CRed );
+ 			break;
+ 		//------------------------------------------------------------------------------------------
+@@ -1245,7 +1272,11 @@
+ 	// Target object: context menu
+ 	if (TargetObject)
+ 		{
++#ifdef __EMSCRIPTEN__
++		SendCommand(C4CMD_Context,VpX,VpY,NULL,TargetObject,0,C4P_Command_Add);
++#else
+ 		SendCommand(C4CMD_Context,X-Viewport->ViewX,Y-Viewport->ViewY,NULL,TargetObject,0,C4P_Command_Add);
++#endif
+ 		return;
+ 		}
+ 
+--- a/engine/src/C4MusicFile.cpp
++++ b/engine/src/C4MusicFile.cpp
+@@ -372,8 +372,16 @@
+ 			LogF("Error reading %s", FileName);
+ 			return FALSE;
+ 			}
++#ifdef __EMSCRIPTEN__
++		// Browser decoding clones the buffer immediately; its Mix_FreeMusic does
++		// not own/free RWops. Release this temporary source after the load call.
++		SDL_RWops *browserSource = SDL_RWFromConstMem(Data, filesize);
++		Music = Mix_LoadMUS_RW(browserSource);
++		if (browserSource) SDL_FreeRW(browserSource);
++#else
+ 		// Mix_FreeMusic frees the RWop
+ 		Music = Mix_LoadMUS_RW(SDL_RWFromConstMem(Data, filesize));
++#endif
+ 		if (!Music)
+ 			{
+ 			LogF("SDL_mixer: %s", SDL_GetError());
+--- a/engine/src/C4MusicSystem.cpp
++++ b/engine/src/C4MusicSystem.cpp
+@@ -3,6 +3,9 @@
+ /* Handles Music.c4g and randomly plays songs */
+ 
+ #include <C4Include.h>
++#ifdef __EMSCRIPTEN__
++extern "C" void C4BrowserAudioOpened(int);
++#endif
+ #include <C4MusicSystem.h>
+ 
+ #ifndef BIG_C4INCLUDE
+@@ -86,7 +89,11 @@
+ 	const SDL_version * link_version;
+ 	MIX_VERSION(&compile_version);
+ 	link_version=Mix_Linked_Version();
++#ifdef __EMSCRIPTEN__
++	LogF("SDL_mixer Web Audio compatibility version is %d.%d.%d (compiled with %d.%d.%d)",
++#else
+ 	LogF("SDL_mixer runtime version is %d.%d.%d (compiled with %d.%d.%d)",
++#endif
+ 		link_version->major, link_version->minor, link_version->patch,
+ 		compile_version.major, compile_version.minor, compile_version.patch);
+ 	if (!SDL_WasInit(SDL_INIT_AUDIO) && SDL_Init(SDL_INIT_AUDIO | SDL_INIT_JOYSTICK | SDL_INIT_NOPARACHUTE))
+@@ -101,6 +108,9 @@
+ 		return false;
+ 		}
+ 	MODInitialized = true;
++#ifdef __EMSCRIPTEN__
++	C4BrowserAudioOpened(1);
++#endif
+ 	return true;
+ #endif 
+ 	return false;
+@@ -116,6 +126,9 @@
+ 	FSOUND_Close();
+ #endif
+ #ifdef HAVE_LIBSDL_MIXER
++#ifdef __EMSCRIPTEN__
++	C4BrowserAudioOpened(0);
++#endif
+ 	Mix_CloseAudio();
+ 	SDL_Quit();
+ #endif
+--- a/engine/src/C4ObjectInfoList.cpp
++++ b/engine/src/C4ObjectInfoList.cpp
+@@ -143,7 +143,7 @@
+ 	C4Def *pDef = NULL;
+ 	if (pDefs) 
+ 		if (!(pDef = pDefs->ID2Def(n_id)))
+-			{ delete pInfo; return FALSE; }
++			{ delete pInfo; return NULL; }
+ 	// Override name source by definition
+ 	if (pDef->pClonkNames) 
+ 		cpNames = pDef->pClonkNames->GetData();
+--- a/engine/src/C4Player.cpp
++++ b/engine/src/C4Player.cpp
+@@ -823,38 +823,38 @@
+ 	// Base owner eliminated
+ 	if (Eliminated)
+ 		{
+-		if (!fShowErrors) return FALSE;
++		if (!fShowErrors) return NULL;
+ 		StartSoundEffect("Error",false,100,pBuyObj);
+-		GameMsgPlayer(FormatString(LoadResStr("IDS_PLR_ELIMINATED"),GetName()).getData(),Number); return FALSE;
++		GameMsgPlayer(FormatString(LoadResStr("IDS_PLR_ELIMINATED"),GetName()).getData(),Number); return NULL;
+ 		}
+ 	// Get def (base owner's homebase material)
+ 	iAvailable = HomeBaseMaterial.GetIDCount(id);
+-	if (!(pDef=C4Id2Def(id))) return FALSE;
++	if (!(pDef=C4Id2Def(id))) return NULL;
+ 	// Object not available
+-	if (iAvailable<=0) return FALSE;
++	if (iAvailable<=0) return NULL;
+ 	// get value
+ 	int32_t iValue = pDef->GetValue(pBuyObj, Number);
+ 	// Not enough wealth (base owner's wealth)
+ 	if (iValue>Wealth) 
+ 		{
+-		if (!fShowErrors) return FALSE;
++		if (!fShowErrors) return NULL;
+ 		GameMsgPlayer(LoadResStr("IDS_PLR_NOWEALTH"),Number);
+-		StartSoundEffect("Error",false,100,pBuyObj); return FALSE;
++		StartSoundEffect("Error",false,100,pBuyObj); return NULL;
+ 		}
+ 	// Decrease homebase material count
+-	if (!HomeBaseMaterial.DecreaseIDCount(id,FALSE)) return FALSE;
++	if (!HomeBaseMaterial.DecreaseIDCount(id,FALSE)) return NULL;
+ 	if (Game.Rules & C4RULE_TeamHombase) SyncHomebaseMaterialToTeam();
+ 	// Reduce wealth
+ 	DoWealth(-iValue);
+ 	// Create object (for player)
+-	if (!(pThing=Game.CreateObject(id,pBuyObj,iForPlr))) return FALSE;
++	if (!(pThing=Game.CreateObject(id,pBuyObj,iForPlr))) return NULL;
+ 	// Make crew member
+ 	if (pDef->CrewMember) if (ValidPlr(iForPlr))
+ 		Game.Players.Get(iForPlr)->MakeCrewMember(pThing);
+ 	// success
+ 	C4AulParSet parset (C4VInt(Number), C4VObj(pBuyObj));
+ 	pThing->Call(PSF_Purchase, &parset);
+-	if (!pThing->Status) return FALSE;
++	if (!pThing->Status) return NULL;
+ 	return pThing;
+ 	}
+ 
+--- a/engine/src/C4Script.cpp
++++ b/engine/src/C4Script.cpp
+@@ -952,7 +952,7 @@
+ 
+ static C4String *FnGetAction(C4AulContext *cthr, C4Object *pObj)
+   {
+-	if (!pObj) pObj=cthr->Obj; if (!pObj) return FALSE;
++	if (!pObj) pObj=cthr->Obj; if (!pObj) return NULL;
+   if (pObj->Action.Act<=ActIdle) return String("Idle");
+   return String(pObj->Def->ActMap[pObj->Action.Act].Name);
+   }
+@@ -2884,13 +2884,13 @@
+ 
+ static C4Object *FnGetHiRank(C4AulContext *cthr, long iPlr)
+   {
+-  if (!ValidPlr(iPlr)) return FALSE;
++  if (!ValidPlr(iPlr)) return NULL;
+   return Game.Players.Get(iPlr)->GetHiRankActiveCrew(false);
+   }
+ 
+ static C4Object *FnGetCrew(C4AulContext *cthr, long iPlr, long index)
+   {
+-  if (!ValidPlr(iPlr)) return FALSE;
++  if (!ValidPlr(iPlr)) return NULL;
+   return Game.Players.Get(iPlr)->Crew.GetObject(index);
+   }
+ 
+@@ -3038,7 +3038,7 @@
+ 
+ static C4Object *FnGetCaptain(C4AulContext *cthr, long iPlr)
+   {
+-  if (!ValidPlr(iPlr)) return FALSE;
++  if (!ValidPlr(iPlr)) return NULL;
+   return Game.Players.Get(iPlr)->Captain;
+   }
+ 
+--- a/engine/src/C4SoundSystem.cpp
++++ b/engine/src/C4SoundSystem.cpp
+@@ -4,6 +4,9 @@
+ 
+ #include <C4Include.h>
+ #include <C4SoundSystem.h>
++#ifdef __EMSCRIPTEN__
++extern "C" int C4BrowserSoundInfo(const unsigned char *, size_t, int *, int *, int *);
++#endif
+ 
+ #ifndef BIG_C4INCLUDE
+ #include <C4Random.h>
+@@ -82,11 +85,26 @@
+ 	// Be paranoid about SDL_Mixer initialisation
+ 	if(!Application.MusicSystem.MODInitialized)
+ 		{ Clear(); return FALSE; }
++#ifdef __EMSCRIPTEN__
++	// The emulated Mix_Chunk is an opaque JS handle. Read length from the original
++	// WAV/Vorbis bytes instead of dereferencing it while Web Audio decodes.
++	int actualDuration;
++	if (!C4BrowserSoundInfo(pData, iDataLen, &actualDuration, &SampleRate, &Length))
++		{ Clear(); return FALSE; }
++	// Emscripten's loader clones bytes synchronously but ignores freesrc.
++	SDL_RWops *browserSource = SDL_RWFromConstMem(pData, iDataLen);
++	pSample = Mix_LoadWAV_RW(browserSource, 0);
++	if (browserSource) SDL_FreeRW(browserSource);
++	if (!pSample) { Clear(); return FALSE; }
++#else
+ 	if (!(pSample = Mix_LoadWAV_RW(SDL_RWFromConstMem(pData, iDataLen), 1)))
+ 		{ Clear(); return FALSE; }
++#endif
++#ifndef __EMSCRIPTEN__
+ 	//FIXME: Is this actually correct?
+ 	Length = 1000 * pSample->alen / (44100 * 2);
+ 	SampleRate = 0;
++#endif
+ #endif
+ 	*Name = '\0';
+ 	// Set usage time
+@@ -513,10 +531,10 @@
+ C4SoundInstance *C4SoundSystem::NewEffect(const char *szSndName, bool fLoop, int32_t iVolume, C4Object *pObj, int32_t iCustomFalloffDistance)
+ 	{
+ 	// Sound not active
+-  if (!Config.Sound.RXSound) return FALSE;
++  if (!Config.Sound.RXSound) return NULL;
+ 	// Get sound
+   C4SoundEffect *csfx;
+-  if (!(csfx=GetEffect(szSndName))) return FALSE;
++  if (!(csfx=GetEffect(szSndName))) return NULL;
+ 	// Play
+   return csfx->New(fLoop, iVolume, pObj, iCustomFalloffDistance);
+ 	}
+--- a/engine/src/C4StartupMainDlg.cpp
++++ b/engine/src/C4StartupMainDlg.cpp
+@@ -81,7 +81,7 @@
+ 		new C4GUI::DlgKeyCB<C4StartupMainDlg>(*this, &C4StartupMainDlg::KeyEnterDown, &C4StartupMainDlg::KeyEnterUp), C4CustomKey::PRIO_CtrlOverride);
+ 	keys.clear(); keys.push_back(C4KeyCodeEx(K_F6));
+ 	pKeyEditor = new C4KeyBinding(keys, "StartupMainEditor", KEYSCOPE_Gui,
+-		new C4GUI::DlgKeyCB<C4StartupMainDlg>(*this, &C4StartupMainDlg::SwitchToEditor, false), C4CustomKey::PRIO_CtrlOverride);
++		new C4GUI::DlgKeyCB<C4StartupMainDlg>(*this, &C4StartupMainDlg::SwitchToEditor, NULL), C4CustomKey::PRIO_CtrlOverride);
+ 	}
+ 
+ C4StartupMainDlg::~C4StartupMainDlg()
+--- a/engine/src/C4Teams.cpp
++++ b/engine/src/C4Teams.cpp
+@@ -386,7 +386,7 @@
+ C4Team *C4TeamList::GetGenerateTeamByID(int32_t iID)
+ 	{
+ 	// only if enabled
+-	if (!IsMultiTeams()) return false;
++	if (!IsMultiTeams()) return NULL;
+ 	// new team?
+ 	if (iID == TEAMID_New) iID = GetLargestTeamID()+1;
+ 	// find in list
+--- a/engine/src/C4UpperBoard.cpp
++++ b/engine/src/C4UpperBoard.cpp
+@@ -39,6 +39,19 @@
+ 	if(!cgo.Surface) return;
+ 	// Background
+ 	Application.DDraw->BlitSurfaceTile(Game.GraphicsResource.fctUpperBoard.Surface,Output.Surface,0,0,Output.Wdt,Output.Hgt);
++#ifdef __EMSCRIPTEN__
++	// Keep the original board and logo. The browser places Save/zoom controls
++	// in the left/right lower rows; title and clock occupy the top row.
++	C4Facet logo;
++	float scale=Min((cgo.Wdt<600 ? 112.0f : 200.0f)/Game.GraphicsResource.fctLogo.Wdt,
++		56.0f/Game.GraphicsResource.fctLogo.Hgt);
++	logo.Set(cgo.Surface,int(cgo.Wdt/2-Game.GraphicsResource.fctLogo.Wdt*scale/2),4,
++		int(Game.GraphicsResource.fctLogo.Wdt*scale),int(Game.GraphicsResource.fctLogo.Hgt*scale));
++	Game.GraphicsResource.fctLogo.Draw(logo);
++	Application.DDraw->TextOut(Game.ScenarioTitle.getData(),Game.GraphicsResource.FontRegular,0.8f,cgo.Surface,8,1,0xFFFFFFFF);
++	Application.DDraw->TextOut(cTimeString,Game.GraphicsResource.FontRegular,0.8f,cgo.Surface,cgo.Wdt-8,1,0xFFFFFFFF,ARight);
++	return;
++#endif
+   // Logo
+ 	C4Facet cgo2;
+ 	float fLogoZoom = 0.75f;
+--- a/engine/src/C4Viewport.cpp
++++ b/engine/src/C4Viewport.cpp
+@@ -1009,6 +1009,16 @@
+ 	return;
+ #endif
+ 
++#ifdef __EMSCRIPTEN__
++	C4FacetEx browserOverlay = cgo;
++	const int browserPixelWdt=ViewWdt, browserPixelHgt=ViewHgt;
++	if (fDrawOverlay) {
++		ViewWdt=BrowserWorldWidth(); ViewHgt=BrowserWorldHeight();
++		cgo.Wdt=ViewWdt; cgo.Hgt=ViewHgt;
++		pGL->SetBrowserWorldZoom(BrowserZoom, DrawX, DrawY);
++	}
++#endif
++
+ 	// landscape mod by FoW
+ 	C4Player *pPlr=Game.Players.Get(Player);
+ 	if (pPlr && pPlr->fFogOfWar)
+@@ -1073,12 +1083,21 @@
+ 	lpDDraw->SetClrModMapEnabled(false);
+ 
+ 	// now restore complete cgo range for overlay drawing
++#ifdef __EMSCRIPTEN__
++	if (fDrawOverlay) {
++		ViewWdt=browserPixelWdt; ViewHgt=browserPixelHgt;
++		cgo=browserOverlay;
++		pGL->SetBrowserWorldZoom(1.0f, 0, 0);
++		Application.DDraw->SetPrimaryClipper(DrawX,DrawY,DrawX+ViewWdt-1,DrawY+ViewHgt-1);
++	}
++#else
+ 	if (fDrawOverlay)
+ 		{
+ 		cgo.X -= BorderLeft; cgo.Y -= BorderTop; cgo.Wdt += BorderLeft+BorderRight; cgo.Hgt += BorderTop+BorderBottom;
+ 		cgo.TargetX -= BorderLeft; cgo.TargetY -= BorderTop;
+ 		Application.DDraw->SetPrimaryClipper(DrawX,DrawY,DrawX+ViewWdt-1,DrawY+ViewHgt-1);
+ 		}
++#endif
+ 
+ 	// draw custom GUI objects
+ 	Game.ForeObjects.DrawIfCategory(cgo, Player, C4D_Parallax, false);
+@@ -1150,6 +1169,32 @@
+ 
+ void C4Viewport::AdjustPosition()
+ 	{
++#ifdef __EMSCRIPTEN__
++	if (PlayerLock && ValidPlr(Player)) {
++		C4Player *player=Game.Players.Get(Player);
++		int safeW=ViewWdt, safeH=ViewHgt;
++		if (BrowserOcclusion.Wdt>0 && BrowserOcclusion.Hgt>0) {
++			int left=BoundBy(BrowserOcclusion.x-DrawX-16, 1, ViewWdt);
++			int top=BoundBy(BrowserOcclusion.y-DrawY-16, 1, ViewHgt);
++			if (left*ViewHgt >= top*ViewWdt) safeW=left; else safeH=top;
++		}
++		const int w=BrowserWorldWidth(), h=BrowserWorldHeight();
++		const int mx=int((ViewWdt-safeW)/BrowserZoom);
++		const int my=int((ViewHgt-safeH)/BrowserZoom);
++		int tx=player->ViewX-int(safeW/(2*BrowserZoom));
++		int ty=player->ViewY-int(safeH/(2*BrowserZoom));
++		// Lower-right controls only need extra camera space at the right/bottom
++		// map edges. Negative origins would add avoidable left/top border bands.
++		tx=BoundBy(tx, 0, Max(0,GBackWdt-w+mx));
++		ty=BoundBy(ty, 0, Max(0,GBackHgt-h+my));
++		const int smooth=BoundBy<int32_t>(Config.General.ScrollSmooth,1,50);
++		if (dViewX==-31337 || dViewY==-31337) { dViewX=itofix(tx); dViewY=itofix(ty); }
++		else { dViewX+=(itofix(tx)-dViewX)/smooth; dViewY+=(itofix(ty)-dViewY)/smooth; }
++		ViewX=fixtoi(dViewX)+ViewOffsX; ViewY=fixtoi(dViewY)+ViewOffsY;
++		UpdateViewPosition();
++		return;
++	}
++#endif
+ 	int32_t ViewportScrollBorder = fIsNoOwnerViewport ? 0 : C4ViewportScrollBorder;
+ 	// View position
+ 	if (PlayerLock && ValidPlr(Player))
+@@ -1228,6 +1273,13 @@
+ 
+ void C4Viewport::UpdateViewPosition()
+ 	{
++#ifdef __EMSCRIPTEN__
++	// Borders are world-space; HUD/output sizes remain physical screen pixels.
++	BorderLeft=Max(-ViewX,0); BorderTop=Max(-ViewY,0);
++	BorderRight=Max(BrowserWorldWidth()-GBackWdt+ViewX,0);
++	BorderBottom=Max(BrowserWorldHeight()-GBackHgt+ViewY,0);
++	return;
++#endif
+ 	int32_t ViewportScrollBorder = Application.isFullScreen ? C4ViewportScrollBorder : 0;
+ 	// no-owner viewports should not scroll outside viewing area
+ 	if(fIsNoOwnerViewport)
+@@ -1258,8 +1310,24 @@
+ 	BorderBottom = Max<int32_t>(ViewHgt - GBackHgt + ViewY, 0);
+ 	}
+ 
++#ifdef __EMSCRIPTEN__
++void C4Viewport::SetBrowserView(float zoom, const C4Rect &occlusion)
++{
++	float minimum=Max(0.5f,Max(float(ViewWdt)/Max(1,GBackWdt),float(ViewHgt)/Max(1,GBackHgt)));
++	BrowserZoom=BoundBy(zoom,minimum,8.0f); BrowserOcclusion=occlusion;
++	// A layout/zoom change centers immediately; subsequent tracking is smooth.
++	dViewX=dViewY=-31337;
++	ResetMenuPositions=TRUE;
++	AdjustPosition();
++}
++#endif
++
+ void C4Viewport::Default()
+ 	{
++#ifdef __EMSCRIPTEN__
++	BrowserZoom=1.0f;
++	BrowserOcclusion=C4Rect(0,0,0,0);
++#endif
+ 	pCtx=NULL;
+ 	//hWnd=NULL;
+ 	pWindow=NULL;
+--- a/engine/src/C4WinMain.cpp
++++ b/engine/src/C4WinMain.cpp
+@@ -130,11 +130,13 @@
+ 
+ int main (int argc, char * argv[])
+ 	{
++#ifndef __EMSCRIPTEN__
+ 	if (!geteuid())
+ 		{
+ 		printf("Do not run %s as root!\n", argc ? argv[0] : "this program");
+ 		return C4XRV_Failure;
+ 		}
++#endif
+ #ifdef HAVE_EXECINFO_H
+ 	// Set up debugging facilities
+ 	signal(SIGBUS, crash_handler);
+@@ -162,7 +164,9 @@
+ 	Application.Run();
+ 	// free app stuff
+ 	Application.Clear();
++#ifndef __EMSCRIPTEN__
+ 	if (Application.restartAtEnd) restart(argv);
++#endif
+ 	// Return exit code
+ 	if (!Game.GameOver) return C4XRV_Aborted;
+ 	return C4XRV_Completed;
+--- a/engine/src/C4Wrappers.cpp
++++ b/engine/src/C4Wrappers.cpp
+@@ -37,7 +37,7 @@
+ C4SoundInstance *StartSoundEffect(const char *szSndName, bool fLoop, int32_t iVolume, C4Object *pObj, int32_t iCustomFalloffDistance)
+   {
+   // Sound check
+-  if (!Config.Sound.RXSound) return FALSE;
++  if (!Config.Sound.RXSound) return NULL;
+   // Start new
+   return Application.SoundSystem.NewEffect(szSndName, fLoop, iVolume, pObj, iCustomFalloffDistance);    
+   }
+@@ -45,7 +45,7 @@
+ C4SoundInstance *StartSoundEffectAt(const char *szSndName, int32_t iX, int32_t iY, bool fLoop, int32_t iVolume)
+   {
+   // Sound check
+-  if (!Config.Sound.RXSound) return FALSE;
++  if (!Config.Sound.RXSound) return NULL;
+   // Create
+   C4SoundInstance *pInst = StartSoundEffect(szSndName, fLoop, iVolume);
+   // Set volume by position
+--- a/standard/inc/StdAdaptors.h
++++ b/standard/inc/StdAdaptors.h
+@@ -51,6 +51,9 @@
+ };
+ template <class T, class D>
+   inline StdDefaultAdapt<T, D> mkDefaultAdapt(T &rValue, const D &rDefault) { return StdDefaultAdapt<T, D>(rValue, rDefault); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T, class D>
++  inline StdDefaultAdapt<T, D> mkDefaultAdapt(T &&rValue, const D &rDefault) { return StdDefaultAdapt<T, D>(rValue, rDefault); }
+ 
+ // * Naming Adaptor 
+ // Embeds a value into a named section, failsafe
+@@ -80,6 +83,9 @@
+ };
+ template <class T>
+   inline StdNamingAdapt<T> mkNamingAdapt(T &rValue, const char *szName) { return StdNamingAdapt<T>(rValue, szName); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T>
++  inline StdNamingAdapt<T> mkNamingAdapt(T &&rValue, const char *szName) { return StdNamingAdapt<T>(rValue, szName); }
+ 
+ // * Naming Adaptor (defaulting)
+ // Embeds a value into a named section, sets default on fail
+@@ -118,6 +124,9 @@
+ };
+ template <class T, class D>
+   inline StdNamingDefaultAdapt<T,D> mkNamingAdapt(T &rValue, const char *szName, const D &rDefault, bool fPrefillDefault=false, bool fStoreDefault=false) { return StdNamingDefaultAdapt<T,D>(rValue, szName, rDefault, fPrefillDefault, fStoreDefault); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T, class D>
++  inline StdNamingDefaultAdapt<T,D> mkNamingAdapt(T &&rValue, const char *szName, const D &rDefault, bool fPrefillDefault=false, bool fStoreDefault=false) { return StdNamingDefaultAdapt<T,D>(rValue, szName, rDefault, fPrefillDefault, fStoreDefault); }
+ 
+ // * Decompiling Adaptor
+ // Allows to use const objects if the compiler won't change the targets
+@@ -135,6 +144,9 @@
+ };
+ template <class T>
+   inline StdDecompileAdapt<T> mkDecompileAdapt(const T &rValue) { return StdDecompileAdapt<T>(rValue); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T>
++  inline StdDecompileAdapt<T> mkDecompileAdapt(const T &&rValue) { return StdDecompileAdapt<T>(rValue); }
+ 
+ // * Runtime value Adaptor
+ // Allows the C4ValueSetCompiler to set the value
+@@ -155,6 +167,9 @@
+ };
+ template <class T>
+   inline StdRuntimeValueAdapt<T> mkRuntimeValueAdapt(T &rValue) { return StdRuntimeValueAdapt<T>(rValue); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T>
++  inline StdRuntimeValueAdapt<T> mkRuntimeValueAdapt(T &&rValue) { return StdRuntimeValueAdapt<T>(rValue); }
+ 
+ // * String adaptor
+ struct StdStringAdapt
+@@ -215,6 +230,8 @@
+ 
+ };
+ template <class T> inline StdIntAdapt<T> mkIntAdapt(T &rValue) { return StdIntAdapt<T>(rValue); }
++// Modern spelling of the original temporary-adaptor binding.
++template <class T> inline StdIntAdapt<T> mkIntAdapt(T &&rValue) { return StdIntAdapt<T>(rValue); }
+ template <class int_t, class T> StdIntAdapt<T, int_t> mkIntAdaptT(T &rValue) { return StdIntAdapt<T, int_t>(rValue); }
+ 
+ // * Casting Adaptor
+@@ -373,6 +390,7 @@
+ };
+ template <class T, class I>
+   inline StdInsertAdapt<T, I> mkInsertAdapt(T &rObj, I &rIns, bool fBefore = true) { return StdInsertAdapt<T,I>(rObj, rIns, fBefore); }
++  template<class T, class I> inline StdInsertAdapt<T, I> mkInsertAdapt(T &&rObj, I &rIns, bool fBefore = true) { return StdInsertAdapt<T,I>(rObj, rIns, fBefore); }
+ 
+ // * Parameter Adaptor
+ // Specify a second parameter for the CompileFunc
+--- a/standard/inc/StdBuf.h
++++ b/standard/inc/StdBuf.h
+@@ -38,6 +38,9 @@
+     else
+       Ref(Buf2);
+   }
++
++  // Preserve the original ownership-transfer constructor for modern temporaries.
++  StdBuf(StdBuf &&Buf2, bool fCopy = false) : StdBuf(Buf2, fCopy) { }
+ 
+   // Set by constant data. Copies data if desired.
+   StdBuf(const void *pData, size_t iSize, bool fCopy = false) 
+@@ -284,6 +287,7 @@
+   bool operator != (const StdBuf &Buf2) const { return ! operator == (Buf2); }
+ 
+   // Set (as constructor: take if possible)
++  StdBuf &operator = (StdBuf &&Buf2) { return operator=(Buf2); }
+   StdBuf &operator = (StdBuf &Buf2)
+   { 
+     if(Buf2.isRef()) Ref(Buf2); else Take(Buf2); 
+@@ -351,6 +355,8 @@
+ class StdStrBuf : protected StdBuf
+ {
+ public:
++
++  StdStrBuf(StdStrBuf &&Buf2, bool fCopy = false) : StdStrBuf(Buf2, fCopy) { }
+ 
+   // *** Construction
+ 
+@@ -402,6 +408,7 @@
+   void Ref(const StdStrBuf &Buf2) { StdBuf::Ref(Buf2.getData(), Buf2.getSize()); }
+ 	StdStrBuf getRef() const { return StdStrBuf(getData(), getLength()); }
+   void Take(StdStrBuf &Buf2) { StdBuf::Take(Buf2); }
++  void Take(StdStrBuf &&Buf2) { Take(Buf2); }
+ 
+   void Clear() { StdBuf::Clear(); }
+   void Copy() { StdBuf::Copy(); }
+@@ -616,11 +623,11 @@
+   { }
+ 
+   explicit StdCopyStrBuf(const StdStrBuf &Buf2, bool fCopy = true)
+-    : StdStrBuf(static_cast<StdStrBuf &>(Buf2.getRef()), fCopy)
++    : StdStrBuf(Buf2.getRef(), fCopy)
+   { }
+ 
+   StdCopyStrBuf(const StdCopyStrBuf &Buf2, bool fCopy = true)
+-    : StdStrBuf(static_cast<StdStrBuf &>(Buf2.getRef()), fCopy)
++    : StdStrBuf(Buf2.getRef(), fCopy)
+   { }
+ 
+   // Set by constant data. Copies data if desired.
+--- a/standard/inc/StdCompiler.h
++++ b/standard/inc/StdCompiler.h
+@@ -163,6 +163,7 @@
+ 		assert(isCompiler());
+ 		DoCompilation(rStruct);
+     }
++  template <class T> inline void Compile(T &&rStruct) { Compile(rStruct); }
+   template <class T> inline void Decompile(const T &rStruct)
+     {
+ 		assert(!isCompiler());
+@@ -433,6 +434,7 @@
+   // Input 
+   typedef StdBuf InT;
+   void setInput(InT &In) { Buf = In; }
++  void setInput(InT &&In) { setInput(In); }
+ 
+ 	// Properties
+   virtual bool isCompiler()                     { return true; }
+@@ -569,6 +571,7 @@
+   // Input 
+   typedef StdStrBuf InT;
+   void setInput(InT &In) { Buf = In; }
++  void setInput(InT &&In) { setInput(In); }
+ 
+   // Properties
+   virtual bool isCompiler() { return true; }
+--- /dev/null
++++ b/standard/inc/StdEmscriptenGL.h
+@@ -0,0 +1,24 @@
++// Browser platform adapter for Rage's desktop pixel layouts. Gameplay and
++// authoritative surfaces retain their original BGRA / inverse-alpha encoding.
++#ifndef INC_StdEmscriptenGL
++#define INC_StdEmscriptenGL
++#ifdef __EMSCRIPTEN__
++#ifndef GL_GLEXT_PROTOTYPES
++#define GL_GLEXT_PROTOTYPES 1
++#endif
++#include <GL/gl.h>
++#include <GL/glext.h>
++void C4WebTexImage2D(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid *);
++void C4WebTexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const GLvoid *);
++void C4WebCopyTexImage2D(GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLsizei, GLint);
++void C4WebGetTexImage(GLenum, GLint, GLenum, GLenum, GLvoid *);
++void C4WebReadPixels(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLvoid *);
++#ifndef STD_EMSCRIPTEN_GL_IMPLEMENTATION
++#define glTexImage2D C4WebTexImage2D
++#define glTexSubImage2D C4WebTexSubImage2D
++#define glCopyTexImage2D C4WebCopyTexImage2D
++#define glGetTexImage C4WebGetTexImage
++#define glReadPixels C4WebReadPixels
++#endif
++#endif
++#endif
+--- a/standard/inc/StdGL.h
++++ b/standard/inc/StdGL.h
+@@ -5,7 +5,16 @@
+ #if !defined(INC_StdGL) && defined(USE_GL)
+ #define INC_StdGL
+ 
++#ifdef __EMSCRIPTEN__
++#ifndef GL_GLEXT_PROTOTYPES
++#define GL_GLEXT_PROTOTYPES 1
++#endif
++#include <GL/gl.h>
++#include <GL/glext.h>
++#include <StdEmscriptenGL.h>
++#else
+ #include "../gl/glew.h"
++#endif
+ 
+ #ifdef USE_X11
+ //  Xmd.h typedefs BOOL to CARD8, but we want int
+@@ -68,6 +77,14 @@
+ 	public:
+ 		CStdGL();
+ 		~CStdGL();
++#ifdef __EMSCRIPTEN__
++		float BrowserWorldZoom = 1.0f;
++		int BrowserZoomX = 0, BrowserZoomY = 0;
++		void SetBrowserWorldZoom(float zoom, int x, int y) {
++			BrowserWorldZoom=zoom; BrowserZoomX=x; BrowserZoomY=y; UpdateClipper();
++			glPointSize(zoom);
++		}
++#endif
+ 		virtual bool PageFlip(RECT *pSrcRt=NULL, RECT *pDstRt=NULL, CStdWindow * pWindow = NULL);
+ 	protected:
+ 
+--- a/standard/inc/StdSurface2.h
++++ b/standard/inc/StdSurface2.h
+@@ -12,7 +12,11 @@
+ #endif
+ 
+ #ifdef USE_GL
++#ifdef __EMSCRIPTEN__
++#include <StdEmscriptenGL.h>
++#else
+ #include "../gl/glew.h"
++#endif
+ #endif
+ 
+ #include <list>
+--- a/standard/inc/StdWindow.h
++++ b/standard/inc/StdWindow.h
+@@ -12,7 +12,7 @@
+ const int SEC1_TIMER=1,SEC1_MSEC=1000;
+ #endif
+ 
+-#ifdef HAVE_PTHREAD
++#if defined(HAVE_PTHREAD) || defined(__EMSCRIPTEN__)
+ #include <pthread.h>
+ #endif
+ 
+--- /dev/null
++++ b/standard/src/StdEmscriptenGL.cpp
+@@ -0,0 +1,83 @@
++// Minimal pixel-transfer adapter for the original Clonk Rage OpenGL backend.
++// The SDL/Emscripten compatibility layer translates the original draw calls;
++// this file handles the desktop BGRA formats absent from WebGL.
++#ifdef __EMSCRIPTEN__
++#define STD_EMSCRIPTEN_GL_IMPLEMENTATION
++#include <StdEmscriptenGL.h>
++#include <vector>
++#include <map>
++#include <stdint.h>
++#include <cstring>
++#include <cstdio>
++
++namespace {
++struct TextureSize { GLsizei width, height; TextureSize():width(0),height(0){} TextureSize(GLsizei w,GLsizei h):width(w),height(h){} };
++std::map<GLuint, TextureSize> dimensions;
++GLuint BoundTexture() { GLint name=0; glGetIntegerv(GL_TEXTURE_BINDING_2D,&name); return name; }
++bool NeedsConversion(GLenum format, GLenum type) { return format==GL_BGRA || format==GL_BGR || type==GL_UNSIGNED_SHORT_4_4_4_4_REV || type==GL_UNSIGNED_INT_8_8_8_8_REV; }
++std::vector<unsigned char> ToRGBA(const void *data,size_t count,GLenum format,GLenum type) {
++  std::vector<unsigned char> result(count*4,0);
++  if(!data)return result;
++  const unsigned char *bytes=static_cast<const unsigned char*>(data);
++  for(size_t i=0;i<count;++i) {
++    if(type==GL_UNSIGNED_SHORT_4_4_4_4_REV) {
++      uint16_t value;std::memcpy(&value,bytes+i*2,2);
++      result[i*4]=(value>>8&15)*17;result[i*4+1]=(value>>4&15)*17;
++      result[i*4+2]=(value&15)*17;result[i*4+3]=(value>>12&15)*17;
++    } else {
++      const size_t stride=format==GL_BGR?3:4;
++      result[i*4]=bytes[i*stride+2];result[i*4+1]=bytes[i*stride+1];
++      result[i*4+2]=bytes[i*stride];result[i*4+3]=stride==4?bytes[i*stride+3]:255;
++    }
++  }
++  return result;
++}
++void FromRGBA(const std::vector<unsigned char>& rgba,void *data,GLenum format,GLenum type) {
++  unsigned char *bytes=static_cast<unsigned char*>(data);
++  const size_t count=rgba.size()/4;
++  for(size_t i=0;i<count;++i) {
++    if(type==GL_UNSIGNED_SHORT_4_4_4_4_REV) {
++      uint16_t value=(rgba[i*4+3]>>4)<<12|(rgba[i*4]>>4)<<8|(rgba[i*4+1]>>4)<<4|(rgba[i*4+2]>>4);
++      std::memcpy(bytes+i*2,&value,2);
++    } else {
++      const size_t stride=format==GL_BGR||format==GL_RGB?3:4;
++      const bool reverse=format==GL_BGR||format==GL_BGRA;
++      bytes[i*stride]=rgba[i*4+(reverse?2:0)];bytes[i*stride+1]=rgba[i*4+1];
++      bytes[i*stride+2]=rgba[i*4+(reverse?0:2)];if(stride==4)bytes[i*stride+3]=rgba[i*4+3];
++    }
++  }
++}
++}
++void C4WebTexImage2D(GLenum target,GLint level,GLint internal,GLsizei width,GLsizei height,GLint border,GLenum format,GLenum type,const GLvoid *pixels) {
++  if(!level)dimensions[BoundTexture()]=TextureSize(width,height);
++  if(NeedsConversion(format,type)) {
++    std::vector<unsigned char> rgba=ToRGBA(pixels,size_t(width)*height,format,type);
++    glTexImage2D(target,level,GL_RGBA,width,height,border,GL_RGBA,GL_UNSIGNED_BYTE,pixels?&rgba[0]:0);
++  } else glTexImage2D(target,level,internal==4?GL_RGBA:internal==3?GL_RGB:internal,width,height,border,format,type,pixels);
++}
++void C4WebTexSubImage2D(GLenum target,GLint level,GLint x,GLint y,GLsizei width,GLsizei height,GLenum format,GLenum type,const GLvoid *pixels) {
++  if(NeedsConversion(format,type)) {
++    std::vector<unsigned char> rgba=ToRGBA(pixels,size_t(width)*height,format,type);
++    glTexSubImage2D(target,level,x,y,width,height,GL_RGBA,GL_UNSIGNED_BYTE,&rgba[0]);
++  } else glTexSubImage2D(target,level,x,y,width,height,format,type,pixels);
++}
++void C4WebCopyTexImage2D(GLenum target,GLint level,GLenum internal,GLint x,GLint y,GLsizei width,GLsizei height,GLint border) {
++  if(!level)dimensions[BoundTexture()]=TextureSize(width,height);
++  glCopyTexImage2D(target,level,internal==GL_RGBA8?GL_RGBA:internal,x,y,width,height,border);
++}
++void C4WebReadPixels(GLint x,GLint y,GLsizei width,GLsizei height,GLenum format,GLenum type,GLvoid *pixels) {
++  if(width<=0||height<=0||!pixels)return;
++  std::vector<unsigned char> rgba(size_t(width)*height*4);
++  glReadPixels(x,y,width,height,GL_RGBA,GL_UNSIGNED_BYTE,&rgba[0]);
++  FromRGBA(rgba,pixels,format,type);
++}
++void C4WebGetTexImage(GLenum target,GLint level,GLenum format,GLenum type,GLvoid *pixels) {
++  const GLuint texture=BoundTexture();const TextureSize size=dimensions[texture];
++  if(size.width<=0||size.height<=0){std::fprintf(stderr,"Unknown Rage texture size: %u\n",texture);return;}
++  GLint previous=0;glGetIntegerv(GL_FRAMEBUFFER_BINDING,&previous);
++  GLuint framebuffer=0;glGenFramebuffers(1,&framebuffer);glBindFramebuffer(GL_FRAMEBUFFER,framebuffer);
++  glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0,target,texture,level);
++  C4WebReadPixels(0,0,size.width,size.height,format,type,pixels);
++  glBindFramebuffer(GL_FRAMEBUFFER,previous);glDeleteFramebuffers(1,&framebuffer);
++}
++#endif
+--- a/standard/src/StdFile.cpp
++++ b/standard/src/StdFile.cpp
+@@ -831,7 +831,7 @@
+ 	if (d) closedir(d);
+ }
+ #endif
+-const char * DirectoryIterator::operator*() const { return filename[0] ? filename : false; }
++const char * DirectoryIterator::operator*() const { return filename[0] ? filename : NULL; }
+ void DirectoryIterator::operator++(int) { operator++(); }
+ 
+ int ForEachFile(const char *szDirName, bool (*fnCallback)(const char *)) {
+--- a/standard/src/StdGL.cpp
++++ b/standard/src/StdGL.cpp
+@@ -83,7 +83,16 @@
+ 		}
+ 	ClipAll=false;
+ 	// set it
++#ifdef __EMSCRIPTEN__
++	// Scale only the world projection. UI drawing resets this to 1 before its
++	// original screen-space layout and hit regions are rendered.
++	int px=BrowserZoomX+int((iX-BrowserZoomX)*BrowserWorldZoom);
++	int py=BrowserZoomY+int((iY-BrowserZoomY)*BrowserWorldZoom);
++	int pw=int(iWdt*BrowserWorldZoom+0.5f), ph=int(iHgt*BrowserWorldZoom+0.5f);
++	glViewport(px, RenderTarget->Hgt-py-ph, pw, ph);
++#else
+ 	glViewport(iX, RenderTarget->Hgt-iY-iHgt, iWdt, iHgt);
++#endif
+ 	glMatrixMode(GL_PROJECTION);
+ 	glLoadIdentity();
+ 	gluOrtho2D((GLdouble) iX, (GLdouble) (iX+iWdt), (GLdouble) (iY+iHgt), (GLdouble) iY);
+@@ -155,6 +164,7 @@
+ 		}
+ 	// reset MOD2 for completely black modulations
+ 	if (fMod2 && !fAnyModNotBlack) fMod2 = 0;
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glEnable(GL_FRAGMENT_SHADER_ATI);
+@@ -190,7 +200,9 @@
+ 			}
+ 		}
+ 	// modulated blit
+-	else if (fModClr)
++	else
++#endif
++	if (fModClr)
+ 		{
+ 		if (fMod2 || ((dwModClr>>24 || dwModMask) && !DDrawCfg.NoAlphaAdd))
+ 			{
+@@ -250,7 +262,13 @@
+ 	}
+ 	
+ 	// draw polygon
++	// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
+ 	glBegin(GL_POLYGON);
++#endif
+ 	for (i=0; i<rBltData.byNumVertices; ++i)
+ 		{
+ 		if (fModClr) glColorDw(rBltData.vtVtx[i].dwModClr | dwModMask);
+@@ -259,6 +277,7 @@
+ 		}
+ 	glEnd();
+ 	glLoadIdentity();
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDisable(GL_FRAGMENT_SHADER_ATI);
+@@ -267,6 +286,7 @@
+ 		{
+ 		glDisable(GL_FRAGMENT_PROGRAM_ARB);
+ 		}
++#endif
+ 	if (!fExact && !DDrawCfg.PointFiltering)
+ 		{
+ 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+@@ -277,6 +297,11 @@
+ void CStdGL::BlitLandscape(SURFACE sfcSource, SURFACE sfcSource2, SURFACE sfcLiquidAnimation, int fx, int fy, 
+ 								SURFACE sfcTarget, int tx, int ty, int wdt, int hgt)
+ 	{
++#ifdef __EMSCRIPTEN__
++	// The second surface is exclusively the desktop fragment-program liquid
++	// mask. Rage's fixed-function path renders the authoritative base surface.
++	sfcSource2 = NULL;
++#endif
+ 	// safety
+ 	if (!sfcSource || !sfcTarget || !wdt || !hgt) return;
+ 	assert(sfcTarget->IsRenderTarget());
+@@ -347,6 +372,7 @@
+ 		glActiveTexture(GL_TEXTURE0);
+ 		}
+ 	DWORD dwModMask = 0;
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glEnable(GL_FRAGMENT_SHADER_ATI);
+@@ -407,6 +433,7 @@
+ 		}
+ 	// texture environment
+ 	else
++#endif
+ 		{
+ 		if (DDrawCfg.NoAlphaAdd)
+ 			{
+@@ -456,7 +483,13 @@
+ 				}
+ 
+ 			// draw polygon
+-			glBegin(GL_POLYGON);
++			// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
++	glBegin(GL_POLYGON);
++#endif
+ 			// get current blitting offset in texture (beforing any last-tex-size-changes)
+ 			int iBlitX=iTexSize*iX;
+ 			int iBlitY=iTexSize*iY;
+@@ -511,14 +544,17 @@
+ 				glColorDw(fdwModClr[i] | dwModMask);
+ 				//glMultiTexCoord2f(GL_TEXTURE0_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
+ 				glTexCoord2f((tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
++#ifndef __EMSCRIPTEN__
+ 				if (sfcSource2) 
+ 					glMultiTexCoord2f(GL_TEXTURE1_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
++#endif
+ 				glVertex2f(ftx[i] + DDrawCfg.fBlitOff, fty[i] + DDrawCfg.fBlitOff);
+ 				}
+ 
+ 			glEnd();
+ 			}
+ 		}
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDisable(GL_FRAGMENT_SHADER_ATI);
+@@ -527,6 +563,7 @@
+ 		{
+ 		glDisable(GL_FRAGMENT_PROGRAM_ARB);
+ 		}
++#endif
+ 	if (sfcSource2)
+ 		{
+ 		glActiveTexture(GL_TEXTURE1);
+@@ -653,7 +690,13 @@
+ 	int iAdditive = dwBlitMode & C4GFXBLIT_ADDITIVE;
+ 	glBlendFunc(GL_ONE_MINUS_SRC_ALPHA, iAdditive ? GL_ONE : GL_SRC_ALPHA);
+ 	// draw two triangles
++	// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
+ 	glBegin(GL_POLYGON);
++#endif
+ 	glColorDw(dwClr1); glVertex2f(ipVtx[0]+DDrawCfg.fBlitOff, ipVtx[1]+DDrawCfg.fBlitOff);
+ 	glColorDw(dwClr2); glVertex2f(ipVtx[2]+DDrawCfg.fBlitOff, ipVtx[3]+DDrawCfg.fBlitOff);
+ 	glColorDw(dwClr3); glVertex2f(ipVtx[4]+DDrawCfg.fBlitOff, ipVtx[5]+DDrawCfg.fBlitOff);
+@@ -722,6 +765,12 @@
+ 			ModulateClr(dwClr, pClrModMap->GetModAt((int)x2, (int)y2));
+ 			glColorDw(InvertRGBAAlpha(dwClr));
+ 			}
++#ifdef __EMSCRIPTEN__
++		else
++			// Emscripten interleaves immediate-mode attributes and requires one
++			// color entry per vertex, unlike native GL's persistent current color.
++			glColorDw(InvertRGBAAlpha(dwClr));
++#endif
+ 		glVertex2f(x2 + 0.5f, y2 + 0.5f);
+ 		glEnd();
+ 		}
+@@ -763,6 +812,7 @@
+ 	return fSuccess && RestoreDeviceObjects();
+ 	}
+ 
++#ifndef __EMSCRIPTEN__
+ static void DefineShaderARB(const char * p, GLuint & s)
+ 	{
+ 	glBindProgramARB (GL_FRAGMENT_PROGRAM_ARB, s);
+@@ -775,8 +825,13 @@
+ 		}
+ 	}
+ 
++#endif
+ bool CStdGL::RestoreDeviceObjects()
+ 	{
++#ifdef __EMSCRIPTEN__
++	// Do not allocate shader-only liquid masks on the fixed-function backend.
++	DDrawCfg.Shader = false;
++#endif
+ 	// safety
+ 	if (!lpPrimary) return false;
+ 	// delete any previous objects
+@@ -797,6 +852,7 @@
+ 	// reset blit states
+ 	dwBlitMode = 0;
+ 
++#ifndef __EMSCRIPTEN__
+ 	if(!DDrawCfg.Shader)
+ 		{
+ 		}
+@@ -1011,6 +1067,7 @@
+ 		"MOV result.color, tmp;\n"
+ 		"END\n", shaders[4]);
+ 		}
++#endif
+ 	// done
+ 	return Active;
+ 	}
+@@ -1027,11 +1084,13 @@
+ 	// invalidate font objects
+ 	// invalidate primary surfaces
+ 	if (lpPrimary) lpPrimary->Clear();
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDeleteFragmentShaderATI(shader);
+ 		shader = 0;
+ 		}
++#endif
+ 	return fSuccess;
+ }
+ 
+--- a/standard/src/StdGLCtx.cpp
++++ b/standard/src/StdGLCtx.cpp
+@@ -352,12 +352,14 @@
+ 	// No luck at all?
+ 	if (!Select(true)) return pGL->Error("  gl: Unable to select context");
+ 	// init extensions
++#ifndef __EMSCRIPTEN__
+ 	GLenum err = glewInit();
+ 	if (GLEW_OK != err)
+ 		{
+ 		// Problem: glewInit failed, something is seriously wrong.
+ 		pGL->Error(reinterpret_cast<const char*>(glewGetErrorString(err)));
+ 		}
++#endif
+ 	return true;
+ }
+ 
+@@ -425,12 +427,20 @@
+ 
+ bool CStdGL::ApplyGammaRamp(CGammaControl& ramp, bool fForce) {
+ 	assert(ramp.size == 256);
++#ifdef __EMSCRIPTEN__
++	return true; // Browser display gamma belongs to the page/compositor.
++#else
+ 	return SDL_SetGammaRamp(ramp.red, ramp.green, ramp.blue) != -1;
++#endif
+ }
+ 
+ bool CStdGL::SaveDefaultGammaRamp(CStdWindow * pWindow) {
+ 	assert(DefRamp.size == 256);
++#ifdef __EMSCRIPTEN__
++	DefRamp.Default(); return true;
++#else
+ 	return SDL_GetGammaRamp(DefRamp.red, DefRamp.green, DefRamp.blue) != -1;
++#endif
+ }
+ 
+ #endif //USE_X11/USE_SDL_MAINLOOP
+--- a/standard/src/StdSDLApp.cpp
++++ b/standard/src/StdSDLApp.cpp
+@@ -15,6 +15,10 @@
+ #include <sys/time.h>
+ #include <time.h>
+ #include <errno.h>
++#include <unistd.h>
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++#endif
+ 
+ /* CStdApp */
+ 
+@@ -145,6 +149,15 @@
+ 		HandleSDLEvent(event);
+ 	}
+ 
++#ifdef __EMSCRIPTEN__
++	// Asyncify preserves Rage's nested modal/startup loops while allowing browser
++	// animation, audio and input to run. Never block JavaScript with select().
++	emscripten_sleep((tv.tv_usec + 999) / 1000);
++	while (SDL_PollEvent(&event)) HandleSDLEvent(event);
++	if (fQuitMsgReceived) return HR_Failure;
++	if (do_execute) { Execute(); return HR_Timer; }
++	return HR_Timeout;
++#else
+ 	// Watch dpy to see when it has input.
+ 	int max_fd = 0;
+ 	fd_set rfds;
+@@ -177,6 +190,7 @@
+ 		}
+ 		return HR_Message;
+ 	}
++#endif
+ }
+ 
+ void CStdApp::HandleSDLEvent(SDL_Event& event) {
+@@ -203,6 +217,14 @@
+     if (iMonitor != 0)
+         return false;
+     
++#ifdef __EMSCRIPTEN__
++    // Browser canvases support these logical sizes; SDL_ListModes may return
++    // the SDL "all modes" sentinel, which native Rage intentionally rejects.
++    static const int sizes[][2] = {{800,600},{1024,768},{1280,720},{1280,960},{1920,1080}};
++    if (iIndex < 0 || iIndex >= 5) return false;
++    *piXRes=sizes[iIndex][0]; *piYRes=sizes[iIndex][1]; *piBitDepth=32;
++    return true;
++#else
+     static SDL_Rect** modes = 0;
+     static unsigned modeCount = 0;
+     if (!modes) {
+@@ -226,6 +248,7 @@
+     *piYRes = modes[iIndex]->h;
+     *piBitDepth = SDL_GetVideoInfo()->vfmt->BitsPerPixel;
+     return true;
++#endif
+ }
+ 
+ bool CStdApp::FindDisplayMode(unsigned int iXRes, unsigned int iYRes,
+--- a/standard/src/StdSDLWindow.cpp
++++ b/standard/src/StdSDLWindow.cpp
+@@ -12,7 +12,7 @@
+ /* CStdWindow */
+ 
+ CStdWindow::CStdWindow ():
+-	Active(false)
++	Active(false), width(800), height(600), BPP(32), fFullscreen(false)
+ {
+ }
+ 
+@@ -50,11 +50,17 @@
+ 
+ bool CStdWindow::SetFullScreen(bool fFullscreen, int BPP) {
+ 	this->BPP = BPP; this->fFullscreen=fFullscreen;
++	return true;
+ }
+ 
+ void CStdWindow::SetSize(unsigned int X, unsigned int Y) {
+ 	width = X, height = Y;
++#ifdef __EMSCRIPTEN__
++	// DOM fullscreen requires a user gesture and is managed by the web shell.
++	SDL_SetVideoMode(X, Y, BPP, SDL_OPENGL);
++#else
+ 	SDL_SetVideoMode(X, Y, BPP, SDL_OPENGL | (fFullscreen ? SDL_FULLSCREEN : 0));
++#endif
+ 	SDL_ShowCursor(SDL_DISABLE);
+ }
+ 

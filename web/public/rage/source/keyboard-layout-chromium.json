@@ -1,0 +1,48 @@
+{
+  "engine": "chromium",
+  "checks": [
+    {
+      "layout": "QWERTZ / Y",
+      "movements": [
+        {
+          "input": "touch",
+          "dx": -7,
+          "action": "Walk"
+        },
+        {
+          "input": "y",
+          "dx": -7,
+          "action": "Walk"
+        },
+        {
+          "input": "z",
+          "dx": -7,
+          "action": "Walk"
+        }
+      ],
+      "menu": true
+    },
+    {
+      "layout": "QWERTY / Z",
+      "movements": [
+        {
+          "input": "touch",
+          "dx": -7,
+          "action": "Walk"
+        },
+        {
+          "input": "y",
+          "dx": -7,
+          "action": "Walk"
+        },
+        {
+          "input": "z",
+          "dx": -7,
+          "action": "Walk"
+        }
+      ],
+      "menu": true
+    }
+  ],
+  "errors": []
+}

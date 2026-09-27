@@ -1,0 +1,509 @@
+--- a/standard/inc/StdGL.h
++++ b/standard/inc/StdGL.h
+@@ -5,7 +5,16 @@
+ #if !defined(INC_StdGL) && defined(USE_GL)
+ #define INC_StdGL
+ 
++#ifdef __EMSCRIPTEN__
++#ifndef GL_GLEXT_PROTOTYPES
++#define GL_GLEXT_PROTOTYPES 1
++#endif
++#include <GL/gl.h>
++#include <GL/glext.h>
++#include <StdEmscriptenGL.h>
++#else
+ #include "../gl/glew.h"
++#endif
+ 
+ #ifdef USE_X11
+ //  Xmd.h typedefs BOOL to CARD8, but we want int
+--- a/standard/inc/StdSurface2.h
++++ b/standard/inc/StdSurface2.h
+@@ -12,7 +12,11 @@
+ #endif
+ 
+ #ifdef USE_GL
++#ifdef __EMSCRIPTEN__
++#include <StdEmscriptenGL.h>
++#else
+ #include "../gl/glew.h"
++#endif
+ #endif
+ 
+ #include <list>
+--- a/standard/inc/StdWindow.h
++++ b/standard/inc/StdWindow.h
+@@ -12,7 +12,7 @@
+ const int SEC1_TIMER=1,SEC1_MSEC=1000;
+ #endif
+ 
+-#ifdef HAVE_PTHREAD
++#if defined(HAVE_PTHREAD) || defined(__EMSCRIPTEN__)
+ #include <pthread.h>
+ #endif
+ 
+--- /dev/null
++++ b/standard/inc/StdEmscriptenGL.h
+@@ -0,0 +1,24 @@
++// Browser platform adapter for Rage's desktop pixel layouts. Gameplay and
++// authoritative surfaces retain their original BGRA / inverse-alpha encoding.
++#ifndef INC_StdEmscriptenGL
++#define INC_StdEmscriptenGL
++#ifdef __EMSCRIPTEN__
++#ifndef GL_GLEXT_PROTOTYPES
++#define GL_GLEXT_PROTOTYPES 1
++#endif
++#include <GL/gl.h>
++#include <GL/glext.h>
++void C4WebTexImage2D(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid *);
++void C4WebTexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const GLvoid *);
++void C4WebCopyTexImage2D(GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLsizei, GLint);
++void C4WebGetTexImage(GLenum, GLint, GLenum, GLenum, GLvoid *);
++void C4WebReadPixels(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLvoid *);
++#ifndef STD_EMSCRIPTEN_GL_IMPLEMENTATION
++#define glTexImage2D C4WebTexImage2D
++#define glTexSubImage2D C4WebTexSubImage2D
++#define glCopyTexImage2D C4WebCopyTexImage2D
++#define glGetTexImage C4WebGetTexImage
++#define glReadPixels C4WebReadPixels
++#endif
++#endif
++#endif
+--- a/standard/src/StdSDLApp.cpp
++++ b/standard/src/StdSDLApp.cpp
+@@ -15,6 +15,10 @@
+ #include <sys/time.h>
+ #include <time.h>
+ #include <errno.h>
++#include <unistd.h>
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++#endif
+ 
+ /* CStdApp */
+ 
+@@ -145,6 +149,15 @@
+ 		HandleSDLEvent(event);
+ 	}
+ 
++#ifdef __EMSCRIPTEN__
++	// Asyncify preserves Rage's nested modal/startup loops while allowing browser
++	// animation, audio and input to run. Never block JavaScript with select().
++	emscripten_sleep((tv.tv_usec + 999) / 1000);
++	while (SDL_PollEvent(&event)) HandleSDLEvent(event);
++	if (fQuitMsgReceived) return HR_Failure;
++	if (do_execute) { Execute(); return HR_Timer; }
++	return HR_Timeout;
++#else
+ 	// Watch dpy to see when it has input.
+ 	int max_fd = 0;
+ 	fd_set rfds;
+@@ -177,6 +190,7 @@
+ 		}
+ 		return HR_Message;
+ 	}
++#endif
+ }
+ 
+ void CStdApp::HandleSDLEvent(SDL_Event& event) {
+@@ -203,6 +217,14 @@
+     if (iMonitor != 0)
+         return false;
+     
++#ifdef __EMSCRIPTEN__
++    // Browser canvases support these logical sizes; SDL_ListModes may return
++    // the SDL "all modes" sentinel, which native Rage intentionally rejects.
++    static const int sizes[][2] = {{800,600},{1024,768},{1280,720},{1280,960},{1920,1080}};
++    if (iIndex < 0 || iIndex >= 5) return false;
++    *piXRes=sizes[iIndex][0]; *piYRes=sizes[iIndex][1]; *piBitDepth=32;
++    return true;
++#else
+     static SDL_Rect** modes = 0;
+     static unsigned modeCount = 0;
+     if (!modes) {
+@@ -226,6 +248,7 @@
+     *piYRes = modes[iIndex]->h;
+     *piBitDepth = SDL_GetVideoInfo()->vfmt->BitsPerPixel;
+     return true;
++#endif
+ }
+ 
+ bool CStdApp::FindDisplayMode(unsigned int iXRes, unsigned int iYRes,
+--- a/standard/src/StdSDLWindow.cpp
++++ b/standard/src/StdSDLWindow.cpp
+@@ -12,7 +12,7 @@
+ /* CStdWindow */
+ 
+ CStdWindow::CStdWindow ():
+-	Active(false)
++	Active(false), width(800), height(600), BPP(32), fFullscreen(false)
+ {
+ }
+ 
+@@ -50,11 +50,17 @@
+ 
+ bool CStdWindow::SetFullScreen(bool fFullscreen, int BPP) {
+ 	this->BPP = BPP; this->fFullscreen=fFullscreen;
++	return true;
+ }
+ 
+ void CStdWindow::SetSize(unsigned int X, unsigned int Y) {
+ 	width = X, height = Y;
++#ifdef __EMSCRIPTEN__
++	// DOM fullscreen requires a user gesture and is managed by the web shell.
++	SDL_SetVideoMode(X, Y, BPP, SDL_OPENGL);
++#else
+ 	SDL_SetVideoMode(X, Y, BPP, SDL_OPENGL | (fFullscreen ? SDL_FULLSCREEN : 0));
++#endif
+ 	SDL_ShowCursor(SDL_DISABLE);
+ }
+ 
+--- a/standard/src/StdGL.cpp
++++ b/standard/src/StdGL.cpp
+@@ -155,6 +155,7 @@
+ 		}
+ 	// reset MOD2 for completely black modulations
+ 	if (fMod2 && !fAnyModNotBlack) fMod2 = 0;
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glEnable(GL_FRAGMENT_SHADER_ATI);
+@@ -190,7 +191,9 @@
+ 			}
+ 		}
+ 	// modulated blit
+-	else if (fModClr)
++	else
++#endif
++	if (fModClr)
+ 		{
+ 		if (fMod2 || ((dwModClr>>24 || dwModMask) && !DDrawCfg.NoAlphaAdd))
+ 			{
+@@ -250,7 +253,13 @@
+ 	}
+ 	
+ 	// draw polygon
++	// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
+ 	glBegin(GL_POLYGON);
++#endif
+ 	for (i=0; i<rBltData.byNumVertices; ++i)
+ 		{
+ 		if (fModClr) glColorDw(rBltData.vtVtx[i].dwModClr | dwModMask);
+@@ -259,6 +268,7 @@
+ 		}
+ 	glEnd();
+ 	glLoadIdentity();
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDisable(GL_FRAGMENT_SHADER_ATI);
+@@ -267,6 +277,7 @@
+ 		{
+ 		glDisable(GL_FRAGMENT_PROGRAM_ARB);
+ 		}
++#endif
+ 	if (!fExact && !DDrawCfg.PointFiltering)
+ 		{
+ 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+@@ -277,6 +288,11 @@
+ void CStdGL::BlitLandscape(SURFACE sfcSource, SURFACE sfcSource2, SURFACE sfcLiquidAnimation, int fx, int fy, 
+ 								SURFACE sfcTarget, int tx, int ty, int wdt, int hgt)
+ 	{
++#ifdef __EMSCRIPTEN__
++	// The second surface is exclusively the desktop fragment-program liquid
++	// mask. Rage's fixed-function path renders the authoritative base surface.
++	sfcSource2 = NULL;
++#endif
+ 	// safety
+ 	if (!sfcSource || !sfcTarget || !wdt || !hgt) return;
+ 	assert(sfcTarget->IsRenderTarget());
+@@ -347,6 +363,7 @@
+ 		glActiveTexture(GL_TEXTURE0);
+ 		}
+ 	DWORD dwModMask = 0;
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glEnable(GL_FRAGMENT_SHADER_ATI);
+@@ -407,6 +424,7 @@
+ 		}
+ 	// texture environment
+ 	else
++#endif
+ 		{
+ 		if (DDrawCfg.NoAlphaAdd)
+ 			{
+@@ -456,7 +474,13 @@
+ 				}
+ 
+ 			// draw polygon
+-			glBegin(GL_POLYGON);
++			// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
++	glBegin(GL_POLYGON);
++#endif
+ 			// get current blitting offset in texture (beforing any last-tex-size-changes)
+ 			int iBlitX=iTexSize*iX;
+ 			int iBlitY=iTexSize*iY;
+@@ -511,14 +535,17 @@
+ 				glColorDw(fdwModClr[i] | dwModMask);
+ 				//glMultiTexCoord2f(GL_TEXTURE0_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
+ 				glTexCoord2f((tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
++#ifndef __EMSCRIPTEN__
+ 				if (sfcSource2) 
+ 					glMultiTexCoord2f(GL_TEXTURE1_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
++#endif
+ 				glVertex2f(ftx[i] + DDrawCfg.fBlitOff, fty[i] + DDrawCfg.fBlitOff);
+ 				}
+ 
+ 			glEnd();
+ 			}
+ 		}
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDisable(GL_FRAGMENT_SHADER_ATI);
+@@ -527,6 +554,7 @@
+ 		{
+ 		glDisable(GL_FRAGMENT_PROGRAM_ARB);
+ 		}
++#endif
+ 	if (sfcSource2)
+ 		{
+ 		glActiveTexture(GL_TEXTURE1);
+@@ -653,7 +681,13 @@
+ 	int iAdditive = dwBlitMode & C4GFXBLIT_ADDITIVE;
+ 	glBlendFunc(GL_ONE_MINUS_SRC_ALPHA, iAdditive ? GL_ONE : GL_SRC_ALPHA);
+ 	// draw two triangles
++	// Clipped Rage blit polygons are convex; a triangle fan preserves their
++	// vertex order and interpolation on WebGL's supported primitive set.
++#ifdef __EMSCRIPTEN__
++	glBegin(GL_TRIANGLE_FAN);
++#else
+ 	glBegin(GL_POLYGON);
++#endif
+ 	glColorDw(dwClr1); glVertex2f(ipVtx[0]+DDrawCfg.fBlitOff, ipVtx[1]+DDrawCfg.fBlitOff);
+ 	glColorDw(dwClr2); glVertex2f(ipVtx[2]+DDrawCfg.fBlitOff, ipVtx[3]+DDrawCfg.fBlitOff);
+ 	glColorDw(dwClr3); glVertex2f(ipVtx[4]+DDrawCfg.fBlitOff, ipVtx[5]+DDrawCfg.fBlitOff);
+@@ -722,6 +756,12 @@
+ 			ModulateClr(dwClr, pClrModMap->GetModAt((int)x2, (int)y2));
+ 			glColorDw(InvertRGBAAlpha(dwClr));
+ 			}
++#ifdef __EMSCRIPTEN__
++		else
++			// Emscripten interleaves immediate-mode attributes and requires one
++			// color entry per vertex, unlike native GL's persistent current color.
++			glColorDw(InvertRGBAAlpha(dwClr));
++#endif
+ 		glVertex2f(x2 + 0.5f, y2 + 0.5f);
+ 		glEnd();
+ 		}
+@@ -763,6 +803,7 @@
+ 	return fSuccess && RestoreDeviceObjects();
+ 	}
+ 
++#ifndef __EMSCRIPTEN__
+ static void DefineShaderARB(const char * p, GLuint & s)
+ 	{
+ 	glBindProgramARB (GL_FRAGMENT_PROGRAM_ARB, s);
+@@ -775,8 +816,13 @@
+ 		}
+ 	}
+ 
++#endif
+ bool CStdGL::RestoreDeviceObjects()
+ 	{
++#ifdef __EMSCRIPTEN__
++	// Do not allocate shader-only liquid masks on the fixed-function backend.
++	DDrawCfg.Shader = false;
++#endif
+ 	// safety
+ 	if (!lpPrimary) return false;
+ 	// delete any previous objects
+@@ -797,6 +843,7 @@
+ 	// reset blit states
+ 	dwBlitMode = 0;
+ 
++#ifndef __EMSCRIPTEN__
+ 	if(!DDrawCfg.Shader)
+ 		{
+ 		}
+@@ -1011,6 +1058,7 @@
+ 		"MOV result.color, tmp;\n"
+ 		"END\n", shaders[4]);
+ 		}
++#endif
+ 	// done
+ 	return Active;
+ 	}
+@@ -1027,11 +1075,13 @@
+ 	// invalidate font objects
+ 	// invalidate primary surfaces
+ 	if (lpPrimary) lpPrimary->Clear();
++#ifndef __EMSCRIPTEN__
+ 	if (shader)
+ 		{
+ 		glDeleteFragmentShaderATI(shader);
+ 		shader = 0;
+ 		}
++#endif
+ 	return fSuccess;
+ }
+ 
+--- a/standard/src/StdGLCtx.cpp
++++ b/standard/src/StdGLCtx.cpp
+@@ -352,12 +352,14 @@
+ 	// No luck at all?
+ 	if (!Select(true)) return pGL->Error("  gl: Unable to select context");
+ 	// init extensions
++#ifndef __EMSCRIPTEN__
+ 	GLenum err = glewInit();
+ 	if (GLEW_OK != err)
+ 		{
+ 		// Problem: glewInit failed, something is seriously wrong.
+ 		pGL->Error(reinterpret_cast<const char*>(glewGetErrorString(err)));
+ 		}
++#endif
+ 	return true;
+ }
+ 
+@@ -425,12 +427,20 @@
+ 
+ bool CStdGL::ApplyGammaRamp(CGammaControl& ramp, bool fForce) {
+ 	assert(ramp.size == 256);
++#ifdef __EMSCRIPTEN__
++	return true; // Browser display gamma belongs to the page/compositor.
++#else
+ 	return SDL_SetGammaRamp(ramp.red, ramp.green, ramp.blue) != -1;
++#endif
+ }
+ 
+ bool CStdGL::SaveDefaultGammaRamp(CStdWindow * pWindow) {
+ 	assert(DefRamp.size == 256);
++#ifdef __EMSCRIPTEN__
++	DefRamp.Default(); return true;
++#else
+ 	return SDL_GetGammaRamp(DefRamp.red, DefRamp.green, DefRamp.blue) != -1;
++#endif
+ }
+ 
+ #endif //USE_X11/USE_SDL_MAINLOOP
+--- /dev/null
++++ b/standard/src/StdEmscriptenGL.cpp
+@@ -0,0 +1,83 @@
++// Minimal pixel-transfer adapter for the original Clonk Rage OpenGL backend.
++// The SDL/Emscripten compatibility layer translates the original draw calls;
++// this file handles the desktop BGRA formats absent from WebGL.
++#ifdef __EMSCRIPTEN__
++#define STD_EMSCRIPTEN_GL_IMPLEMENTATION
++#include <StdEmscriptenGL.h>
++#include <vector>
++#include <map>
++#include <stdint.h>
++#include <cstring>
++#include <cstdio>
++
++namespace {
++struct TextureSize { GLsizei width, height; TextureSize():width(0),height(0){} TextureSize(GLsizei w,GLsizei h):width(w),height(h){} };
++std::map<GLuint, TextureSize> dimensions;
++GLuint BoundTexture() { GLint name=0; glGetIntegerv(GL_TEXTURE_BINDING_2D,&name); return name; }
++bool NeedsConversion(GLenum format, GLenum type) { return format==GL_BGRA || format==GL_BGR || type==GL_UNSIGNED_SHORT_4_4_4_4_REV || type==GL_UNSIGNED_INT_8_8_8_8_REV; }
++std::vector<unsigned char> ToRGBA(const void *data,size_t count,GLenum format,GLenum type) {
++  std::vector<unsigned char> result(count*4,0);
++  if(!data)return result;
++  const unsigned char *bytes=static_cast<const unsigned char*>(data);
++  for(size_t i=0;i<count;++i) {
++    if(type==GL_UNSIGNED_SHORT_4_4_4_4_REV) {
++      uint16_t value;std::memcpy(&value,bytes+i*2,2);
++      result[i*4]=(value>>8&15)*17;result[i*4+1]=(value>>4&15)*17;
++      result[i*4+2]=(value&15)*17;result[i*4+3]=(value>>12&15)*17;
++    } else {
++      const size_t stride=format==GL_BGR?3:4;
++      result[i*4]=bytes[i*stride+2];result[i*4+1]=bytes[i*stride+1];
++      result[i*4+2]=bytes[i*stride];result[i*4+3]=stride==4?bytes[i*stride+3]:255;
++    }
++  }
++  return result;
++}
++void FromRGBA(const std::vector<unsigned char>& rgba,void *data,GLenum format,GLenum type) {
++  unsigned char *bytes=static_cast<unsigned char*>(data);
++  const size_t count=rgba.size()/4;
++  for(size_t i=0;i<count;++i) {
++    if(type==GL_UNSIGNED_SHORT_4_4_4_4_REV) {
++      uint16_t value=(rgba[i*4+3]>>4)<<12|(rgba[i*4]>>4)<<8|(rgba[i*4+1]>>4)<<4|(rgba[i*4+2]>>4);
++      std::memcpy(bytes+i*2,&value,2);
++    } else {
++      const size_t stride=format==GL_BGR||format==GL_RGB?3:4;
++      const bool reverse=format==GL_BGR||format==GL_BGRA;
++      bytes[i*stride]=rgba[i*4+(reverse?2:0)];bytes[i*stride+1]=rgba[i*4+1];
++      bytes[i*stride+2]=rgba[i*4+(reverse?0:2)];if(stride==4)bytes[i*stride+3]=rgba[i*4+3];
++    }
++  }
++}
++}
++void C4WebTexImage2D(GLenum target,GLint level,GLint internal,GLsizei width,GLsizei height,GLint border,GLenum format,GLenum type,const GLvoid *pixels) {
++  if(!level)dimensions[BoundTexture()]=TextureSize(width,height);
++  if(NeedsConversion(format,type)) {
++    std::vector<unsigned char> rgba=ToRGBA(pixels,size_t(width)*height,format,type);
++    glTexImage2D(target,level,GL_RGBA,width,height,border,GL_RGBA,GL_UNSIGNED_BYTE,pixels?&rgba[0]:0);
++  } else glTexImage2D(target,level,internal==4?GL_RGBA:internal==3?GL_RGB:internal,width,height,border,format,type,pixels);
++}
++void C4WebTexSubImage2D(GLenum target,GLint level,GLint x,GLint y,GLsizei width,GLsizei height,GLenum format,GLenum type,const GLvoid *pixels) {
++  if(NeedsConversion(format,type)) {
++    std::vector<unsigned char> rgba=ToRGBA(pixels,size_t(width)*height,format,type);
++    glTexSubImage2D(target,level,x,y,width,height,GL_RGBA,GL_UNSIGNED_BYTE,&rgba[0]);
++  } else glTexSubImage2D(target,level,x,y,width,height,format,type,pixels);
++}
++void C4WebCopyTexImage2D(GLenum target,GLint level,GLenum internal,GLint x,GLint y,GLsizei width,GLsizei height,GLint border) {
++  if(!level)dimensions[BoundTexture()]=TextureSize(width,height);
++  glCopyTexImage2D(target,level,internal==GL_RGBA8?GL_RGBA:internal,x,y,width,height,border);
++}
++void C4WebReadPixels(GLint x,GLint y,GLsizei width,GLsizei height,GLenum format,GLenum type,GLvoid *pixels) {
++  if(width<=0||height<=0||!pixels)return;
++  std::vector<unsigned char> rgba(size_t(width)*height*4);
++  glReadPixels(x,y,width,height,GL_RGBA,GL_UNSIGNED_BYTE,&rgba[0]);
++  FromRGBA(rgba,pixels,format,type);
++}
++void C4WebGetTexImage(GLenum target,GLint level,GLenum format,GLenum type,GLvoid *pixels) {
++  const GLuint texture=BoundTexture();const TextureSize size=dimensions[texture];
++  if(size.width<=0||size.height<=0){std::fprintf(stderr,"Unknown Rage texture size: %u\n",texture);return;}
++  GLint previous=0;glGetIntegerv(GL_FRAMEBUFFER_BINDING,&previous);
++  GLuint framebuffer=0;glGenFramebuffers(1,&framebuffer);glBindFramebuffer(GL_FRAMEBUFFER,framebuffer);
++  glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0,target,texture,level);
++  C4WebReadPixels(0,0,size.width,size.height,format,type,pixels);
++  glBindFramebuffer(GL_FRAMEBUFFER,previous);glDeleteFramebuffers(1,&framebuffer);
++}
++#endif
+--- a/engine/src/C4WinMain.cpp
++++ b/engine/src/C4WinMain.cpp
+@@ -130,11 +130,13 @@
+ 
+ int main (int argc, char * argv[])
+ 	{
++#ifndef __EMSCRIPTEN__
+ 	if (!geteuid())
+ 		{
+ 		printf("Do not run %s as root!\n", argc ? argv[0] : "this program");
+ 		return C4XRV_Failure;
+ 		}
++#endif
+ #ifdef HAVE_EXECINFO_H
+ 	// Set up debugging facilities
+ 	signal(SIGBUS, crash_handler);
+@@ -162,7 +164,9 @@
+ 	Application.Run();
+ 	// free app stuff
+ 	Application.Clear();
++#ifndef __EMSCRIPTEN__
+ 	if (Application.restartAtEnd) restart(argv);
++#endif
+ 	// Return exit code
+ 	if (!Game.GameOver) return C4XRV_Aborted;
+ 	return C4XRV_Completed;

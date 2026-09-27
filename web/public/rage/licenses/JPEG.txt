@@ -1,0 +1,2 @@
+This software is based in part on the work of the Independent JPEG Group.
+Bundled JPEG implementation: version 6b, copyright (C) 1991-1998 Thomas G. Lane.

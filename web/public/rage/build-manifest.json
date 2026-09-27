@@ -1,0 +1,26 @@
+{
+  "clonk.data": {
+    "bytes": 23928602,
+    "sha256": "f4e0f2d6927e6f645e1b08b466a7d9735c041e653572397cc9e4a5472cef4e0e"
+  },
+  "clonk.js": {
+    "bytes": 607828,
+    "sha256": "64d0fe06494a3ab0ee9f45ebcaf1df4484ea56c5e6661483358ad5d3a66ea612"
+  },
+  "index.html": {
+    "bytes": 13548,
+    "sha256": "c78e0bc75eb1c435e0ca449271bb0fdfe9c0eb0c11cacddc67c263b49bbc8531"
+  },
+  "game.js": {
+    "bytes": 19515,
+    "sha256": "eaa5d35b88cefd40002c43773862ad938dc85bb56ca8dc1c244ec8ffc62ee3cc"
+  },
+  "clonk.wasm": {
+    "bytes": 12970213,
+    "sha256": "5bae584375f3e2d13b9c0b36cf25f527ad3287c2a3d180c5ecfb4ee7787ea52c"
+  },
+  "clonk.ico": {
+    "bytes": 22862,
+    "sha256": "e610c04265f387bcde14fd7c5885cb55841fcf50fad96d2e06723daa82237441"
+  }
+}

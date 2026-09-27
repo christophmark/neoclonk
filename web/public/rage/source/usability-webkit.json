@@ -1,0 +1,83 @@
+{
+  "engine": "webkit",
+  "url": "http://127.0.0.1:3000/",
+  "checks": [
+    {
+      "name": "Original-artwork start menu appears without booting game"
+    },
+    {
+      "name": "Desktop fills viewport with only original header additions",
+      "visibleButtons": [
+        "game-save",
+        "main-menu"
+      ]
+    },
+    {
+      "name": "Zoom changes world view while HUD size and simulation stay unchanged",
+      "from": 1.6,
+      "to": 7.1
+    },
+    {
+      "name": "Header Save persists original round and startup Load resumes it",
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-122329-1.c4s",
+      "bytes": 71336
+    },
+    {
+      "name": "Original logo opens menu and Resume returns to the round"
+    },
+    {
+      "name": "Touch portrait fills screen and keeps Clonk outside controls",
+      "viewport": {
+        "x": 0,
+        "y": 64,
+        "width": 390,
+        "height": 758,
+        "worldX": 15,
+        "worldY": 57,
+        "worldWidth": 260,
+        "worldHeight": 505,
+        "zoom": 1.5,
+        "requestedZoom": 1.5,
+        "minZoom": 1.2633,
+        "headerHeight": 64,
+        "clonkScreenX": 195,
+        "clonkScreenY": 362,
+        "occlusion": {
+          "x": 240,
+          "y": 677,
+          "width": 140,
+          "height": 157
+        }
+      }
+    },
+    {
+      "name": "Touch landscape fills screen and keeps Clonk outside controls",
+      "viewport": {
+        "x": 0,
+        "y": 64,
+        "width": 896,
+        "height": 328,
+        "worldX": -99,
+        "worldY": 147,
+        "worldWidth": 597,
+        "worldHeight": 219,
+        "zoom": 1.5,
+        "requestedZoom": 1.5,
+        "minZoom": 1.12,
+        "headerHeight": 64,
+        "clonkScreenX": 366,
+        "clonkScreenY": 227,
+        "occlusion": {
+          "x": 748,
+          "y": 263,
+          "width": 138,
+          "height": 141
+        }
+      }
+    },
+    {
+      "name": "Touch zoom preserves simulation and clearance; touch Left reaches original control"
+    }
+  ],
+  "errors": []
+}

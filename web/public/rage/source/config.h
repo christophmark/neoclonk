@@ -1,0 +1,21 @@
+#pragma once
+#define NDEBUG 1
+#define NONETWORK 1
+#define USE_SDL_MAINLOOP 1
+#define USE_GL 1
+#define HAVE_SDL 1
+#define HAVE_LIBSDL_MIXER 1
+#define HAVE_FREETYPE 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_SOCKET_H 1
+#define HAVE_LOCALE_H 1
+#define HAVE_LANGINFO_H 1
+#define HAVE_SIGNAL_H 1
+#define HAVE_VASPRINTF 1
+#define HAVE_STRINGS_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define X_DISPLAY_MISSING 1

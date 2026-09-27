@@ -1,0 +1,57 @@
+{
+  "license": "CC-BY-NC-4.0",
+  "attribution": "RedWolf Design / Matthes Bender",
+  "modifications": "None. Original files copied byte-for-byte. CSS scales them for responsive browser layout.",
+  "files": [
+    {
+      "file": "StartupMainMenuBG.png",
+      "source": "original-content/import/files/Graphics.c4g/StartupMainMenuBG.png",
+      "sha256": "c49860526b3bbf0115f060095cda60f3934df2aeb4ae9fb95f26f0ce98d24828"
+    },
+    {
+      "file": "StartupBigButton.png",
+      "source": "original-content/import/files/Graphics.c4g/StartupBigButton.png",
+      "sha256": "10c76f433e297bc4c52415a3fe7b5072f988a981d43117b241f45a24c8392af7"
+    },
+    {
+      "file": "StartupBigButtonDown.png",
+      "source": "original-content/import/files/Graphics.c4g/StartupBigButtonDown.png",
+      "sha256": "c5faa7f36f7d0141ef2a85518ebbfdebe23ab1a236928f17785b763b8a6a2460"
+    },
+    {
+      "file": "UpperBoard.png",
+      "source": "original-content/import/files/Graphics.c4g/UpperBoard.png",
+      "sha256": "07ea751fdc976762d19e29904ab7bb70686500297f1deecdae9941b40800fbc6"
+    },
+    {
+      "file": "Logo.png",
+      "source": "original-content/import/files/Graphics.c4g/Logo.png",
+      "sha256": "e10c7da9275fd788c10a81c0b5a538f610c2f691766cb6ec3e9fd309d4bc02e5"
+    },
+    {
+      "file": "GUIButton.png",
+      "source": "original-content/import/files/Graphics.c4g/GUIButton.png",
+      "sha256": "beee369f690a2f830632e7aa3b843dee4abf507ad9b949687bdfbb18cb3915af"
+    },
+    {
+      "file": "GUIButtonDown.png",
+      "source": "original-content/import/files/Graphics.c4g/GUIButtonDown.png",
+      "sha256": "57a61d01ff6882f58479b5e2b3a565a10ad393dab2d7f9f4b79cd83fd9e68770"
+    },
+    {
+      "file": "GUICaption.png",
+      "source": "original-content/import/files/Graphics.c4g/GUICaption.png",
+      "sha256": "1fcb14281bdfa0365f203492518f7ce8f4c1338ced3d14a2e40e2cfea0535854"
+    },
+    {
+      "file": "StartupDlgPaper.png",
+      "source": "original-content/import/files/Graphics.c4g/StartupDlgPaper.png",
+      "sha256": "ff122bd788f555bf83b5eac20b4175a11c9a0f5ade96f8198351ec8154080736"
+    },
+    {
+      "file": "Endeavour.ttf",
+      "source": "original-content/import/files/System.c4g/Endeavour.ttf",
+      "sha256": "b2152d461aa526fa6d880cb4a6d5d9a386431caccd1f7deaf9986b96ff4b5261"
+    }
+  ]
+}
