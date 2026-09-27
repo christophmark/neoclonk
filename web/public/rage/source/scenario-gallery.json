@@ -1410,15 +1410,5 @@
       "passed": true
     }
   ],
-  "passed": true,
-  "visualReview": {
-    "reviewed": true,
-    "artifacts": [
-      "desktop.png",
-      "mobile.png",
-      "mobile-startup.png",
-      "mobile-western.png"
-    ],
-    "finding": "All 80 real capture previews decode in desktop and mobile galleries. Three tiles fit mobile width, no horizontal document overflow, original-style header and saved-round controls remain readable; sticky selected-scenario panel remains available when scrolling. Original map aspect ratios preserved."
-  }
+  "passed": true
 }

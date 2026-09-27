@@ -6825,8 +6825,8 @@
       "sha256": "71e702aa556e674e7ba3a960f75a73d7890368bc43548c2bebdda61fecd9c200"
     },
     "rage-port/shell/index.html": {
-      "bytes": 28393,
-      "sha256": "55b42fd11d4c162851cf2372c8fa3ea7bf643a8e6a36823cd62e7af4d4fe3def"
+      "bytes": 28414,
+      "sha256": "84f885f8f027934a03e90b19fbaaf8973753e225043bf3b7c9df5098cdfa677c"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 20682,
@@ -12958,7 +12958,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1132,
-      "sha256": "12d452561b322c7f135b8c8e8f3672e0ed6273cb13d09505afa7643ee8513c6e"
+      "sha256": "c1bc646d2ad87dfe036dfd92a35441b383604d6d2fc320fc060b7c1eb22f44cb"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -13641,8 +13641,8 @@
       "sha256": "71e702aa556e674e7ba3a960f75a73d7890368bc43548c2bebdda61fecd9c200"
     },
     "web/public/rage/index.html": {
-      "bytes": 28393,
-      "sha256": "55b42fd11d4c162851cf2372c8fa3ea7bf643a8e6a36823cd62e7af4d4fe3def"
+      "bytes": 28414,
+      "sha256": "84f885f8f027934a03e90b19fbaaf8973753e225043bf3b7c9df5098cdfa677c"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -13749,8 +13749,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10825263,
-      "sha256": "289bc9191447576251c999532bd8ba022f9651fb3203ceaa84e8afc66736e2a4"
+      "bytes": 10825269,
+      "sha256": "97b6d26073a198fcefcb907f505ab6ded91d3f5c48604bd33ed3f1965b869465"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
@@ -13841,8 +13841,8 @@
       "sha256": "d6b792a79029cf3b3c56bcaf3016ca1c8601758b8f0ecd83b166cabb7a1330c0"
     },
     "web/public/rage/source/scenario-gallery.json": {
-      "bytes": 44136,
-      "sha256": "942fc742a5b6d571ce81c9fad51332577dcc99e0b60c19cac9a913a04da2415f"
+      "bytes": 43651,
+      "sha256": "d989ba555942f64f594c742957fca51db5c55edbb95c809fb3d15509d20444a3"
     },
     "web/public/rage/source/scenario-image-checks.json": {
       "bytes": 22771,
