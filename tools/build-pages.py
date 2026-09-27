@@ -31,7 +31,7 @@ HTML = '''<!doctype html>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <title>Neoclonk — Play Clonk Rage in the browser.</title>
 <style>:root{color-scheme:dark;background:#11120f}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}main{position:fixed;inset:0;height:100dvh}iframe{display:block;width:100%;height:100%;border:0}</style>
-<script src="pages-shell.js?v=startup-menu-1" defer></script>
+<script src="pages-shell.js?v=crisp-1" defer></script>
 </head>
 <body><main><iframe id="game" title="Neoclonk — original Clonk Rage scenarios" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe><noscript>Enable JavaScript to play Neoclonk.</noscript></main></body>
 </html>
@@ -39,7 +39,7 @@ HTML = '''<!doctype html>
 SCRIPT = ''''use strict';
 (() => {
  const input=new URLSearchParams(location.search),query=new URLSearchParams();
- query.set('v','startup-menu-1');
+ query.set('v','crisp-1');
  for(const key of ['debug','touch','replay','play','load','host','join'])if(input.get(key)==='1')query.set(key,'1');
  const scenario=input.get('scenario');
  if(scenario&&/^[a-z0-9_./-]+$/i.test(scenario)&&!scenario.split('/').includes('..'))query.set('scenario',scenario);

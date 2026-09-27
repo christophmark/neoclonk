@@ -1,0 +1,55 @@
+{
+  "engine": "webkit",
+  "checks": [
+    {
+      "zoom": 0.5,
+      "filters": {
+        "nearest": 4172,
+        "linear": 0,
+        "minLinear": 2086
+      }
+    },
+    {
+      "zoom": 1,
+      "filters": {
+        "nearest": 1194,
+        "linear": 0,
+        "minLinear": 597
+      }
+    },
+    {
+      "zoom": 1.5,
+      "filters": {
+        "nearest": 1104,
+        "linear": 0,
+        "minLinear": 552
+      }
+    },
+    {
+      "zoom": 2,
+      "filters": {
+        "nearest": 1242,
+        "linear": 0,
+        "minLinear": 621
+      }
+    },
+    {
+      "zoom": 2.35,
+      "filters": {
+        "nearest": 440,
+        "linear": 0,
+        "minLinear": 220
+      }
+    },
+    {
+      "zoom": 4,
+      "filters": {
+        "nearest": 602,
+        "linear": 0,
+        "minLinear": 301
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

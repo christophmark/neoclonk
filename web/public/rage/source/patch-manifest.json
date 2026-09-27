@@ -267,7 +267,7 @@
   {
     "path": "standard/src/StdGL.cpp",
     "originalSha256": "53780afd4ce972ead9bec07940a057a883722acf3508252799f56e7797ef46e8",
-    "portedSha256": "beeaa8a4da3a914afed5552b3dfb706cbbb088a536bd3a76d48fbd1aa773f856"
+    "portedSha256": "cd28168feaaade4e9ea67e5b73ef5562e6e0e30fd0410168daf7ef2afd26c574"
   },
   {
     "path": "standard/src/StdGLCtx.cpp",

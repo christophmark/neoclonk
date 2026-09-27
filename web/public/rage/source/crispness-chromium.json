@@ -1,0 +1,55 @@
+{
+  "engine": "chromium",
+  "checks": [
+    {
+      "zoom": 0.5,
+      "filters": {
+        "nearest": 1534,
+        "linear": 0,
+        "minLinear": 767
+      }
+    },
+    {
+      "zoom": 1,
+      "filters": {
+        "nearest": 1452,
+        "linear": 0,
+        "minLinear": 726
+      }
+    },
+    {
+      "zoom": 1.5,
+      "filters": {
+        "nearest": 988,
+        "linear": 0,
+        "minLinear": 494
+      }
+    },
+    {
+      "zoom": 2,
+      "filters": {
+        "nearest": 1588,
+        "linear": 0,
+        "minLinear": 794
+      }
+    },
+    {
+      "zoom": 2.35,
+      "filters": {
+        "nearest": 408,
+        "linear": 0,
+        "minLinear": 204
+      }
+    },
+    {
+      "zoom": 4,
+      "filters": {
+        "nearest": 1968,
+        "linear": 0,
+        "minLinear": 984
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

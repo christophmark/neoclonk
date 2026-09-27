@@ -246,7 +246,13 @@ void CStdGL::PerformBlt(CBltData &rBltData, CTexRef *pTex, DWORD dwModClr, bool 
 	glBindTexture(GL_TEXTURE_2D, pTex->texName);
 	if (!fExact && !DDrawCfg.PointFiltering)
 		{
+#ifdef __EMSCRIPTEN__
+		// Keep the original sprite pixels distinct when magnified. Retain
+		// linear minification for this scaled-blit path when shrinking.
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+#else
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+#endif
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		}
 	

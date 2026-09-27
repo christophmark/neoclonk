@@ -65,3 +65,15 @@ This creates temporary private rooms and runs the original Gold Mine simulation
 through both a direct connection and a forced relay connection. It verifies
 matching simulation and landscape state, guest input, and no lobby requests
 during play. It consumes a small amount of the deployment's request/relay budget.
+
+`browser-crispness.mjs` checks the compiled renderer at 3× device pixel density
+and six zoom levels, including fractional zoom. It verifies magnification and
+minification filter calls, canvas pixel scaling, and unchanged paused simulation
+and terrain. Serve the static export on port 3902, then run:
+
+```sh
+node rage-port/tests/browser-crispness.mjs
+BROWSER=webkit node rage-port/tests/browser-crispness.mjs
+```
+
+Use `GAME_URL` to override the default `/rage/index.html` test URL.

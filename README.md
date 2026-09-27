@@ -14,6 +14,11 @@ The catalog includes all 80 official scenarios (53 base and 27 from Knights, Far
 
 The 80 scenarios are organized into nine category galleries. Original packs download unchanged as required. Original Title.png previews are kept separate from newly captured browser gameplay screenshots. The menu includes a documented HD restoration of the original background; the original packs and scenario scripts are not repainted or rewritten.
 
+The game canvas uses pixel-preserving scaling on high-density screens. Enlarged
+sprites use nearest-neighbor filtering; the existing smoothing for scaled sprite
+minification remains. The zoom slider stays continuous, though whole-number zoom
+levels give the most uniform pixel sizes. Original artwork resolution is unchanged.
+
 Multiplayer connects browser-to-browser using WebRTC. The optional [lobby service](lobby-service/README.md) provides public rooms, private room codes and automatic connection setup. Browsers try a direct connection first; only a failed direct attempt requests expiring TURN credentials. A relay forwards encrypted packets while the original simulation still runs on the players' devices. Configure the public endpoint in `rage-port/shell/discovery-config.js`; when unconfigured, manual invitation/reply exchange remains available under Advanced. The host tab must stay open; background browser throttling may slow the room. Each participant has one local player in their own browser/device, with no shared-keyboard or split-screen multiplayer. **Live-room saves, reconnect and host migration are not implemented.** Solo saves remain local and use original `.c4s` files. See the verification section for measured acceptance scope and current results.
 
 All mission scenarios are available immediately, as requested. At browser startup, the adapter adds only the catalog’s 12 original scenario-entry `Head.MissionAccess` passwords to the player’s configuration. The original engine gate remains intact. Internal progress flags such as `StormPortal` and `PortalOpen` are not prefilled; puzzles, scripted objectives and earned progress inside each mission remain unchanged.

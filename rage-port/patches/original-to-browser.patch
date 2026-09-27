@@ -2339,7 +2339,21 @@
  		{
  		if (fMod2 || ((dwModClr>>24 || dwModMask) && !DDrawCfg.NoAlphaAdd))
  			{
-@@ -250,7 +271,13 @@
+@@ -225,7 +246,13 @@
+ 	glBindTexture(GL_TEXTURE_2D, pTex->texName);
+ 	if (!fExact && !DDrawCfg.PointFiltering)
+ 		{
++#ifdef __EMSCRIPTEN__
++		// Keep the original sprite pixels distinct when magnified. Retain
++		// linear minification for this scaled-blit path when shrinking.
++		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
++#else
+ 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
++#endif
+ 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+ 		}
+ 	
+@@ -250,7 +277,13 @@
  	}
  	
  	// draw polygon
@@ -2353,7 +2367,7 @@
  	for (i=0; i<rBltData.byNumVertices; ++i)
  		{
  		if (fModClr) glColorDw(rBltData.vtVtx[i].dwModClr | dwModMask);
-@@ -259,6 +286,7 @@
+@@ -259,6 +292,7 @@
  		}
  	glEnd();
  	glLoadIdentity();
@@ -2361,7 +2375,7 @@
  	if (shader)
  		{
  		glDisable(GL_FRAGMENT_SHADER_ATI);
-@@ -267,6 +295,7 @@
+@@ -267,6 +301,7 @@
  		{
  		glDisable(GL_FRAGMENT_PROGRAM_ARB);
  		}
@@ -2369,7 +2383,7 @@
  	if (!fExact && !DDrawCfg.PointFiltering)
  		{
  		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-@@ -277,6 +306,11 @@
+@@ -277,6 +312,11 @@
  void CStdGL::BlitLandscape(SURFACE sfcSource, SURFACE sfcSource2, SURFACE sfcLiquidAnimation, int fx, int fy, 
  								SURFACE sfcTarget, int tx, int ty, int wdt, int hgt)
  	{
@@ -2381,7 +2395,7 @@
  	// safety
  	if (!sfcSource || !sfcTarget || !wdt || !hgt) return;
  	assert(sfcTarget->IsRenderTarget());
-@@ -347,6 +381,7 @@
+@@ -347,6 +387,7 @@
  		glActiveTexture(GL_TEXTURE0);
  		}
  	DWORD dwModMask = 0;
@@ -2389,7 +2403,7 @@
  	if (shader)
  		{
  		glEnable(GL_FRAGMENT_SHADER_ATI);
-@@ -407,6 +442,7 @@
+@@ -407,6 +448,7 @@
  		}
  	// texture environment
  	else
@@ -2397,7 +2411,7 @@
  		{
  		if (DDrawCfg.NoAlphaAdd)
  			{
-@@ -456,7 +492,13 @@
+@@ -456,7 +498,13 @@
  				}
  
  			// draw polygon
@@ -2412,7 +2426,7 @@
  			// get current blitting offset in texture (beforing any last-tex-size-changes)
  			int iBlitX=iTexSize*iX;
  			int iBlitY=iTexSize*iY;
-@@ -511,14 +553,17 @@
+@@ -511,14 +559,17 @@
  				glColorDw(fdwModClr[i] | dwModMask);
  				//glMultiTexCoord2f(GL_TEXTURE0_ARB,(tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
  				glTexCoord2f((tcx[i] + DDrawCfg.fTexIndent) / iTexSize, (tcy[i] + DDrawCfg.fTexIndent) / iTexSize);
@@ -2430,7 +2444,7 @@
  	if (shader)
  		{
  		glDisable(GL_FRAGMENT_SHADER_ATI);
-@@ -527,6 +572,7 @@
+@@ -527,6 +578,7 @@
  		{
  		glDisable(GL_FRAGMENT_PROGRAM_ARB);
  		}
@@ -2438,7 +2452,7 @@
  	if (sfcSource2)
  		{
  		glActiveTexture(GL_TEXTURE1);
-@@ -653,7 +699,13 @@
+@@ -653,7 +705,13 @@
  	int iAdditive = dwBlitMode & C4GFXBLIT_ADDITIVE;
  	glBlendFunc(GL_ONE_MINUS_SRC_ALPHA, iAdditive ? GL_ONE : GL_SRC_ALPHA);
  	// draw two triangles
@@ -2452,7 +2466,7 @@
  	glColorDw(dwClr1); glVertex2f(ipVtx[0]+DDrawCfg.fBlitOff, ipVtx[1]+DDrawCfg.fBlitOff);
  	glColorDw(dwClr2); glVertex2f(ipVtx[2]+DDrawCfg.fBlitOff, ipVtx[3]+DDrawCfg.fBlitOff);
  	glColorDw(dwClr3); glVertex2f(ipVtx[4]+DDrawCfg.fBlitOff, ipVtx[5]+DDrawCfg.fBlitOff);
-@@ -722,6 +774,12 @@
+@@ -722,6 +780,12 @@
  			ModulateClr(dwClr, pClrModMap->GetModAt((int)x2, (int)y2));
  			glColorDw(InvertRGBAAlpha(dwClr));
  			}
@@ -2465,7 +2479,7 @@
  		glVertex2f(x2 + 0.5f, y2 + 0.5f);
  		glEnd();
  		}
-@@ -763,6 +821,7 @@
+@@ -763,6 +827,7 @@
  	return fSuccess && RestoreDeviceObjects();
  	}
  
@@ -2473,7 +2487,7 @@
  static void DefineShaderARB(const char * p, GLuint & s)
  	{
  	glBindProgramARB (GL_FRAGMENT_PROGRAM_ARB, s);
-@@ -775,8 +834,13 @@
+@@ -775,8 +840,13 @@
  		}
  	}
  
@@ -2487,7 +2501,7 @@
  	// safety
  	if (!lpPrimary) return false;
  	// delete any previous objects
-@@ -797,6 +861,7 @@
+@@ -797,6 +867,7 @@
  	// reset blit states
  	dwBlitMode = 0;
  
@@ -2495,7 +2509,7 @@
  	if(!DDrawCfg.Shader)
  		{
  		}
-@@ -1011,6 +1076,7 @@
+@@ -1011,6 +1082,7 @@
  		"MOV result.color, tmp;\n"
  		"END\n", shaders[4]);
  		}
@@ -2503,7 +2517,7 @@
  	// done
  	return Active;
  	}
-@@ -1027,11 +1093,13 @@
+@@ -1027,11 +1099,13 @@
  	// invalidate font objects
  	// invalidate primary surfaces
  	if (lpPrimary) lpPrimary->Clear();
