@@ -18,7 +18,7 @@ Neoclonk runs the original **Clonk Rage 4.9.10.7 [330]** C++ engine in the brows
 - **Solo exploration** is available through **Play solo** for multiplayer scenarios, including Jungle. Original rules and goals remain in place; some need opponents or finish immediately. Choose **Continue this round** after an early victory to keep exploring. **Host** starts the normal multiplayer lobby.
 - **Every mission is available immediately.** Puzzles, objectives and progress within each mission follow the original scripts.
 - **Classic nine-button controls**, with transparent touch controls on mobile. Touch buttons sit above the game's action icons, and the camera accounts for the space they cover.
-- **Responsive, full-viewport play** with a zoom slider. Pixel-preserving sprite magnification keeps the original artwork sharp; whole-number zoom levels give the most uniform pixel sizes.
+- **Responsive, full-viewport play** with compact **− / + zoom buttons**. Whole-number enlargement keeps source pixels uniform; ½× and ¼× steps provide wider views. New games default to 2×, and saved fractional settings snap to the nearest step.
 - **Local saves** in the original `.c4s` format. Choose **Load saved game** on the start screen to continue. The header's **Exit** button and scenario switching offer to save a solo round before leaving; a failed save keeps the round open.
 - **Help** and **Multiplayer lobby** are available at the top of the start screen.
 
@@ -36,7 +36,7 @@ To run your own discovery and relay service, see [the lobby service documentatio
 
 - Live multiplayer saves, reconnect and host migration are not supported. Background browser throttling may slow a room. Shared-keyboard and split-screen multiplayer are not supported.
 - WAV sound effects and Vorbis music are supported through Web Audio. MIDI-only music tracks are silent because the browser adapter has no MIDI synthesizer.
-- The original artwork retains its original resolution. Fractional zoom levels can produce uneven pixel sizes.
+- The original artwork retains its original resolution. Pixel-aligned enlargement avoids uneven scaling but cannot add detail absent from the original sprites.
 
 ## Run locally
 

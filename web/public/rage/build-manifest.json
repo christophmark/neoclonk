@@ -24,12 +24,12 @@
     "sha256": "63889fc39d65b22c7b85d2dd197ff23842ac680a5fdf0f364069de202a7531e6"
   },
   "index.html": {
-    "bytes": 34782,
-    "sha256": "4218b913d08f016feab984512d3dfed563f5a6147a0541e638b5cafde84fb0fd"
+    "bytes": 34323,
+    "sha256": "6d1981b235103aa9a703b7750f35412a314b219af6f6efdb2d03bb3583ddc679"
   },
   "game.js": {
-    "bytes": 28999,
-    "sha256": "0b3c09e7b5d32457fa42f6f2a84ae78b955ce87c9afe61603081d25bf03efa6a"
+    "bytes": 29509,
+    "sha256": "569af8990f36537a743509b357f96cc12498ba2b60eb2af7de36544989f03c58"
   },
   "clonk.wasm": {
     "bytes": 12992995,

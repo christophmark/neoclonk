@@ -25,13 +25,13 @@ async function view(width,height,zoom,occlusion=[0,0,0,0]) {
   throw Error('Shell layout kept replacing explicit camera test configuration');
 }
 try {
- const url=new URL(process.env.GAME_URL||'http://127.0.0.1:3902/');url.searchParams.set('touch','0');await page.goto(url.href);await page.locator('#start').click();
+ const url=new URL(process.env.GAME_URL||'http://127.0.0.1:3902/rage/index.html');url.searchParams.set('touch','0');url.searchParams.set('scenario','worlds.c4f/goldmine.c4s');await page.goto(url.href);await page.locator('#start').click();
  await page.waitForFunction(()=>window.__rageBrowser?.getState().phase==='playing'&&window.Module?._nc_browser_view,null,{timeout:90000});
  await call('pause','number',[1]);await call('step','number',[40]);
  // WebKit may expose the new native viewport before the shell's first layout.
- await page.waitForFunction(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).viewport?.zoom===1.5);
+ await page.waitForFunction(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).viewport?.zoom===2);
  const initial=await state(), hash=await call('landscape_hash'), cursor=initial.players.find(p=>p.local).cursor;
- assert.equal(initial.viewport.zoom,1.5,'Fresh default zoom stays unchanged');
+ assert.equal(initial.viewport.zoom,2,'Fresh default zoom uses whole pixels');
  const one=await view(1280,800,1);await record('desktop-1x');
  assert.equal(one.viewport.width,1280);assert.equal(one.viewport.y,64);
  await page.screenshot({path:out+'/desktop-1x.png'});
@@ -63,15 +63,14 @@ try {
  assert.ok(wide.viewport.worldX>=0&&wide.viewport.worldY>=0,'Landscape camera does not add avoidable left/top borders');
  assert.ok(wide.viewport.clonkScreenX<718 || wide.viewport.clonkScreenY<230);
  await page.screenshot({path:out+'/landscape-2x.png'});
- // Exercise the actual slider at its new minimum with the real touch pad.
+ // Exercise the actual zoom-out button to its minimum with the real touch pad.
  await page.evaluate(()=>window.__rageBrowser.showTouch(true));
  for(const [width,height,label]of [[390,844,'portrait'],[896,414,'landscape']]){
   await page.setViewportSize({width,height});
   await page.waitForFunction(({width,height})=>Module.canvas.width===width&&Module.canvas.height===height,{width,height});
-  const slider=page.locator('#zoom'),box=await slider.boundingBox();
-  await page.touchscreen.tap(box.x+1,box.y+box.height/2);
-  await page.waitForFunction(()=>{const v=JSON.parse(Module.ccall('nc_browser_state','string',[],[])).viewport;return v.zoom===.25&&Number(document.querySelector('#zoom').min)===.25;});
-  const overview=await record(label+'-slider-minimum'),v=overview.viewport;
+  while(!await page.locator('#zoom-out').isDisabled())await page.locator('#zoom-out').tap();
+  await page.waitForFunction(()=>{const v=JSON.parse(Module.ccall('nc_browser_state','string',[],[])).viewport;return v.zoom===.25&&document.querySelector('#zoom-out').disabled;});
+  const overview=await record(label+'-button-minimum'),v=overview.viewport;
   assert.equal(v.worldWidth,Math.round(v.width/.25));
   assert.equal(v.worldHeight,Math.round(v.height/.25));
   const pad=await page.locator('#touchpad').boundingBox();

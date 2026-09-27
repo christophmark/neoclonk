@@ -18,7 +18,7 @@ async function start(g,button='#start'){
  assert.equal(await g.evaluate(()=>window.__rageBrowser.getState().phase),'playing');
  await g.waitForFunction(()=>JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).players.some(p=>p.cursor));
  await call(g,'pause',[1]);await call(g,'step',[40]);
- await g.waitForFunction(()=>{const v=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).viewport,p=document.querySelector('#touchpad');return v&&v.zoom>=v.minZoom&&Math.abs(v.zoom-Number(document.querySelector('#zoom').value))<.001&&(p.hidden||(v.occlusion.width===Math.ceil(p.getBoundingClientRect().width)&&v.occlusion.x===Math.round(p.getBoundingClientRect().x)&&v.occlusion.y===Math.round(p.getBoundingClientRect().y)));},null,{timeout:15000});
+ await g.waitForFunction(()=>{const v=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).viewport,p=document.querySelector('#touchpad');return v&&v.zoom>=v.minZoom&&Math.abs(v.zoom-window.__rageBrowser.getState().zoom)<.001&&(p.hidden||(v.occlusion.width===Math.ceil(p.getBoundingClientRect().width)&&v.occlusion.x===Math.round(p.getBoundingClientRect().x)&&v.occlusion.y===Math.round(p.getBoundingClientRect().y)));},null,{timeout:15000});
 }
 async function fullViewport(g,width,height){const box=await g.locator('#canvas').boundingBox();assert.equal(Math.round(box.width),width);assert.equal(Math.round(box.height),height);await g.waitForFunction(({width,height})=>window.Module.canvas.width===width&&window.Module.canvas.height===height,{width,height},{timeout:20000});const b=await g.locator('#game-header').boundingBox();assert.equal(Math.round(b.height),64);}
 try{
@@ -29,9 +29,9 @@ try{
  assert.equal(await g.locator('#scenario-panel').isVisible(),false);
  await page.screenshot({path:`outputs/usability/${engine}-menu.png`});check('Original-artwork start menu appears without booting game');
  await start(g);await fullViewport(g,1280,800);assert.equal(await g.locator('#touchpad').isVisible(),false);
- const visibleButtons=await g.locator('button:visible').evaluateAll(bs=>bs.map(b=>b.id));assert.deepEqual(visibleButtons.sort(),['game-exit','game-save','main-menu']);check('Desktop fills viewport with only original header additions',{visibleButtons});
+ const visibleButtons=await g.locator('button:visible').evaluateAll(bs=>bs.map(b=>b.id));assert.deepEqual(visibleButtons.sort(),['game-exit','game-save','main-menu','zoom-in','zoom-out']);check('Desktop fills viewport with only original header additions',{visibleButtons});
  const before=await state(g),world=before.players[0].cursor;
- const slider=g.locator('#zoom');const box=await slider.boundingBox();await page.mouse.click(box.x+box.width*.8,box.y+box.height/2);
+ await g.locator('#zoom-in').click();
  await g.waitForFunction(()=>JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).viewport.zoom>2);
  const after=await state(g);assert.ok(after.viewport.worldWidth<before.viewport.worldWidth);assert.equal(after.viewport.headerHeight,64);assert.equal(after.frame,before.frame);assert.equal(after.players[0].cursor.fixedX,world.fixedX);assert.equal(after.players[0].cursor.fixedY,world.fixedY);
  check('Zoom changes world view while HUD size and simulation stay unchanged',{from:before.viewport.zoom,to:after.viewport.zoom});
@@ -51,7 +51,7 @@ try{
   const view=(await state(g)).viewport,pad=await g.locator('#touchpad').boundingBox();assert.equal(view.occlusion.x,Math.round(pad.x));assert.equal(view.occlusion.y,Math.round(pad.y));assert.equal(view.occlusion.width,Math.ceil(pad.width));assert.equal(view.occlusion.height,Math.ceil(pad.height));assert.ok(view.zoom>=view.minZoom);
   await phone.screenshot({path:`outputs/usability/${engine}-${label}.png`});check(`Touch ${label} fills screen and keeps Clonk outside controls`,{viewport:view});
  }
- const mobileBefore=await state(g),mobileSlider=await g.locator('#zoom').boundingBox();await phone.touchscreen.tap(mobileSlider.x+mobileSlider.width*.55,mobileSlider.y+mobileSlider.height/2);
+ const mobileBefore=await state(g);await g.locator('#zoom-in').tap();await g.locator('#zoom-in').tap();
  await g.waitForFunction(()=>JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).viewport.zoom>3);
  const mobileAfter=await state(g),pad=await g.locator('#touchpad').boundingBox(),v=mobileAfter.viewport;
  assert.equal(mobileBefore.frame,mobileAfter.frame);assert.ok(!(v.clonkScreenX>=pad.x&&v.clonkScreenX<=pad.x+pad.width&&v.clonkScreenY>=pad.y&&v.clonkScreenY<=pad.y+pad.height));

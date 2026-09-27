@@ -2,51 +2,102 @@
   "engine": "webkit",
   "checks": [
     {
+      "zoom": 0.25,
+      "filters": {
+        "nearest": 1070,
+        "linear": 0,
+        "minLinear": 535
+      }
+    },
+    {
       "zoom": 0.5,
       "filters": {
-        "nearest": 4172,
+        "nearest": 1716,
         "linear": 0,
-        "minLinear": 2086
+        "minLinear": 858
       }
     },
     {
       "zoom": 1,
       "filters": {
-        "nearest": 1194,
+        "nearest": 828,
         "linear": 0,
-        "minLinear": 597
-      }
-    },
-    {
-      "zoom": 1.5,
-      "filters": {
-        "nearest": 1104,
-        "linear": 0,
-        "minLinear": 552
+        "minLinear": 414
       }
     },
     {
       "zoom": 2,
       "filters": {
-        "nearest": 1242,
+        "nearest": 1862,
         "linear": 0,
-        "minLinear": 621
+        "minLinear": 931
       }
     },
     {
-      "zoom": 2.35,
+      "zoom": 3,
       "filters": {
-        "nearest": 440,
+        "nearest": 1814,
         "linear": 0,
-        "minLinear": 220
+        "minLinear": 907
       }
     },
     {
       "zoom": 4,
       "filters": {
-        "nearest": 602,
+        "nearest": 1848,
         "linear": 0,
-        "minLinear": 301
+        "minLinear": 924
+      }
+    },
+    {
+      "zoom": 8,
+      "filters": {
+        "nearest": 3116,
+        "linear": 0,
+        "minLinear": 1558
+      }
+    },
+    {
+      "buttons": "All steps, both limits, touch input and preference persistence passed"
+    },
+    {
+      "width": 320,
+      "height": 700,
+      "selection": {
+        "css": "none",
+        "calloutSupported": false,
+        "callout": "",
+        "allowed": false
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "selection": {
+        "css": "none",
+        "calloutSupported": false,
+        "callout": "",
+        "allowed": false
+      }
+    },
+    {
+      "width": 896,
+      "height": 414,
+      "selection": {
+        "css": "none",
+        "calloutSupported": false,
+        "callout": "",
+        "allowed": false
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "selection": {
+        "css": "none",
+        "calloutSupported": false,
+        "callout": "",
+        "allowed": false
       }
     }
   ],

@@ -2,51 +2,94 @@
   "engine": "chromium",
   "checks": [
     {
+      "zoom": 0.25,
+      "filters": {
+        "nearest": 1360,
+        "linear": 0,
+        "minLinear": 680
+      }
+    },
+    {
       "zoom": 0.5,
       "filters": {
-        "nearest": 1534,
+        "nearest": 1804,
         "linear": 0,
-        "minLinear": 767
+        "minLinear": 902
       }
     },
     {
       "zoom": 1,
       "filters": {
-        "nearest": 1452,
+        "nearest": 1356,
         "linear": 0,
-        "minLinear": 726
-      }
-    },
-    {
-      "zoom": 1.5,
-      "filters": {
-        "nearest": 988,
-        "linear": 0,
-        "minLinear": 494
+        "minLinear": 678
       }
     },
     {
       "zoom": 2,
       "filters": {
-        "nearest": 1588,
+        "nearest": 2188,
         "linear": 0,
-        "minLinear": 794
+        "minLinear": 1094
       }
     },
     {
-      "zoom": 2.35,
+      "zoom": 3,
       "filters": {
-        "nearest": 408,
+        "nearest": 204,
         "linear": 0,
-        "minLinear": 204
+        "minLinear": 102
       }
     },
     {
       "zoom": 4,
       "filters": {
-        "nearest": 1968,
+        "nearest": 2188,
         "linear": 0,
-        "minLinear": 984
+        "minLinear": 1094
+      }
+    },
+    {
+      "zoom": 8,
+      "filters": {
+        "nearest": 308,
+        "linear": 0,
+        "minLinear": 154
+      }
+    },
+    {
+      "buttons": "All steps, both limits, touch input and preference persistence passed"
+    },
+    {
+      "width": 320,
+      "height": 700,
+      "selection": {
+        "css": "none",
+        "allowed": false
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "selection": {
+        "css": "none",
+        "allowed": false
+      }
+    },
+    {
+      "width": 896,
+      "height": 414,
+      "selection": {
+        "css": "none",
+        "allowed": false
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "selection": {
+        "css": "none",
+        "allowed": false
       }
     }
   ],
