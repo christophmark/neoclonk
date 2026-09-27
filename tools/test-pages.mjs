@@ -10,11 +10,25 @@ const server=createServer(async(req,res)=>{try{const url=new URL(req.url,'http:/
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}/neoclonk/`;
 const browser=await chromium.launch({headless:true,executablePath:'/opt/google/chrome/chrome',args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[],report={};page.on('pageerror',e=>errors.push(String(e)));
+await page.addInitScript(()=>localStorage.setItem('neoclonk.selectedScenario','worlds.c4f/goldmine.c4s'));
+await page.route('**/api/lobby',route=>route.fulfill({status:route.request().postDataJSON()?.action==='list'?200:404,contentType:'application/json',body:JSON.stringify(route.request().postDataJSON()?.action==='list'?{rooms:[]}:{code:'room_not_found',error:'Room not found'})}));
 try{
  await page.goto(base);const game=page.frameLocator('#game');await game.locator('#catalog-summary').filter({hasText:'80 original scenarios'}).waitFor();assert.equal(await game.locator('.scenario-tile').count(),80);assert.deepEqual(await page.locator('#game').boundingBox(),{x:0,y:0,width:390,height:844});
  const manifestURL=await page.locator('link[rel="manifest"]').evaluate(el=>el.href);assert.equal(manifestURL,base+'manifest.json');const manifest=await(await page.request.get(manifestURL)).json();for(const key of ['id','start_url','scope'])assert.equal(new URL(manifest[key],manifestURL).href,base);
  for(const icon of manifest.icons){const url=new URL(icon.src,manifestURL).href;assert.ok(url.startsWith(base+'icons/'));assert.equal((await page.request.head(url)).status(),200);}assert.equal((await page.request.head(await page.locator('link[rel="apple-touch-icon"]').evaluate(el=>el.href))).status(),200);
+ await game.locator('.scenario-track').first().locator('img').evaluateAll(images=>Promise.all(images.slice(0,3).map(image=>image.decode())));
  await page.screenshot({path:out+'/mobile-gallery.png'});report.galleryAndIcons=true;
+ assert.deepEqual(await game.locator('.menu-top-actions button').allTextContents(),['Load saved game','Multiplayer lobby','Help']);
+ assert.equal(await game.locator('#scenario-panel').isVisible(),false);
+ assert.equal(await game.locator('.scenario-tile[aria-pressed="true"]').count(),0);
+ assert.equal(await game.locator('body').innerText().then(text=>text.includes('Project Neoclonk')),false);
+ await game.locator('#saves-open').click();assert.equal(await game.locator('#saved-dialog').isVisible(),true);assert.equal(await game.locator('#load-save').isDisabled(),true);await page.keyboard.press('Escape');assert.equal(await game.locator('#saved-dialog').isVisible(),false);
+ await game.locator('#help-open').click();assert.equal(await game.locator('#help').isVisible(),true);await game.locator('#help-close').click();
+ await game.locator('#join-room').click();await game.locator('#room-title').filter({hasText:'Join a crew'}).waitFor();await game.locator('#room-leave').click();assert.equal(await game.locator('#scenario-panel').isVisible(),false);
+ await game.locator('.scenario-tile').first().click();assert.equal(await game.locator('#scenario-panel').isVisible(),true);assert.equal(await game.locator('.scenario-tile[aria-pressed="true"]').count(),1);await page.screenshot({path:out+'/mobile-selected.png'});
+ await page.setViewportSize({width:1280,height:800});await page.goto(base);await game.locator('.scenario-tile').first().waitFor();assert.equal(await game.locator('#scenario-panel').isVisible(),false);
+ assert.ok((await game.locator('#scenario-library').boundingBox()).width>=(await game.locator('.menu-content').boundingBox()).width-1);
+ await page.screenshot({path:out+'/desktop-gallery.png'});report.startupActionsAndSelection=true;
  await page.goto(base+'?room=abcd2345&scenario=worlds.c4f/goldmine.c4s&touch=1');await game.locator('#room-title').filter({hasText:'Join a crew'}).waitFor();const frameURL=new URL(await page.locator('#game').getAttribute('src'));assert.equal(frameURL.pathname,'/neoclonk/rage/index.html');assert.equal(frameURL.searchParams.get('room'),'ABCD2345');assert.equal(frameURL.searchParams.get('join'),'1');assert.equal(frameURL.searchParams.get('touch'),'1');assert.equal(frameURL.searchParams.get('scenario'),'worlds.c4f/goldmine.c4s');report.wrapperInvite=true;
  await page.goto(base+'rage/index.html?join=1&room=ABCD2345');await page.locator('#room-title').filter({hasText:'Join a crew'}).waitFor();assert.equal(await page.locator('link[rel="manifest"]').evaluate(el=>el.href),manifestURL);assert.equal(await page.locator('link[rel="apple-touch-icon"]').evaluate(el=>el.href),base+'apple-touch-icon.png');report.nativeInviteIcons=true;
  for(const asset of ['rage/clonk.wasm','rage/clonk.data','rage/source/browser-port-sources.zip','rage/licenses/clonk_content_license.txt']){const result=await page.request.head(base+asset);assert.equal(result.status(),200,asset);}

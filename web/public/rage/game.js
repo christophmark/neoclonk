@@ -11,7 +11,7 @@
  const zoom=$('zoom');
  const setting=(name,fallback)=>{try{return localStorage.getItem(name)||fallback;}catch{return fallback;}};
  zoom.value=String(Math.max(.25,Math.min(8,Number(setting('neoclonk.zoom','1.5'))||1.5)));
- function phase(value){state.phase=value;document.body.dataset.phase=value;$('game-header').hidden=value!=='playing';window.dispatchEvent(new CustomEvent('neoclonk-phase',{detail:{phase:value}}));}
+ function phase(value){if(value!=='menu')$('scenario-panel').hidden=false;state.phase=value;document.body.dataset.phase=value;$('game-header').hidden=value!=='playing';window.dispatchEvent(new CustomEvent('neoclonk-phase',{detail:{phase:value}}));}
  function setStatus(message){state.lastStatus=String(message||'');$('status').textContent=state.lastStatus;}
  function storageStatus(message){if($('storage-status'))$('storage-status').textContent=message;}
  function log(...args){const line=args.map(String).join(' ');logs.push(line);if(logs.length>600)logs.shift();$('debug').textContent=logs.join('\n');console.log('[Clonk]',line);
@@ -138,6 +138,8 @@
  $('main-menu').onclick=openMenu;
  $('new-game').onclick=()=>startScenario(selectedScenarioId);
  const closeHelp=()=>{if($('help'))$('help').hidden=true;(ready&&state.phase==='playing'?canvas:$('start')).focus();};
+ $('saves-open').onclick=()=>{refreshSavedGames();$('saved-dialog').showModal();};
+ $('saves-close').onclick=()=>$('saved-dialog').close();
  if($('help-open'))$('help-open').onclick=()=>{$('help').hidden=false;$('help-close').focus();};
  if($('help-close'))$('help-close').onclick=closeHelp;
  window.addEventListener('keydown',event=>{if($('help')&&!$('help').hidden){if(event.key==='Escape'){event.preventDefault();closeHelp();}event.stopImmediatePropagation();return;}if(!cover.hidden){if(event.target===canvas)event.stopImmediatePropagation();return;}if(ready&&document.activeElement===canvas&&['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','Tab'].includes(event.code))event.preventDefault();},true);
@@ -167,7 +169,7 @@
  }
  window.addEventListener('scenario-select',event=>{selectedScenarioId=event.detail.id;state.selectedScenarioId=selectedScenarioId;});
  $('start').onclick=()=>{if(ready&&state.phase==='menu'){resumeGame();return;}if(query.get('save'))startGame(query.get('save'));else startScenario(selectedScenarioId);};
- $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;if(!booted){state.replay=false;startGame(name);return;}restart({save:name,load:'1'});};
+ $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;$('saved-dialog').close();if(!booted){state.replay=false;startGame(name);return;}restart({save:name,load:'1'});};
  window.__rageBrowser={getState:()=>({...state,ready,booted,selectedScenarioId,logs:[...logs],canvas:{width:canvas.width,height:canvas.height}}),press:code=>key(code,true),release:code=>key(code,false),tap,pause:()=>tap('Pause'),releaseAll,readFile:path=>Array.from(window.Module.FS.readFile(path)),listFiles:path=>window.Module.FS.readdir(path),showTouch,syncSaves,listSavedGames,openMenu,saveGame,updateView,startScenario,restart};
  phase('menu');refreshSavedGames();
  const savedIndexReady=readSavedIndex();Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))startGame(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId);else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});

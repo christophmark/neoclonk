@@ -25,6 +25,7 @@
   if(!catalog||['loading','initializing'].includes(gameState().phase))return false;
   const scenario=catalog.scenarios.find(item=>idKey(item.id)===idKey(id));if(!scenario)return false;
   selected=scenario;
+  $('scenario-panel').hidden=false;
   for(const [key,button] of tiles){const active=key===idKey(id);button.setAttribute('aria-pressed',String(active));button.querySelector('.tile-selected').hidden=!active;}
   const button=tiles.get(idKey(id));if(button){setRovingFocus(button.closest('.scenario-track'),button);if(focus){button.focus({preventScroll:true});reveal(button);}}
   const paragraphs=text(scenario.description).replace(/\0/g,'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);const headingKey=value=>String(value||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');const knownTitles=[scenario.title,...Object.values(scenario.titles||{}),scenario.configuration?.Head?.Title];if(paragraphs[0]&&knownTitles.some(title=>headingKey(title)===headingKey(paragraphs[0])))paragraphs.shift();
@@ -86,10 +87,8 @@
    catalog={...data,scenarios:data.scenarios.filter(s=>typeof s.id==='string'&&typeof s.title==='string')};root.replaceChildren();$('category-nav').replaceChildren();
    for(const category of catalog.categories){const scenarios=catalog.scenarios.filter(s=>s.categoryId===category.id);if(scenarios.length)makeCategory(category,scenarios);}
    $('catalog-summary').textContent=`${catalog.scenarios.length} original scenarios`;
-   let remembered;try{remembered=localStorage.getItem('neoclonk.selectedScenario');}catch{}
-   const requested=new URLSearchParams(location.search).get('scenario')||remembered;
-   const initial=catalog.scenarios.find(s=>idKey(s.id)===idKey(requested))||catalog.scenarios.find(s=>/worlds\.c4f\/goldmine\.c4s$/i.test(s.path||s.id))||catalog.scenarios[0];
-   if(initial)select(initial.id);root.setAttribute('aria-busy','false');window.dispatchEvent(new CustomEvent('scenario-catalog-ready',{detail:{catalog}}));return catalog;
+   const requested=new URLSearchParams(location.search).get('scenario');
+   if(requested)select(requested);root.setAttribute('aria-busy','false');window.dispatchEvent(new CustomEvent('scenario-catalog-ready',{detail:{catalog}}));return catalog;
   }catch(error){root.replaceChildren();const message=document.createElement('p');message.className='catalog-loading';message.textContent='The scenario library could not load. Reload to try again.';root.append(message);root.setAttribute('aria-busy','false');$('catalog-summary').textContent='';console.error('[gallery]',error);return null;}
  }
  window.__scenarioGallery={getSelected:()=>selected,select,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();

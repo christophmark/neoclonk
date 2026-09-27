@@ -14,7 +14,7 @@ async function save(){
  const result=JSON.parse(await call('nc_browser_save_status','string'));assert.equal(result.status,'saved',result.error);assert.equal(result.requestId,queued.request);assert.match(result.path,/^\/data\/home\/Savegames\.c4f\/Neoclonk-\d{8}-\d{6}-\d+\.c4s$/);assert.ok(result.bytes>1000);saves.push(result);return result;
 }
 try{
- await page.goto(process.env.GAME_URL||'http://127.0.0.1:3002/');await page.locator('#start').click();
+ await page.goto(process.env.GAME_URL||'http://127.0.0.1:3002/');await page.locator('.scenario-tile[data-scenario-id="worlds.c4f/goldmine.c4s"]').click();await page.locator('#start').click();
  await page.waitForFunction(()=>['error','exited'].includes(window.__rageBrowser?.getState().phase)||(window.__rageBrowser?.getState().phase==='playing'&&window.Module?._nc_browser_save&&JSON.parse(Module.ccall('nc_browser_state','string',[],[])).players.length),{},{timeout:90000});
  assert.equal((await state()).running,true);assert.equal(await call('nc_browser_pause','number',[1]),1);
  const before=await state(),first=await save(),hashBefore=await digest(first.path);

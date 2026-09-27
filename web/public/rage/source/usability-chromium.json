@@ -14,13 +14,13 @@
     },
     {
       "name": "Zoom changes world view while HUD size and simulation stay unchanged",
-      "from": 1.6,
-      "to": 7.2
+      "from": 1.5,
+      "to": 7
     },
     {
       "name": "Header Save persists original round and startup Load resumes it",
-      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-122219-1.c4s",
-      "bytes": 70007
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-160919-1.c4s",
+      "bytes": 67590
     },
     {
       "name": "Original logo opens menu and Resume returns to the round"
@@ -32,13 +32,13 @@
         "y": 64,
         "width": 390,
         "height": 758,
-        "worldX": 20,
-        "worldY": 89,
+        "worldX": 244,
+        "worldY": 78,
         "worldWidth": 260,
         "worldHeight": 505,
         "zoom": 1.5,
         "requestedZoom": 1.5,
-        "minZoom": 1.2633,
+        "minZoom": 0.25,
         "headerHeight": 64,
         "clonkScreenX": 195,
         "clonkScreenY": 362,
@@ -57,13 +57,13 @@
         "y": 64,
         "width": 896,
         "height": 328,
-        "worldX": -94,
-        "worldY": 179,
+        "worldX": 130,
+        "worldY": 168,
         "worldWidth": 597,
         "worldHeight": 219,
         "zoom": 1.5,
         "requestedZoom": 1.5,
-        "minZoom": 1.12,
+        "minZoom": 0.25,
         "headerHeight": 64,
         "clonkScreenX": 366,
         "clonkScreenY": 227,

@@ -9,17 +9,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = requestHeaders.get('x-forwarded-proto') === 'https' ? 'https' : localHost ? 'http' : 'https';
   const origin = `${protocol}://${host}`;
   return {
-    applicationName: 'Project Neoclonk',
+    applicationName: 'Neoclonk',
     appleWebApp: { capable: true, title: 'Neoclonk', statusBarStyle: 'black' },
     icons: {
       icon: [{ url: '/rage/clonk.ico' }, { url: '/icons/neoclonk-192.png', type: 'image/png', sizes: '192x192' }],
       apple: [{ url: '/apple-touch-icon.png?v=1', sizes: '180x180', type: 'image/png' }],
     },
-    title: 'Project Neoclonk — Play Clonk Rage in the browser.',
+    title: 'Neoclonk — Play Clonk Rage in the browser.',
     description: 'Play Clonk Rage in the browser. 80 original scenarios with classic controls and multiplayer.',
     metadataBase: new URL(origin),
-    openGraph: { title: 'Project Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.', type: 'website' },
-    twitter: { card: 'summary', title: 'Project Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.' },
+    openGraph: { title: 'Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.', type: 'website' },
+    twitter: { card: 'summary', title: 'Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.' },
   };
 }
 export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="en"><head><link rel="manifest" href="/manifest.json?v=1" crossOrigin="use-credentials" /><meta name="apple-mobile-web-app-capable" content="yes" /></head><body>{children}</body></html>; }

@@ -13,6 +13,7 @@ async function frame(page){if(await page.locator('iframe').count())return(await 
 const call=(g,name,args=[],type='number')=>g.evaluate(({name,args,type})=>window.Module.ccall('nc_browser_'+name,type,args.map(()=> 'number'),args),{name,args,type});
 const state=async g=>JSON.parse(await call(g,'state',[],'string'));
 async function start(g,button='#start'){
+ if(button==='#start'&&!await g.locator('#start').isVisible())await g.locator('.scenario-tile[data-scenario-id="worlds.c4f/goldmine.c4s"]').click();
  await g.locator(button).click();await g.waitForFunction(()=>['playing','error'].includes(window.__rageBrowser?.getState().phase),null,{timeout:120000});
  assert.equal(await g.evaluate(()=>window.__rageBrowser.getState().phase),'playing');
  await g.waitForFunction(()=>JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).players.some(p=>p.cursor));
@@ -24,7 +25,8 @@ try{
  const context=await browser.newContext({viewport:{width:1280,height:800}});const page=await context.newPage();activePage=page;page.on('pageerror',e=>report.errors.push(String(e)));
  await page.goto(base);let g=await frame(page);
  assert.equal(await g.evaluate(()=>typeof window.Module),'undefined','Original menu appears before engine downloads');
- await g.waitForFunction(()=>document.querySelector('.menu-logo').complete&&document.querySelector('.menu-logo').naturalWidth>0);
+ await g.locator('.scenario-tile').first().waitFor();
+ assert.equal(await g.locator('#scenario-panel').isVisible(),false);
  await page.screenshot({path:`outputs/usability/${engine}-menu.png`});check('Original-artwork start menu appears without booting game');
  await start(g);await fullViewport(g,1280,800);assert.equal(await g.locator('#touchpad').isVisible(),false);
  const visibleButtons=await g.locator('button:visible').evaluateAll(bs=>bs.map(b=>b.id));assert.deepEqual(visibleButtons.sort(),['game-save','main-menu']);check('Desktop fills viewport with only original header additions',{visibleButtons});
@@ -37,7 +39,7 @@ try{
  const path=await g.evaluate(()=>window.__rageBrowser.getState().lastSaved);assert.match(await g.locator('#save-feedback').textContent(),/Game saved/);const originalBytes=await g.evaluate(path=>window.Module.FS.readFile(path).length,path);
  await page.reload();g=await frame(page);const relative=path.replace('/data/home/Savegames.c4f/','');
  await g.waitForFunction(relative=>[...document.querySelector('#saved-games').options].some(o=>o.value===relative),relative);
- assert.equal(await g.evaluate(()=>typeof window.Module),'undefined');await g.locator('#saved-games').selectOption(relative);await page.screenshot({path:`outputs/usability/${engine}-load-menu.png`});await start(g,'#load-save');
+ assert.equal(await g.evaluate(()=>typeof window.Module),'undefined');await g.locator('#saves-open').click();await g.locator('#saved-games').selectOption(relative);await page.screenshot({path:`outputs/usability/${engine}-load-menu.png`});await start(g,'#load-save');
  assert.ok((await state(g)).scenario.endsWith(relative));assert.equal(await g.evaluate(path=>window.Module.FS.readFile(path).length,path),originalBytes);
  check('Header Save persists original round and startup Load resumes it',{path,bytes:originalBytes});
  await g.locator('#main-menu').click();assert.equal(await g.locator('#cover').isVisible(),true);assert.equal((await state(g)).paused,true);await g.locator('#start').click();assert.equal(await g.locator('#cover').isVisible(),false);check('Original logo opens menu and Resume returns to the round');
