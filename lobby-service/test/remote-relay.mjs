@@ -33,6 +33,9 @@ try {
    const deadline=setTimeout(()=>abort.abort(),85000);
    const timeout=(promise,ms,label)=>new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error(label+' timed out')),ms);promise.then(value=>{clearTimeout(timer);resolve(value);},error=>{clearTimeout(timer);reject(error);});});
    const api=async(action,data={},member)=>{
+    // Exercise transport behavior without exhausting the public proxy's 3 r/s
+    // admission limit across four back-to-back room lifecycles and preflights.
+    await new Promise(resolve=>setTimeout(resolve,600));
     const response=await fetch(serviceUrl+'/api/lobby',{method:'POST',headers:{'Content-Type':'application/json',...(member?{Authorization:'Bearer '+member.token}:{})},body:JSON.stringify({action,...data}),signal:abort.signal});
     const result=await response.json().catch(()=>({}));
     if(!response.ok)throw Error('API '+action+' failed: '+response.status+' '+String(result.code||'unknown').replace(/[^a-z0-9_-]/gi,''));

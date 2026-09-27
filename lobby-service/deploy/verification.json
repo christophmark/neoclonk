@@ -1,0 +1,117 @@
+{
+  "endpoint": "https://lobby.40-180-87-214.sslip.io",
+  "origin": "http://127.0.0.1:3902",
+  "startedAt": "2026-09-27T16:03:18.402Z",
+  "results": [
+    {
+      "transport": "udp3478",
+      "ok": true,
+      "durationMs": 8730,
+      "credentialsDeniedBeforeFallback": true,
+      "relayUrls": [
+        "turn:turn.40-180-87-214.sslip.io:3478?transport=udp"
+      ],
+      "host": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "udp",
+        "pairState": "succeeded",
+        "bytesSent": 2264,
+        "bytesReceived": 2411
+      },
+      "guest": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "udp",
+        "pairState": "succeeded",
+        "bytesSent": 2411,
+        "bytesReceived": 2264
+      }
+    },
+    {
+      "transport": "tcp3478",
+      "ok": true,
+      "durationMs": 8876,
+      "credentialsDeniedBeforeFallback": true,
+      "relayUrls": [
+        "turn:turn.40-180-87-214.sslip.io:3478?transport=tcp"
+      ],
+      "host": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tcp",
+        "pairState": "succeeded",
+        "bytesSent": 2261,
+        "bytesReceived": 2412
+      },
+      "guest": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tcp",
+        "pairState": "succeeded",
+        "bytesSent": 2412,
+        "bytesReceived": 2261
+      }
+    },
+    {
+      "transport": "tls5349",
+      "ok": true,
+      "durationMs": 8883,
+      "credentialsDeniedBeforeFallback": true,
+      "relayUrls": [
+        "turns:turn.40-180-87-214.sslip.io:5349?transport=tcp"
+      ],
+      "host": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tls",
+        "pairState": "succeeded",
+        "bytesSent": 2261,
+        "bytesReceived": 2413
+      },
+      "guest": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tls",
+        "pairState": "succeeded",
+        "bytesSent": 2413,
+        "bytesReceived": 2211
+      }
+    },
+    {
+      "transport": "tls443",
+      "ok": true,
+      "durationMs": 8803,
+      "credentialsDeniedBeforeFallback": true,
+      "relayUrls": [
+        "turns:turn.40-180-87-214.sslip.io:443?transport=tcp"
+      ],
+      "host": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tls",
+        "pairState": "succeeded",
+        "bytesSent": 2263,
+        "bytesReceived": 950
+      },
+      "guest": {
+        "localType": "relay",
+        "remoteType": "relay",
+        "protocol": "udp",
+        "relayProtocol": "tls",
+        "pairState": "succeeded",
+        "bytesSent": 950,
+        "bytesReceived": 2263
+      }
+    }
+  ],
+  "ok": true,
+  "finishedAt": "2026-09-27T16:03:54.417Z"
+}

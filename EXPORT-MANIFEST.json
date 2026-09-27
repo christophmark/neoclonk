@@ -5853,8 +5853,8 @@
       "sha256": "044058dc21e67044f4b8be25bea96df9c4a9d730907b21a72652efb6e04c3613"
     },
     "lobby-service/deploy/README.md": {
-      "bytes": 11320,
-      "sha256": "230d086a21d1c7c74c8c3ae8f1f549fbb039bb3a4a1d9104282d7a820c4d7c14"
+      "bytes": 11734,
+      "sha256": "01a795c5302f924f36ab0dceb5853be6248165c4aefccd5d2ee9eb48050b79fb"
     },
     "lobby-service/deploy/check-host.sh": {
       "bytes": 595,
@@ -5895,6 +5895,10 @@
     "lobby-service/deploy/traffic-guard.py": {
       "bytes": 4049,
       "sha256": "0243818c4f3cf3425e25b651eb32ae0ef5fcd97a22226baa401794c50b6d199e"
+    },
+    "lobby-service/deploy/verification.json": {
+      "bytes": 3004,
+      "sha256": "2fe916281bbf3a85b95f1a44497b7b8eb5f6e3a400b670cbbc1e1f8c369cefaa"
     },
     "lobby-service/package-lock.json": {
       "bytes": 3441,
@@ -5941,8 +5945,8 @@
       "sha256": "8e4a22b7d34c326c824fd604f10aa6f3e96d1625f9297b91e9c56729d98d0ecb"
     },
     "lobby-service/test/remote-relay.mjs": {
-      "bytes": 10583,
-      "sha256": "b70a47a5c6aae6dc4bcac2c9e08c86baff0fc6b06557644999c83a5c373a63dc"
+      "bytes": 10799,
+      "sha256": "eeea84b0bd72299542ac41e976d590cf4dba332b8f55f20df1441b46f975c536"
     },
     "lobby-service/test/server.test.js": {
       "bytes": 1514,

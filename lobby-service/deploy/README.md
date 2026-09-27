@@ -208,3 +208,11 @@ change to an old distro coturn package without reviewing its patch level.
 - [Lightsail static IP documentation](https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-create-static-ip.html)
 - [Lightsail firewall documentation](https://docs.aws.amazon.com/lightsail/latest/userguide/understanding-firewall-and-port-mappings-in-amazon-lightsail.html)
 - [sslip.io](https://sslip.io/)
+
+## Deployment verification
+
+[Public browser relay check](verification.json) records successful authenticated
+UDP3478, TCP3478, TLS5349 and TLS443 data-channel ping/pong on the deployed
+Lightsail service. Credentials were denied before fallback in every case.
+Candidate addresses, credentials and signaling descriptions are excluded.
+This is a bounded connectivity check, not a guarantee for every client network.
