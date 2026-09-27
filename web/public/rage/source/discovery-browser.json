@@ -1,0 +1,423 @@
+{
+  "concurrentDirect": {
+    "configured": true,
+    "active": true,
+    "code": "1001",
+    "host": true,
+    "started": false,
+    "connections": [
+      {
+        "slot": 1,
+        "generation": 0,
+        "connected": true,
+        "kind": "direct",
+        "failed": false
+      },
+      {
+        "slot": 2,
+        "generation": 0,
+        "connected": true,
+        "kind": "direct",
+        "failed": false
+      }
+    ]
+  },
+  "gameplayPollingStopped": true,
+  "fallback": {
+    "configured": true,
+    "active": true,
+    "code": "1002",
+    "host": true,
+    "started": false,
+    "connections": [
+      {
+        "slot": 1,
+        "generation": 1,
+        "connected": true,
+        "kind": "direct",
+        "failed": false
+      }
+    ]
+  },
+  "staleSessionSafe": true,
+  "pendingCreateCancelled": true,
+  "slotReuseConnected": true,
+  "connectedCloseCleanup": true,
+  "rejoinedAfterClose": true,
+  "passed": true,
+  "calls": [
+    {
+      "action": "create"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "join",
+      "code": "1001"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "join",
+      "code": "1001"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "signal",
+      "code": "1001",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "signal",
+      "code": "1001",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "signal",
+      "code": "1001",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "signal",
+      "code": "1001",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
+      "action": "start",
+      "code": "1001"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "join",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "signal",
+      "code": "1002",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "signal",
+      "code": "1002",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "signal",
+      "code": "1002",
+      "generation": 0,
+      "kind": "relay"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "turn",
+      "code": "1002"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "turn",
+      "code": "1002"
+    },
+    {
+      "action": "signal",
+      "code": "1002",
+      "generation": 1,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "signal",
+      "code": "1002",
+      "generation": 1,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1002"
+    },
+    {
+      "action": "connected",
+      "code": "1002"
+    },
+    {
+      "action": "connected",
+      "code": "1002"
+    },
+    {
+      "action": "leave",
+      "code": "1002"
+    },
+    {
+      "action": "leave",
+      "code": "1002"
+    },
+    {
+      "action": "leave",
+      "code": "1002"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "leave",
+      "code": "1004"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "join",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "join",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "leave",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    },
+    {
+      "action": "drop",
+      "code": "1003"
+    },
+    {
+      "action": "leave",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "list"
+    },
+    {
+      "action": "join",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "offer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "signal",
+      "code": "1003",
+      "generation": 0,
+      "kind": "answer"
+    },
+    {
+      "action": "poll",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    },
+    {
+      "action": "connected",
+      "code": "1003"
+    }
+  ],
+  "errors": []
+}

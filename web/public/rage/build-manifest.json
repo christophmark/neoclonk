@@ -1,11 +1,15 @@
 {
+  "discovery-config.js": {
+    "bytes": 231,
+    "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+  },
   "clonk.data": {
     "bytes": 23928602,
     "sha256": "f4e0f2d6927e6f645e1b08b466a7d9735c041e653572397cc9e4a5472cef4e0e"
   },
   "multiplayer.js": {
-    "bytes": 20682,
-    "sha256": "7b37da67f3cff47350da7f2109ab83d3f6838d37991f1c369ba4b0e5a1472124"
+    "bytes": 24302,
+    "sha256": "ae710eef2e321dbc35d364fa1d22e028712d7e3c0422720386c2cb801783244a"
   },
   "clonk.js": {
     "bytes": 610235,
@@ -20,12 +24,12 @@
     "sha256": "63eec078370ca00d7fecadb715af2a28ba22669d6908176e775e6b018c9394ca"
   },
   "index.html": {
-    "bytes": 28414,
-    "sha256": "84f885f8f027934a03e90b19fbaaf8973753e225043bf3b7c9df5098cdfa677c"
+    "bytes": 30206,
+    "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
   },
   "game.js": {
-    "bytes": 26114,
-    "sha256": "71e702aa556e674e7ba3a960f75a73d7890368bc43548c2bebdda61fecd9c200"
+    "bytes": 26121,
+    "sha256": "a432f23aa02e7a9160b1636c0b7cf77c7c66e61b41086fe6cfdde17786c3506c"
   },
   "clonk.wasm": {
     "bytes": 12992995,
@@ -34,5 +38,9 @@
   "clonk.ico": {
     "bytes": 22862,
     "sha256": "e610c04265f387bcde14fd7c5885cb55841fcf50fad96d2e06723daa82237441"
+  },
+  "discovery.js": {
+    "bytes": 15115,
+    "sha256": "fa53adafb35402b4d0ab6ad4d58a9151fdf4b7e5c0ec00accfd3e0a7eb0c14ed"
   }
 }

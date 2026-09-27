@@ -1,0 +1,10 @@
+[Unit]
+Description=Renew Neoclonk certificates twice daily
+
+[Timer]
+OnCalendar=*-*-* 00,12:00:00
+RandomizedDelaySec=45m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

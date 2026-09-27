@@ -1,12 +1,16 @@
 {
   "files": {
+    ".github/workflows/pages.yml": {
+      "bytes": 1188,
+      "sha256": "ac8087529e58a654b4158f3e35c1615173e164db73cdc8f634925813ce05d548"
+    },
     ".gitignore": {
-      "bytes": 257,
-      "sha256": "e5fb51a86e36a456ba51f031ec6e7df18910f2cce113a2c69c810b254d1db5c7"
+      "bytes": 293,
+      "sha256": "4016f9cbe1186439969dc85c3ee8bfba38d35e7b2f6ed7b17d8b1fcfba8336d5"
     },
     "README.md": {
-      "bytes": 9816,
-      "sha256": "0f5864f02054dbe3a05fad0417626cfa7b609f6b6750e9bb14b3768d7ad752ff"
+      "bytes": 10641,
+      "sha256": "05c0de8e37748043f2f41f94a25abb79a182302ae43b18876920769b2dfe0a59"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5828,9 +5832,13 @@
       "bytes": 1373,
       "sha256": "d5c107730a534c2d2056ff2802abaa95d547b5698147f5aee2d074596576a3f7"
     },
+    "docs/GITHUB_PAGES.md": {
+      "bytes": 1213,
+      "sha256": "6b52db38f6159d8104cfc17ec2aa1dbb8014f18628f0b619a48e752d6dd24a5a"
+    },
     "docs/GITHUB_README.md": {
-      "bytes": 9816,
-      "sha256": "0f5864f02054dbe3a05fad0417626cfa7b609f6b6750e9bb14b3768d7ad752ff"
+      "bytes": 10641,
+      "sha256": "05c0de8e37748043f2f41f94a25abb79a182302ae43b18876920769b2dfe0a59"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -5839,6 +5847,126 @@
     "docs/ORIGINAL_GAMEPLAY_AUDIT.md": {
       "bytes": 26534,
       "sha256": "b338e3a7d4f81c0750de2397ef0f0ee4e5f7861b822683d7100d9a1ad4ba206f"
+    },
+    "lobby-service/.env.example": {
+      "bytes": 866,
+      "sha256": "9add5c4414b539c83819c1527f56c9e021043aba0b4d710b6a686fa249d2cbc6"
+    },
+    "lobby-service/.gitignore": {
+      "bytes": 54,
+      "sha256": "9f91bb8ad8e6286da82918d8d0446a01b9f325811f18a94dde15f1d9ff44f3f8"
+    },
+    "lobby-service/README.md": {
+      "bytes": 9380,
+      "sha256": "666c78d4709f6b7b521bf40c496fa2387f78b1bd7002b48def236e9c70f4e6e8"
+    },
+    "lobby-service/api/lobby.js": {
+      "bytes": 420,
+      "sha256": "60cc0bd3fb98ac7dcdecfc1a487e63695bd1240a8f6ead3d38b8fe7dd9ec3edf"
+    },
+    "lobby-service/deploy/Dockerfile": {
+      "bytes": 301,
+      "sha256": "044058dc21e67044f4b8be25bea96df9c4a9d730907b21a72652efb6e04c3613"
+    },
+    "lobby-service/deploy/README.md": {
+      "bytes": 10885,
+      "sha256": "f264ceaa8a99366380e40a94b7f05f63d9cf3b9072b5913d750fbedec89c6c69"
+    },
+    "lobby-service/deploy/check-host.sh": {
+      "bytes": 595,
+      "sha256": "2739c89c2066a61ed8d631c61a09ad3a63f4dec164da73bdcc38dcbfbd352ac6"
+    },
+    "lobby-service/deploy/neoclonk-cert-renew.service": {
+      "bytes": 219,
+      "sha256": "8b86e47547de22e6c9d3ad56f2ed29fd866fb5c72c2c2f33cc09e6b1f14ce472"
+    },
+    "lobby-service/deploy/neoclonk-cert-renew.timer": {
+      "bytes": 170,
+      "sha256": "c81fb4661fbbb66a69c9eb82db21daf69d79ccec5aff9b553865539607380a42"
+    },
+    "lobby-service/deploy/neoclonk-traffic-guard.service": {
+      "bytes": 275,
+      "sha256": "7e4943985ab1623ebde37a5d0ae6fa7bb4370b690ebe4554d60d36b04a4fd1b3"
+    },
+    "lobby-service/deploy/neoclonk-traffic-guard.timer": {
+      "bytes": 156,
+      "sha256": "420a4f9baaeb62fdf022229c937a029467c5bc53cda604158bbd746961a4abb8"
+    },
+    "lobby-service/deploy/render.py": {
+      "bytes": 9748,
+      "sha256": "afdcce1e202748d2e0cd4d6e5f8cd59f1cfc72bb9f5661936171d34e9ed3a0a0"
+    },
+    "lobby-service/deploy/renew-cert.sh": {
+      "bytes": 618,
+      "sha256": "f063227f821a021dcba655fedfb563a30f5fca94fbfc4e5af6a1414c576a545b"
+    },
+    "lobby-service/deploy/test_deploy.py": {
+      "bytes": 3179,
+      "sha256": "9bcfe0740d765176c27ca67b29b97a1c7ed9fd4b799cbb73ad71ff2c253865c8"
+    },
+    "lobby-service/deploy/traffic-guard.py": {
+      "bytes": 4049,
+      "sha256": "0243818c4f3cf3425e25b651eb32ae0ef5fcd97a22226baa401794c50b6d199e"
+    },
+    "lobby-service/package-lock.json": {
+      "bytes": 3441,
+      "sha256": "043d29a4139ae0dff6bcc39d467e1f1fefbecb7ca90775fea71a04027905803d"
+    },
+    "lobby-service/package.json": {
+      "bytes": 207,
+      "sha256": "b4fdc6afdc5d5f7fac72dcad552fda98e9b7cbb0c40bfb61cc646dd26250ede7"
+    },
+    "lobby-service/public/index.html": {
+      "bytes": 284,
+      "sha256": "d184d58df46d83949b0bb3c8854f29f129fabb5c34bd4ed8d3df01fd08834939"
+    },
+    "lobby-service/src/dev.js": {
+      "bytes": 687,
+      "sha256": "edd91ce5923d3d2c725af35565f7bf1a412a9d4670cf3fcb67ef5302de233ab8"
+    },
+    "lobby-service/src/http.js": {
+      "bytes": 4076,
+      "sha256": "1aebed8487266e27eb7405ccc9c98688eb39772548645599c5ee3702fcdc4733"
+    },
+    "lobby-service/src/server.js": {
+      "bytes": 1266,
+      "sha256": "d0a7367fb862c42dcc07c49ee3c417d3c1c46a80a5da11f5a6f21a86fa1e05c2"
+    },
+    "lobby-service/src/service.js": {
+      "bytes": 11473,
+      "sha256": "f26f4221b9ac76108dace0beea673c0e5391e9453573a267f2c40fbca68a0525"
+    },
+    "lobby-service/src/store.js": {
+      "bytes": 4391,
+      "sha256": "fdf6b3da7bc3fea026b68b69f4281c76c5479c51ce70ac923eeab84efa9f284b"
+    },
+    "lobby-service/src/turn.js": {
+      "bytes": 1630,
+      "sha256": "e58f5c0473e5ffae1dfd76ef39bcf6821ee4603fa45738d25f5a505a627efe8b"
+    },
+    "lobby-service/test/http.test.js": {
+      "bytes": 1451,
+      "sha256": "d6f9f66c1d33536dcbafc284427cadd08a9d51720953a920c51e78991d8f1cec"
+    },
+    "lobby-service/test/redis.test.js": {
+      "bytes": 1707,
+      "sha256": "8e4a22b7d34c326c824fd604f10aa6f3e96d1625f9297b91e9c56729d98d0ecb"
+    },
+    "lobby-service/test/remote-relay.mjs": {
+      "bytes": 10419,
+      "sha256": "e19a5629c62674a414e9a87878f5cf49ac114e2abf181dcb963ff55fe02491fe"
+    },
+    "lobby-service/test/server.test.js": {
+      "bytes": 1514,
+      "sha256": "f6ea0205a3d49693aee128bbf445efd61091b348c26fe7c394b290d1a4a16452"
+    },
+    "lobby-service/test/service.test.js": {
+      "bytes": 10166,
+      "sha256": "96d0b9901e86fa62340a951ad0566114fe29e93f2bff35c0090a230bcb752f11"
+    },
+    "lobby-service/vercel.json": {
+      "bytes": 268,
+      "sha256": "2cbecca79b47ef1cd5172fc3904cf3971e3d62da37ce2af278d11362c41cc95b"
     },
     "native-reference/README.md": {
       "bytes": 6508,
@@ -5977,8 +6105,8 @@
       "sha256": "5c6d9c301b368be3c7ef8328d5ebae6fc86ec7e7283cd50a7a6ec11cc09fdd00"
     },
     "rage-port/BROWSER_LOCKSTEP.md": {
-      "bytes": 7462,
-      "sha256": "d764814c1829c7a6c424569cd206ebda55d4ff14025a9384167e0377838e1c93"
+      "bytes": 8867,
+      "sha256": "9dacdcc4dceb5b7250d2409963bfb34e9c1d9864bef2233bb542f051f7b73994"
     },
     "rage-port/PLATFORM_PORT.md": {
       "bytes": 12913,
@@ -6753,8 +6881,8 @@
       "sha256": "de2c58363193452b0c66bb103380b91d0686d088c45505b571d13cbf5d5808ff"
     },
     "rage-port/scripts/install-web.py": {
-      "bytes": 7302,
-      "sha256": "a7550dd34a82e55b5ec4c6e31e25110ad29ebe8ff6f988cfe2d2a99d7cd0c2c4"
+      "bytes": 7456,
+      "sha256": "b92c0c44d41bb9b8007cde72f3d9453381ec11925254091ff0b4c4d3e8281c50"
     },
     "rage-port/scripts/patch-emscripten.py": {
       "bytes": 6977,
@@ -6816,21 +6944,29 @@
       "bytes": 2307,
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
+    "rage-port/shell/discovery-config.js": {
+      "bytes": 231,
+      "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+    },
+    "rage-port/shell/discovery.js": {
+      "bytes": 15115,
+      "sha256": "fa53adafb35402b4d0ab6ad4d58a9151fdf4b7e5c0ec00accfd3e0a7eb0c14ed"
+    },
     "rage-port/shell/gallery.js": {
       "bytes": 10496,
       "sha256": "f68618aaae265281b745100f25ed01e8777568b0d11f9c8b74ba813083189b2f"
     },
     "rage-port/shell/game.js": {
-      "bytes": 26114,
-      "sha256": "71e702aa556e674e7ba3a960f75a73d7890368bc43548c2bebdda61fecd9c200"
+      "bytes": 26121,
+      "sha256": "a432f23aa02e7a9160b1636c0b7cf77c7c66e61b41086fe6cfdde17786c3506c"
     },
     "rage-port/shell/index.html": {
-      "bytes": 28414,
-      "sha256": "84f885f8f027934a03e90b19fbaaf8973753e225043bf3b7c9df5098cdfa677c"
+      "bytes": 30206,
+      "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
     },
     "rage-port/shell/multiplayer.js": {
-      "bytes": 20682,
-      "sha256": "7b37da67f3cff47350da7f2109ab83d3f6838d37991f1c369ba4b0e5a1472124"
+      "bytes": 24302,
+      "sha256": "ae710eef2e321dbc35d364fa1d22e028712d7e3c0422720386c2cb801783244a"
     },
     "rage-port/shell/scenario-library.js": {
       "bytes": 2147,
@@ -12697,8 +12833,8 @@
       "sha256": "938e5ec44e6de0bf8963127fb87135874d7e2af3809cc32dd2aac363395de676"
     },
     "rage-port/tests/README.md": {
-      "bytes": 3146,
-      "sha256": "d294ab126b1155a9384682182c9e04bd70b95e78b89f3828a4e08699dba356e6"
+      "bytes": 4158,
+      "sha256": "b3d2551a50aa158af928da02f1ec4ec8eddcf12522e18ea5ae6132cfd8d224e4"
     },
     "rage-port/tests/SCENARIO_LIBRARY.md": {
       "bytes": 4784,
@@ -12740,6 +12876,14 @@
       "bytes": 7100,
       "sha256": "bc5b0ac7ddeec866c557b808f0089e39eb4f2614bf6a0e4759d63df88827afff"
     },
+    "rage-port/tests/discovery-browser.mjs": {
+      "bytes": 11660,
+      "sha256": "177fe775b19949c1eded2ea6ae25fcc4ee8b9e7f28d67cd8f01668da8eb2b45b"
+    },
+    "rage-port/tests/discovery-relay.mjs": {
+      "bytes": 8209,
+      "sha256": "8a25b3f86b9dd786e56bbf2080bf142e63d8d4c4c43795134e93fda5dad30f9a"
+    },
     "rage-port/tests/gameplay-parity.mjs": {
       "bytes": 1332,
       "sha256": "6a57dc5f3b1395ae51e675334495dd02322e22675208266c4803778dbf8501dc"
@@ -12769,12 +12913,12 @@
       "sha256": "659f8a17163f7159c44b2ea17837d9e95068484b82040481a721ad7028aa8ad3"
     },
     "rage-port/tests/room-driver.mjs": {
-      "bytes": 5452,
-      "sha256": "92ca205638638366ccd63726cab8fc32b5b3dffd0f49bb6f0a58b3440f3b7300"
+      "bytes": 5583,
+      "sha256": "780981f033a4a2ca3e42d986bb7f3a48f7d51f91567ff53661be48742854477d"
     },
     "rage-port/tests/rtc-room.mjs": {
-      "bytes": 7106,
-      "sha256": "50d4b1bb2f12eb29d55186d6d9830e81a734c8d307ef22b52c5f2d6f529d16bb"
+      "bytes": 7237,
+      "sha256": "33de2103f000abdc26b7e5b7145e34cb257cc7aa96b5f6dbb1a2a5cb34c99f83"
     },
     "rage-port/tests/scenario-contact-sheet.py": {
       "bytes": 2570,
@@ -12808,6 +12952,10 @@
       "bytes": 1852,
       "sha256": "e7e358bf320b99a55bce55e0b1c6c37f49e13d8493e6337081ee0fc1f892d0fd"
     },
+    "tools/build-pages.py": {
+      "bytes": 6260,
+      "sha256": "0e9b60fa1e148a6e4eaf4ecbe9576114340bcf5f8503b28e4d5d4e1f6928996e"
+    },
     "tools/import-content.mjs": {
       "bytes": 8903,
       "sha256": "e414af64bf89ec556d666c29c90f1508c6a7a0f7b28ddf9507b9859c7b520e30"
@@ -12817,8 +12965,12 @@
       "sha256": "9c3b318a8d0b0c9ee053fa036c5678bdeb9f126341b75a5c68c0aab2edfbc7ef"
     },
     "tools/sync-github-source.py": {
-      "bytes": 4174,
-      "sha256": "9878a5255357c024099844f34a2f66dbccf526a61612f51f7ba7e33c0220ecac"
+      "bytes": 4297,
+      "sha256": "6bbb7e333597bd82cc53f58dde837e68ed6217754fcf27125ec44c7425a71e82"
+    },
+    "tools/test-pages.mjs": {
+      "bytes": 4331,
+      "sha256": "613ab79ed9faf8208bc64993516279ded56019d53d6c1332138979fc6fb2149d"
     },
     "web/app/chatgpt-auth.ts": {
       "bytes": 2550,
@@ -12837,8 +12989,8 @@
       "sha256": "a38a6c714707b3e301cd20f4a00f74290ece2e586ea39d3bfd0ed0bc63cde357"
     },
     "web/app/page.tsx": {
-      "bytes": 1063,
-      "sha256": "cf3b86e7fe00dc7a57b8e0f05aa76a502fe9eebe63b9d5b7749c298f72c1e10a"
+      "bytes": 1188,
+      "sha256": "9b651aa920eee3f53e5b5b69c1842d89de1f45363525491546fe912cfc2e8877"
     },
     "web/artwork/README.md": {
       "bytes": 933,
@@ -12957,8 +13109,8 @@
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
     "web/public/rage/build-manifest.json": {
-      "bytes": 1132,
-      "sha256": "c1bc646d2ad87dfe036dfd92a35441b383604d6d2fc320fc060b7c1eb22f44cb"
+      "bytes": 1389,
+      "sha256": "c17049b3c18a4feabfc1023a5aa290e97b3630bbfcee3a4d233347c38d84fdb1"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -13632,17 +13784,25 @@
       "bytes": 12992995,
       "sha256": "2b35d4d83dabf41443fd2c1707ef634390e35b977c5487e4b23c5db7d3e43e2d"
     },
+    "web/public/rage/discovery-config.js": {
+      "bytes": 231,
+      "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+    },
+    "web/public/rage/discovery.js": {
+      "bytes": 15115,
+      "sha256": "fa53adafb35402b4d0ab6ad4d58a9151fdf4b7e5c0ec00accfd3e0a7eb0c14ed"
+    },
     "web/public/rage/gallery.js": {
       "bytes": 10496,
       "sha256": "f68618aaae265281b745100f25ed01e8777568b0d11f9c8b74ba813083189b2f"
     },
     "web/public/rage/game.js": {
-      "bytes": 26114,
-      "sha256": "71e702aa556e674e7ba3a960f75a73d7890368bc43548c2bebdda61fecd9c200"
+      "bytes": 26121,
+      "sha256": "a432f23aa02e7a9160b1636c0b7cf77c7c66e61b41086fe6cfdde17786c3506c"
     },
     "web/public/rage/index.html": {
-      "bytes": 28414,
-      "sha256": "84f885f8f027934a03e90b19fbaaf8973753e225043bf3b7c9df5098cdfa677c"
+      "bytes": 30206,
+      "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -13681,8 +13841,8 @@
       "sha256": "de4cbb87d2e0091407b8534f5b55818c14e17951376237b05469a2b16fcc3c91"
     },
     "web/public/rage/multiplayer.js": {
-      "bytes": 20682,
-      "sha256": "7b37da67f3cff47350da7f2109ab83d3f6838d37991f1c369ba4b0e5a1472124"
+      "bytes": 24302,
+      "sha256": "ae710eef2e321dbc35d364fa1d22e028712d7e3c0422720386c2cb801783244a"
     },
     "web/public/rage/packs/Fantasy.c4d": {
       "bytes": 4133760,
@@ -13749,8 +13909,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10825269,
-      "sha256": "97b6d26073a198fcefcb907f505ab6ded91d3f5c48604bd33ed3f1965b869465"
+      "bytes": 10840791,
+      "sha256": "8e18803186a2c4df9f8da00cc2428f2e5d0a9b08f947334dc9c57613fd953814"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
@@ -13771,6 +13931,14 @@
     "web/public/rage/source/content-manifest.json": {
       "bytes": 3442,
       "sha256": "e52e977a8ca15088a80a4a319d01f6a60691722d733ba3559fd9b058e0c834b6"
+    },
+    "web/public/rage/source/discovery-browser.json": {
+      "bytes": 6652,
+      "sha256": "5a6e68fae5cd510ff8056ada1f16520635f02047db9ce27b73d10bb5338a6a83"
+    },
+    "web/public/rage/source/discovery-relay.json": {
+      "bytes": 1997,
+      "sha256": "aff4c1d484cc879bef81060ccd5e8919cda7f3f7616f9cff85fb1adcee0d58ab"
     },
     "web/public/rage/source/goldmine-cycle-observed.json": {
       "bytes": 1700,

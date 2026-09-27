@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew Neoclonk lobby and TURN certificate
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/neoclonk/lobby-service/deploy/renew-cert.sh

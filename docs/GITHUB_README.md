@@ -8,7 +8,7 @@ The catalog includes all 80 official scenarios (53 base and 27 from Knights, Far
 
 The 80 scenarios are organized into nine category galleries. Original packs download unchanged as required. Original Title.png previews are kept separate from newly captured browser gameplay screenshots. The menu includes a documented HD restoration of the original background; the original packs and scenario scripts are not repainted or rewritten.
 
-Multiplayer connects browser-to-browser using WebRTC, with manually exchanged invitation and reply text. No default discovery, signalling, game, STUN or TURN server is contacted. Optional user-supplied ICE servers can be configured where a direct connection needs them. The host tab must stay open; background browser throttling may slow the room. Each participant has one local player in their own browser/device, with no shared-keyboard or split-screen multiplayer. **Live-room saves and reconnect are not implemented.** Solo saves remain local and use original `.c4s` files. See the verification section for measured acceptance scope and current results.
+Multiplayer connects browser-to-browser using WebRTC. The optional [lobby service](lobby-service/README.md) provides public rooms, private room codes and automatic connection setup. Browsers try a direct connection first; only a failed direct attempt requests expiring TURN credentials. A relay forwards encrypted packets while the original simulation still runs on the players' devices. Configure the public endpoint in `rage-port/shell/discovery-config.js`; when unconfigured, manual invitation/reply exchange remains available under Advanced. The host tab must stay open; background browser throttling may slow the room. Each participant has one local player in their own browser/device, with no shared-keyboard or split-screen multiplayer. **Live-room saves, reconnect and host migration are not implemented.** Solo saves remain local and use original `.c4s` files. See the verification section for measured acceptance scope and current results.
 
 All mission scenarios are available immediately, as requested. At browser startup, the adapter adds only the catalog’s 12 original scenario-entry `Head.MissionAccess` passwords to the player’s configuration. The original engine gate remains intact. Internal progress flags such as `StormPortal` and `PortalOpen` are not prefilled; puzzles, scripted objectives and earned progress inside each mission remain unchanged.
 
@@ -24,6 +24,7 @@ Release reports are published with the checked-in browser build:
 - [Sweep summary](web/public/rage/source/scenario-summary.json), [responsive gallery checks](web/public/rage/source/scenario-gallery.json), and [80-scenario contact sheet](web/public/rage/source/scenario-contact-sheet.webp).
 - Direct-room checks: [Gold Mine](web/public/rage/source/rtc-goldmine.json), [Knights](web/public/rage/source/rtc-knights.json), and [Desert](web/public/rage/source/rtc-desert.json).
 - [Chromium host ↔ WebKit guest](web/public/rage/source/rtc-cross-browser.json): production invitation/reply exchange, player input, synchronization at frame 120, terrain agreement and shared pause passed.
+- [Discovery and real TURN relay](web/public/rage/source/discovery-relay.json): original Gold Mine synchronized through frame 120 over both direct WebRTC and a real local coturn relay. Direct connections requested no TURN credentials; both modes stopped lobby requests during gameplay. This is a local integration check, not a claim about every carrier/firewall.
 - Native exit/save persistence: [Chromium](web/public/rage/source/native-exit-persistence.json) and [WebKit](web/public/rage/source/native-exit-persistence-webkit.json).
 - [Touch access to original menus](web/public/rage/source/touch-menus.json) and [original native replay parity](web/public/rage/source/native-replay-verification.json).
 
@@ -81,6 +82,7 @@ The importer requires a fresh destination. The generator retains archived downlo
 ## Structure and verification
 
 - `web/`: website source and runnable compiled engine/assets under `public/rage/`.
+- `lobby-service/`: Node discovery/signaling service, Redis storage, expiring TURN credentials and a single-server deployment bundle; no game simulation or player saves.
 - `rage-port/`: original engine port, build configuration, shell, catalog, tests and data.
 - `cr_source/`: unchanged source used to establish the port patch.
 - `original-content/`: provenance, license notices and the exact Gold Mine audit manifest.

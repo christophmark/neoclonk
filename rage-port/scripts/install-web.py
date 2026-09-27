@@ -40,6 +40,8 @@ for relative,name in [
  ('rage-port/outputs/rtc-team/report.json','rtc-knights.json'),
  ('rage-port/outputs/rtc-desert/report.json','rtc-desert.json'),
  ('rage-port/outputs/rtc-cross-browser/report.json','rtc-cross-browser.json'),
+ ('rage-port/outputs/discovery-relay/report.json','discovery-relay.json'),
+ ('rage-port/outputs/discovery-browser/report.json','discovery-browser.json'),
  ('rage-port/outputs/touch-menus/report.json','touch-menus.json'),
  ('rage-port/outputs/exit/report.json','native-exit-persistence.json'),
  ('rage-port/outputs/exit-webkit/report.json','native-exit-persistence-webkit.json')]:

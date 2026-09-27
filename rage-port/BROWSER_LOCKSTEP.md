@@ -5,6 +5,28 @@ physics, script execution, terrain updates or the original command interpreter.
 The native socket implementation remains disabled. The browser shell owns a reliable,
 ordered transport, room membership, sequencing, pause policy and disconnect handling.
 
+## Discovery and relay
+
+`shell/discovery.js` exchanges connection offers/answers through `lobby-service`.
+Public rooms and private codes carry only temporary lobby metadata. The server
+authenticates host/guest tokens and validates version, catalog and room capacity;
+Redis atomically expires rooms and protects simultaneous joins. The service never
+receives original `C4Control` packets, terrain, saved games or simulation frames.
+
+Each connection first gathers direct/STUN candidates. If the direct data channel
+cannot open, the peers advance to a new signaling generation and request temporary
+TURN credentials. TURN is not allocated for the initial direct attempt. Fallback
+still permits a direct candidate pair if one becomes available. The selected ICE
+pair determines whether the UI reports direct or relayed transport. Connected
+guests stop polling; the host maintains the room until starting. All discovery
+polling ends when gameplay begins. Relay credentials default to four hours and can
+be configured up to twelve; live credential renewal and host migration are not
+implemented, so long relayed sessions are limited by their issued credentials.
+
+Manual invitation/reply exchange remains available when no service is configured.
+Keep provider keys and coturn's shared secret only on the server. The public shell
+configuration contains the lobby URL and STUN URLs, never a permanent credential.
+
 ## Bootstrap
 
 Every participant loads the same engine/content bytes and the same original player

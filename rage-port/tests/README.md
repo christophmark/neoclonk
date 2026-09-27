@@ -36,3 +36,18 @@ unique original QuickSave groups, preservation of earlier saves and pause state.
 
 The end-to-end menu/header/storage/rotation tests live in
 `web/tests/usability-browser.mjs`; run `npm run test:browser` from `web/`.
+# Lobby discovery and TURN
+
+`node rage-port/tests/discovery-browser.mjs` tests the production lobby UI with
+three browser peers and a fixture signaling API: direct connections, lazy fallback,
+cancelled creation, same-slot replacement, peer departure, and stopped polling.
+
+`REDIS_TEST_URL=redis://127.0.0.1:16387 TURN_SERVER_BINARY=/path/to/turnserver node rage-port/tests/discovery-relay.mjs`
+tests the production server, isolated Redis namespace, real coturn, and the original
+Gold Mine WASM engine. It verifies selected direct/relay candidate pairs, zero TURN
+requests for direct connections, input, original frame-120 synchronization, matching
+terrain and no lobby calls during gameplay. Use a local test Redis and an available
+coturn binary; coturn listens only on loopback with test-only loopback peer access.
+The relay run deliberately removes direct candidates to model a restricted network.
+No production relay keys or player rooms are used. Results are written to
+`rage-port/outputs/discovery-relay/`.

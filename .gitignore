@@ -1,7 +1,10 @@
 .toolchains/
+_site/
 node_modules
 **/node_modules
 **/.env*
+!**/.env.example
+**/.vercel/
 **/.wrangler/
 **/.next/
 **/__pycache__/

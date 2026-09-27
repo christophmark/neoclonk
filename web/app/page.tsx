@@ -4,11 +4,13 @@ export default async function Page({ searchParams }: {
 }) {
   const values = (await searchParams) ?? {};
   const query = new URLSearchParams();
-  query.set('v', 'scenarios-zoom-2');
+  query.set('v', 'discovery-1');
   for (const key of ['debug', 'touch', 'replay', 'play', 'load', 'host', 'join']) {
     if (values[key] === '1') query.set(key, '1');
   }
   const scenario = values.scenario;
+  const room = values.room;
+  if (typeof room === 'string' && /^[A-Z2-9]{8}$/i.test(room)) query.set('room', room.toUpperCase());
   if (typeof scenario === 'string' && /^[a-z0-9_./-]+$/i.test(scenario)) query.set('scenario', scenario);
   const save = values.save;
   if (typeof save === 'string' && /\.c4s$/i.test(save) &&
