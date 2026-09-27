@@ -8,8 +8,9 @@ new=$(sha256sum "$certificate")
 if [ "$old" != "$new" ]; then
   docker compose -f "$compose" exec -T nginx nginx -t
   docker compose -f "$compose" exec -T nginx nginx -s reload
-  # Restart only an already-running relay. Never undo the traffic cutoff.
-  if [ -n "$(docker compose -f "$compose" ps --status running -q coturn)" ]; then
-    docker compose -f "$compose" restart coturn
-  fi
+  # TURN TLS terminates in HAProxy. A graceful master reload preserves sessions
+  # and never starts/restarts coturn, so it cannot undo the traffic cutoff.
+  python3 /opt/neoclonk/lobby-service/deploy/refresh-haproxy-cert.py
+  docker compose -f "$compose" exec -T haproxy haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+  docker compose -f "$compose" kill -s SIGUSR2 haproxy
 fi

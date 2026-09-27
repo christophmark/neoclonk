@@ -51,3 +51,17 @@ coturn binary; coturn listens only on loopback with test-only loopback peer acce
 The relay run deliberately removes direct candidates to model a restricted network.
 No production relay keys or player rooms are used. Results are written to
 `rage-port/outputs/discovery-relay/`.
+
+For an opt-in check against the deployed lobby and TURN, use the shipped
+`discovery-config.js` endpoint and an allowed localhost origin (port 3902):
+
+```sh
+LOBBY_URL=https://lobby.40-180-87-214.sslip.io \
+DISCOVERY_OUT=rage-port/outputs/discovery-live \
+node rage-port/tests/discovery-relay.mjs
+```
+
+This creates temporary private rooms and runs the original Gold Mine simulation
+through both a direct connection and a forced relay connection. It verifies
+matching simulation and landscape state, guest input, and no lobby requests
+during play. It consumes a small amount of the deployment's request/relay budget.

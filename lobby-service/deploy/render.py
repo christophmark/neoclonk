@@ -7,6 +7,8 @@ import os
 from pathlib import Path
 import re
 import secrets
+import subprocess
+import sys
 
 IMAGES = {
     'coturn': 'coturn/coturn:4.18.0-r0@sha256:bbefd3e1fdfdc0d58770fe01b581fd8b00d9f3a5580d00acb77cf719a6bc78e3',
@@ -74,6 +76,9 @@ maxmemory 64mb
 maxmemory-policy noeviction
 save 900 1
 ''', 0o644)
+    # Coturn 4.18 defaults to TLS >= 1.2, DTLS/CLI/legacy STUN disabled.
+    # Its PROXY mode replaces ordinary TCP listeners and accepts plaintext only.
+    # HAProxy terminates TURN TLS and supplies the public TCP listeners.
     # Coturn PROXY port must only be reachable locally; firewall in setup guide
     # rejects public 5348. HAProxy sends the binary v2 format coturn requires.
     write('turnserver.conf', f'''listening-port=3478
@@ -90,16 +95,10 @@ server-name={turn}
 fingerprint
 use-auth-secret
 static-auth-secret={secret}
-cert=/etc/letsencrypt/live/neoclonk/fullchain.pem
-pkey=/etc/letsencrypt/live/neoclonk/privkey.pem
-no-cli
+no-tls
 no-multicast-peers
 no-tcp-relay
-no-tlsv1
-no-tlsv1_1
-no-dtls
 no-rfc5780
-no-stun-backward-compatibility
 stale-nonce=600
 user-quota=8
 total-quota=64
@@ -108,7 +107,6 @@ bps-capacity=2097152
 relay-threads=2
 log-file=stdout
 simple-log
-no-software-attribute
 denied-peer-ip=0.0.0.0-0.255.255.255
 denied-peer-ip=10.0.0.0-10.255.255.255
 denied-peer-ip=100.64.0.0-100.127.255.255
@@ -139,10 +137,19 @@ frontend tls_mux
   tcp-request inspect-delay 5s
   tcp-request content accept if {{ req.ssl_hello_type 1 }}
   use_backend lobby_tls if {{ req.ssl_sni -i {lobby} }}
-  default_backend turn_tls
+  default_backend turn_tls_termination
+frontend turn_plain
+  bind 0.0.0.0:3478
+  default_backend turn_proxy
+frontend turn_tls
+  bind 127.0.0.1:5347 accept-proxy ssl crt /usr/local/etc/haproxy/certs/turn.pem ssl-min-ver TLSv1.2
+  bind 0.0.0.0:5349 ssl crt /usr/local/etc/haproxy/certs/turn.pem ssl-min-ver TLSv1.2
+  default_backend turn_proxy
+backend turn_tls_termination
+  server tls 127.0.0.1:5347 send-proxy-v2
 backend lobby_tls
   server lobby 127.0.0.1:8443 send-proxy-v2
-backend turn_tls
+backend turn_proxy
   server turn 127.0.0.1:5348 send-proxy-v2
 ''', 0o644)
     https = f'''
@@ -236,6 +243,7 @@ services:
     mem_limit: 64m
     volumes:
       - {directory}/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - {directory}/haproxy-certs:/usr/local/etc/haproxy/certs:ro
   coturn:
     <<: *common
     image: {IMAGES['coturn']}
@@ -244,7 +252,6 @@ services:
     mem_limit: 192m
     volumes:
       - {directory}/turnserver.conf:/etc/coturn/turnserver.conf:ro
-      - /etc/letsencrypt:/etc/letsencrypt:ro
   certbot:
     image: {IMAGES['certbot']}
     network_mode: host
@@ -268,4 +275,6 @@ if __name__ == '__main__':
     p.add_argument('--tls', action='store_true', help='Enable HTTPS after obtaining a certificate')
     args = p.parse_args()
     result = render(json.loads(Path(args.settings).read_text()), args.directory, args.source, args.tls)
+    if args.tls:
+        subprocess.run([sys.executable, str(Path(__file__).with_name('refresh-haproxy-cert.py')), '--directory', str(result)], check=True)
     print(f'Rendered private configuration into {result}; secrets were not printed.')

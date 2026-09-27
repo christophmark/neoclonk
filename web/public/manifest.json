@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "Neoclonk",
+  "name": "Project Neoclonk",
   "short_name": "Neoclonk",
-  "description": "80 original Clonk Rage scenarios, playable in your browser.",
+  "description": "Play Clonk Rage in the browser.",
   "lang": "en",
   "start_url": "/",
   "scope": "/",

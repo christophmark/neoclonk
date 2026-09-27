@@ -2,12 +2,12 @@
 // Opt-in deployment verification. No provider keys or SDP/credential logging.
 // LOBBY_URL=https://lobby.example.com node test/remote-relay.mjs
 import {createServer} from 'node:http';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {access,mkdir,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {dirname,resolve} from 'node:path';
 import {chromium} from '../../web/node_modules/playwright/index.mjs';
 
-const serviceUrl=(process.env.LOBBY_URL||'https://lobby.108-129-220-236.sslip.io').replace(/\/$/,'');
+const serviceUrl=(process.env.LOBBY_URL||'https://lobby.40-180-87-214.sslip.io').replace(/\/$/,'');
 const origin=process.env.TEST_ORIGIN||'http://127.0.0.1:3902';
 const originUrl=new URL(origin);
 if(!['127.0.0.1','localhost'].includes(originUrl.hostname)||originUrl.protocol!=='http:')throw Error('TEST_ORIGIN must be an HTTP localhost origin.');
@@ -19,7 +19,8 @@ const report={endpoint:serviceUrl,origin,startedAt:new Date().toISOString(),resu
 try {
  server=createServer((req,res)=>{res.writeHead(200,{'Content-Type':'text/html','Cache-Control':'no-store'});res.end('<!doctype html><html lang="en"><meta charset="utf-8"><title>Neoclonk relay verification</title><p>Checking player-hosted relay connections.</p></html>');});
  await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(Number(originUrl.port)||80,originUrl.hostname,resolve);});
- browser=await chromium.launch({headless:true});
+ const executablePath=process.env.CHROME_BINARY||await access('/opt/google/chrome/chrome').then(()=>'/opt/google/chrome/chrome',()=>undefined);
+ browser=await chromium.launch({headless:true,executablePath});
  const context=await browser.newContext();
  const page=await context.newPage();
  await page.goto(origin,{waitUntil:'domcontentloaded',timeout:10000});

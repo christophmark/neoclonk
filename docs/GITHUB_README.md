@@ -1,4 +1,8 @@
-# Neoclonk
+# Project Neoclonk
+
+**Play Clonk Rage in the browser.**
+
+> Unofficial, noncommercial browser adaptation of [Clonk Rage](https://www.clonk.de/) © RedWolf Design / Matthes Bender and contributors. Original content: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); engine: [ISC](cr_source/licenses/clonk_source_license.txt). Browser code and presentation have been modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement is implied. Provided **as-is, without warranties**, to the extent permitted by law. See [licenses, attribution and changes](#licenses-attribution-and-changes) before redistributing.
 
 An unofficial, noncommercial browser adaptation of **Clonk Rage 4.9.10.7 [330]**. The original C++ engine runs through Emscripten/WebAssembly, with the original scenario scripts, sprites, materials and sound. The earlier Three.js simulation has been replaced.
 
@@ -63,7 +67,7 @@ python3 rage-port/scripts/install-web.py
 python3 rage-port/scripts/install-library.py
 ```
 
-`rage-port/source/` contains the modified engine; `cr_source/` preserves the original ISC source and bundled library notices (unused historical Windows binaries are omitted). `rage-port/patches/original-to-browser.patch` records the modifications. Build scripts pin the OpenSSL input hash and patch the pinned SDK for the original SDL/GL compatibility layer. The SDK, dependency build products and object files are intentionally excluded.
+`rage-port/source/` contains the modified engine; `cr_source/` preserves the original ISC source and bundled library notices (unused historical native binaries are omitted). `rage-port/patches/original-to-browser.patch` records the modifications. Build scripts pin the OpenSSL input hash and patch the pinned SDK for the original SDL/GL compatibility layer. The SDK, dependency build products and object files are intentionally excluded.
 
 The included packed files are unchanged originals. Supplemental packs load separately as needed; no individual pack exceeds the hosting file limit. All 19 catalog group files are included at their original `sourcePath` locations under `original-content/release/cr_game_linux/` and `original-content/addons/release/`; `install-library.py` verifies their hashes. No native executable is included. The five publisher archives are recorded by URL/hash as provenance but are not redundantly included.
 
@@ -99,7 +103,7 @@ The native Gold Mine recording was replayed by the browser engine through frame 
 
 **Clonk trademark:** Clonk is a registered trademark of Matthes Bender. The original trademark license is reproduced verbatim in `original-content/licenses/clonk_trademark_license.txt`. Neoclonk is an unofficial adaptation and is not endorsed by the original authors.
 
-Original scenario and object packs remain unchanged. The surrounding browser menu/layout, responsive presentation, background/icon treatment and newly captured screenshots are adaptations; their underlying original artwork remains subject to the content license. A private GitHub repository does not change any of these license terms.
+Original scenario and object packs remain unchanged. The surrounding browser menu/layout, responsive presentation, background/icon treatment and newly captured screenshots are adaptations; their underlying original artwork remains subject to the content license. Public availability does not waive the noncommercial content restrictions or other applicable license terms.
 
 ## Audio compatibility
 

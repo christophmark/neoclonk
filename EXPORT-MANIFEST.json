@@ -9,8 +9,8 @@
       "sha256": "4016f9cbe1186439969dc85c3ee8bfba38d35e7b2f6ed7b17d8b1fcfba8336d5"
     },
     "README.md": {
-      "bytes": 10641,
-      "sha256": "05c0de8e37748043f2f41f94a25abb79a182302ae43b18876920769b2dfe0a59"
+      "bytes": 11309,
+      "sha256": "11bf19440d0c2ae2b97135b9c74bd84aba9d83503e901ade28c2531ae4fa1c4f"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -835,14 +835,6 @@
     "cr_source/engine/fmod/fmoddyn.h": {
       "bytes": 39872,
       "sha256": "1e9a315a753c8337dd97be0751965575b0c5e02b4e801f7de5a27c8555326f8f"
-    },
-    "cr_source/engine/fmod/libfmod-3.74.so": {
-      "bytes": 1348,
-      "sha256": "e0c26611709ec854f7476b0de8e387e35dd7b3c05ce3c4133f791fac64516b00"
-    },
-    "cr_source/engine/fmod/libfmod-3.75.so": {
-      "bytes": 445480,
-      "sha256": "5c72d7586a75c6bccc4fb60664876f80d2a652b6554ba3a22cd9e22d64d89bad"
     },
     "cr_source/engine/fmod/wincompat.h": {
       "bytes": 1519,
@@ -5412,10 +5404,6 @@
       "bytes": 1701,
       "sha256": "9cc059e9b3cfbd5cfdb0a7b3b50fd100e941a147d818b717e66d203a2d64afa7"
     },
-    "cr_source/xcode/SDL.framework/SDL": {
-      "bytes": 2260968,
-      "sha256": "38eb139cec6eb995fbbedba7ef9d701a50c29ef7162b0f3ca388d254a1f68d6f"
-    },
     "cr_source/xcode/SDL.framework/Versions/A/Headers/SDL.h": {
       "bytes": 3133,
       "sha256": "a10517cba09ea91b5b2ba89fa35e68943d9917d2fdade598d1493e7b92afe5d4"
@@ -5796,10 +5784,6 @@
       "bytes": 814,
       "sha256": "68db5e0d2def725633de31e17037f6e9b2cc42379ecb3b5b22b09d8675a7e6bc"
     },
-    "cr_source/xcode/SDL_mixer.framework/SDL_mixer": {
-      "bytes": 3674436,
-      "sha256": "3506a17d9471a5212c473f43d7d6dd9af9a39bcedd68aeaa7a5b8fe6594a3ba4"
-    },
     "cr_source/xcode/SDL_mixer.framework/Versions/A/Headers/SDL_mixer.h": {
       "bytes": 25516,
       "sha256": "907e31e004663d5cbc2a913659f0a2377e91b695fceefdb82380b697a8c57517"
@@ -5833,12 +5817,12 @@
       "sha256": "d5c107730a534c2d2056ff2802abaa95d547b5698147f5aee2d074596576a3f7"
     },
     "docs/GITHUB_PAGES.md": {
-      "bytes": 1213,
-      "sha256": "6b52db38f6159d8104cfc17ec2aa1dbb8014f18628f0b619a48e752d6dd24a5a"
+      "bytes": 1970,
+      "sha256": "d28dda6ef19c49ab0bb4ba0c376438b4658870ce7936a5b38d45bf21aebcf669"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 10641,
-      "sha256": "05c0de8e37748043f2f41f94a25abb79a182302ae43b18876920769b2dfe0a59"
+      "bytes": 11309,
+      "sha256": "11bf19440d0c2ae2b97135b9c74bd84aba9d83503e901ade28c2531ae4fa1c4f"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -5869,8 +5853,8 @@
       "sha256": "044058dc21e67044f4b8be25bea96df9c4a9d730907b21a72652efb6e04c3613"
     },
     "lobby-service/deploy/README.md": {
-      "bytes": 10885,
-      "sha256": "f264ceaa8a99366380e40a94b7f05f63d9cf3b9072b5913d750fbedec89c6c69"
+      "bytes": 11320,
+      "sha256": "230d086a21d1c7c74c8c3ae8f1f549fbb039bb3a4a1d9104282d7a820c4d7c14"
     },
     "lobby-service/deploy/check-host.sh": {
       "bytes": 595,
@@ -5892,13 +5876,17 @@
       "bytes": 156,
       "sha256": "420a4f9baaeb62fdf022229c937a029467c5bc53cda604158bbd746961a4abb8"
     },
+    "lobby-service/deploy/refresh-haproxy-cert.py": {
+      "bytes": 817,
+      "sha256": "94e1e644a052937d88710bba4d520ac72163563cbd3deb0778016f9cffd7f1cf"
+    },
     "lobby-service/deploy/render.py": {
-      "bytes": 9748,
-      "sha256": "afdcce1e202748d2e0cd4d6e5f8cd59f1cfc72bb9f5661936171d34e9ed3a0a0"
+      "bytes": 10390,
+      "sha256": "7c250c7f89d8cc8751e734b8f2cf08928f0c946be6252bb2b22550fd7e9dbc9e"
     },
     "lobby-service/deploy/renew-cert.sh": {
-      "bytes": 618,
-      "sha256": "f063227f821a021dcba655fedfb563a30f5fca94fbfc4e5af6a1414c576a545b"
+      "bytes": 785,
+      "sha256": "42870e7ce7b11d0d714384bc8402a9b0f40fb1638ce8a61895388b815a74b2d2"
     },
     "lobby-service/deploy/test_deploy.py": {
       "bytes": 3179,
@@ -5953,8 +5941,8 @@
       "sha256": "8e4a22b7d34c326c824fd604f10aa6f3e96d1625f9297b91e9c56729d98d0ecb"
     },
     "lobby-service/test/remote-relay.mjs": {
-      "bytes": 10419,
-      "sha256": "e19a5629c62674a414e9a87878f5cf49ac114e2abf181dcb963ff55fe02491fe"
+      "bytes": 10583,
+      "sha256": "b70a47a5c6aae6dc4bcac2c9e08c86baff0fc6b06557644999c83a5c373a63dc"
     },
     "lobby-service/test/server.test.js": {
       "bytes": 1514,
@@ -6945,8 +6933,8 @@
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
     "rage-port/shell/discovery-config.js": {
-      "bytes": 231,
-      "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+      "bytes": 275,
+      "sha256": "f3db06e4f53c9184aca043ffc008922b5b888c0a11fef83e00b4c5c981bfc8f9"
     },
     "rage-port/shell/discovery.js": {
       "bytes": 15115,
@@ -6961,8 +6949,8 @@
       "sha256": "a432f23aa02e7a9160b1636c0b7cf77c7c66e61b41086fe6cfdde17786c3506c"
     },
     "rage-port/shell/index.html": {
-      "bytes": 30206,
-      "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
+      "bytes": 31366,
+      "sha256": "e5a0e455908e861b740aa7c60edd9f2dd0fb9cb8681976249c81d5cab714508a"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 24302,
@@ -7795,14 +7783,6 @@
     "rage-port/source/engine/fmod/fmoddyn.h": {
       "bytes": 39872,
       "sha256": "1e9a315a753c8337dd97be0751965575b0c5e02b4e801f7de5a27c8555326f8f"
-    },
-    "rage-port/source/engine/fmod/libfmod-3.74.so": {
-      "bytes": 1348,
-      "sha256": "e0c26611709ec854f7476b0de8e387e35dd7b3c05ce3c4133f791fac64516b00"
-    },
-    "rage-port/source/engine/fmod/libfmod-3.75.so": {
-      "bytes": 445480,
-      "sha256": "5c72d7586a75c6bccc4fb60664876f80d2a652b6554ba3a22cd9e22d64d89bad"
     },
     "rage-port/source/engine/fmod/wincompat.h": {
       "bytes": 1519,
@@ -12400,10 +12380,6 @@
       "bytes": 1701,
       "sha256": "9cc059e9b3cfbd5cfdb0a7b3b50fd100e941a147d818b717e66d203a2d64afa7"
     },
-    "rage-port/source/xcode/SDL.framework/SDL": {
-      "bytes": 2260968,
-      "sha256": "38eb139cec6eb995fbbedba7ef9d701a50c29ef7162b0f3ca388d254a1f68d6f"
-    },
     "rage-port/source/xcode/SDL.framework/Versions/A/Headers/SDL.h": {
       "bytes": 3133,
       "sha256": "a10517cba09ea91b5b2ba89fa35e68943d9917d2fdade598d1493e7b92afe5d4"
@@ -12784,10 +12760,6 @@
       "bytes": 814,
       "sha256": "68db5e0d2def725633de31e17037f6e9b2cc42379ecb3b5b22b09d8675a7e6bc"
     },
-    "rage-port/source/xcode/SDL_mixer.framework/SDL_mixer": {
-      "bytes": 3674436,
-      "sha256": "3506a17d9471a5212c473f43d7d6dd9af9a39bcedd68aeaa7a5b8fe6594a3ba4"
-    },
     "rage-port/source/xcode/SDL_mixer.framework/Versions/A/Headers/SDL_mixer.h": {
       "bytes": 25516,
       "sha256": "907e31e004663d5cbc2a913659f0a2377e91b695fceefdb82380b697a8c57517"
@@ -12833,8 +12805,8 @@
       "sha256": "938e5ec44e6de0bf8963127fb87135874d7e2af3809cc32dd2aac363395de676"
     },
     "rage-port/tests/README.md": {
-      "bytes": 4158,
-      "sha256": "b3d2551a50aa158af928da02f1ec4ec8eddcf12522e18ea5ae6132cfd8d224e4"
+      "bytes": 4773,
+      "sha256": "6fe932b92430e2bbd5d616d2bc9567e8fd9049864bd429f0234d85a1c1e436ec"
     },
     "rage-port/tests/SCENARIO_LIBRARY.md": {
       "bytes": 4784,
@@ -12881,8 +12853,8 @@
       "sha256": "177fe775b19949c1eded2ea6ae25fcc4ee8b9e7f28d67cd8f01668da8eb2b45b"
     },
     "rage-port/tests/discovery-relay.mjs": {
-      "bytes": 8209,
-      "sha256": "8a25b3f86b9dd786e56bbf2080bf142e63d8d4c4c43795134e93fda5dad30f9a"
+      "bytes": 8899,
+      "sha256": "ab91cdff78149100e9363f69071ea3e8f2f0e8c4992bae92abb47225f1495e0a"
     },
     "rage-port/tests/gameplay-parity.mjs": {
       "bytes": 1332,
@@ -12953,8 +12925,8 @@
       "sha256": "e7e358bf320b99a55bce55e0b1c6c37f49e13d8493e6337081ee0fc1f892d0fd"
     },
     "tools/build-pages.py": {
-      "bytes": 6260,
-      "sha256": "0e9b60fa1e148a6e4eaf4ecbe9576114340bcf5f8503b28e4d5d4e1f6928996e"
+      "bytes": 6280,
+      "sha256": "3cb197a15b6dde6ab7b4b0a827058a4ea26e1e78d433e64660e3b654e5abc7bf"
     },
     "tools/import-content.mjs": {
       "bytes": 8903,
@@ -12964,9 +12936,13 @@
       "bytes": 2884,
       "sha256": "9c3b318a8d0b0c9ee053fa036c5678bdeb9f126341b75a5c68c0aab2edfbc7ef"
     },
+    "tools/publish-lan.py": {
+      "bytes": 825,
+      "sha256": "821267b2c1979120d546363b71003fea6e7ad5fcb7961c044ef329a4b06ec359"
+    },
     "tools/sync-github-source.py": {
-      "bytes": 4297,
-      "sha256": "6bbb7e333597bd82cc53f58dde837e68ed6217754fcf27125ec44c7425a71e82"
+      "bytes": 4462,
+      "sha256": "6ddd670b0523d2855a8915a5a6ad41e6fa85d5992886b2f73a8dcd4ed307d89e"
     },
     "tools/test-pages.mjs": {
       "bytes": 4331,
@@ -12985,8 +12961,8 @@
       "sha256": "921807d2da50637822aa3be2b2a23c6fb7cc1d84b265a3a19466e737b5921c5d"
     },
     "web/app/layout.tsx": {
-      "bytes": 1889,
-      "sha256": "a38a6c714707b3e301cd20f4a00f74290ece2e586ea39d3bfd0ed0bc63cde357"
+      "bytes": 1883,
+      "sha256": "8a84c79fe94c6f332dfed3beb796cbf0955f61563783649b9b99d197c939fad1"
     },
     "web/app/page.tsx": {
       "bytes": 1188,
@@ -13053,8 +13029,8 @@
       "sha256": "120b12d087f370363454dea559eac028bcb375ea6d274d770f3f1724332b4d34"
     },
     "web/public/manifest.json": {
-      "bytes": 728,
-      "sha256": "3cefd1e92345d22c0369bf4b567f4e04ce8542db432bc2536236a941a414e3cf"
+      "bytes": 708,
+      "sha256": "da430f7df5954538eb67b8e1fb735ee01a199491be6e86424649aad2275aafbd"
     },
     "web/public/rage/assets/Endeavour.ttf": {
       "bytes": 35644,
@@ -13110,7 +13086,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1389,
-      "sha256": "c17049b3c18a4feabfc1023a5aa290e97b3630bbfcee3a4d233347c38d84fdb1"
+      "sha256": "357a6be4bfaef53ae01406078f98775da2c3efbbd9415cb09d4a7cc603fa6728"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -13785,8 +13761,8 @@
       "sha256": "2b35d4d83dabf41443fd2c1707ef634390e35b977c5487e4b23c5db7d3e43e2d"
     },
     "web/public/rage/discovery-config.js": {
-      "bytes": 231,
-      "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+      "bytes": 275,
+      "sha256": "f3db06e4f53c9184aca043ffc008922b5b888c0a11fef83e00b4c5c981bfc8f9"
     },
     "web/public/rage/discovery.js": {
       "bytes": 15115,
@@ -13801,8 +13777,8 @@
       "sha256": "a432f23aa02e7a9160b1636c0b7cf77c7c66e61b41086fe6cfdde17786c3506c"
     },
     "web/public/rage/index.html": {
-      "bytes": 30206,
-      "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
+      "bytes": 31366,
+      "sha256": "e5a0e455908e861b740aa7c60edd9f2dd0fb9cb8681976249c81d5cab714508a"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -13909,8 +13885,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10840791,
-      "sha256": "8e18803186a2c4df9f8da00cc2428f2e5d0a9b08f947334dc9c57613fd953814"
+      "bytes": 10841754,
+      "sha256": "ad27164d2d7af1dba3f2ddfd2e9816852ff1824169781e355cecb702e8d265cd"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,

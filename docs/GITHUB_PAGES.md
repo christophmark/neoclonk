@@ -4,6 +4,12 @@ The game can run directly on GitHub Pages; no Node or React server is required.
 Lobby discovery and optional TURN fallback use the separate endpoint in
 `rage-port/shell/discovery-config.js`.
 
+Production game: `https://christophmark.github.io/neoclonk/`.
+Discovery: `https://lobby.40-180-87-214.sslip.io`.
+STUN/TURN: `turn.40-180-87-214.sslip.io` on the Lightsail static IP
+`40.180.87.214`. The browser attempts a direct connection first and requests
+temporary relay credentials only after that attempt fails.
+
 After staging the current runtime with `python3 rage-port/scripts/install-web.py`:
 
 ```sh
@@ -17,6 +23,13 @@ both a domain root and `https://ACCOUNT.github.io/neoclonk/` work. Room links
 forward through the wrapper; native `/rage/` invite links also carry app metadata.
 Saved games belong to the browser origin, so saves on another host need exporting
 and importing through the game.
+
+For persistent Wi-Fi hosting, run `python3 tools/publish-lan.py` after exporting,
+then serve its snapshot with
+`python3 -m http.server 3000 --bind 0.0.0.0 --directory ~/.local/share/neoclonk-lan/current`.
+The publication switches complete snapshots atomically. Rebuilding the React
+website no longer invalidates the running Wi-Fi server's loaded modules.
+Older snapshots remain under `~/.local/share/neoclonk-lan/releases/` for rollback.
 
 `.github/workflows/pages.yml` deploys staged assets on `main` pushes or manual
 runs once Pages is enabled with **GitHub Actions** as its source. No cloud keys

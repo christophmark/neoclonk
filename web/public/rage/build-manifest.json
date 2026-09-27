@@ -1,7 +1,7 @@
 {
   "discovery-config.js": {
-    "bytes": 231,
-    "sha256": "e3552d70c18f3c8dc09ab45d8b6908fa4ef648d078ce61b74bf5c511b6c55c0d"
+    "bytes": 275,
+    "sha256": "f3db06e4f53c9184aca043ffc008922b5b888c0a11fef83e00b4c5c981bfc8f9"
   },
   "clonk.data": {
     "bytes": 23928602,
@@ -24,8 +24,8 @@
     "sha256": "63eec078370ca00d7fecadb715af2a28ba22669d6908176e775e6b018c9394ca"
   },
   "index.html": {
-    "bytes": 30206,
-    "sha256": "549b982299552824e60fa31c9e52eebf9b0a753ced0c3508b5742fa1ed580125"
+    "bytes": 31366,
+    "sha256": "e5a0e455908e861b740aa7c60edd9f2dd0fb9cb8681976249c81d5cab714508a"
   },
   "game.js": {
     "bytes": 26121,

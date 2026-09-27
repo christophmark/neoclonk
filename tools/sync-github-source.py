@@ -7,14 +7,15 @@ ap=argparse.ArgumentParser();ap.add_argument('--output',default=str(ROOT/'github
 assert OUT == ROOT/'github-source', 'Export is restricted to this workspace’s dedicated github-source directory'
 OUT.mkdir(parents=True,exist_ok=True)
 allowed=set()
-blocked={'.git','.openai','.wrangler','.vercel','.next','node_modules','__pycache__','build','dist','outputs','.DS_Store'}
+blocked={'.git','.openai','.wrangler','.vercel','.next','node_modules','__pycache__','build','dist','outputs','artifacts','.DS_Store'}
+native_framework_binaries={'xcode/SDL.framework/SDL','xcode/SDL_mixer.framework/SDL_mixer'}
 def include(path, target=None):
  p=ROOT/path
  if not p.exists():return
  if p.is_dir():
   for child in sorted(p.rglob('*')):
    rel=child.relative_to(p)
-   if child.is_file() and not child.is_symlink() and not any(part in blocked or part.startswith('.env') for part in rel.parts) and child.suffix not in {'.pyc','.o','.a','.log','.tsbuildinfo','.dll','.lib','.exe','.pdb'}:include(str(child.relative_to(ROOT)),str(Path(target or path)/rel))
+   if child.is_file() and not child.is_symlink() and not any(part in blocked or part.startswith('.env') for part in rel.parts) and str(rel) not in native_framework_binaries and child.suffix not in {'.pyc','.o','.a','.so','.dylib','.log','.tsbuildinfo','.dll','.lib','.exe','.pdb'}:include(str(child.relative_to(ROOT)),str(Path(target or path)/rel))
  else:
   destination=OUT/(target or path);destination.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,destination);allowed.add(str(destination.relative_to(OUT)))
 for p in ['cr_source','rage-port/source','rage-port/scripts','rage-port/tests','rage-port/patches','rage-port/shell','rage-port/catalog','rage-port/data','docs','tools','web/app','web/public','web/tests','web/artwork','lobby-service','.github/workflows']:

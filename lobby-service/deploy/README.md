@@ -22,8 +22,9 @@ TURN fallback. Nothing in this directory installs or deploys automatically.
   service; its availability and ACME rate limits are outside this deployment's
   control. Replace with owned DNS when practical. No wildcard certificate is
   needed. Publish no AAAA records unless IPv6 is separately configured.
-- A real email address for Let's Encrypt expiry notifications, and the exact
-  game origin, e.g. `https://christophmark.github.io` (without `/neoclonk`).
+- The exact game origin, e.g. `https://christophmark.github.io` (without `/neoclonk`).
+  An email address is optional: replace `--email YOU@example.org` below with
+  `--register-unsafely-without-email` when registering without one.
 - Review the selected Lightsail bundle's transfer allowance and create an AWS
   Budget alert. This bundle does **not** create an AWS spending limit.
 
@@ -50,7 +51,11 @@ Docker's port-publishing NAT and its firewall bypass behavior.
 HAProxy sends PROXY **v2** to both upstreams. nginx trusts it only on its loopback
 HTTPS listener and overwrites `X-Forwarded-For` before forwarding to Node. Coturn
 also requires v2 on `tcp-proxy-port`; nginx stream's v1 output would not work.
-Direct TURN 3478/5349 does not use PROXY headers. The same certificate covers both
+HAProxy terminates TURN TLS on public TCP5349 and on loopback TCP5347
+(the TCP443 mux forwards there with PROXY v2). It sends plaintext TURN plus
+PROXY v2 to coturn5348. Public TCP3478 follows the same plaintext backend.
+Coturn PROXY mode replaces ordinary TCP listeners and does not accept TLS.
+UDP3478 still goes directly to coturn. Keep internal TCP5347 blocked too. The same certificate covers both
 DNS names. TLS on 443 also supports TURN clients without SNI via the default
 TURN route.
 
@@ -148,9 +153,9 @@ sudo python3 deploy/traffic-guard.py
 sudo systemctl list-timers 'neoclonk-*'
 ```
 
-The certificate job runs twice daily. It reloads nginx and restarts an already
-running coturn only when the certificate actually changes. That rare restart
-interrupts relayed matches. It never restarts a relay stopped by the cutoff.
+The certificate job runs twice daily. It reloads nginx, refreshes the private HAProxy PEM, and gracefully reloads
+HAProxy only when the certificate actually changes. It never starts or restarts
+coturn, preserving the traffic cutoff latch and established relay sessions.
 
 The traffic guard tracks the primary NIC's **received plus sent** bytes, including
 SSH, image downloads, lobby traffic, and relay traffic. Every minute it persists
