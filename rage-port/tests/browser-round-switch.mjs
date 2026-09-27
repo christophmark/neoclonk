@@ -24,7 +24,7 @@ try{
  if(!touchOnly){
  await page.setViewportSize({width:390,height:844});await page.locator('#main-menu').click();
  await page.locator('.scenario-tile[data-scenario-id="tutorial.c4f/tutorial01.c4s"]').click();
- assert.equal(await page.locator('#start').textContent(),'Play selected scenario');assert.equal(await page.locator('#new-game').textContent(),'Resume current game');
+ assert.equal(await page.locator('#start').textContent(),'Play');assert.equal(await page.locator('#new-game').textContent(),'Resume current game');
  await page.locator('#start').click();assert.equal(await page.locator('#leave-dialog').isVisible(),true);assert.match((await state()).scenario,/goldmine/i);assert.equal((await state()).paused,true);
  await page.locator('#leave-cancel').click();await page.locator('#new-game').click();assert.equal(await page.locator('#cover').isVisible(),false);assert.match((await state()).scenario,/goldmine/i);
  await page.locator('#game-exit').click();await page.keyboard.press('Escape');assert.equal(await page.locator('#cover').isVisible(),false);check('Cancel preserves current round; explicit Resume and Exit work');

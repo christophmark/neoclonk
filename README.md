@@ -15,6 +15,7 @@ Neoclonk runs the original **Clonk Rage 4.9.10.7 [330]** C++ engine in the brows
 ## Playing
 
 - **80 official scenarios** in nine galleries: 53 base scenarios and 27 from Knights, Far Worlds, Fantasy and Western. Tiles show actual gameplay; scenario packs download as needed.
+- **Solo exploration** is available through **Play solo** for multiplayer scenarios, including Jungle. Original rules and goals remain in place; some need opponents or finish immediately. Choose **Continue this round** after an early victory to keep exploring. **Host** starts the normal multiplayer lobby.
 - **Every mission is available immediately.** Puzzles, objectives and progress within each mission follow the original scripts.
 - **Classic nine-button controls**, with transparent touch controls on mobile. Touch buttons sit above the game's action icons, and the camera accounts for the space they cover.
 - **Responsive, full-viewport play** with a zoom slider. Pixel-preserving sprite magnification keeps the original artwork sharp; whole-number zoom levels give the most uniform pixel sizes.
@@ -103,10 +104,11 @@ The importer requires a fresh destination. Catalog generation preserves download
 
 ## Test coverage
 
-The [80-scenario integration report](web/public/rage/source/scenario-library-acceptance.json) covers startup, normal controls, a short simulation interval, gameplay screenshots and solo saves where available. All 27 scenarios requiring multiple players are covered by actual two-browser rooms. This does not establish completion of every objective or campaign puzzle, or coverage of every device, network and long-running round.
+The [80-scenario integration report](web/public/rage/source/scenario-library-acceptance.json) covers startup, normal controls, a short simulation interval, gameplay screenshots and solo saves where available. All 27 scenarios listed for two or more players are covered by actual two-browser rooms. This does not establish completion of every objective or campaign puzzle, or coverage of every device, network and long-running round.
 
 Additional checks cover:
 
+- [Solo startup for multiplayer scenarios](web/public/rage/source/solo-scenarios-chromium.json), including [Jungle in WebKit](web/public/rage/source/solo-scenarios-webkit.json). These checks cover one-player startup, original controls and a short simulation interval.
 - [Original-engine replay parity](web/public/rage/source/native-replay-verification.json) through frame 680 of a Gold Mine recording.
 - [Chromium ↔ WebKit multiplayer](web/public/rage/source/rtc-cross-browser.json), including player input, synchronized state, terrain agreement and shared pause.
 - [Direct and TURN-relayed multiplayer on the deployed service](web/public/rage/source/discovery-live.json).

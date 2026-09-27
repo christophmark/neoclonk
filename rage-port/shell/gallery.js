@@ -41,10 +41,11 @@
  function updateActions(){
   if(!selected)return;
   const state=gameState(),solo=(Number(selected.minPlayers)||1)<=1,same=state.ready&&state.scenarioId===selected.id;
-  const primary=same?'Resume game':solo?'Play selected scenario':'Host selected scenario';
+  const primary=same?'Resume game':solo?'Play':'Host';
   $('start').hidden=false;$('start').disabled=['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
   $('new-game').hidden=!state.ready;$('new-game').textContent=same?'Restart scenario':'Resume current game';$('new-game').setAttribute('aria-label',same?`Restart ${selected.title}`:'Resume current game');
-  $('host-room').hidden=!solo||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);
+  $('play-solo').hidden=solo||(same&&!state.multiplayer);$('play-solo').disabled=['loading','initializing'].includes(state.phase);$('play-solo').setAttribute('aria-label',`Play ${selected.title} solo`);$('solo-note').hidden=solo;
+  $('host-room').disabled=['loading','initializing'].includes(state.phase);$('host-room').hidden=(!solo&&!same)||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);
  }
  function updateArrows(record){const {track,previous,next}=record;previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-2;}
  function makeTile(scenario,index){

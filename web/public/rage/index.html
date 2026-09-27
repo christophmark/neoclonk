@@ -29,6 +29,7 @@
 @media(max-width:760px){.menu-top-actions{gap:7px}.menu-top-actions>button:is(#saves-open,#join-room,#help-open){font-size:16px;padding:7px 6px;min-height:49px}.project-notice{font-size:12px;margin-bottom:16px;padding:9px 10px}}
 #game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 80px);width:64px}#leave-dialog{width:min(520px,calc(100% - 28px));max-height:90dvh;overflow:auto;padding:24px;background:#2b1a0e;color:#f5e6c9;border:2px solid #a57940;box-shadow:inset 0 0 0 3px #1b0d04,0 12px 50px #000c}#leave-dialog::backdrop{background:#0d0704da}#leave-title{font-size:27px;font-weight:normal;color:#ffdf9c;margin:0 0 14px}#leave-description{font-size:18px;line-height:1.4}#leave-error{color:#ffd49a;line-height:1.4}#leave-error:empty{display:none}.leave-actions{display:flex;flex-wrap:wrap;gap:10px}.leave-actions button{min-height:44px}@media(max-width:760px){#game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 70px);width:54px;font-size:15px}}
 @media(max-width:360px){#game-save{width:44px;padding:3px;font-size:14px}#game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 48px);width:44px;padding:3px;font-size:14px}}
+#solo-note{font-size:13px;line-height:1.4;color:#d8bd90;margin:10px 0}@media(max-width:760px){.menu-panel>#play-solo{grid-column:2;grid-row:3;font-size:16px;min-height:34px}.menu-panel>#new-game{grid-row:4}#solo-note{grid-column:1/-1;grid-row:5;font-size:12px;margin:4px 0}#scenario-story{grid-row:6}}
 </style>
 </head>
 <body data-phase="menu">
@@ -56,9 +57,11 @@
 <aside id="scenario-panel" class="menu-panel" aria-label="Selected scenario" hidden>
 <div class="selected-heading"><p class="selection-label">Selected adventure</p><h2 id="title">Gold Mine</h2><p id="intro">Mine all the gold and bring it to your home base.</p></div>
 <dl id="scenario-details" class="scenario-details"><div><dt>Players</dt><dd id="scenario-players">1–4</dd></div><div><dt>Requires</dt><dd id="scenario-requirements">Clonk Rage</dd></div></dl>
-<button id="start" class="menu-button" type="button">Play Gold Mine</button>
+<button id="start" class="menu-button" type="button">Play</button>
 <button id="new-game" class="menu-button secondary" type="button" hidden>New Gold Mine</button>
-<button id="host-room" class="menu-button secondary" type="button">Host with friends</button>
+<button id="host-room" class="menu-button secondary" type="button">Host</button>
+<button id="play-solo" class="menu-button secondary" type="button" aria-describedby="solo-note" hidden>Play solo</button>
+<p id="solo-note" hidden>Original multiplayer goals may need opponents or finish immediately. Choose “Continue this round” to keep exploring.</p>
 <details id="scenario-story" class="scenario-story"><summary>Scenario details</summary><p id="scenario-full-description"></p></details>
 <p id="status" role="status" aria-live="polite"></p><pre id="error" role="alert" hidden></pre>
 </aside>
@@ -107,7 +110,7 @@
 <script src="multiplayer.js?v=discovery-1"></script>
 <script src="discovery-config.js?v=discovery-1"></script>
 <script src="discovery.js?v=discovery-1"></script>
-<script src="game.js?v=round-switch-1"></script>
-<script src="gallery.js?v=round-switch-1"></script>
+<script src="game.js?v=solo-start-1"></script>
+<script src="gallery.js?v=solo-start-1"></script>
 </body>
 </html>

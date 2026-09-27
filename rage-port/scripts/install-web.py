@@ -37,6 +37,9 @@ for directory,name in [('view','browser-view-report.json'),('view-webkit','brows
 # Current expansion evidence: publish successful real-engine reports only.
 for relative,name in [
  ('rage-port/outputs/rtc-room/report.json','rtc-goldmine.json'),
+ ('rage-port/outputs/rtc-jungle-solo-update/report.json','rtc-jungle.json'),
+ ('rage-port/outputs/solo-scenarios-chromium/report.json','solo-scenarios-chromium.json'),
+ ('rage-port/outputs/solo-scenarios-webkit/report.json','solo-scenarios-webkit.json'),
  ('rage-port/outputs/rtc-team/report.json','rtc-knights.json'),
  ('rage-port/outputs/rtc-desert/report.json','rtc-desert.json'),
  ('rage-port/outputs/rtc-cross-browser/report.json','rtc-cross-browser.json'),

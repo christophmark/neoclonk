@@ -136,7 +136,7 @@
  function openMenu(){if(!ready)return;releaseAll();const game=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[]));menuWasPaused=game.paused;if(session)window.__neoclonkMultiplayer.setPaused(true);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[1]);phase('menu');cover.hidden=false;$('start').disabled=false;if(!window.__scenarioGallery?.getSelected())window.__scenarioGallery?.select(launchScenario.id);window.__scenarioGallery?.updateActions();showTouch(touchWanted);refreshSavedGames();$('start').focus();}
  function resumeGame(){if(!ready)return;if(session)window.__neoclonkMultiplayer.setPaused(false);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[0]);phase('playing');cover.hidden=true;showTouch(touchWanted);canvas.focus();}
  $('main-menu').onclick=openMenu;
- $('new-game').onclick=()=>{if(ready&&selectedScenarioId!==launchScenario?.id)resumeGame();else startScenario(selectedScenarioId);};
+ $('new-game').onclick=()=>{if(ready&&selectedScenarioId!==launchScenario?.id)resumeGame();else startScenario(selectedScenarioId,null,{solo:ready&&!session});};
  let pendingLeave=null,leaveBusy=false;
  function requestLeave(action,title='Leave current game?'){
   if(!ready)return action();if(pendingLeave)return;
@@ -171,10 +171,18 @@
  canvas.addEventListener('pointerdown',()=>canvas.focus());canvas.addEventListener('contextmenu',event=>event.preventDefault());
  window.addEventListener('error',event=>{if(booted&&!failed)fail(event.message||'Unexpected engine error.');});
  window.addEventListener('unhandledrejection',event=>{if(booted&&!failed)fail(event.reason?.stack||event.reason||'Unexpected engine rejection.');});
- async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['scenario','save','replay','load','play','host','join','room'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
- async function startScenario(id,networkSession=null){await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;if(booted){return requestLeave(()=>restart({scenario:id,[scenario.minPlayers>1?'host':'play']:'1'}),'Start '+scenario.title+'?');}if(scenario.minPlayers>1&&!networkSession){window.__neoclonkMultiplayer.host(id);return;}state.replay=false;return startGame(null,scenario,networkSession);}
+ async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['scenario','save','replay','load','play','solo','host','join','room'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
+ // Solo uses original one-player engine startup; scenario rules and goals stay intact.
+ async function startScenario(id,networkSession=null,{solo=false}={}){
+  await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;
+  const host=!solo&&scenario.minPlayers>1;
+  if(booted)return requestLeave(()=>restart({scenario:id,[host?'host':'play']:'1',...(solo?{solo:'1'}:{})}),'Start '+scenario.title+'?');
+  if(host&&!networkSession){window.__neoclonkMultiplayer.host(id);return;}
+  if(!networkSession)window.__neoclonkMultiplayer?.disconnect();
+  state.replay=false;return startGame(null,scenario,networkSession);
+ }
  async function startGame(save=null,scenario=null,networkSession=null){
-  if(booted){if(ready)resumeGame();return;}booted=true;selectedSave=save;session=networkSession;phase('loading');$('start').disabled=true;$('load-save').disabled=true;$('start').textContent='Loading…';setStatus('Preparing scenario…');canvas.focus();
+  if(booted){if(ready)resumeGame();return;}booted=true;selectedSave=save;session=networkSession;phase('loading');$('start').disabled=true;$('play-solo').disabled=true;$('host-room').disabled=true;$('load-save').disabled=true;$('start').textContent='Loading…';setStatus('Preparing scenario…');canvas.focus();
   try{await library.ready;await savedIndexReady;launchScenario=scenario||library.find(savedScenarioMeta[save]?.scenarioId)||library.get(selectedScenarioId);selectedScenarioId=launchScenario.id;state.scenarioId=launchScenario.id;state.multiplayer=!!session;
    const packs=save?(savedScenarioMeta[save]?.requiredPacks||library.allPacks):launchScenario.requiredPacks;
    stagedPacks=await library.fetchPacks(packs,(done,total)=>setStatus(total?'Preparing original content ('+done+'/'+total+')…':'Loading '+launchScenario.title+'…'));
@@ -190,8 +198,9 @@
  }
  window.addEventListener('scenario-select',event=>{selectedScenarioId=event.detail.id;state.selectedScenarioId=selectedScenarioId;});
  $('start').onclick=()=>{if(ready&&state.phase==='menu'&&selectedScenarioId===launchScenario?.id){resumeGame();return;}startScenario(selectedScenarioId);};
+ $('play-solo').onclick=()=>startScenario(selectedScenarioId,null,{solo:true});
  $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;$('saved-dialog').close();if(!booted){state.replay=false;startGame(name);return;}requestLeave(()=>restart({save:name,load:'1'}),'Load saved game?');};
  window.__rageBrowser={getState:()=>({...state,ready,booted,selectedScenarioId,logs:[...logs],canvas:{width:canvas.width,height:canvas.height}}),press:code=>key(code,true),release:code=>key(code,false),tap,pause:()=>tap('Pause'),releaseAll,readFile:path=>Array.from(window.Module.FS.readFile(path)),listFiles:path=>window.Module.FS.readdir(path),showTouch,syncSaves,listSavedGames,openMenu,saveGame,updateView,startScenario,restart:options=>requestLeave(()=>restart(options))};
  phase('menu');refreshSavedGames();
- const savedIndexReady=readSavedIndex();Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))startGame(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId);else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});
+ const savedIndexReady=readSavedIndex();Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))startGame(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId,null,{solo:query.get('solo')==='1'});else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});
 })();

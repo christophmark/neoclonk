@@ -1,0 +1,1081 @@
+{
+  "engine": "webkit",
+  "results": [
+    {
+      "id": "farworlds.c4f/jungle.c4s",
+      "passed": true,
+      "dialogs": [],
+      "errors": [],
+      "initial": {
+        "running": true,
+        "paused": true,
+        "frame": 6,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "FarWorlds.c4f/Jungle.c4s",
+        "randomHold": 2645489893,
+        "randomCount": 1825,
+        "landscape": {
+          "width": 2600,
+          "height": 1000,
+          "mapWidth": 260,
+          "mapHeight": 100,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 32,
+          "temperature": 50,
+          "season": 70
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 20403,
+            "effectivePixels": 20403
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 2576,
+            "effectivePixels": 2576
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 6,
+            "name": "FlySand",
+            "pixels": 30687,
+            "effectivePixels": 30687
+          },
+          {
+            "index": 7,
+            "name": "Gold",
+            "pixels": 30890,
+            "effectivePixels": 30890
+          },
+          {
+            "index": 8,
+            "name": "Granite",
+            "pixels": 45424,
+            "effectivePixels": 45424
+          },
+          {
+            "index": 9,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 10,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Ore",
+            "pixels": 56596,
+            "effectivePixels": 56596
+          },
+          {
+            "index": 13,
+            "name": "Rock",
+            "pixels": 117555,
+            "effectivePixels": 117555
+          },
+          {
+            "index": 14,
+            "name": "Sand",
+            "pixels": 27152,
+            "effectivePixels": 27152
+          },
+          {
+            "index": 15,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Sulphur",
+            "pixels": 13759,
+            "effectivePixels": 13759
+          },
+          {
+            "index": 17,
+            "name": "Tunnel",
+            "pixels": 272705,
+            "effectivePixels": 272705
+          },
+          {
+            "index": 18,
+            "name": "Vehicle",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 19,
+            "name": "Earth",
+            "pixels": 908919,
+            "effectivePixels": 908919
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 174299,
+            "effectivePixels": 174299
+          }
+        ],
+        "goldObjects": 72,
+        "objectCount": 682,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 0,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 681,
+              "id": "JCLK",
+              "name": "Imabu",
+              "x": 309,
+              "y": 358,
+              "fixedX": 20250624,
+              "fixedY": 23461888,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 1,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 6,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [
+                683,
+                682
+              ],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 681,
+                "id": "JCLK",
+                "name": "Imabu",
+                "x": 309,
+                "y": 358,
+                "fixedX": 20250624,
+                "fixedY": 23461888,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 1,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 6,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  683,
+                  682
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 680,
+                "id": "JCLK",
+                "name": "Andira",
+                "x": 337,
+                "y": 377,
+                "fixedX": 22085632,
+                "fixedY": 24707072,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 6,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  685,
+                  684
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 679,
+                "id": "JCLK",
+                "name": "Surubim",
+                "x": 350,
+                "y": 389,
+                "fixedX": 22937600,
+                "fixedY": 25493504,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 6,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  688,
+                  687,
+                  686
+                ],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 758,
+          "worldX": 179,
+          "worldY": 185,
+          "worldWidth": 260,
+          "worldHeight": 505,
+          "zoom": 1.5,
+          "requestedZoom": 1.5,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 195,
+          "clonkScreenY": 323,
+          "occlusion": {
+            "x": 240,
+            "y": 601,
+            "width": 140,
+            "height": 157
+          }
+        }
+      },
+      "input": {
+        "running": true,
+        "paused": true,
+        "frame": 36,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "FarWorlds.c4f/Jungle.c4s",
+        "randomHold": 138760912,
+        "randomCount": 1950,
+        "landscape": {
+          "width": 2600,
+          "height": 1000,
+          "mapWidth": 260,
+          "mapHeight": 100,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 32,
+          "temperature": 51,
+          "season": 70
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 20403,
+            "effectivePixels": 20403
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 2576,
+            "effectivePixels": 2576
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 6,
+            "name": "FlySand",
+            "pixels": 30687,
+            "effectivePixels": 30687
+          },
+          {
+            "index": 7,
+            "name": "Gold",
+            "pixels": 30890,
+            "effectivePixels": 30890
+          },
+          {
+            "index": 8,
+            "name": "Granite",
+            "pixels": 45424,
+            "effectivePixels": 45424
+          },
+          {
+            "index": 9,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 10,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Ore",
+            "pixels": 56596,
+            "effectivePixels": 56596
+          },
+          {
+            "index": 13,
+            "name": "Rock",
+            "pixels": 117555,
+            "effectivePixels": 117555
+          },
+          {
+            "index": 14,
+            "name": "Sand",
+            "pixels": 27152,
+            "effectivePixels": 27152
+          },
+          {
+            "index": 15,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Sulphur",
+            "pixels": 13759,
+            "effectivePixels": 13759
+          },
+          {
+            "index": 17,
+            "name": "Tunnel",
+            "pixels": 272706,
+            "effectivePixels": 272706
+          },
+          {
+            "index": 18,
+            "name": "Vehicle",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 19,
+            "name": "Earth",
+            "pixels": 908919,
+            "effectivePixels": 908919
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 174298,
+            "effectivePixels": 174298
+          }
+        ],
+        "goldObjects": 72,
+        "objectCount": 682,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 0,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 4,
+            "menu": false,
+            "cursor": {
+              "number": 681,
+              "id": "JCLK",
+              "name": "Imabu",
+              "x": 314,
+              "y": 363,
+              "fixedX": 20578304,
+              "fixedY": 23789568,
+              "vx": 0,
+              "vy": -39328,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 3,
+              "action": "Scale",
+              "commandDirection": 3,
+              "facing": 1,
+              "phase": 12,
+              "phaseDelay": 8,
+              "actionTime": 25,
+              "actionData": 0,
+              "contact": 2,
+              "attachment": 2,
+              "contents": [
+                683,
+                682
+              ],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 681,
+                "id": "JCLK",
+                "name": "Imabu",
+                "x": 314,
+                "y": 363,
+                "fixedX": 20578304,
+                "fixedY": 23789568,
+                "vx": 0,
+                "vy": -39328,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 3,
+                "action": "Scale",
+                "commandDirection": 3,
+                "facing": 1,
+                "phase": 12,
+                "phaseDelay": 8,
+                "actionTime": 25,
+                "actionData": 0,
+                "contact": 2,
+                "attachment": 2,
+                "contents": [
+                  683,
+                  682
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 680,
+                "id": "JCLK",
+                "name": "Andira",
+                "x": 337,
+                "y": 377,
+                "fixedX": 22085632,
+                "fixedY": 24707072,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 36,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  685,
+                  684
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 679,
+                "id": "JCLK",
+                "name": "Surubim",
+                "x": 350,
+                "y": 389,
+                "fixedX": 22937600,
+                "fixedY": 25493504,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 36,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  688,
+                  687,
+                  686
+                ],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 758,
+          "worldX": 180,
+          "worldY": 186,
+          "worldWidth": 260,
+          "worldHeight": 505,
+          "zoom": 1.5,
+          "requestedZoom": 1.5,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 201,
+          "clonkScreenY": 329,
+          "occlusion": {
+            "x": 240,
+            "y": 601,
+            "width": 140,
+            "height": 157
+          }
+        }
+      },
+      "after": {
+        "running": true,
+        "paused": true,
+        "frame": 246,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "FarWorlds.c4f/Jungle.c4s",
+        "randomHold": 2345861062,
+        "randomCount": 3132,
+        "landscape": {
+          "width": 2600,
+          "height": 1000,
+          "mapWidth": 260,
+          "mapHeight": 100,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 32,
+          "temperature": 57,
+          "season": 70
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 20403,
+            "effectivePixels": 20403
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 2576,
+            "effectivePixels": 2576
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 6,
+            "name": "FlySand",
+            "pixels": 30687,
+            "effectivePixels": 30687
+          },
+          {
+            "index": 7,
+            "name": "Gold",
+            "pixels": 30890,
+            "effectivePixels": 30890
+          },
+          {
+            "index": 8,
+            "name": "Granite",
+            "pixels": 45424,
+            "effectivePixels": 45424
+          },
+          {
+            "index": 9,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 10,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Ore",
+            "pixels": 56596,
+            "effectivePixels": 56596
+          },
+          {
+            "index": 13,
+            "name": "Rock",
+            "pixels": 117555,
+            "effectivePixels": 117555
+          },
+          {
+            "index": 14,
+            "name": "Sand",
+            "pixels": 27152,
+            "effectivePixels": 27152
+          },
+          {
+            "index": 15,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Sulphur",
+            "pixels": 13759,
+            "effectivePixels": 13759
+          },
+          {
+            "index": 17,
+            "name": "Tunnel",
+            "pixels": 272705,
+            "effectivePixels": 272705
+          },
+          {
+            "index": 18,
+            "name": "Vehicle",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 19,
+            "name": "Earth",
+            "pixels": 908919,
+            "effectivePixels": 908919
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 174299,
+            "effectivePixels": 174299
+          }
+        ],
+        "goldObjects": 72,
+        "objectCount": 684,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 0,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 20,
+            "menu": false,
+            "cursor": {
+              "number": 681,
+              "id": "JCLK",
+              "name": "Imabu",
+              "x": 317,
+              "y": 366,
+              "fixedX": 20774912,
+              "fixedY": 23986176,
+              "vx": 0,
+              "vy": 39383,
+              "owner": 0,
+              "controller": 0,
+              "energy": 34000,
+              "breath": 0,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 3,
+              "action": "ScaleDown",
+              "commandDirection": 5,
+              "facing": 1,
+              "phase": 5,
+              "phaseDelay": 0,
+              "actionTime": 202,
+              "actionData": 0,
+              "contact": 4,
+              "attachment": 2,
+              "contents": [
+                683,
+                682
+              ],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 681,
+                "id": "JCLK",
+                "name": "Imabu",
+                "x": 317,
+                "y": 366,
+                "fixedX": 20774912,
+                "fixedY": 23986176,
+                "vx": 0,
+                "vy": 39383,
+                "owner": 0,
+                "controller": 0,
+                "energy": 34000,
+                "breath": 0,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 3,
+                "action": "ScaleDown",
+                "commandDirection": 5,
+                "facing": 1,
+                "phase": 5,
+                "phaseDelay": 0,
+                "actionTime": 202,
+                "actionData": 0,
+                "contact": 4,
+                "attachment": 2,
+                "contents": [
+                  683,
+                  682
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 680,
+                "id": "JCLK",
+                "name": "Andira",
+                "x": 337,
+                "y": 377,
+                "fixedX": 22085632,
+                "fixedY": 24707072,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 246,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  685,
+                  684
+                ],
+                "menu": null,
+                "commands": []
+              },
+              {
+                "number": 679,
+                "id": "JCLK",
+                "name": "Surubim",
+                "x": 350,
+                "y": 389,
+                "fixedX": 22937600,
+                "fixedY": 25493504,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": false,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 246,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [
+                  688,
+                  687,
+                  686
+                ],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 758,
+          "worldX": 181,
+          "worldY": 187,
+          "worldWidth": 260,
+          "worldHeight": 505,
+          "zoom": 1.5,
+          "requestedZoom": 1.5,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 204,
+          "clonkScreenY": 332,
+          "occlusion": {
+            "x": 240,
+            "y": 601,
+            "width": 140,
+            "height": 157
+          }
+        }
+      },
+      "diagnostics": {
+        "running": true,
+        "minPlayers": 0,
+        "maxPlayers": 12,
+        "randomSeed": 1790528509,
+        "definitionCount": 378,
+        "definitionModules": "/data/Objects.c4d;/data/FarWorlds.c4d\\Jungle.c4d",
+        "mouseOwned": true,
+        "players": [
+          {
+            "number": 0,
+            "team": 0,
+            "client": 0,
+            "status": 1,
+            "local": true,
+            "mouse": false,
+            "profile": "/data/home/players/Browser.c4p",
+            "keys": [
+              "Q",
+              "W",
+              "E",
+              "A",
+              "S",
+              "D",
+              "Z",
+              "X",
+              "C",
+              "R",
+              "V",
+              "F"
+            ]
+          }
+        ],
+        "viewports": [
+          {
+            "player": 0,
+            "x": 0,
+            "y": 64,
+            "width": 390,
+            "height": 758,
+            "worldX": 181,
+            "worldY": 187,
+            "zoom": 1.5
+          }
+        ],
+        "dialog": null,
+        "goals": []
+      },
+      "restartRetainsSolo": true
+    }
+  ],
+  "passed": true
+}

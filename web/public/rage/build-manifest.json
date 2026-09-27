@@ -16,20 +16,20 @@
     "sha256": "fb5ed2a3c5f39a01f796ac208dfe266df16a51bab8c521b61cd2486cbfa61d98"
   },
   "gallery.js": {
-    "bytes": 10468,
-    "sha256": "ef3f358c7d38090383f02061db2c5352715a63c1a58f5f9ce7d100887fb4f91d"
+    "bytes": 10744,
+    "sha256": "e272b430f612fe46de62f8a2e3fc3ec570480fa6bd887fe0f5963bf050cdb9ab"
   },
   "scenario-library.js": {
     "bytes": 2138,
     "sha256": "63889fc39d65b22c7b85d2dd197ff23842ac680a5fdf0f364069de202a7531e6"
   },
   "index.html": {
-    "bytes": 34235,
-    "sha256": "bd342e42aab116d1f5a850dc7b4e08c5c24372bd32dcc6b8bde67023d0880269"
+    "bytes": 34782,
+    "sha256": "4218b913d08f016feab984512d3dfed563f5a6147a0541e638b5cafde84fb0fd"
   },
   "game.js": {
-    "bytes": 28576,
-    "sha256": "01f4c4c0c0641fab4b6b495cb59febd031aad1bfc44f7a6072cfd2b44f24effb"
+    "bytes": 28999,
+    "sha256": "0b3c09e7b5d32457fa42f6f2a84ae78b955ce87c9afe61603081d25bf03efa6a"
   },
   "clonk.wasm": {
     "bytes": 12992995,
