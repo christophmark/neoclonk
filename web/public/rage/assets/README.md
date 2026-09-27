@@ -15,3 +15,11 @@ Original content: RedWolf Design / Matthes Bender, CC BY-NC 4.0 (<https://creati
 The game header remains rendered by the C++ engine. HTML adds only a Save button and a zoom slider inside its 64px browser header. A transparent hit area over the original engine-rendered logo opens the menu; it does not draw a duplicate logo or wooden bar. The original image bytes stay unchanged; CSS scales interface sprites for the responsive browser layout.
 
 Desktop, portrait, and landscape startup layouts were checked with actual browser screenshots at 1280×900, 390×844, 844×390, and 568×320. Their menu bounds fit each viewport without horizontal overflow or initial-menu scrolling.
+
+## Higher-resolution menu background
+
+`StartupMainMenuBG-HD.webp` is an ImageGen-assisted restoration of the original
+800×600 `StartupMainMenuBG.png`, retaining its mine-cart composition and warm
+lighting. It is a modified derivative, unlike the byte-identical original UI
+assets above. Original artwork © RedWolf Design / Matthes Bender; CC BY-NC 4.0.
+The generated source is retained in `web/artwork/StartupMainMenuBG-HD.png`.

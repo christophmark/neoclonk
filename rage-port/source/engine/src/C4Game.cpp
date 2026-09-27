@@ -2043,6 +2043,9 @@ bool C4Game::DoKeyboardInput(C4KeyCode vk_code, C4KeyEventType eEventType, bool 
 
 bool C4Game::CanQuickSave()
 	{
+#ifdef __EMSCRIPTEN__
+  if(BrowserNetworkEnabled())return false; // Room checkpoints require coordinated original synchronization.
+#endif
 	// Registered only
 	/*if (!Config.Registered()) FREEWARE
 		{ Log(LoadResStr("IDS_GAME_NOUNREGSAVE")); return false; } */
@@ -2065,6 +2068,9 @@ bool C4Game::CanQuickSave()
 
 BOOL C4Game::QuickSave(const char *strFilename, const char *strTitle, bool fForceSave)
 	{
+#ifdef __EMSCRIPTEN__
+  if(BrowserNetworkEnabled())return false; // Room checkpoints require coordinated original synchronization.
+#endif
 	// Check
 	if (!fForceSave) if (!CanQuickSave()) return false;
 

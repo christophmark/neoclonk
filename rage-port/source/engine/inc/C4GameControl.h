@@ -7,6 +7,9 @@
 #include "C4Control.h"
 #include "C4Network2Client.h"
 #include "C4Record.h"
+#ifdef __EMSCRIPTEN__
+#include "C4BrowserNetwork.h"
+#endif
 
 enum C4ControlMode
 {
@@ -86,7 +89,11 @@ public:
 	bool isCtrlHost() const { return fHost; }
 	bool isRecord() const { return !! pRecord; }
 	int32_t  ClientID() const { return iClientID; }
-	bool SyncMode() const { return eMode != CM_Local || pRecord; }
+	bool SyncMode() const { return eMode != CM_Local || pRecord
+#ifdef __EMSCRIPTEN__
+    || BrowserNetworkEnabled()
+#endif
+    ; }
 
 	bool NoInput() const { return isReplay(); }
 	

@@ -75,5 +75,8 @@ for filename in ['clonk.wasm','clonk.data','clonk.js']:
     shutil.copy2(link_output/filename,PORT/'dist'/(filename+'.new'))
     (PORT/'dist'/(filename+'.new')).replace(PORT/'dist'/filename)
 shutil.copy2(PORT/'shell/index.html',PORT/'dist/index.html')
-shutil.copy2(PORT/'shell/game.js',PORT/'dist/game.js')
+for script in (PORT/'shell').glob('*.js'):
+    shutil.copy2(script,PORT/'dist'/script.name)
 shutil.copytree(PORT/'shell/assets',PORT/'dist/assets',dirs_exist_ok=True)
+
+subprocess.run(['python3',str(PORT/'scripts/install-library.py')],check=True)

@@ -1273,6 +1273,13 @@ void C4Menu::UpdateOwnPos()
 
 void C4Menu::UserSelectItem(int32_t Player, C4MenuItem *pItem)
 	{
+#ifdef __EMSCRIPTEN__
+  // Keyboard-only profiles may leave the world mouse attached to the initial
+  // observer. GUI taps belong to the original menu's local viewport instead.
+  C4Viewport *view=GetViewport();
+  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
+  if(owner && owner->LocalControl)Player=owner->Number;
+#endif
 	// not if user con't control anything
 	if (IsReadOnly()) return;
 	// the item must be selectable
@@ -1283,6 +1290,13 @@ void C4Menu::UserSelectItem(int32_t Player, C4MenuItem *pItem)
 
 void C4Menu::UserEnter(int32_t Player, C4MenuItem *pItem, bool fRight)
 	{
+#ifdef __EMSCRIPTEN__
+  // Keyboard-only profiles may leave the world mouse attached to the initial
+  // observer. GUI taps belong to the original menu's local viewport instead.
+  C4Viewport *view=GetViewport();
+  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
+  if(owner && owner->LocalControl)Player=owner->Number;
+#endif
 	// not if user con't control anything
 	if (IsReadOnly()) return;
 	// the item must be selectable

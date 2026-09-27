@@ -4,15 +4,17 @@ export default async function Page({ searchParams }: {
 }) {
   const values = (await searchParams) ?? {};
   const query = new URLSearchParams();
-  query.set('v', 'original-interface-6');
-  for (const key of ['debug', 'touch', 'replay']) {
+  query.set('v', 'scenarios-rtc-1');
+  for (const key of ['debug', 'touch', 'replay', 'play', 'load', 'host', 'join']) {
     if (values[key] === '1') query.set(key, '1');
   }
+  const scenario = values.scenario;
+  if (typeof scenario === 'string' && /^[a-z0-9_./-]+$/i.test(scenario)) query.set('scenario', scenario);
   const save = values.save;
   if (typeof save === 'string' && /\.c4s$/i.test(save) &&
     save.split('/').every(part => part && part !== '.' && part !== '..' && !/[\\\0]/.test(part))) query.set('save', save);
   return <main className="original-game">
-    <iframe title="Neoclonk — original Clonk Rage Gold Mine"
+    <iframe title="Neoclonk — original Clonk Rage scenarios"
       src={`/rage/index.html${query.size ? `?${query}` : ''}`}
       allow="fullscreen; autoplay; gamepad" allowFullScreen />
   </main>;

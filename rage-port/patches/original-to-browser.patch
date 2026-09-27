@@ -1,3 +1,18 @@
+--- /dev/null
++++ b/engine/inc/C4BrowserNetwork.h
+@@ -0,0 +1,12 @@
++#ifndef INC_C4BrowserNetwork
++#define INC_C4BrowserNetwork
++class C4Control;
++class C4ControlPacket;
++bool BrowserNetworkEnabled();
++bool BrowserNetworkReady();
++void BrowserNetworkSeed();
++void BrowserNetworkTake(C4Control &control);
++void BrowserNetworkAfterControl();
++bool BrowserNetworkQueue(int type, C4ControlPacket *packet);
++bool BrowserNetworkDecodeAllowed(int type);
++#endif
 --- a/engine/inc/C4Constants.h
 +++ b/engine/inc/C4Constants.h
 @@ -62,7 +62,11 @@
@@ -12,6 +27,75 @@
  					C4PictureSize      = 64,
  					C4MaxPictureSize   = 150,
  					C4MaxBigIconSize   = 64;
+--- a/engine/inc/C4Control.h
++++ b/engine/inc/C4Control.h
+@@ -127,6 +127,11 @@
+ 	StdStrBuf Script;
+ public:
+ 	void SetTargetObj(int32_t iObj) { iTargetObj = iObj; }
++#ifdef __EMSCRIPTEN__
++  const char *BrowserScript() const { return Script.getData(); }
++  int BrowserTarget() const { return iTargetObj; }
++  bool BrowserInternal() const { return fInternal; }
++#endif
+ 	DECLARE_C4CONTROL_VIRTUALS
+ };
+ 
+@@ -142,6 +147,9 @@
+ 	int32_t iObjCnt;
+ 	int32_t *pObjNrs;
+ public:
++#ifdef __EMSCRIPTEN__
++	int BrowserPlayer() const { return iPlr; }
++#endif
+ 	DECLARE_C4CONTROL_VIRTUALS
+ };
+ 
+@@ -155,6 +163,9 @@
+ protected:
+ 	int32_t iPlr, iCom, iData;
+ public:
++#ifdef __EMSCRIPTEN__
++	int BrowserPlayer() const { return iPlr; }
++#endif
+ 	DECLARE_C4CONTROL_VIRTUALS
+ };
+ 
+@@ -168,6 +179,9 @@
+ protected:
+ 	int32_t iPlr, iCmd, iX, iY, iTarget, iTarget2, iData, iAddMode;
+ public:
++#ifdef __EMSCRIPTEN__
++	int BrowserPlayer() const { return iPlr; }
++#endif
+ 	DECLARE_C4CONTROL_VIRTUALS
+ };
+ 
+--- a/engine/inc/C4GameControl.h
++++ b/engine/inc/C4GameControl.h
+@@ -7,6 +7,9 @@
+ #include "C4Control.h"
+ #include "C4Network2Client.h"
+ #include "C4Record.h"
++#ifdef __EMSCRIPTEN__
++#include "C4BrowserNetwork.h"
++#endif
+ 
+ enum C4ControlMode
+ {
+@@ -86,7 +89,11 @@
+ 	bool isCtrlHost() const { return fHost; }
+ 	bool isRecord() const { return !! pRecord; }
+ 	int32_t  ClientID() const { return iClientID; }
+-	bool SyncMode() const { return eMode != CM_Local || pRecord; }
++	bool SyncMode() const { return eMode != CM_Local || pRecord
++#ifdef __EMSCRIPTEN__
++    || BrowserNetworkEnabled()
++#endif
++    ; }
+ 
+ 	bool NoInput() const { return isReplay(); }
+ 	
 --- a/engine/inc/C4Gui.h
 +++ b/engine/inc/C4Gui.h
 @@ -1618,7 +1618,7 @@
@@ -46,6 +130,18 @@
  
  // StdStrBuf that validates on compilation
  struct ValidatedStdCopyStrBufBase : public StdCopyStrBuf
+--- a/engine/inc/C4Menu.h
++++ b/engine/inc/C4Menu.h
+@@ -230,6 +230,9 @@
+ 		void UpdateElementPositions();            // reposition list items so they are stacked vertically
+ 		virtual int32_t GetZOrdering() { return -1; }
+ 		virtual void Draw(C4FacetEx &cgo);
++#ifdef __EMSCRIPTEN__
++		void DrawBrowser(C4FacetEx &cgo, const C4Rect &occlusion);
++#endif
+ 		virtual void DrawElement(C4FacetEx &cgo); // draw menu
+ 		virtual bool IsOwnPtrElement() { return true; }
+ 		virtual void UserClose(bool fOK);
 --- a/engine/inc/C4MouseControl.h
 +++ b/engine/inc/C4MouseControl.h
 @@ -81,6 +81,12 @@
@@ -130,7 +226,7 @@
  		try
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,279 @@
+@@ -0,0 +1,354 @@
 +/* Browser inspection and automation boundary for the original Clonk Rage engine.
 +   Scheduling and input only: this file does not implement gameplay or mutate
 +   terrain, object positions, inventories, materials, scripts, or objectives. */
@@ -148,6 +244,8 @@
 +#include <C4Viewport.h>
 +#include <C4GraphicsSystem.h>
 +#include <C4MouseControl.h>
++#include <C4Gui.h>
++#include <C4RoundResults.h>
 +#include <emscripten/emscripten.h>
 +
 +namespace {
@@ -194,7 +292,8 @@
 +      if(i)out.AppendChar(',');
 +      char itemId[5]; GetC4IdText(object->Menu->GetItem(i)->GetC4ID(),itemId); JsonString(out,itemId);
 +    }
-+    out.Append("]}");
++    C4Rect bounds=object->Menu->GetBounds();
++    out.AppendFormat("],\"bounds\":{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}}",bounds.x,bounds.y,bounds.Wdt,bounds.Hgt);
 +  } else out.Append("null");
 +  out.Append(",\"commands\":[");
 +  bool commandComma=false;
@@ -266,8 +365,8 @@
 +    {if(crewComma)BrowserResult.AppendChar(',');crewComma=true;ObjectJson(BrowserResult,link->Obj);}
 +    BrowserResult.Append("]}");
 +  }
-+  BrowserResult.AppendFormat("],\"mouse\":{\"active\":%s,\"screenX\":%d,\"screenY\":%d,\"worldX\":%d,\"worldY\":%d},\"viewport\":",
-+    Game.MouseControl.IsActive()?"true":"false",Game.MouseControl.BrowserScreenX(),Game.MouseControl.BrowserScreenY(),Game.MouseControl.BrowserWorldX(),Game.MouseControl.BrowserWorldY());
++  BrowserResult.AppendFormat("],\"mouse\":{\"active\":%s,\"player\":%d,\"screenX\":%d,\"screenY\":%d,\"worldX\":%d,\"worldY\":%d},\"viewport\":",
++    Game.MouseControl.IsActive()?"true":"false",Game.MouseControl.GetPlayer(),Game.MouseControl.BrowserScreenX(),Game.MouseControl.BrowserScreenY(),Game.MouseControl.BrowserWorldX(),Game.MouseControl.BrowserWorldY());
 +  C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();
 +  if(!view)BrowserResult.Append("null");
 +  else {
@@ -283,6 +382,78 @@
 +  BrowserResult.Append("}");return BrowserResult.getData();
 +}
 +
++
++// Lifecycle calls run after the initiating JS call returns, like original Save.
++EMSCRIPTEN_KEEPALIVE int nc_browser_quit()
++{
++  if(!Game.IsRunning)return -1;
++  emscripten_async_call([](void *) { if(Game.IsRunning)Game.Abort(true); },NULL,0);
++  return 1;
++}
++
++// Original full-landscape screenshot path, useful for scenario gallery QA.
++EMSCRIPTEN_KEEPALIVE int nc_browser_overview()
++{
++  if(!Game.IsRunning)return -1;
++  return Game.GraphicsSystem.SaveScreenshot(true)?1:0;
++}
++
++// Native GUI geometry for pointer acceptance tests; no selection or command calls.
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_menus()
++{
++  BrowserResult.Copy("[");bool comma=false;
++  for(C4Player *p=Game.Players.First;p;p=p->Next) {
++    C4Menu *menus[2]={&p->Menu,p->Cursor?p->Cursor->Menu:NULL};
++    for(int kind=0;kind<2;++kind) {
++      C4Menu *menu=menus[kind];if(!menu || !menu->IsActive())continue;
++      C4Viewport *view=Game.GraphicsSystem.GetViewport(p->Number);if(!view)continue;
++      C4Rect viewport=view->GetOutputRect(),r=menu->GetBounds();
++      if(comma)BrowserResult.AppendChar(',');comma=true;
++      BrowserResult.AppendFormat("{\"player\":%d,\"objectMenu\":%s,\"id\":%d,\"selected\":%d,\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"items\":[",p->Number,kind?"true":"false",menu->GetIdentification(),menu->GetSelection(),viewport.x+r.x,viewport.y+r.y,r.Wdt,r.Hgt);
++      for(int i=0;i<menu->GetItemCount();++i) {
++        if(i)BrowserResult.AppendChar(',');C4MenuItem *item=menu->GetItem(i);C4Rect ir=item->GetBounds();int x=0,y=0;item->ClientPos2ScreenPos(x,y);char id[5];GetC4IdText(item->GetC4ID(),id);
++        BrowserResult.AppendFormat("{\"index\":%d,\"id\":",i);JsonString(BrowserResult,id);
++        BrowserResult.AppendFormat(",\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}",x,y,ir.Wdt,ir.Hgt);
++      }
++      BrowserResult.Append("]}");
++    }
++  }
++  BrowserResult.AppendChar(']');return BrowserResult.getData();
++}
++
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_diagnostics()
++{
++  BrowserResult.Format("{\"running\":%s,\"minPlayers\":%d,\"maxPlayers\":%d,\"randomSeed\":%u,\"definitionCount\":%d,\"definitionModules\":",
++    Game.IsRunning?"true":"false",Game.C4S.Head.MinPlayer,Game.Parameters.MaxPlayers,static_cast<unsigned>(Game.Parameters.RandomSeed),Game.Defs.GetDefCount());
++  JsonString(BrowserResult,Game.DefinitionFilenames);
++  BrowserResult.AppendFormat(",\"mouseOwned\":%s,\"players\":[",Game.MouseControl.IsMouseOwned()?"true":"false");
++  bool comma=false;
++  for(C4Player *p=Game.Players.First;p;p=p->Next) {
++    if(comma)BrowserResult.AppendChar(',');comma=true;
++    BrowserResult.AppendFormat("{\"number\":%d,\"team\":%d,\"client\":%d,\"status\":%d,\"local\":%s,\"mouse\":%s,\"profile\":",p->Number,p->Team,p->AtClient,p->Status,p->LocalControl?"true":"false",p->MouseControl?"true":"false");
++    JsonString(BrowserResult,p->Filename);BrowserResult.Append(",\"keys\":[");
++    if(p->Control>=C4P_Control_Keyboard1 && p->Control<=C4P_Control_Keyboard4)
++      for(int k=0;k<C4MaxKey;++k){if(k)BrowserResult.AppendChar(',');JsonString(BrowserResult,C4KeyCodeEx::KeyCode2String(Config.Controls.Keyboard[p->Control][k],true,false).getData());}
++    BrowserResult.Append("]}");
++  }
++  BrowserResult.Append("],\"viewports\":[");comma=false;
++  for(C4Viewport *v=Game.GraphicsSystem.GetFirstViewport();v;v=v->GetNext()) {
++    if(comma)BrowserResult.AppendChar(',');comma=true;C4Rect r=v->GetOutputRect();
++    BrowserResult.AppendFormat("{\"player\":%d,\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"worldX\":%d,\"worldY\":%d,\"zoom\":%.4f}",v->GetPlayer(),r.x,r.y,r.Wdt,r.Hgt,v->ViewX,v->ViewY,static_cast<double>(v->BrowserZoom));
++  }
++  BrowserResult.Append("],\"dialog\":");
++  C4GUI::Dialog *dialog=Game.pGUI?Game.pGUI->GetTopDialog():NULL;
++  if(dialog){C4Rect r=dialog->GetBounds();BrowserResult.Append("{\"id\":");JsonString(BrowserResult,dialog->GetID());BrowserResult.AppendFormat(",\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}",r.x,r.y,r.Wdt,r.Hgt);}else BrowserResult.Append("null");
++  BrowserResult.Append(" ,\"goals\":[");comma=false;
++  for(C4ObjectLink *link=Game.Objects.First;link;link=link->Next) {
++    C4Object *o=link->Obj;if(!o || !o->Status || !(o->Category&C4D_Goal))continue;
++    if(comma)BrowserResult.AppendChar(',');comma=true;char id[5];GetC4IdText(o->id,id);
++    BrowserResult.Append("{\"id\":");JsonString(BrowserResult,id);BrowserResult.Append(",\"name\":");JsonString(BrowserResult,o->GetName());
++    BrowserResult.Append(",\"description\":");JsonString(BrowserResult,o->Def?o->Def->GetDesc():NULL);
++    BrowserResult.AppendFormat(",\"fulfilled\":%s}",Game.Evaluated?(Game.RoundResults.GetFulfilledGoals().GetIDCount(o->id)?"true":"false"):"null");
++  }
++  BrowserResult.Append("]}");return BrowserResult.getData();
++}
 +EMSCRIPTEN_KEEPALIVE const char *nc_browser_object(int number)
 +{
 +  BrowserResult.Clear();ObjectJson(BrowserResult,Game.IsRunning?Game.Objects.SafeObjectPointer(number):NULL);
@@ -531,6 +702,180 @@
 +  return 0;
 +}
 --- /dev/null
++++ b/engine/src/C4BrowserNetwork.cpp
+@@ -0,0 +1,171 @@
++// Transport-independent original-control lockstep. WebRTC carries these bytes;
++// simulation, command interpretation and binary format remain the original engine.
++#include <C4Include.h>
++#include <C4BrowserNetwork.h>
++#include <C4Game.h>
++#include <C4Player.h>
++#include <C4Object.h>
++#include <C4Control.h>
++#include <C4Viewport.h>
++#include <C4Random.h>
++#include <emscripten/emscripten.h>
++
++namespace {
++bool enabled=false, decoding=false, decodingBootstrap=false, selected=false;
++unsigned seed=0;
++int localPlayer=-1, totalPlayers=0, acceptedFrame=-1, builtFrame=-1;
++C4Control incoming, pending;
++StdBuf output;
++StdStrBuf status;
++const unsigned MaxInput=65536, MaxFrame=1048576;
++int ownedPlayerNumber(int index) {
++  // Script players can precede humans in a scenario. Room slots enumerate
++  // original user players in native player-number order, never script players.
++  int previous=-1;
++  for(int slot=0;slot<=index;++slot) {
++    int next=2147483647;
++    for(C4Player *p=Game.Players.First;p;p=p->Next)
++      if(p->Number>previous && p->Number<next && (!p->GetInfo() || p->GetInfo()->GetType()==C4PT_User))next=p->Number;
++    if(next==2147483647)return -1;
++    previous=next;
++  }
++  return previous;
++}
++int scriptPlayer(const C4ControlScript *packet) {
++  if(!packet->BrowserInternal())return -1;
++  const char *s=packet->BrowserScript();if(!s || strlen(s)>8192)return -1;
++  int p=-1,a=0,b=0,c=0,end=0;
++  const int target=packet->BrowserTarget();
++  if(target==C4ControlScript::SCOPE_Global) {
++    if((sscanf(s,"InitScenarioPlayer(%d,%d)%n",&p,&a,&end)==2 && end && !s[end]) ||
++       (end=0,sscanf(s,"SetPlayerTeam(%d,%d)%n",&p,&a,&end)==2 && end && !s[end]) ||
++       (end=0,sscanf(s,"ActivateGameGoalMenu(%d)%n",&p,&end)==1 && end && !s[end]) ||
++       (end=0,sscanf(s,"SurrenderPlayer(%d)%n",&p,&end)==1 && end && !s[end]))return p;
++    end=0;
++    if(sscanf(s,"SetHostility(%d, %d, !Hostile(%d, %d, true))%n",&p,&a,&b,&c,&end)==4 && end && !s[end] && p==b && a==c)return p;
++    // Original message-board answers contain only an escaped string literal (or
++    // the native cancel value 0), never an arbitrary expression supplied by peers.
++    end=0;
++    if(sscanf(s,"OnMessageBoardAnswer(Object(%d), %d, %n",&a,&p,&end)==2 && end) {
++      const char *v=s+end;
++      if(!strcmp(v,"0)"))return p;
++      if(*v++=='"') {
++        while(*v && *v!='"'){if(*v=='\\'){++v;if(!*v)return -1;}++v;}
++        if(*v=='"' && v[1]==')' && !v[2])return p;
++      }
++    }
++  } else if(target>0) {
++    C4Object *object=Game.Objects.SafeObjectPointer(target);
++    if(object && (object->Category&(C4D_Goal|C4D_Rule)) &&
++       sscanf(s,"Activate(%d)%n",&p,&end)==1 && end && !s[end])return p;
++  }
++  return -1;
++}
++int packetPlayer(C4IDPacket *packet) {
++  switch(packet->getPktType()) {
++    case CID_Script: return scriptPlayer(static_cast<C4ControlScript *>(packet->getPkt()));
++    case CID_PlrSelect: return static_cast<C4ControlPlayerSelect *>(packet->getPkt())->BrowserPlayer();
++    case CID_PlrControl: return static_cast<C4ControlPlayerControl *>(packet->getPkt())->BrowserPlayer();
++    case CID_PlrCommand: return static_cast<C4ControlPlayerCommand *>(packet->getPkt())->BrowserPlayer();
++    default:return -1;
++  }
++}
++bool decode(C4Control &result, const void *bytes, unsigned length, bool bootstrap) {
++  if(!bytes || !length || length>MaxFrame)return false;
++  decoding=true; decodingBootstrap=bootstrap;
++  try { CompileFromBuf<StdCompilerBinRead>(result,StdBuf(bytes,length)); }
++  catch(StdCompiler::Exception *error){delete error;decoding=false;result.Clear();return false;}
++  catch(...){decoding=false;result.Clear();return false;}
++  decoding=false;
++  unsigned count=0;
++  for(C4IDPacket *p=result.firstPkt();p;p=result.nextPkt(p))if(++count>512){result.Clear();return false;}
++  return true;
++}
++const void *serialize(C4Control &control) {
++  output=DecompileToBuf<StdCompilerBinWrite>(control);
++  return output.getData();
++}
++}
++
++bool BrowserNetworkEnabled(){return enabled;}
++void BrowserNetworkSeed(){if(enabled){Game.Parameters.RandomSeed=seed;Game.Parameters.IsNetworkGame=true;}}
++bool BrowserNetworkReady(){return !enabled || acceptedFrame==Game.FrameCounter;}
++void BrowserNetworkTake(C4Control &control){control.Take(incoming);acceptedFrame=-1;}
++bool BrowserNetworkQueue(int type,C4ControlPacket *packet) {
++  if(!enabled || !Game.IsRunning || !packet->Sync())return false;
++  Game.Control.Input.Add(static_cast<C4PacketType>(type),packet);return true;
++}
++bool BrowserNetworkDecodeAllowed(int type) {
++  if(!decoding)return true;
++  if(type==PID_None || type==CID_Script || type==CID_PlrSelect || type==CID_PlrControl || type==CID_PlrCommand)return true;
++  return decodingBootstrap && type==CID_JoinPlr;
++}
++void BrowserNetworkAfterControl() {
++  if(!enabled || selected || ownedPlayerNumber(totalPlayers-1)<0)return;
++  const int localNumber=ownedPlayerNumber(localPlayer);
++  // Only device presentation/input ownership differs. Native player ownership,
++  // teams, inventories, crew and simulation state stay identical on every peer.
++  for(C4Player *p=Game.Players.First;p;p=p->Next) {
++    p->LocalControl=(p->Number==localNumber);
++    p->Control=p->LocalControl?C4P_Control_Keyboard1:C4P_Control_None;
++    if(!p->LocalControl) {
++      p->MouseControl=FALSE;
++      Game.GraphicsSystem.CloseViewport(p->Number,true);
++    }
++  }
++  selected=true;
++}
++
++extern "C" {
++EMSCRIPTEN_KEEPALIVE int nc_browser_net_configure(unsigned randomSeed,int player,int players) {
++  if(Game.IsRunning || enabled || player<0 || player>=players || players<2 || players>12)return -1;
++  enabled=true;seed=randomSeed;localPlayer=player;totalPlayers=players;return 1;
++}
++EMSCRIPTEN_KEEPALIVE unsigned nc_browser_net_size(){return output.getSize();}
++EMSCRIPTEN_KEEPALIVE const void *nc_browser_net_drain() {
++  output.Clear();if(!enabled || !Game.IsRunning || !selected)return NULL;
++  C4Control outgoing;
++  // Take the queue, then discard engine-local diagnostics and non-owned inputs.
++  outgoing.Take(Game.Control.Input);
++  for(C4IDPacket *p=outgoing.firstPkt(),*next;p;p=next) {
++    next=outgoing.nextPkt(p);if(packetPlayer(p)!=ownedPlayerNumber(localPlayer))outgoing.Delete(p);
++  }
++  return serialize(outgoing);
++}
++EMSCRIPTEN_KEEPALIVE int nc_browser_net_admit(int origin,const void *bytes,unsigned length) {
++  if(!enabled || localPlayer!=0 || !selected || origin<0 || origin>=totalPlayers || length>MaxInput)return -1;
++  C4Control batch;if(!decode(batch,bytes,length,false))return -2;
++  for(C4IDPacket *p=batch.firstPkt();p;p=batch.nextPkt(p))if(packetPlayer(p)!=ownedPlayerNumber(origin))return -3;
++  // Prevent an unbounded queue while a peer has stopped acknowledging frames.
++  StdBuf test=DecompileToBuf<StdCompilerBinWrite>(pending);
++  if(test.getSize()+length>MaxFrame)return -4;
++  pending.Append(batch);return 1;
++}
++EMSCRIPTEN_KEEPALIVE const void *nc_browser_net_build(int frame) {
++  output.Clear();
++  if(!enabled || localPlayer!=0 || !Game.IsRunning || frame!=Game.FrameCounter || frame==builtFrame || acceptedFrame>=0)return NULL;
++  C4Control batch;
++  if(!selected)batch.Take(Game.Control.Input);else batch.Take(pending);
++  builtFrame=frame;return serialize(batch);
++}
++EMSCRIPTEN_KEEPALIVE int nc_browser_net_accept(int frame,const void *bytes,unsigned length) {
++  if(!enabled || !Game.IsRunning || frame!=Game.FrameCounter || acceptedFrame>=0)return -1;
++  C4Control batch;if(!decode(batch,bytes,length,!selected))return -2;
++  for(C4IDPacket *p=batch.firstPkt();p;p=batch.nextPkt(p))
++    if(p->getPktType()==CID_Script && packetPlayer(p)<0)return -3;
++  if(!selected)Game.Control.Input.Clear(); // host's canonical startup joins win
++  incoming.Take(batch);acceptedFrame=frame;return 1;
++}
++EMSCRIPTEN_KEEPALIVE const void *nc_browser_net_sync() {
++  output.Clear();if(!enabled || !Game.IsRunning)return NULL;
++  C4ControlSyncCheck check;check.Set();
++  output=DecompileToBuf<StdCompilerBinWrite>(check);
++  // Original checker plus the main random stream, which is useful in QA reports.
++  output.Append(&RandomHold,sizeof(RandomHold));return output.getData();
++}
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_net_status() {
++  status.Format("{\"enabled\":%s,\"running\":%s,\"playersJoined\":%s,\"paused\":%s,\"frame\":%d,\"acceptedFrame\":%d,\"localPlayerIndex\":%d,\"totalPlayers\":%d,\"seed\":%u}",
++    enabled?"true":"false",Game.IsRunning?"true":"false",selected?"true":"false",Game.IsPaused()?"true":"false",Game.FrameCounter,acceptedFrame,localPlayer,totalPlayers,seed);
++  return status.getData();
++}
++}
+--- /dev/null
 +++ b/engine/src/C4BrowserSave.cpp
 @@ -0,0 +1,129 @@
 +// Browser save-button boundary: original QuickSave and original .c4s groups.
@@ -678,9 +1023,53 @@
  
  #ifndef BIG_C4INCLUDE
  #include <C4Log.h>
+--- a/engine/src/C4Control.cpp
++++ b/engine/src/C4Control.cpp
+@@ -337,6 +337,10 @@
+   pComp->Value(mkNamingAdapt(iPlr, "Player", -1));
+   pComp->Value(mkNamingAdapt(iObjCnt, "ObjCnt", 0));
+   // Compile array
++#ifdef __EMSCRIPTEN__
++  if(pComp->isCompiler() && (iObjCnt<0 || iObjCnt>4096))
++    pComp->excCorrupt("Invalid selection size");
++#endif
+   if(pComp->isCompiler())
+ 		{ delete[] pObjNrs; pObjNrs = new int32_t [iObjCnt]; }
+   pComp->Value(mkNamingAdapt(mkArrayAdapt(pObjNrs, iObjCnt), "Objs", 0));
 --- a/engine/src/C4Game.cpp
 +++ b/engine/src/C4Game.cpp
-@@ -2757,7 +2757,7 @@
+@@ -2043,6 +2043,9 @@
+ 
+ bool C4Game::CanQuickSave()
+ 	{
++#ifdef __EMSCRIPTEN__
++  if(BrowserNetworkEnabled())return false; // Room checkpoints require coordinated original synchronization.
++#endif
+ 	// Registered only
+ 	/*if (!Config.Registered()) FREEWARE
+ 		{ Log(LoadResStr("IDS_GAME_NOUNREGSAVE")); return false; } */
+@@ -2065,6 +2068,9 @@
+ 
+ BOOL C4Game::QuickSave(const char *strFilename, const char *strTitle, bool fForceSave)
+ 	{
++#ifdef __EMSCRIPTEN__
++  if(BrowserNetworkEnabled())return false; // Room checkpoints require coordinated original synchronization.
++#endif
+ 	// Check
+ 	if (!fForceSave) if (!CanQuickSave()) return false;
+ 
+@@ -2590,6 +2596,10 @@
+ 	{
+ 
+ 	// Randomize
++#ifdef __EMSCRIPTEN__
++  extern void BrowserNetworkSeed();
++  BrowserNetworkSeed();
++#endif
+ 	FixRandom(Parameters.RandomSeed);
+ 
+   // Replay?
+@@ -2757,7 +2767,7 @@
  			iX=Random(GBackWdt); iY=Random(GBackHgt);
  			if (!FindSurfaceLiquid(iX,iY,pDef->Shape.Wdt,pDef->Shape.Hgt))
  				if (!FindLiquid(iX,iY,pDef->Shape.Wdt,pDef->Shape.Hgt))
@@ -689,7 +1078,7 @@
  			iY+=pDef->Shape.Hgt/2;
  			break;
  		// Floating in air
-@@ -3820,6 +3820,12 @@
+@@ -3820,6 +3830,12 @@
  		InitFullscreenComponents(!!IsRunning);
  	// note that this may fail if the gfx groups are closed already (runtime resolution change)
  	// doesn't matter; old gfx are kept in this case
@@ -702,6 +1091,59 @@
  	GraphicsResource.ReloadResolutionDependantFiles();
  	}
  
+--- a/engine/src/C4GameControl.cpp
++++ b/engine/src/C4GameControl.cpp
+@@ -2,6 +2,9 @@
+ /* control management */
+ 
+ #include "C4Include.h"
++#ifdef __EMSCRIPTEN__
++#include <C4BrowserNetwork.h>
++#endif
+ 
+ #ifndef BIG_C4INCLUDE
+ #include <C4Application.h>
+@@ -214,6 +217,9 @@
+ 
+ bool C4GameControl::Prepare()
+ {
++#ifdef __EMSCRIPTEN__
++  if(BrowserNetworkEnabled())return BrowserNetworkReady();
++#endif
+   assert(fInitComplete);
+ 
+ 	// Prepare control, return true if everything is ready for GameGo.
+@@ -264,6 +270,9 @@
+ 	C4Control Control;
+ 	if(eMode == CM_Local)
+ 	{
++#ifdef __EMSCRIPTEN__
++    if(BrowserNetworkEnabled()) BrowserNetworkTake(Control); else
++#endif
+ 		// control = input
+ 		Control.Take(Input);
+ 	}
+@@ -293,6 +302,9 @@
+ 	// execute
+ 	pExecutingControl = &Control;
+ 	Control.Execute();
++#ifdef __EMSCRIPTEN__
++  BrowserNetworkAfterControl();
++#endif
+ 	Control.Clear();
+ 	pExecutingControl = NULL;
+ 
+@@ -362,6 +374,10 @@
+ {
+ 	assert(fPreInit);
+ 
++
++#ifdef __EMSCRIPTEN__
++  if(BrowserNetworkQueue(eCtrlType,pPkt))return;
++#endif
+   // check if the control can be executed
+ 	if(eDelivery == CDT_Direct || eDelivery == CDT_Private)
+ 		assert(!pPkt->Sync());
 --- a/engine/src/C4GameMessage.cpp
 +++ b/engine/src/C4GameMessage.cpp
 @@ -4,6 +4,10 @@
@@ -831,6 +1273,106 @@
  		{
  		C4KeyboardCallbackInterface *pItfc = *i;
  		vecCallbacks.erase(i);
+--- a/engine/src/C4MainMenu.cpp
++++ b/engine/src/C4MainMenu.cpp
+@@ -43,6 +43,9 @@
+ 
+ bool C4MainMenu::ActivateNewPlayer(int32_t iPlayer)
+ 	{
++#ifdef __EMSCRIPTEN__
++  return false; // Browser multiplayer joins devices through the room lobby.
++#endif
+ 	// league or replay game
+ 	if (Game.Parameters.isLeague() || Game.C4S.Head.Replay) return false;
+ 	// Max player limit
+@@ -618,12 +621,18 @@
+ 		AddRefSym(LoadResStr("IDS_MSG_SELTEAM"),fctTeams,"ActivateMenu:TeamSel",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MSG_ALLOWSYOUTOJOINADIFFERENT"));
+ 		}
+ 	// Player join
++#ifndef __EMSCRIPTEN__
+ 	if ((Game.Players.GetCount() < Game.Parameters.MaxPlayers) && !Game.Parameters.isLeague()) 
+ 		{
+ 		AddRefSym(LoadResStr("IDS_MENU_CPNEWPLAYER"),GfxR->fctPlayerClr.GetPhase(),"ActivateMenu:NewPlayer",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MENU_CPNEWPLAYERINFO"));
+ 		}	
++#endif
+ 	// Save game (player menu only - should we allow saving games with no players in it?)
+-	if (pPlr && (!Game.Network.isEnabled() || Game.Network.isHost()))
++	if (pPlr && (!Game.Network.isEnabled() || Game.Network.isHost())
++#ifdef __EMSCRIPTEN__
++    && Game.CanQuickSave()
++#endif
++    )
+ 		{
+ 		AddRefSym(LoadResStr("IDS_MENU_CPSAVEGAME"),GfxR->fctMenu.GetPhase(0),"ActivateMenu:Save:Game",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MENU_CPSAVEGAMEINFO"));		
+ 		}
+@@ -695,6 +704,9 @@
+ 	// JoinPlayer
+ 	if (SEqual2(szCommand,"JoinPlayer:"))
+ 		{
++#ifdef __EMSCRIPTEN__
++    return false;
++#endif
+ 		// not in league or replay mode
+ 		if (Game.Parameters.isLeague() || Game.C4S.Head.Replay) return false;
+ 		// join player
+--- a/engine/src/C4Menu.cpp
++++ b/engine/src/C4Menu.cpp
+@@ -793,6 +793,27 @@
+ 	// resize for bar
+ 	InitSize();
+ 	}
++
++#ifdef __EMSCRIPTEN__
++void C4Menu::DrawBrowser(C4FacetEx &cgo, const C4Rect &occlusion)
++	{
++	if (!IsActive()) return;
++	if (occlusion.Wdt > 0 && occlusion.Hgt > 0)
++		{
++		if (!LocationSet) { InitLocation(cgo); LocationSet=TRUE; }
++		// These are native GUI coordinates, so rendering and hit testing move
++		// together. Wide menus rise above the pad on narrow portrait screens.
++		int x = Min(8, Max(0, cgo.Wdt-rcBounds.Wdt));
++		int y = Max(0, cgo.Hgt-rcBounds.Hgt-8);
++		int padX = occlusion.x-cgo.TargetX, padY = occlusion.y-cgo.TargetY;
++		if (x+rcBounds.Wdt > padX && x < padX+occlusion.Wdt &&
++		    y+rcBounds.Hgt > padY && y < padY+occlusion.Hgt)
++			y = Max(0, padY-rcBounds.Hgt-8);
++		SetPos(x,y);
++		}
++	Draw(cgo);
++	}
++#endif
+ 
+ void C4Menu::Draw(C4FacetEx &cgo)
+ 	{
+@@ -1252,6 +1273,13 @@
+ 
+ void C4Menu::UserSelectItem(int32_t Player, C4MenuItem *pItem)
+ 	{
++#ifdef __EMSCRIPTEN__
++  // Keyboard-only profiles may leave the world mouse attached to the initial
++  // observer. GUI taps belong to the original menu's local viewport instead.
++  C4Viewport *view=GetViewport();
++  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
++  if(owner && owner->LocalControl)Player=owner->Number;
++#endif
+ 	// not if user con't control anything
+ 	if (IsReadOnly()) return;
+ 	// the item must be selectable
+@@ -1262,6 +1290,13 @@
+ 
+ void C4Menu::UserEnter(int32_t Player, C4MenuItem *pItem, bool fRight)
+ 	{
++#ifdef __EMSCRIPTEN__
++  // Keyboard-only profiles may leave the world mouse attached to the initial
++  // observer. GUI taps belong to the original menu's local viewport instead.
++  C4Viewport *view=GetViewport();
++  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
++  if(owner && owner->LocalControl)Player=owner->Number;
++#endif
+ 	// not if user con't control anything
+ 	if (IsReadOnly()) return;
+ 	// the item must be selectable
 --- a/engine/src/C4MouseControl.cpp
 +++ b/engine/src/C4MouseControl.cpp
 @@ -3,6 +3,9 @@
@@ -1014,6 +1556,37 @@
  	// Override name source by definition
  	if (pDef->pClonkNames) 
  		cpNames = pDef->pClonkNames->GetData();
+--- a/engine/src/C4ObjectMenu.cpp
++++ b/engine/src/C4ObjectMenu.cpp
+@@ -432,7 +432,13 @@
+ void C4ObjectMenu::OnUserClose()
+ 	{
+ 	// Queue
+-	Game.Input.Add(CID_PlrControl, new C4ControlPlayerControl(Game.MouseControl.GetPlayer(),COM_MenuClose,0));
++	int player=Game.MouseControl.GetPlayer();
++#ifdef __EMSCRIPTEN__
++  C4Viewport *view=GetViewport();
++  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
++  if(owner && owner->LocalControl)player=owner->Number;
++#endif
++  Game.Input.Add(CID_PlrControl, new C4ControlPlayerControl(player,COM_MenuClose,0));
+ 	}
+ 
+ bool C4ObjectMenu::IsReadOnly()
+--- a/engine/src/C4Packet2.cpp
++++ b/engine/src/C4Packet2.cpp
+@@ -188,6 +188,11 @@
+ {
+ 	// Packet ID
+   pComp->Value(mkNamingAdapt(mkIntAdaptT<uint8_t>(eID), "ID", PID_None));
++#ifdef __EMSCRIPTEN__
++  extern bool BrowserNetworkDecodeAllowed(int);
++  if(pComp->isCompiler() && !BrowserNetworkDecodeAllowed(eID))
++    pComp->excCorrupt("Packet type is not admitted by the browser session");
++#endif
+ 	// Compiling or Decompiling?
+   if(pComp->isCompiler())
+   {
 --- a/engine/src/C4Player.cpp
 +++ b/engine/src/C4Player.cpp
 @@ -823,38 +823,38 @@
@@ -1198,10 +1771,36 @@
  	float fLogoZoom = 0.75f;
 --- a/engine/src/C4Viewport.cpp
 +++ b/engine/src/C4Viewport.cpp
-@@ -1009,6 +1009,16 @@
+@@ -973,7 +973,11 @@
+ 			lpDDraw->ActivateBlitModulation(0xafffffff);
+ 			}
+ 		// draw menu
++#ifdef __EMSCRIPTEN__
++		pPlr->Cursor->Menu->DrawBrowser(cgo, BrowserOcclusion);
++#else
+ 		pPlr->Cursor->Menu->Draw(cgo);
++#endif
+ 		// reset modulation for dragging
+ 		if (fDragging) lpDDraw->DeactivateBlitModulation();
+ 		}
+@@ -981,7 +985,11 @@
+ 	if (pPlr && pPlr->Menu.IsActive())
+ 		{
+ 		if (ResetMenuPositions) pPlr->Menu.ResetLocation();
++#ifdef __EMSCRIPTEN__
++		pPlr->Menu.DrawBrowser(cgo, BrowserOcclusion);
++#else
+ 		pPlr->Menu.Draw(cgo);
++#endif
+ 		}
+ 	// Fullscreen menu
+ 	if (FullScreen.pMenu && FullScreen.pMenu->IsActive())
+@@ -1007,6 +1015,16 @@
+ #ifdef USE_CONSOLE
+ 	// No drawing in console mode
  	return;
- #endif
- 
++#endif
++
 +#ifdef __EMSCRIPTEN__
 +	C4FacetEx browserOverlay = cgo;
 +	const int browserPixelWdt=ViewWdt, browserPixelHgt=ViewHgt;
@@ -1210,12 +1809,10 @@
 +		cgo.Wdt=ViewWdt; cgo.Hgt=ViewHgt;
 +		pGL->SetBrowserWorldZoom(BrowserZoom, DrawX, DrawY);
 +	}
-+#endif
-+
+ #endif
+ 
  	// landscape mod by FoW
- 	C4Player *pPlr=Game.Players.Get(Player);
- 	if (pPlr && pPlr->fFogOfWar)
-@@ -1073,12 +1083,21 @@
+@@ -1073,12 +1091,21 @@
  	lpDDraw->SetClrModMapEnabled(false);
  
  	// now restore complete cgo range for overlay drawing
@@ -1237,7 +1834,7 @@
  
  	// draw custom GUI objects
  	Game.ForeObjects.DrawIfCategory(cgo, Player, C4D_Parallax, false);
-@@ -1150,6 +1169,32 @@
+@@ -1150,6 +1177,32 @@
  
  void C4Viewport::AdjustPosition()
  	{
@@ -1270,7 +1867,7 @@
  	int32_t ViewportScrollBorder = fIsNoOwnerViewport ? 0 : C4ViewportScrollBorder;
  	// View position
  	if (PlayerLock && ValidPlr(Player))
-@@ -1228,6 +1273,13 @@
+@@ -1228,6 +1281,13 @@
  
  void C4Viewport::UpdateViewPosition()
  	{
@@ -1284,7 +1881,7 @@
  	int32_t ViewportScrollBorder = Application.isFullScreen ? C4ViewportScrollBorder : 0;
  	// no-owner viewports should not scroll outside viewing area
  	if(fIsNoOwnerViewport)
-@@ -1258,8 +1310,24 @@
+@@ -1258,8 +1318,24 @@
  	BorderBottom = Max<int32_t>(ViewHgt - GBackHgt + ViewY, 0);
  	}
  

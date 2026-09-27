@@ -1,14 +1,15 @@
 # Browser host for the original engine
 
-`index.html`, `game.js`, and `assets/` are the canonical standalone shell. Copy them beside the generated `clonk.js`, `clonk.wasm`, and `clonk.data` in `rage-port/dist/`. It expects the non-modularized Emscripten build with exported `FS`, `IDBFS`, `addRunDependency`, `removeRunDependency` and linked `-lidbfs.js`, and the original game data mounted at `/data`.
+`index.html`, `game.js`, `gallery.js`, `scenario-library.js`, `multiplayer.js`, and `assets/` are the canonical standalone shell. Copy them beside the generated `clonk.js`, `clonk.wasm`, and `clonk.data` in `rage-port/dist/`. It expects the non-modularized Emscripten build with exported `FS`, `IDBFS`, `addRunDependency`, `removeRunDependency` and linked `-lidbfs.js`, and the original game data mounted at `/data`.
 
-Click **Start Goldmine** to load the engine. This deliberate button supplies a browser user interaction, focuses the canvas, and leaves actual browser fullscreen optional. The page hosts the original engine's canvas and does not draw replacement scenery or simulate gameplay.
+Select one of the 80 scenarios in nine galleries, then choose **Play solo** or **Host game** to load the engine. This deliberate button supplies a browser user interaction, focuses the canvas, and leaves actual browser fullscreen optional. The page hosts the original engine's canvas and does not draw replacement scenery or simulate gameplay.
 
 Parameters:
 
 - `?replay=1`: load the native recording fixture instead of a fresh Goldmine round.
 - `?touch=1`: show the transparent nine-button controls even on a desktop.
-- `?debug=1`: show the engine log immediately.
+- `?scenario=<original-lowercase-path>`: select a catalog scenario.
+- `?host=1` / `?join=1`: open the manual WebRTC room flow.
 
 The touch pad resolves the active player's original keyboard configuration: Q/W/E selection; A throw; S jump/up; D dig; Y/Z left; X stop/down; C right. Pointer release sends keyup, and subsequent taps remain separate key presses so the original double-command logic remains authoritative. No held movement or digging is synthesized after release: persistence comes from the original engine.
 
@@ -34,7 +35,7 @@ Storage stays on the current device and origin. The browser may not complete an 
 
 ## Original interface and responsive camera
 
-The original Clonk Rage artwork and font form the startup menu. It reads the
+The original Clonk Rage artwork and font, plus the documented HD restoration of its background, form the startup menu. It reads the
 existing save catalog before downloading the engine, allowing direct **Load**.
 During play, the canvas occupies the full available viewport. Only **Save** and
 **Zoom** are added to the original wooden header; touch devices get the nine
@@ -73,3 +74,17 @@ Physical Y and Z both resolve to the configured Left action while gameplay
 handles that key; unhandled GUI/text-entry events keep their native path.
 The touch label explicitly shows Y / Z. Repeat and release events still pass
 through the original keyboard dispatcher.
+
+## Catalog and multiplayer lifecycle
+
+`scenario-library.js` loads the 80-scenario catalog and verifies unchanged supplemental pack downloads. `gallery.js` displays the nine original categories, original player limits and prerequisites. Original Title.png previews remain distinct from new browser gameplay screenshots.
+
+All mission scenarios are available immediately, as requested. At browser startup, the adapter adds only the catalog’s 12 original scenario-entry `Head.MissionAccess` passwords to the player’s configuration. The original engine gate remains intact. Internal progress flags such as `StormPortal` and `PortalOpen` are not prefilled; puzzles, scripted objectives and earned progress inside each mission remain unchanged.
+
+`multiplayer.js` manages browser-to-browser WebRTC rooms. The host creates an invitation, the guest pastes it and returns a reply, and the host pastes that reply. No default discovery, signalling, game, STUN or TURN server is contacted. Optional user-supplied ICE servers are supported. Every participant uses a separate browser/device; there is no shared-keyboard or split-screen mode. The host tab must remain open.
+
+The transport carries original native control packets through reliable ordered data channels, with original state checks during the round. Live-room saving and reconnect are not implemented; the Save button is disabled in connected rounds. Solo saving and loading remain supported. The root README links the scenario and room reports. The sweep checks startup, normal controls, a short simulation interval, screenshots, and saves where available; scenarios requiring two players use actual two-browser rooms. This does not claim completion of every objective.
+
+## Audio compatibility
+
+WAV effects and Vorbis music use Web Audio. There is no MIDI synthesizer in the browser adapter; original MIDI-only tracks are skipped and silent. Unsupported audio decoding is contained by the SDK adapter so gameplay and local saves continue to work. Original audio packs remain unchanged. See the root README for the cross-browser room report (Chromium host, WebKit guest), including shared controls, frame-120 synchronization, terrain agreement and pause.

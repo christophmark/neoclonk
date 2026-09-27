@@ -1,0 +1,1424 @@
+{
+  "base": "http://127.0.0.1:3902",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "layout": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "coverWidth": 1440,
+        "selected": "worlds.c4f/goldmine.c4s",
+        "visibleTiles": [
+          {
+            "track": "track-base-tutorial",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-base-worlds",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-base-missions",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-base-melees",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-base-races",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-knights",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-farworlds",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-fantasy",
+            "width": 1011,
+            "tileWidth": 216
+          },
+          {
+            "track": "track-western",
+            "width": 1011,
+            "tileWidth": 216
+          }
+        ]
+      },
+      "previews": [
+        {
+          "scenario": "tutorial.c4f/tutorial01.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial01.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial02.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial02.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial03.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial03.webp",
+          "width": 640,
+          "height": 470
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial04.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial04.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial05.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial05.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial06.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial06.webp",
+          "width": 640,
+          "height": 452
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial07.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial07.webp",
+          "width": 640,
+          "height": 452
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial08.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial08.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial09.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial09.webp",
+          "width": 640,
+          "height": 400
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial10.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial10.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/arcticocean.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__arcticocean.webp",
+          "width": 640,
+          "height": 173
+        },
+        {
+          "scenario": "worlds.c4f/ashlands.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__ashlands.webp",
+          "width": 640,
+          "height": 438
+        },
+        {
+          "scenario": "worlds.c4f/chasm.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__chasm.webp",
+          "width": 640,
+          "height": 591
+        },
+        {
+          "scenario": "worlds.c4f/desert.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__desert.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "worlds.c4f/foggycliffs.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__foggycliffs.webp",
+          "width": 640,
+          "height": 179
+        },
+        {
+          "scenario": "worlds.c4f/goldmine.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__goldmine.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/lavacaves.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__lavacaves.webp",
+          "width": 640,
+          "height": 404
+        },
+        {
+          "scenario": "worlds.c4f/mountains.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__mountains.webp",
+          "width": 640,
+          "height": 445
+        },
+        {
+          "scenario": "worlds.c4f/outset.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__outset.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/skyatoll.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__skyatoll.webp",
+          "width": 640,
+          "height": 424
+        },
+        {
+          "scenario": "worlds.c4f/skyislands.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__skyislands.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "worlds.c4f/tropical.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__tropical.webp",
+          "width": 640,
+          "height": 369
+        },
+        {
+          "scenario": "worlds.c4f/watercaves.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__watercaves.webp",
+          "width": 640,
+          "height": 497
+        },
+        {
+          "scenario": "missions.c4f/frontier.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__frontier.webp",
+          "width": 640,
+          "height": 366
+        },
+        {
+          "scenario": "missions.c4f/funnel.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__funnel.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "missions.c4f/high.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__high.webp",
+          "width": 640,
+          "height": 6400
+        },
+        {
+          "scenario": "missions.c4f/lastwill.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__lastwill.webp",
+          "width": 640,
+          "height": 81
+        },
+        {
+          "scenario": "missions.c4f/low.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__low.webp",
+          "width": 640,
+          "height": 497
+        },
+        {
+          "scenario": "missions.c4f/pearls.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__pearls.webp",
+          "width": 640,
+          "height": 512
+        },
+        {
+          "scenario": "missions.c4f/rattle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__rattle.webp",
+          "width": 640,
+          "height": 171
+        },
+        {
+          "scenario": "missions.c4f/regeneration.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__regeneration.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "missions.c4f/rocks.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__rocks.webp",
+          "width": 640,
+          "height": 328
+        },
+        {
+          "scenario": "missions.c4f/sevenkeys.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__sevenkeys.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "missions.c4f/skyvillage.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__skyvillage.webp",
+          "width": 640,
+          "height": 277
+        },
+        {
+          "scenario": "missions.c4f/submine.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__submine.webp",
+          "width": 640,
+          "height": 1019
+        },
+        {
+          "scenario": "missions.c4f/treasure.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__treasure.webp",
+          "width": 640,
+          "height": 1040
+        },
+        {
+          "scenario": "melees.c4f/canyon.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__canyon.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "melees.c4f/castle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__castle.webp",
+          "width": 640,
+          "height": 512
+        },
+        {
+          "scenario": "melees.c4f/clepal.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__clepal.webp",
+          "width": 640,
+          "height": 336
+        },
+        {
+          "scenario": "melees.c4f/clifffight.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__clifffight.webp",
+          "width": 640,
+          "height": 327
+        },
+        {
+          "scenario": "melees.c4f/greed.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__greed.webp",
+          "width": 640,
+          "height": 187
+        },
+        {
+          "scenario": "melees.c4f/massif.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__massif.webp",
+          "width": 640,
+          "height": 384
+        },
+        {
+          "scenario": "melees.c4f/minormelee.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__minormelee.webp",
+          "width": 640,
+          "height": 384
+        },
+        {
+          "scenario": "melees.c4f/mountaincombat.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__mountaincombat.webp",
+          "width": 640,
+          "height": 445
+        },
+        {
+          "scenario": "melees.c4f/sharklake.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__sharklake.webp",
+          "width": 640,
+          "height": 300
+        },
+        {
+          "scenario": "melees.c4f/theft.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__theft.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "races.c4f/caverace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__caverace.webp",
+          "width": 640,
+          "height": 1760
+        },
+        {
+          "scenario": "races.c4f/glowingpeak.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__glowingpeak.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "races.c4f/goldrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__goldrace.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "races.c4f/monsterrescue.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__monsterrescue.webp",
+          "width": 640,
+          "height": 154
+        },
+        {
+          "scenario": "races.c4f/skyrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__skyrace.webp",
+          "width": 640,
+          "height": 102
+        },
+        {
+          "scenario": "races.c4f/tritonpath.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__tritonpath.webp",
+          "width": 640,
+          "height": 171
+        },
+        {
+          "scenario": "races.c4f/wipfrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__wipfrace.webp",
+          "width": 640,
+          "height": 160
+        },
+        {
+          "scenario": "knights.c4f/camp.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__camp.webp",
+          "width": 640,
+          "height": 167
+        },
+        {
+          "scenario": "knights.c4f/cofut.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__cofut.webp",
+          "width": 640,
+          "height": 222
+        },
+        {
+          "scenario": "knights.c4f/dunkelfels.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__dunkelfels.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "knights.c4f/hammerfest.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__hammerfest.webp",
+          "width": 640,
+          "height": 245
+        },
+        {
+          "scenario": "knights.c4f/kingdoms.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__kingdoms.webp",
+          "width": 640,
+          "height": 222
+        },
+        {
+          "scenario": "knights.c4f/paxhill.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__paxhill.webp",
+          "width": 640,
+          "height": 221
+        },
+        {
+          "scenario": "knights.c4f/regicide.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__regicide.webp",
+          "width": 640,
+          "height": 183
+        },
+        {
+          "scenario": "knights.c4f/tournament.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__tournament.webp",
+          "width": 640,
+          "height": 167
+        },
+        {
+          "scenario": "farworlds.c4f/arctic.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__arctic.webp",
+          "width": 640,
+          "height": 128
+        },
+        {
+          "scenario": "farworlds.c4f/deep.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__deep.webp",
+          "width": 640,
+          "height": 390
+        },
+        {
+          "scenario": "farworlds.c4f/jungle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__jungle.webp",
+          "width": 640,
+          "height": 246
+        },
+        {
+          "scenario": "fantasy.c4f/alchemy.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__alchemy.webp",
+          "width": 640,
+          "height": 661
+        },
+        {
+          "scenario": "fantasy.c4f/crystalvalley.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__crystalvalley.webp",
+          "width": 640,
+          "height": 401
+        },
+        {
+          "scenario": "fantasy.c4f/drachenfels.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__drachenfels.webp",
+          "width": 640,
+          "height": 455
+        },
+        {
+          "scenario": "fantasy.c4f/skiesoffire.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__skiesoffire.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "western.c4f/bankrobbery.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__bankrobbery.webp",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "scenario": "western.c4f/capturetheflag.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__capturetheflag.webp",
+          "width": 640,
+          "height": 208
+        },
+        {
+          "scenario": "western.c4f/deadmansvalley.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__deadmansvalley.webp",
+          "width": 640,
+          "height": 299
+        },
+        {
+          "scenario": "western.c4f/fallingstarspeak.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__fallingstarspeak.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "western.c4f/goldencanyon.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__goldencanyon.webp",
+          "width": 640,
+          "height": 768
+        },
+        {
+          "scenario": "western.c4f/goldrush.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__goldrush.webp",
+          "width": 640,
+          "height": 96
+        },
+        {
+          "scenario": "western.c4f/lasthope.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__lasthope.webp",
+          "width": 640,
+          "height": 63
+        },
+        {
+          "scenario": "western.c4f/milestonewoods.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__milestonewoods.webp",
+          "width": 640,
+          "height": 228
+        },
+        {
+          "scenario": "western.c4f/minerscreek.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__minerscreek.webp",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "scenario": "western.c4f/redrockbay.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__redrockbay.webp",
+          "width": 640,
+          "height": 256
+        },
+        {
+          "scenario": "western.c4f/shootthesheriff.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__shootthesheriff.webp",
+          "width": 640,
+          "height": 213
+        },
+        {
+          "scenario": "western.c4f/totemhunt.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__totemhunt.webp",
+          "width": 640,
+          "height": 251
+        }
+      ],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "coverWidth": 390,
+        "selected": "worlds.c4f/goldmine.c4s",
+        "visibleTiles": [
+          {
+            "track": "track-base-tutorial",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-base-worlds",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-base-missions",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-base-melees",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-base-races",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-knights",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-farworlds",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-fantasy",
+            "width": 362,
+            "tileWidth": 111.328125
+          },
+          {
+            "track": "track-western",
+            "width": 362,
+            "tileWidth": 111.328125
+          }
+        ]
+      },
+      "previews": [
+        {
+          "scenario": "tutorial.c4f/tutorial01.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial01.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial02.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial02.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial03.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial03.webp",
+          "width": 640,
+          "height": 470
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial04.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial04.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial05.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial05.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial06.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial06.webp",
+          "width": 640,
+          "height": 452
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial07.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial07.webp",
+          "width": 640,
+          "height": 452
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial08.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial08.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial09.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial09.webp",
+          "width": 640,
+          "height": 400
+        },
+        {
+          "scenario": "tutorial.c4f/tutorial10.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-tutorial/tutorial__tutorial10.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/arcticocean.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__arcticocean.webp",
+          "width": 640,
+          "height": 173
+        },
+        {
+          "scenario": "worlds.c4f/ashlands.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__ashlands.webp",
+          "width": 640,
+          "height": 438
+        },
+        {
+          "scenario": "worlds.c4f/chasm.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__chasm.webp",
+          "width": 640,
+          "height": 591
+        },
+        {
+          "scenario": "worlds.c4f/desert.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__desert.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "worlds.c4f/foggycliffs.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__foggycliffs.webp",
+          "width": 640,
+          "height": 179
+        },
+        {
+          "scenario": "worlds.c4f/goldmine.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__goldmine.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/lavacaves.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__lavacaves.webp",
+          "width": 640,
+          "height": 404
+        },
+        {
+          "scenario": "worlds.c4f/mountains.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__mountains.webp",
+          "width": 640,
+          "height": 445
+        },
+        {
+          "scenario": "worlds.c4f/outset.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__outset.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "worlds.c4f/skyatoll.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__skyatoll.webp",
+          "width": 640,
+          "height": 424
+        },
+        {
+          "scenario": "worlds.c4f/skyislands.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__skyislands.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "worlds.c4f/tropical.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__tropical.webp",
+          "width": 640,
+          "height": 369
+        },
+        {
+          "scenario": "worlds.c4f/watercaves.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-worlds/worlds__watercaves.webp",
+          "width": 640,
+          "height": 497
+        },
+        {
+          "scenario": "missions.c4f/frontier.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__frontier.webp",
+          "width": 640,
+          "height": 366
+        },
+        {
+          "scenario": "missions.c4f/funnel.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__funnel.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "missions.c4f/high.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__high.webp",
+          "width": 640,
+          "height": 6400
+        },
+        {
+          "scenario": "missions.c4f/lastwill.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__lastwill.webp",
+          "width": 640,
+          "height": 81
+        },
+        {
+          "scenario": "missions.c4f/low.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__low.webp",
+          "width": 640,
+          "height": 497
+        },
+        {
+          "scenario": "missions.c4f/pearls.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__pearls.webp",
+          "width": 640,
+          "height": 512
+        },
+        {
+          "scenario": "missions.c4f/rattle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__rattle.webp",
+          "width": 640,
+          "height": 171
+        },
+        {
+          "scenario": "missions.c4f/regeneration.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__regeneration.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "missions.c4f/rocks.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__rocks.webp",
+          "width": 640,
+          "height": 328
+        },
+        {
+          "scenario": "missions.c4f/sevenkeys.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__sevenkeys.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "missions.c4f/skyvillage.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__skyvillage.webp",
+          "width": 640,
+          "height": 277
+        },
+        {
+          "scenario": "missions.c4f/submine.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__submine.webp",
+          "width": 640,
+          "height": 1019
+        },
+        {
+          "scenario": "missions.c4f/treasure.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-missions/missions__treasure.webp",
+          "width": 640,
+          "height": 1040
+        },
+        {
+          "scenario": "melees.c4f/canyon.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__canyon.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "melees.c4f/castle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__castle.webp",
+          "width": 640,
+          "height": 512
+        },
+        {
+          "scenario": "melees.c4f/clepal.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__clepal.webp",
+          "width": 640,
+          "height": 336
+        },
+        {
+          "scenario": "melees.c4f/clifffight.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__clifffight.webp",
+          "width": 640,
+          "height": 327
+        },
+        {
+          "scenario": "melees.c4f/greed.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__greed.webp",
+          "width": 640,
+          "height": 187
+        },
+        {
+          "scenario": "melees.c4f/massif.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__massif.webp",
+          "width": 640,
+          "height": 384
+        },
+        {
+          "scenario": "melees.c4f/minormelee.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__minormelee.webp",
+          "width": 640,
+          "height": 384
+        },
+        {
+          "scenario": "melees.c4f/mountaincombat.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__mountaincombat.webp",
+          "width": 640,
+          "height": 445
+        },
+        {
+          "scenario": "melees.c4f/sharklake.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__sharklake.webp",
+          "width": 640,
+          "height": 300
+        },
+        {
+          "scenario": "melees.c4f/theft.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-melees/melees__theft.webp",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "scenario": "races.c4f/caverace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__caverace.webp",
+          "width": 640,
+          "height": 1760
+        },
+        {
+          "scenario": "races.c4f/glowingpeak.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__glowingpeak.webp",
+          "width": 640,
+          "height": 640
+        },
+        {
+          "scenario": "races.c4f/goldrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__goldrace.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "races.c4f/monsterrescue.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__monsterrescue.webp",
+          "width": 640,
+          "height": 154
+        },
+        {
+          "scenario": "races.c4f/skyrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__skyrace.webp",
+          "width": 640,
+          "height": 102
+        },
+        {
+          "scenario": "races.c4f/tritonpath.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__tritonpath.webp",
+          "width": 640,
+          "height": 171
+        },
+        {
+          "scenario": "races.c4f/wipfrace.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/base-races/races__wipfrace.webp",
+          "width": 640,
+          "height": 160
+        },
+        {
+          "scenario": "knights.c4f/camp.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__camp.webp",
+          "width": 640,
+          "height": 167
+        },
+        {
+          "scenario": "knights.c4f/cofut.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__cofut.webp",
+          "width": 640,
+          "height": 222
+        },
+        {
+          "scenario": "knights.c4f/dunkelfels.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__dunkelfels.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "knights.c4f/hammerfest.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__hammerfest.webp",
+          "width": 640,
+          "height": 245
+        },
+        {
+          "scenario": "knights.c4f/kingdoms.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__kingdoms.webp",
+          "width": 640,
+          "height": 222
+        },
+        {
+          "scenario": "knights.c4f/paxhill.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__paxhill.webp",
+          "width": 640,
+          "height": 221
+        },
+        {
+          "scenario": "knights.c4f/regicide.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__regicide.webp",
+          "width": 640,
+          "height": 183
+        },
+        {
+          "scenario": "knights.c4f/tournament.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/knights/knights__tournament.webp",
+          "width": 640,
+          "height": 167
+        },
+        {
+          "scenario": "farworlds.c4f/arctic.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__arctic.webp",
+          "width": 640,
+          "height": 128
+        },
+        {
+          "scenario": "farworlds.c4f/deep.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__deep.webp",
+          "width": 640,
+          "height": 390
+        },
+        {
+          "scenario": "farworlds.c4f/jungle.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/farworlds/farworlds__jungle.webp",
+          "width": 640,
+          "height": 246
+        },
+        {
+          "scenario": "fantasy.c4f/alchemy.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__alchemy.webp",
+          "width": 640,
+          "height": 661
+        },
+        {
+          "scenario": "fantasy.c4f/crystalvalley.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__crystalvalley.webp",
+          "width": 640,
+          "height": 401
+        },
+        {
+          "scenario": "fantasy.c4f/drachenfels.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__drachenfels.webp",
+          "width": 640,
+          "height": 455
+        },
+        {
+          "scenario": "fantasy.c4f/skiesoffire.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/fantasy/fantasy__skiesoffire.webp",
+          "width": 640,
+          "height": 320
+        },
+        {
+          "scenario": "western.c4f/bankrobbery.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__bankrobbery.webp",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "scenario": "western.c4f/capturetheflag.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__capturetheflag.webp",
+          "width": 640,
+          "height": 208
+        },
+        {
+          "scenario": "western.c4f/deadmansvalley.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__deadmansvalley.webp",
+          "width": 640,
+          "height": 299
+        },
+        {
+          "scenario": "western.c4f/fallingstarspeak.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__fallingstarspeak.webp",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "scenario": "western.c4f/goldencanyon.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__goldencanyon.webp",
+          "width": 640,
+          "height": 768
+        },
+        {
+          "scenario": "western.c4f/goldrush.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__goldrush.webp",
+          "width": 640,
+          "height": 96
+        },
+        {
+          "scenario": "western.c4f/lasthope.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__lasthope.webp",
+          "width": 640,
+          "height": 63
+        },
+        {
+          "scenario": "western.c4f/milestonewoods.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__milestonewoods.webp",
+          "width": 640,
+          "height": 228
+        },
+        {
+          "scenario": "western.c4f/minerscreek.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__minerscreek.webp",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "scenario": "western.c4f/redrockbay.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__redrockbay.webp",
+          "width": 640,
+          "height": 256
+        },
+        {
+          "scenario": "western.c4f/shootthesheriff.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__shootthesheriff.webp",
+          "width": 640,
+          "height": 213
+        },
+        {
+          "scenario": "western.c4f/totemhunt.c4s",
+          "kind": "gameplay",
+          "loaded": true,
+          "source": "catalog/screenshots/western/western__totemhunt.webp",
+          "width": 640,
+          "height": 251
+        }
+      ],
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "visualReview": {
+    "reviewed": true,
+    "artifacts": [
+      "desktop.png",
+      "mobile.png",
+      "mobile-startup.png",
+      "mobile-western.png"
+    ],
+    "finding": "All 80 real capture previews decode in desktop and mobile galleries. Three tiles fit mobile width, no horizontal document overflow, original-style header and saved-round controls remain readable; sticky selected-scenario panel remains available when scrolling. Original map aspect ratios preserved."
+  }
+}

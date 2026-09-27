@@ -1,0 +1,924 @@
+{
+  "trace": [
+    {
+      "name": "portrait",
+      "menu": {
+        "player": 0,
+        "objectMenu": true,
+        "id": 4,
+        "selected": 0,
+        "x": 8,
+        "y": 668,
+        "width": 179,
+        "height": 146,
+        "items": [
+          {
+            "index": 0,
+            "id": "CNKT",
+            "x": 10,
+            "y": 691,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 1,
+            "id": "LNKT",
+            "x": 45,
+            "y": 691,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 2,
+            "id": "LOAM",
+            "x": 80,
+            "y": 691,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 3,
+            "id": "WOOD",
+            "x": 115,
+            "y": 691,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 4,
+            "id": "METL",
+            "x": 150,
+            "y": 691,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 5,
+            "id": "FLNT",
+            "x": 10,
+            "y": 726,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 6,
+            "id": "TFLN",
+            "x": 45,
+            "y": 726,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 7,
+            "id": "SFLN",
+            "x": 80,
+            "y": 726,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 8,
+            "id": "SPHR",
+            "x": 115,
+            "y": 726,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 9,
+            "id": "BARL",
+            "x": 150,
+            "y": 726,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 10,
+            "id": "FLAG",
+            "x": 10,
+            "y": 761,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 11,
+            "id": "CLNK",
+            "x": 45,
+            "y": 761,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 12,
+            "id": "LORY",
+            "x": 80,
+            "y": 761,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 13,
+            "id": "CATA",
+            "x": 115,
+            "y": 761,
+            "width": 35,
+            "height": 35
+          }
+        ]
+      },
+      "pad": {
+        "x": 240,
+        "y": 677.25,
+        "width": 140,
+        "height": 156.75
+      },
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 37,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 3935509043,
+        "randomCount": 676,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -9,
+          "temperature": 4,
+          "season": 47
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 2808,
+            "effectivePixels": 2808
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 209106,
+            "effectivePixels": 209106
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 6320,
+            "effectivePixels": 6320
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 3701,
+            "effectivePixels": 3701
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 13800,
+            "effectivePixels": 13800
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 657,
+            "effectivePixels": 657
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 254,
+            "effectivePixels": 254
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 596,
+            "effectivePixels": 596
+          }
+        ],
+        "goldObjects": 12,
+        "objectCount": 152,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 3,
+            "commandDelay": 3,
+            "pressedCommands": 8,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Peter",
+              "x": 577,
+              "y": 274,
+              "fixedX": 37814272,
+              "fixedY": 17956864,
+              "vx": 0,
+              "vy": 65535,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 150,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 1,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 37,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": {
+                "id": 4,
+                "selected": 0,
+                "items": [
+                  "CNKT",
+                  "LNKT",
+                  "LOAM",
+                  "WOOD",
+                  "METL",
+                  "FLNT",
+                  "TFLN",
+                  "SFLN",
+                  "SPHR",
+                  "BARL",
+                  "FLAG",
+                  "CLNK",
+                  "LORY",
+                  "CATA"
+                ],
+                "bounds": {
+                  "x": 8,
+                  "y": 604,
+                  "width": 179,
+                  "height": 146
+                }
+              },
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Peter",
+                "x": 577,
+                "y": 274,
+                "fixedX": 37814272,
+                "fixedY": 17956864,
+                "vx": 0,
+                "vy": 65535,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 150,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 1,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 37,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": {
+                  "id": 4,
+                  "selected": 0,
+                  "items": [
+                    "CNKT",
+                    "LNKT",
+                    "LOAM",
+                    "WOOD",
+                    "METL",
+                    "FLNT",
+                    "TFLN",
+                    "SFLN",
+                    "SPHR",
+                    "BARL",
+                    "FLAG",
+                    "CLNK",
+                    "LORY",
+                    "CATA"
+                  ],
+                  "bounds": {
+                    "x": 8,
+                    "y": 604,
+                    "width": 179,
+                    "height": 146
+                  }
+                },
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 758,
+          "worldX": 447,
+          "worldY": 75,
+          "worldWidth": 260,
+          "worldHeight": 505,
+          "zoom": 1.5,
+          "requestedZoom": 1.5,
+          "minZoom": 1.2633,
+          "headerHeight": 64,
+          "clonkScreenX": 195,
+          "clonkScreenY": 362,
+          "occlusion": {
+            "x": 240,
+            "y": 677,
+            "width": 140,
+            "height": 157
+          }
+        }
+      }
+    },
+    {
+      "name": "portrait-tap",
+      "before": 50,
+      "after": 45,
+      "flint": {
+        "index": 5,
+        "id": "FLNT",
+        "x": 10,
+        "y": 726,
+        "width": 35,
+        "height": 35
+      }
+    },
+    {
+      "name": "landscape",
+      "menu": {
+        "player": 0,
+        "objectMenu": true,
+        "id": 4,
+        "selected": 5,
+        "x": 8,
+        "y": 238,
+        "width": 179,
+        "height": 146,
+        "items": [
+          {
+            "index": 0,
+            "id": "CNKT",
+            "x": 10,
+            "y": 261,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 1,
+            "id": "LNKT",
+            "x": 45,
+            "y": 261,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 2,
+            "id": "LOAM",
+            "x": 80,
+            "y": 261,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 3,
+            "id": "WOOD",
+            "x": 115,
+            "y": 261,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 4,
+            "id": "METL",
+            "x": 150,
+            "y": 261,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 5,
+            "id": "FLNT",
+            "x": 10,
+            "y": 296,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 6,
+            "id": "TFLN",
+            "x": 45,
+            "y": 296,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 7,
+            "id": "SFLN",
+            "x": 80,
+            "y": 296,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 8,
+            "id": "SPHR",
+            "x": 115,
+            "y": 296,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 9,
+            "id": "BARL",
+            "x": 150,
+            "y": 296,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 10,
+            "id": "FLAG",
+            "x": 10,
+            "y": 331,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 11,
+            "id": "CLNK",
+            "x": 45,
+            "y": 331,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 12,
+            "id": "LORY",
+            "x": 80,
+            "y": 331,
+            "width": 35,
+            "height": 35
+          },
+          {
+            "index": 13,
+            "id": "CATA",
+            "x": 115,
+            "y": 331,
+            "width": 35,
+            "height": 35
+          }
+        ]
+      },
+      "pad": {
+        "x": 748,
+        "y": 263.40625,
+        "width": 138,
+        "height": 140.59375
+      },
+      "state": {
+        "running": true,
+        "paused": true,
+        "frame": 57,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 3203311002,
+        "randomCount": 789,
+        "landscape": {
+          "width": 800,
+          "height": 600,
+          "mapWidth": 80,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": -9,
+          "temperature": 4,
+          "season": 47
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 2808,
+            "effectivePixels": 2808
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 209106,
+            "effectivePixels": 209106
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 6320,
+            "effectivePixels": 6320
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 3701,
+            "effectivePixels": 3701
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 13800,
+            "effectivePixels": 13800
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 657,
+            "effectivePixels": 657
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 254,
+            "effectivePixels": 254
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 466,
+            "effectivePixels": 466
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 596,
+            "effectivePixels": 596
+          }
+        ],
+        "goldObjects": 12,
+        "objectCount": 153,
+        "players": [
+          {
+            "number": 0,
+            "name": "Browser",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 45,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 8,
+            "menu": false,
+            "cursor": {
+              "number": 153,
+              "id": "CLNK",
+              "name": "Peter",
+              "x": 577,
+              "y": 274,
+              "fixedX": 37814272,
+              "fixedY": 17956864,
+              "vx": 0,
+              "vy": 65535,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 150,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 1,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 57,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": {
+                "id": 4,
+                "selected": 5,
+                "items": [
+                  "CNKT",
+                  "LNKT",
+                  "LOAM",
+                  "WOOD",
+                  "METL",
+                  "FLNT",
+                  "TFLN",
+                  "SFLN",
+                  "SPHR",
+                  "BARL",
+                  "FLAG",
+                  "CLNK",
+                  "LORY",
+                  "CATA"
+                ],
+                "bounds": {
+                  "x": 8,
+                  "y": 174,
+                  "width": 179,
+                  "height": 146
+                }
+              },
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 153,
+                "id": "CLNK",
+                "name": "Peter",
+                "x": 577,
+                "y": 274,
+                "fixedX": 37814272,
+                "fixedY": 17956864,
+                "vx": 0,
+                "vy": 65535,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 150,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 1,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 57,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": {
+                  "id": 4,
+                  "selected": 5,
+                  "items": [
+                    "CNKT",
+                    "LNKT",
+                    "LOAM",
+                    "WOOD",
+                    "METL",
+                    "FLNT",
+                    "TFLN",
+                    "SFLN",
+                    "SPHR",
+                    "BARL",
+                    "FLAG",
+                    "CLNK",
+                    "LORY",
+                    "CATA"
+                  ],
+                  "bounds": {
+                    "x": 8,
+                    "y": 174,
+                    "width": 179,
+                    "height": 146
+                  }
+                },
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 896,
+          "height": 328,
+          "worldX": 312,
+          "worldY": 165,
+          "worldWidth": 597,
+          "worldHeight": 219,
+          "zoom": 1.5,
+          "requestedZoom": 1.5,
+          "minZoom": 1.12,
+          "headerHeight": 64,
+          "clonkScreenX": 397,
+          "clonkScreenY": 227,
+          "occlusion": {
+            "x": 748,
+            "y": 263,
+            "width": 138,
+            "height": 141
+          }
+        }
+      }
+    },
+    {
+      "name": "landscape-tap",
+      "before": 45,
+      "after": 40,
+      "flint": {
+        "index": 5,
+        "id": "FLNT",
+        "x": 10,
+        "y": 296,
+        "width": 35,
+        "height": 35
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

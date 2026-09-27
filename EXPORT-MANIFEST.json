@@ -1,12 +1,12 @@
 {
   "files": {
     ".gitignore": {
-      "bytes": 259,
-      "sha256": "574cbbcd6ffaad8a58bf8cadab241d13658102bd749808994d00c56dfcc2307a"
+      "bytes": 257,
+      "sha256": "e5fb51a86e36a456ba51f031ec6e7df18910f2cce113a2c69c810b254d1db5c7"
     },
     "README.md": {
-      "bytes": 5508,
-      "sha256": "3ac219bd339ee53094a22f72f1b3dbf599f4dec2bdd8194b1f724897a7521c7d"
+      "bytes": 9816,
+      "sha256": "0f5864f02054dbe3a05fad0417626cfa7b609f6b6750e9bb14b3768d7ad752ff"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5829,8 +5829,8 @@
       "sha256": "d5c107730a534c2d2056ff2802abaa95d547b5698147f5aee2d074596576a3f7"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 5508,
-      "sha256": "3ac219bd339ee53094a22f72f1b3dbf599f4dec2bdd8194b1f724897a7521c7d"
+      "bytes": 9816,
+      "sha256": "0f5864f02054dbe3a05fad0417626cfa7b609f6b6750e9bb14b3768d7ad752ff"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -5860,9 +5860,53 @@
       "bytes": 5703,
       "sha256": "38badb61d8c8c6e3792d9393dd8b4aa19e0e187e4170fd48eb4d54af0d5dcf63"
     },
+    "native-reference/warning-audit/Clonk.log": {
+      "bytes": 2359,
+      "sha256": "52b764e434047cb163d651eff70ef99b70db4c471a0dabff4e7c2a362c76f31e"
+    },
+    "native-reference/warning-audit/README.md": {
+      "bytes": 1868,
+      "sha256": "d0b9a0ee2dd8eef4050969d2de8018ff04562cce2512191cb0817600115c58e6"
+    },
+    "native-reference/warning-audit/report.json": {
+      "bytes": 1977,
+      "sha256": "5420948a508331fd70ce44bcd274b6218ff574d39c82bec39fe84f3fb4ada123"
+    },
     "original-content/README.md": {
-      "bytes": 6304,
-      "sha256": "daddbb3206fd4a553527ac32c2ed9680acc2cd667f7b4603990935a72a54ab76"
+      "bytes": 7182,
+      "sha256": "d81fc4d8509f099653f6fc41d99831e099b7806b9e1aec5a812e6bca206cd4a0"
+    },
+    "original-content/addons/release/Fantasy.c4d": {
+      "bytes": 4133760,
+      "sha256": "7e8fe792abdaaec166df717cf5d4397b46f535f0a650e83cf76bb589397c575c"
+    },
+    "original-content/addons/release/Fantasy.c4f": {
+      "bytes": 1433835,
+      "sha256": "335ac7cb7683ad5e4654e935318d4dc0e350eeb215f736e8270007b7a77c9274"
+    },
+    "original-content/addons/release/FarWorlds.c4d": {
+      "bytes": 4727584,
+      "sha256": "3819609536d86f4a8717172784e5fd79a661a9f9e79a9e71b1050a3c67eeca51"
+    },
+    "original-content/addons/release/FarWorlds.c4f": {
+      "bytes": 775230,
+      "sha256": "8bbe4237ce010bfc898e851d6a397f8343064ca449b5416dc3331c79018f499e"
+    },
+    "original-content/addons/release/Knights.c4d": {
+      "bytes": 5552746,
+      "sha256": "c98d486d771d7860014d0d0e38d05c847202a57506e9dc8d10932c662128ec87"
+    },
+    "original-content/addons/release/Knights.c4f": {
+      "bytes": 8897200,
+      "sha256": "a8ca6b113974ae12d5cc928a988a8e4cb6c14d79dc4c9bce9b6fc574a9e838bb"
+    },
+    "original-content/addons/release/Western.c4d": {
+      "bytes": 11721765,
+      "sha256": "ae265915464da0e517c842ff6941247126c4a3a12e1377c7e439a2505854942e"
+    },
+    "original-content/addons/release/Western.c4f": {
+      "bytes": 8408569,
+      "sha256": "dabf604de2661d24982a09f7738c8434a98984654c44d43f9b780188bd7099c4"
     },
     "original-content/build-manifest.py": {
       "bytes": 3745,
@@ -5888,29 +5932,397 @@
       "bytes": 10583,
       "sha256": "69cb984f91f277bb2be273e2b3c8b05586937b13cfb894f7a564518723245dbf"
     },
+    "original-content/release/cr_game_linux/Graphics.c4g": {
+      "bytes": 5749519,
+      "sha256": "75e3472296a2280c6590c0eb24b9c1a841087b05304d207b353db871c619da6c"
+    },
+    "original-content/release/cr_game_linux/Material.c4g": {
+      "bytes": 853439,
+      "sha256": "ddccbd0e3ed8516caa90764d0b0045a6a3cb0780c11334cf1e1b9b46e9e6dac2"
+    },
+    "original-content/release/cr_game_linux/Melees.c4f": {
+      "bytes": 1054667,
+      "sha256": "9894685d340f0ef44e221720e7ad8e9d3478ac132b9ec7425031118a0b9aa2a4"
+    },
+    "original-content/release/cr_game_linux/Missions.c4f": {
+      "bytes": 2596985,
+      "sha256": "3a04c490140d42e6a80a9c08d626263f8f5d8e4b41356ffd5817fb00359e98cc"
+    },
+    "original-content/release/cr_game_linux/Music.c4g": {
+      "bytes": 6786841,
+      "sha256": "25e8270f6ed7416164e5fffae3b32055b2a0d3828fb9fd7a17c7b2c6c918580e"
+    },
+    "original-content/release/cr_game_linux/Objects.c4d": {
+      "bytes": 6924109,
+      "sha256": "ded9762fcfb36d551f341ba88b266e18190a08560cdfaaffbf1ffc60aafd6347"
+    },
+    "original-content/release/cr_game_linux/Races.c4f": {
+      "bytes": 861975,
+      "sha256": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72"
+    },
+    "original-content/release/cr_game_linux/Sound.c4g": {
+      "bytes": 1461737,
+      "sha256": "80b16fc9d4da6d213ce84e9f2191cc2a8e0f315b2f4d4fdbda10a3f93da38eb9"
+    },
+    "original-content/release/cr_game_linux/System.c4g": {
+      "bytes": 102112,
+      "sha256": "2a73c38864b533b39e4d74ee210a9efa9cbcb9777ee0b444add5162de8fc3003"
+    },
+    "original-content/release/cr_game_linux/Tutorial.c4f": {
+      "bytes": 13330033,
+      "sha256": "64ec0f3ad74133eab2eac07d7d8e26c2271a5049d71555b42e72acb96f98549a"
+    },
+    "original-content/release/cr_game_linux/Worlds.c4f": {
+      "bytes": 1965190,
+      "sha256": "5c6d9c301b368be3c7ef8328d5ebae6fc86ec7e7283cd50a7a6ec11cc09fdd00"
+    },
+    "rage-port/BROWSER_LOCKSTEP.md": {
+      "bytes": 7462,
+      "sha256": "d764814c1829c7a6c424569cd206ebda55d4ff14025a9384167e0377838e1c93"
+    },
     "rage-port/PLATFORM_PORT.md": {
-      "bytes": 7065,
-      "sha256": "9cb13522a59fd0c9d075108e1f1fa9bd67fc6a787232f65f3b4a25290026aa07"
+      "bytes": 12695,
+      "sha256": "ce645a4502ca21db4578f3b16c18ff18ce752c097921da436ddeb2d98f7d148c"
     },
     "rage-port/README.md": {
-      "bytes": 3754,
-      "sha256": "eff4489d2c58fc45b5a6c73dd31474afca06d8fadbeb5aeb70b48377d03eaf77"
+      "bytes": 6828,
+      "sha256": "03510a261acdf400aa96c26ba57199c42fcaabb4ba90dc4a0693afbaa58d1a03"
     },
     "rage-port/catalog/README.md": {
-      "bytes": 5253,
-      "sha256": "eb0234fa822786a8d45bb0523e9c8870396d4144c4fa76497f8df9858e771fe3"
+      "bytes": 6192,
+      "sha256": "0d560342acf5a13a9c215e309105fa256c165834d625274be49df3780fa1310d"
     },
     "rage-port/catalog/build-catalog.py": {
-      "bytes": 8831,
-      "sha256": "80e4717eb56f18ef54224b9133aed4eab50734abc44428e01fb14fcc60bdadb1"
+      "bytes": 9582,
+      "sha256": "0053d2880a34b0bbb881734429799a2d167165b7c7f8afb6690959cc977091f4"
     },
     "rage-port/catalog/packs.json": {
       "bytes": 6871,
       "sha256": "014f954621d8aeeac1e254232278e3a7beb8b2e3b2949d81da244a60bbbc5238"
     },
     "rage-port/catalog/scenarios.json": {
-      "bytes": 640120,
-      "sha256": "6a099c60e3201db55cedf7fe0f4a780480964544c3a8d1ce9f7ca0c1f9db01b1"
+      "bytes": 644274,
+      "sha256": "3ed48645470b08446e19676abd196d8d850c8152c1ac3b95f9d799028fafa66f"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__canyon.webp": {
+      "bytes": 45128,
+      "sha256": "f20491e270e1af9ad58ca0516287f837ae29a419bc8f0c1c88fd003683822730"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__castle.webp": {
+      "bytes": 57884,
+      "sha256": "2036683df552c76e3a28c1a9c15209eb2c0b4bc797cd99b74b2fc755db117d52"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__clepal.webp": {
+      "bytes": 57174,
+      "sha256": "b8c1c503ba1044a68156ce22ebfd5b9c1611eb1d122b8be2837b0ab8dd9b4345"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__clifffight.webp": {
+      "bytes": 57370,
+      "sha256": "938a10461dd72ccbff2430b562dd492d2ff2847312e4ad5c966b514b809a4d50"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__greed.webp": {
+      "bytes": 41964,
+      "sha256": "b9770ce5cf3decc31d3c0f700da139a111a8677ff742461ff20720b4cd65958c"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__massif.webp": {
+      "bytes": 67496,
+      "sha256": "c34413c03cf3fa155f06a5d3b4f2db8b1560aca2bdc3d91c3a0db25f20199871"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__minormelee.webp": {
+      "bytes": 51278,
+      "sha256": "a6f65564ec2cabb06ddd8e9edc34f09e2b7f70da417e115d62c484a011ea12cd"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__mountaincombat.webp": {
+      "bytes": 76132,
+      "sha256": "1919386a282b6ed58dfd4848ca79bed3d2591c16954c50ac81896ec257ed5fd3"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__sharklake.webp": {
+      "bytes": 44390,
+      "sha256": "709b168f864f110aacbebdd1bdb6fa16e966634b3946fc3228706ff01768152c"
+    },
+    "rage-port/catalog/screenshots/base-melees/melees__theft.webp": {
+      "bytes": 63322,
+      "sha256": "5e7d51b5928042bb7ddcb688e88dd0ed664f6d1335c9d7ccb4e78dffa2608d18"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__frontier.webp": {
+      "bytes": 47382,
+      "sha256": "70bda50c3f843f0ba238465f1d4cf613fe1471779bddcb7618d2ed86b15a2d6f"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__funnel.webp": {
+      "bytes": 52840,
+      "sha256": "f76935e92d0c31d8f4ca0e9cde60e9ba45d1da6dee60aac26c75caafa2cac83c"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__high.webp": {
+      "bytes": 464594,
+      "sha256": "f6e8fc5ccbca1e18560e51355b5f42403174cea6ac219b1cc40a908e38d2d36d"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__lastwill.webp": {
+      "bytes": 12760,
+      "sha256": "e883eb73c15e49289d8019bc2aec9d490f3f377ea789f3da888c9007c38c2942"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__low.webp": {
+      "bytes": 106432,
+      "sha256": "56cc4a6db58291733577d93e5c162d6f469b9643a77ea765b5e158e6b359cac0"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__pearls.webp": {
+      "bytes": 69116,
+      "sha256": "24083a5537049ce521a959dfe00ac59951cd551b1cd7391f79f9baa8c1f255cf"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__rattle.webp": {
+      "bytes": 32470,
+      "sha256": "a4844c8ecb997fbe464459805677d28ce5aad7de64a16ae45a90345c52bb4bc9"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__regeneration.webp": {
+      "bytes": 81696,
+      "sha256": "46b69aebb6ca823eee05129aa521f44f7cf26e045addd8b445aecd916dc030df"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__rocks.webp": {
+      "bytes": 42938,
+      "sha256": "a64dd92ea6082eba2f0805096cf5dcf9b2cb0c124dfd4773831b539b35146ccd"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__sevenkeys.webp": {
+      "bytes": 94070,
+      "sha256": "f3d763e3be9d8df2164993ed6610c8db45df9d64ff7c4656fe72e08959c30cd5"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__skyvillage.webp": {
+      "bytes": 22816,
+      "sha256": "7db2eece21932963a8f7978e7a93d34044eb55c483e738f8200469879e8a176e"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__submine.webp": {
+      "bytes": 105264,
+      "sha256": "1bbb6a2ef752f24dc165213d9ec0ed7ce3d830fb686a59f6ef440e88882d35d4"
+    },
+    "rage-port/catalog/screenshots/base-missions/missions__treasure.webp": {
+      "bytes": 152384,
+      "sha256": "72d26288da61a3ac7f2d0291c5943b2222e81b1c6194381d8f28f74b070a2e73"
+    },
+    "rage-port/catalog/screenshots/base-races/races__caverace.webp": {
+      "bytes": 294048,
+      "sha256": "1da9731183300b68adeca5c15d79e68518261c5a626f922b2ac11e355234c29c"
+    },
+    "rage-port/catalog/screenshots/base-races/races__glowingpeak.webp": {
+      "bytes": 98600,
+      "sha256": "e5ec93e04278219aab3a2824b75bfa5cf7939792dce7be274463b0d02ef51fc6"
+    },
+    "rage-port/catalog/screenshots/base-races/races__goldrace.webp": {
+      "bytes": 43744,
+      "sha256": "8219e5fa4f52b89da51ed81b1cce6ddce655ef8902d4f0e1ef8a7d8d26ede59c"
+    },
+    "rage-port/catalog/screenshots/base-races/races__monsterrescue.webp": {
+      "bytes": 31254,
+      "sha256": "2ebabea3902d798322cf118d8e0e468d03e19df3a2ba0f103703bd7222e25f69"
+    },
+    "rage-port/catalog/screenshots/base-races/races__skyrace.webp": {
+      "bytes": 9262,
+      "sha256": "37519f50fb948193fa69b89eec206872bfaa3a5dd05b6b5a6eef90d148c83e39"
+    },
+    "rage-port/catalog/screenshots/base-races/races__tritonpath.webp": {
+      "bytes": 28444,
+      "sha256": "7f2a20f1d0190dd8c6dde83425c2b64f81dd3a8a42e560a7ebf6734313141485"
+    },
+    "rage-port/catalog/screenshots/base-races/races__wipfrace.webp": {
+      "bytes": 35884,
+      "sha256": "a0cc8a43151d4832dcccb1092e871fb757c4a41fa41e9585ff097d971a261afa"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial01.webp": {
+      "bytes": 68444,
+      "sha256": "f941a7a97958d3fd65c092e0f2dad41bfb128ce4aba0be909aac30475dc3bf48"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial02.webp": {
+      "bytes": 46980,
+      "sha256": "79916e3b21f522d39bc769a554f4f316e67ebe087ebe00b974e47cfa7441d0fa"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial03.webp": {
+      "bytes": 66808,
+      "sha256": "390037942741222274620da72a1248014880964df8628eb74ad9e7d710c58190"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial04.webp": {
+      "bytes": 75510,
+      "sha256": "8ddab7c27589081a179ac5d855dc573f2b4c352bf249dbfc97e00fff561b2c01"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial05.webp": {
+      "bytes": 63254,
+      "sha256": "1175166d1e933e0d041c93f64ea316d53c1df8a4dcd5e419b9fe8893766e34bc"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial06.webp": {
+      "bytes": 79140,
+      "sha256": "c0e0cf0e4c9971cb457508c63dbd4c710a8dc815391a43b2cfa07468734472da"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial07.webp": {
+      "bytes": 43636,
+      "sha256": "d832b8789330972af881185eeb5f6a6c369ef20d94d8320f23f7f72318e6060c"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial08.webp": {
+      "bytes": 73024,
+      "sha256": "3e8325bc08d4122823a5cfe5c0233cf9feca653e3787934d1a883f211d88e4da"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial09.webp": {
+      "bytes": 14452,
+      "sha256": "6b80710a8e7d964759f3758412345f44faa684a801a30d15a4e35536272fa950"
+    },
+    "rage-port/catalog/screenshots/base-tutorial/tutorial__tutorial10.webp": {
+      "bytes": 61458,
+      "sha256": "9e5546c4c80a75f90a4d133573656c6be4e9039b4585a8d7660e974cd2677a9d"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__arcticocean.webp": {
+      "bytes": 26478,
+      "sha256": "c19473ee67dc696f2fd59fa05f8c33191f7c8262515d2df4a693ad1d1467d0d6"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__ashlands.webp": {
+      "bytes": 71830,
+      "sha256": "50ce94f7620b32a19d44525a8f288d5e04c862e23b274926b017f6638e507aa0"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__chasm.webp": {
+      "bytes": 87948,
+      "sha256": "b1be5d8c21050bf01befb62aa57db0a7b39c86cfc7910129600d73290c09ad05"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__desert.webp": {
+      "bytes": 74212,
+      "sha256": "8ef299c491794f08f3198670553099ec77b1b5b6ebfe63d11a47937a49db7a40"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__foggycliffs.webp": {
+      "bytes": 20450,
+      "sha256": "93a0010d99d9fd3dff601143a62a24dcdebba8f3b55f5944cdb762cb7d4f3d05"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__goldmine.webp": {
+      "bytes": 60890,
+      "sha256": "22e62e9152500911042719001bef6cf5e3be43b0065db023b5a9e2467a94d205"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__lavacaves.webp": {
+      "bytes": 75156,
+      "sha256": "8cded47fad61c6ce79792bde37ee5936aeaa9f0a8a2e7105a304d957ee53cfd4"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__mountains.webp": {
+      "bytes": 78916,
+      "sha256": "37710f0d8181705856d6f0fa8d8d8046b4a9f30d3a48b08721b9c3d8f0a719e1"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__outset.webp": {
+      "bytes": 57370,
+      "sha256": "acfd03e770e25f8086087edd0aea5555d5a9ee4a387062876e2b433e0961c813"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__skyatoll.webp": {
+      "bytes": 51842,
+      "sha256": "0a5ed528df9e12119e7e9dbb2d3b32ab343f584e008e091634342113a0741e1a"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__skyislands.webp": {
+      "bytes": 80796,
+      "sha256": "840b3705a60ff4e7e91b5e5453492c62df83d4939cd7d53f1b658f44707b499c"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__tropical.webp": {
+      "bytes": 41836,
+      "sha256": "453629bb50ab6f0972399ca627cb857f5a1185c639a18e2dab4b4064e7f35495"
+    },
+    "rage-port/catalog/screenshots/base-worlds/worlds__watercaves.webp": {
+      "bytes": 90260,
+      "sha256": "110248fdd18b473374b4a170050f1e7870c46e963fda0a6776e35018b91a4e6c"
+    },
+    "rage-port/catalog/screenshots/fantasy/fantasy__alchemy.webp": {
+      "bytes": 138308,
+      "sha256": "75b2864774e4fc8937458b4618ede781483316caadff0cd9c83ef000dfd25f4e"
+    },
+    "rage-port/catalog/screenshots/fantasy/fantasy__crystalvalley.webp": {
+      "bytes": 89394,
+      "sha256": "cd04c9e8f3e897a4f77b462a4dbdf9e1369518683801110394f683f51d38311e"
+    },
+    "rage-port/catalog/screenshots/fantasy/fantasy__drachenfels.webp": {
+      "bytes": 52562,
+      "sha256": "8f1a6e5fb89a0f4b39ad5bf0b00ccfcab2cfdbd65b250f6aefc5e24a3f0d4a66"
+    },
+    "rage-port/catalog/screenshots/fantasy/fantasy__skiesoffire.webp": {
+      "bytes": 53332,
+      "sha256": "1bb79b6155048b579c6d6fdb57a009732b831745eb876387b9009bfd99a3cd74"
+    },
+    "rage-port/catalog/screenshots/farworlds/farworlds__arctic.webp": {
+      "bytes": 13624,
+      "sha256": "72a27c66fc43cb8197a74cf95af7224dba4868062d75363157800820403e023f"
+    },
+    "rage-port/catalog/screenshots/farworlds/farworlds__deep.webp": {
+      "bytes": 65306,
+      "sha256": "1bd3059b7abcc269aaa23d5f9070b50404354daa99eabdd14da5da6bbf50ac43"
+    },
+    "rage-port/catalog/screenshots/farworlds/farworlds__jungle.webp": {
+      "bytes": 53934,
+      "sha256": "0b16f5b74b27ffcba5e9d85b4ddffce6413358b2cef5f0461cad1542728c6123"
+    },
+    "rage-port/catalog/screenshots/knights/knights__camp.webp": {
+      "bytes": 24044,
+      "sha256": "ff82332826307163a9190f1f48fd873321cab0140f2db47cfd284c635805a9d2"
+    },
+    "rage-port/catalog/screenshots/knights/knights__cofut.webp": {
+      "bytes": 38664,
+      "sha256": "a7a0748c6a9a4d1b7306e28ce5b43902285cb394888774e8c165cd025b985aa3"
+    },
+    "rage-port/catalog/screenshots/knights/knights__dunkelfels.webp": {
+      "bytes": 49010,
+      "sha256": "b18fd30303aa28382097f15ddf826ce35cce556bc02544cbc45b095f1d74d644"
+    },
+    "rage-port/catalog/screenshots/knights/knights__hammerfest.webp": {
+      "bytes": 48806,
+      "sha256": "f3be085df1d5ec0e4bd8684ab9ccf0a803d1e00921cc241ce691c917636a32f8"
+    },
+    "rage-port/catalog/screenshots/knights/knights__kingdoms.webp": {
+      "bytes": 36616,
+      "sha256": "13f6d47184c609a1e2fcb2c2a281eae45bd5d914f5123c9ca50e37d5c078ca6d"
+    },
+    "rage-port/catalog/screenshots/knights/knights__paxhill.webp": {
+      "bytes": 39256,
+      "sha256": "2c388b5f54beef9e1af9df7225ba9d5ea1746429f07a5f2d74f543c86c4c898b"
+    },
+    "rage-port/catalog/screenshots/knights/knights__regicide.webp": {
+      "bytes": 37716,
+      "sha256": "151874f841695d2fc5ba7a764cd42f452e81dfff0500c392b1d7b46f2b9d881b"
+    },
+    "rage-port/catalog/screenshots/knights/knights__tournament.webp": {
+      "bytes": 29570,
+      "sha256": "dbcd4536f071c1f15d76c2177c3969076a672de28aa1a87575682e740d8282a7"
+    },
+    "rage-port/catalog/screenshots/western/western__bankrobbery.webp": {
+      "bytes": 33750,
+      "sha256": "dc80b72ccb4642517d893210d596ced95fe5717381ebb41bde6a6201cac25d5c"
+    },
+    "rage-port/catalog/screenshots/western/western__capturetheflag.webp": {
+      "bytes": 39124,
+      "sha256": "fc494f0d26f053eaadb3a6e1afad6a5adffc4f30b8b60cae1203ff4336b06c3b"
+    },
+    "rage-port/catalog/screenshots/western/western__deadmansvalley.webp": {
+      "bytes": 53310,
+      "sha256": "116b05a148ffdf0ac72d498aeab8c2cd745fce6e952dd09ed837ef1051751e0e"
+    },
+    "rage-port/catalog/screenshots/western/western__fallingstarspeak.webp": {
+      "bytes": 47646,
+      "sha256": "c643ae517c42455d5b19f6b48cee82893bf10322615c03d66ee15af21cbd9ff2"
+    },
+    "rage-port/catalog/screenshots/western/western__goldencanyon.webp": {
+      "bytes": 83916,
+      "sha256": "1cf7b848dbbb10b9a17dd4f83909cb3c2b50b8fc15864d958a0ee0b6865ebd7d"
+    },
+    "rage-port/catalog/screenshots/western/western__goldrush.webp": {
+      "bytes": 26134,
+      "sha256": "812f65836a25ef4dbb1c91752a937f25a08871da23284afaca32425d0672cf37"
+    },
+    "rage-port/catalog/screenshots/western/western__lasthope.webp": {
+      "bytes": 13624,
+      "sha256": "ad9ece46304becce581017e66e5ea5a6ea7e93166730392d44b7cceb102d98bb"
+    },
+    "rage-port/catalog/screenshots/western/western__milestonewoods.webp": {
+      "bytes": 44876,
+      "sha256": "24592edf8a0cbdf2e16dcf86e4836152f7589b6c6d3e925128a9b9f3c7b5706a"
+    },
+    "rage-port/catalog/screenshots/western/western__minerscreek.webp": {
+      "bytes": 38708,
+      "sha256": "95d705ba4ff88f5751833d8a64c9a62f52a8d9113658eb8f2cafdfce1242791d"
+    },
+    "rage-port/catalog/screenshots/western/western__redrockbay.webp": {
+      "bytes": 44676,
+      "sha256": "1d35287c4a26f3124848e1f63ca3e66b1f960ab417c6a3483c10e2956542b297"
+    },
+    "rage-port/catalog/screenshots/western/western__shootthesheriff.webp": {
+      "bytes": 46134,
+      "sha256": "7b11f9bede1f1bfaa4dd7b8b6a1677d4c059f95bcbc4d46aa00fe9cfcd86cf52"
+    },
+    "rage-port/catalog/screenshots/western/western__totemhunt.webp": {
+      "bytes": 49372,
+      "sha256": "879a57049cd70602b8b9b9f775e4a5a9dc8d7c745de3da0c6b81c6f9c274c773"
     },
     "rage-port/catalog/thumbnails/base-melees/canyon.png": {
       "bytes": 39047,
@@ -6321,32 +6733,36 @@
       "sha256": "46f933fe9aca87ae3891dd37f0571048fe6b03def2b26cb1e178e9eca41522fe"
     },
     "rage-port/patches/manifest.json": {
-      "bytes": 10162,
-      "sha256": "3290aa901921a75f9d9b3f721f1fbbef78016f846f2a39d71f0413be631f3e38"
+      "bytes": 12536,
+      "sha256": "8d3b07e3641a214986425f5323a8c3ccf5ee48fd3ac1b696c2d95ae7726e9c0a"
     },
     "rage-port/patches/original-to-browser.patch": {
-      "bytes": 78971,
-      "sha256": "e446b2191f25ee911cda29dc3efa9563505a8cc078ab6ea8bd364abf8454c206"
+      "bytes": 103065,
+      "sha256": "5c0e1c05e97965e7755beb72f087d49cfdd2bf79f98747d400d308620d63c855"
     },
     "rage-port/scripts/build.py": {
-      "bytes": 5918,
-      "sha256": "24485bd20350f37f69ed27125cb334952ef9090e3cc04d41c276826e0c78c0e4"
+      "bytes": 6034,
+      "sha256": "115d53d32042071ca8d2345e185d876f78f486cd8d1b22ef481315f41a421c40"
     },
     "rage-port/scripts/export-patch.py": {
       "bytes": 1230,
       "sha256": "cce302afe31f9ce620e1e109b1f9ca13ee02461feaf776617fba32504f59df85"
     },
+    "rage-port/scripts/install-library.py": {
+      "bytes": 1201,
+      "sha256": "de2c58363193452b0c66bb103380b91d0686d088c45505b571d13cbf5d5808ff"
+    },
     "rage-port/scripts/install-web.py": {
-      "bytes": 4743,
-      "sha256": "890b5628e6423970bc66a130d31d5c1f1a681cc0e7672af58f407e0219c2f102"
+      "bytes": 7203,
+      "sha256": "5140663103dd953905aaa31172e183a6532c0b1ce28fe200452ad82fc815a428"
     },
     "rage-port/scripts/patch-emscripten.py": {
-      "bytes": 1724,
-      "sha256": "e2015914058e00604cd23bcc698e56bd6bb3e148abe005af305e4a097e447b20"
+      "bytes": 6977,
+      "sha256": "ac49ab9ba5043d3a975923c5c6a0b35efbe16db623cf2dc5d612b16e73b919fd"
     },
     "rage-port/shell/README.md": {
-      "bytes": 5849,
-      "sha256": "eac212081f9e18de2c540e827f372d60ed6bdd9606b1f466e4890395061e3caf"
+      "bytes": 8314,
+      "sha256": "ac4798602146a3b5386bef8cf1fdaea9ce14c93f1e9d3ff25959ea49ab9e5f00"
     },
     "rage-port/shell/assets/Endeavour.ttf": {
       "bytes": 35644,
@@ -6369,8 +6785,8 @@
       "sha256": "e10c7da9275fd788c10a81c0b5a538f610c2f691766cb6ec3e9fd309d4bc02e5"
     },
     "rage-port/shell/assets/README.md": {
-      "bytes": 1692,
-      "sha256": "60a9205edfe8f0440009eb32c1a0ce0e873b5111ef9dd67d6e695339fdca8f72"
+      "bytes": 2124,
+      "sha256": "b59e6a177c0167e5ce7225a7fddcc964cf7a31f01201a933b2c39b0075402fe9"
     },
     "rage-port/shell/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -6383,6 +6799,10 @@
     "rage-port/shell/assets/StartupDlgPaper.png": {
       "bytes": 266673,
       "sha256": "ff122bd788f555bf83b5eac20b4175a11c9a0f5ade96f8198351ec8154080736"
+    },
+    "rage-port/shell/assets/StartupMainMenuBG-HD.webp": {
+      "bytes": 441164,
+      "sha256": "d0234cec4593e88055274da933f7a1c8473b72125f385c966a19d8b88130c770"
     },
     "rage-port/shell/assets/StartupMainMenuBG.png": {
       "bytes": 742002,
@@ -6397,16 +6817,20 @@
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
     "rage-port/shell/gallery.js": {
-      "bytes": 10432,
-      "sha256": "744495736ea8c5d5ef0a3d6ae5e6dd6ede45a7f78037cd5ff9d8b939a4373880"
+      "bytes": 10496,
+      "sha256": "f68618aaae265281b745100f25ed01e8777568b0d11f9c8b74ba813083189b2f"
     },
     "rage-port/shell/game.js": {
-      "bytes": 19515,
-      "sha256": "eaa5d35b88cefd40002c43773862ad938dc85bb56ca8dc1c244ec8ffc62ee3cc"
+      "bytes": 26113,
+      "sha256": "7465c91b677d985673a47f9927f94dda886fe487b1af2f3a167efe14c443f90a"
     },
     "rage-port/shell/index.html": {
-      "bytes": 28254,
-      "sha256": "49b2a8f08539d67e5d4114476644d8b188134a30867c0165cfe67c6cf85f0774"
+      "bytes": 28388,
+      "sha256": "4ad1affff1927bfb53d94e421b0dc5fbab4a4042f31934d08aacc8253920e93f"
+    },
+    "rage-port/shell/multiplayer.js": {
+      "bytes": 20682,
+      "sha256": "7b37da67f3cff47350da7f2109ab83d3f6838d37991f1c369ba4b0e5a1472124"
     },
     "rage-port/shell/scenario-library.js": {
       "bytes": 2146,
@@ -7297,8 +7721,8 @@
       "sha256": "993a57528a98328117b819afb73210219a11f3c27b6683c863c6011f2217782e"
     },
     "rage-port/source/engine/inc/C4Control.h": {
-      "bytes": 12066,
-      "sha256": "56a7ab302e19e0fe4797abf470d269f49d350e57c7c842493817041896b9b607"
+      "bytes": 12264,
+      "sha256": "ba4d433407bb9000cff68483e0dde47b4d7b678c0185a81a180412eb17a20e97"
     },
     "rage-port/source/engine/inc/C4Def.h": {
       "bytes": 14259,
@@ -7373,8 +7797,8 @@
       "sha256": "9a40d389a1152b9d7dbbbf62cca97a4bddc4b85663ed48f29e5b77f3bc4135bf"
     },
     "rage-port/source/engine/inc/C4GameControl.h": {
-      "bytes": 4028,
-      "sha256": "5c23d792da4b5bd3fbd9f5567780cfb0e9446fc7cae2ee599e285484f01425d0"
+      "bytes": 4152,
+      "sha256": "598f3d33b709fd07e57f51f9ba5956838885e1166d9c96b9dfb09826dd5ac119"
     },
     "rage-port/source/engine/inc/C4GameControlNetwork.h": {
       "bytes": 7830,
@@ -8169,16 +8593,16 @@
       "sha256": "00a7aacbadbaaf019089e2c5b3877a4bee5efbbc126a1a34f6ff54a635ca042c"
     },
     "rage-port/source/engine/src/C4Browser.cpp": {
-      "bytes": 15208,
-      "sha256": "03ec0718366fa22e7bb57491cd0ebd095751b6c8ac0da4a6b5838e4192b1ed0e"
+      "bytes": 20189,
+      "sha256": "ab373dddf5216eb6daa3082aef93366ca1901d06a737abd1a9a02d264cc17665"
     },
     "rage-port/source/engine/src/C4BrowserAudio.cpp": {
       "bytes": 5345,
       "sha256": "d8627fdd9521c9d0d4d76eb5e7deecf58cfa28e0a616920860e0a17b9aec24b0"
     },
     "rage-port/source/engine/src/C4BrowserNetwork.cpp": {
-      "bytes": 5990,
-      "sha256": "2bdd7891c429ebab488a228c68de010fc7a5175c6fafeb19d2952b3d60a06676"
+      "bytes": 8440,
+      "sha256": "a568cb596a1094ac743cb5c1a98aecba4e201100f4d91fa0bc220a9e4ac9a50f"
     },
     "rage-port/source/engine/src/C4BrowserSave.cpp": {
       "bytes": 5501,
@@ -8281,8 +8705,8 @@
       "sha256": "bbed1beb3a37fcfc59c7115d23ca4c4da5380cb8affe4a0fe4a7c3e20fa04db5"
     },
     "rage-port/source/engine/src/C4Game.cpp": {
-      "bytes": 134356,
-      "sha256": "1d735da1255b476ad9d7b9f861b98049a8d12fc028b1b168d0133f61123645c3"
+      "bytes": 134632,
+      "sha256": "6daebfe5727587927c6fa871b83fec9df4e4d24dff2c8eb4135f82649ca680af"
     },
     "rage-port/source/engine/src/C4GameControl.cpp": {
       "bytes": 11688,
@@ -8445,8 +8869,8 @@
       "sha256": "b5bd84f63a38bbbaba299ac91e3ab48538cb59ec0f89982da942663a45cfd2ea"
     },
     "rage-port/source/engine/src/C4MainMenu.cpp": {
-      "bytes": 33271,
-      "sha256": "302b202072bf8fb904b799c823b65b1b4d42816cf5918066db20a7d4597af299"
+      "bytes": 33515,
+      "sha256": "4c895b096f4d7235b8150ca94f54d02cdce6dab53e8dca9825e906fe3229c879"
     },
     "rage-port/source/engine/src/C4Map.cpp": {
       "bytes": 5901,
@@ -8469,8 +8893,8 @@
       "sha256": "b82edce0a537257ed239746f3070d9da0a194458862ef3320e290840bb34f9f4"
     },
     "rage-port/source/engine/src/C4Menu.cpp": {
-      "bytes": 41231,
-      "sha256": "d4ceaf8f62f6135d41b46c122c388217e9be53119066e6700f82957bee7a5d46"
+      "bytes": 41911,
+      "sha256": "6283b96ff5b7d6c98680552719e6398ef6b2ae4e2647f5b19045d7daf591378e"
     },
     "rage-port/source/engine/src/C4MessageBoard.cpp": {
       "bytes": 8115,
@@ -8577,8 +9001,8 @@
       "sha256": "7b07081ba7b49e4852bbca1f5e971fce073ab1ef1cd1874096daa61ff84c828d"
     },
     "rage-port/source/engine/src/C4ObjectMenu.cpp": {
-      "bytes": 26591,
-      "sha256": "f721b18010973fa16d97c71c80cc1521c8a820be119afd0f3026eec01b6eaf5d"
+      "bytes": 26796,
+      "sha256": "56993ef439cce2e9c482f3f8d134eb0c8abcd3c2bb76e15a7344f5f18438c5db"
     },
     "rage-port/source/engine/src/C4PXS.cpp": {
       "bytes": 10900,
@@ -12276,13 +12700,25 @@
       "bytes": 3146,
       "sha256": "d294ab126b1155a9384682182c9e04bd70b95e78b89f3828a4e08699dba356e6"
     },
+    "rage-port/tests/SCENARIO_LIBRARY.md": {
+      "bytes": 4784,
+      "sha256": "cea6f37d279d06abf747e0772279659624d51529ab29ba32d85c910ec602fbd4"
+    },
     "rage-port/tests/browser-audio.mjs": {
       "bytes": 2911,
       "sha256": "9f2f7dec05f683e47d71abd6df555eaa79f10eb1d6a622368a8c0b027dd376a2"
     },
+    "rage-port/tests/browser-exit.mjs": {
+      "bytes": 4251,
+      "sha256": "b1069de8217be7e92f6a5fca225c1b414b1498ae2ff7e40f0b3b18cba1358570"
+    },
     "rage-port/tests/browser-graphics.mjs": {
       "bytes": 3344,
       "sha256": "326c3a7e8426230f014eafec2f45b25645653361e4ce3a5534927ff6d0a13076"
+    },
+    "rage-port/tests/browser-network.mjs": {
+      "bytes": 261,
+      "sha256": "2469a97e27faac9b28e371025227416bc16b15ae0a64a1e1b5ead2c3bd305ab4"
     },
     "rage-port/tests/browser-save-export.mjs": {
       "bytes": 3509,
@@ -12291,6 +12727,10 @@
     "rage-port/tests/browser-smoke.mjs": {
       "bytes": 1329,
       "sha256": "3028ddb2a263b8473afbc01dd73292ebc54b5b174fb3d7e86fbc2f8a8bb02c8c"
+    },
+    "rage-port/tests/browser-touch-menus.mjs": {
+      "bytes": 3684,
+      "sha256": "9fe89939fc0daf3fec672888d5319fe4644e6d331e25b1d8e441c75be9823da5"
     },
     "rage-port/tests/browser-view.mjs": {
       "bytes": 5639,
@@ -12328,6 +12768,34 @@
       "bytes": 2433,
       "sha256": "659f8a17163f7159c44b2ea17837d9e95068484b82040481a721ad7028aa8ad3"
     },
+    "rage-port/tests/room-driver.mjs": {
+      "bytes": 5452,
+      "sha256": "92ca205638638366ccd63726cab8fc32b5b3dffd0f49bb6f0a58b3440f3b7300"
+    },
+    "rage-port/tests/rtc-room.mjs": {
+      "bytes": 7106,
+      "sha256": "50d4b1bb2f12eb29d55186d6d9830e81a734c8d307ef22b52c5f2d6f529d16bb"
+    },
+    "rage-port/tests/scenario-contact-sheet.py": {
+      "bytes": 2570,
+      "sha256": "fba199c6bece53a2cc2807150819f5d3716cc0c062e6ea3bffe411213fe2a7e5"
+    },
+    "rage-port/tests/scenario-gallery.mjs": {
+      "bytes": 3613,
+      "sha256": "5d3dc1561b90e1cd31208bab450a2353930c1c0cba3d8c4de74cd87ec5fc7fa6"
+    },
+    "rage-port/tests/scenario-library.mjs": {
+      "bytes": 14945,
+      "sha256": "97497668f66ffd05ac67d8edecb1b5b496632d4024bfdf703fc6d3f5d5587d17"
+    },
+    "rage-port/tests/scenario-summarize.py": {
+      "bytes": 3622,
+      "sha256": "4bdbd3be33fd776d43456de98edd2e9ca41fe7c0b10001c1964c6c58de066dc5"
+    },
+    "rage-port/tests/sdl-audio-decode.mjs": {
+      "bytes": 2623,
+      "sha256": "367c7655746d98f99c729ff4712096f053c10e224fbf161f77db7fb210e0f6d6"
+    },
     "rage-port/tests/test_browser_audio.py": {
       "bytes": 2744,
       "sha256": "b23124f63bf5e25adecda158653ec7ee3983019005900a21c5282d29d851af05"
@@ -12349,8 +12817,8 @@
       "sha256": "9c3b318a8d0b0c9ee053fa036c5678bdeb9f126341b75a5c68c0aab2edfbc7ef"
     },
     "tools/sync-github-source.py": {
-      "bytes": 3425,
-      "sha256": "8363777184e5dfbf3848fc5b42dcf11c7018c6e0864108f9315687f946745229"
+      "bytes": 4174,
+      "sha256": "9878a5255357c024099844f34a2f66dbccf526a61612f51f7ba7e33c0220ecac"
     },
     "web/app/chatgpt-auth.ts": {
       "bytes": 2550,
@@ -12365,12 +12833,24 @@
       "sha256": "921807d2da50637822aa3be2b2a23c6fb7cc1d84b265a3a19466e737b5921c5d"
     },
     "web/app/layout.tsx": {
-      "bytes": 1883,
-      "sha256": "ed9c34d38dec77067a6038a07dfa44a7ef49a6c2abbdd2804acb5254883807db"
+      "bytes": 1889,
+      "sha256": "a38a6c714707b3e301cd20f4a00f74290ece2e586ea39d3bfd0ed0bc63cde357"
     },
     "web/app/page.tsx": {
-      "bytes": 893,
-      "sha256": "cf4b9580e5be01c637747786c19d8255e037f143950c6edaae39602346e69362"
+      "bytes": 1062,
+      "sha256": "f7f43a8d17e9443f0e05681f498c7e7190c0e8568542906eee005c787ee1ca53"
+    },
+    "web/artwork/README.md": {
+      "bytes": 933,
+      "sha256": "4f6b000044b5bb83455ce3cbd0caf8f38bc4afbd13f0a5800075feea425175a3"
+    },
+    "web/artwork/StartupMainMenuBG-HD.png": {
+      "bytes": 2539274,
+      "sha256": "76c55b706bccb592294577a355bcb3b20983a74c48c77ced8992cbd3c957004c"
+    },
+    "web/artwork/neoclonk-icon.png": {
+      "bytes": 2400282,
+      "sha256": "fc7eef5747e737f908e285534b2f2a418560998e9e26f814f7a8e09fd5fe93ea"
     },
     "web/eslint.config.mjs": {
       "bytes": 1031,
@@ -12421,8 +12901,8 @@
       "sha256": "120b12d087f370363454dea559eac028bcb375ea6d274d770f3f1724332b4d34"
     },
     "web/public/manifest.json": {
-      "bytes": 725,
-      "sha256": "b9c0010736f83db6992870215b264ea13cdb85ead4919ec8eb3937ecfde3b951"
+      "bytes": 728,
+      "sha256": "3cefd1e92345d22c0369bf4b567f4e04ce8542db432bc2536236a941a414e3cf"
     },
     "web/public/rage/assets/Endeavour.ttf": {
       "bytes": 35644,
@@ -12445,8 +12925,8 @@
       "sha256": "e10c7da9275fd788c10a81c0b5a538f610c2f691766cb6ec3e9fd309d4bc02e5"
     },
     "web/public/rage/assets/README.md": {
-      "bytes": 1692,
-      "sha256": "60a9205edfe8f0440009eb32c1a0ce0e873b5111ef9dd67d6e695339fdca8f72"
+      "bytes": 2124,
+      "sha256": "b59e6a177c0167e5ce7225a7fddcc964cf7a31f01201a933b2c39b0075402fe9"
     },
     "web/public/rage/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -12459,6 +12939,10 @@
     "web/public/rage/assets/StartupDlgPaper.png": {
       "bytes": 266673,
       "sha256": "ff122bd788f555bf83b5eac20b4175a11c9a0f5ade96f8198351ec8154080736"
+    },
+    "web/public/rage/assets/StartupMainMenuBG-HD.webp": {
+      "bytes": 441164,
+      "sha256": "d0234cec4593e88055274da933f7a1c8473b72125f385c966a19d8b88130c770"
     },
     "web/public/rage/assets/StartupMainMenuBG.png": {
       "bytes": 742002,
@@ -12473,8 +12957,664 @@
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
     "web/public/rage/build-manifest.json": {
-      "bytes": 748,
-      "sha256": "f100cd6d86730425597c6320442048b8d2be49723f67cbc7581e109d136911cf"
+      "bytes": 1132,
+      "sha256": "7a96f1b78bea078fb031e0cf3feb8ce0c28af879f59b6a15c30577db4ba0dbe5"
+    },
+    "web/public/rage/catalog/README.md": {
+      "bytes": 6192,
+      "sha256": "0d560342acf5a13a9c215e309105fa256c165834d625274be49df3780fa1310d"
+    },
+    "web/public/rage/catalog/build-catalog.py": {
+      "bytes": 9582,
+      "sha256": "0053d2880a34b0bbb881734429799a2d167165b7c7f8afb6690959cc977091f4"
+    },
+    "web/public/rage/catalog/packs.json": {
+      "bytes": 6871,
+      "sha256": "014f954621d8aeeac1e254232278e3a7beb8b2e3b2949d81da244a60bbbc5238"
+    },
+    "web/public/rage/catalog/scenarios.json": {
+      "bytes": 644274,
+      "sha256": "3ed48645470b08446e19676abd196d8d850c8152c1ac3b95f9d799028fafa66f"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__canyon.webp": {
+      "bytes": 45128,
+      "sha256": "f20491e270e1af9ad58ca0516287f837ae29a419bc8f0c1c88fd003683822730"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__castle.webp": {
+      "bytes": 57884,
+      "sha256": "2036683df552c76e3a28c1a9c15209eb2c0b4bc797cd99b74b2fc755db117d52"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__clepal.webp": {
+      "bytes": 57174,
+      "sha256": "b8c1c503ba1044a68156ce22ebfd5b9c1611eb1d122b8be2837b0ab8dd9b4345"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__clifffight.webp": {
+      "bytes": 57370,
+      "sha256": "938a10461dd72ccbff2430b562dd492d2ff2847312e4ad5c966b514b809a4d50"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__greed.webp": {
+      "bytes": 41964,
+      "sha256": "b9770ce5cf3decc31d3c0f700da139a111a8677ff742461ff20720b4cd65958c"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__massif.webp": {
+      "bytes": 67496,
+      "sha256": "c34413c03cf3fa155f06a5d3b4f2db8b1560aca2bdc3d91c3a0db25f20199871"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__minormelee.webp": {
+      "bytes": 51278,
+      "sha256": "a6f65564ec2cabb06ddd8e9edc34f09e2b7f70da417e115d62c484a011ea12cd"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__mountaincombat.webp": {
+      "bytes": 76132,
+      "sha256": "1919386a282b6ed58dfd4848ca79bed3d2591c16954c50ac81896ec257ed5fd3"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__sharklake.webp": {
+      "bytes": 44390,
+      "sha256": "709b168f864f110aacbebdd1bdb6fa16e966634b3946fc3228706ff01768152c"
+    },
+    "web/public/rage/catalog/screenshots/base-melees/melees__theft.webp": {
+      "bytes": 63322,
+      "sha256": "5e7d51b5928042bb7ddcb688e88dd0ed664f6d1335c9d7ccb4e78dffa2608d18"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__frontier.webp": {
+      "bytes": 47382,
+      "sha256": "70bda50c3f843f0ba238465f1d4cf613fe1471779bddcb7618d2ed86b15a2d6f"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__funnel.webp": {
+      "bytes": 52840,
+      "sha256": "f76935e92d0c31d8f4ca0e9cde60e9ba45d1da6dee60aac26c75caafa2cac83c"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__high.webp": {
+      "bytes": 464594,
+      "sha256": "f6e8fc5ccbca1e18560e51355b5f42403174cea6ac219b1cc40a908e38d2d36d"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__lastwill.webp": {
+      "bytes": 12760,
+      "sha256": "e883eb73c15e49289d8019bc2aec9d490f3f377ea789f3da888c9007c38c2942"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__low.webp": {
+      "bytes": 106432,
+      "sha256": "56cc4a6db58291733577d93e5c162d6f469b9643a77ea765b5e158e6b359cac0"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__pearls.webp": {
+      "bytes": 69116,
+      "sha256": "24083a5537049ce521a959dfe00ac59951cd551b1cd7391f79f9baa8c1f255cf"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__rattle.webp": {
+      "bytes": 32470,
+      "sha256": "a4844c8ecb997fbe464459805677d28ce5aad7de64a16ae45a90345c52bb4bc9"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__regeneration.webp": {
+      "bytes": 81696,
+      "sha256": "46b69aebb6ca823eee05129aa521f44f7cf26e045addd8b445aecd916dc030df"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__rocks.webp": {
+      "bytes": 42938,
+      "sha256": "a64dd92ea6082eba2f0805096cf5dcf9b2cb0c124dfd4773831b539b35146ccd"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__sevenkeys.webp": {
+      "bytes": 94070,
+      "sha256": "f3d763e3be9d8df2164993ed6610c8db45df9d64ff7c4656fe72e08959c30cd5"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__skyvillage.webp": {
+      "bytes": 22816,
+      "sha256": "7db2eece21932963a8f7978e7a93d34044eb55c483e738f8200469879e8a176e"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__submine.webp": {
+      "bytes": 105264,
+      "sha256": "1bbb6a2ef752f24dc165213d9ec0ed7ce3d830fb686a59f6ef440e88882d35d4"
+    },
+    "web/public/rage/catalog/screenshots/base-missions/missions__treasure.webp": {
+      "bytes": 152384,
+      "sha256": "72d26288da61a3ac7f2d0291c5943b2222e81b1c6194381d8f28f74b070a2e73"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__caverace.webp": {
+      "bytes": 294048,
+      "sha256": "1da9731183300b68adeca5c15d79e68518261c5a626f922b2ac11e355234c29c"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__glowingpeak.webp": {
+      "bytes": 98600,
+      "sha256": "e5ec93e04278219aab3a2824b75bfa5cf7939792dce7be274463b0d02ef51fc6"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__goldrace.webp": {
+      "bytes": 43744,
+      "sha256": "8219e5fa4f52b89da51ed81b1cce6ddce655ef8902d4f0e1ef8a7d8d26ede59c"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__monsterrescue.webp": {
+      "bytes": 31254,
+      "sha256": "2ebabea3902d798322cf118d8e0e468d03e19df3a2ba0f103703bd7222e25f69"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__skyrace.webp": {
+      "bytes": 9262,
+      "sha256": "37519f50fb948193fa69b89eec206872bfaa3a5dd05b6b5a6eef90d148c83e39"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__tritonpath.webp": {
+      "bytes": 28444,
+      "sha256": "7f2a20f1d0190dd8c6dde83425c2b64f81dd3a8a42e560a7ebf6734313141485"
+    },
+    "web/public/rage/catalog/screenshots/base-races/races__wipfrace.webp": {
+      "bytes": 35884,
+      "sha256": "a0cc8a43151d4832dcccb1092e871fb757c4a41fa41e9585ff097d971a261afa"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial01.webp": {
+      "bytes": 68444,
+      "sha256": "f941a7a97958d3fd65c092e0f2dad41bfb128ce4aba0be909aac30475dc3bf48"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial02.webp": {
+      "bytes": 46980,
+      "sha256": "79916e3b21f522d39bc769a554f4f316e67ebe087ebe00b974e47cfa7441d0fa"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial03.webp": {
+      "bytes": 66808,
+      "sha256": "390037942741222274620da72a1248014880964df8628eb74ad9e7d710c58190"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial04.webp": {
+      "bytes": 75510,
+      "sha256": "8ddab7c27589081a179ac5d855dc573f2b4c352bf249dbfc97e00fff561b2c01"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial05.webp": {
+      "bytes": 63254,
+      "sha256": "1175166d1e933e0d041c93f64ea316d53c1df8a4dcd5e419b9fe8893766e34bc"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial06.webp": {
+      "bytes": 79140,
+      "sha256": "c0e0cf0e4c9971cb457508c63dbd4c710a8dc815391a43b2cfa07468734472da"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial07.webp": {
+      "bytes": 43636,
+      "sha256": "d832b8789330972af881185eeb5f6a6c369ef20d94d8320f23f7f72318e6060c"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial08.webp": {
+      "bytes": 73024,
+      "sha256": "3e8325bc08d4122823a5cfe5c0233cf9feca653e3787934d1a883f211d88e4da"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial09.webp": {
+      "bytes": 14452,
+      "sha256": "6b80710a8e7d964759f3758412345f44faa684a801a30d15a4e35536272fa950"
+    },
+    "web/public/rage/catalog/screenshots/base-tutorial/tutorial__tutorial10.webp": {
+      "bytes": 61458,
+      "sha256": "9e5546c4c80a75f90a4d133573656c6be4e9039b4585a8d7660e974cd2677a9d"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__arcticocean.webp": {
+      "bytes": 26478,
+      "sha256": "c19473ee67dc696f2fd59fa05f8c33191f7c8262515d2df4a693ad1d1467d0d6"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__ashlands.webp": {
+      "bytes": 71830,
+      "sha256": "50ce94f7620b32a19d44525a8f288d5e04c862e23b274926b017f6638e507aa0"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__chasm.webp": {
+      "bytes": 87948,
+      "sha256": "b1be5d8c21050bf01befb62aa57db0a7b39c86cfc7910129600d73290c09ad05"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__desert.webp": {
+      "bytes": 74212,
+      "sha256": "8ef299c491794f08f3198670553099ec77b1b5b6ebfe63d11a47937a49db7a40"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__foggycliffs.webp": {
+      "bytes": 20450,
+      "sha256": "93a0010d99d9fd3dff601143a62a24dcdebba8f3b55f5944cdb762cb7d4f3d05"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__goldmine.webp": {
+      "bytes": 60890,
+      "sha256": "22e62e9152500911042719001bef6cf5e3be43b0065db023b5a9e2467a94d205"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__lavacaves.webp": {
+      "bytes": 75156,
+      "sha256": "8cded47fad61c6ce79792bde37ee5936aeaa9f0a8a2e7105a304d957ee53cfd4"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__mountains.webp": {
+      "bytes": 78916,
+      "sha256": "37710f0d8181705856d6f0fa8d8d8046b4a9f30d3a48b08721b9c3d8f0a719e1"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__outset.webp": {
+      "bytes": 57370,
+      "sha256": "acfd03e770e25f8086087edd0aea5555d5a9ee4a387062876e2b433e0961c813"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__skyatoll.webp": {
+      "bytes": 51842,
+      "sha256": "0a5ed528df9e12119e7e9dbb2d3b32ab343f584e008e091634342113a0741e1a"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__skyislands.webp": {
+      "bytes": 80796,
+      "sha256": "840b3705a60ff4e7e91b5e5453492c62df83d4939cd7d53f1b658f44707b499c"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__tropical.webp": {
+      "bytes": 41836,
+      "sha256": "453629bb50ab6f0972399ca627cb857f5a1185c639a18e2dab4b4064e7f35495"
+    },
+    "web/public/rage/catalog/screenshots/base-worlds/worlds__watercaves.webp": {
+      "bytes": 90260,
+      "sha256": "110248fdd18b473374b4a170050f1e7870c46e963fda0a6776e35018b91a4e6c"
+    },
+    "web/public/rage/catalog/screenshots/fantasy/fantasy__alchemy.webp": {
+      "bytes": 138308,
+      "sha256": "75b2864774e4fc8937458b4618ede781483316caadff0cd9c83ef000dfd25f4e"
+    },
+    "web/public/rage/catalog/screenshots/fantasy/fantasy__crystalvalley.webp": {
+      "bytes": 89394,
+      "sha256": "cd04c9e8f3e897a4f77b462a4dbdf9e1369518683801110394f683f51d38311e"
+    },
+    "web/public/rage/catalog/screenshots/fantasy/fantasy__drachenfels.webp": {
+      "bytes": 52562,
+      "sha256": "8f1a6e5fb89a0f4b39ad5bf0b00ccfcab2cfdbd65b250f6aefc5e24a3f0d4a66"
+    },
+    "web/public/rage/catalog/screenshots/fantasy/fantasy__skiesoffire.webp": {
+      "bytes": 53332,
+      "sha256": "1bb79b6155048b579c6d6fdb57a009732b831745eb876387b9009bfd99a3cd74"
+    },
+    "web/public/rage/catalog/screenshots/farworlds/farworlds__arctic.webp": {
+      "bytes": 13624,
+      "sha256": "72a27c66fc43cb8197a74cf95af7224dba4868062d75363157800820403e023f"
+    },
+    "web/public/rage/catalog/screenshots/farworlds/farworlds__deep.webp": {
+      "bytes": 65306,
+      "sha256": "1bd3059b7abcc269aaa23d5f9070b50404354daa99eabdd14da5da6bbf50ac43"
+    },
+    "web/public/rage/catalog/screenshots/farworlds/farworlds__jungle.webp": {
+      "bytes": 53934,
+      "sha256": "0b16f5b74b27ffcba5e9d85b4ddffce6413358b2cef5f0461cad1542728c6123"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__camp.webp": {
+      "bytes": 24044,
+      "sha256": "ff82332826307163a9190f1f48fd873321cab0140f2db47cfd284c635805a9d2"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__cofut.webp": {
+      "bytes": 38664,
+      "sha256": "a7a0748c6a9a4d1b7306e28ce5b43902285cb394888774e8c165cd025b985aa3"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__dunkelfels.webp": {
+      "bytes": 49010,
+      "sha256": "b18fd30303aa28382097f15ddf826ce35cce556bc02544cbc45b095f1d74d644"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__hammerfest.webp": {
+      "bytes": 48806,
+      "sha256": "f3be085df1d5ec0e4bd8684ab9ccf0a803d1e00921cc241ce691c917636a32f8"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__kingdoms.webp": {
+      "bytes": 36616,
+      "sha256": "13f6d47184c609a1e2fcb2c2a281eae45bd5d914f5123c9ca50e37d5c078ca6d"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__paxhill.webp": {
+      "bytes": 39256,
+      "sha256": "2c388b5f54beef9e1af9df7225ba9d5ea1746429f07a5f2d74f543c86c4c898b"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__regicide.webp": {
+      "bytes": 37716,
+      "sha256": "151874f841695d2fc5ba7a764cd42f452e81dfff0500c392b1d7b46f2b9d881b"
+    },
+    "web/public/rage/catalog/screenshots/knights/knights__tournament.webp": {
+      "bytes": 29570,
+      "sha256": "dbcd4536f071c1f15d76c2177c3969076a672de28aa1a87575682e740d8282a7"
+    },
+    "web/public/rage/catalog/screenshots/western/western__bankrobbery.webp": {
+      "bytes": 33750,
+      "sha256": "dc80b72ccb4642517d893210d596ced95fe5717381ebb41bde6a6201cac25d5c"
+    },
+    "web/public/rage/catalog/screenshots/western/western__capturetheflag.webp": {
+      "bytes": 39124,
+      "sha256": "fc494f0d26f053eaadb3a6e1afad6a5adffc4f30b8b60cae1203ff4336b06c3b"
+    },
+    "web/public/rage/catalog/screenshots/western/western__deadmansvalley.webp": {
+      "bytes": 53310,
+      "sha256": "116b05a148ffdf0ac72d498aeab8c2cd745fce6e952dd09ed837ef1051751e0e"
+    },
+    "web/public/rage/catalog/screenshots/western/western__fallingstarspeak.webp": {
+      "bytes": 47646,
+      "sha256": "c643ae517c42455d5b19f6b48cee82893bf10322615c03d66ee15af21cbd9ff2"
+    },
+    "web/public/rage/catalog/screenshots/western/western__goldencanyon.webp": {
+      "bytes": 83916,
+      "sha256": "1cf7b848dbbb10b9a17dd4f83909cb3c2b50b8fc15864d958a0ee0b6865ebd7d"
+    },
+    "web/public/rage/catalog/screenshots/western/western__goldrush.webp": {
+      "bytes": 26134,
+      "sha256": "812f65836a25ef4dbb1c91752a937f25a08871da23284afaca32425d0672cf37"
+    },
+    "web/public/rage/catalog/screenshots/western/western__lasthope.webp": {
+      "bytes": 13624,
+      "sha256": "ad9ece46304becce581017e66e5ea5a6ea7e93166730392d44b7cceb102d98bb"
+    },
+    "web/public/rage/catalog/screenshots/western/western__milestonewoods.webp": {
+      "bytes": 44876,
+      "sha256": "24592edf8a0cbdf2e16dcf86e4836152f7589b6c6d3e925128a9b9f3c7b5706a"
+    },
+    "web/public/rage/catalog/screenshots/western/western__minerscreek.webp": {
+      "bytes": 38708,
+      "sha256": "95d705ba4ff88f5751833d8a64c9a62f52a8d9113658eb8f2cafdfce1242791d"
+    },
+    "web/public/rage/catalog/screenshots/western/western__redrockbay.webp": {
+      "bytes": 44676,
+      "sha256": "1d35287c4a26f3124848e1f63ca3e66b1f960ab417c6a3483c10e2956542b297"
+    },
+    "web/public/rage/catalog/screenshots/western/western__shootthesheriff.webp": {
+      "bytes": 46134,
+      "sha256": "7b11f9bede1f1bfaa4dd7b8b6a1677d4c059f95bcbc4d46aa00fe9cfcd86cf52"
+    },
+    "web/public/rage/catalog/screenshots/western/western__totemhunt.webp": {
+      "bytes": 49372,
+      "sha256": "879a57049cd70602b8b9b9f775e4a5a9dc8d7c745de3da0c6b81c6f9c274c773"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/canyon.png": {
+      "bytes": 39047,
+      "sha256": "5bf3ab7e7afc6a0e223cc9aa962f1fbfa7699221aabb7d9478a17ea83ef4d6b7"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/castle.png": {
+      "bytes": 38533,
+      "sha256": "347b184bd8ad446ea8c0d342c16fbae79e247932edd2d8cf77da83bc4c2e9321"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/clepal.png": {
+      "bytes": 48662,
+      "sha256": "ebb52bdfe31d749962c01692c4094c5b88cfdbb08d09683c8ba8e29f5c7f92f6"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/clifffight.png": {
+      "bytes": 38587,
+      "sha256": "d03be69b21cd7709e0eb768ee28787482d21a2572e2680a7201fb8b5dc7a2912"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/greed.png": {
+      "bytes": 52616,
+      "sha256": "5a701206a1bcde04618b2737af2aa99ff87475f7db2b91c41f5b947b63fef586"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/massif.png": {
+      "bytes": 47953,
+      "sha256": "119ae291e71e4cce72bedcba6ae20dad12576eeea865d365cf51577749351552"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/minormelee.png": {
+      "bytes": 59021,
+      "sha256": "3657bdcd1b373aa62c87bdc5ee2d0a3cd42e3d7c668c032c5e8d7acfadf46fef"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/mountaincombat.png": {
+      "bytes": 48810,
+      "sha256": "dbe1154ad971baad103b8a7f3ede3fcb401960c9c4ecf190fae995fcd2c90aaa"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/sharklake.png": {
+      "bytes": 59893,
+      "sha256": "64ce48cdab1af27c0d42c5ef30b2c0adff4cacbc05742921fe54b6e1ed6bf406"
+    },
+    "web/public/rage/catalog/thumbnails/base-melees/theft.png": {
+      "bytes": 51348,
+      "sha256": "1ac87c44be8d2d1f020806a7a767987a47cf2006b57b6217ebc787680094cb53"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/frontier.png": {
+      "bytes": 50364,
+      "sha256": "68d592ffaa1fb9c16fa6bbb1615739fff41a43a1d0e1d822271cf66f6a418354"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/funnel.png": {
+      "bytes": 51757,
+      "sha256": "84f4ee36557d27320cafcd34ab0e33b13379e0abbad2778a25c1efcf23b6cd4b"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/high.png": {
+      "bytes": 52696,
+      "sha256": "2f5c948607aac8c50e76f475fd7c99c74eea4349ceb59301399d9995c488131e"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/lastwill.png": {
+      "bytes": 53485,
+      "sha256": "da172e3a17893e2c002f84eeafc7ee99de2f2dea39be78eb76bdc90283500d0d"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/low.png": {
+      "bytes": 55051,
+      "sha256": "a328332e1d4736c3b969153e81bc7ffccdbd31c5f03eecfa5510cd65dee10d90"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/pearls.png": {
+      "bytes": 32712,
+      "sha256": "dde17854edb1876c64fd73d671151a1d3e2d817d54853533ada31fa3346161cf"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/rattle.png": {
+      "bytes": 55948,
+      "sha256": "5fcaed6447e2fe9cbd50cc36608fbe186b04a7ad2180a3a8aa214f25cac3a1bf"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/regeneration.png": {
+      "bytes": 50769,
+      "sha256": "c60e25305749767696dd284909e5fd878a41c112aa5246e76577d15fa3dd3a6c"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/rocks.png": {
+      "bytes": 54405,
+      "sha256": "60d8eab478fad4d225dde539a422eddfb07d7cdb15b6589482b523325dd7e751"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/sevenkeys.png": {
+      "bytes": 13557,
+      "sha256": "4efe5235583c69a870d15fab06ca0b17a85a50092866c5c67d26acc3669c8dc8"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/skyvillage.png": {
+      "bytes": 37955,
+      "sha256": "aa5a46a32352b6a33e208b302ffc0d0609aa637b84990c3db01f144014e0ff00"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/submine.png": {
+      "bytes": 35258,
+      "sha256": "eefddc8808eafa167bfaad0e162867ec061a88b1f4c3c8036e450f530712a29b"
+    },
+    "web/public/rage/catalog/thumbnails/base-missions/treasure.png": {
+      "bytes": 50392,
+      "sha256": "fc43a3e7e7b4bb7eb375179d4b61f05c0d0384bc9f7374fdfd330a0e6c27472f"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/caverace.png": {
+      "bytes": 45076,
+      "sha256": "3b1b5d29093871f8b68ca5a8b7c8ea50d3ac3ecd752f01aad24138fae0b6a03f"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/glowingpeak.png": {
+      "bytes": 46876,
+      "sha256": "186edbf7b6b427ee82d3e6ca82db495515356ee981c3eaa582c35c55cf16576d"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/goldrace.png": {
+      "bytes": 54229,
+      "sha256": "f9955d7102aefc621fc98462571c0a5f37268ac675f733bbf4a4b8460ad44419"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/monsterrescue.png": {
+      "bytes": 60018,
+      "sha256": "d51045075ba44a33a48be83227fba616a4a4ae55490400409e3208a97f252780"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/skyrace.png": {
+      "bytes": 33073,
+      "sha256": "d09f54498204f5d72aef14febfbc14b89bfffbe1c42593e5209e001d19868dc0"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/tritonpath.png": {
+      "bytes": 60798,
+      "sha256": "b50f238b0d4118c0ce1d60a6e9600ae6f27ecebafe2cd072de50a83fd756c4c3"
+    },
+    "web/public/rage/catalog/thumbnails/base-races/wipfrace.png": {
+      "bytes": 40715,
+      "sha256": "7faf655f26cb99967e3049dd979e485a224e0dc381521feeee5f4097ebf24a7c"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial01.png": {
+      "bytes": 46546,
+      "sha256": "477c3c12a40a289253f8c5ded553e53a6d60c93e8e3c0e614d11fc00bbb644c5"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial02.png": {
+      "bytes": 57569,
+      "sha256": "bd1edb4c371febcbcc8281299fb8488a2d1b0f935579844fa7d84b48f10712a2"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial03.png": {
+      "bytes": 55670,
+      "sha256": "0e49519609749c60ec3469314716cc96bd21573f6ca60ac22708a2b556b36635"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial04.png": {
+      "bytes": 63680,
+      "sha256": "d5cb3fd94f0d209e9e715e6f33c8037bf861c1b70f0e47a626c3b33fee83d9b3"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial05.png": {
+      "bytes": 51333,
+      "sha256": "647048abc773022f29981b7441f878e89d3ff07d6f29062f69804ed495c1eb86"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial06.png": {
+      "bytes": 21600,
+      "sha256": "5797fa720ee994aeb584b96ff0a3abae145018300c4c5fd02d0729f1a5de65c3"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial07.png": {
+      "bytes": 45841,
+      "sha256": "01ad93d46c2f193b099c2ded4ca854bc2cba97f3259bed92474f2ce50f250d0e"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial08.png": {
+      "bytes": 54298,
+      "sha256": "f3634fbe8dd0939aa064b9c5f772c7ab0101a858dc6dfbfb7c7bdf64a7e1e250"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial09.png": {
+      "bytes": 26447,
+      "sha256": "5bb6113e7da3ada77a641344c3752a924be2f334c9d3f096be3fbeb1eac8fe25"
+    },
+    "web/public/rage/catalog/thumbnails/base-tutorial/tutorial10.png": {
+      "bytes": 51949,
+      "sha256": "fe3811fbc689897117088c6e74eb1c6dc055348c3808d48a9139f677999d941b"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/arcticocean.png": {
+      "bytes": 24946,
+      "sha256": "d0aaca8f4beebe218df41d886635479e010dcbcb4226c55e93d414dc01249c73"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/ashlands.png": {
+      "bytes": 45299,
+      "sha256": "7a4e44986f99aaa84b3bda27d517f8168b7d326da1e960547a06d8885b88359d"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/chasm.png": {
+      "bytes": 58764,
+      "sha256": "ea47299bf5995da601fba23eb0ae46beab746342795dce1041ec32c9c4cc1bc9"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/desert.png": {
+      "bytes": 33016,
+      "sha256": "b88df7652e2d28754e3ce4e0001fbddfea58ecc4e26c0d4a9c4832c94840f2f6"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/foggycliffs.png": {
+      "bytes": 52333,
+      "sha256": "fac440b59917e3707b061ef38606c3ddcfb07ab16f24078c80ffb4573f18bad8"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/goldmine.png": {
+      "bytes": 70809,
+      "sha256": "fc835e14a96b7e729080bd745030304f1af5e5b9324d1d0991b417465c7a1253"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/lavacaves.png": {
+      "bytes": 48100,
+      "sha256": "13ea48783b9188ae917695fe81fa0b2b5b06b01af289bc51e9ea2b1ea54e43ad"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/mountains.png": {
+      "bytes": 58343,
+      "sha256": "c8a77e39abbdf7469f0042d0846c61f6d647816556c8a742286d91ffd25df05d"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/outset.png": {
+      "bytes": 58544,
+      "sha256": "3ce78c6ea83f0829812b283daed12c83a28c88b3ca443f5576b57b4143920e75"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/skyatoll.png": {
+      "bytes": 38307,
+      "sha256": "a8e8d69fccc8b83e18ee3b1fd8f4b385c65ecc4d6d68b28487af8f2b3871aae5"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/skyislands.png": {
+      "bytes": 60291,
+      "sha256": "be97a00d7128eef138c0b14711dfd937f05719ed23805e9e78fed3c55446cdac"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/tropical.png": {
+      "bytes": 60229,
+      "sha256": "2be288d5bbf484ccda778dc08278111ed64a135015e675d526fdd6149f467c92"
+    },
+    "web/public/rage/catalog/thumbnails/base-worlds/watercaves.png": {
+      "bytes": 46297,
+      "sha256": "e87f6af5260dfcc79a55641c9e4e2f0f381ed999efc1d7af43c998ed4b5301a6"
+    },
+    "web/public/rage/catalog/thumbnails/fantasy/alchemy.png": {
+      "bytes": 16760,
+      "sha256": "999d7aa5974628c515f0764662aa645bea4ebedba8a632618366f29723ca0a93"
+    },
+    "web/public/rage/catalog/thumbnails/fantasy/crystalvalley.png": {
+      "bytes": 21979,
+      "sha256": "9a3069a17702d31c49928122553b2fe9b1ae42c99e0e3029b32b41fa354326b3"
+    },
+    "web/public/rage/catalog/thumbnails/fantasy/drachenfels.png": {
+      "bytes": 56518,
+      "sha256": "6011846d3dac3b3f2f2d2bde71f85bee1e828df4399908a8ffff82524a6bbcbb"
+    },
+    "web/public/rage/catalog/thumbnails/fantasy/skiesoffire.png": {
+      "bytes": 60410,
+      "sha256": "78ca8de5724894ebf22358e6221d8cebda7d6277856e1a0fe5a9718361a80aed"
+    },
+    "web/public/rage/catalog/thumbnails/farworlds/arctic.png": {
+      "bytes": 23187,
+      "sha256": "c208a04fdc9e8301be364a9e812a13fddbf8d95e691394e6470bcfa638a12562"
+    },
+    "web/public/rage/catalog/thumbnails/farworlds/deep.png": {
+      "bytes": 54195,
+      "sha256": "4ff8efb35a84f6b3fc58e0f84201ed5beabd93fc356299f5ba2c7fcf7c5b963e"
+    },
+    "web/public/rage/catalog/thumbnails/farworlds/jungle.png": {
+      "bytes": 58919,
+      "sha256": "97a57f41d936724dd4b5fc96a435622ed3371a496f97b4aa78e59d086ac9b80b"
+    },
+    "web/public/rage/catalog/thumbnails/knights/camp.png": {
+      "bytes": 16519,
+      "sha256": "7a1f627c0a13c6a6dfc03d15f62dc0c58f9ccff86667bdf2269e4fcf9a9c690c"
+    },
+    "web/public/rage/catalog/thumbnails/knights/cofut.png": {
+      "bytes": 21083,
+      "sha256": "02a4148cca7f854ba5b331b447e5bb553727ba8fce6a242b88711d6b57fea39c"
+    },
+    "web/public/rage/catalog/thumbnails/knights/dunkelfels.png": {
+      "bytes": 51738,
+      "sha256": "b8473d3b63d62a0bbc668da7faef5796b8957b6f2592d33040cec9c92110579c"
+    },
+    "web/public/rage/catalog/thumbnails/knights/hammerfest.png": {
+      "bytes": 35298,
+      "sha256": "6b9b4f36082b2857bb369ae9e196d5c395f93b13526ecce6d400f407f6edd90a"
+    },
+    "web/public/rage/catalog/thumbnails/knights/kingdoms.png": {
+      "bytes": 15339,
+      "sha256": "3b3aae412264e2a7d4ecabe939a0ac3a70d04b5f36abc15ce5d403ccb08660d0"
+    },
+    "web/public/rage/catalog/thumbnails/knights/paxhill.png": {
+      "bytes": 20122,
+      "sha256": "3787d59b2ba9cd287740e44a9c92b05c5356599d696f24c5fb976b139a1fc6a3"
+    },
+    "web/public/rage/catalog/thumbnails/knights/regicide.png": {
+      "bytes": 53673,
+      "sha256": "633e1ac5b4d5257f1cf1413d39432a3bb3cc9186404bb4d9755f2167da2b6af3"
+    },
+    "web/public/rage/catalog/thumbnails/knights/tournament.png": {
+      "bytes": 48816,
+      "sha256": "e2af5c1925a5c4a14eea339c950de50ed64ea0f6ea3ac18353f2bacefea356b1"
+    },
+    "web/public/rage/catalog/thumbnails/western/bankrobbery.png": {
+      "bytes": 43742,
+      "sha256": "3aa6393072de56a0dfbe46a70221cf1055a9b846c548a8f3202037f560a35fc9"
+    },
+    "web/public/rage/catalog/thumbnails/western/capturetheflag.png": {
+      "bytes": 52946,
+      "sha256": "0f987fdef2e3e845e1cafcd8215bc828027b87c1ff99594d58fbbe14f66d5780"
+    },
+    "web/public/rage/catalog/thumbnails/western/deadmansvalley.png": {
+      "bytes": 41558,
+      "sha256": "0c43b7eee49ee1da363d1c5f98fd0417920e2832758a36e0d10edf55183f8fca"
+    },
+    "web/public/rage/catalog/thumbnails/western/fallingstarspeak.png": {
+      "bytes": 38672,
+      "sha256": "463614880579729cf12c7674d0b046e8b1b54748d1537a2f20edb66c258b5b5d"
+    },
+    "web/public/rage/catalog/thumbnails/western/goldencanyon.png": {
+      "bytes": 46041,
+      "sha256": "4aa9ffb0c3339ea54ff1034248af949568e076a9902ab6981ecc0bceb4bf3d75"
+    },
+    "web/public/rage/catalog/thumbnails/western/goldrush.png": {
+      "bytes": 64696,
+      "sha256": "ad3967a69fc4798fb6b65c73c5748b6f4e03fcd63f69112f5a6062cc21c5a68f"
+    },
+    "web/public/rage/catalog/thumbnails/western/lasthope.png": {
+      "bytes": 49314,
+      "sha256": "c4d706e1033a49fe8a264da874c462d3ca4b69984ea86ba2d9c9db61290d00a1"
+    },
+    "web/public/rage/catalog/thumbnails/western/milestonewoods.png": {
+      "bytes": 49894,
+      "sha256": "87a3d96f58c8839a43eb5f073e49c336fb3a19aa7affe0c3b5ff482a9a447e44"
+    },
+    "web/public/rage/catalog/thumbnails/western/minerscreek.png": {
+      "bytes": 57574,
+      "sha256": "d101a170c6f05a89edddbd01dadc3b0b3c7bc846435c25d31c1bd988e64620b7"
+    },
+    "web/public/rage/catalog/thumbnails/western/redrockbay.png": {
+      "bytes": 55824,
+      "sha256": "f6cec5326bb322847cdcf0b27d09a2d9cf2006a72d40ab46ea2098e5b072c179"
+    },
+    "web/public/rage/catalog/thumbnails/western/shootthesheriff.png": {
+      "bytes": 50854,
+      "sha256": "5bee402748050be0383518aff6b4a88388fc89c0bccfb87ad7bdb02c4b8dcdc5"
+    },
+    "web/public/rage/catalog/thumbnails/western/totemhunt.png": {
+      "bytes": 47440,
+      "sha256": "5f2540a38f28cb18c31035ec96b01767a285b2be0526de45fbb31f50e63b424c"
     },
     "web/public/rage/clonk.data": {
       "bytes": 23928602,
@@ -12485,20 +13625,24 @@
       "sha256": "e610c04265f387bcde14fd7c5885cb55841fcf50fad96d2e06723daa82237441"
     },
     "web/public/rage/clonk.js": {
-      "bytes": 607828,
-      "sha256": "64d0fe06494a3ab0ee9f45ebcaf1df4484ea56c5e6661483358ad5d3a66ea612"
+      "bytes": 610235,
+      "sha256": "57067f1f4d58008083bf270cbff4523333acf790f02bdec711da9add394f47f4"
     },
     "web/public/rage/clonk.wasm": {
-      "bytes": 12970213,
-      "sha256": "5bae584375f3e2d13b9c0b36cf25f527ad3287c2a3d180c5ecfb4ee7787ea52c"
+      "bytes": 12992900,
+      "sha256": "e9dc511b559cc2f7589e406fe55deaad968594721e1a15be9228f56a7fd2a747"
+    },
+    "web/public/rage/gallery.js": {
+      "bytes": 10496,
+      "sha256": "f68618aaae265281b745100f25ed01e8777568b0d11f9c8b74ba813083189b2f"
     },
     "web/public/rage/game.js": {
-      "bytes": 19515,
-      "sha256": "eaa5d35b88cefd40002c43773862ad938dc85bb56ca8dc1c244ec8ffc62ee3cc"
+      "bytes": 26113,
+      "sha256": "7465c91b677d985673a47f9927f94dda886fe487b1af2f3a167efe14c443f90a"
     },
     "web/public/rage/index.html": {
-      "bytes": 13548,
-      "sha256": "c78e0bc75eb1c435e0ca449271bb0fdfe9c0eb0c11cacddc67c263b49bbc8531"
+      "bytes": 28388,
+      "sha256": "4ad1affff1927bfb53d94e421b0dc5fbab4a4042f31934d08aacc8253920e93f"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -12536,25 +13680,85 @@
       "bytes": 1334,
       "sha256": "de4cbb87d2e0091407b8534f5b55818c14e17951376237b05469a2b16fcc3c91"
     },
+    "web/public/rage/multiplayer.js": {
+      "bytes": 20682,
+      "sha256": "7b37da67f3cff47350da7f2109ab83d3f6838d37991f1c369ba4b0e5a1472124"
+    },
+    "web/public/rage/packs/Fantasy.c4d": {
+      "bytes": 4133760,
+      "sha256": "7e8fe792abdaaec166df717cf5d4397b46f535f0a650e83cf76bb589397c575c"
+    },
+    "web/public/rage/packs/Fantasy.c4f": {
+      "bytes": 1433835,
+      "sha256": "335ac7cb7683ad5e4654e935318d4dc0e350eeb215f736e8270007b7a77c9274"
+    },
+    "web/public/rage/packs/FarWorlds.c4d": {
+      "bytes": 4727584,
+      "sha256": "3819609536d86f4a8717172784e5fd79a661a9f9e79a9e71b1050a3c67eeca51"
+    },
+    "web/public/rage/packs/FarWorlds.c4f": {
+      "bytes": 775230,
+      "sha256": "8bbe4237ce010bfc898e851d6a397f8343064ca449b5416dc3331c79018f499e"
+    },
+    "web/public/rage/packs/Knights.c4d": {
+      "bytes": 5552746,
+      "sha256": "c98d486d771d7860014d0d0e38d05c847202a57506e9dc8d10932c662128ec87"
+    },
+    "web/public/rage/packs/Knights.c4f": {
+      "bytes": 8897200,
+      "sha256": "a8ca6b113974ae12d5cc928a988a8e4cb6c14d79dc4c9bce9b6fc574a9e838bb"
+    },
+    "web/public/rage/packs/Melees.c4f": {
+      "bytes": 1054667,
+      "sha256": "9894685d340f0ef44e221720e7ad8e9d3478ac132b9ec7425031118a0b9aa2a4"
+    },
+    "web/public/rage/packs/Missions.c4f": {
+      "bytes": 2596985,
+      "sha256": "3a04c490140d42e6a80a9c08d626263f8f5d8e4b41356ffd5817fb00359e98cc"
+    },
+    "web/public/rage/packs/Races.c4f": {
+      "bytes": 861975,
+      "sha256": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72"
+    },
+    "web/public/rage/packs/Tutorial.c4f": {
+      "bytes": 13330033,
+      "sha256": "64ec0f3ad74133eab2eac07d7d8e26c2271a5049d71555b42e72acb96f98549a"
+    },
+    "web/public/rage/packs/Western.c4d": {
+      "bytes": 11721765,
+      "sha256": "ae265915464da0e517c842ff6941247126c4a3a12e1377c7e439a2505854942e"
+    },
+    "web/public/rage/packs/Western.c4f": {
+      "bytes": 8408569,
+      "sha256": "dabf604de2661d24982a09f7738c8434a98984654c44d43f9b780188bd7099c4"
+    },
+    "web/public/rage/scenario-library.js": {
+      "bytes": 2146,
+      "sha256": "395dc73691471c9f63999bcbb6a5b671d149f5a97ebef64a6345ca0cf6094f5b"
+    },
     "web/public/rage/source/ORIGINAL_GAMEPLAY_AUDIT.md": {
       "bytes": 26534,
       "sha256": "b338e3a7d4f81c0750de2397ef0f0ee4e5f7861b822683d7100d9a1ad4ba206f"
+    },
+    "web/public/rage/source/SCENARIO_VALIDATION.md": {
+      "bytes": 2414,
+      "sha256": "9ff516f9d2c119f3d9aca4931015e3ce7b66294856a4a5435f8f354cf4a4f201"
     },
     "web/public/rage/source/browser-acceptance.json": {
       "bytes": 53762,
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 1385182,
-      "sha256": "73376e45f6d0650919d78a871550a8a87b3f8e7c706def26e824438cb87d4a51"
+      "bytes": 10823821,
+      "sha256": "ae7d42e98bed86b034c768f31d74eead52dfa9408892d8cadaed54bd1d6256e8"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 33258,
       "sha256": "4cbef5b613f22a2cbbee0925e1a144886093259e7957e1b07c3d04aa5cad0d00"
     },
     "web/public/rage/source/build.py": {
-      "bytes": 5884,
-      "sha256": "edf97b60367d7b396a6668b36dfad803c41d8d522bbae407be2c8574408734c8"
+      "bytes": 6034,
+      "sha256": "115d53d32042071ca8d2345e185d876f78f486cd8d1b22ef481315f41a421c40"
     },
     "web/public/rage/source/config.h": {
       "bytes": 494,
@@ -12576,21 +13780,81 @@
       "bytes": 800,
       "sha256": "28d5516187e09e7f27919011153bf4dc16e4c2f29282efbd11072d1df820ff10"
     },
+    "web/public/rage/source/native-exit-persistence-webkit.json": {
+      "bytes": 2767,
+      "sha256": "e5d7984de3fb6b744c8cc6ff44a93630876681a64dc622465518374c550dc1ef"
+    },
+    "web/public/rage/source/native-exit-persistence.json": {
+      "bytes": 2747,
+      "sha256": "3c1dc9845ea3efb88931856e5f2f5bc93e75915528a4091a441302b8597829cb"
+    },
     "web/public/rage/source/native-replay-verification.json": {
       "bytes": 5703,
       "sha256": "38badb61d8c8c6e3792d9393dd8b4aa19e0e187e4170fd48eb4d54af0d5dcf63"
     },
     "web/public/rage/source/original-to-browser.patch": {
-      "bytes": 78971,
-      "sha256": "e446b2191f25ee911cda29dc3efa9563505a8cc078ab6ea8bd364abf8454c206"
+      "bytes": 103065,
+      "sha256": "5c0e1c05e97965e7755beb72f087d49cfdd2bf79f98747d400d308620d63c855"
+    },
+    "web/public/rage/source/original-warning-baseline/README.md": {
+      "bytes": 1868,
+      "sha256": "d0b9a0ee2dd8eef4050969d2de8018ff04562cce2512191cb0817600115c58e6"
+    },
+    "web/public/rage/source/original-warning-baseline/report.json": {
+      "bytes": 1977,
+      "sha256": "5420948a508331fd70ce44bcd274b6218ff574d39c82bec39fe84f3fb4ada123"
     },
     "web/public/rage/source/patch-manifest.json": {
-      "bytes": 10162,
-      "sha256": "3290aa901921a75f9d9b3f721f1fbbef78016f846f2a39d71f0413be631f3e38"
+      "bytes": 12536,
+      "sha256": "8d3b07e3641a214986425f5323a8c3ccf5ee48fd3ac1b696c2d95ae7726e9c0a"
+    },
+    "web/public/rage/source/rtc-cross-browser.json": {
+      "bytes": 52072,
+      "sha256": "0d885b829b4a320064a8f7d72c4641aa27df4121fb6b65cea1c386a81397bc6c"
+    },
+    "web/public/rage/source/rtc-desert.json": {
+      "bytes": 51938,
+      "sha256": "f01cefc3d73410c2487f1791c94417327f965369a3ad07e15c88962f62888ec5"
+    },
+    "web/public/rage/source/rtc-goldmine.json": {
+      "bytes": 47501,
+      "sha256": "fcbf46a862e1d652018c0bb4ea6850b856c567d6366c4aa871b088513db22ff4"
+    },
+    "web/public/rage/source/rtc-knights.json": {
+      "bytes": 62408,
+      "sha256": "60be2949cc1275d38540b5046402a9a1f6249111dba1be16b46454ec4d30895d"
     },
     "web/public/rage/source/save-export-report.json": {
       "bytes": 693,
       "sha256": "972ccc235473696231a0599d0894982609b19731e9ec5271e39fa3b3c4fe8311"
+    },
+    "web/public/rage/source/scenario-contact-sheet.webp": {
+      "bytes": 613648,
+      "sha256": "5cb1e92aff86466ce01b432e0b6f564c6bbf3faf65f0386543e95c44435a09f0"
+    },
+    "web/public/rage/source/scenario-engine-provenance.json": {
+      "bytes": 3887,
+      "sha256": "d6b792a79029cf3b3c56bcaf3016ca1c8601758b8f0ecd83b166cabb7a1330c0"
+    },
+    "web/public/rage/source/scenario-gallery.json": {
+      "bytes": 44136,
+      "sha256": "942fc742a5b6d571ce81c9fad51332577dcc99e0b60c19cac9a913a04da2415f"
+    },
+    "web/public/rage/source/scenario-image-checks.json": {
+      "bytes": 22771,
+      "sha256": "b25d6b0c642e4497478b9dabf7e381b9f48a17c744b832201e94007b037718d0"
+    },
+    "web/public/rage/source/scenario-library-acceptance.json": {
+      "bytes": 3990789,
+      "sha256": "2d80d311103a920d138f5ea4ef477193c129b1e3b56df9b9e9ffdb08ef42ebc7"
+    },
+    "web/public/rage/source/scenario-screenshot-provenance.json": {
+      "bytes": 154070,
+      "sha256": "c37cb4de467623db292338d97bf96df9892fd63686347af89be00454bfc32c96"
+    },
+    "web/public/rage/source/scenario-summary.json": {
+      "bytes": 1550,
+      "sha256": "e983f5823745d55e04232f049c69d54b1ad56667c6acc1eb65313a361ef07c4e"
     },
     "web/public/rage/source/startup-chromium.json": {
       "bytes": 166,
@@ -12600,13 +13864,21 @@
       "bytes": 164,
       "sha256": "5376b6d997393ff28fc6b616351c4fd31b125500e533ff6dcf1c90947b2148a1"
     },
+    "web/public/rage/source/touch-menus.json": {
+      "bytes": 21824,
+      "sha256": "386664b6e0af40da5038994374d3bc36d26b58c731fc97ed608a28d2899f8d97"
+    },
     "web/public/rage/source/usability-chromium.json": {
       "bytes": 2028,
       "sha256": "d61c680f6ee8a71002b12f8c4a875ba3ff3f1d7f65fcb6fbb43309a570020717"
     },
     "web/public/rage/source/usability-webkit.json": {
       "bytes": 2026,
-      "sha256": "98ae00b95f991d4bb493907a59e8668a8ba332f7a14329e9725a955a40c22ab0"
+      "sha256": "6633001fa72b2853fe33c1c41fc79d6510ddbb79b5e952a295ea17808c621760"
+    },
+    "web/public/rage/source/western-localization-audit.json": {
+      "bytes": 2197,
+      "sha256": "48d0ff27d91ab234a4508020af63653be5c6763339fe6b15e93c866928b0d5cf"
     },
     "web/public/scenarios.md": {
       "bytes": 4477,

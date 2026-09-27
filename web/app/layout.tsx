@@ -15,11 +15,11 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: [{ url: '/rage/clonk.ico' }, { url: '/icons/neoclonk-192.png', type: 'image/png', sizes: '192x192' }],
       apple: [{ url: '/apple-touch-icon.png?v=1', sizes: '180x180', type: 'image/png' }],
     },
-    title: 'Neoclonk — Original Gold Mine',
-    description: 'The original Clonk Rage Gold Mine scenario, sprites and gameplay running in your browser. Classic nine-button controls and touch support.',
+    title: 'Neoclonk — Clonk Rage in your browser',
+    description: 'Play 80 original Clonk Rage scenarios with classic sprites, nine-button controls, touch support and direct multiplayer.',
     metadataBase: new URL(origin),
-    openGraph: { title: 'Neoclonk — Original Gold Mine', description: 'Original Clonk Rage gameplay in the browser.', type: 'website' },
-    twitter: { card: 'summary', title: 'Neoclonk — Original Gold Mine', description: 'Original Clonk Rage gameplay in the browser.' },
+    openGraph: { title: 'Neoclonk — Clonk Rage in your browser', description: 'Original Clonk Rage gameplay in the browser.', type: 'website' },
+    twitter: { card: 'summary', title: 'Neoclonk — Clonk Rage in your browser', description: 'Original Clonk Rage gameplay in the browser.' },
   };
 }
 export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="en"><head><link rel="manifest" href="/manifest.json?v=1" crossOrigin="use-credentials" /><meta name="apple-mobile-web-app-capable" content="yes" /></head><body>{children}</body></html>; }

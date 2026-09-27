@@ -6,6 +6,8 @@ invalid GLSL. Generated coordinates contain at most one matrix parenthesis;
 match that complete expression while retaining the duplicate-load optimization.
 SDL's DOM key table also omits Pause, although its headers use the scancode-based
 SDLK_PAUSE (1096), not DOM keyCode 19. Match the key event to those same headers.
+Rage's MOD2 blits use GL_ADD_SIGNED with RGB_SCALE=2. Supply the original
+Arg0+Arg1-0.5 combine formula and reserve its own shader-cache key.
 """
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
@@ -22,6 +24,43 @@ else:
     p.write_text(text)
     print('Patched Emscripten legacy texture-sample parser')
 
+p=root/'.toolchains/emsdk/upstream/emscripten/src/library_glemu.js'
+text=p.read_text()
+replacements=[
+    ('      var GL_SUBTRACT    = 0x84E7;',
+     '      var GL_ADD_SIGNED  = 0x8574; // Rage MOD2 fixed-function blits\n      var GL_SUBTRACT    = 0x84E7;'),
+    ('          0x8575 /* GL_INTERPOLATE */: 4,',
+     '          0x8575 /* GL_INTERPOLATE */: 4,\n          0x8574 /* GL_ADD_SIGNED */: 5,'),
+    ('          var key = k[this.mode] * 1638400; // 6 distinct values.\n'
+     '          key += k[this.colorCombiner] * 327680; // 5 distinct values.\n'
+     '          key += k[this.alphaCombiner] * 65536; // 5 distinct values.\n'
+     '          // The above three fields have 6*5*5=150 distinct values -> 8 bits.',
+     '          var key = k[this.mode] * 2359296; // 6 distinct values.\n'
+     '          key += k[this.colorCombiner] * 393216; // 6 distinct values.\n'
+     '          key += k[this.alphaCombiner] * 65536; // 6 distinct values.\n'
+     '          // The above three fields have 6*6*6=216 distinct values -> 8 bits.'),
+    ('          case GL_ADD:\n          case GL_SUBTRACT:\n            argsNeeded = 2;',
+     '          case GL_ADD:\n          case GL_ADD_SIGNED:\n          case GL_SUBTRACT:\n            argsNeeded = 2;'),
+    ('          case GL_SUBTRACT: {\n            lines = [`${outputType} ${outputVar} = ${src0Expr} - ${src1Expr};`]',
+     '          case GL_ADD_SIGNED: {\n'
+     '            lines = [`${outputType} ${outputVar} = ${src0Expr} + ${src1Expr} - 0.5;`];\n'
+     '            break;\n'
+     '          }\n'
+     '          case GL_SUBTRACT: {\n            lines = [`${outputType} ${outputVar} = ${src0Expr} - ${src1Expr};`]'),
+    ('            return [].concat(colorLines, alphaLines, [line]);',
+     '            // OpenGL clamps each texture combine result after its RGB/alpha scale.\n'
+     '            return [].concat(colorLines, alphaLines, [line,\n'
+     '              passOutputVar + " = clamp(" + passOutputVar + ", 0.0, 1.0);"]);'),
+]
+for old,new in replacements:
+    if text.count(new)==1:
+        continue
+    if text.count(old)!=1:
+        raise SystemExit('Unexpected Emscripten texture-combiner implementation; inspect before patching')
+    text=text.replace(old,new,1)
+p.write_text(text)
+print('Emscripten GL_ADD_SIGNED formula, scale clamp and cache keys patched')
+
 p=root/'.toolchains/emsdk/upstream/emscripten/src/library_sdl.js'
 text=p.read_text()
 anchor='      18: 226 | 1<<10, // alt\n'
@@ -34,3 +73,57 @@ else:
     text=text.replace(anchor,anchor+pause,1)
     p.write_text(text)
     print('Patched Emscripten SDL Pause key mapping')
+
+# Native SDL_mixer reports an unsupported/corrupt audio resource as a playback
+# failure. Web Audio reports that asynchronously through both callback and
+# Promise APIs; consume that resource error without a global rejection.
+p=root/'.toolchains/emsdk/upstream/emscripten/src/library_sdl.js'
+text=p.read_text()
+replacements=[
+    ('        var webAudio = audio.resource.webAudio;\n        audio.paused = false;',
+     '        var webAudio = audio.resource.webAudio;\n'
+     '        if (webAudio.decodeFailed) { audio.paused = true; return; }\n'
+     '        audio.paused = false;'),
+    ("      SDL.audioContext['decodeAudioData'](arrayBuffer, (data) => {",
+     '      var onDecodeFailure = (error) => {\n'
+     '        if (webAudio.decodeFailed) return; // callback and Promise can both report it\n'
+     '        webAudio.decodeFailed = true;\n'
+     "        err('[audio] Resource could not be decoded: ' + (filename || 'memory buffer') + ': ' + error);\n"
+     '        var pending = webAudio.onDecodeComplete || [];\n'
+     '        delete webAudio.onDecodeComplete;\n'
+     '        pending.forEach((callback) => callback());\n'
+     '      };\n'
+     "      var decodePromise = SDL.audioContext['decodeAudioData'](arrayBuffer, (data) => {"),
+    ('        delete webAudio.onDecodeComplete;\n      });\n    } else if (audio === undefined && bytes) {',
+     '        delete webAudio.onDecodeComplete;\n'
+     '      }, onDecodeFailure);\n'
+     '      if (decodePromise) decodePromise.catch(onDecodeFailure);\n'
+     '    } else if (audio === undefined && bytes) {'),
+]
+for old,new in replacements:
+    if text.count(new)==1:
+        continue
+    if text.count(old)!=1:
+        raise SystemExit('Unexpected Emscripten SDL audio decoder; inspect before patching')
+    text=text.replace(old,new,1)
+p.write_text(text)
+print('Emscripten SDL resource decode failure handling patched')
+
+# FS/IDBFS retain their JavaScript tree after native exit. An explicit final
+# sync can therefore persist Config.Save and original crew writes, but creating
+# an FS errno must not invoke native strerror after its runtime has shut down.
+p=root/'.toolchains/emsdk/upstream/emscripten/src/library_fs.js'
+text=p.read_text()
+old="        super(runtimeInitialized ? strError(errno) : '');"
+new="""#if EXIT_RUNTIME
+        super(runtimeInitialized && !runtimeExited ? strError(errno) : '');
+#else
+        super(runtimeInitialized ? strError(errno) : '');
+#endif"""
+if text.count(new)==1:
+    print('Emscripten FS post-exit errno guard already patched')
+else:
+    if text.count(old)!=1:
+        raise SystemExit('Unexpected Emscripten FS errno implementation; inspect before patching')
+    p.write_text(text.replace(old,new,1))
+    print('Patched Emscripten FS post-exit errno diagnostic')

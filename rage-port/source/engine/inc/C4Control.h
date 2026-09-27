@@ -127,6 +127,11 @@ protected:
 	StdStrBuf Script;
 public:
 	void SetTargetObj(int32_t iObj) { iTargetObj = iObj; }
+#ifdef __EMSCRIPTEN__
+  const char *BrowserScript() const { return Script.getData(); }
+  int BrowserTarget() const { return iTargetObj; }
+  bool BrowserInternal() const { return fInternal; }
+#endif
 	DECLARE_C4CONTROL_VIRTUALS
 };
 

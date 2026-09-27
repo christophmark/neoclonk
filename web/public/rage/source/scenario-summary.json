@@ -1,0 +1,44 @@
+{
+  "scenarioCount": 80,
+  "recorded": 80,
+  "passed": 80,
+  "failed": [],
+  "screenshots": 80,
+  "realTwoDeviceRooms": 27,
+  "originalSaves": 53,
+  "saveReloadCategories": [
+    "base-tutorial",
+    "base-worlds",
+    "base-missions",
+    "base-races",
+    "farworlds",
+    "fantasy",
+    "western"
+  ],
+  "shippedScriptWarnings": [
+    {
+      "id": "races.c4f/tritonpath.c4s",
+      "count": 2,
+      "messages": [
+        "WARNING: parameter has the same name as type id (in Take, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:83:21)",
+        "WARNING: parameter has the same name as type id (in Put, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:95:20)"
+      ],
+      "baseline": "native-reference/warning-audit/Clonk.log",
+      "nativeVersion": "Official Linux Clonk Rage 4.9.10.7 [330]",
+      "note": "Exact unchanged native warnings reproduced, not new browser warnings."
+    }
+  ],
+  "categoryCounts": {
+    "base-tutorial": 10,
+    "base-worlds": 13,
+    "base-missions": 13,
+    "base-melees": 10,
+    "base-races": 7,
+    "knights": 8,
+    "farworlds": 3,
+    "fantasy": 4,
+    "western": 12
+  },
+  "scope": "Original startup, required players, short simulation, controls, original rendering/captures, solo save and representative reload; real two-device controls and frozen native sync/terrain for rooms. Scenario objectives and long-session completeness not asserted.",
+  "provenance": "Per-case recorded artifact hashes plus engine-provenance.json; early link overlaps remain explicitly uncertain."
+}

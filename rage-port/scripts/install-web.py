@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Install the compiled original engine and source provenance into the website."""
 from pathlib import Path
-import shutil, hashlib, json, zipfile
+import shutil, hashlib, json, zipfile, subprocess, sys
 root=Path(__file__).resolve().parents[2];port=root/'rage-port';dest=root/'web/public/rage'
 dest.mkdir(parents=True,exist_ok=True)
 for name in ['clonk.js','clonk.wasm','clonk.data']:
  shutil.copy2(port/'dist'/name,dest/name)
 shutil.copy2(port/'shell/index.html',dest/'index.html')
-shutil.copy2(port/'shell/game.js',dest/'game.js')
+for script in (port/'shell').glob('*.js'):shutil.copy2(script,dest/script.name)
+subprocess.run([sys.executable,str(port/'scripts/install-library.py')],check=True)
 shutil.copytree(port/'shell/assets',dest/'assets',dirs_exist_ok=True)
 shutil.copy2(root/'cr_source/engine/res/cr.ico',dest/'clonk.ico')
 licenses=dest/'licenses';licenses.mkdir(exist_ok=True)
@@ -32,6 +33,34 @@ for browser in ['chromium','webkit']:
 camera_report=port/'outputs/view/report.json'
 if camera_report.exists() and not json.loads(camera_report.read_text()).get('errors'):
  shutil.copy2(camera_report,provenance/'browser-view-report.json')
+# Current expansion evidence: publish successful real-engine reports only.
+for relative,name in [
+ ('rage-port/outputs/rtc-room/report.json','rtc-goldmine.json'),
+ ('rage-port/outputs/rtc-team/report.json','rtc-knights.json'),
+ ('rage-port/outputs/rtc-desert/report.json','rtc-desert.json'),
+ ('rage-port/outputs/rtc-cross-browser/report.json','rtc-cross-browser.json'),
+ ('rage-port/outputs/touch-menus/report.json','touch-menus.json'),
+ ('rage-port/outputs/exit/report.json','native-exit-persistence.json'),
+ ('rage-port/outputs/exit-webkit/report.json','native-exit-persistence-webkit.json')]:
+ report=root/relative
+ if report.exists() and json.loads(report.read_text()).get('passed'):
+  shutil.copy2(report,provenance/name)
+report=port/'outputs/scenario-library/report.json'
+if report.exists():
+ evidence=json.loads(report.read_text());results=evidence.get('results',[])
+ if len(results)==80 and all(r.get('passed') for r in results):
+  shutil.copy2(report,provenance/'scenario-library-acceptance.json')
+  shutil.copy2(port/'outputs/scenario-library/screenshots.json',provenance/'scenario-screenshot-provenance.json')
+  localization=port/'outputs/scenario-library/western-localization-audit.json'
+  if localization.exists():shutil.copy2(localization,provenance/'western-localization-audit.json')
+  for source_name,output_name in [('summary.json','scenario-summary.json'),('VALIDATION.md','SCENARIO_VALIDATION.md'),('engine-provenance.json','scenario-engine-provenance.json'),('image-checks.json','scenario-image-checks.json'),('contact-sheet.webp','scenario-contact-sheet.webp'),('gallery/report.json','scenario-gallery.json')]:
+   evidence_file=port/'outputs/scenario-library'/source_name
+   if evidence_file.exists():shutil.copy2(evidence_file,provenance/output_name)
+for name in ['README.md','report.json','Clonk.log']:
+ report=root/'native-reference/warning-audit'/name
+ if report.exists():
+  target=provenance/'original-warning-baseline';target.mkdir(exist_ok=True)
+  shutil.copy2(report,target/name)
 # Preserve the build adapters and test sources alongside the exact binary release.
 # The original archive and official content remain separate licensed inputs.
 inputs=[port/'README.md',port/'PLATFORM_PORT.md',port/'config.h',port/'shell/index.html',port/'shell/game.js',
@@ -47,6 +76,11 @@ inputs.append(port/'data/content-manifest.json')
 inputs.extend([port/'data/Browser.c4p',port/'data/browser.cfg',
                port/'data/verification/NativeGoldmine.c4s'])
 inputs.extend((port/'data').glob('*license*.txt'))
+inputs.extend((port/'shell').glob('*.js'))
+inputs.extend([port/'BROWSER_LOCKSTEP.md',root/'docs/GITHUB_README.md'])
+inputs.extend(root/'native-reference/warning-audit'/name for name in ['README.md','report.json','Clonk.log'])
+inputs.extend(p for p in (port/'catalog').rglob('*') if p.is_file())
+inputs=list(set(inputs))
 inputs.extend(p for p in (port/'shell/assets').rglob('*') if p.is_file())
 with zipfile.ZipFile(provenance/'browser-port-sources.zip','w',zipfile.ZIP_DEFLATED) as archive:
  for p in sorted(inputs):archive.write(p,p.relative_to(root))

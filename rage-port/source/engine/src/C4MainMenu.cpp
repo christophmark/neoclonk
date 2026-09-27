@@ -43,6 +43,9 @@ bool C4MainMenu::InitRefSym(const C4FacetEx &fctSymbol, const char *szEmpty, int
 
 bool C4MainMenu::ActivateNewPlayer(int32_t iPlayer)
 	{
+#ifdef __EMSCRIPTEN__
+  return false; // Browser multiplayer joins devices through the room lobby.
+#endif
 	// league or replay game
 	if (Game.Parameters.isLeague() || Game.C4S.Head.Replay) return false;
 	// Max player limit
@@ -618,12 +621,18 @@ bool C4MainMenu::ActivateMain(int32_t iPlayer)
 		AddRefSym(LoadResStr("IDS_MSG_SELTEAM"),fctTeams,"ActivateMenu:TeamSel",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MSG_ALLOWSYOUTOJOINADIFFERENT"));
 		}
 	// Player join
+#ifndef __EMSCRIPTEN__
 	if ((Game.Players.GetCount() < Game.Parameters.MaxPlayers) && !Game.Parameters.isLeague()) 
 		{
 		AddRefSym(LoadResStr("IDS_MENU_CPNEWPLAYER"),GfxR->fctPlayerClr.GetPhase(),"ActivateMenu:NewPlayer",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MENU_CPNEWPLAYERINFO"));
 		}	
+#endif
 	// Save game (player menu only - should we allow saving games with no players in it?)
-	if (pPlr && (!Game.Network.isEnabled() || Game.Network.isHost()))
+	if (pPlr && (!Game.Network.isEnabled() || Game.Network.isHost())
+#ifdef __EMSCRIPTEN__
+    && Game.CanQuickSave()
+#endif
+    )
 		{
 		AddRefSym(LoadResStr("IDS_MENU_CPSAVEGAME"),GfxR->fctMenu.GetPhase(0),"ActivateMenu:Save:Game",C4MN_Item_NoCount,NULL,LoadResStr("IDS_MENU_CPSAVEGAMEINFO"));		
 		}
@@ -695,6 +704,9 @@ bool C4MainMenu::MenuCommand(const char *szCommand, bool fIsCloseCommand)
 	// JoinPlayer
 	if (SEqual2(szCommand,"JoinPlayer:"))
 		{
+#ifdef __EMSCRIPTEN__
+    return false;
+#endif
 		// not in league or replay mode
 		if (Game.Parameters.isLeague() || Game.C4S.Head.Replay) return false;
 		// join player

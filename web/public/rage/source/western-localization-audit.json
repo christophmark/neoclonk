@@ -1,0 +1,54 @@
+{
+  "note": "Exact unchanged original English tables inspected. Original notices retained, no content edits.",
+  "entries": [
+    {
+      "path": "Western.c4d/Items.c4d/Traps.c4d/Traps.c4d/StringTblUS.txt",
+      "key": "MsgNoArm",
+      "originalExtractedFileSha256": "4365c85569bcd6b4181b04d8793ab80c7cee14db85f1aff697f65473b0282f0f",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Items.c4d/Traps.c4d/Traps.c4d/StringTblUS.txt",
+      "key": "MsgNoTrapAllowedHere",
+      "originalExtractedFileSha256": "4365c85569bcd6b4181b04d8793ab80c7cee14db85f1aff697f65473b0282f0f",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Items.c4d/Traps.c4d/Traps.c4d/StringTblUS.txt",
+      "key": "TxtArm",
+      "originalExtractedFileSha256": "4365c85569bcd6b4181b04d8793ab80c7cee14db85f1aff697f65473b0282f0f",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Items.c4d/Weapons.c4d/DynamiteBox.c4d/StringTblUS.txt",
+      "key": "TxtTakeDynamite",
+      "originalExtractedFileSha256": "abd6c69fcc24453483b81cb3c605d4f08b1e6bad20b279752d78332168a12311",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Structures.c4d/Camp.c4d/ShamanTipi.c4d/StringTblUS.txt",
+      "key": "TxtProduction",
+      "originalExtractedFileSha256": "0de3673c4f9ece41e65121df17ea55a21e0e33a766cdc3fddc24b596881fca19",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Structures.c4d/Camp.c4d/ShamanTipi.c4d/StringTblUS.txt",
+      "key": "TxtChiefRecruited",
+      "originalExtractedFileSha256": "0de3673c4f9ece41e65121df17ea55a21e0e33a766cdc3fddc24b596881fca19",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    },
+    {
+      "path": "Western.c4d/Structures.c4d/Camp.c4d/StoreTipi.c4d/StringTblUS.txt",
+      "key": "TxtMenu",
+      "originalExtractedFileSha256": "169ba9bfa0886e1fc10dedd79450f8ce843dcb2908edd89a039c515c878e79e8",
+      "keyPresent": false,
+      "keyCaseInsensitivePresent": false
+    }
+  ]
+}

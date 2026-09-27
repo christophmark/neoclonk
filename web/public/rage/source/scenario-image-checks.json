@@ -1,0 +1,1132 @@
+{
+  "count": 80,
+  "captured": 80,
+  "checks": [
+    {
+      "id": "tutorial.c4f/tutorial01.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        51.84261686329561,
+        48.656386127783755,
+        66.53970473793477
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial02.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        46.43602424255872,
+        41.751747859984356,
+        53.56611761687046
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial03.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        470
+      ],
+      "stddev": [
+        50.54732416711019,
+        50.76664621025192,
+        68.77136020714735
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial04.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        40.05103459301807,
+        46.69678337546668,
+        83.67354755706738
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial05.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        43.37487317968182,
+        46.87706137575091,
+        69.2999580045844
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial06.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        452
+      ],
+      "stddev": [
+        35.32097820269748,
+        28.89743517013731,
+        31.578855344696816
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial07.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        452
+      ],
+      "stddev": [
+        59.843535603171574,
+        42.69448992956789,
+        25.34422641875505
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial08.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        640
+      ],
+      "stddev": [
+        40.08910748845389,
+        42.386115897689116,
+        72.99300396558667
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial09.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        400
+      ],
+      "stddev": [
+        30.151081293519013,
+        31.587835283654915,
+        22.34808851549804
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "tutorial.c4f/tutorial10.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        41.19668220892173,
+        36.01211288109023,
+        27.981044824600783
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/arcticocean.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        173
+      ],
+      "stddev": [
+        64.02365302374862,
+        45.150524026500634,
+        44.7083191179103
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/ashlands.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        438
+      ],
+      "stddev": [
+        35.13909722124235,
+        36.82306035223755,
+        36.25275341955265
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/chasm.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        591
+      ],
+      "stddev": [
+        45.94700183561615,
+        33.05661732795379,
+        21.770113513004006
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/desert.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        640
+      ],
+      "stddev": [
+        48.08415402065191,
+        53.06790714493118,
+        74.49302026196162
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/foggycliffs.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        179
+      ],
+      "stddev": [
+        67.11120232036053,
+        68.97367829352358,
+        70.84452416855585
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/goldmine.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        45.54831247564131,
+        44.12362506050791,
+        68.09614391241684
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/lavacaves.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        404
+      ],
+      "stddev": [
+        55.676380764198385,
+        46.28856096792741,
+        30.000926794200392
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/mountains.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        445
+      ],
+      "stddev": [
+        41.332120024446326,
+        50.52709415405109,
+        81.07158114986544
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/outset.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        45.85557796739206,
+        45.23720283629418,
+        69.09817144937338
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/skyatoll.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        424
+      ],
+      "stddev": [
+        36.013384350071064,
+        44.18384771077608,
+        61.878137428040084
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/skyislands.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        640
+      ],
+      "stddev": [
+        42.810393555883216,
+        41.328741847808956,
+        63.57748028336189
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/tropical.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        369
+      ],
+      "stddev": [
+        56.81477071034742,
+        35.749482464545544,
+        53.87687183987306
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "worlds.c4f/watercaves.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        497
+      ],
+      "stddev": [
+        49.92390011722939,
+        37.767601317373774,
+        41.34310318605948
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/frontier.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        366
+      ],
+      "stddev": [
+        43.83898769883091,
+        43.727508071236535,
+        65.68228262217441
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/funnel.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        320
+      ],
+      "stddev": [
+        45.72305356602238,
+        46.65678676033294,
+        84.12318361448415
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/high.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        6400
+      ],
+      "stddev": [
+        37.46755834152781,
+        44.21161083107084,
+        84.07534423005322
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/lastwill.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        81
+      ],
+      "stddev": [
+        36.109184300947895,
+        27.19472261165504,
+        37.75551508096845
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/low.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        497
+      ],
+      "stddev": [
+        60.46134605915398,
+        47.68052449773861,
+        38.597325431209796
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/pearls.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        512
+      ],
+      "stddev": [
+        63.401719391609866,
+        57.878994072157965,
+        69.46258774134539
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/rattle.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        171
+      ],
+      "stddev": [
+        46.69131131427017,
+        43.846949279795105,
+        59.252987383424184
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/regeneration.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        640
+      ],
+      "stddev": [
+        61.005435152320715,
+        46.13404289239246,
+        36.84231944376626
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/rocks.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        328
+      ],
+      "stddev": [
+        36.43601784873317,
+        26.082061048841744,
+        30.00014908674071
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/sevenkeys.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        427
+      ],
+      "stddev": [
+        37.75797253224931,
+        42.11437647670669,
+        87.3291219888844
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/skyvillage.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        277
+      ],
+      "stddev": [
+        46.98923855135487,
+        38.784354890967684,
+        56.88843586436253
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/submine.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        1019
+      ],
+      "stddev": [
+        48.633350262713584,
+        32.15745551719902,
+        47.95047680853415
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "missions.c4f/treasure.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        1040
+      ],
+      "stddev": [
+        61.88231188024162,
+        47.33295570359176,
+        54.06804062725563
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/canyon.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        427
+      ],
+      "stddev": [
+        48.62852847123932,
+        34.46893431457738,
+        65.53651609304292
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/castle.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        512
+      ],
+      "stddev": [
+        69.72181573818858,
+        49.815600979534,
+        52.71848081724664
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/clepal.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        336
+      ],
+      "stddev": [
+        53.875422650314555,
+        63.04354243020734,
+        89.60688476261839
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/clifffight.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        327
+      ],
+      "stddev": [
+        47.55202931055995,
+        43.0731821500199,
+        68.30271786046004
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/greed.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        187
+      ],
+      "stddev": [
+        35.59682353450258,
+        31.192133679682943,
+        23.298331611069816
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/massif.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        384
+      ],
+      "stddev": [
+        46.62647249016185,
+        57.83246223987377,
+        89.60395937903549
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/minormelee.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        384
+      ],
+      "stddev": [
+        45.67239463045946,
+        45.17728932292448,
+        67.65384105199647
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/mountaincombat.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        445
+      ],
+      "stddev": [
+        56.75331541073255,
+        62.6579795612958,
+        87.21916512992253
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/sharklake.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        300
+      ],
+      "stddev": [
+        49.548234721822,
+        44.806916647868555,
+        64.94918186532904
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "melees.c4f/theft.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        427
+      ],
+      "stddev": [
+        68.03371244809419,
+        57.02944740895583,
+        72.56962673829548
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/caverace.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        1760
+      ],
+      "stddev": [
+        50.059593391930335,
+        34.76279613172587,
+        47.83372418424486
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/glowingpeak.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        640
+      ],
+      "stddev": [
+        38.8666768256142,
+        38.04235849930004,
+        32.18074808412765
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/goldrace.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        320
+      ],
+      "stddev": [
+        54.52271162315952,
+        51.66197206994452,
+        68.02993636468538
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/monsterrescue.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        154
+      ],
+      "stddev": [
+        47.448856139766164,
+        44.34523133323255,
+        70.29197577400245
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/skyrace.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        102
+      ],
+      "stddev": [
+        71.65323231461244,
+        70.2036945579717,
+        51.98849959789447
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/tritonpath.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        171
+      ],
+      "stddev": [
+        64.08195276182903,
+        54.03300995605181,
+        52.23965555213305
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "races.c4f/wipfrace.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        160
+      ],
+      "stddev": [
+        36.21917969150094,
+        42.720748251869914,
+        83.68360189792088
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/camp.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        167
+      ],
+      "stddev": [
+        54.61488666307098,
+        60.84796732151822,
+        75.68648483602007
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/cofut.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        222
+      ],
+      "stddev": [
+        51.96989390971729,
+        23.628173815511953,
+        29.290467836777832
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/dunkelfels.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        320
+      ],
+      "stddev": [
+        36.111201980009845,
+        33.881093767731635,
+        86.63815124082852
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/hammerfest.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        245
+      ],
+      "stddev": [
+        40.383887885666496,
+        52.877699176621874,
+        86.32070890306788
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/kingdoms.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        222
+      ],
+      "stddev": [
+        55.67222455439862,
+        54.2651548181271,
+        61.74488213166606
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/paxhill.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        221
+      ],
+      "stddev": [
+        62.32584508138555,
+        54.01757469995153,
+        52.539722174151144
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/regicide.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        183
+      ],
+      "stddev": [
+        49.813054903737566,
+        28.589579034114802,
+        33.51193420344454
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "knights.c4f/tournament.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        167
+      ],
+      "stddev": [
+        45.84261041068643,
+        46.85771860538577,
+        67.24693591288249
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "farworlds.c4f/arctic.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        128
+      ],
+      "stddev": [
+        52.498931944291655,
+        36.760271549974334,
+        35.91199199823098
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "farworlds.c4f/deep.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        390
+      ],
+      "stddev": [
+        54.23152201057739,
+        42.01084776773112,
+        35.490607092751155
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "farworlds.c4f/jungle.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        246
+      ],
+      "stddev": [
+        54.66801602551323,
+        51.870083713816946,
+        75.38348145948649
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "fantasy.c4f/alchemy.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        661
+      ],
+      "stddev": [
+        52.891080165239934,
+        34.74671076483534,
+        43.70256143042229
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "fantasy.c4f/crystalvalley.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        401
+      ],
+      "stddev": [
+        34.08651648883684,
+        34.875346738363184,
+        68.05875131916906
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "fantasy.c4f/drachenfels.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        455
+      ],
+      "stddev": [
+        40.7620143731606,
+        39.016803929120606,
+        55.16653137722262
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "fantasy.c4f/skiesoffire.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        320
+      ],
+      "stddev": [
+        33.99620824507682,
+        23.482333856636767,
+        17.42742850396377
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/bankrobbery.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        192
+      ],
+      "stddev": [
+        41.41829394455969,
+        54.85838860451,
+        80.4887556136588
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/capturetheflag.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        208
+      ],
+      "stddev": [
+        40.42490105717121,
+        53.39056723359611,
+        79.22728592520049
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/deadmansvalley.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        299
+      ],
+      "stddev": [
+        71.94692973409991,
+        57.27930678928378,
+        41.05392193429805
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/fallingstarspeak.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        480
+      ],
+      "stddev": [
+        57.46100982464375,
+        42.668591439693024,
+        62.75228962767514
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/goldencanyon.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        768
+      ],
+      "stddev": [
+        54.05558935329121,
+        56.01601366363145,
+        76.10245467535223
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/goldrush.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        96
+      ],
+      "stddev": [
+        42.34504508540057,
+        44.17274951845018,
+        59.83992913252079
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/lasthope.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        63
+      ],
+      "stddev": [
+        39.20844245735669,
+        50.531955314790665,
+        72.71330409647257
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/milestonewoods.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        228
+      ],
+      "stddev": [
+        59.87710696945139,
+        55.99445113243305,
+        72.49570873278914
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/minerscreek.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        192
+      ],
+      "stddev": [
+        68.54952954660219,
+        52.50709645527023,
+        38.62825895267243
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/redrockbay.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        256
+      ],
+      "stddev": [
+        48.723148291164726,
+        60.14245135694989,
+        90.9293676636688
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/shootthesheriff.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        213
+      ],
+      "stddev": [
+        46.0606643221696,
+        46.47799385894596,
+        63.706913565229286
+      ],
+      "visuallyBlankCandidate": false
+    },
+    {
+      "id": "western.c4f/totemhunt.c4s",
+      "present": true,
+      "dimensions": [
+        640,
+        251
+      ],
+      "stddev": [
+        56.331792941090974,
+        67.96274785341635,
+        86.99886072306249
+      ],
+      "visuallyBlankCandidate": false
+    }
+  ],
+  "visualReview": {
+    "reviewed": true,
+    "artifact": "contact-sheet.png",
+    "finding": "All 80 labeled original-engine landscape captures inspected. No blank or visibly broken captures observed. Extreme landscape aspect ratios (Up High, The Last Will, Gold Rush, Last Hope) are retained and fitted without cropping.",
+    "reviewType": "Visual inspection of final 1600×1600 contact sheet plus automated image-presence and pixel-variance checks."
+  }
+}

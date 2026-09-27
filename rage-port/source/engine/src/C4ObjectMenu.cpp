@@ -432,7 +432,13 @@ void C4ObjectMenu::OnUserEnter(int32_t Player, int32_t iIndex, bool fRight)
 void C4ObjectMenu::OnUserClose()
 	{
 	// Queue
-	Game.Input.Add(CID_PlrControl, new C4ControlPlayerControl(Game.MouseControl.GetPlayer(),COM_MenuClose,0));
+	int player=Game.MouseControl.GetPlayer();
+#ifdef __EMSCRIPTEN__
+  C4Viewport *view=GetViewport();
+  C4Player *owner=view?Game.Players.Get(view->GetPlayer()):NULL;
+  if(owner && owner->LocalControl)player=owner->Number;
+#endif
+  Game.Input.Add(CID_PlrControl, new C4ControlPlayerControl(player,COM_MenuClose,0));
 	}
 
 bool C4ObjectMenu::IsReadOnly()

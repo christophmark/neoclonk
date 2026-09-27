@@ -15,6 +15,8 @@
 #include <C4Viewport.h>
 #include <C4GraphicsSystem.h>
 #include <C4MouseControl.h>
+#include <C4Gui.h>
+#include <C4RoundResults.h>
 #include <emscripten/emscripten.h>
 
 namespace {
@@ -61,7 +63,8 @@ void ObjectJson(StdStrBuf &out, C4Object *object)
       if(i)out.AppendChar(',');
       char itemId[5]; GetC4IdText(object->Menu->GetItem(i)->GetC4ID(),itemId); JsonString(out,itemId);
     }
-    out.Append("]}");
+    C4Rect bounds=object->Menu->GetBounds();
+    out.AppendFormat("],\"bounds\":{\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}}",bounds.x,bounds.y,bounds.Wdt,bounds.Hgt);
   } else out.Append("null");
   out.Append(",\"commands\":[");
   bool commandComma=false;
@@ -133,8 +136,8 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_state()
     {if(crewComma)BrowserResult.AppendChar(',');crewComma=true;ObjectJson(BrowserResult,link->Obj);}
     BrowserResult.Append("]}");
   }
-  BrowserResult.AppendFormat("],\"mouse\":{\"active\":%s,\"screenX\":%d,\"screenY\":%d,\"worldX\":%d,\"worldY\":%d},\"viewport\":",
-    Game.MouseControl.IsActive()?"true":"false",Game.MouseControl.BrowserScreenX(),Game.MouseControl.BrowserScreenY(),Game.MouseControl.BrowserWorldX(),Game.MouseControl.BrowserWorldY());
+  BrowserResult.AppendFormat("],\"mouse\":{\"active\":%s,\"player\":%d,\"screenX\":%d,\"screenY\":%d,\"worldX\":%d,\"worldY\":%d},\"viewport\":",
+    Game.MouseControl.IsActive()?"true":"false",Game.MouseControl.GetPlayer(),Game.MouseControl.BrowserScreenX(),Game.MouseControl.BrowserScreenY(),Game.MouseControl.BrowserWorldX(),Game.MouseControl.BrowserWorldY());
   C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();
   if(!view)BrowserResult.Append("null");
   else {
@@ -150,6 +153,78 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_state()
   BrowserResult.Append("}");return BrowserResult.getData();
 }
 
+
+// Lifecycle calls run after the initiating JS call returns, like original Save.
+EMSCRIPTEN_KEEPALIVE int nc_browser_quit()
+{
+  if(!Game.IsRunning)return -1;
+  emscripten_async_call([](void *) { if(Game.IsRunning)Game.Abort(true); },NULL,0);
+  return 1;
+}
+
+// Original full-landscape screenshot path, useful for scenario gallery QA.
+EMSCRIPTEN_KEEPALIVE int nc_browser_overview()
+{
+  if(!Game.IsRunning)return -1;
+  return Game.GraphicsSystem.SaveScreenshot(true)?1:0;
+}
+
+// Native GUI geometry for pointer acceptance tests; no selection or command calls.
+EMSCRIPTEN_KEEPALIVE const char *nc_browser_menus()
+{
+  BrowserResult.Copy("[");bool comma=false;
+  for(C4Player *p=Game.Players.First;p;p=p->Next) {
+    C4Menu *menus[2]={&p->Menu,p->Cursor?p->Cursor->Menu:NULL};
+    for(int kind=0;kind<2;++kind) {
+      C4Menu *menu=menus[kind];if(!menu || !menu->IsActive())continue;
+      C4Viewport *view=Game.GraphicsSystem.GetViewport(p->Number);if(!view)continue;
+      C4Rect viewport=view->GetOutputRect(),r=menu->GetBounds();
+      if(comma)BrowserResult.AppendChar(',');comma=true;
+      BrowserResult.AppendFormat("{\"player\":%d,\"objectMenu\":%s,\"id\":%d,\"selected\":%d,\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"items\":[",p->Number,kind?"true":"false",menu->GetIdentification(),menu->GetSelection(),viewport.x+r.x,viewport.y+r.y,r.Wdt,r.Hgt);
+      for(int i=0;i<menu->GetItemCount();++i) {
+        if(i)BrowserResult.AppendChar(',');C4MenuItem *item=menu->GetItem(i);C4Rect ir=item->GetBounds();int x=0,y=0;item->ClientPos2ScreenPos(x,y);char id[5];GetC4IdText(item->GetC4ID(),id);
+        BrowserResult.AppendFormat("{\"index\":%d,\"id\":",i);JsonString(BrowserResult,id);
+        BrowserResult.AppendFormat(",\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}",x,y,ir.Wdt,ir.Hgt);
+      }
+      BrowserResult.Append("]}");
+    }
+  }
+  BrowserResult.AppendChar(']');return BrowserResult.getData();
+}
+
+EMSCRIPTEN_KEEPALIVE const char *nc_browser_diagnostics()
+{
+  BrowserResult.Format("{\"running\":%s,\"minPlayers\":%d,\"maxPlayers\":%d,\"randomSeed\":%u,\"definitionCount\":%d,\"definitionModules\":",
+    Game.IsRunning?"true":"false",Game.C4S.Head.MinPlayer,Game.Parameters.MaxPlayers,static_cast<unsigned>(Game.Parameters.RandomSeed),Game.Defs.GetDefCount());
+  JsonString(BrowserResult,Game.DefinitionFilenames);
+  BrowserResult.AppendFormat(",\"mouseOwned\":%s,\"players\":[",Game.MouseControl.IsMouseOwned()?"true":"false");
+  bool comma=false;
+  for(C4Player *p=Game.Players.First;p;p=p->Next) {
+    if(comma)BrowserResult.AppendChar(',');comma=true;
+    BrowserResult.AppendFormat("{\"number\":%d,\"team\":%d,\"client\":%d,\"status\":%d,\"local\":%s,\"mouse\":%s,\"profile\":",p->Number,p->Team,p->AtClient,p->Status,p->LocalControl?"true":"false",p->MouseControl?"true":"false");
+    JsonString(BrowserResult,p->Filename);BrowserResult.Append(",\"keys\":[");
+    if(p->Control>=C4P_Control_Keyboard1 && p->Control<=C4P_Control_Keyboard4)
+      for(int k=0;k<C4MaxKey;++k){if(k)BrowserResult.AppendChar(',');JsonString(BrowserResult,C4KeyCodeEx::KeyCode2String(Config.Controls.Keyboard[p->Control][k],true,false).getData());}
+    BrowserResult.Append("]}");
+  }
+  BrowserResult.Append("],\"viewports\":[");comma=false;
+  for(C4Viewport *v=Game.GraphicsSystem.GetFirstViewport();v;v=v->GetNext()) {
+    if(comma)BrowserResult.AppendChar(',');comma=true;C4Rect r=v->GetOutputRect();
+    BrowserResult.AppendFormat("{\"player\":%d,\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d,\"worldX\":%d,\"worldY\":%d,\"zoom\":%.4f}",v->GetPlayer(),r.x,r.y,r.Wdt,r.Hgt,v->ViewX,v->ViewY,static_cast<double>(v->BrowserZoom));
+  }
+  BrowserResult.Append("],\"dialog\":");
+  C4GUI::Dialog *dialog=Game.pGUI?Game.pGUI->GetTopDialog():NULL;
+  if(dialog){C4Rect r=dialog->GetBounds();BrowserResult.Append("{\"id\":");JsonString(BrowserResult,dialog->GetID());BrowserResult.AppendFormat(",\"x\":%d,\"y\":%d,\"width\":%d,\"height\":%d}",r.x,r.y,r.Wdt,r.Hgt);}else BrowserResult.Append("null");
+  BrowserResult.Append(" ,\"goals\":[");comma=false;
+  for(C4ObjectLink *link=Game.Objects.First;link;link=link->Next) {
+    C4Object *o=link->Obj;if(!o || !o->Status || !(o->Category&C4D_Goal))continue;
+    if(comma)BrowserResult.AppendChar(',');comma=true;char id[5];GetC4IdText(o->id,id);
+    BrowserResult.Append("{\"id\":");JsonString(BrowserResult,id);BrowserResult.Append(",\"name\":");JsonString(BrowserResult,o->GetName());
+    BrowserResult.Append(",\"description\":");JsonString(BrowserResult,o->Def?o->Def->GetDesc():NULL);
+    BrowserResult.AppendFormat(",\"fulfilled\":%s}",Game.Evaluated?(Game.RoundResults.GetFulfilledGoals().GetIDCount(o->id)?"true":"false"):"null");
+  }
+  BrowserResult.Append("]}");return BrowserResult.getData();
+}
 EMSCRIPTEN_KEEPALIVE const char *nc_browser_object(int number)
 {
   BrowserResult.Clear();ObjectJson(BrowserResult,Game.IsRunning?Game.Objects.SafeObjectPointer(number):NULL);

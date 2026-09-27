@@ -21,7 +21,7 @@ for raw in (SRC/'Makefile.am').read_text().replace('\\\n',' ').splitlines():
 sources=[]
 for key in ['clonk_SOURCES','libstandard_a_SOURCES','libpng_a_SOURCES','libjpeg_a_SOURCES','libzlib_a_SOURCES','libfreetype_a_SOURCES']:
     sources += [s for s in values[key] if s.endswith(('.c','.cpp')) and s!='standard/gl/glew.c']
-for extra in ['standard/src/StdEmscriptenGL.cpp','engine/src/C4Browser.cpp','engine/src/C4BrowserAudio.cpp','engine/src/C4BrowserSave.cpp']:
+for extra in ['standard/src/StdEmscriptenGL.cpp','engine/src/C4Browser.cpp','engine/src/C4BrowserAudio.cpp','engine/src/C4BrowserSave.cpp','engine/src/C4BrowserNetwork.cpp']:
     if (SRC/extra).exists(): sources.append(extra)
 includes=[PORT/'deps/openssl-1.0.2u/include',BUILD,SRC/'standard',SRC/'standard/inc',SRC/'standard/zlib',SRC/'standard/lpng121',SRC/'standard/jpeglib',SRC/'standard/freetype2',SRC/'engine',SRC/'engine/inc',SRC/'engine/sec']
 common=['-O1','-g1','-DHAVE_CONFIG_H','-DC4ENGINE','-DGLEW_STATIC','-sUSE_SDL=1','-Wno-everything']+[f'-I{p}' for p in includes]
@@ -75,5 +75,8 @@ for filename in ['clonk.wasm','clonk.data','clonk.js']:
     shutil.copy2(link_output/filename,PORT/'dist'/(filename+'.new'))
     (PORT/'dist'/(filename+'.new')).replace(PORT/'dist'/filename)
 shutil.copy2(PORT/'shell/index.html',PORT/'dist/index.html')
-shutil.copy2(PORT/'shell/game.js',PORT/'dist/game.js')
+for script in (PORT/'shell').glob('*.js'):
+    shutil.copy2(script,PORT/'dist'/script.name)
 shutil.copytree(PORT/'shell/assets',PORT/'dist/assets',dirs_exist_ok=True)
+
+subprocess.run(['python3',str(PORT/'scripts/install-library.py')],check=True)

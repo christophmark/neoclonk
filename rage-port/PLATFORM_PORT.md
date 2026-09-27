@@ -74,6 +74,21 @@ QA task.
   and invisible terrain. `scripts/patch-emscripten.py` corrects that dependency
   parser without changing Rage's texture matrices or materials. Run this
   idempotent script after installing a fresh toolchain and before linking.
+- The same patch adds the missing `GL_ADD_SIGNED` texture combiner used by
+  original MOD2 blits, first encountered in Submine. It generates
+  `Arg0 + Arg1 - 0.5`, retains the original RGB scale, and clamps the resulting
+  texture stage after scaling. Its shader-cache key has a distinct sixth
+  combiner value; the original engine's rendering calls remain unchanged.
+- Emscripten's assertion-only filesystem errno message now avoids native
+  `strerror` after runtime exit. The JavaScript filesystem and IndexedDB adapter
+  remain available for one final persistence flush after the original engine
+  saves its config and crew. No native calls are permitted after exit; the
+  browser shell waits for this explicit flush before restarting.
+  `tests/browser-exit.mjs` passed actual Submine startup, native quit and a
+  unique file written immediately before quit appearing in IndexedDB after
+  page reload in Chromium and WebKit (`outputs/exit/report.json` and
+  `outputs/exit-webkit/report.json`, no browser errors). The WebKit run uses
+  `BROWSER=webkit` with software GL; physical iPhone testing remains separate.
 - The same script repairs SDL's missing DOM Pause mapping. Emscripten's headers
   define `SDLK_PAUSE` as scancode 72 with its 1024 mask, while the unpatched JS
   event table passed DOM keycode 19. The mapping lets the original Pause binding
@@ -81,6 +96,30 @@ QA task.
 - The browser graphics test intercepts actual WebGL shader compile/link errors
   and saves both page and unobstructed canvas screenshots. Engine startup alone
   is insufficient to pass it when shaders fail.
+
+## Browser audio resource failures
+
+The SDK patch supplies both Web Audio's decode error callback and its Promise
+rejection handler. One unsupported or corrupt resource is reported once per
+load, pending playback is released, and the resource stays paused. Original
+SDL music polling can then move on; general browser exceptions are not hidden.
+`tests/sdl-audio-decode.mjs` exercises the actual patched dependency with
+callback-only, Promise-only and combined failures, including repeated playback
+and absence of unhandled rejections.
+
+Original WAV and Vorbis playback remains available. MIDI tracks are **not
+synthesized**: a MIDI-only track is silent/skipped by the original playlist's
+playback checks. No original music pack was rewritten or replaced. This is a
+browser audio limitation, not a claim of complete audio-format parity.
+
+## Original content warning baseline
+
+The scenario sweep identified two shipped script warnings in Triton's Path.
+The unchanged official Linux330 executable reproduces both `id` parameter-name
+warnings, the same 44,338-line link summary and successful startup. Exact native
+messages, reproduction command and binary/content hashes are preserved in
+`native-reference/warning-audit/`; these are baseline content warnings, not a
+browser compiler failure. All other script warnings remain subject to review.
 
 ## Responsive viewport and world zoom
 
@@ -120,3 +159,55 @@ centering, and zoom never changes simulation coordinates or timing.
 boundary, verifies the resulting original group, and preserves halt state.
 The HTML host separately flushes IDBFS before confirming a stored save. Startup
 uses the original background, logo, buttons and font; credits remain in the menu.
+
+## Native touch menus
+
+When a viewport has a touch occlusion rectangle, its original object and player
+menus are anchored at the lower left using native GUI `SetPos`. A menu too wide
+to fit beside the pad rises above it on narrow screens. Original GUI bounds and
+hit regions move together; menu contents, selection commands and purchase logic
+are unchanged. Desktop alignment is restored when the touch layout is removed.
+
+Classic keyboard profiles can leave the world mouse associated with the initial
+observer (`NO_OWNER`). Browser GUI taps resolve the local player from the menu's
+original viewport, then enqueue the original select/enter/close commands. This
+also avoids assigning a guest device's inventory taps to player zero.
+
+`tests/browser-touch-menus.mjs` passed real canvas touchscreen purchases at
+390×844 and 896×414. The original FLNT shop purchases reduced wealth from
+50 to 45 to 40. Both native menus fit the viewport at x=8, remained clear of the
+lower-right controls, and produced no browser errors. Screenshots and native GUI
+rectangles are in `outputs/touch-menus/`. The read-only `nc_browser_menus` export
+reports actual screen rectangles using the original GUI coordinate transforms.
+The browser removes the original same-device New Player entry and rejects its
+handler, because multiplayer participation is assigned by the browser room.
+
+## Browser-hosted multiplayer
+
+`C4BrowserNetwork.cpp` adapts original binary `C4Control` batches to an ordered,
+frame-numbered transport, currently a browser-hosted WebRTC data channel. Each
+peer executes the complete original simulation and waits for canonical controls
+at the original frame boundary. Shared scenario/profile bytes, player order and
+seed precede initialization. Original synchronized-script restrictions and the
+original `IsNetworkGame` parameter are enabled; native TCP/UDP are not used.
+
+The production room regression passed original controls, synchronization bytes,
+full terrain hashes and coordinated pause/resume at frame 122 in two independent
+browser contexts with different viewport sizes. See `BROWSER_LOCKSTEP.md` for
+API contracts, packet admission, scope and scenario-specific coverage limits.
+Native and browser Save entry points reject live rooms until coordinated original
+snapshot support is verified; original solo saves remain available.
+
+## Scenario inspection and lifecycle
+
+`nc_browser_diagnostics()` exposes original player limits/seed, loaded definition
+modules/count, player profile paths, key names, teams, all viewports, native dialog
+bounds and existing goal objects. It does not call goal scripts; fulfillment is
+null until the original engine has evaluated the round. `nc_browser_overview()`
+uses the original full-landscape screenshot operation. `nc_browser_quit()` schedules
+the original confirmed abort routine after the initiating browser call returns.
+
+For the complete current browser/compiler patch, run
+`python3 rage-port/scripts/export-patch.py`. The authoritative full patch and file
+hash manifest are `patches/original-to-browser.patch` and `patches/manifest.json`;
+the earlier `browser-platform.patch` is only the initial graphics/platform subset.

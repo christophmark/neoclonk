@@ -1,6 +1,6 @@
 {
   "engine": "webkit",
-  "url": "http://127.0.0.1:3000/",
+  "url": "http://127.0.0.1:3902/",
   "checks": [
     {
       "name": "Original-artwork start menu appears without booting game"
@@ -19,8 +19,8 @@
     },
     {
       "name": "Header Save persists original round and startup Load resumes it",
-      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-122329-1.c4s",
-      "bytes": 71336
+      "path": "/data/home/Savegames.c4f/Neoclonk-20260927-135943-1.c4s",
+      "bytes": 70775
     },
     {
       "name": "Original logo opens menu and Resume returns to the round"
@@ -32,8 +32,8 @@
         "y": 64,
         "width": 390,
         "height": 758,
-        "worldX": 15,
-        "worldY": 57,
+        "worldX": 185,
+        "worldY": 58,
         "worldWidth": 260,
         "worldHeight": 505,
         "zoom": 1.5,
@@ -57,8 +57,8 @@
         "y": 64,
         "width": 896,
         "height": 328,
-        "worldX": -99,
-        "worldY": 147,
+        "worldX": 71,
+        "worldY": 148,
         "worldWidth": 597,
         "worldHeight": 219,
         "zoom": 1.5,

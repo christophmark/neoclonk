@@ -1,0 +1,62 @@
+{
+  "change": "Read-only nc_browser_menus inspector subtracts GUI root offset from item rectangles. No simulation or rendering changes.",
+  "installedAtUtc": "2026-09-27T13:44:20.628691Z",
+  "beforeSha256": "836a132e1e80aac78cf62c134d5d8f093d2427e9398ed11cc91990385e1474ba",
+  "afterSha256": "dce6852d953c9c33b10b1c03f13ea6edcf0c358d57e89b00184355a469d2f3a9",
+  "recordsBefore": [
+    "tutorial.c4f/tutorial01.c4s"
+  ],
+  "overlappingRecord": {
+    "id": "tutorial.c4f/tutorial02.c4s",
+    "possibleHashes": [
+      "836a132e1e80aac78cf62c134d5d8f093d2427e9398ed11cc91990385e1474ba",
+      "dce6852d953c9c33b10b1c03f13ea6edcf0c358d57e89b00184355a469d2f3a9"
+    ],
+    "note": "Startup preceded final link and capture followed it; exact downloaded WASM hash was not observed."
+  },
+  "recordsAfter": [
+    "tutorial.c4f/tutorial03.c4s",
+    "tutorial.c4f/tutorial04.c4s",
+    "tutorial.c4f/tutorial05.c4s",
+    "tutorial.c4f/tutorial06.c4s",
+    "tutorial.c4f/tutorial07.c4s"
+  ],
+  "note": "Initial runner stamped one process-start hash; apply this ledger for its records. Resumed runner records current artifact hash separately at each new case.",
+  "laterChanges": [
+    {
+      "installedAtUtc": "2026-09-27T13:47:50.441780Z",
+      "beforeSha256": "dce6852d953c9c33b10b1c03f13ea6edcf0c358d57e89b00184355a469d2f3a9",
+      "afterSha256": "bb7254a8f2fb27368fd9ba96ebae33ec55239af2c0290f5651c5d8f600a40159",
+      "change": "Browser GUI resolves native menu viewport local owner for taps; browser local NewPlayer menu and unavailable room Save hidden; no physics, terrain, or script changes.",
+      "overlappingRecord": "tutorial.c4f/tutorial08.c4s",
+      "note": "Per-case hash records the file at case start, so overlapping runtime downloads can use either adjacent artifact. Later cases hash the current file."
+    },
+    {
+      "installedAtUtc": "2026-09-27T13:54:33.495111Z",
+      "beforeSha256": "bb7254a8f2fb27368fd9ba96ebae33ec55239af2c0290f5651c5d8f600a40159",
+      "afterSha256": "e9dc511b559cc2f7589e406fe55deaad968594721e1a15be9228f56a7fd2a747",
+      "change": "RTC sessions set original Parameters.IsNetworkGame=true so original sun/lens-flare scripts use their network-safe branch. Solo behavior unaffected.",
+      "note": "Per-case hash and timestamps identify the current artifact; all multiplayer cases occur after this link."
+    },
+    {
+      "installedAtUtc": "2026-09-27T14:04:05.899231Z",
+      "wasmSha256": "e9dc511b559cc2f7589e406fe55deaad968594721e1a15be9228f56a7fd2a747",
+      "clonkJsSha256": "f1a2201469e034cabfe2110da265a3060927348a20126a5f25f90d6d6924834d",
+      "change": "Emscripten JavaScript GL_ADD_SIGNED texture-combiner support; native engine unchanged.",
+      "note": "Current sweep began before this JS-only link. Native binary hash alone cannot distinguish renderer versions; case start times identify cases after the link, and cases spanning it are not assigned a guessed JS hash."
+    },
+    {
+      "installedAtUtc": "2026-09-27T14:07:07.250581Z",
+      "wasmSha256": "e9dc511b559cc2f7589e406fe55deaad968594721e1a15be9228f56a7fd2a747",
+      "clonkJsSha256": "fcac59e6fc57a77ddd1091a0768d68e0b24c2a2f96cb15e08b0ce9af0d593ab3",
+      "change": "SDK JS IDBFS errno construction after native exit no longer calls ended C runtime during final Config/crew flush; engine unchanged."
+    },
+    {
+      "installedAtUtc": "2026-09-27T14:31:16.228573Z",
+      "wasmSha256": "e9dc511b559cc2f7589e406fe55deaad968594721e1a15be9228f56a7fd2a747",
+      "clonkJsSha256": "57067f1f4d58008083bf270cbff4523333acf790f02bdec711da9add394f47f4",
+      "change": "SDK browser audio decode failures handled via callback and Promise; pending failed playback paused so original music poll advances; unsupported MIDI does not cause global runtime failure. No native gameplay changes.",
+      "priorAttemptArchive": "report-before-audio-fix.json"
+    }
+  ]
+}

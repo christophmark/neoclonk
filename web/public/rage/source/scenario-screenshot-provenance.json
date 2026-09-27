@@ -1,0 +1,6477 @@
+[
+  {
+    "id": "tutorial.c4f/tutorial01.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial01.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial01.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        480
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516605,
+      "definitionCount": 351,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 0,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Take the flag into your hut to create a homebase. Then dig out one chunk of gold and take that into your hut as well.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516605,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial02.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial02.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial02.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        480
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516646,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 123,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Use the hot air balloon to reach the sky island on the right and collect the flag. Build loam bridges to get back to your home base.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516646,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial03.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial03.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial03.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        470
+      ],
+      "preview": [
+        640,
+        470
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516679,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 77,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Chop down one tree and cut it down to wood in the sawmill. The wood can be used as firing fuel to process ore into metal.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516679,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial04.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial04.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial04.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        480
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516714,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 63,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Build an elevator and build a mine to the vein of gold. Use flints to blast free chunks of gold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516714,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial05.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial05.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial05.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        480
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516747,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 0,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Use the catapults to fling construction material onto the left hill. Complete the elevator and use it to bring all clonks to the homebase.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516747,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial06.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial06.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial06.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        680,
+        480
+      ],
+      "preview": [
+        640,
+        452
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516783,
+      "definitionCount": 354,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 0,
+          "zoom": 1.9
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Retrieve the crystal and sell it in the homebase.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516783,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial07.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial07.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial07.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        680,
+        480
+      ],
+      "preview": [
+        640,
+        452
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516808,
+      "definitionCount": 353,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 0,
+          "zoom": 1.9
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Retrieve the crystal and sell it in the homebase.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516808,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial08.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial08.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial08.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        800,
+        800
+      ],
+      "preview": [
+        640,
+        640
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516865,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 373,
+          "worldY": 277,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Catch all wipfs and sell them at your homebase.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516865,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial09.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial09.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial09.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        400
+      ],
+      "preview": [
+        640,
+        400
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516894,
+      "definitionCount": 353,
+      "definitionModules": "/data/Objects.c4d;/data/Worlds.c4f\\ArcticOcean.c4s;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 45,
+          "worldY": 0,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Build an igloo and gain 100 points by selling fish that you catch in the sea.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516894,
+    "scriptWarnings": []
+  },
+  {
+    "id": "tutorial.c4f/tutorial10.c4s",
+    "path": "catalog/screenshots/base-tutorial/tutorial__tutorial10.webp",
+    "originalPng": "rage-port/outputs/scenario-library/tutorial__tutorial10.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1280,
+        960
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 1,
+      "randomSeed": 1790516919,
+      "definitionCount": 353,
+      "definitionModules": "/data/Objects.c4d;Tutorial.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 243,
+          "worldY": 294,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Tutorial",
+          "description": "Drain the lava lake to reach the crystal.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516919,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/arcticocean.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__arcticocean.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__arcticocean.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        3000,
+        810
+      ],
+      "preview": [
+        640,
+        173
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790516944,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 157,
+          "worldY": 69,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "OILP",
+          "name": "Oil Production",
+          "description": "All oil needs to be extracted and all oil barrels must be sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516944,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/ashlands.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__ashlands.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__ashlands.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1500,
+        1026
+      ],
+      "preview": [
+        640,
+        438
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790516993,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 0,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        },
+        {
+          "id": "OILP",
+          "name": "Oil Production",
+          "description": "All oil needs to be extracted and all oil barrels must be sold.",
+          "fulfilled": null
+        },
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790516993,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/chasm.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__chasm.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__chasm.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        2100,
+        1940
+      ],
+      "preview": [
+        640,
+        591
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1790517036,
+      "definitionCount": 347,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 219,
+          "worldY": 416,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517036,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/desert.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__desert.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__desert.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1500,
+        1500
+      ],
+      "preview": [
+        640,
+        640
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517092,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 213,
+          "worldY": 434,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "OILP",
+          "name": "Oil Production",
+          "description": "All oil needs to be extracted and all oil barrels must be sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517092,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/foggycliffs.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__foggycliffs.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__foggycliffs.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        2500,
+        700
+      ],
+      "preview": [
+        640,
+        179
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1790517112,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 739,
+          "worldY": 291,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517112,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/goldmine.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__goldmine.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__goldmine.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        800,
+        600
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517144,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 114,
+          "worldY": 112,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517144,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/lavacaves.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__lavacaves.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__lavacaves.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1425,
+        900
+      ],
+      "preview": [
+        640,
+        404
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790517163,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 998,
+          "worldY": 19,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        },
+        {
+          "id": "MNTK",
+          "name": "Monsterkill",
+          "description": "All monsters and monster eggs have to be removed.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517163,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/mountains.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__mountains.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__mountains.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1122,
+        781
+      ],
+      "preview": [
+        640,
+        445
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790517182,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 405,
+          "worldY": 150,
+          "zoom": 1
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "OREM",
+          "name": "Ore Mining",
+          "description": "All ore needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517182,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/outset.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__outset.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__outset.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        800,
+        600
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517201,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 183,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517201,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/skyatoll.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__skyatoll.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__skyatoll.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1930,
+        1280
+      ],
+      "preview": [
+        640,
+        424
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1790517219,
+      "definitionCount": 343,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1503,
+          "worldY": 1017,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517219,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/skyislands.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__skyislands.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__skyislands.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        960,
+        960
+      ],
+      "preview": [
+        640,
+        640
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517246,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 533,
+          "worldY": 262,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517246,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/tropical.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__tropical.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__tropical.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1020,
+        588
+      ],
+      "preview": [
+        640,
+        369
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517267,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 583,
+          "worldY": 134,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517267,
+    "scriptWarnings": []
+  },
+  {
+    "id": "worlds.c4f/watercaves.c4s",
+    "path": "catalog/screenshots/base-worlds/worlds__watercaves.webp",
+    "originalPng": "rage-port/outputs/scenario-library/worlds__watercaves.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        2060,
+        1600
+      ],
+      "preview": [
+        640,
+        497
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1790517288,
+      "definitionCount": 349,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1586,
+          "worldY": 0,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517288,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/treasure.c4s",
+    "path": "catalog/screenshots/base-missions/missions__treasure.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__treasure.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        640,
+        1040
+      ],
+      "preview": [
+        640,
+        1040
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 4,
+      "randomSeed": 1790517369,
+      "definitionCount": 347,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 213,
+          "worldY": 97,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "RMOB",
+          "name": "Find skulls",
+          "description": "The specified objects have to be removed.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517369,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/canyon.c4s",
+    "path": "catalog/screenshots/base-melees/melees__canyon.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__canyon.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 122,
+    "dimensions": {
+      "original": [
+        1440,
+        960
+      ],
+      "preview": [
+        640,
+        427
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1746124010,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 114,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1746124010,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/frontier.c4s",
+    "path": "catalog/screenshots/base-missions/missions__frontier.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__frontier.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1120,
+        640
+      ],
+      "preview": [
+        640,
+        366
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517819,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 337,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "CROB",
+          "name": "Build settlement",
+          "description": "The specified objects have to be created.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517819,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/funnel.c4s",
+    "path": "catalog/screenshots/base-missions/missions__funnel.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__funnel.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        1152,
+        576
+      ],
+      "preview": [
+        640,
+        320
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790517842,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 725,
+          "worldY": 20,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517842,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/high.c4s",
+    "path": "catalog/screenshots/base-missions/missions__high.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__high.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        320,
+        3200
+      ],
+      "preview": [
+        640,
+        6400
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790517865,
+      "definitionCount": 355,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 2822,
+          "zoom": 2
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Rebuild the statue",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517865,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/lastwill.c4s",
+    "path": "catalog/screenshots/base-missions/missions__lastwill.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__lastwill.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        3928,
+        496
+      ],
+      "preview": [
+        640,
+        81
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 3,
+      "randomSeed": 1790517885,
+      "definitionCount": 351,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 90,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "The last will",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517885,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/low.c4s",
+    "path": "catalog/screenshots/base-missions/missions__low.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__low.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1884,
+        1464
+      ],
+      "preview": [
+        640,
+        497
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790517908,
+      "definitionCount": 357,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 1201,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Rebuild the statue",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517908,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/pearls.c4s",
+    "path": "catalog/screenshots/base-missions/missions__pearls.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__pearls.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1000,
+        800
+      ],
+      "preview": [
+        640,
+        512
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 64,
+      "randomSeed": 1790517941,
+      "definitionCount": 347,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 89,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "RMOB",
+          "name": "Pearl diving",
+          "description": "The specified objects have to be removed.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517941,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/rattle.c4s",
+    "path": "catalog/screenshots/base-missions/missions__rattle.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__rattle.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        2240,
+        600
+      ],
+      "preview": [
+        640,
+        171
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 4,
+      "randomSeed": 1790517960,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1813,
+          "worldY": 169,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517960,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/regeneration.c4s",
+    "path": "catalog/screenshots/base-missions/missions__regeneration.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__regeneration.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1440,
+        1440
+      ],
+      "preview": [
+        640,
+        640
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790517980,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 403,
+          "worldY": 576,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "VALG",
+          "name": "Settlement points",
+          "description": "Each player has to gain the indicated number of score points.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790517980,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/rocks.c4s",
+    "path": "catalog/screenshots/base-missions/missions__rocks.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__rocks.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        2340,
+        1200
+      ],
+      "preview": [
+        640,
+        328
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790518004,
+      "definitionCount": 348,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 54,
+          "worldY": 642,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "OREM",
+          "name": "Ore Mining",
+          "description": "All ore needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518004,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/sevenkeys.c4s",
+    "path": "catalog/screenshots/base-missions/missions__sevenkeys.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__sevenkeys.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        3000,
+        2000
+      ],
+      "preview": [
+        640,
+        427
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 25,
+      "randomSeed": 1790518036,
+      "definitionCount": 359,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 537,
+          "worldY": 809,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Seven Keys",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518036,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/skyvillage.c4s",
+    "path": "catalog/screenshots/base-missions/missions__skyvillage.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__skyvillage.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        1480,
+        640
+      ],
+      "preview": [
+        640,
+        277
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790518073,
+      "definitionCount": 348,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 443,
+          "worldY": 368,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "CROB",
+          "name": "Build village",
+          "description": "The specified objects have to be created.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518073,
+    "scriptWarnings": []
+  },
+  {
+    "id": "missions.c4f/submine.c4s",
+    "path": "catalog/screenshots/base-missions/missions__submine.webp",
+    "originalPng": "rage-port/outputs/scenario-library/missions__submine.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        686,
+        1092
+      ],
+      "preview": [
+        640,
+        1019
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 1790518097,
+      "definitionCount": 349,
+      "definitionModules": "/data/Objects.c4d;Missions.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 49,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "_CRM",
+          "name": "Coral Mining",
+          "description": "All corals needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518097,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/castle.c4s",
+    "path": "catalog/screenshots/base-melees/melees__castle.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__castle.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 122,
+    "dimensions": {
+      "original": [
+        1000,
+        800
+      ],
+      "preview": [
+        640,
+        512
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 2,
+      "randomSeed": 2298683924,
+      "definitionCount": 347,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 510,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2298683924,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/clepal.c4s",
+    "path": "catalog/screenshots/base-melees/melees__clepal.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__clepal.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 121,
+    "dimensions": {
+      "original": [
+        1176,
+        618
+      ],
+      "preview": [
+        640,
+        336
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 3856247460,
+      "definitionCount": 347,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 139,
+          "worldY": 215,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 3856247460,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/clifffight.c4s",
+    "path": "catalog/screenshots/base-melees/melees__clifffight.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__clifffight.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 37,
+    "dimensions": {
+      "original": [
+        2600,
+        1330
+      ],
+      "preview": [
+        640,
+        327
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2846340009,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 248,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2846340009,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/greed.c4s",
+    "path": "catalog/screenshots/base-melees/melees__greed.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__greed.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 32,
+    "dimensions": {
+      "original": [
+        2400,
+        700
+      ],
+      "preview": [
+        640,
+        187
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 3594696241,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 38,
+          "worldY": 232,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 3594696241,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/massif.c4s",
+    "path": "catalog/screenshots/base-melees/melees__massif.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__massif.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 38,
+    "dimensions": {
+      "original": [
+        2400,
+        1440
+      ],
+      "preview": [
+        640,
+        384
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1870014374,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 131,
+          "worldY": 76,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1870014374,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/minormelee.c4s",
+    "path": "catalog/screenshots/base-melees/melees__minormelee.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__minormelee.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 32,
+    "dimensions": {
+      "original": [
+        1000,
+        600
+      ],
+      "preview": [
+        640,
+        384
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 3552495010,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 148,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 3552495010,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/mountaincombat.c4s",
+    "path": "catalog/screenshots/base-melees/melees__mountaincombat.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__mountaincombat.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 30,
+    "dimensions": {
+      "original": [
+        1280,
+        890
+      ],
+      "preview": [
+        640,
+        445
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2249179251,
+      "definitionCount": 352,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 439,
+          "worldY": 283,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2249179251,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/sharklake.c4s",
+    "path": "catalog/screenshots/base-melees/melees__sharklake.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__sharklake.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 34,
+    "dimensions": {
+      "original": [
+        1280,
+        600
+      ],
+      "preview": [
+        640,
+        300
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 4,
+      "randomSeed": 306891752,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 52,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 306891752,
+    "scriptWarnings": []
+  },
+  {
+    "id": "melees.c4f/theft.c4s",
+    "path": "catalog/screenshots/base-melees/melees__theft.webp",
+    "originalPng": "rage-port/outputs/scenario-library/melees__theft.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 32,
+    "dimensions": {
+      "original": [
+        1440,
+        960
+      ],
+      "preview": [
+        640,
+        427
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 2,
+      "randomSeed": 8953353,
+      "definitionCount": 346,
+      "definitionModules": "/data/Objects.c4d;Melees.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 129,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 8953353,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/caverace.c4s",
+    "path": "catalog/screenshots/base-races/races__caverace.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__caverace.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        768,
+        2112
+      ],
+      "preview": [
+        640,
+        1760
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790518532,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 1849,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 507,
+        "y": 102,
+        "width": 113,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518532,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/glowingpeak.c4s",
+    "path": "catalog/screenshots/base-races/races__glowingpeak.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__glowingpeak.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 142,
+    "dimensions": {
+      "original": [
+        1800,
+        1800
+      ],
+      "preview": [
+        640,
+        640
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "randomSeed": 1790518566,
+      "definitionCount": 568,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 2,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 687,
+          "worldY": 769,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 512,
+        "y": 102,
+        "width": 108,
+        "height": 55
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518566,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/goldrace.c4s",
+    "path": "catalog/screenshots/base-races/races__goldrace.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__goldrace.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        900,
+        450
+      ],
+      "preview": [
+        640,
+        320
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "randomSeed": 1790518624,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 129,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 503,
+        "y": 102,
+        "width": 117,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518624,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/monsterrescue.c4s",
+    "path": "catalog/screenshots/base-races/races__monsterrescue.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__monsterrescue.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        2250,
+        540
+      ],
+      "preview": [
+        640,
+        154
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "randomSeed": 1790518647,
+      "definitionCount": 445,
+      "definitionModules": "/data/Objects.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 41,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 503,
+        "y": 102,
+        "width": 117,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518647,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/skyrace.c4s",
+    "path": "catalog/screenshots/base-races/races__skyrace.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__skyrace.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        3750,
+        600
+      ],
+      "preview": [
+        640,
+        102
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790518676,
+      "definitionCount": 345,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 154,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 503,
+        "y": 102,
+        "width": 117,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518676,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/wipfrace.c4s",
+    "path": "catalog/screenshots/base-races/races__wipfrace.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__wipfrace.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        3600,
+        900
+      ],
+      "preview": [
+        640,
+        160
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790518733,
+      "definitionCount": 349,
+      "definitionModules": "/data/Objects.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 456,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 503,
+        "y": 102,
+        "width": 117,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790518733,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/camp.c4s",
+    "path": "catalog/screenshots/knights/knights__camp.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__camp.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 38,
+    "dimensions": {
+      "original": [
+        1720,
+        450
+      ],
+      "preview": [
+        640,
+        167
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2555335607,
+      "definitionCount": 472,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 89,
+          "worldY": 88,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2555335607,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/cofut.c4s",
+    "path": "catalog/screenshots/knights/knights__cofut.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__cofut.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 35,
+    "dimensions": {
+      "original": [
+        1440,
+        500
+      ],
+      "preview": [
+        640,
+        222
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 572255859,
+      "definitionCount": 480,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 91,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 572255859,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/dunkelfels.c4s",
+    "path": "catalog/screenshots/knights/knights__dunkelfels.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__dunkelfels.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 38,
+    "dimensions": {
+      "original": [
+        2400,
+        1200
+      ],
+      "preview": [
+        640,
+        320
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 836554472,
+      "definitionCount": 472,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 117,
+          "worldY": 685,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 836554472,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/hammerfest.c4s",
+    "path": "catalog/screenshots/knights/knights__hammerfest.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__hammerfest.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 35,
+    "dimensions": {
+      "original": [
+        1700,
+        650
+      ],
+      "preview": [
+        640,
+        245
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "randomSeed": 730732150,
+      "definitionCount": 484,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 236,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "BDST",
+          "name": "Destruction",
+          "description": "Some buildings have to be destructed. For the destruction you gain money.",
+          "fulfilled": null
+        },
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 730732150,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/kingdoms.c4s",
+    "path": "catalog/screenshots/knights/knights__kingdoms.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__kingdoms.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 36,
+    "dimensions": {
+      "original": [
+        2590,
+        900
+      ],
+      "preview": [
+        640,
+        222
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2152313475,
+      "definitionCount": 479,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 213,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        },
+        {
+          "id": "_KTK",
+          "name": "World dominion",
+          "description": "Only one kingdom may survive! A kingdom is eliminated if the king dies, or if an enemy king sits down on the own throne.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2152313475,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/paxhill.c4s",
+    "path": "catalog/screenshots/knights/knights__paxhill.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__paxhill.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 35,
+    "dimensions": {
+      "original": [
+        1920,
+        664
+      ],
+      "preview": [
+        640,
+        221
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2600795749,
+      "definitionCount": 477,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 60,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        },
+        {
+          "id": "_CTC",
+          "name": "Capture the crown",
+          "description": "You must sell the crown of the enemy, or eliminate all enemies.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2600795749,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/regicide.c4s",
+    "path": "catalog/screenshots/knights/knights__regicide.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__regicide.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 34,
+    "dimensions": {
+      "original": [
+        2100,
+        600
+      ],
+      "preview": [
+        640,
+        183
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 2,
+      "maxPlayers": 8,
+      "randomSeed": 1183790231,
+      "definitionCount": 488,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1673,
+          "worldY": 25,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1183790231,
+    "scriptWarnings": []
+  },
+  {
+    "id": "knights.c4f/tournament.c4s",
+    "path": "catalog/screenshots/knights/knights__tournament.webp",
+    "originalPng": "rage-port/outputs/scenario-library/knights__tournament.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 41,
+    "dimensions": {
+      "original": [
+        1720,
+        450
+      ],
+      "preview": [
+        640,
+        167
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1413239617,
+      "definitionCount": 473,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;/data/Worlds.c4f\\Desert.c4s;Knights.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 61,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1413239617,
+    "scriptWarnings": []
+  },
+  {
+    "id": "farworlds.c4f/arctic.c4s",
+    "path": "catalog/screenshots/farworlds/farworlds__arctic.webp",
+    "originalPng": "rage-port/outputs/scenario-library/farworlds__arctic.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        4500,
+        900
+      ],
+      "preview": [
+        640,
+        128
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790519124,
+      "definitionCount": 411,
+      "definitionModules": "/data/Objects.c4d;/data/FarWorlds.c4d\\Arctic.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 4073,
+          "worldY": 234,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": []
+    },
+    "ready": true,
+    "seed": 1790519124,
+    "scriptWarnings": []
+  },
+  {
+    "id": "farworlds.c4f/deep.c4s",
+    "path": "catalog/screenshots/farworlds/farworlds__deep.webp",
+    "originalPng": "rage-port/outputs/scenario-library/farworlds__deep.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        2788,
+        1700
+      ],
+      "preview": [
+        640,
+        390
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790519158,
+      "definitionCount": 366,
+      "definitionModules": "/data/Objects.c4d;/data/FarWorlds.c4d\\Deep.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 216,
+          "worldY": 454,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "ENGI",
+          "name": "Engineer",
+          "description": "All constructable objects have to be built.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790519158,
+    "scriptWarnings": []
+  },
+  {
+    "id": "farworlds.c4f/jungle.c4s",
+    "path": "catalog/screenshots/farworlds/farworlds__jungle.webp",
+    "originalPng": "rage-port/outputs/scenario-library/farworlds__jungle.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 33,
+    "dimensions": {
+      "original": [
+        2600,
+        1000
+      ],
+      "preview": [
+        640,
+        246
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1468685040,
+      "definitionCount": 378,
+      "definitionModules": "/data/Objects.c4d;/data/FarWorlds.c4d\\Jungle.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 408,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1468685040,
+    "scriptWarnings": []
+  },
+  {
+    "id": "races.c4f/tritonpath.c4s",
+    "path": "catalog/screenshots/base-races/races__tritonpath.webp",
+    "originalPng": "rage-port/outputs/scenario-library/races__tritonpath.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        2700,
+        720
+      ],
+      "preview": [
+        640,
+        171
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 1,
+      "maxPlayers": 12,
+      "randomSeed": 1790519570,
+      "definitionCount": 596,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;/data/Fantasy.c4d;/data/FarWorlds.c4d\\Deep.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 216,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 507,
+        "y": 102,
+        "width": 113,
+        "height": 81
+      },
+      "goals": [
+        {
+          "id": "RACE",
+          "name": "Race",
+          "description": "The first player who reaches the goal wins.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790519570,
+    "scriptWarnings": [],
+    "shippedWarnings": {
+      "count": 2,
+      "messages": [
+        "WARNING: parameter has the same name as type id (in Take, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:83:21)",
+        "WARNING: parameter has the same name as type id (in Put, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:95:20)"
+      ],
+      "baseline": "native-reference/warning-audit/Clonk.log",
+      "nativeVersion": "Official Linux Clonk Rage 4.9.10.7 [330]",
+      "note": "Exact unchanged native warnings reproduced, not new browser warnings."
+    }
+  },
+  {
+    "id": "fantasy.c4f/alchemy.c4s",
+    "path": "catalog/screenshots/fantasy/fantasy__alchemy.webp",
+    "originalPng": "rage-port/outputs/scenario-library/fantasy__alchemy.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1488,
+        1536
+      ],
+      "preview": [
+        640,
+        661
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 8,
+      "randomSeed": 1790519605,
+      "definitionCount": 443,
+      "definitionModules": "/data/Objects.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 142,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "ANHT",
+          "name": "Hunt",
+          "description": "Hunt down all animals, dead or alive! Additionally, all eggs and nests have to be collected and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790519605,
+    "scriptWarnings": []
+  },
+  {
+    "id": "fantasy.c4f/crystalvalley.c4s",
+    "path": "catalog/screenshots/fantasy/fantasy__crystalvalley.webp",
+    "originalPng": "rage-port/outputs/scenario-library/fantasy__crystalvalley.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 31,
+    "dimensions": {
+      "original": [
+        2415,
+        1515
+      ],
+      "preview": [
+        640,
+        401
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 4192775024,
+      "definitionCount": 442,
+      "definitionModules": "/data/Objects.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1181,
+          "worldY": 203,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 4192775024,
+    "scriptWarnings": []
+  },
+  {
+    "id": "fantasy.c4f/drachenfels.c4s",
+    "path": "catalog/screenshots/fantasy/fantasy__drachenfels.webp",
+    "originalPng": "rage-port/outputs/scenario-library/fantasy__drachenfels.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 136,
+    "dimensions": {
+      "original": [
+        2250,
+        1600
+      ],
+      "preview": [
+        640,
+        455
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790519687,
+      "definitionCount": 578,
+      "definitionModules": "/data/Objects.c4d;/data/Knights.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 10,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": true,
+          "profile": "/tmp/ScriptPlr-1.c4p",
+          "keys": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 1057,
+          "zoom": 1
+        }
+      ],
+      "dialog": {
+        "id": "",
+        "x": 391,
+        "y": 283,
+        "width": 179,
+        "height": 76
+      },
+      "goals": []
+    },
+    "ready": true,
+    "seed": 1790519687,
+    "scriptWarnings": []
+  },
+  {
+    "id": "fantasy.c4f/skiesoffire.c4s",
+    "path": "catalog/screenshots/fantasy/fantasy__skiesoffire.webp",
+    "originalPng": "rage-port/outputs/scenario-library/fantasy__skiesoffire.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 31,
+    "dimensions": {
+      "original": [
+        4500,
+        2250
+      ],
+      "preview": [
+        640,
+        320
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 6,
+      "randomSeed": 764154857,
+      "definitionCount": 442,
+      "definitionModules": "/data/Objects.c4d;/data/Fantasy.c4d",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 404,
+          "worldY": 258,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 764154857,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/bankrobbery.c4s",
+    "path": "catalog/screenshots/western/western__bankrobbery.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__bankrobbery.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 37,
+    "dimensions": {
+      "original": [
+        2500,
+        750
+      ],
+      "preview": [
+        640,
+        192
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 229801454,
+      "definitionCount": 623,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 369,
+          "worldY": 487,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 460,
+        "y": 102,
+        "width": 160,
+        "height": 107
+      },
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        },
+        {
+          "id": "BNKR",
+          "name": "Bank Robbery",
+          "description": "The bandits' goal is to steal the money of the townspeople and to deposit it in their secret treasure box. They get the money through destroying the bank. When they have more money than the townspeople, they win.\r\n\r\nThe goal of townspeople and sheriffs is to stop the bandits. On the one hand they have to keep their money balance higher than that of the bandits. On the other hand they have to eliminate the bandits (imprisoned bandits also count as eliminated).",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 229801454,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/capturetheflag.c4s",
+    "path": "catalog/screenshots/western/western__capturetheflag.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__capturetheflag.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 34,
+    "dimensions": {
+      "original": [
+        2000,
+        650
+      ],
+      "preview": [
+        640,
+        208
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 2173545094,
+      "definitionCount": 629,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 29,
+          "worldY": 66,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2173545094,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/deadmansvalley.c4s",
+    "path": "catalog/screenshots/western/western__deadmansvalley.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__deadmansvalley.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 30,
+    "dimensions": {
+      "original": [
+        1500,
+        700
+      ],
+      "preview": [
+        640,
+        299
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 3236720132,
+      "definitionCount": 624,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 261,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": {
+        "id": "Scoreboard",
+        "x": 471,
+        "y": 102,
+        "width": 149,
+        "height": 107
+      },
+      "goals": [
+        {
+          "id": "BKIL",
+          "name": "Duel",
+          "description": "You have to take out a set number of opponents to win.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 3236720132,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/fallingstarspeak.c4s",
+    "path": "catalog/screenshots/western/western__fallingstarspeak.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__fallingstarspeak.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1000,
+        750
+      ],
+      "preview": [
+        640,
+        480
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790519944,
+      "definitionCount": 628,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 483,
+          "worldY": 437,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": []
+    },
+    "ready": true,
+    "seed": 1790519944,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/goldencanyon.c4s",
+    "path": "catalog/screenshots/western/western__goldencanyon.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__goldencanyon.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        1050,
+        1260
+      ],
+      "preview": [
+        640,
+        768
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790519985,
+      "definitionCount": 620,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 623,
+          "worldY": 102,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "GLDM",
+          "name": "Goldmine",
+          "description": "All gold needs to be mined and sold.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790519985,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/goldrush.c4s",
+    "path": "catalog/screenshots/western/western__goldrush.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__goldrush.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        4350,
+        650
+      ],
+      "preview": [
+        640,
+        96
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790520013,
+      "definitionCount": 628,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;/data/Western.c4f\\Misc.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 119,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": []
+    },
+    "ready": true,
+    "seed": 1790520013,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/lasthope.c4s",
+    "path": "catalog/screenshots/western/western__lasthope.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__lasthope.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 112,
+    "dimensions": {
+      "original": [
+        6100,
+        600
+      ],
+      "preview": [
+        640,
+        63
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790520046,
+      "definitionCount": 621,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;/data/Western.c4f\\Misc.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 107,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Game goal",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790520046,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/milestonewoods.c4s",
+    "path": "catalog/screenshots/western/western__milestonewoods.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__milestonewoods.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        2500,
+        890
+      ],
+      "preview": [
+        640,
+        228
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790520080,
+      "definitionCount": 621,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 1483,
+          "worldY": 458,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "SCRG",
+          "name": "Game goal",
+          "description": "The goal is defined by the scenario.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790520080,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/minerscreek.c4s",
+    "path": "catalog/screenshots/western/western__minerscreek.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__minerscreek.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 40,
+    "dimensions": {
+      "original": [
+        2000,
+        600
+      ],
+      "preview": [
+        640,
+        192
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1621644829,
+      "definitionCount": 621,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 46,
+          "worldY": 43,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "BDST",
+          "name": "Destruction",
+          "description": "Some buildings have to be destructed. For the destruction you gain money.",
+          "fulfilled": null
+        },
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1621644829,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/redrockbay.c4s",
+    "path": "catalog/screenshots/western/western__redrockbay.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__redrockbay.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 120,
+    "dimensions": {
+      "original": [
+        2000,
+        800
+      ],
+      "preview": [
+        640,
+        256
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1790520168,
+      "definitionCount": 623,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 0,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/home/players/Browser.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 263,
+          "worldY": 265,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "TSCG",
+          "name": "Connection",
+          "description": "Two telegraph stations need a connection.",
+          "fulfilled": null
+        },
+        {
+          "id": "MONE",
+          "name": "Money Points",
+          "description": "Each player has to gain the indicated number of money points.",
+          "fulfilled": null
+        },
+        {
+          "id": "CROB",
+          "name": "Housing",
+          "description": "The specified buildings have to be built.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1790520168,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/shootthesheriff.c4s",
+    "path": "catalog/screenshots/western/western__shootthesheriff.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__shootthesheriff.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 35,
+    "dimensions": {
+      "original": [
+        1800,
+        600
+      ],
+      "preview": [
+        640,
+        213
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 12,
+      "randomSeed": 1719538566,
+      "definitionCount": 619,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 49,
+          "worldY": 153,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 1719538566,
+    "scriptWarnings": []
+  },
+  {
+    "id": "western.c4f/totemhunt.c4s",
+    "path": "catalog/screenshots/western/western__totemhunt.webp",
+    "originalPng": "rage-port/outputs/scenario-library/western__totemhunt.png",
+    "originalVirtualPath": "/data/home/Screenshots/Screenshot001.png",
+    "frame": 38,
+    "dimensions": {
+      "original": [
+        2040,
+        800
+      ],
+      "preview": [
+        640,
+        251
+      ]
+    },
+    "method": "Original Game.GraphicsSystem.SaveScreenshot(true); Pillow Lanczos resize and WebP compression only",
+    "diagnostics": {
+      "running": true,
+      "minPlayers": 0,
+      "maxPlayers": 13,
+      "randomSeed": 2593843242,
+      "definitionCount": 622,
+      "definitionModules": "/data/Objects.c4d;/data/Western.c4d;/data/Western.c4f\\Misc.c4d;Western.c4f",
+      "mouseOwned": true,
+      "players": [
+        {
+          "number": 0,
+          "team": 1,
+          "client": 0,
+          "status": 1,
+          "local": true,
+          "mouse": false,
+          "profile": "/data/session/Player1.c4p",
+          "keys": [
+            "Q",
+            "W",
+            "E",
+            "A",
+            "S",
+            "D",
+            "Z",
+            "X",
+            "C",
+            "R",
+            "V",
+            "F"
+          ]
+        },
+        {
+          "number": 1,
+          "team": 2,
+          "client": 0,
+          "status": 1,
+          "local": false,
+          "mouse": false,
+          "profile": "/data/session/Player2.c4p",
+          "keys": []
+        }
+      ],
+      "viewports": [
+        {
+          "player": 0,
+          "x": 0,
+          "y": 64,
+          "width": 640,
+          "height": 394,
+          "worldX": 0,
+          "worldY": 318,
+          "zoom": 1.5
+        }
+      ],
+      "dialog": null,
+      "goals": [
+        {
+          "id": "MELE",
+          "name": "Melee",
+          "description": "All players or teams fight each other until only one survivor remains.",
+          "fulfilled": null
+        }
+      ]
+    },
+    "ready": true,
+    "seed": 2593843242,
+    "scriptWarnings": []
+  }
+]

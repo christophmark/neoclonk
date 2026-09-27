@@ -1,0 +1,27 @@
+{
+  "scenario": "Races.c4f/Tritonpath.c4s",
+  "engine": "Unmodified official Clonk Rage 4.9.10.7 [330] linux",
+  "executableSha256": "a242fd21e6415ae0f4ba26fa37b32fb066cc88f49c6a80d4c6e2da39f8f85bc7",
+  "scenarioPackSha256": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72",
+  "warnings": [
+    "[16:22:05] WARNING: parameter has the same name as type id (in Take, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:83:21)",
+    "[16:22:05] WARNING: parameter has the same name as type id (in Put, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:95:20)"
+  ],
+  "scriptLink": "[16:22:06] C4AulScriptEngine linked - 44338 lines, 2 warnings, 0 errors",
+  "gameStarted": true,
+  "sourceModified": false,
+  "nativeLog": "Clonk.log",
+  "files": {
+    "clonk64": "a242fd21e6415ae0f4ba26fa37b32fb066cc88f49c6a80d4c6e2da39f8f85bc7",
+    "Races.c4f": "00c15cad12daa4e99b537735e0d41fa3bf33eeaec6c30662ba4aeb08637b0e72",
+    "Objects.c4d": "ded9762fcfb36d551f341ba88b266e18190a08560cdfaaffbf1ffc60aafd6347",
+    "Knights.c4d": "c98d486d771d7860014d0d0e38d05c847202a57506e9dc8d10932c662128ec87",
+    "Fantasy.c4d": "7e8fe792abdaaec166df717cf5d4397b46f535f0a650e83cf76bb589397c575c",
+    "FarWorlds.c4d": "3819609536d86f4a8717172784e5fd79a661a9f9e79a9e71b1050a3c67eeca51",
+    "System.c4g": "2a73c38864b533b39e4d74ee210a9efa9cbcb9777ee0b444add5162de8fc3003"
+  },
+  "command": "DISPLAY=:94 LIBGL_ALWAYS_SOFTWARE=1 SDL_AUDIODRIVER=dummy LD_LIBRARY_PATH=../libs/usr/lib/x86_64-linux-gnu:../libs/lib/x86_64-linux-gnu ./clonk64 /config:$PWD/reference.cfg /fullscreen /nosplash Reference.c4p Races.c4f/Tritonpath.c4s",
+  "workingDirectory": "native-reference/warning-audit",
+  "classification": "Two shipped content warnings, reproduced by the original native engine; no browser-port-specific script warning.",
+  "sourceExplanation": "Take(id, pClonk, bRight) and Put(id, pClonk, bRight) name a parameter id, which is also an original script type name."
+}

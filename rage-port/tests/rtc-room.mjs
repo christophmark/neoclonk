@@ -1,0 +1,35 @@
+// Exercise production lobby, manual SDP pairing and actual reliable WebRTC.
+import {chromium,webkit} from '../../web/node_modules/playwright/index.mjs';
+import {mkdir,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const out=process.env.RTC_OUT||'rage-port/outputs/rtc-room';await mkdir(out,{recursive:true});
+const base=process.env.GAME_URL||'http://127.0.0.1:3902',scenario=process.env.RTC_SCENARIO||'worlds.c4f/goldmine.c4s';
+const browser=await chromium.launch({executablePath:'/opt/google/chrome/chrome',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--disable-dev-shm-usage']});
+const guestEngine=process.env.RTC_GUEST_BROWSER||'chromium';
+assert.ok(['chromium','webkit'].includes(guestEngine));
+let guestBrowser=browser;
+const pages=[],report={scenario,hostEngine:'chromium',guestEngine,errors:[],checkpoints:[],capabilities:[]};
+const room=page=>page.evaluate(()=>window.__neoclonkMultiplayer.getState());
+const state=page=>page.evaluate(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])));
+async function ownership(){for(let i=0;i<pages.length;i++){const s=await state(pages[i]),locals=s.players.filter(p=>p.local);assert.deepEqual(locals.map(p=>p.number),[i],'Each device must keep exactly its own local player, including after team selection');const d=await pages[i].evaluate(()=>JSON.parse(Module.ccall('nc_browser_diagnostics','string',[],[])));assert.equal(d.viewports.length,1,'Only one local viewport per device');}}
+try{
+ if(guestEngine==='webkit')guestBrowser=await webkit.launch({headless:true,env:{...process.env,LIBGL_ALWAYS_SOFTWARE:'1'}});
+ for(let i=0;i<2;i++){const context=await(i?guestBrowser:browser).newContext({viewport:i?{width:896,height:414}:{width:1280,height:800}}),page=await context.newPage();pages.push(page);page.on('console',m=>{if(m.text().includes('[Clonk]')||m.text().includes('[room]'))console.log('player',i,m.text());});page.on('pageerror',e=>report.errors.push({player:i,error:String(e)}));await page.goto(base);await page.waitForFunction(()=>window.__scenarioGallery?.getCatalog());const capability=await page.evaluate(()=>({peerConnection:typeof RTCPeerConnection==='function',secureContext:isSecureContext}));report.capabilities.push(capability);assert.ok(capability.peerConnection,'Browser test environment must expose RTCPeerConnection');}
+ console.log('gallery ready');const [host,guest]=pages;await host.evaluate(id=>window.__neoclonkMultiplayer.host(id),scenario);await host.locator('#room-name').fill('Host');await host.locator('#room-name').dispatchEvent('change');await host.locator('#room-create-invite').click();await host.waitForFunction(()=>document.getElementById('invite-output').value.length>20);const offer=await host.locator('#invite-output').inputValue();
+ await guest.locator('#join-room').click();await guest.locator('#room-name').fill('Guest');await guest.locator('#room-name').dispatchEvent('change');await guest.locator('#invite-input').fill(offer);await guest.locator('#room-create-answer').click();await guest.waitForFunction(()=>document.getElementById('answer-output').value.length>20);const answer=await guest.locator('#answer-output').inputValue();await host.locator('#answer-input').fill(answer);await host.locator('#room-add-guest').click();
+ for(const page of pages)await page.waitForFunction(()=>document.querySelectorAll('#room-players li').length===2);
+ console.log('paired');for(const page of pages)await page.locator('#room-ready').check();await host.waitForFunction(()=>!document.getElementById('room-start').disabled);await host.locator('#room-start').click();
+ for(const page of pages)await page.waitForFunction(()=>window.__neoclonkMultiplayer.getState()?.error||window.__neoclonkMultiplayer.getState()?.frame>=5,null,{timeout:150000});
+ for(let i=0;i<2;i++){const r=await room(pages[i]);assert.equal(r.error,null);report.checkpoints.push({stage:'started',player:i,room:r,state:await state(pages[i])});}
+ if(process.env.RTC_TEAMS==='1'){for(let i=0;i<2;i++){const page=pages[i];await page.waitForFunction(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).players.some(p=>p.local&&(p.menu||p.cursor)),null,{timeout:30000});const s=await state(page),local=s.players.find(p=>p.local);if(!local.cursor){if(i)await page.evaluate(()=>window.__rageBrowser.tap('KeyC'));await page.waitForTimeout(120);await page.evaluate(()=>window.__rageBrowser.tap('KeyA'));await page.waitForFunction(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).players.some(p=>p.local&&p.cursor),null,{timeout:30000});}}report.teams=await Promise.all(pages.map(state));}
+ await ownership();
+ const beforeGuest=(await state(guest)).players[1];await guest.evaluate(()=>window.__rageBrowser.tap('KeyC'));const inputFrame=(await room(guest)).frame;await guest.waitForFunction(f=>window.__neoclonkMultiplayer.getState().frame>=f+3,inputFrame);const afterGuest=(await state(guest)).players[1];report.guestControl={before:beforeGuest,after:afterGuest};assert.notEqual(afterGuest.lastCommand,beforeGuest.lastCommand,'Guest input must reach its own original player');
+ for(const page of pages)await page.evaluate(()=>window.__rageBrowser.tap('KeyD'));
+ await host.waitForFunction(()=>window.__neoclonkMultiplayer.getState()?.error||window.__neoclonkMultiplayer.getState()?.lastVerifiedFrame>=120,null,{timeout:90000});assert.equal((await room(host)).error,null);
+ await guest.evaluate(()=>window.__rageBrowser.openMenu());await host.waitForFunction(()=>window.__neoclonkMultiplayer.getState().paused);await new Promise(r=>setTimeout(r,150));
+ const frozen=await room(host);await new Promise(r=>setTimeout(r,250));assert.equal((await room(host)).frame,frozen.frame);const sync=await Promise.all(pages.map(p=>p.evaluate(()=>{const ptr=Module.ccall('nc_browser_net_sync','number',[],[]),size=Module.ccall('nc_browser_net_size','number',[],[]);return {sync:Array.from(Module.HEAPU8.slice(ptr,ptr+size)),terrain:Module.ccall('nc_browser_landscape_hash','number',[],[])};})));assert.deepEqual(sync[0],sync[1]);report.sync=sync;report.pauseFrame=frozen.frame;
+ await guest.locator('#start').click();await host.waitForFunction(f=>window.__neoclonkMultiplayer.getState().frame>f+10,frozen.frame);for(let i=0;i<2;i++){report.checkpoints.push({stage:'resumed',player:i,room:await room(pages[i]),state:await state(pages[i])});await pages[i].screenshot({path:`${out}/player-${i}.png`});}
+ await ownership();assert.equal(report.errors.length,0);report.passed=true;
+}catch(error){report.failure=String(error);report.stack=error.stack;console.error(error);process.exitCode=1;}
+finally{for(let i=0;i<pages.length;i++){try{report['player'+i]={room:await room(pages[i]),shell:await pages[i].evaluate(()=>window.__rageBrowser.getState()),lobbyStatus:await pages[i].locator('#room-status').textContent()};}catch{}}await writeFile(out+'/report.json',JSON.stringify(report,null,2));if(guestBrowser!==browser)await guestBrowser.close();await browser.close();}
+console.log(JSON.stringify({passed:report.passed,failure:report.failure,pauseFrame:report.pauseFrame}));

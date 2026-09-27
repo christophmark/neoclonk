@@ -1,0 +1,59 @@
+[16:22:02] Command line: 
+[16:22:02] "/config:/home/user/projects/neoclonk/native-reference/warning-audit/reference.cfg" "/fullscreen" "/nosplash" "Reference.c4p" "Races.c4f/Tritonpath.c4s" ""
+[16:22:02] Clonk Rage 
+[16:22:02] Version: 4.9.10.7 [330]  linux
+[16:22:02] No valid key file found.
+[16:22:02]   Using OpenGL...
+[16:22:02]   gl: No Display mode found; leaving current!
+[16:22:02] No Gamepad found
+[16:22:02] Loading graphics...
+[16:22:02] SDL_mixer runtime version is 1.2.12 (compiled with 1.2.8)
+[16:22:02] Scenario: Races.c4f/Tritonpath.c4s
+[16:22:02] Scenario uses specified object definitions.
+[16:22:02] Loading extras...
+[16:22:03] Loading graphics...
+[16:22:03] Loading object definitions:
+[16:22:03] Objects.c4d...
+[16:22:04]    345 definitions loaded.
+[16:22:04] Knights.c4d...
+[16:22:04]    126 definitions loaded.
+[16:22:04] Fantasy.c4d...
+[16:22:05]    97 definitions loaded.
+[16:22:05] Deep.c4d...
+[16:22:05]    23 definitions loaded.
+[16:22:05] Tritonpath.c4s...
+[16:22:05] WARNING: parameter has the same name as type id (in Take, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:83:21)
+[16:22:05] WARNING: parameter has the same name as type id (in Put, Races.c4f/Tritonpath.c4s/Hippo.c4d/HippoSaddled.c4d/Script.c:95:20)
+[16:22:05]    8 definitions loaded.
+[16:22:06] C4AulScriptEngine linked - 44338 lines, 2 warnings, 0 errors
+[16:22:06] Texture table holds 45 entries.
+[16:22:06] 25 textures loaded.
+[16:22:06] 24 materials loaded.
+[16:22:07] Creating landscape...
+[16:22:08] 176 objects positioned.
+[16:22:08] Placing environment objects...
+[16:22:08] Network: Synchronization (Frame 0) [PlrSave: 0]
+[16:22:08] Game started.
+[16:22:08] Player join: Reference
+4.9.10.7 [330] : Caught signal SIGTERM
+./clonk64() [0x5cab80]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x45cb0) [0x790362445cb0]
+./clonk64() [0x412310]
+./clonk64() [0x4137fd]
+./clonk64() [0x5815ec]
+./clonk64() [0x500f70]
+./clonk64() [0x516f51]
+./clonk64() [0x469ce5]
+./clonk64() [0x46a074]
+./clonk64() [0x45051d]
+./clonk64() [0x51bed6]
+./clonk64() [0x51c32c]
+./clonk64() [0x467079]
+./clonk64() [0x46ef59]
+./clonk64() [0x410f0d]
+./clonk64() [0x62b6ab]
+./clonk64() [0x62b72c]
+./clonk64() [0x5caa4d]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x2a601) [0x79036242a601]
+/usr/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x88) [0x79036242a718]
+./clonk64() [0x40f749]

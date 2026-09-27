@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpvwu71kv8.js
+// include: /tmp/tmplztq84fn.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,21 +217,21 @@ Module['FS_createPath']("/data", "verification", true, true);
 
   })();
 
-// end include: /tmp/tmpvwu71kv8.js
-// include: /tmp/tmp5flgaivv.js
+// end include: /tmp/tmplztq84fn.js
+// include: /tmp/tmpp9h7t25k.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmp5flgaivv.js
-// include: /tmp/tmpaveiytsk.js
+  // end include: /tmp/tmpp9h7t25k.js
+// include: /tmp/tmpcd104k6p.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpaveiytsk.js
+  // end include: /tmp/tmpcd104k6p.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -3303,6 +3303,7 @@ function dbg(...args) {
         if (!SDL.webAudioAvailable()) return;
         try {
           var webAudio = audio.resource.webAudio;
+          if (webAudio.decodeFailed) { audio.paused = true; return; }
           audio.paused = false;
           if (!webAudio.decodedBuffer) {
             if (webAudio.onDecodeComplete === undefined) {
@@ -4886,7 +4887,7 @@ function dbg(...args) {
         // the test `err instanceof FS.ErrnoError` won't detect an error coming from another filesystem, causing bugs.
         // we'll use the reliable test `err.name == "ErrnoError"` instead
         constructor(errno) {
-          super(runtimeInitialized ? strError(errno) : '');
+          super(runtimeInitialized && !runtimeExited ? strError(errno) : '');
           this.errno = errno;
           for (var key in ERRNO_CODES) {
             if (ERRNO_CODES[key] === errno) {
@@ -6560,14 +6561,23 @@ function dbg(...args) {
           // is complete, which will then start the playback (with some delay).
           onDecodeComplete: [], // While this member array exists, decoding hasn't finished yet.
         }
-        SDL.audioContext['decodeAudioData'](arrayBuffer, (data) => {
+        var onDecodeFailure = (error) => {
+          if (webAudio.decodeFailed) return; // callback and Promise can both report it
+          webAudio.decodeFailed = true;
+          err('[audio] Resource could not be decoded: ' + (filename || 'memory buffer') + ': ' + error);
+          var pending = webAudio.onDecodeComplete || [];
+          delete webAudio.onDecodeComplete;
+          pending.forEach((callback) => callback());
+        };
+        var decodePromise = SDL.audioContext['decodeAudioData'](arrayBuffer, (data) => {
           webAudio.decodedBuffer = data;
           // Call all handlers that were waiting for this decode to finish, and
           // clear the handler list.
           webAudio.onDecodeComplete.forEach((e) => e());
           // Don't allow more callback handlers since audio has finished decoding.
           delete webAudio.onDecodeComplete;
-        });
+        }, onDecodeFailure);
+        if (decodePromise) decodePromise.catch(onDecodeFailure);
       } else if (audio === undefined && bytes) {
         // Here, we didn't find a preloaded audio but we either were passed a
         // filepath for which we loaded bytes, or we were passed some bytes
@@ -10880,6 +10890,7 @@ function dbg(...args) {
         //var GL_ADD         = 0x104;
         //var GL_REPLACE     = 0x1E01;
         //var GL_MODULATE    = 0x2100;
+        var GL_ADD_SIGNED  = 0x8574; // Rage MOD2 fixed-function blits
         var GL_SUBTRACT    = 0x84E7;
         var GL_INTERPOLATE = 0x8575;
   
@@ -11061,6 +11072,7 @@ function dbg(...args) {
             // additional color and alpha combiners
             0x84E7 /* GL_SUBTRACT */: 3,
             0x8575 /* GL_INTERPOLATE */: 4,
+            0x8574 /* GL_ADD_SIGNED */: 5,
   
             // color and alpha src
             0x1702 /* GL_TEXTURE */: 0,
@@ -11083,10 +11095,10 @@ function dbg(...args) {
   
           this.computeKey0 = function() {
             var k = this.traverseKey;
-            var key = k[this.mode] * 1638400; // 6 distinct values.
-            key += k[this.colorCombiner] * 327680; // 5 distinct values.
-            key += k[this.alphaCombiner] * 65536; // 5 distinct values.
-            // The above three fields have 6*5*5=150 distinct values -> 8 bits.
+            var key = k[this.mode] * 2359296; // 6 distinct values.
+            key += k[this.colorCombiner] * 393216; // 6 distinct values.
+            key += k[this.alphaCombiner] * 65536; // 6 distinct values.
+            // The above three fields have 6*6*6=216 distinct values -> 8 bits.
             key += (this.colorScale-1) * 16384; // 10 bits used.
             key += (this.alphaScale-1) * 4096; // 12 bits used.
             key += k[this.colorSrc[0]] * 1024; // 14
@@ -11313,7 +11325,9 @@ function dbg(...args) {
                   ")",
                 ";",
               ].join("");
-              return [].concat(colorLines, alphaLines, [line]);
+              // OpenGL clamps each texture combine result after its RGB/alpha scale.
+              return [].concat(colorLines, alphaLines, [line,
+                passOutputVar + " = clamp(" + passOutputVar + ", 0.0, 1.0);"]);
             }
           }
   
@@ -11332,6 +11346,7 @@ function dbg(...args) {
   
             case GL_MODULATE:
             case GL_ADD:
+            case GL_ADD_SIGNED:
             case GL_SUBTRACT:
               argsNeeded = 2;
               break;
@@ -11375,6 +11390,10 @@ function dbg(...args) {
             }
             case GL_ADD: {
               lines = [`${outputType} ${outputVar} = ${src0Expr} + ${src1Expr};`]
+              break;
+            }
+            case GL_ADD_SIGNED: {
+              lines = [`${outputType} ${outputVar} = ${src0Expr} + ${src1Expr} - 0.5;`];
               break;
             }
             case GL_SUBTRACT: {
@@ -15855,6 +15874,10 @@ var _htons = createExportWrapper('htons', 1);
 var _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
 var _nc_browser_view = Module['_nc_browser_view'] = createExportWrapper('nc_browser_view', 7);
 var _nc_browser_state = Module['_nc_browser_state'] = createExportWrapper('nc_browser_state', 0);
+var _nc_browser_quit = Module['_nc_browser_quit'] = createExportWrapper('nc_browser_quit', 0);
+var _nc_browser_overview = Module['_nc_browser_overview'] = createExportWrapper('nc_browser_overview', 0);
+var _nc_browser_menus = Module['_nc_browser_menus'] = createExportWrapper('nc_browser_menus', 0);
+var _nc_browser_diagnostics = Module['_nc_browser_diagnostics'] = createExportWrapper('nc_browser_diagnostics', 0);
 var _nc_browser_object = Module['_nc_browser_object'] = createExportWrapper('nc_browser_object', 1);
 var _nc_browser_objects = Module['_nc_browser_objects'] = createExportWrapper('nc_browser_objects', 3);
 var _nc_browser_material = Module['_nc_browser_material'] = createExportWrapper('nc_browser_material', 2);
@@ -15867,6 +15890,14 @@ var _nc_browser_pause = Module['_nc_browser_pause'] = createExportWrapper('nc_br
 var _nc_browser_step = Module['_nc_browser_step'] = createExportWrapper('nc_browser_step', 1);
 var _nc_browser_save = Module['_nc_browser_save'] = createExportWrapper('nc_browser_save', 0);
 var _nc_browser_save_status = Module['_nc_browser_save_status'] = createExportWrapper('nc_browser_save_status', 0);
+var _nc_browser_net_configure = Module['_nc_browser_net_configure'] = createExportWrapper('nc_browser_net_configure', 3);
+var _nc_browser_net_size = Module['_nc_browser_net_size'] = createExportWrapper('nc_browser_net_size', 0);
+var _nc_browser_net_drain = Module['_nc_browser_net_drain'] = createExportWrapper('nc_browser_net_drain', 0);
+var _nc_browser_net_admit = Module['_nc_browser_net_admit'] = createExportWrapper('nc_browser_net_admit', 3);
+var _nc_browser_net_build = Module['_nc_browser_net_build'] = createExportWrapper('nc_browser_net_build', 1);
+var _nc_browser_net_accept = Module['_nc_browser_net_accept'] = createExportWrapper('nc_browser_net_accept', 3);
+var _nc_browser_net_sync = Module['_nc_browser_net_sync'] = createExportWrapper('nc_browser_net_sync', 0);
+var _nc_browser_net_status = Module['_nc_browser_net_status'] = createExportWrapper('nc_browser_net_status', 0);
 var _strerror = createExportWrapper('strerror', 1);
 var ___funcs_on_exit = createExportWrapper('__funcs_on_exit', 0);
 var _ntohs = createExportWrapper('ntohs', 1);
