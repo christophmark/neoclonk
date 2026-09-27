@@ -1,0 +1,58 @@
+{
+  "description": "Three portrait crops of original-engine gameplay captures, arranged side by side with scenario labels.",
+  "attribution": "Clonk Rage content © RedWolf Design / Matthes Bender and contributors. CC BY-NC 4.0.",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "captureMethod": "Original Game.GraphicsSystem.SaveScreenshot(true), rendered in the browser port.",
+  "composition": "node tools/render-readme-collage.mjs",
+  "dimensions": [
+    1200,
+    600
+  ],
+  "panels": [
+    {
+      "title": "Arctic",
+      "id": "farworlds.c4f/arctic.c4s",
+      "file": "farworlds__arctic.png",
+      "width": 4500,
+      "height": 900,
+      "crop": [
+        1050,
+        0,
+        600,
+        900
+      ],
+      "source": "rage-port/outputs/scenario-library/farworlds__arctic.png",
+      "sha256": "2ca765ca397ab4c9e691c1606992ca3121a67c31160871d232389c0b65bb49b1"
+    },
+    {
+      "title": "Gold Rush",
+      "id": "western.c4f/goldrush.c4s",
+      "file": "western__goldrush.png",
+      "width": 4350,
+      "height": 650,
+      "crop": [
+        1030,
+        0,
+        433.333333,
+        650
+      ],
+      "source": "rage-port/outputs/scenario-library/western__goldrush.png",
+      "sha256": "7b200cb9060d16d181e8752ed79281658d8db291f55944c38ac2eeaa756824ec"
+    },
+    {
+      "title": "Jungle",
+      "id": "farworlds.c4f/jungle.c4s",
+      "file": "farworlds__jungle.png",
+      "width": 2600,
+      "height": 1000,
+      "crop": [
+        1220,
+        0,
+        600,
+        900
+      ],
+      "source": "rage-port/outputs/scenario-library/farworlds__jungle.png",
+      "sha256": "bcf3f59d9c36d4001c7e3eded8d7e4a61fcc11c6f29f4f7b1cb880d87383c3f3"
+    }
+  ]
+}

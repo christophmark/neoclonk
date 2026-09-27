@@ -9,8 +9,8 @@
       "sha256": "4016f9cbe1186439969dc85c3ee8bfba38d35e7b2f6ed7b17d8b1fcfba8336d5"
     },
     "README.md": {
-      "bytes": 12318,
-      "sha256": "b9ad53d16283e4bc14ef96f6d3ca2e933a2369b0ba4a4f499dd8ba2c2cc795d8"
+      "bytes": 9700,
+      "sha256": "5922928bf1dc00625946add27f466799254a97e4bf9fd7bfc48fe3ffbb6457de"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5821,8 +5821,8 @@
       "sha256": "d28dda6ef19c49ab0bb4ba0c376438b4658870ce7936a5b38d45bf21aebcf669"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 12318,
-      "sha256": "b9ad53d16283e4bc14ef96f6d3ca2e933a2369b0ba4a4f499dd8ba2c2cc795d8"
+      "bytes": 9700,
+      "sha256": "5922928bf1dc00625946add27f466799254a97e4bf9fd7bfc48fe3ffbb6457de"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -5831,6 +5831,14 @@
     "docs/ORIGINAL_GAMEPLAY_AUDIT.md": {
       "bytes": 26534,
       "sha256": "b338e3a7d4f81c0750de2397ef0f0ee4e5f7861b822683d7100d9a1ad4ba206f"
+    },
+    "docs/images/scenarios.png": {
+      "bytes": 1056866,
+      "sha256": "fe117d3f944ddd61a68b30544a27c60147aed8e7614883ffc3bb116770f0aac7"
+    },
+    "docs/images/scenarios.provenance.json": {
+      "bytes": 1705,
+      "sha256": "8a4ca5be5c5a6942bc48f1efd69dcd79a39923cdae6644b70ff48f2571ec835b"
     },
     "lobby-service/.env.example": {
       "bytes": 866,
@@ -12951,6 +12959,10 @@
     "tools/publish-lan.py": {
       "bytes": 825,
       "sha256": "821267b2c1979120d546363b71003fea6e7ad5fcb7961c044ef329a4b06ec359"
+    },
+    "tools/render-readme-collage.mjs": {
+      "bytes": 3487,
+      "sha256": "172415f016d21356073243891fdc1cf0321a7d5aabbe0c28f15b60cd7418952f"
     },
     "tools/sync-github-source.py": {
       "bytes": 4462,
