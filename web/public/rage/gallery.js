@@ -33,13 +33,18 @@
   const first=paragraphs[0]||description;$('title').textContent=scenario.title;$('intro').textContent=first.length>245?first.slice(0,240).replace(/\s+\S*$/,'')+'…':first;
   $('scenario-full-description').textContent=description;$('scenario-story').open=false;
   $('scenario-players').textContent=players(scenario);$('scenario-requirements').textContent=requirements(scenario);
-  const state=gameState(),solo=(Number(scenario.minPlayers)||1)<=1;
-  if(!state.ready&&!['error','ended'].includes(state.phase)){$('start').textContent=solo?'Play solo':'Host game';$('start').setAttribute('aria-label',`${solo?'Play solo':'Host game'}: ${scenario.title}`);}
-  $('host-room').hidden=!solo||(Number(scenario.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${scenario.title} with friends`);
-  if(state.ready||state.phase==='ended'){$('new-game').textContent=solo?'Play selected scenario':'Host selected scenario';$('new-game').setAttribute('aria-label',`${solo?'Play':'Host'} ${scenario.title}`);}
+  updateActions();
   try{localStorage.setItem('neoclonk.selectedScenario',scenario.id);}catch{/* Selection remains usable without storage. */}
   if(notify)window.dispatchEvent(new CustomEvent('scenario-select',{detail:{id:scenario.id,scenario}}));
   return true;
+ }
+ function updateActions(){
+  if(!selected)return;
+  const state=gameState(),solo=(Number(selected.minPlayers)||1)<=1,same=state.ready&&state.scenarioId===selected.id;
+  const primary=same?'Resume game':solo?'Play selected scenario':'Host selected scenario';
+  $('start').hidden=false;$('start').disabled=['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
+  $('new-game').hidden=!state.ready;$('new-game').textContent=same?'Restart scenario':'Resume current game';$('new-game').setAttribute('aria-label',same?`Restart ${selected.title}`:'Resume current game');
+  $('host-room').hidden=!solo||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);
  }
  function updateArrows(record){const {track,previous,next}=record;previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-2;}
  function makeTile(scenario,index){
@@ -91,5 +96,5 @@
    if(requested)select(requested);root.setAttribute('aria-busy','false');window.dispatchEvent(new CustomEvent('scenario-catalog-ready',{detail:{catalog}}));return catalog;
   }catch(error){root.replaceChildren();const message=document.createElement('p');message.className='catalog-loading';message.textContent='The scenario library could not load. Reload to try again.';root.append(message);root.setAttribute('aria-busy','false');$('catalog-summary').textContent='';console.error('[gallery]',error);return null;}
  }
- window.__scenarioGallery={getSelected:()=>selected,select,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();
+ window.__scenarioGallery={getSelected:()=>selected,select,updateActions,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();
 })();

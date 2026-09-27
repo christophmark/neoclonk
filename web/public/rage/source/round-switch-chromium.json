@@ -1,0 +1,14 @@
+{
+  "engine": "chromium",
+  "checks": [
+    "Raised touch controls clear action strip and header targets do not overlap",
+    "Cancel preserves current round; explicit Resume and Exit work",
+    "Failed save keeps original round open",
+    "Save and start persists old scenario and starts selected scenario",
+    "Exit without saving returns to clean main menu",
+    "Saved original round remains loadable",
+    "Save and exit persists round before returning to menu"
+  ],
+  "errors": [],
+  "passed": true
+}

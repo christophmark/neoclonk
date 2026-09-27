@@ -67,10 +67,10 @@
    if(module.ccall('nc_browser_net_configure','number',['number','number','number'],[session.seed,session.localPlayerIndex,session.players.length])!==1)throw Error('Could not prepare the original multiplayer session.');}
   knownSaves=new Set(listSavedGames());refreshSavedGames();if(persistenceMounted){syncTimer=setInterval(()=>syncSaves(),15000);setTimeout(()=>syncSaves(),0);}
  }catch(error){fail('Could not prepare the local player: '+(error.message||error.errno));throw error;}}
- async function saveGame(){if(!ready||saveBusy||session)return;saveBusy=true;clearTimeout(saveFeedbackTimer);const button=$('game-save'),feedback=$('save-feedback');button.disabled=true;button.textContent='Saving…';feedback.hidden=false;feedback.textContent='Saving round…';
+ async function saveGame(){if(!ready||saveBusy||session)return false;saveBusy=true;clearTimeout(saveFeedbackTimer);const button=$('game-save'),feedback=$('save-feedback');button.disabled=true;button.textContent='Saving…';feedback.hidden=false;feedback.textContent='Saving round…';
   try{const id=window.Module.ccall('nc_browser_save','number',[],[]);if(id<1)throw Error('Saving is unavailable right now.');const result=await new Promise((resolve,reject)=>{const timer=setInterval(()=>{if(exited){clearInterval(timer);reject(Error('The round ended before saving finished.'));return;}try{const result=JSON.parse(window.Module.ccall('nc_browser_save_status','string',[],[]));if(result.requestId!==id)return;if(result.status==='saved'){clearInterval(timer);resolve(result);}else if(result.status==='error'){clearInterval(timer);reject(Error(result.error||'Could not save this round.'));}}catch(error){clearInterval(timer);reject(error);}},80);});
-   rememberSaves();if(!await syncSaves())throw Error('The round could not be stored on this device.');feedback.textContent='Game saved';state.lastSaved=result.path;
-  }catch(error){feedback.textContent=error.message;log('[save]',error.message);}finally{saveBusy=false;button.disabled=!ready;button.textContent='Save';saveFeedbackTimer=setTimeout(()=>{feedback.hidden=true;},5000);if(state.phase==='playing')canvas.focus();}
+   rememberSaves();if(!await syncSaves())throw Error('The round could not be stored on this device.');feedback.textContent='Game saved';state.lastSaved=result.path;return true;
+  }catch(error){feedback.textContent=error.message;log('[save]',error.message);return false;}finally{saveBusy=false;button.disabled=!ready;button.textContent='Save';saveFeedbackTimer=setTimeout(()=>{feedback.hidden=true;},5000);if(state.phase==='playing')canvas.focus();}
  }
  function updateView(){viewFrame=0;if(exited||!ready||!window.Module?._nc_browser_view)return;const size=screenSize(),stage=$('stage').getBoundingClientRect(),pad=$('touchpad').getBoundingClientRect(),visible=!$('touchpad').hidden;
   const args=[size.width,size.height,Number(zoom.value),visible?Math.round(pad.left-stage.left):0,visible?Math.round(pad.top-stage.top):0,visible?Math.ceil(pad.width):0,visible?Math.ceil(pad.height):0];
@@ -133,10 +133,31 @@
  function showTouch(show){touchWanted=show;$('touchpad').hidden=!ready||state.phase!=='playing'||!show;scheduleView();}
  coarse.addEventListener('change',()=>showTouch(coarse.matches||query.get('touch')==='1'));
  showTouch(touchWanted);
- function openMenu(){if(!ready)return;releaseAll();const game=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[]));menuWasPaused=game.paused;if(session)window.__neoclonkMultiplayer.setPaused(true);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[1]);phase('menu');cover.hidden=false;$('start').textContent='Resume game';$('start').disabled=false;$('new-game').hidden=false;showTouch(touchWanted);refreshSavedGames();$('start').focus();}
+ function openMenu(){if(!ready)return;releaseAll();const game=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[]));menuWasPaused=game.paused;if(session)window.__neoclonkMultiplayer.setPaused(true);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[1]);phase('menu');cover.hidden=false;$('start').disabled=false;if(!window.__scenarioGallery?.getSelected())window.__scenarioGallery?.select(launchScenario.id);window.__scenarioGallery?.updateActions();showTouch(touchWanted);refreshSavedGames();$('start').focus();}
  function resumeGame(){if(!ready)return;if(session)window.__neoclonkMultiplayer.setPaused(false);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[0]);phase('playing');cover.hidden=true;showTouch(touchWanted);canvas.focus();}
  $('main-menu').onclick=openMenu;
- $('new-game').onclick=()=>startScenario(selectedScenarioId);
+ $('new-game').onclick=()=>{if(ready&&selectedScenarioId!==launchScenario?.id)resumeGame();else startScenario(selectedScenarioId);};
+ let pendingLeave=null,leaveBusy=false;
+ function requestLeave(action,title='Leave current game?'){
+  if(!ready)return action();if(pendingLeave)return;
+  const returnToGame=state.phase==='playing';if(returnToGame)openMenu();
+  pendingLeave={action,returnToGame};$('leave-title').textContent=title;
+  $('leave-description').textContent=session?'Leaving disconnects you from this multiplayer game. Connected rounds cannot be saved yet.':'Save your current round before leaving?';
+  const verb=title.startsWith('Exit ')?'exit':title.startsWith('Start ')?'start':title.startsWith('Load ')?'load':'continue';
+  $('leave-save').textContent='Save and '+verb;$('leave-discard').textContent=session?'Leave game':verb[0].toUpperCase()+verb.slice(1)+' without saving';$('leave-save').hidden=!!session;$('leave-error').textContent='';$('leave-dialog').showModal();$('leave-cancel').focus();
+ }
+ function cancelLeave(){if(leaveBusy||!pendingLeave)return;const back=pendingLeave.returnToGame;pendingLeave=null;$('leave-dialog').close();if(back)resumeGame();}
+ async function finishLeave(save){
+  if(leaveBusy||!pendingLeave)return;leaveBusy=true;for(const b of $('leave-dialog').querySelectorAll('button'))b.disabled=true;
+  try{
+   if(save&&!await saveGame()){$('leave-error').textContent=$('save-feedback').textContent||'Could not save. Your current game is still open.';return;}
+   const action=pendingLeave.action;pendingLeave=null;$('leave-dialog').close();await action();
+  }catch(error){setStatus(error.message||String(error));}
+  finally{leaveBusy=false;for(const b of $('leave-dialog').querySelectorAll('button'))b.disabled=false;}
+ }
+ $('game-exit').onclick=()=>requestLeave(()=>restart(),'Exit current game?');
+ $('leave-cancel').onclick=cancelLeave;$('leave-save').onclick=()=>finishLeave(true);$('leave-discard').onclick=()=>finishLeave(false);
+ $('leave-dialog').addEventListener('cancel',event=>{event.preventDefault();cancelLeave();});
  const closeHelp=()=>{if($('help'))$('help').hidden=true;(ready&&state.phase==='playing'?canvas:$('start')).focus();};
  $('saves-open').onclick=()=>{refreshSavedGames();$('saved-dialog').showModal();};
  $('saves-close').onclick=()=>$('saved-dialog').close();
@@ -150,8 +171,8 @@
  canvas.addEventListener('pointerdown',()=>canvas.focus());canvas.addEventListener('contextmenu',event=>event.preventDefault());
  window.addEventListener('error',event=>{if(booted&&!failed)fail(event.message||'Unexpected engine error.');});
  window.addEventListener('unhandledrejection',event=>{if(booted&&!failed)fail(event.reason?.stack||event.reason||'Unexpected engine rejection.');});
- async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['save','replay','load','play','host','join','room'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
- async function startScenario(id,networkSession=null){await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;if(booted){return restart({scenario:id,[scenario.minPlayers>1?'host':'play']:'1'});}if(scenario.minPlayers>1&&!networkSession){window.__neoclonkMultiplayer.host(id);return;}state.replay=false;return startGame(null,scenario,networkSession);}
+ async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['scenario','save','replay','load','play','host','join','room'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
+ async function startScenario(id,networkSession=null){await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;if(booted){return requestLeave(()=>restart({scenario:id,[scenario.minPlayers>1?'host':'play']:'1'}),'Start '+scenario.title+'?');}if(scenario.minPlayers>1&&!networkSession){window.__neoclonkMultiplayer.host(id);return;}state.replay=false;return startGame(null,scenario,networkSession);}
  async function startGame(save=null,scenario=null,networkSession=null){
   if(booted){if(ready)resumeGame();return;}booted=true;selectedSave=save;session=networkSession;phase('loading');$('start').disabled=true;$('load-save').disabled=true;$('start').textContent='Loading…';setStatus('Preparing scenario…');canvas.focus();
   try{await library.ready;await savedIndexReady;launchScenario=scenario||library.find(savedScenarioMeta[save]?.scenarioId)||library.get(selectedScenarioId);selectedScenarioId=launchScenario.id;state.scenarioId=launchScenario.id;state.multiplayer=!!session;
@@ -168,9 +189,9 @@
   const script=document.createElement('script');script.src=assetUrl('clonk.js');script.onerror=()=>fail('The game could not download. Reload to try again.');document.body.append(script);
  }
  window.addEventListener('scenario-select',event=>{selectedScenarioId=event.detail.id;state.selectedScenarioId=selectedScenarioId;});
- $('start').onclick=()=>{if(ready&&state.phase==='menu'){resumeGame();return;}if(query.get('save'))startGame(query.get('save'));else startScenario(selectedScenarioId);};
- $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;$('saved-dialog').close();if(!booted){state.replay=false;startGame(name);return;}restart({save:name,load:'1'});};
- window.__rageBrowser={getState:()=>({...state,ready,booted,selectedScenarioId,logs:[...logs],canvas:{width:canvas.width,height:canvas.height}}),press:code=>key(code,true),release:code=>key(code,false),tap,pause:()=>tap('Pause'),releaseAll,readFile:path=>Array.from(window.Module.FS.readFile(path)),listFiles:path=>window.Module.FS.readdir(path),showTouch,syncSaves,listSavedGames,openMenu,saveGame,updateView,startScenario,restart};
+ $('start').onclick=()=>{if(ready&&state.phase==='menu'&&selectedScenarioId===launchScenario?.id){resumeGame();return;}startScenario(selectedScenarioId);};
+ $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;$('saved-dialog').close();if(!booted){state.replay=false;startGame(name);return;}requestLeave(()=>restart({save:name,load:'1'}),'Load saved game?');};
+ window.__rageBrowser={getState:()=>({...state,ready,booted,selectedScenarioId,logs:[...logs],canvas:{width:canvas.width,height:canvas.height}}),press:code=>key(code,true),release:code=>key(code,false),tap,pause:()=>tap('Pause'),releaseAll,readFile:path=>Array.from(window.Module.FS.readFile(path)),listFiles:path=>window.Module.FS.readdir(path),showTouch,syncSaves,listSavedGames,openMenu,saveGame,updateView,startScenario,restart:options=>requestLeave(()=>restart(options))};
  phase('menu');refreshSavedGames();
  const savedIndexReady=readSavedIndex();Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))startGame(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId);else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});
 })();

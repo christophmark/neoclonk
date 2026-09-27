@@ -77,3 +77,13 @@ BROWSER=webkit node rage-port/tests/browser-crispness.mjs
 ```
 
 Use `GAME_URL` to override the default `/rage/index.html` test URL.
+
+`browser-round-switch.mjs` exercises scenario selection during a live round,
+cancel/resume, failed-save protection, save-and-switch, exit, and reloading the
+original saved round. It also checks touch/action-bar and header-button clearance
+at 320px, portrait and landscape sizes. Run against the same static test server:
+
+```sh
+node rage-port/tests/browser-round-switch.mjs
+BROWSER=webkit node rage-port/tests/browser-round-switch.mjs
+```

@@ -29,7 +29,7 @@ try{
  assert.equal(await g.locator('#scenario-panel').isVisible(),false);
  await page.screenshot({path:`outputs/usability/${engine}-menu.png`});check('Original-artwork start menu appears without booting game');
  await start(g);await fullViewport(g,1280,800);assert.equal(await g.locator('#touchpad').isVisible(),false);
- const visibleButtons=await g.locator('button:visible').evaluateAll(bs=>bs.map(b=>b.id));assert.deepEqual(visibleButtons.sort(),['game-save','main-menu']);check('Desktop fills viewport with only original header additions',{visibleButtons});
+ const visibleButtons=await g.locator('button:visible').evaluateAll(bs=>bs.map(b=>b.id));assert.deepEqual(visibleButtons.sort(),['game-exit','game-save','main-menu']);check('Desktop fills viewport with only original header additions',{visibleButtons});
  const before=await state(g),world=before.players[0].cursor;
  const slider=g.locator('#zoom');const box=await slider.boundingBox();await page.mouse.click(box.x+box.width*.8,box.y+box.height/2);
  await g.waitForFunction(()=>JSON.parse(window.Module.ccall('nc_browser_state','string',[],[])).viewport.zoom>2);

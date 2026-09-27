@@ -14,6 +14,11 @@ The catalog includes all 80 official scenarios (53 base and 27 from Knights, Far
 
 The 80 scenarios are organized into nine category galleries. Original packs download unchanged as required. Original Title.png previews are kept separate from newly captured browser gameplay screenshots. The menu includes a documented HD restoration of the original background; the original packs and scenario scripts are not repainted or rewritten.
 
+The header's **Exit** button offers to save a solo round before leaving. Selecting
+another scenario offers to start it, while **Resume current game** returns to the
+running round. Failed saves keep that round open. Touch controls sit above the
+original action icons; their position is included in the camera's occlusion area.
+
 The game canvas uses pixel-preserving scaling on high-density screens. Enlarged
 sprites use nearest-neighbor filtering; the existing smoothing for scaled sprite
 minification remains. The zoom slider stays continuous, though whole-number zoom

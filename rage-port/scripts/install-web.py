@@ -44,6 +44,8 @@ for relative,name in [
  ('rage-port/outputs/discovery-live/report.json','discovery-live.json'),
  ('rage-port/outputs/crispness-chromium/report.json','crispness-chromium.json'),
  ('rage-port/outputs/crispness-webkit/report.json','crispness-webkit.json'),
+ ('rage-port/outputs/round-switch-chromium/report.json','round-switch-chromium.json'),
+ ('rage-port/outputs/round-switch-webkit/report.json','round-switch-webkit.json'),
  ('rage-port/outputs/discovery-browser/report.json','discovery-browser.json'),
  ('rage-port/outputs/touch-menus/report.json','touch-menus.json'),
  ('rage-port/outputs/exit/report.json','native-exit-persistence.json'),
