@@ -237,7 +237,7 @@
   {
     "path": "standard/inc/StdEmscriptenGL.h",
     "originalSha256": null,
-    "portedSha256": "39f69db587a1573e530b0b0177f6155577ce80386966c2168ee315679a17e80c"
+    "portedSha256": "683b69e1fd82ddd00395a360df779ca8604f10ddb7ffaa90dee6e8545b4aac23"
   },
   {
     "path": "standard/inc/StdGL.h",
@@ -257,7 +257,7 @@
   {
     "path": "standard/src/StdEmscriptenGL.cpp",
     "originalSha256": null,
-    "portedSha256": "a4f442377c136fcfb15b56a3ea705c1aa9c432f78c6735fcccea31512a0db2e4"
+    "portedSha256": "b6d629bd0e704c01df04643f3bfb81269b9c15dfa3fa363641ec261b06a5039a"
   },
   {
     "path": "standard/src/StdFile.cpp",

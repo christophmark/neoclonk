@@ -127,3 +127,31 @@ else:
         raise SystemExit('Unexpected Emscripten FS errno implementation; inspect before patching')
     p.write_text(text.replace(old,new,1))
     print('Patched Emscripten FS post-exit errno diagnostic')
+
+# Mobile Web Audio decoding otherwise expands a several-minute music track to
+# roughly 100 MiB of PCM. An optional context rate bounds that decoded storage;
+# Web Audio resamples decoded content while preserving its duration and pitch.
+p=root/'.toolchains/emsdk/upstream/emscripten/src/library_sdl.js'
+text=p.read_text()
+old="""        if (typeof AudioContext != 'undefined') {
+          SDL.audioContext = new AudioContext();
+        } else if (typeof webkitAudioContext != 'undefined') {
+          SDL.audioContext = new webkitAudioContext();
+        }"""
+new="""        var AudioContextClass = globalThis.AudioContext || globalThis.webkitAudioContext;
+        if (AudioContextClass) {
+          var rate = Module['neoclonkAudioSampleRate'];
+          try {
+            SDL.audioContext = new AudioContextClass(rate ? { sampleRate: rate } : undefined);
+          } catch (error) {
+            // Some older WebKit/device combinations reject a requested rate.
+            SDL.audioContext = new AudioContextClass();
+          }
+        }"""
+if text.count(new)==1:
+    print('Emscripten optional audio context rate already patched')
+else:
+    if text.count(old)!=1:
+        raise SystemExit('Unexpected Emscripten SDL context creation; inspect before patching')
+    p.write_text(text.replace(old,new,1))
+    print('Patched Emscripten optional audio context rate')

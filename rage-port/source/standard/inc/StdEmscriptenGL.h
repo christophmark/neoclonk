@@ -11,6 +11,7 @@
 void C4WebTexImage2D(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const GLvoid *);
 void C4WebTexSubImage2D(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const GLvoid *);
 void C4WebCopyTexImage2D(GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLsizei, GLint);
+void C4WebDeleteTextures(GLsizei, const GLuint *);
 void C4WebGetTexImage(GLenum, GLint, GLenum, GLenum, GLvoid *);
 void C4WebReadPixels(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLvoid *);
 #ifndef STD_EMSCRIPTEN_GL_IMPLEMENTATION
@@ -18,6 +19,7 @@ void C4WebReadPixels(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLvoid *);
 #define glTexSubImage2D C4WebTexSubImage2D
 #define glCopyTexImage2D C4WebCopyTexImage2D
 #define glGetTexImage C4WebGetTexImage
+#define glDeleteTextures C4WebDeleteTextures
 #define glReadPixels C4WebReadPixels
 #endif
 #endif

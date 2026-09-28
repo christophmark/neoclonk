@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpy5447a2d.js
+// include: /tmp/tmpys5whzlg.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,21 +217,21 @@ Module['FS_createPath']("/data", "verification", true, true);
 
   })();
 
-// end include: /tmp/tmpy5447a2d.js
-// include: /tmp/tmpz9w4lq2g.js
+// end include: /tmp/tmpys5whzlg.js
+// include: /tmp/tmp8ibldc3y.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpz9w4lq2g.js
-// include: /tmp/tmp3jy1ulqw.js
+  // end include: /tmp/tmp8ibldc3y.js
+// include: /tmp/tmp5i9nqx5t.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp3jy1ulqw.js
+  // end include: /tmp/tmp5i9nqx5t.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -3364,10 +3364,15 @@ function dbg(...args) {
         // initializing multiple times fails on Chrome saying 'audio resources
         // have been exhausted'.
         if (!SDL.audioContext) {
-          if (typeof AudioContext != 'undefined') {
-            SDL.audioContext = new AudioContext();
-          } else if (typeof webkitAudioContext != 'undefined') {
-            SDL.audioContext = new webkitAudioContext();
+          var AudioContextClass = globalThis.AudioContext || globalThis.webkitAudioContext;
+          if (AudioContextClass) {
+            var rate = Module['neoclonkAudioSampleRate'];
+            try {
+              SDL.audioContext = new AudioContextClass(rate ? { sampleRate: rate } : undefined);
+            } catch (error) {
+              // Some older WebKit/device combinations reject a requested rate.
+              SDL.audioContext = new AudioContextClass();
+            }
           }
         }
       },

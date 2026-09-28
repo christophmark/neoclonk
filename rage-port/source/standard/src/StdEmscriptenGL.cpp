@@ -71,6 +71,12 @@ void C4WebReadPixels(GLint x,GLint y,GLsizei width,GLsizei height,GLenum format,
   glReadPixels(x,y,width,height,GL_RGBA,GL_UNSIGNED_BYTE,&rgba[0]);
   FromRGBA(rgba,pixels,format,type);
 }
+void C4WebDeleteTextures(GLsizei count, const GLuint *textures) {
+  // Emscripten texture handles keep increasing. Retire size metadata with its
+  // texture so long rounds cannot retain every deleted surface's dimensions.
+  for(GLsizei i=0;i<count;++i)dimensions.erase(textures[i]);
+  glDeleteTextures(count,textures);
+}
 void C4WebGetTexImage(GLenum target,GLint level,GLenum format,GLenum type,GLvoid *pixels) {
   const GLuint texture=BoundTexture();const TextureSize size=dimensions[texture];
   if(size.width<=0||size.height<=0){std::fprintf(stderr,"Unknown Rage texture size: %u\n",texture);return;}
