@@ -52,7 +52,7 @@
 <button id="help-open" class="small-button" type="button">Help</button>
 </nav>
 </header>
-<p class="project-notice">Unofficial, noncommercial browser adaptation of <a href="https://www.clonk.de/" target="_blank" rel="noopener">Clonk Rage</a> © RedWolf Design / Matthes Bender and contributors. Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>; engine: <a href="licenses/clonk_source_license.txt" target="_blank" rel="noopener">ISC</a>. Browser code and presentation modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement implied. Provided as-is, without warranties, to the extent permitted by law.</p>
+<p class="project-notice">Unofficial, noncommercial browser adaptation of <a href="https://www.clonk.de/" target="_blank" rel="noopener">Clonk Rage and Clonk Planet</a> © RedWolf Design / Matthes Bender and contributors. Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>; engine: <a href="licenses/clonk_source_license.txt" target="_blank" rel="noopener">ISC</a>. Browser code and presentation modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement implied. Provided as-is, without warranties, to the extent permitted by law.</p>
 <div class="menu-content">
 <aside id="scenario-panel" class="menu-panel" aria-label="Selected scenario" hidden>
 <div class="selected-heading"><p class="selection-label">Selected adventure</p><h2 id="title">Gold Mine</h2><p id="intro">Mine all the gold and bring it to your home base.</p></div>
@@ -71,7 +71,7 @@
 <div id="scenario-galleries" aria-busy="true"><p class="catalog-loading">Opening the scenario library…</p></div>
 </section>
 </div>
-<footer class="menu-credits"><p>Clonk Rage 4.9.10.7 · Original scenarios and game content</p><details><summary>Credits and licenses</summary><p>Original game © RedWolf Design / Matthes Bender. Original graphics, scripts, sound and music: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Browser platform adaptation: Neoclonk.</p><p>“Clonk” is a registered trademark of Matthes Bender. No endorsement by the original authors is implied.</p></details></footer>
+<footer class="menu-credits"><p>Clonk Rage 4.9.10.7 · Clonk Planet 4.65 · Original scenarios and game content</p><details><summary>Credits and licenses</summary><p>Original game © RedWolf Design / Matthes Bender. Original graphics, scripts, sound and music: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Browser platform adaptation: Neoclonk.</p><p>“Clonk” is a registered trademark of Matthes Bender. No endorsement by the original authors is implied.</p></details></footer>
 </div>
 </section>
 <div id="touchpad" aria-label="Classic nine-button controls" hidden>
@@ -106,11 +106,12 @@
 <section id="help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden><div><button id="help-close" class="small-button" type="button">Close</button><h2 id="help-title">Classic controls</h2><table><tr><td>Q · Previous</td><td>W · Select</td><td>E · Next</td></tr><tr><td>A · Throw</td><td>S · Up / jump</td><td>D · Dig</td></tr><tr><td>Y / Z · Left</td><td>X · Stop / down</td><td>C · Right</td></tr></table><p>Press a direction, then D. Your Clonk keeps digging diagonally downwards after you release the keys. X stops him. Solid rock and gold require explosives.</p><p>Each scenario keeps its original goals. Read the selected adventure’s description and follow its in-game objectives.</p><p>In solo play, Save records the current round on this device. Load it from the main menu next time. Exit leaves the round and offers to save solo games. Selecting another scenario lets you start it or resume the current round. The − and + buttons zoom out and in using crisp pixel steps, from ¼× to 8×.</p><p>Pause pauses the original engine. Escape opens its abort dialog. Y (German QWERTZ) and Z (English QWERTY) both move left.</p></div></section>
 <pre id="debug" hidden></pre>
 </main>
-<script src="scenario-library.js?v=mobile-memory-1"></script>
-<script src="multiplayer.js?v=discovery-1"></script>
+<script src="planet-storage.js?v=planet-1"></script>
+<script src="scenario-library.js?v=planet-library-1"></script>
+<script src="multiplayer.js?v=planet-library-1"></script>
 <script src="discovery-config.js?v=discovery-1"></script>
 <script src="discovery.js?v=discovery-1"></script>
-<script src="game.js?v=mobile-memory-1"></script>
-<script src="gallery.js?v=zoom-buttons-1"></script>
+<script src="game.js?v=planet-library-1"></script>
+<script src="gallery.js?v=planet-library-1"></script>
 </body>
 </html>

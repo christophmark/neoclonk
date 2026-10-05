@@ -10,6 +10,9 @@ node_modules
 **/__pycache__/
 **/*.pyc
 **/*.tsbuildinfo
+planet-port/build/
+planet-port/dist/
+planet-port/upstream/
 rage-port/build/
 rage-port/dist/
 rage-port/outputs/

@@ -1,0 +1,465 @@
+{
+  "errors": [],
+  "sync": [
+    [
+      0,
+      0,
+      0,
+      0,
+      121,
+      0,
+      0,
+      0,
+      67,
+      0,
+      0,
+      0,
+      18,
+      126,
+      0,
+      0,
+      11,
+      3,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      26,
+      105,
+      177,
+      115
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      121,
+      0,
+      0,
+      0,
+      67,
+      0,
+      0,
+      0,
+      18,
+      126,
+      0,
+      0,
+      11,
+      3,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      26,
+      105,
+      177,
+      115
+    ]
+  ],
+  "states": [
+    {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 121,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 1941006618,
+      "randomCount": 32274,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Library host",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 20,
+            "y": 278,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 20,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Library guest",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 759,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 759,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 640,
+        "height": 334,
+        "zoom": 2
+      }
+    },
+    {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 121,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 1941006618,
+      "randomCount": 32274,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Library host",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 20,
+            "y": 278,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 20,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Library guest",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 759,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 759,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 214,
+        "zoom": 2
+      }
+    }
+  ],
+  "room": {
+    "host": true,
+    "started": true,
+    "players": [
+      {
+        "name": "Library host",
+        "index": 0
+      },
+      {
+        "name": "Library guest",
+        "index": 1
+      }
+    ],
+    "index": 0,
+    "error": null,
+    "paused": false,
+    "localPaused": false,
+    "lastVerifiedFrame": 120,
+    "engine": true,
+    "connections": [
+      {
+        "slot": 1,
+        "connected": true,
+        "connection": "connected",
+        "channel": "open",
+        "frame": 127
+      }
+    ],
+    "frame": 128
+  },
+  "passed": true,
+  "final": [
+    {
+      "host": true,
+      "started": true,
+      "players": [
+        {
+          "name": "Library host",
+          "index": 0
+        },
+        {
+          "name": "Library guest",
+          "index": 1
+        }
+      ],
+      "index": 0,
+      "error": null,
+      "paused": false,
+      "localPaused": false,
+      "lastVerifiedFrame": 120,
+      "engine": true,
+      "connections": [
+        {
+          "slot": 1,
+          "connected": true,
+          "connection": "connected",
+          "channel": "open",
+          "frame": 132
+        }
+      ],
+      "frame": 133
+    },
+    {
+      "host": false,
+      "started": true,
+      "players": [
+        {
+          "name": "Library host",
+          "index": 0
+        },
+        {
+          "name": "Library guest",
+          "index": 1
+        }
+      ],
+      "index": 1,
+      "error": null,
+      "paused": false,
+      "localPaused": false,
+      "engine": true,
+      "connections": [
+        {
+          "slot": 1,
+          "connected": true,
+          "connection": "connected",
+          "channel": "open",
+          "frame": 0
+        }
+      ],
+      "frame": 132
+    }
+  ],
+  "native": [
+    {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 133,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 3909160497,
+      "randomCount": 32287,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Library host",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 20,
+            "y": 278,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 20,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Library guest",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 759,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 759,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 640,
+        "height": 334,
+        "zoom": 2
+      }
+    },
+    {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 132,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 3909160497,
+      "randomCount": 32287,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Library host",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 20,
+            "y": 278,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 20,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Library guest",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 759,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 759,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 214,
+        "zoom": 2
+      }
+    }
+  ]
+}

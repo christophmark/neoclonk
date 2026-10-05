@@ -17,7 +17,7 @@
   return values.filter(Boolean).map(value=>typeof value==='string'?value:text(value.title)||text(value.name)).filter(value=>value&&!/^At least \d+ players/.test(value)).map(value=>{
    const access=value.match(/^Original mission access: (.+)$/);if(access)return 'Mission unlocked';
    return value.replace(/\.c4d$/i,'').replace('FarWorlds','Far Worlds');
-  }).join(' · ')||'Clonk Rage';
+  }).join(' · ')||(scenario.engine==='planet'?'Clonk Planet':'Clonk Rage');
  }
  function setRovingFocus(track,button){for(const tile of track.querySelectorAll('.scenario-tile'))tile.tabIndex=tile===button?0:-1;}
  function reveal(button){button.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'nearest',inline:'nearest'});}
@@ -32,7 +32,7 @@
   const description=paragraphs.join('\n\n')||'Choose your Clonk and enter this original scenario.';
   const first=paragraphs[0]||description;$('title').textContent=scenario.title;$('intro').textContent=first.length>245?first.slice(0,240).replace(/\s+\S*$/,'')+'…':first;
   $('scenario-full-description').textContent=description;$('scenario-story').open=false;
-  $('scenario-players').textContent=players(scenario);$('scenario-requirements').textContent=requirements(scenario);
+  $('scenario-players').textContent=players(scenario);$('scenario-requirements').textContent=scenario.blockedReason||requirements(scenario);
   updateActions();
   try{localStorage.setItem('neoclonk.selectedScenario',scenario.id);}catch{/* Selection remains usable without storage. */}
   if(notify)window.dispatchEvent(new CustomEvent('scenario-select',{detail:{id:scenario.id,scenario}}));
@@ -41,11 +41,12 @@
  function updateActions(){
   if(!selected)return;
   const state=gameState(),solo=(Number(selected.minPlayers)||1)<=1,same=state.ready&&state.scenarioId===selected.id;
+  const blocked=window.__scenarioLibrary.isBlocked(selected)||selected.engine==='openclonk',needsImport=window.NeoclonkCommunity&&!window.NeoclonkCommunity.available(selected);
   const primary=same?'Resume game':solo?'Play':'Host';
-  $('start').hidden=false;$('start').disabled=['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
+  $('start').hidden=false;$('start').disabled=blocked||needsImport||['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
   $('new-game').hidden=!state.ready;$('new-game').textContent=same?'Restart scenario':'Resume current game';$('new-game').setAttribute('aria-label',same?`Restart ${selected.title}`:'Resume current game');
-  $('play-solo').hidden=solo||(same&&!state.multiplayer);$('play-solo').disabled=['loading','initializing'].includes(state.phase);$('play-solo').setAttribute('aria-label',`Play ${selected.title} solo`);$('solo-note').hidden=solo;
-  $('host-room').disabled=['loading','initializing'].includes(state.phase);$('host-room').hidden=(!solo&&!same)||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);
+  $('play-solo').hidden=blocked||solo||(same&&!state.multiplayer);$('play-solo').disabled=needsImport||['loading','initializing'].includes(state.phase);$('play-solo').setAttribute('aria-label',`Play ${selected.title} solo`);$('solo-note').hidden=solo;
+  $('host-room').disabled=needsImport||['loading','initializing'].includes(state.phase);$('host-room').hidden=blocked||(!solo&&!same)||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);if(needsImport)$('scenario-requirements').textContent='Import your community collection below to play on this device.';
  }
  function updateArrows(record){const {track,previous,next}=record;previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-2;}
  function makeTile(scenario,index){
@@ -63,7 +64,7 @@
  function makeCategory(category,scenarios){
   const section=document.createElement('section');section.className='scenario-category';section.id=`category-${category.id}`;
   const heading=document.createElement('div');heading.className='category-heading';
-  const title=document.createElement('h3');title.id=`heading-${category.id}`;title.textContent=category.title;section.setAttribute('aria-labelledby',title.id);
+  const title=document.createElement('h3');title.id=`heading-${category.id}`;title.textContent=(category.engine==='planet'?'Clonk Planet · ':'')+category.title;section.setAttribute('aria-labelledby',title.id);
   const count=document.createElement('span');count.className='category-count';count.textContent=String(scenarios.length);count.setAttribute('aria-label',`${scenarios.length} scenarios`);
   const controls=document.createElement('div');controls.className='gallery-controls';
   const previous=document.createElement('button'),next=document.createElement('button');
@@ -83,7 +84,7 @@
   });
   new ResizeObserver(()=>updateArrows(record)).observe(track);
   section.append(heading,track);root.append(section);
-  const link=document.createElement('a');link.href=`#${section.id}`;link.textContent=category.title;link.addEventListener('click',event=>{event.preventDefault();section.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});$('category-nav').append(link);
+  const link=document.createElement('a');link.href=`#${section.id}`;link.textContent=(category.engine==='planet'?'Planet · ':'')+category.title;link.addEventListener('click',event=>{event.preventDefault();section.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});$('category-nav').append(link);
   requestAnimationFrame(()=>updateArrows(record));
  }
  async function load(){
@@ -97,5 +98,6 @@
    if(requested)select(requested);root.setAttribute('aria-busy','false');window.dispatchEvent(new CustomEvent('scenario-catalog-ready',{detail:{catalog}}));return catalog;
   }catch(error){root.replaceChildren();const message=document.createElement('p');message.className='catalog-loading';message.textContent='The scenario library could not load. Reload to try again.';root.append(message);root.setAttribute('aria-busy','false');$('catalog-summary').textContent='';console.error('[gallery]',error);return null;}
  }
+ window.addEventListener('community-imported',updateActions);
  window.__scenarioGallery={getSelected:()=>selected,select,updateActions,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();
 })();

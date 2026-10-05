@@ -10,9 +10,11 @@ STUN/TURN: `turn.40-180-87-214.sslip.io` on the Lightsail static IP
 `40.180.87.214`. The browser attempts a direct connection first and requests
 temporary relay credentials only after that attempt fails.
 
-After staging the current runtime with `python3 rage-port/scripts/install-web.py`:
+Stage both runtimes, then export:
 
 ```sh
+python3 rage-port/scripts/install-web.py
+python3 planet-port/scripts/install.py
 python3 tools/build-pages.py
 python3 -m http.server 8080 --directory _site
 ```
@@ -34,5 +36,5 @@ Older snapshots remain under `~/.local/share/neoclonk-lan/releases/` for rollbac
 `.github/workflows/pages.yml` deploys staged assets on `main` pushes or manual
 runs once Pages is enabled with **GitHub Actions** as its source. No cloud keys
 are needed. Actions are pinned to verified official commits. The workflow does
-not rebuild the original C++ engine: commit freshly staged `web/public/rage/`
+not rebuild the original C++ engine: commit freshly staged `web/public/rage/` and `web/public/planet/`
 assets when the engine or shell changes. `_site/` is a generated local artifact.

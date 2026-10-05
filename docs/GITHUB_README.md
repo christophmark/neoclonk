@@ -2,7 +2,7 @@
 
 **Play Clonk Rage in the browser.**
 
-> Unofficial, noncommercial browser adaptation of [Clonk Rage](https://www.clonk.de/) © RedWolf Design / Matthes Bender and contributors. Original content: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); engine: [ISC](cr_source/licenses/clonk_source_license.txt). Browser code and presentation are modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement is implied. Provided **as-is, without warranties**, to the extent permitted by law. See [licenses and attribution](#licenses-and-attribution) before redistributing.
+> Unofficial, noncommercial browser adaptation of [Clonk Rage and Clonk Planet](https://www.clonk.de/) © RedWolf Design / Matthes Bender and contributors. Original content: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); engine: [ISC](cr_source/licenses/clonk_source_license.txt). Browser code and presentation are modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement is implied. Provided **as-is, without warranties**, to the extent permitted by law. See [licenses and attribution](#licenses-and-attribution) before redistributing.
 
 ![Three portrait gameplay screenshots: Arctic's snowy ice formations, Gold Rush's western headquarters, and Jungle's lush terrain and waterways.](docs/images/scenarios.png)
 
@@ -10,11 +10,11 @@
 
 **[Play Neoclonk](https://christophmark.github.io/neoclonk/)**
 
-Neoclonk runs the original **Clonk Rage 4.9.10.7 [330]** C++ engine in the browser through Emscripten/WebAssembly, with the original scenario scripts, sprites, materials and sound. Gameplay runs on your device.
+Neoclonk runs **Clonk Rage 4.9.10.7 [330]** and **Clonk Planet 4.65** through separate C++ engines compiled to WebAssembly. Each uses its own original scenario scripts, sprites, materials and sound. Gameplay runs on your device; only the selected engine loads.
 
 ## Playing
 
-- **80 official scenarios** in nine galleries: 53 base scenarios and 27 from Knights, Far Worlds, Fantasy and Western. Tiles show actual gameplay; scenario packs download as needed.
+- **133 official scenarios**: 80 from Rage and its Knights, Far Worlds, Fantasy and Western add-ons, plus 53 from Planet. Separate galleries identify each game. Rage tiles show gameplay captures; Planet tiles retain the original scenario artwork. Packs download as needed.
 - **Solo exploration** is available through **Play solo** for multiplayer scenarios, including Jungle. Original rules and goals remain in place; some need opponents or finish immediately. Choose **Continue this round** after an early victory to keep exploring. **Host** starts the normal multiplayer lobby.
 - **Every mission is available immediately.** Puzzles, objectives and progress within each mission follow the original scripts.
 - **Classic nine-button controls**, with transparent touch controls on mobile. Touch buttons sit above the game's action icons, and the camera accounts for the space they cover.
@@ -35,7 +35,9 @@ To run your own discovery and relay service, see [the lobby service documentatio
 ### Compatibility and limitations
 
 - Live multiplayer saves, reconnect and host migration are not supported. Background browser throttling may slow a room. Shared-keyboard and split-screen multiplayer are not supported.
-- WAV sound effects and Vorbis music are supported through Web Audio. MIDI-only music tracks are silent because the browser adapter has no MIDI synthesizer.
+- Rage supports WAV sound effects and Vorbis music through Web Audio; Planet supports its original wave sound effects. MIDI-only music tracks are silent in both browser ports.
+- Planet uses a modern Linux platform adaptation of its original engine. Exact parity with the original Windows executable has not been established. WebGL 2 is required for Planet.
+- Community collections without clear redistribution terms are not bundled. Their presence in a public contest archive does not establish permission for this distribution. See the [content policy](docs/PLANET_CONTENT.md).
 - The original artwork retains its original resolution. Pixel-aligned enlargement avoids uneven scaling but cannot add detail absent from the original sprites.
 
 ## Run locally
@@ -70,11 +72,16 @@ python3 rage-port/deps/build-openssl.py
 python3 rage-port/scripts/build.py --jobs 4
 python3 rage-port/scripts/install-web.py
 python3 rage-port/scripts/install-library.py
+python3 planet-port/scripts/prepare.py
+python3 planet-port/scripts/build.py --jobs 4
+python3 planet-port/scripts/install.py
 ```
 
 `rage-port/source/` contains the browser engine, and `cr_source/` contains the original ISC source and bundled library notices. Browser modifications are recorded in `rage-port/patches/original-to-browser.patch`. Build scripts pin the OpenSSL input hash and adapt the pinned SDK for the original SDL/GL compatibility layer. Toolchains and intermediate build products are not included.
 
-All 19 original catalog group files are included under `original-content/release/cr_game_linux/` and `original-content/addons/release/`. `install-library.py` verifies their hashes. Supplemental packs load separately as needed. Publisher archive URLs and hashes are recorded in the provenance manifests; native executables are not included.
+Planet source, its pinned upstream revision, browser patch and build instructions are documented in [planet-port/README.md](planet-port/README.md). The official Planet group files and their checksums are included under `planet-content/`.
+
+All 19 original Rage catalog group files are included under `original-content/release/cr_game_linux/` and `original-content/addons/release/`. `install-library.py` verifies their hashes. Supplemental packs load separately as needed. Publisher archive URLs and hashes are recorded in the provenance manifests; native executables are not included.
 
 ### Regenerate the scenario catalog
 
@@ -95,7 +102,9 @@ The importer requires a fresh destination. Catalog generation preserves download
 | Directory | Contents |
 | --- | --- |
 | `web/` | Website source and runnable engine/assets in `public/rage/` |
-| `rage-port/` | Engine port, browser shell, catalog, build scripts and tests |
+| `rage-port/` | Rage engine port, shared browser menu, catalog, build scripts and tests |
+| `planet-port/` | Separate Planet engine, browser shell, build adapters and tests |
+| `planet-content/` | Permitted Planet groups, public catalog and provenance |
 | `lobby-service/` | Discovery/signaling service, Redis storage, TURN credentials and deployment bundle |
 | `cr_source/` | Original engine source and library notices |
 | `original-content/` | Original game packs, licenses and provenance |
@@ -114,11 +123,13 @@ Additional checks cover:
 - [Direct and TURN-relayed multiplayer on the deployed service](web/public/rage/source/discovery-live.json).
 - Save persistence in [Chromium](web/public/rage/source/native-exit-persistence.json) and [WebKit](web/public/rage/source/native-exit-persistence-webkit.json), plus [touch access to native menus](web/public/rage/source/touch-menus.json).
 
-Browser test scripts are in `rage-port/tests/` and `web/tests/`. Gameplay screenshot sources and capture details are recorded in the [catalog provenance](web/public/rage/source/scenario-screenshot-provenance.json) and [README collage provenance](docs/images/scenarios.provenance.json).
+Planet checks cover official scenario startup and controls, mobile zoom and touch input, save/reload through the shared menu, and original control synchronization across two browser instances. These short checks do not prove completion of every goal or performance on every phone. See [Planet validation](planet-content/validation/README.md).
+
+Browser test scripts are in `rage-port/tests/`, `planet-port/tests/` and `web/tests/`. Gameplay screenshot sources and capture details are recorded in the [catalog provenance](web/public/rage/source/scenario-screenshot-provenance.json) and [README collage provenance](docs/images/scenarios.provenance.json).
 
 ## Licenses and attribution
 
-**Engine code:** the original Clonk source uses the **[ISC license](cr_source/licenses/clonk_source_license.txt)**. Preserve its copyright notices. Browser platform, rendering, input, filesystem/audio adapters, responsive viewport, menus, gallery and build tooling are modifications to the original project. Bundled libraries retain their own licenses; see source notices and `web/public/rage/licenses/`.
+**Engine code:** Planet’s pinned Linux adaptation is credited to [Teero888 and contributors](https://github.com/Teero888/clonk_planet); its ISC notice and embedded third-party notices are preserved in `planet-port/`. The original Clonk source uses the **[ISC license](cr_source/licenses/clonk_source_license.txt)**. Preserve its copyright notices. Browser platform, rendering, input, filesystem/audio adapters, responsive viewport, menus, gallery and build tooling are modifications to the original project. Bundled libraries retain their own licenses; see source notices and `web/public/rage/licenses/`.
 
 **Original game content:** graphics, audio, scenario/object scripts and text are by **RedWolf Design / Matthes Bender and the credited original contributors**, under **[Creative Commons Attribution–NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/)**. Content is not covered by the engine's ISC license. This distribution and browser adaptation are noncommercial; commercial reuse requires separate permission. Preserve the [original content license](original-content/licenses/clonk_content_license.txt), original credits in the packs and asset provenance manifests.
 

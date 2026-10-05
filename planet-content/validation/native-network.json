@@ -1,0 +1,949 @@
+{
+  "initial": [
+    {
+      "state": {
+        "engine": "planet-4.65",
+        "ready": true,
+        "running": true,
+        "frame": 0,
+        "paused": false,
+        "gameOver": false,
+        "scenario": "Easy.c4f/Goldmine.c4s",
+        "randomHold": 3934065165,
+        "randomCount": 32353,
+        "landscape": {
+          "width": 800,
+          "height": 600
+        },
+        "players": [
+          {
+            "number": 0,
+            "name": "Player0",
+            "local": true,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 85,
+              "x": 32,
+              "y": 290,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 85,
+                "x": 32,
+                "y": 290,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Player1",
+            "local": false,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 89,
+              "x": 735,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 89,
+                "x": 735,
+                "y": 278,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          }
+        ],
+        "viewport": {
+          "width": 640,
+          "height": 480,
+          "zoom": 1
+        }
+      },
+      "network": {
+        "enabled": true,
+        "running": true,
+        "playersJoined": true,
+        "paused": false,
+        "frame": 0,
+        "acceptedFrame": -1,
+        "localPlayerIndex": 0,
+        "totalPlayers": 2,
+        "seed": 424242
+      },
+      "errors": [],
+      "logs": [
+        "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "DeterminePaths: SetCurrentDirectory(/data): 1",
+        "Console.Init...",
+        "Engine.Init...",
+        "RedWolf Design Clonk Planet Engine",
+        "Version: 4.65",
+        "glfwInit successful",
+        "glfwCreateWindow(640x480)...",
+        "glfwCreateWindow successful",
+        "WebGL 2 indexed renderer initialized",
+        "Console.CommandLine...",
+        "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "InitSystem...",
+        "InitGame...",
+        "InitGame: Network override...",
+        "InitGame: DirectJoinGetReference...",
+        "InitGame: OpenScenario...",
+        "Scenario: Easy.c4f/Goldmine.c4s",
+        "InitGame: InitNetworkScenario...",
+        "InitNetworkScenario: New game as host",
+        "InitNetworkScenario: fLobby is false",
+        "InitNetworkScenario: Success",
+        "InitGame: LoadScenarioComponents...",
+        "InitGame: GraphicsResource.Init...",
+        "Loading graphics...",
+        "Loading object definitions:",
+        "Objects.c4d...",
+        "   269 definitions loaded.",
+        "Goldmine.c4s...",
+        "   0 definitions loaded.",
+        "Texture table holds 40 entries.",
+        "16 textures loaded.",
+        "21 materials loaded.",
+        "Creating landscape...",
+        "Placing environment objects...",
+        "InitPlayers...",
+        "Player join: Player0.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "Player join: Player1.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "InitGameFinal...",
+        "Game started."
+      ]
+    },
+    {
+      "state": {
+        "engine": "planet-4.65",
+        "ready": true,
+        "running": true,
+        "frame": 0,
+        "paused": false,
+        "gameOver": false,
+        "scenario": "Easy.c4f/Goldmine.c4s",
+        "randomHold": 3934065165,
+        "randomCount": 32353,
+        "landscape": {
+          "width": 800,
+          "height": 600
+        },
+        "players": [
+          {
+            "number": 0,
+            "name": "Player0",
+            "local": false,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 85,
+              "x": 32,
+              "y": 290,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 85,
+                "x": 32,
+                "y": 290,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Player1",
+            "local": true,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 89,
+              "x": 735,
+              "y": 278,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 89,
+                "x": 735,
+                "y": 278,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          }
+        ],
+        "viewport": {
+          "width": 640,
+          "height": 480,
+          "zoom": 1
+        }
+      },
+      "network": {
+        "enabled": true,
+        "running": true,
+        "playersJoined": true,
+        "paused": false,
+        "frame": 0,
+        "acceptedFrame": -1,
+        "localPlayerIndex": 1,
+        "totalPlayers": 2,
+        "seed": 424242
+      },
+      "errors": [],
+      "logs": [
+        "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "DeterminePaths: SetCurrentDirectory(/data): 1",
+        "Console.Init...",
+        "Engine.Init...",
+        "RedWolf Design Clonk Planet Engine",
+        "Version: 4.65",
+        "glfwInit successful",
+        "glfwCreateWindow(640x480)...",
+        "glfwCreateWindow successful",
+        "WebGL 2 indexed renderer initialized",
+        "Console.CommandLine...",
+        "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "InitSystem...",
+        "InitGame...",
+        "InitGame: Network override...",
+        "InitGame: DirectJoinGetReference...",
+        "InitGame: OpenScenario...",
+        "Scenario: Easy.c4f/Goldmine.c4s",
+        "InitGame: InitNetworkScenario...",
+        "InitNetworkScenario: New game as host",
+        "InitNetworkScenario: fLobby is false",
+        "InitNetworkScenario: Success",
+        "InitGame: LoadScenarioComponents...",
+        "InitGame: GraphicsResource.Init...",
+        "Loading graphics...",
+        "Loading object definitions:",
+        "Objects.c4d...",
+        "   269 definitions loaded.",
+        "Goldmine.c4s...",
+        "   0 definitions loaded.",
+        "Texture table holds 40 entries.",
+        "16 textures loaded.",
+        "21 materials loaded.",
+        "Creating landscape...",
+        "Placing environment objects...",
+        "InitPlayers...",
+        "Player join: Player0.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "Player join: Player1.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "InitGameFinal...",
+        "Game started."
+      ]
+    }
+  ],
+  "initialSync": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      204,
+      0,
+      0,
+      0,
+      97,
+      126,
+      0,
+      0,
+      255,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      13,
+      18,
+      125,
+      234
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      204,
+      0,
+      0,
+      0,
+      97,
+      126,
+      0,
+      0,
+      255,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      13,
+      18,
+      125,
+      234
+    ]
+  ],
+  "final": [
+    {
+      "state": {
+        "engine": "planet-4.65",
+        "ready": true,
+        "running": true,
+        "frame": 180,
+        "paused": false,
+        "gameOver": false,
+        "scenario": "Easy.c4f/Goldmine.c4s",
+        "randomHold": 1119525206,
+        "randomCount": 32708,
+        "landscape": {
+          "width": 800,
+          "height": 600
+        },
+        "players": [
+          {
+            "number": 0,
+            "name": "Player0",
+            "local": true,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 85,
+              "x": 134,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 85,
+                "x": 134,
+                "y": 289,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Player1",
+            "local": false,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 89,
+              "x": 743,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 89,
+                "x": 743,
+                "y": 289,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          }
+        ],
+        "viewport": {
+          "width": 640,
+          "height": 480,
+          "zoom": 1
+        }
+      },
+      "network": {
+        "enabled": true,
+        "running": true,
+        "playersJoined": true,
+        "paused": false,
+        "frame": 180,
+        "acceptedFrame": -1,
+        "localPlayerIndex": 0,
+        "totalPlayers": 2,
+        "seed": 424242
+      },
+      "errors": [],
+      "logs": [
+        "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "DeterminePaths: SetCurrentDirectory(/data): 1",
+        "Console.Init...",
+        "Engine.Init...",
+        "RedWolf Design Clonk Planet Engine",
+        "Version: 4.65",
+        "glfwInit successful",
+        "glfwCreateWindow(640x480)...",
+        "glfwCreateWindow successful",
+        "WebGL 2 indexed renderer initialized",
+        "Console.CommandLine...",
+        "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "InitSystem...",
+        "InitGame...",
+        "InitGame: Network override...",
+        "InitGame: DirectJoinGetReference...",
+        "InitGame: OpenScenario...",
+        "Scenario: Easy.c4f/Goldmine.c4s",
+        "InitGame: InitNetworkScenario...",
+        "InitNetworkScenario: New game as host",
+        "InitNetworkScenario: fLobby is false",
+        "InitNetworkScenario: Success",
+        "InitGame: LoadScenarioComponents...",
+        "InitGame: GraphicsResource.Init...",
+        "Loading graphics...",
+        "Loading object definitions:",
+        "Objects.c4d...",
+        "   269 definitions loaded.",
+        "Goldmine.c4s...",
+        "   0 definitions loaded.",
+        "Texture table holds 40 entries.",
+        "16 textures loaded.",
+        "21 materials loaded.",
+        "Creating landscape...",
+        "Placing environment objects...",
+        "InitPlayers...",
+        "Player join: Player0.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "Player join: Player1.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "InitGameFinal...",
+        "Game started."
+      ]
+    },
+    {
+      "state": {
+        "engine": "planet-4.65",
+        "ready": true,
+        "running": true,
+        "frame": 180,
+        "paused": false,
+        "gameOver": false,
+        "scenario": "Easy.c4f/Goldmine.c4s",
+        "randomHold": 1119525206,
+        "randomCount": 32708,
+        "landscape": {
+          "width": 800,
+          "height": 600
+        },
+        "players": [
+          {
+            "number": 0,
+            "name": "Player0",
+            "local": false,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 85,
+              "x": 134,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 85,
+                "x": 134,
+                "y": 289,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Player1",
+            "local": true,
+            "eliminated": false,
+            "wealth": 0,
+            "lastCommand": 0,
+            "cursor": {
+              "number": 89,
+              "x": 743,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            },
+            "crew": [
+              {
+                "number": 89,
+                "x": 743,
+                "y": 289,
+                "action": 0,
+                "energy": 50000
+              }
+            ]
+          }
+        ],
+        "viewport": {
+          "width": 640,
+          "height": 480,
+          "zoom": 1
+        }
+      },
+      "network": {
+        "enabled": true,
+        "running": true,
+        "playersJoined": true,
+        "paused": false,
+        "frame": 180,
+        "acceptedFrame": -1,
+        "localPlayerIndex": 1,
+        "totalPlayers": 2,
+        "seed": 424242
+      },
+      "errors": [],
+      "logs": [
+        "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "DeterminePaths: SetCurrentDirectory(/data): 1",
+        "Console.Init...",
+        "Engine.Init...",
+        "RedWolf Design Clonk Planet Engine",
+        "Version: 4.65",
+        "glfwInit successful",
+        "glfwCreateWindow(640x480)...",
+        "glfwCreateWindow successful",
+        "WebGL 2 indexed renderer initialized",
+        "Console.CommandLine...",
+        "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+        "InitSystem...",
+        "InitGame...",
+        "InitGame: Network override...",
+        "InitGame: DirectJoinGetReference...",
+        "InitGame: OpenScenario...",
+        "Scenario: Easy.c4f/Goldmine.c4s",
+        "InitGame: InitNetworkScenario...",
+        "InitNetworkScenario: New game as host",
+        "InitNetworkScenario: fLobby is false",
+        "InitNetworkScenario: Success",
+        "InitGame: LoadScenarioComponents...",
+        "InitGame: GraphicsResource.Init...",
+        "Loading graphics...",
+        "Loading object definitions:",
+        "Objects.c4d...",
+        "   269 definitions loaded.",
+        "Goldmine.c4s...",
+        "   0 definitions loaded.",
+        "Texture table holds 40 entries.",
+        "16 textures loaded.",
+        "21 materials loaded.",
+        "Creating landscape...",
+        "Placing environment objects...",
+        "InitPlayers...",
+        "Player join: Player0.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "Player join: Player1.c4p",
+        "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+        "InitGameFinal...",
+        "Game started."
+      ]
+    }
+  ],
+  "finalSync": [
+    [
+      0,
+      0,
+      0,
+      0,
+      180,
+      0,
+      0,
+      0,
+      221,
+      0,
+      0,
+      0,
+      196,
+      127,
+      0,
+      0,
+      109,
+      3,
+      0,
+      0,
+      129,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      86,
+      153,
+      186,
+      66
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      180,
+      0,
+      0,
+      0,
+      221,
+      0,
+      0,
+      0,
+      196,
+      127,
+      0,
+      0,
+      109,
+      3,
+      0,
+      0,
+      129,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      89,
+      0,
+      0,
+      0,
+      86,
+      153,
+      186,
+      66
+    ]
+  ],
+  "malformed": -2,
+  "foreign": -2,
+  "pass": true,
+  "peer0": {
+    "logs": [
+      "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+      "DeterminePaths: SetCurrentDirectory(/data): 1",
+      "Console.Init...",
+      "Engine.Init...",
+      "RedWolf Design Clonk Planet Engine",
+      "Version: 4.65",
+      "glfwInit successful",
+      "glfwCreateWindow(640x480)...",
+      "glfwCreateWindow successful",
+      "WebGL 2 indexed renderer initialized",
+      "Console.CommandLine...",
+      "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+      "InitSystem...",
+      "InitGame...",
+      "InitGame: Network override...",
+      "InitGame: DirectJoinGetReference...",
+      "InitGame: OpenScenario...",
+      "Scenario: Easy.c4f/Goldmine.c4s",
+      "InitGame: InitNetworkScenario...",
+      "InitNetworkScenario: New game as host",
+      "InitNetworkScenario: fLobby is false",
+      "InitNetworkScenario: Success",
+      "InitGame: LoadScenarioComponents...",
+      "InitGame: GraphicsResource.Init...",
+      "Loading graphics...",
+      "Loading object definitions:",
+      "Objects.c4d...",
+      "   269 definitions loaded.",
+      "Goldmine.c4s...",
+      "   0 definitions loaded.",
+      "Texture table holds 40 entries.",
+      "16 textures loaded.",
+      "21 materials loaded.",
+      "Creating landscape...",
+      "Placing environment objects...",
+      "InitPlayers...",
+      "Player join: Player0.c4p",
+      "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+      "Player join: Player1.c4p",
+      "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+      "InitGameFinal...",
+      "Game started."
+    ],
+    "errors": [],
+    "state": {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 180,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 1119525206,
+      "randomCount": 32708,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Player0",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 134,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 134,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Player1",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 743,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 743,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 640,
+        "height": 480,
+        "zoom": 1
+      }
+    },
+    "net": {
+      "enabled": true,
+      "running": true,
+      "playersJoined": true,
+      "paused": false,
+      "frame": 180,
+      "acceptedFrame": -1,
+      "localPlayerIndex": 0,
+      "totalPlayers": 2,
+      "seed": 424242
+    }
+  },
+  "peer1": {
+    "logs": [
+      "Application::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+      "DeterminePaths: SetCurrentDirectory(/data): 1",
+      "Console.Init...",
+      "Engine.Init...",
+      "RedWolf Design Clonk Planet Engine",
+      "Version: 4.65",
+      "glfwInit successful",
+      "glfwCreateWindow(640x480)...",
+      "glfwCreateWindow successful",
+      "WebGL 2 indexed renderer initialized",
+      "Console.CommandLine...",
+      "Game::Init: \"Easy.c4f/Goldmine.c4s\" \"Objects.c4d\" \"Player0.c4p\" \"Player1.c4p\"",
+      "InitSystem...",
+      "InitGame...",
+      "InitGame: Network override...",
+      "InitGame: DirectJoinGetReference...",
+      "InitGame: OpenScenario...",
+      "Scenario: Easy.c4f/Goldmine.c4s",
+      "InitGame: InitNetworkScenario...",
+      "InitNetworkScenario: New game as host",
+      "InitNetworkScenario: fLobby is false",
+      "InitNetworkScenario: Success",
+      "InitGame: LoadScenarioComponents...",
+      "InitGame: GraphicsResource.Init...",
+      "Loading graphics...",
+      "Loading object definitions:",
+      "Objects.c4d...",
+      "   269 definitions loaded.",
+      "Goldmine.c4s...",
+      "   0 definitions loaded.",
+      "Texture table holds 40 entries.",
+      "16 textures loaded.",
+      "21 materials loaded.",
+      "Creating landscape...",
+      "Placing environment objects...",
+      "InitPlayers...",
+      "Player join: Player0.c4p",
+      "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+      "Player join: Player1.c4p",
+      "C4PlayerInfoCore::Load: Using new version (Player.txt)",
+      "InitGameFinal...",
+      "Game started."
+    ],
+    "errors": [],
+    "state": {
+      "engine": "planet-4.65",
+      "ready": true,
+      "running": true,
+      "frame": 180,
+      "paused": false,
+      "gameOver": false,
+      "scenario": "Easy.c4f/Goldmine.c4s",
+      "randomHold": 1119525206,
+      "randomCount": 32708,
+      "landscape": {
+        "width": 800,
+        "height": 600
+      },
+      "players": [
+        {
+          "number": 0,
+          "name": "Player0",
+          "local": false,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 85,
+            "x": 134,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 85,
+              "x": 134,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "name": "Player1",
+          "local": true,
+          "eliminated": false,
+          "wealth": 0,
+          "lastCommand": 0,
+          "cursor": {
+            "number": 89,
+            "x": 743,
+            "y": 289,
+            "action": 0,
+            "energy": 50000
+          },
+          "crew": [
+            {
+              "number": 89,
+              "x": 743,
+              "y": 289,
+              "action": 0,
+              "energy": 50000
+            }
+          ]
+        }
+      ],
+      "viewport": {
+        "width": 640,
+        "height": 480,
+        "zoom": 1
+      }
+    },
+    "net": {
+      "enabled": true,
+      "running": true,
+      "playersJoined": true,
+      "paused": false,
+      "frame": 180,
+      "acceptedFrame": -1,
+      "localPlayerIndex": 1,
+      "totalPlayers": 2,
+      "seed": 424242
+    }
+  }
+}

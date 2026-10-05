@@ -1,0 +1,249 @@
+{
+  "checks": [
+    "Portrait viewport and zoom 8",
+    "Real touch movement and stop",
+    "UI writes Planet save to IndexedDB",
+    "Planet save appears in shared main menu",
+    "Shared menu resumes original Planet save",
+    "Saving again after resume succeeds"
+  ],
+  "errors": [],
+  "initial": {
+    "engine": "planet-4.65",
+    "ready": true,
+    "running": true,
+    "frame": 8,
+    "paused": true,
+    "gameOver": false,
+    "scenario": "Easy.c4f/Goldmine.c4s",
+    "randomHold": 3630105878,
+    "randomCount": 32800,
+    "landscape": {
+      "width": 800,
+      "height": 600
+    },
+    "players": [
+      {
+        "number": 0,
+        "name": "Explorer",
+        "local": true,
+        "eliminated": false,
+        "wealth": 0,
+        "lastCommand": 0,
+        "cursor": {
+          "number": 85,
+          "x": 190,
+          "y": 264,
+          "action": 0,
+          "energy": 50000
+        },
+        "crew": [
+          {
+            "number": 85,
+            "x": 190,
+            "y": 264,
+            "action": 0,
+            "energy": 50000
+          }
+        ]
+      }
+    ],
+    "viewport": {
+      "width": 195,
+      "height": 396,
+      "zoom": 2
+    }
+  },
+  "zoom8": {
+    "engine": "planet-4.65",
+    "ready": true,
+    "running": true,
+    "frame": 8,
+    "paused": true,
+    "gameOver": false,
+    "scenario": "Easy.c4f/Goldmine.c4s",
+    "randomHold": 3630105878,
+    "randomCount": 32800,
+    "landscape": {
+      "width": 800,
+      "height": 600
+    },
+    "players": [
+      {
+        "number": 0,
+        "name": "Explorer",
+        "local": true,
+        "eliminated": false,
+        "wealth": 0,
+        "lastCommand": 0,
+        "cursor": {
+          "number": 85,
+          "x": 190,
+          "y": 264,
+          "action": 0,
+          "energy": 50000
+        },
+        "crew": [
+          {
+            "number": 85,
+            "x": 190,
+            "y": 264,
+            "action": 0,
+            "energy": 50000
+          }
+        ]
+      }
+    ],
+    "viewport": {
+      "width": 48,
+      "height": 99,
+      "zoom": 8
+    }
+  },
+  "canvas": {
+    "width": 390,
+    "height": 792,
+    "cssWidth": 390,
+    "cssHeight": 792
+  },
+  "afterTouch": {
+    "engine": "planet-4.65",
+    "ready": true,
+    "running": true,
+    "frame": 88,
+    "paused": true,
+    "gameOver": false,
+    "scenario": "Easy.c4f/Goldmine.c4s",
+    "randomHold": 3282776914,
+    "randomCount": 32956,
+    "landscape": {
+      "width": 800,
+      "height": 600
+    },
+    "players": [
+      {
+        "number": 0,
+        "name": "Explorer",
+        "local": true,
+        "eliminated": false,
+        "wealth": 0,
+        "lastCommand": 4,
+        "cursor": {
+          "number": 85,
+          "x": 215,
+          "y": 279,
+          "action": 0,
+          "energy": 50000
+        },
+        "crew": [
+          {
+            "number": 85,
+            "x": 215,
+            "y": 279,
+            "action": 0,
+            "energy": 50000
+          }
+        ]
+      }
+    ],
+    "viewport": {
+      "width": 195,
+      "height": 396,
+      "zoom": 2
+    }
+  },
+  "saved": {
+    "engine": "planet-4.65",
+    "ready": true,
+    "running": true,
+    "frame": 88,
+    "paused": true,
+    "gameOver": false,
+    "scenario": "Easy.c4f/Goldmine.c4s",
+    "randomHold": 3282776914,
+    "randomCount": 32956,
+    "landscape": {
+      "width": 800,
+      "height": 600
+    },
+    "players": [
+      {
+        "number": 0,
+        "name": "Explorer",
+        "local": true,
+        "eliminated": false,
+        "wealth": 0,
+        "lastCommand": 4,
+        "cursor": {
+          "number": 85,
+          "x": 215,
+          "y": 279,
+          "action": 0,
+          "energy": 50000
+        },
+        "crew": [
+          {
+            "number": 85,
+            "x": 215,
+            "y": 279,
+            "action": 0,
+            "energy": 50000
+          }
+        ]
+      }
+    ],
+    "viewport": {
+      "width": 195,
+      "height": 396,
+      "zoom": 2
+    }
+  },
+  "saveMenu": "Gold Mine · Clonk Planet · 10/5/26, 10:16 AM",
+  "loaded": {
+    "engine": "planet-4.65",
+    "ready": true,
+    "running": true,
+    "frame": 89,
+    "paused": true,
+    "gameOver": false,
+    "scenario": "/data/LoadedSave.c4s",
+    "randomHold": 2119734978,
+    "randomCount": 1009,
+    "landscape": {
+      "width": 800,
+      "height": 600
+    },
+    "players": [
+      {
+        "number": 0,
+        "name": "Explorer",
+        "local": true,
+        "eliminated": false,
+        "wealth": 0,
+        "lastCommand": 4,
+        "cursor": {
+          "number": 85,
+          "x": 215,
+          "y": 279,
+          "action": 0,
+          "energy": 50000
+        },
+        "crew": [
+          {
+            "number": 85,
+            "x": 215,
+            "y": 279,
+            "action": 0,
+            "energy": 50000
+          }
+        ]
+      }
+    ],
+    "viewport": {
+      "width": 195,
+      "height": 396,
+      "zoom": 2
+    }
+  },
+  "passed": true
+}

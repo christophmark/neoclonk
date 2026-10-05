@@ -4,7 +4,7 @@ export default async function Page({ searchParams }: {
 }) {
   const values = (await searchParams) ?? {};
   const query = new URLSearchParams();
-  query.set('v', 'zoom-buttons-1');
+  query.set('v', 'planet-library-1');
   for (const key of ['debug', 'touch', 'replay', 'play', 'solo', 'load', 'host', 'join']) {
     if (values[key] === '1') query.set(key, '1');
   }
@@ -16,7 +16,7 @@ export default async function Page({ searchParams }: {
   if (typeof save === 'string' && /\.c4s$/i.test(save) &&
     save.split('/').every(part => part && part !== '.' && part !== '..' && !/[\\\0]/.test(part))) query.set('save', save);
   return <main className="original-game">
-    <iframe title="Neoclonk — original Clonk Rage scenarios"
+    <iframe title="Neoclonk — original Clonk Rage and Planet scenarios"
       src={`/rage/index.html${query.size ? `?${query}` : ''}`}
       allow="fullscreen; autoplay; gamepad" allowFullScreen />
   </main>;

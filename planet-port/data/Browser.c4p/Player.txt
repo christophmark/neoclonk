@@ -1,0 +1,7 @@
+[Player]
+Name=Explorer
+Comment=Neoclonk browser player
+RankName=Beginner
+[Preferences]
+Control=0
+Color=0

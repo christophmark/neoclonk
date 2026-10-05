@@ -1,0 +1,129 @@
+{
+  "publisherUrl": "http://www.clonkx.de/planet/cp465us_free.exe",
+  "listingUrl": "http://www.clonk.de/classics.php?lng=en",
+  "sourceSha256": "0e438cd214b80739472f7071b29091143e8ff75c65609a290718a4b877f9e8b2",
+  "sourceBytes": 11312552,
+  "method": "GkWare zlib self-extractor and NORMAL section; each file verified against installer MD5; no executable run",
+  "files": [
+    {
+      "path": "planet-content/original/planet-release/clonk.c4x",
+      "bytes": 320000,
+      "sha256": "2f29fbd5368f4a859b435ee6d72ef433d7abfe1a5f2bb449c9f58e3253f3e47f"
+    },
+    {
+      "path": "planet-content/original/planet-release/Easy.c4f",
+      "bytes": 352866,
+      "sha256": "a292009f8c81a637e7c7f00acb930e157b4088d08a18c28fd038680dd96b6b84"
+    },
+    {
+      "path": "planet-content/original/planet-release/Freeware.txt",
+      "bytes": 356,
+      "sha256": "b44741d5553e2ad8d4ca1114ff75a752e126442b176dabfab31b31be13742dbf"
+    },
+    {
+      "path": "planet-content/original/planet-release/Graphics.c4g",
+      "bytes": 357772,
+      "sha256": "ed2f7b75f74fa85131944ad19b42e6eb9212c1705756f4c9da8790f4678c1828"
+    },
+    {
+      "path": "planet-content/original/planet-release/Hazard.c4d",
+      "bytes": 545770,
+      "sha256": "4325316da94b7b026926eb3b2ea330d5334ba337cc8cd0247b3618ad4f072003"
+    },
+    {
+      "path": "planet-content/original/planet-release/Hazard.c4f",
+      "bytes": 775288,
+      "sha256": "eaae26f85824c000afb8846ea2a3b13d924f51c42b175e722c1da7c31bf62669"
+    },
+    {
+      "path": "planet-content/original/planet-release/Joki.c4p",
+      "bytes": 13387,
+      "sha256": "6a0b10ee86598a08c5e1582a28e6301aff47fd21847734462f0188f6d0f92505"
+    },
+    {
+      "path": "planet-content/original/planet-release/Knights.c4d",
+      "bytes": 1051144,
+      "sha256": "bbf71f5503adcebeb1d268faf092a9a0919ce0faec32614b472d24afa6889343"
+    },
+    {
+      "path": "planet-content/original/planet-release/Knights.c4f",
+      "bytes": 774331,
+      "sha256": "06dfcd03409e939033f185f2ec1943cf4d2733e000718f6f3362b32594d50a37"
+    },
+    {
+      "path": "planet-content/original/planet-release/Maps.c4f",
+      "bytes": 143052,
+      "sha256": "a332b8663ec773bfcfcf2976937378e76250816af4c5d5330ac91fcf91eff7a5"
+    },
+    {
+      "path": "planet-content/original/planet-release/Material.c4g",
+      "bytes": 122145,
+      "sha256": "a6bc145f0846b1f9fe21ab911c0b72498db4714864272d24b94c27c8772f6a21"
+    },
+    {
+      "path": "planet-content/original/planet-release/Missions.c4f",
+      "bytes": 627241,
+      "sha256": "a503a9689b6e3799389d938a5c5b8b9efd5bf6599647b83041ea821ae19b976c"
+    },
+    {
+      "path": "planet-content/original/planet-release/Music.c4g",
+      "bytes": 71639,
+      "sha256": "45e9268ceb6d119b90ebfdf141fd73f765b2ee87f62cc01dbe971bf6aea603c6"
+    },
+    {
+      "path": "planet-content/original/planet-release/Names.txt",
+      "bytes": 677,
+      "sha256": "1d4ad13582975ed1c05f8bc18b688422eb85d732d20cf9b3ab2cd5815ea3dcc5"
+    },
+    {
+      "path": "planet-content/original/planet-release/Objects.c4d",
+      "bytes": 1056908,
+      "sha256": "1ca045528473f4162bf298cf18bc8840ba0bb0867d07294d1d463d08f6aad35b"
+    },
+    {
+      "path": "planet-content/original/planet-release/Planet.cnt",
+      "bytes": 465,
+      "sha256": "8967db40e9724aa03f8874a3c434966b03650a2b3b73f3757e86cee4d78fd353"
+    },
+    {
+      "path": "planet-content/original/planet-release/Planet.exe",
+      "bytes": 1019392,
+      "sha256": "c047938a6dc1fb6fad5e5ab23222c023cb2e7eb68f6cbf7ff0127506889ac7f6"
+    },
+    {
+      "path": "planet-content/original/planet-release/Planet.hlp",
+      "bytes": 76456,
+      "sha256": "b771a562b940b8db3507ee215379d98a16c221228b7550998cbb31bd83eba9aa"
+    },
+    {
+      "path": "planet-content/original/planet-release/Sound.c4g",
+      "bytes": 772730,
+      "sha256": "69ad894f722871f8bbe102941cb0c8446035ce70657bc30bcfa943dfbd445604"
+    },
+    {
+      "path": "planet-content/original/planet-release/Splash.c4v",
+      "bytes": 1578496,
+      "sha256": "c85abf805d6a2ed8fb187207d4121bff3696728e2c221356d3e4072eda1845a7"
+    },
+    {
+      "path": "planet-content/original/planet-release/Tutorial.c4f",
+      "bytes": 535085,
+      "sha256": "05de4b5eba7640a75768e57b30316822b78fec77724d9ddbc73b2f905bf30e3b"
+    },
+    {
+      "path": "planet-content/original/planet-release/Twonky.c4p",
+      "bytes": 14029,
+      "sha256": "94497037f52da426a0f7fc5c89bf429819cf665788503bf7c714fb098af5f68c"
+    },
+    {
+      "path": "planet-content/original/planet-release/Worlds.c4f",
+      "bytes": 152570,
+      "sha256": "1b987f3e85d3e98ea104d34690e67348fce33a7de3da7d022a1ba359ce849ad4"
+    },
+    {
+      "path": "planet-content/original/planet-release/Worlds2.c4f",
+      "bytes": 1504277,
+      "sha256": "4b4c9649e01a364502c05ee2847c00c2c88f672c55241f0e174b4c3e31c1aec3"
+    }
+  ]
+}

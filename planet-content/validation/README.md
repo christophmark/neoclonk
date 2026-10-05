@@ -1,0 +1,10 @@
+# Planet browser validation
+
+Tests use unchanged original group files and the separately compiled Planet engine. They exercise startup, original control input and a short simulation interval, not full completion of each scenario objective.
+
+- `official-scenarios.json`: official scenario startup/control sweep.
+- `mobile-webkit.json` and `mobile-chromium.json`: portrait viewport, zoom, touch movement, IndexedDB save, shared menu listing, reload and save again.
+- `native-network.json`: two independent engine instances, 180 ordered original control frames, inputs from both players, RNG and native synchronization equality, malformed/foreign control rejection.
+- `room-shell.json`: shared browser lobby, real WebRTC data channel, separate Planet runtimes, synchronization, shared pause/resume.
+
+Scripts are in `planet-port/tests/`. Exact legacy Windows executable parity, all possible actions/goals and long-running device stability are not established by these smoke tests. MIDI music is not available in this browser build.

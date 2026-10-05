@@ -11,7 +11,7 @@
  const encode=value=>{const b=new TextEncoder().encode(JSON.stringify(value));let s='';for(const c of b)s+=String.fromCharCode(c);return btoa(s);};
  const decode=value=>{if(typeof value!=='string'||value.length>60000)throw Error('This invitation is too large.');try{return JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(value.trim()),c=>c.charCodeAt(0))));}catch{throw Error('Paste the complete invitation or reply.');}};
  function status(message){$('room-status').textContent=message;}
- function notice(message){status(message);const feedback=$('save-feedback');if(engine&&feedback){feedback.hidden=!message;feedback.textContent=message;}}
+ function notice(message){status(message);window.__planetHost?.notice(message);const feedback=$('save-feedback');if(engine&&feedback){feedback.hidden=!message;feedback.textContent=message;}}
  const call=(suffix,types=[],args=[],result='number')=>window.Module.ccall('nc_browser_net_'+suffix,result,types,args);
  const nativeStatus=()=>JSON.parse(call('status',[],[],'string'));
  function bytes(suffix,types=[],args=[]){const p=call(suffix,types,args),n=call('size');return p&&n?Module.HEAPU8.slice(p,p+n):null;}
@@ -43,7 +43,7 @@
   case 'name':if(!room.host||room.started)return;p.name=String(m.name||'Clonk').replace(/[\r\n\0=\[\]]/g,'').slice(0,24);publishRoster();break;
   case 'start':if(room.host||room.started||!Array.isArray(m.players)||m.players.length<Math.max(2,room.scenario.minPlayers)||m.players.length>Math.min(maxPlayers,room.scenario.maxPlayers)||!Number.isInteger(m.index)||m.index<1||m.index>=m.players.length||!Number.isInteger(m.seed))throw Error('Invalid round settings.');room.index=m.index;room.seed=m.seed;room.players=m.players;launch().catch(stop);break;
   case 'engine-ready':if(!room.host||!room.started)return;p.engineReady=true;notice('Waiting for all devices to load…');break;
-  case 'ack':if(!room.host||!room.started||!Number.isInteger(m.frame)||m.frame<p.frame||m.frame>nativeStatus().frame+1)throw Error('Invalid frame acknowledgment.');p.frame=m.frame;p.sync=typeof m.sync==='string'?m.sync:null;break;
+  case 'ack':if(!room.host||!room.started||!Number.isInteger(m.frame)||m.frame<p.frame||m.frame>(engine?nativeStatus().frame+1:0))throw Error('Invalid frame acknowledgment.');p.frame=m.frame;p.sync=typeof m.sync==='string'?m.sync:null;break;
   case 'pause':if(!room.started)return;if(room.host){p.paused=!!m.paused;publishPause();}else{room.paused=!!m.paused;notice(room.paused?'Round paused by a player.':'');}break;
   case 'error':stop('Another player stopped: '+String(m.message||'connection error').slice(0,180));break;
   default:throw Error('Unknown room message.');
