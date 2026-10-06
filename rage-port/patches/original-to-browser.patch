@@ -226,13 +226,14 @@
  		try
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,354 @@
+@@ -0,0 +1,382 @@
 +/* Browser inspection and automation boundary for the original Clonk Rage engine.
 +   Scheduling and input only: this file does not implement gameplay or mutate
 +   terrain, object positions, inventories, materials, scripts, or objectives. */
 +#include <C4Include.h>
 +#include <C4Game.h>
 +#include <C4Object.h>
++#include <C4ObjectCom.h>
 +#include <C4Player.h>
 +#include <C4Config.h>
 +#include <C4Random.h>
@@ -330,6 +331,33 @@
 +  for(C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();view;view=view->GetNext())
 +    view->SetBrowserView(static_cast<float>(zoom),occlusion);
 +  return 1;
++}
++
++// Read-only counterpart of DrawCommands' special-key metadata. Using the
++// compiled masks/descriptions avoids running scripts from a local UI timer.
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch()
++{
++  C4Player *p=Game.Players.First;
++  while(p && (!p->LocalControl || p->Eliminated))p=p->Next;
++  if(!p){BrowserResult.Copy("null");return BrowserResult.getData();}
++  C4Object *o=p->Cursor;
++  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"extras\":[",
++    p->Number,o?o->Number:0,p->ActiveCrewCount(),
++    (p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false");
++  bool comma=false;
++  if(o && o->Status && o->Def)for(int key=0;key<2;++key){
++    bool started=false;
++    for(int variant=0;variant<3;++variant){
++      int order=6+key+8*variant;
++      int method=o->Def->Script.GetControlMethod(order,o->Def->Script.ControlMethod[0],o->Def->Script.ControlMethod[1]);
++      if(!(method==C4AUL_ControlMethod_All || (method==C4AUL_ControlMethod_Classic && !p->ControlStyle) || (method==C4AUL_ControlMethod_JumpAndRun && p->ControlStyle)))continue;
++      if(!started){if(comma)BrowserResult.AppendChar(',');comma=true;BrowserResult.AppendFormat("{\"control\":%d,\"variants\":[",10+key);started=true;}else BrowserResult.AppendChar(',');
++      BrowserResult.Append("{\"gesture\":");JsonString(BrowserResult,variant==2?"double":variant==1?"single":"press");
++      BrowserResult.Append(",\"label\":");JsonString(BrowserResult,o->Def->Script.GetControlDesc(PSF_Control,ComOrder(order)));BrowserResult.AppendChar('}');
++    }
++    if(started)BrowserResult.Append("]}");
++  }
++  BrowserResult.Append("]}");return BrowserResult.getData();
 +}
 +
 +EMSCRIPTEN_KEEPALIVE const char *nc_browser_state()

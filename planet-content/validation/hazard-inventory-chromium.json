@@ -1,25 +1,51 @@
 {
   "browser": "chromium",
   "errors": [],
+  "touch": {
+    "player": 0,
+    "cursor": 413,
+    "crewCount": 1,
+    "menu": false,
+    "extras": [
+      {
+        "control": 10,
+        "variants": [
+          {
+            "gesture": "press",
+            "label": "Select inventory"
+          }
+        ]
+      },
+      {
+        "control": 11,
+        "variants": [
+          {
+            "gesture": "press",
+            "label": "Info"
+          }
+        ]
+      }
+    ]
+  },
   "before": {
     "contents": "417;416;415;",
-    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Kodell\r\nOwner=0\r\nTimer=1\r\nController=0\r\nCategory=264200\r\nX=510\r\nY=-80\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=33423360\r\nFixY=-5242880\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139116737\r\nAction=Walk\r\nDir=1\r\nActionTime=1\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Compor\r\nOwner=0\r\nTimer=1\r\nController=0\r\nCategory=264200\r\nX=1532\r\nY=-80\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=100401152\r\nFixY=-5242880\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139116737\r\nAction=Walk\r\nDir=1\r\nActionTime=1\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
   },
   "afterTouch": {
     "contents": "416;415;417;",
-    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Kodell\r\nOwner=0\r\nTimer=6\r\nController=0\r\nCategory=264200\r\nX=511\r\nY=-79\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=33488896\r\nFixY=-5177344\r\nXDir=26216\r\nYDir=26216\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139116737\r\nAction=ArmedWalk\r\nDir=1\r\nActionTime=4\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=416;415;417;\r\n\r\n"
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Compor\r\nOwner=0\r\nTimer=6\r\nController=0\r\nCategory=264200\r\nX=1533\r\nY=-79\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=100466688\r\nFixY=-5177344\r\nXDir=26216\r\nYDir=26216\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139116737\r\nAction=ArmedWalk\r\nDir=1\r\nActionTime=4\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=416;415;417;\r\n\r\n"
   },
   "afterKey": {
     "contents": "415;417;416;",
-    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Kodell\r\nOwner=0\r\nTimer=31\r\nController=0\r\nCategory=264200\r\nX=543\r\nY=-47\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=35586048\r\nFixY=-3080192\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=4\r\nPhase=1\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Compor\r\nOwner=0\r\nTimer=31\r\nController=0\r\nCategory=264200\r\nX=1565\r\nY=-47\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=102563840\r\nFixY=-3080192\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=4\r\nPhase=1\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
   },
   "afterInfo": {
     "contents": "415;417;416;",
-    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Kodell\r\nOwner=0\r\nTimer=21\r\nController=0\r\nCategory=264200\r\nX=581\r\nY=-9\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=38076416\r\nFixY=-589824\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=29\r\nPhase=1\r\nPhaseDelay=20\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Compor\r\nOwner=0\r\nTimer=21\r\nController=0\r\nCategory=264200\r\nX=1603\r\nY=-9\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=105054208\r\nFixY=-589824\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=29\r\nPhase=1\r\nPhaseDelay=20\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
   },
   "wrapped": {
     "contents": "417;416;415;",
-    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Kodell\r\nOwner=0\r\nTimer=26\r\nController=0\r\nCategory=264200\r\nX=589\r\nY=-1\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=38600704\r\nFixY=-65536\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=34\r\nPhase=3\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Compor\r\nOwner=0\r\nTimer=26\r\nController=0\r\nCategory=264200\r\nX=1611\r\nY=-1\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=105578496\r\nFixY=-65536\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=34\r\nPhase=3\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
   },
   "passed": true
 }

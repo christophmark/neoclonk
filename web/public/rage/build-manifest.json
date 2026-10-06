@@ -7,13 +7,17 @@
     "bytes": 23928602,
     "sha256": "f4e0f2d6927e6f645e1b08b466a7d9735c041e653572397cc9e4a5472cef4e0e"
   },
+  "adaptive-touch.js": {
+    "bytes": 2578,
+    "sha256": "184f5bb0ccb81b0872e0c0d02415a8d4e722f353bc9807bf9a3359c2dab5a38d"
+  },
   "multiplayer.js": {
     "bytes": 24350,
     "sha256": "d022767a8d2a33ca2e0cb4de4dd531931850e07e716fc14b445ea92378f1252a"
   },
   "clonk.js": {
-    "bytes": 610492,
-    "sha256": "a3ad5b85995e1b80ec9eaef29e1b46f42a3378a42105138c38714cb4dd635ac1"
+    "bytes": 610590,
+    "sha256": "3e70e020c65a9d31a2ee92f12be5da77859d5d1babee496bc962097156639ca7"
   },
   "gallery.js": {
     "bytes": 11332,
@@ -21,23 +25,23 @@
   },
   "scenario-library.js": {
     "bytes": 3108,
-    "sha256": "59c3a4b82f7b590cd12451a64e4ba2a2e857d13e416a4f7be99cb948467a2d1a"
+    "sha256": "0f6002cec9b90962825cff96012c0d5cdba172ef1b3092d243eb274d10397a30"
   },
   "index.html": {
-    "bytes": 34722,
-    "sha256": "33c6e953405ca54971dd66f64a1a6c67f27990dc6dcc90e04135a8ecfb63490a"
+    "bytes": 35183,
+    "sha256": "438068e261993ffd7a270409d883571f7103bdff26d2bc1f4387ca36ac701dba"
   },
   "planet-storage.js": {
     "bytes": 1820,
     "sha256": "48e1d11f42222181197846f579fc078794a4a06542ba25d164afdd82d9010a6d"
   },
   "game.js": {
-    "bytes": 31857,
-    "sha256": "4d073b70257b2556a2cd3d71ea84fcfa4fc761a5705f2a53394de76c3edf908c"
+    "bytes": 32274,
+    "sha256": "265de564ab744a3c9ac226aa37e96dfb95fee837c4b9bbbf2b0e02b2300db5b0"
   },
   "clonk.wasm": {
-    "bytes": 12993365,
-    "sha256": "ce3956ddd999fbcf713d4fca34b6fdd87b9329aaefc94818fdedca7e2869c298"
+    "bytes": 12995895,
+    "sha256": "1d84f883b5362d9e6a13532a0372f7952a857fbebe8e29af5325d816b0f08fec"
   },
   "clonk.ico": {
     "bytes": 22862,

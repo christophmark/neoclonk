@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpys5whzlg.js
+// include: /tmp/tmpxmbgv9qa.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,21 +217,21 @@ Module['FS_createPath']("/data", "verification", true, true);
 
   })();
 
-// end include: /tmp/tmpys5whzlg.js
-// include: /tmp/tmp8ibldc3y.js
+// end include: /tmp/tmpxmbgv9qa.js
+// include: /tmp/tmp7gkiq4p6.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmp8ibldc3y.js
-// include: /tmp/tmp5i9nqx5t.js
+  // end include: /tmp/tmp7gkiq4p6.js
+// include: /tmp/tmp5rq06fj6.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp5i9nqx5t.js
+  // end include: /tmp/tmp5rq06fj6.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -15878,6 +15878,7 @@ var _fflush = createExportWrapper('fflush', 1);
 var _htons = createExportWrapper('htons', 1);
 var _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
 var _nc_browser_view = Module['_nc_browser_view'] = createExportWrapper('nc_browser_view', 7);
+var _nc_browser_touch = Module['_nc_browser_touch'] = createExportWrapper('nc_browser_touch', 0);
 var _nc_browser_state = Module['_nc_browser_state'] = createExportWrapper('nc_browser_state', 0);
 var _nc_browser_quit = Module['_nc_browser_quit'] = createExportWrapper('nc_browser_quit', 0);
 var _nc_browser_overview = Module['_nc_browser_overview'] = createExportWrapper('nc_browser_overview', 0);

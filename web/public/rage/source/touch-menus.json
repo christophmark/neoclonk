@@ -128,19 +128,19 @@
       },
       "pad": {
         "x": 240,
-        "y": 677.25,
+        "y": 552.0625,
         "width": 140,
-        "height": 156.75
+        "height": 205.9375
       },
       "state": {
         "running": true,
         "paused": true,
-        "frame": 37,
+        "frame": 38,
         "gameOver": false,
         "evaluated": false,
         "scenario": "Worlds.c4f/Goldmine.c4s",
-        "randomHold": 3935509043,
-        "randomCount": 676,
+        "randomHold": 3166516653,
+        "randomCount": 669,
         "landscape": {
           "width": 800,
           "height": 600,
@@ -149,9 +149,9 @@
           "mapZoom": 10
         },
         "weather": {
-          "wind": -9,
-          "temperature": 4,
-          "season": 47
+          "wind": -61,
+          "temperature": 7,
+          "season": 19
         },
         "materials": [
           {
@@ -169,8 +169,8 @@
           {
             "index": 2,
             "name": "Coal",
-            "pixels": 2808,
-            "effectivePixels": 2808
+            "pixels": 2683,
+            "effectivePixels": 2683
           },
           {
             "index": 3,
@@ -187,8 +187,8 @@
           {
             "index": 5,
             "name": "Earth",
-            "pixels": 209106,
-            "effectivePixels": 209106
+            "pixels": 210891,
+            "effectivePixels": 210891
           },
           {
             "index": 6,
@@ -205,14 +205,14 @@
           {
             "index": 8,
             "name": "Gold",
-            "pixels": 6320,
-            "effectivePixels": 6320
+            "pixels": 6379,
+            "effectivePixels": 6379
           },
           {
             "index": 9,
             "name": "Granite",
-            "pixels": 3701,
-            "effectivePixels": 3701
+            "pixels": 2369,
+            "effectivePixels": 2369
           },
           {
             "index": 10,
@@ -241,8 +241,8 @@
           {
             "index": 14,
             "name": "Rock",
-            "pixels": 13800,
-            "effectivePixels": 13800
+            "pixels": 18612,
+            "effectivePixels": 18612
           },
           {
             "index": 15,
@@ -259,14 +259,14 @@
           {
             "index": 17,
             "name": "Sulphur",
-            "pixels": 657,
-            "effectivePixels": 657
+            "pixels": 1456,
+            "effectivePixels": 1456
           },
           {
             "index": 18,
             "name": "Tunnel",
-            "pixels": 254,
-            "effectivePixels": 254
+            "pixels": 39,
+            "effectivePixels": 39
           },
           {
             "index": 19,
@@ -277,11 +277,11 @@
           {
             "index": 20,
             "name": "Water",
-            "pixels": 596,
-            "effectivePixels": 596
+            "pixels": 83,
+            "effectivePixels": 83
           }
         ],
-        "goldObjects": 12,
+        "goldObjects": 18,
         "objectCount": 152,
         "players": [
           {
@@ -293,19 +293,19 @@
             "keyboardSet": 0,
             "wealth": 50,
             "lastCommand": 3,
-            "commandDelay": 3,
+            "commandDelay": 4,
             "pressedCommands": 8,
             "menu": false,
             "cursor": {
               "number": 153,
               "id": "CLNK",
-              "name": "Peter",
-              "x": 577,
+              "name": "Lemy",
+              "x": 160,
               "y": 274,
-              "fixedX": 37814272,
+              "fixedX": 10485760,
               "fixedY": 17956864,
               "vx": 0,
-              "vy": 65535,
+              "vy": 78642,
               "owner": 0,
               "controller": 0,
               "energy": 50000,
@@ -317,10 +317,10 @@
               "procedure": 0,
               "action": "Walk",
               "commandDirection": 0,
-              "facing": 1,
+              "facing": 0,
               "phase": 0,
               "phaseDelay": 0,
-              "actionTime": 37,
+              "actionTime": 38,
               "actionData": 0,
               "contact": 0,
               "attachment": 8,
@@ -357,13 +357,13 @@
               {
                 "number": 153,
                 "id": "CLNK",
-                "name": "Peter",
-                "x": 577,
+                "name": "Lemy",
+                "x": 160,
                 "y": 274,
-                "fixedX": 37814272,
+                "fixedX": 10485760,
                 "fixedY": 17956864,
                 "vx": 0,
-                "vy": 65535,
+                "vy": 78642,
                 "owner": 0,
                 "controller": 0,
                 "energy": 50000,
@@ -375,10 +375,10 @@
                 "procedure": 0,
                 "action": "Walk",
                 "commandDirection": 0,
-                "facing": 1,
+                "facing": 0,
                 "phase": 0,
                 "phaseDelay": 0,
-                "actionTime": 37,
+                "actionTime": 38,
                 "actionData": 0,
                 "contact": 0,
                 "attachment": 8,
@@ -427,21 +427,21 @@
           "y": 64,
           "width": 390,
           "height": 758,
-          "worldX": 447,
-          "worldY": 75,
-          "worldWidth": 260,
-          "worldHeight": 505,
-          "zoom": 1.5,
-          "requestedZoom": 1.5,
-          "minZoom": 1.2633,
+          "worldX": 63,
+          "worldY": 156,
+          "worldWidth": 195,
+          "worldHeight": 379,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
           "headerHeight": 64,
-          "clonkScreenX": 195,
-          "clonkScreenY": 362,
+          "clonkScreenX": 194,
+          "clonkScreenY": 300,
           "occlusion": {
             "x": 240,
-            "y": 677,
+            "y": 552,
             "width": 140,
-            "height": 157
+            "height": 206
           }
         }
       }
@@ -587,19 +587,19 @@
       },
       "pad": {
         "x": 748,
-        "y": 263.40625,
+        "y": 142.40625,
         "width": 138,
-        "height": 140.59375
+        "height": 185.59375
       },
       "state": {
         "running": true,
         "paused": true,
-        "frame": 57,
+        "frame": 59,
         "gameOver": false,
         "evaluated": false,
         "scenario": "Worlds.c4f/Goldmine.c4s",
-        "randomHold": 3203311002,
-        "randomCount": 789,
+        "randomHold": 321936088,
+        "randomCount": 762,
         "landscape": {
           "width": 800,
           "height": 600,
@@ -608,9 +608,9 @@
           "mapZoom": 10
         },
         "weather": {
-          "wind": -9,
-          "temperature": 4,
-          "season": 47
+          "wind": -61,
+          "temperature": 7,
+          "season": 19
         },
         "materials": [
           {
@@ -628,8 +628,8 @@
           {
             "index": 2,
             "name": "Coal",
-            "pixels": 2808,
-            "effectivePixels": 2808
+            "pixels": 2683,
+            "effectivePixels": 2683
           },
           {
             "index": 3,
@@ -646,8 +646,8 @@
           {
             "index": 5,
             "name": "Earth",
-            "pixels": 209106,
-            "effectivePixels": 209106
+            "pixels": 210891,
+            "effectivePixels": 210891
           },
           {
             "index": 6,
@@ -664,14 +664,14 @@
           {
             "index": 8,
             "name": "Gold",
-            "pixels": 6320,
-            "effectivePixels": 6320
+            "pixels": 6379,
+            "effectivePixels": 6379
           },
           {
             "index": 9,
             "name": "Granite",
-            "pixels": 3701,
-            "effectivePixels": 3701
+            "pixels": 2369,
+            "effectivePixels": 2369
           },
           {
             "index": 10,
@@ -700,8 +700,8 @@
           {
             "index": 14,
             "name": "Rock",
-            "pixels": 13800,
-            "effectivePixels": 13800
+            "pixels": 18612,
+            "effectivePixels": 18612
           },
           {
             "index": 15,
@@ -718,14 +718,14 @@
           {
             "index": 17,
             "name": "Sulphur",
-            "pixels": 657,
-            "effectivePixels": 657
+            "pixels": 1456,
+            "effectivePixels": 1456
           },
           {
             "index": 18,
             "name": "Tunnel",
-            "pixels": 254,
-            "effectivePixels": 254
+            "pixels": 39,
+            "effectivePixels": 39
           },
           {
             "index": 19,
@@ -736,11 +736,11 @@
           {
             "index": 20,
             "name": "Water",
-            "pixels": 596,
-            "effectivePixels": 596
+            "pixels": 83,
+            "effectivePixels": 83
           }
         ],
-        "goldObjects": 12,
+        "goldObjects": 18,
         "objectCount": 153,
         "players": [
           {
@@ -758,13 +758,13 @@
             "cursor": {
               "number": 153,
               "id": "CLNK",
-              "name": "Peter",
-              "x": 577,
+              "name": "Lemy",
+              "x": 160,
               "y": 274,
-              "fixedX": 37814272,
+              "fixedX": 10485760,
               "fixedY": 17956864,
               "vx": 0,
-              "vy": 65535,
+              "vy": 91749,
               "owner": 0,
               "controller": 0,
               "energy": 50000,
@@ -776,10 +776,10 @@
               "procedure": 0,
               "action": "Walk",
               "commandDirection": 0,
-              "facing": 1,
+              "facing": 0,
               "phase": 0,
               "phaseDelay": 0,
-              "actionTime": 57,
+              "actionTime": 59,
               "actionData": 0,
               "contact": 0,
               "attachment": 8,
@@ -816,13 +816,13 @@
               {
                 "number": 153,
                 "id": "CLNK",
-                "name": "Peter",
-                "x": 577,
+                "name": "Lemy",
+                "x": 160,
                 "y": 274,
-                "fixedX": 37814272,
+                "fixedX": 10485760,
                 "fixedY": 17956864,
                 "vx": 0,
-                "vy": 65535,
+                "vy": 91749,
                 "owner": 0,
                 "controller": 0,
                 "energy": 50000,
@@ -834,10 +834,10 @@
                 "procedure": 0,
                 "action": "Walk",
                 "commandDirection": 0,
-                "facing": 1,
+                "facing": 0,
                 "phase": 0,
                 "phaseDelay": 0,
-                "actionTime": 57,
+                "actionTime": 59,
                 "actionData": 0,
                 "contact": 0,
                 "attachment": 8,
@@ -886,21 +886,21 @@
           "y": 64,
           "width": 896,
           "height": 328,
-          "worldX": 312,
-          "worldY": 165,
-          "worldWidth": 597,
-          "worldHeight": 219,
-          "zoom": 1.5,
-          "requestedZoom": 1.5,
-          "minZoom": 1.12,
+          "worldX": 0,
+          "worldY": 192,
+          "worldWidth": 448,
+          "worldHeight": 164,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
           "headerHeight": 64,
-          "clonkScreenX": 397,
-          "clonkScreenY": 227,
+          "clonkScreenX": 320,
+          "clonkScreenY": 228,
           "occlusion": {
             "x": 748,
-            "y": 263,
+            "y": 142,
             "width": 138,
-            "height": 141
+            "height": 186
           }
         }
       }
@@ -920,5 +920,39 @@
     }
   ],
   "errors": [],
+  "initialTouch": {
+    "player": 0,
+    "cursor": 153,
+    "crewCount": 1,
+    "menu": false,
+    "extras": [
+      {
+        "control": 11,
+        "variants": [
+          {
+            "gesture": "press",
+            "label": "Menu"
+          }
+        ]
+      }
+    ]
+  },
+  "recruitedTouch": {
+    "player": 0,
+    "cursor": 153,
+    "crewCount": 2,
+    "menu": true,
+    "extras": [
+      {
+        "control": 11,
+        "variants": [
+          {
+            "gesture": "press",
+            "label": "Menu"
+          }
+        ]
+      }
+    ]
+  },
   "passed": true
 }

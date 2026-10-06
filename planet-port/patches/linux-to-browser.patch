@@ -125,7 +125,7 @@
  void C4Application::Quit() { PostQuitMessage(0); }
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,86 @@
+@@ -0,0 +1,111 @@
 +#include <C4Include.h>
 +#include <emscripten.h>
 +#include <sstream>
@@ -151,6 +151,31 @@
 +    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy << "}";
 +}
 +extern "C" {
++// Read the same compiled command metadata as the original action HUD. Never
++// call scenario scripts here: UI polling must not change the simulation or RNG.
++EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {
++  std::ostringstream s;
++  C4Player *p=Game.Players.First;
++  while(p && (!p->LocalControl || p->Eliminated))p=p->Next;
++  if(!p){BrowserState="null";return BrowserState.c_str();}
++  C4Object *o=p->Cursor;int crew=0;
++  for(C4ObjectLink *l=p->Crew.First;l;l=l->Next)if(l->Obj && l->Obj->Status)++crew;
++  s<<"{\"player\":"<<p->Number<<",\"cursor\":"<<(o?o->Number:0)
++   <<",\"crewCount\":"<<crew<<",\"menu\":"<<((p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false")<<",\"extras\":[";
++  bool comma=false;
++  if(o && o->Status && o->Def)for(int key=0;key<2;++key){
++    bool started=false;
++    for(int variant=0;variant<3;++variant){
++      int order=6+key+8*variant;
++      if(!(o->Def->ControlFlag & (1<<order)))continue;
++      if(!started){if(comma)s<<',';comma=true;s<<"{\"control\":"<<(10+key)<<",\"variants\":[";started=true;}else s<<',';
++      const char *desc=o->Def->Script.GetControlDesc(PSF_Control,ComOrder(order));
++      s<<"{\"gesture\":"<<JsonText(variant==2?"double":variant==1?"single":"press")<<",\"label\":"<<JsonText(desc?desc:"")<<"}";
++    }
++    if(started)s<<"]}";
++  }
++  s<<"]}";BrowserState=s.str();return BrowserState.c_str();
++}
 +EMSCRIPTEN_KEEPALIVE const char *nc_browser_state() {
 +  std::ostringstream s;
 +  s << "{\"engine\":\"planet-4.65\",\"ready\":" << (PlanetReady?"true":"false") << ",\"running\":" << (Game.Landscape.Width>0 ? "true":"false")

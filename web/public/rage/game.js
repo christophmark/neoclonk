@@ -22,7 +22,7 @@
  function setStatus(message){state.lastStatus=String(message||'');$('status').textContent=state.lastStatus;}
  function storageStatus(message){if($('storage-status'))$('storage-status').textContent=message;}
  function log(...args){const line=args.map(String).join(' ');logs.push(line);if(logs.length>600)logs.shift();$('debug').textContent=logs.join('\n');console.log('[Clonk]',line);
-  if(/Game (started|resumed|joined)\./.test(line)){ready=true;state.ready=true;phase('playing');cover.hidden=true;$('game-save').disabled=!!session;$('game-save').title=session?'Saving a connected round is not available yet.':'Save round on this device';showTouch(touchWanted);canvas.focus();scheduleView();if(session)window.__neoclonkMultiplayer?.engineReady();}
+  if(/Game (started|resumed|joined)\./.test(line)){ready=true;state.ready=true;phase('playing');cover.hidden=true;$('game-save').disabled=!!session;$('game-save').title=session?'Saving a connected round is not available yet.':'Save round on this device';showTouch(touchWanted);touch.refresh();canvas.focus();scheduleView();if(session)window.__neoclonkMultiplayer?.engineReady();}
   if(line.includes('Game saved.'))setTimeout(()=>{rememberSaves();syncSaves();},0);
  }
  function fail(message){if(failed)return;failed=true;ready=false;clearInterval(syncTimer);cancelAnimationFrame(viewFrame);viewFrame=0;state.ready=false;state.error=String(message);phase('error');cover.hidden=false;$('title').textContent='Could not start the scenario';$('intro').textContent='Reload to try again. Your stored saves are retained.';$('start').disabled=true;$('error').hidden=false;$('error').textContent=state.error;$('debug').hidden=false;log(state.error);}
@@ -101,8 +101,8 @@
  $('game-header').addEventListener('selectstart',event=>event.preventDefault());
  $('game-save').onclick=saveGame;
  new ResizeObserver(scheduleView).observe($('stage'));window.visualViewport?.addEventListener('resize',scheduleView);window.addEventListener('orientationchange',scheduleView);
- const controlIndices={KeyQ:0,KeyW:1,KeyE:2,KeyA:3,KeyS:4,KeyD:5,KeyZ:6,KeyY:6,KeyX:7,KeyC:8,KeyR:9};
- const keyCodes={KeyY:89,KeyQ:81,KeyW:87,KeyE:69,KeyA:65,KeyS:83,KeyD:68,KeyZ:90,KeyX:88,KeyC:67,KeyR:82,Pause:19,Escape:27,Enter:13,F9:120};
+ const controlIndices={KeyQ:0,KeyW:1,KeyE:2,KeyA:3,KeyS:4,KeyD:5,KeyZ:6,KeyY:6,KeyX:7,KeyC:8,KeyR:9,KeyV:10,KeyF:11};
+ const keyCodes={KeyY:89,KeyQ:81,KeyW:87,KeyE:69,KeyA:65,KeyS:83,KeyD:68,KeyZ:90,KeyX:88,KeyC:67,KeyR:82,KeyV:86,KeyF:70,Pause:19,Escape:27,Enter:13,F9:120};
  const pressed=new Set();
  // Resolve through the active player's original configuration, including QWERTZ.
  function control(index,down,repeated=false){
@@ -137,15 +137,19 @@
  function releaseAll(){if(hardwareLeft.size){control(6,false);hardwareLeft.clear();}for(const code of [...pressed])key(code,false);pressed.clear();document.querySelectorAll('#touchpad .active').forEach(button=>button.classList.remove('active'));}
  function tap(code){key(code,true);setTimeout(()=>key(code,false),50);}
  const touchHolds=new Map();
- for(const button of document.querySelectorAll('#touchpad button')){
+ function bindTouch(button){
   button.addEventListener('pointerdown',event=>{event.preventDefault();if(!ready)return;canvas.focus();button.setPointerCapture(event.pointerId);touchHolds.set(event.pointerId,button.dataset.code);button.classList.add('active');key(button.dataset.code,true);});
   const end=event=>{event.preventDefault();const code=touchHolds.get(event.pointerId);if(!code)return;touchHolds.delete(event.pointerId);if(![...touchHolds.values()].includes(code)){key(code,false);button.classList.remove('active');}};
   button.addEventListener('pointerup',end);button.addEventListener('pointercancel',end);button.addEventListener('lostpointercapture',end);button.addEventListener('contextmenu',event=>event.preventDefault());
  }
+ for(const button of document.querySelectorAll('#touchpad button'))bindTouch(button);
  const coarse=matchMedia('(pointer: coarse)');
  let touchWanted=coarse.matches||query.get('touch')==='1',menuWasPaused=false;
  function showTouch(show){touchWanted=show;$('touchpad').hidden=!ready||state.phase!=='playing'||!show;scheduleView();}
  coarse.addEventListener('change',()=>showTouch(coarse.matches||query.get('touch')==='1'));
+ const touch=NeoclonkTouch.create({pad:$('touchpad'),enabled:()=>ready&&!failed&&!exited&&!window.__planetHost&&!$('touchpad').hidden,
+  read:()=>window.Module?._nc_browser_touch?JSON.parse(window.Module.ccall('nc_browser_touch','string',[],[])):null,
+  bind:bindTouch,release:code=>key(code,false),changed:scheduleView});
  showTouch(touchWanted);
  function openMenu(){if(!ready)return;releaseAll();const game=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[]));menuWasPaused=game.paused;if(session)window.__neoclonkMultiplayer.setPaused(true);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[1]);phase('menu');cover.hidden=false;$('start').disabled=false;if(!window.__scenarioGallery?.getSelected())window.__scenarioGallery?.select(launchScenario.id);window.__scenarioGallery?.updateActions();showTouch(touchWanted);refreshSavedGames();$('start').focus();}
  function resumeGame(){if(!ready)return;if(session)window.__neoclonkMultiplayer.setPaused(false);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[0]);phase('playing');cover.hidden=true;showTouch(touchWanted);canvas.focus();}

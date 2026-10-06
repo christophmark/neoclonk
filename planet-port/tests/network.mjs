@@ -13,6 +13,8 @@ try{
  const sync=()=>Promise.all(pages.map(p=>bytes(p,'sync')));
  report.initialSync=await sync();assert.deepEqual(...report.initialSync);
  for(let frame=0;frame<180;frame++){
+  // Only one peer polls touch metadata; UI reads must not affect lockstep or RNG.
+  await pages[0].evaluate(()=>{for(let i=0;i<4;i++)Module.ccall('nc_browser_touch','string',[],[]);});
   if(frame%40===0)for(let slot=0;slot<2;slot++)await pages[slot].evaluate(({slot,frame})=>Module.ccall('nc_planet_control','number',Array(4).fill('number'),[slot,frame%80===0?(slot?6:8):7,1,0]),{slot,frame});
   for(let slot=0;slot<2;slot++){const data=await bytes(pages[slot],'drain');if(data)assert.equal(await pages[0].evaluate(({slot,data})=>Module.ccall('nc_browser_net_admit','number',['number','array','number'],[slot,data,data.length]),{slot,data}),1);}
   const data=await bytes(pages[0],'build',[frame]);assert.ok(data&&data.length>=17);

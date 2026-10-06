@@ -12,12 +12,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 6,
+    "frame": 16,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 3879721780,
-    "randomCount": 29904,
+    "randomHold": 2583578062,
+    "randomCount": 28359,
     "landscape": {
       "width": 800,
       "height": 600
@@ -31,17 +31,17 @@
         "wealth": 0,
         "lastCommand": 0,
         "cursor": {
-          "number": 85,
-          "x": 471,
-          "y": 305,
+          "number": 79,
+          "x": 351,
+          "y": 290,
           "action": 0,
           "energy": 50000
         },
         "crew": [
           {
-            "number": 85,
-            "x": 471,
-            "y": 305,
+            "number": 79,
+            "x": 351,
+            "y": 290,
             "action": 0,
             "energy": 50000
           }
@@ -58,12 +58,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 6,
+    "frame": 16,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 3879721780,
-    "randomCount": 29904,
+    "randomHold": 2583578062,
+    "randomCount": 28359,
     "landscape": {
       "width": 800,
       "height": 600
@@ -77,17 +77,17 @@
         "wealth": 0,
         "lastCommand": 0,
         "cursor": {
-          "number": 85,
-          "x": 471,
-          "y": 305,
+          "number": 79,
+          "x": 351,
+          "y": 290,
           "action": 0,
           "energy": 50000
         },
         "crew": [
           {
-            "number": 85,
-            "x": 471,
-            "y": 305,
+            "number": 79,
+            "x": 351,
+            "y": 290,
             "action": 0,
             "energy": 50000
           }
@@ -110,12 +110,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 86,
+    "frame": 96,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 970402332,
-    "randomCount": 30072,
+    "randomHold": 1833493609,
+    "randomCount": 28440,
     "landscape": {
       "width": 800,
       "height": 600
@@ -129,18 +129,18 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 85,
-          "x": 511,
-          "y": 320,
-          "action": 0,
+          "number": 79,
+          "x": 395,
+          "y": 300,
+          "action": 4,
           "energy": 50000
         },
         "crew": [
           {
-            "number": 85,
-            "x": 511,
-            "y": 320,
-            "action": 0,
+            "number": 79,
+            "x": 395,
+            "y": 300,
+            "action": 4,
             "energy": 50000
           }
         ]
@@ -156,12 +156,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 86,
+    "frame": 96,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 970402332,
-    "randomCount": 30072,
+    "randomHold": 1833493609,
+    "randomCount": 28440,
     "landscape": {
       "width": 800,
       "height": 600
@@ -175,18 +175,18 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 85,
-          "x": 511,
-          "y": 320,
-          "action": 0,
+          "number": 79,
+          "x": 395,
+          "y": 300,
+          "action": 4,
           "energy": 50000
         },
         "crew": [
           {
-            "number": 85,
-            "x": 511,
-            "y": 320,
-            "action": 0,
+            "number": 79,
+            "x": 395,
+            "y": 300,
+            "action": 4,
             "energy": 50000
           }
         ]
@@ -198,16 +198,16 @@
       "zoom": 2
     }
   },
-  "saveMenu": "Gold Mine · Clonk Planet · 10/5/26, 10:16 AM",
+  "saveMenu": "Gold Mine · Clonk Planet · 10/6/26, 8:51 PM",
   "loaded": {
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 86,
+    "frame": 96,
     "paused": true,
     "gameOver": false,
     "scenario": "/data/LoadedSave.c4s",
-    "randomHold": 4197132152,
+    "randomHold": 2537395915,
     "randomCount": 1009,
     "landscape": {
       "width": 800,
@@ -222,18 +222,18 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 85,
-          "x": 511,
-          "y": 320,
-          "action": 0,
+          "number": 79,
+          "x": 395,
+          "y": 300,
+          "action": 4,
           "energy": 50000
         },
         "crew": [
           {
-            "number": 85,
-            "x": 511,
-            "y": 320,
-            "action": 0,
+            "number": 79,
+            "x": 395,
+            "y": 300,
+            "action": 4,
             "energy": 50000
           }
         ]
