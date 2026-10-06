@@ -1,0 +1,25 @@
+{
+  "browser": "webkit",
+  "errors": [],
+  "before": {
+    "contents": "417;416;415;",
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Dornick\r\nOwner=0\r\nController=0\r\nCategory=264200\r\nX=820\r\nY=1209\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=53739520\r\nFixY=79233024\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nSelected=1\r\nOCF=139116737\r\nAction=Walk\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
+  },
+  "afterTouch": {
+    "contents": "416;415;417;",
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Dornick\r\nOwner=0\r\nTimer=5\r\nController=0\r\nCategory=264200\r\nX=1714\r\nY=-79\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=112328704\r\nFixY=-5177344\r\nXDir=19662\r\nYDir=19662\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139116737\r\nAction=ArmedWalk\r\nActionTime=4\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=416;415;417;\r\n\r\n"
+  },
+  "afterKey": {
+    "contents": "415;417;416;",
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Dornick\r\nOwner=0\r\nTimer=30\r\nController=0\r\nCategory=264200\r\nX=1745\r\nY=-48\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=114360320\r\nFixY=-3145728\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=4\r\nPhase=1\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
+  },
+  "afterInfo": {
+    "contents": "415;417;416;",
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Dornick\r\nOwner=0\r\nTimer=20\r\nController=0\r\nCategory=264200\r\nX=1783\r\nY=-10\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=116850688\r\nFixY=-655360\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=29\r\nPhase=1\r\nPhaseDelay=20\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=415;417;416;\r\n\r\n"
+  },
+  "wrapped": {
+    "contents": "417;416;415;",
+    "object": "\r\nid=HZCK\r\nNumber=413\r\nInfo=Dornick\r\nOwner=0\r\nTimer=25\r\nController=0\r\nCategory=264200\r\nX=1790\r\nY=-3\r\nSize=100000\r\nMass=80\r\nEnergy=50000\r\nAlive=1\r\nBreath=250000\r\nFixX=117309440\r\nFixY=-196608\r\nXDir=98304\r\nYDir=98304\r\nWidth=16\r\nHeight=20\r\nOffset=-8,-10\r\nVertices=6\r\nVertexX=0,0,-2,2,-4,4\r\nVertexY=-7,9,-3,-3,3,3\r\nVertexCNAT=4,8,1,2,1,2\r\nVertexFriction=100,100,100,100,100,100\r\nSolidMask=0,0,0,0,0,0\r\nMobile=1\r\nSelected=1\r\nOCF=139120865\r\nAction=Walk\r\nDir=1\r\nActionTime=34\r\nPhase=3\r\nPhaseDelay=10\r\nContained=414\r\nComponent=HZCK=0;\r\nContents=417;416;415;\r\n\r\n"
+  },
+  "passed": true
+}

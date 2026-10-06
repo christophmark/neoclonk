@@ -9,8 +9,8 @@
       "sha256": "cf43e104747363a11a58f1d9d836c7ab794182c86a29cd39320c886575040cd1"
     },
     "README.md": {
-      "bytes": 12083,
-      "sha256": "3c604faa332943aa71a5aa02ed3b36bf3ee7c5a6af78617ac0740a30a724d398"
+      "bytes": 12339,
+      "sha256": "d8e281dbe98d0d4851bd14c376328b685ad3c0395a6434993f27b227aca01cf3"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5821,8 +5821,8 @@
       "sha256": "55e532a5d38fcecff206c136d1a73e51dda29d0676f1f93c50937a0b46041acb"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 12083,
-      "sha256": "3c604faa332943aa71a5aa02ed3b36bf3ee7c5a6af78617ac0740a30a724d398"
+      "bytes": 12339,
+      "sha256": "d8e281dbe98d0d4851bd14c376328b685ad3c0395a6434993f27b227aca01cf3"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -6397,8 +6397,16 @@
       "sha256": "3befd889977765b8464145c5a11c08b20ed62679528fc9607ed73b1d6d16c1be"
     },
     "planet-content/validation/README.md": {
-      "bytes": 1028,
-      "sha256": "2435cd4fd22871b535de026e2702972c0a0dcf18666aa901dbf8719089d08619"
+      "bytes": 1534,
+      "sha256": "b2b0fa34bfb734d8d17444281b83f374ed1cc08f54d582318e636d30c786a9fa"
+    },
+    "planet-content/validation/hazard-inventory-chromium.json": {
+      "bytes": 3477,
+      "sha256": "6f91bfec7af5d55d94dfe85f6c44447be1a1c36ea703270c4f4cfe51fcc797d8"
+    },
+    "planet-content/validation/hazard-inventory-webkit.json": {
+      "bytes": 3434,
+      "sha256": "456d0361967263458175cd3515725f2dc9b7eeb839211a6dad982e16f9577e93"
     },
     "planet-content/validation/mobile-chromium.json": {
       "bytes": 4959,
@@ -6509,12 +6517,12 @@
       "sha256": "497e8a4a08042cf5b7ae2f87dbed88d109bb9f3aa6ed39940006edd40f15852e"
     },
     "planet-port/shell/game.js": {
-      "bytes": 9558,
-      "sha256": "d429fe4c3abfcb5b7eec8b25e7f97b60fea1e787ff5bb39164229e0b2f63818e"
+      "bytes": 9863,
+      "sha256": "6528884ac58567d62ac0b4942ce614674bbcdc41a4c2844c9290baa08d97fd14"
     },
     "planet-port/shell/index.html": {
-      "bytes": 3393,
-      "sha256": "a650c22a7cc064701dba2d23f3754ce36544739e89f931a359b00de8a969c9fd"
+      "bytes": 3539,
+      "sha256": "1aac16a67399cde16ee8d24460351d06523e940715d8965687147ed40bbc9335"
     },
     "planet-port/source-manifest.json": {
       "bytes": 65894,
@@ -7528,9 +7536,13 @@
       "bytes": 2314,
       "sha256": "8e238fea48a699718ff09b5f8944f214ec34348831d495c1284ae80cb85f9d11"
     },
+    "planet-port/tests/hazard-inventory.mjs": {
+      "bytes": 5537,
+      "sha256": "91fce4b881cbf70ee63a6d027941177c6ae31c22cb8b732898046605fbbb81e4"
+    },
     "planet-port/tests/mobile.mjs": {
-      "bytes": 4907,
-      "sha256": "40e3e37de8bf7f6e6b00c762808c1fa29c0fc0b8b958cb538f9dd5d2b6ca765a"
+      "bytes": 4915,
+      "sha256": "efd28d7c90c38fc3de75fc91d2b52d985ba8e4f9ab2379cbeebc598a7ddee4ec"
     },
     "planet-port/tests/network.mjs": {
       "bytes": 5598,
@@ -8405,8 +8417,8 @@
       "sha256": "4d073b70257b2556a2cd3d71ea84fcfa4fc761a5705f2a53394de76c3edf908c"
     },
     "rage-port/shell/index.html": {
-      "bytes": 34432,
-      "sha256": "703bc2c60f9314b86cfaa470332464c9576186f83378b2e49f671c79edcbf05c"
+      "bytes": 34722,
+      "sha256": "33c6e953405ca54971dd66f64a1a6c67f27990dc6dcc90e04135a8ecfb63490a"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 24350,
@@ -14521,12 +14533,12 @@
       "sha256": "249a0a373bd8e444c42ae227e21b99703dcfbaf25907a645f362f455d0906452"
     },
     "web/public/planet/game.js": {
-      "bytes": 9558,
-      "sha256": "d429fe4c3abfcb5b7eec8b25e7f97b60fea1e787ff5bb39164229e0b2f63818e"
+      "bytes": 9863,
+      "sha256": "6528884ac58567d62ac0b4942ce614674bbcdc41a4c2844c9290baa08d97fd14"
     },
     "web/public/planet/index.html": {
-      "bytes": 3393,
-      "sha256": "a650c22a7cc064701dba2d23f3754ce36544739e89f931a359b00de8a969c9fd"
+      "bytes": 3539,
+      "sha256": "1aac16a67399cde16ee8d24460351d06523e940715d8965687147ed40bbc9335"
     },
     "web/public/planet/licenses/DejaVu.txt": {
       "bytes": 3859,
@@ -14557,8 +14569,8 @@
       "sha256": "ff512d7eac20d6e35c64b9a1b1d24b8071bde6019fdf6df9ff9770da144f655a"
     },
     "web/public/planet/source/planet-browser-sources.zip": {
-      "bytes": 1471348,
-      "sha256": "cb8dccb2e5d4ea1a930db2fcc2fd0736ba968725c265de104af371f197045b65"
+      "bytes": 1474059,
+      "sha256": "135c06e02e4d756323b08eee4ff623584e84d97dd96f88202da8e90a82d03d47"
     },
     "web/public/rage/assets/Endeavour.ttf": {
       "bytes": 35644,
@@ -14614,7 +14626,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1519,
-      "sha256": "11d51b78e0e1d2c694f596b2a2781d60ddd74f9e094293b1b28dc326700563a4"
+      "sha256": "0efb835b344c5af450f977e2000d5ed80980b6da8ae9753d33afe6ee5db05452"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -15521,8 +15533,8 @@
       "sha256": "4d073b70257b2556a2cd3d71ea84fcfa4fc761a5705f2a53394de76c3edf908c"
     },
     "web/public/rage/index.html": {
-      "bytes": 34432,
-      "sha256": "703bc2c60f9314b86cfaa470332464c9576186f83378b2e49f671c79edcbf05c"
+      "bytes": 34722,
+      "sha256": "33c6e953405ca54971dd66f64a1a6c67f27990dc6dcc90e04135a8ecfb63490a"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -15693,8 +15705,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10859224,
-      "sha256": "230bffbf5041b561144cbea7b7d543dbd77faed0461d73672e27dc9088c383f3"
+      "bytes": 10859502,
+      "sha256": "4b8ff194f7282021ca8f41068f0f8003f83cf45e4ca3a7f650e1efa19b7c8d63"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,

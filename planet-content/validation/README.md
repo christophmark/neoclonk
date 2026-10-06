@@ -8,3 +8,5 @@ Tests use unchanged original group files and the separately compiled Planet engi
 - `room-shell.json`: shared browser lobby, real WebRTC data channel, separate Planet runtimes, synchronization, shared pause/resume.
 
 Scripts are in `planet-port/tests/`. Exact legacy Windows executable parity, all possible actions/goals and long-running device stability are not established by these smoke tests. MIDI music is not available in this browser build.
+
+Hazard inventory checks (`hazard-inventory-chromium.json`, `hazard-inventory-webkit.json`) use the original Research Facility with a test-only starting inventory of three items. Touch V and physical V cycle the native saved-object contents; three activations wrap to the original ordering. Info preserves the selection. Original double-click timing is allowed to expire between repeated inventory commands. The distributed scenario archive is unchanged. Screenshots inspect portrait and landscape layout.
