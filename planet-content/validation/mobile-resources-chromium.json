@@ -1,0 +1,425 @@
+{
+  "browser": "chromium",
+  "tag": "optimized",
+  "scenarios": [
+    {
+      "scenario": "easy.c4f/goldmine.c4s",
+      "errors": [],
+      "initial": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 307968,
+          "uploads": 16,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 1,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Easy.c4f/Goldmine.c4s",
+          "randomHold": 3066901271,
+          "randomCount": 30182,
+          "landscape": {
+            "width": 800,
+            "height": 600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 85,
+                "x": 696,
+                "y": 274,
+                "action": 0,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 85,
+                  "x": 696,
+                  "y": 274,
+                  "action": 0,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14696,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      },
+      "steps": {
+        "ticks": 360,
+        "elapsedMs": 273.2999997138977
+      },
+      "afterPlay": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 307968,
+          "uploads": 41,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 361,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Easy.c4f/Goldmine.c4s",
+          "randomHold": 3876187463,
+          "randomCount": 30550,
+          "landscape": {
+            "width": 800,
+            "height": 600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 85,
+                "x": 630,
+                "y": 300,
+                "action": 0,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14700,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 85,
+                  "x": 630,
+                  "y": 300,
+                  "action": 0,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14700,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      },
+      "afterResize": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 1236288,
+          "uploads": 45,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 379,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Easy.c4f/Goldmine.c4s",
+          "randomHold": 3332235927,
+          "randomCount": 30566,
+          "landscape": {
+            "width": 800,
+            "height": 600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 85,
+                "x": 596,
+                "y": 302,
+                "action": 0,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14700,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 85,
+                  "x": 596,
+                  "y": 302,
+                  "action": 0,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14700,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      }
+    },
+    {
+      "scenario": "hazard.c4f/research.c4s",
+      "errors": [],
+      "initial": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 307968,
+          "uploads": 19,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 1,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Hazard.c4f/Research.c4s",
+          "randomHold": 2712610252,
+          "randomCount": 248567,
+          "landscape": {
+            "width": 2560,
+            "height": 1600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 413,
+                "x": 708,
+                "y": -80,
+                "action": 2,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 413,
+                  "x": 708,
+                  "y": -80,
+                  "action": 2,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14696,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      },
+      "steps": {
+        "ticks": 360,
+        "elapsedMs": 580.1999998092651
+      },
+      "afterPlay": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 307968,
+          "uploads": 44,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 361,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Hazard.c4f/Research.c4s",
+          "randomHold": 737582648,
+          "randomCount": 249123,
+          "landscape": {
+            "width": 2560,
+            "height": 1600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 413,
+                "x": 1008,
+                "y": 368,
+                "action": 2,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14700,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 413,
+                  "x": 1008,
+                  "y": 368,
+                  "action": 2,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14700,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      },
+      "afterResize": {
+        "resources": {
+          "textures": 2,
+          "framebuffers": 0,
+          "textureBytes": 77988,
+          "peakTextures": 2,
+          "peakFbos": 0,
+          "peakBytes": 1236288,
+          "uploads": 49,
+          "readbacks": 0,
+          "wasmBytes": 134217728
+        },
+        "state": {
+          "engine": "planet-4.65",
+          "ready": true,
+          "running": true,
+          "frame": 379,
+          "paused": true,
+          "gameOver": false,
+          "scenario": "Hazard.c4f/Research.c4s",
+          "randomHold": 4123439228,
+          "randomCount": 249127,
+          "landscape": {
+            "width": 2560,
+            "height": 1600
+          },
+          "players": [
+            {
+              "number": 0,
+              "name": "Explorer",
+              "local": true,
+              "eliminated": false,
+              "wealth": 0,
+              "lastCommand": 0,
+              "cursor": {
+                "number": 413,
+                "x": 1008,
+                "y": 366,
+                "action": 2,
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14700,
+                "canScale": true,
+                "canHangle": true
+              },
+              "crew": [
+                {
+                  "number": 413,
+                  "x": 1008,
+                  "y": 366,
+                  "action": 2,
+                  "energy": 80000,
+                  "rank": 6,
+                  "experience": 14700,
+                  "canScale": true,
+                  "canHangle": true
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 195,
+            "height": 396,
+            "zoom": 2
+          }
+        }
+      }
+    }
+  ],
+  "passed": true
+}

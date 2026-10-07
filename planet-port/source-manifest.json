@@ -1433,7 +1433,7 @@
     {
       "path": "standard/src/StdDDraw.cpp",
       "upstreamSha256": "82decb1bdad8038e958accea4584b59fdc1ca07360bf783f62fdb1acd8959993",
-      "browserSha256": "51429dfb65e7c3755d80ffb935bb72f8bd81a3b8ea74cd49da7534e1f7967c77",
+      "browserSha256": "e9d50ee9ce475586bf141134968ccedeb756ed4a1d04eaf3038e63d9b59c214d",
       "modified": true
     },
     {

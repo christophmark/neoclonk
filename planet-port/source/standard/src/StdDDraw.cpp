@@ -171,7 +171,24 @@ static void GetOrthoMatrix(float *mat, float left, float right, float bottom, fl
 }
 
 static void SyncSurfaceGPU(CGLSurface *surf) {
-  if (surf && surf->dirty_cpu && surf->tex && std::this_thread::get_id() == g_mainThreadId) {
+  if (!surf || !g_window || std::this_thread::get_id() != g_mainThreadId) return;
+  // All drawing into surfaces happens in CPU memory. Allocate GPU storage only
+  // for a surface actually presented on screen, not every sprite/landscape.
+  if (!surf->tex) {
+    GLint maxTextureSize = 0;
+    glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
+    if (surf->w > maxTextureSize || surf->h > maxTextureSize) return;
+    glGenTextures(1, &surf->tex);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glBindTexture(GL_TEXTURE_2D, surf->tex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_R8UI, surf->w, surf->h, 0, GL_RED_INTEGER, GL_UNSIGNED_BYTE, surf->bits);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    surf->dirty_cpu = false;
+  } else if (surf->dirty_cpu) {
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     glBindTexture(GL_TEXTURE_2D, surf->tex);
     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, surf->w, surf->h, GL_RED_INTEGER, GL_UNSIGNED_BYTE, surf->bits);
@@ -227,6 +244,7 @@ static void DrawHardwareQuad(CGLSurface *src, CGLSurface *dst, int tx, int ty, i
     }
     dst->dirty_cpu=true;return;
   }
+  SyncSurfaceGPU(src);
   if ((!src || !src->tex) && program != g_shaderProgramSolid)
     return;
   if (twdt <= 0 || thgt <= 0) return;
@@ -668,26 +686,9 @@ SURFACE CStdDDraw::CreateSurface(int iWdt, int iHgt) {
   s->useColorKey = true;
   s->fClipped = false;
 
-  GLint maxTextureSize=0;
-  if(g_window)glGetIntegerv(GL_MAX_TEXTURE_SIZE,&maxTextureSize);
-  if (std::this_thread::get_id() == g_mainThreadId && g_window && s->w<=maxTextureSize && s->h<=maxTextureSize) {
-    glGenTextures(1, &s->tex);
-    glBindTexture(GL_TEXTURE_2D, s->tex);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_R8UI, s->w, s->h, 0, GL_RED_INTEGER, GL_UNSIGNED_BYTE, s->bits);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glBindTexture(GL_TEXTURE_2D, 0);
-
-    glGenFramebuffers(1, &s->fbo);
-    glBindFramebuffer(GL_FRAMEBUFFER, s->fbo);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, s->tex, 0);
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-  } else {
-    s->tex = 0;
-    s->fbo = 0;
-  }
+  // CPU-only until first presentation. No offscreen GPU framebuffer is needed.
+  s->tex = 0;
+  s->fbo = 0;
   s->dirty_cpu = false;
   s->dirty_gpu = false;
   return (SURFACE)s;

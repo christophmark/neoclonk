@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpo1xytioy.js
+// include: /tmp/tmpznfznc1j.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,14 +217,14 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
 
   })();
 
-// end include: /tmp/tmpo1xytioy.js
-// include: /tmp/tmp4p0jbw70.js
+// end include: /tmp/tmpznfznc1j.js
+// include: /tmp/tmphbmmd6rv.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmp4p0jbw70.js
+  // end include: /tmp/tmphbmmd6rv.js
 // include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
 // Legacy Planet logs contain Windows-1252; Emscripten's default UTF-8 decoder
 // warns on umlauts. Decode only the console presentation boundary, never scripts.
@@ -246,13 +246,13 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
   Module['stderr'] = sink(true);
 })();
 // end include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
-// include: /tmp/tmp0a_gx8kk.js
+// include: /tmp/tmpd0fm1lut.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp0a_gx8kk.js
+  // end include: /tmp/tmpd0fm1lut.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -7171,18 +7171,8 @@ var ASM_CONSTS = {
       GLctx.enableVertexAttribArray(index);
     };
 
-  var _glFramebufferTexture2D = (target, attachment, textarget, texture, level) => {
-      GLctx.framebufferTexture2D(target, attachment, textarget,
-                                      GL.textures[texture], level);
-    };
-
   var _glGenBuffers = (n, buffers) => {
       GL.genObject(n, buffers, 'createBuffer', GL.buffers
-        );
-    };
-
-  var _glGenFramebuffers = (n, ids) => {
-      GL.genObject(n, ids, 'createFramebuffer', GL.framebuffers
         );
     };
 
@@ -9911,11 +9901,7 @@ var wasmImports = {
   /** @export */
   glEnableVertexAttribArray: _glEnableVertexAttribArray,
   /** @export */
-  glFramebufferTexture2D: _glFramebufferTexture2D,
-  /** @export */
   glGenBuffers: _glGenBuffers,
-  /** @export */
-  glGenFramebuffers: _glGenFramebuffers,
   /** @export */
   glGenTextures: _glGenTextures,
   /** @export */

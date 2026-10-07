@@ -17,8 +17,8 @@
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 4069770636,
-    "randomCount": 31902,
+    "randomHold": 2067492507,
+    "randomCount": 31377,
     "landscape": {
       "width": 800,
       "height": 600
@@ -33,8 +33,8 @@
         "lastCommand": 0,
         "cursor": {
           "number": 85,
-          "x": 476,
-          "y": 274,
+          "x": 693,
+          "y": 271,
           "action": 0,
           "energy": 80000,
           "rank": 6,
@@ -45,8 +45,8 @@
         "crew": [
           {
             "number": 85,
-            "x": 476,
-            "y": 274,
+            "x": 693,
+            "y": 271,
             "action": 0,
             "energy": 80000,
             "rank": 6,
@@ -71,8 +71,8 @@
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 4069770636,
-    "randomCount": 31902,
+    "randomHold": 2067492507,
+    "randomCount": 31377,
     "landscape": {
       "width": 800,
       "height": 600
@@ -87,8 +87,8 @@
         "lastCommand": 0,
         "cursor": {
           "number": 85,
-          "x": 476,
-          "y": 274,
+          "x": 693,
+          "y": 271,
           "action": 0,
           "energy": 80000,
           "rank": 6,
@@ -99,8 +99,8 @@
         "crew": [
           {
             "number": 85,
-            "x": 476,
-            "y": 274,
+            "x": 693,
+            "y": 271,
             "action": 0,
             "energy": 80000,
             "rank": 6,
@@ -131,8 +131,8 @@
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 3456605084,
-    "randomCount": 32046,
+    "randomHold": 3369195021,
+    "randomCount": 31539,
     "landscape": {
       "width": 800,
       "height": 600
@@ -147,9 +147,9 @@
         "lastCommand": 4,
         "cursor": {
           "number": 85,
-          "x": 514,
-          "y": 289,
-          "action": 0,
+          "x": 737,
+          "y": 292,
+          "action": 1,
           "energy": 80000,
           "rank": 6,
           "experience": 14696,
@@ -159,9 +159,9 @@
         "crew": [
           {
             "number": 85,
-            "x": 514,
-            "y": 289,
-            "action": 0,
+            "x": 737,
+            "y": 292,
+            "action": 1,
             "energy": 80000,
             "rank": 6,
             "experience": 14696,
@@ -185,8 +185,8 @@
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 3456605084,
-    "randomCount": 32046,
+    "randomHold": 3369195021,
+    "randomCount": 31539,
     "landscape": {
       "width": 800,
       "height": 600
@@ -201,9 +201,9 @@
         "lastCommand": 4,
         "cursor": {
           "number": 85,
-          "x": 514,
-          "y": 289,
-          "action": 0,
+          "x": 737,
+          "y": 292,
+          "action": 1,
           "energy": 80000,
           "rank": 6,
           "experience": 14696,
@@ -213,9 +213,9 @@
         "crew": [
           {
             "number": 85,
-            "x": 514,
-            "y": 289,
-            "action": 0,
+            "x": 737,
+            "y": 292,
+            "action": 1,
             "energy": 80000,
             "rank": 6,
             "experience": 14696,
@@ -231,7 +231,7 @@
       "zoom": 2
     }
   },
-  "saveMenu": "Gold Mine · Clonk Planet · 10/7/26, 11:41 AM",
+  "saveMenu": "Gold Mine · Clonk Planet · 10/7/26, 11:58 AM",
   "loaded": {
     "engine": "planet-4.65",
     "ready": true,
@@ -240,7 +240,7 @@
     "paused": true,
     "gameOver": false,
     "scenario": "/data/LoadedSave.c4s",
-    "randomHold": 3208961618,
+    "randomHold": 636841516,
     "randomCount": 1009,
     "landscape": {
       "width": 800,
@@ -256,9 +256,9 @@
         "lastCommand": 4,
         "cursor": {
           "number": 85,
-          "x": 514,
-          "y": 289,
-          "action": 0,
+          "x": 737,
+          "y": 292,
+          "action": 1,
           "energy": 80000,
           "rank": 6,
           "experience": 14696,
@@ -268,9 +268,9 @@
         "crew": [
           {
             "number": 85,
-            "x": 514,
-            "y": 289,
-            "action": 0,
+            "x": 737,
+            "y": 292,
+            "action": 1,
             "energy": 80000,
             "rank": 6,
             "experience": 14696,
