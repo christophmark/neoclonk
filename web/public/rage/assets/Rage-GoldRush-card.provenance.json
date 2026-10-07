@@ -3,10 +3,10 @@
   "source": "rage-port/outputs/scenario-library/western__goldrush.png",
   "sourceSha256": "7b200cb9060d16d181e8752ed79281658d8db291f55944c38ac2eeaa756824ec",
   "crop": {
-    "x": 930,
-    "y": 20,
-    "width": 800,
-    "height": 450
+    "x": 1070,
+    "y": 135,
+    "width": 400,
+    "height": 225
   },
   "method": "Original Game.GraphicsSystem.SaveScreenshot(true), cropped at native resolution using browser screenshot. No generated scenery.",
   "reproduce": "node tools/render-game-card.mjs",

@@ -3,7 +3,7 @@ import {chromium} from '../web/node_modules/playwright/index.mjs';
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const source='rage-port/outputs/scenario-library/western__goldrush.png';
-const png=await readFile(source),crop={x:930,y:20,width:800,height:450};
+const png=await readFile(source),crop={x:1070,y:135,width:400,height:225};
 const output='rage-port/shell/assets/Rage-GoldRush-card.png';
 const browser=await chromium.launch({executablePath:'/opt/google/chrome/chrome',headless:true,args:['--no-sandbox']});
 try {
