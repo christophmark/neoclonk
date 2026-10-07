@@ -8381,8 +8381,16 @@
       "sha256": "c86a8c6100d57a655543de240341c8d4ac48a94b06916c20a032e27fb64081b3"
     },
     "rage-port/shell/assets/README.md": {
-      "bytes": 2775,
-      "sha256": "354b108f1c371ff00f4e5ab546bd0c778b6a5c7cdb9655dddef829a17f14b998"
+      "bytes": 3350,
+      "sha256": "7565d64d37381722494e12e1913e4a08ed7921b699cdb6e18441f07c5bb8954c"
+    },
+    "rage-port/shell/assets/Rage-GoldRush-card.png": {
+      "bytes": 515316,
+      "sha256": "2ce3a610596ec20c47b1ae6f9c5e3de9881491e27e4e17ef451d1ef5417f1e7f"
+    },
+    "rage-port/shell/assets/Rage-GoldRush-card.provenance.json": {
+      "bytes": 582,
+      "sha256": "fd88c7b8481bde9eacfa078d89d740503695c44eb0bcb1c13db3fb2e0f05767a"
     },
     "rage-port/shell/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -8425,16 +8433,16 @@
       "sha256": "b45a72db9da16507cace5d027aaf7982c1614fb3ed6a061c388fb503118a1325"
     },
     "rage-port/shell/gallery.js": {
-      "bytes": 13437,
-      "sha256": "f1f8f7cc7dc764e0d6210e92ea0b687e575f57df6b51ab41974f975aa49b7be5"
+      "bytes": 13638,
+      "sha256": "fa856fbb7657f49bea50aa20454615f2cc09def483e7a200e13f91d52da2785c"
     },
     "rage-port/shell/game.js": {
       "bytes": 32579,
       "sha256": "402a42f880228c40da7e123036b86dec21ace2dc98f3fc8b80e45d14bf712a6d"
     },
     "rage-port/shell/index.html": {
-      "bytes": 36932,
-      "sha256": "d248538b48ae6e3b1b98f404edefec8e740543f952f24897b099d372c891a216"
+      "bytes": 36934,
+      "sha256": "7179925c6e1a5c43e8a7a69936a1646e6c9b167f6168008288cafbb04343e3c5"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 26665,
@@ -14460,6 +14468,10 @@
       "bytes": 825,
       "sha256": "821267b2c1979120d546363b71003fea6e7ad5fcb7961c044ef329a4b06ec359"
     },
+    "tools/render-game-card.mjs": {
+      "bytes": 1484,
+      "sha256": "45c6e23bb69ba79c7d935c564f422ad3d9fdf9ed10c4ca73e7db7fa952e59242"
+    },
     "tools/render-readme-collage.mjs": {
       "bytes": 3487,
       "sha256": "172415f016d21356073243891fdc1cf0321a7d5aabbe0c28f15b60cd7418952f"
@@ -14629,8 +14641,16 @@
       "sha256": "c86a8c6100d57a655543de240341c8d4ac48a94b06916c20a032e27fb64081b3"
     },
     "web/public/rage/assets/README.md": {
-      "bytes": 2775,
-      "sha256": "354b108f1c371ff00f4e5ab546bd0c778b6a5c7cdb9655dddef829a17f14b998"
+      "bytes": 3350,
+      "sha256": "7565d64d37381722494e12e1913e4a08ed7921b699cdb6e18441f07c5bb8954c"
+    },
+    "web/public/rage/assets/Rage-GoldRush-card.png": {
+      "bytes": 515316,
+      "sha256": "2ce3a610596ec20c47b1ae6f9c5e3de9881491e27e4e17ef451d1ef5417f1e7f"
+    },
+    "web/public/rage/assets/Rage-GoldRush-card.provenance.json": {
+      "bytes": 582,
+      "sha256": "fd88c7b8481bde9eacfa078d89d740503695c44eb0bcb1c13db3fb2e0f05767a"
     },
     "web/public/rage/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -14666,7 +14686,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1649,
-      "sha256": "9b2ae2cab3cc5064959b14cfff7e1946aa4cbd2dc828e6ae1fccd5286c908db7"
+      "sha256": "bed96d5d3c4888def96dfc080dcc1694136653177c6966a54d0e6075de64f905"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -15565,16 +15585,16 @@
       "sha256": "b45a72db9da16507cace5d027aaf7982c1614fb3ed6a061c388fb503118a1325"
     },
     "web/public/rage/gallery.js": {
-      "bytes": 13437,
-      "sha256": "f1f8f7cc7dc764e0d6210e92ea0b687e575f57df6b51ab41974f975aa49b7be5"
+      "bytes": 13638,
+      "sha256": "fa856fbb7657f49bea50aa20454615f2cc09def483e7a200e13f91d52da2785c"
     },
     "web/public/rage/game.js": {
       "bytes": 32579,
       "sha256": "402a42f880228c40da7e123036b86dec21ace2dc98f3fc8b80e45d14bf712a6d"
     },
     "web/public/rage/index.html": {
-      "bytes": 36932,
-      "sha256": "d248538b48ae6e3b1b98f404edefec8e740543f952f24897b099d372c891a216"
+      "bytes": 36934,
+      "sha256": "7179925c6e1a5c43e8a7a69936a1646e6c9b167f6168008288cafbb04343e3c5"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -15745,8 +15765,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 12910111,
-      "sha256": "5f138ac72713ccae278f6587650ea6492ed6dd209a4321dddb1cde01eb41fcd7"
+      "bytes": 13426680,
+      "sha256": "a811acb879028997fdc55b8d95fee49ec5b1f1a294e84caccb49b8ba07f93aac"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,

@@ -1,0 +1,14 @@
+{
+  "scenario": "western.c4f/goldrush.c4s",
+  "source": "rage-port/outputs/scenario-library/western__goldrush.png",
+  "sourceSha256": "7b200cb9060d16d181e8752ed79281658d8db291f55944c38ac2eeaa756824ec",
+  "crop": {
+    "x": 930,
+    "y": 20,
+    "width": 800,
+    "height": 450
+  },
+  "method": "Original Game.GraphicsSystem.SaveScreenshot(true), cropped at native resolution using browser screenshot. No generated scenery.",
+  "reproduce": "node tools/render-game-card.mjs",
+  "attribution": "Clonk Rage content © RedWolf Design / Matthes Bender and contributors. CC BY-NC 4.0."
+}

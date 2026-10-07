@@ -113,7 +113,12 @@
     const scenarios=catalog.scenarios.filter(s=>(s.engine||'rage')===engine);
     $(engine+'-game-count').textContent=`${scenarios.length} scenarios`;
     const preview=scenarios.find(s=>/goldmine/i.test(s.id))||scenarios.find(s=>s.screenshot||s.thumbnail);
-    if(preview)$(engine+'-game-art').src=preview.screenshot||preview.thumbnail;
+    const art=$(engine+'-game-art');
+    if(engine==='rage'){
+     art.src='assets/Rage-GoldRush-card.png';
+     art.alt='Gold Rush: a frontier headquarters among desert mesas';
+     art.width=800;art.height=450;
+    }else if(preview)art.src=preview.screenshot||preview.thumbnail;
    }
    const engine=new URLSearchParams(location.search).get('game');chooseGame(['rage','planet'].includes(engine)?engine:null,{remember:false});
    const requested=new URLSearchParams(location.search).get('scenario');
