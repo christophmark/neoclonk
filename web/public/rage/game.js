@@ -191,10 +191,10 @@
  window.addEventListener('unhandledrejection',event=>{if(booted&&!failed)fail(event.reason?.stack||event.reason||'Unexpected engine rejection.');});
  function planetURL(scenarioId,save=null){const url=new URL('../planet/index.html',location.href);if(scenarioId)url.searchParams.set('scenario',scenarioId);if(save)url.searchParams.set('save',save);return url;}
  async function loadRound(name){if(name.startsWith('planet:')){const go=()=>location.assign(planetURL(null,name.slice(7)));if(booted)return requestLeave(go,'Load saved Planet game?');return go();}if(!booted){state.replay=false;return startGame(name);}return requestLeave(()=>restart({save:name,load:'1'}),'Load saved game?');}
- async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['scenario','save','replay','load','play','solo','host','join','room'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
+ async function restart(options={}){if(exitSync)await exitSync;else await syncSaves();window.__neoclonkMultiplayer?.disconnect();const next=new URL(location.href);for(const key of ['scenario','save','replay','load','play','solo','host','join','room','lobby'])next.searchParams.delete(key);for(const [key,value]of Object.entries(options))next.searchParams.set(key,value);location.assign(next);}
  // Solo uses original one-player engine startup; scenario rules and goals stay intact.
  async function startScenario(id,networkSession=null,{solo=false}={}){
-  await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;
+  await library.ready;const scenario=library.get(id);selectedScenarioId=scenario.id;window.__scenarioGallery?.select(scenario.id);
   if(library.isBlocked(scenario)){setStatus(scenario.blockedReason||'This scenario needs additional content.');return false;}
   if(scenario.engine==='openclonk'){setStatus('This scenario requires the separate OpenClonk engine.');return false;}
   const host=!solo&&scenario.minPlayers>1;
@@ -213,7 +213,7 @@
   const url=planetURL(scenario.id);url.searchParams.set('network','1');frame.src=url;document.body.append(frame);
  }
  async function startGame(save=null,scenario=null,networkSession=null){
-  if(booted){if(ready)resumeGame();return;}booted=true;selectedSave=save;session=networkSession;phase('loading');$('start').disabled=true;$('play-solo').disabled=true;$('host-room').disabled=true;$('load-save').disabled=true;$('start').textContent='Loading…';setStatus('Preparing scenario…');canvas.focus();
+  if(booted){if(ready)resumeGame();return;}const menuScenario=scenario||library.find(savedScenarioMeta[save]?.scenarioId)||library.find(selectedScenarioId);if(menuScenario)window.__scenarioGallery?.select(menuScenario.id);booted=true;selectedSave=save;session=networkSession;phase('loading');$('start').disabled=true;$('play-solo').disabled=true;$('host-room').disabled=true;$('load-save').disabled=true;$('start').textContent='Loading…';setStatus('Preparing scenario…');canvas.focus();
   try{await library.ready;await savedIndexReady;launchScenario=scenario||library.find(savedScenarioMeta[save]?.scenarioId)||library.get(selectedScenarioId);selectedScenarioId=launchScenario.id;state.scenarioId=launchScenario.id;state.multiplayer=!!session;
    const packs=save?(savedScenarioMeta[save]?.requiredPacks||library.allPacks):launchScenario.requiredPacks;
    stagedPacks=await library.fetchPacks(packs,(done,total)=>setStatus(total?'Preparing original content ('+done+'/'+total+')…':'Loading '+launchScenario.title+'…'));
@@ -233,5 +233,5 @@
  $('load-save').onclick=async()=>{const name=$('saved-games').value;if(!name)return;$('saved-dialog').close();loadRound(name);};
  window.__rageBrowser={getState:()=>({...state,ready,booted,selectedScenarioId,zoom:worldZoom,logs:[...logs],canvas:{width:canvas.width,height:canvas.height}}),press:code=>key(code,true),release:code=>key(code,false),tap,pause:()=>tap('Pause'),releaseAll,readFile:path=>Array.from(window.Module.FS.readFile(path)),listFiles:path=>window.Module.FS.readdir(path),showTouch,syncSaves,listSavedGames,openMenu,saveGame,updateView,setZoom,startScenario,restart:options=>requestLeave(()=>restart(options))};
  phase('menu');refreshSavedGames();
- const savedIndexReady=Promise.all([readSavedIndex(),(async()=>{try{planetSaves=await window.NeoclonkLocal?.saves()||[];refreshSavedGames();}catch{/* Planet saves are optional. */}})()]);Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))loadRound(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId,null,{solo:query.get('solo')==='1'});else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});
+ const savedIndexReady=Promise.all([readSavedIndex(),(async()=>{try{planetSaves=await window.NeoclonkLocal?.saves()||[];refreshSavedGames();}catch{/* Planet saves are optional. */}})()]);Promise.all([savedIndexReady,library.ready]).then(()=>{if(query.get('load')==='1'&&query.get('save'))loadRound(query.get('save'));else if(query.get('play')==='1')startScenario(selectedScenarioId,null,{solo:query.get('solo')==='1'});else if(query.get('host')==='1')window.__neoclonkMultiplayer.host(selectedScenarioId);else if(query.get('join')==='1')window.__neoclonkMultiplayer.join();else if(query.get('lobby')==='1')window.__neoclonkMultiplayer.chooser();}).catch(error=>{setStatus(error.message);$('start').disabled=true;});
 })();

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#29180b">
-<title>Neoclonk — Play Clonk Rage in the browser.</title>
+<title>NeoClonk — Clonk Rage &amp; Clonk Planet</title>
 <style>
 @font-face{font-family:Endeavour;src:url("assets/Endeavour.ttf") format("truetype");font-display:swap}
 :root{color-scheme:dark;font-family:Endeavour,Georgia,serif;background:#0c0906;color:#fff;font-synthesis:none}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}button,input,select{font:inherit}button{cursor:pointer;color:#fff;text-shadow:1px 2px 1px #160b00;border:0}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid #ffcf58;outline-offset:3px}button:disabled{cursor:wait;filter:brightness(.7)}button:hover:not(:disabled){color:#ffe500}button:active:not(:disabled){transform:translateY(1px)}[hidden]{display:none!important}#stage{position:fixed;inset:0;background:#090806;overflow:hidden;isolation:isolate}#canvas{image-rendering:pixelated;display:block;width:100%;height:100%;outline:none;touch-action:none;background:#000}#stage:fullscreen{width:100vw;height:100vh}#canvas:fullscreen{width:100vw;height:100vh}
@@ -31,6 +31,7 @@
 @media(max-width:360px){#game-save{width:44px;padding:3px;font-size:14px}#game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 48px);width:44px;padding:3px;font-size:14px}}
 #solo-note{font-size:13px;line-height:1.4;color:#d8bd90;margin:10px 0}@media(max-width:760px){.menu-panel>#play-solo{grid-column:2;grid-row:3;font-size:16px;min-height:34px}.menu-panel>#new-game{grid-row:4}#solo-note{grid-column:1/-1;grid-row:5;font-size:12px;margin:4px 0}#scenario-story{grid-row:6}}
 </style>
+<link rel="stylesheet" href="assets/launcher.css?v=1">
 </head>
 <body data-phase="menu">
 <main id="stage">
@@ -43,9 +44,9 @@
 <p id="save-feedback" role="status" aria-live="polite"></p>
 </div>
 <section id="cover" aria-label="Scenario menu">
-<div id="menu-layout">
+<div id="menu-layout" data-screen="games">
 <header class="menu-masthead">
-<img class="menu-logo" src="assets/Logo.png" width="320" height="103" alt="Clonk Rage" style="max-width:100%;margin:0 auto 16px">
+<div class="launcher-brand"><img class="neoclonk-logo" src="assets/NeoClonk-logo.png" width="1254" height="1254" alt="NeoClonk emblem"><div><h1>NeoClonk</h1><p>Clonk Rage &amp; Clonk Planet in your browser</p></div></div>
 <nav class="menu-top-actions" aria-label="Main menu">
 <button id="saves-open" class="small-button" type="button" aria-haspopup="dialog">Load saved game</button>
 <button id="join-room" class="small-button" type="button">Multiplayer lobby</button>
@@ -53,6 +54,14 @@
 </nav>
 </header>
 <p class="project-notice">Unofficial, noncommercial browser adaptation of <a href="https://www.clonk.de/" target="_blank" rel="noopener">Clonk Rage and Clonk Planet</a> © RedWolf Design / Matthes Bender and contributors. Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>; engine: <a href="licenses/clonk_source_license.txt" target="_blank" rel="noopener">ISC</a>. Browser code and presentation modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement implied. Provided as-is, without warranties, to the extent permitted by law.</p>
+<section id="game-picker" aria-labelledby="game-picker-title">
+<h2 id="game-picker-title">Choose your game</h2>
+<div class="game-choices">
+<button class="game-choice" type="button" data-game="rage"><span class="game-art"><img id="rage-game-art" alt="" width="640" height="400"></span><span class="game-choice-caption"><strong>Clonk Rage</strong><span id="rage-game-count">Original scenarios</span></span></button>
+<button class="game-choice" type="button" data-game="planet"><span class="game-art"><img id="planet-game-art" alt="" width="640" height="400"></span><span class="game-choice-caption"><strong>Clonk Planet</strong><span id="planet-game-count">Original scenarios</span></span></button>
+</div></section>
+<div id="game-library" hidden>
+<div class="game-library-heading"><button id="choose-game" class="small-button" type="button">‹ Choose game</button><h2 id="chosen-game-title">Clonk Rage</h2></div>
 <div class="menu-content">
 <aside id="scenario-panel" class="menu-panel" aria-label="Selected scenario" hidden>
 <div class="selected-heading"><p class="selection-label">Selected adventure</p><h2 id="title">Gold Mine</h2><p id="intro">Mine all the gold and bring it to your home base.</p></div>
@@ -71,6 +80,7 @@
 <div id="scenario-galleries" aria-busy="true"><p class="catalog-loading">Opening the scenario library…</p></div>
 </section>
 </div>
+</div>
 <footer class="menu-credits"><p>Clonk Rage 4.9.10.7 · Clonk Planet 4.65 · Original scenarios and game content</p><details><summary>Credits and licenses</summary><p>Original game © RedWolf Design / Matthes Bender. Original graphics, scripts, sound and music: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>. Browser platform adaptation: Neoclonk.</p><p>“Clonk” is a registered trademark of Matthes Bender. No endorsement by the original authors is implied.</p></details></footer>
 </div>
 </section>
@@ -80,18 +90,24 @@
 <button data-code="KeyZ" aria-label="Move left, Y or Z"><b>Y/Z</b><span>Left</span></button><button data-code="KeyX" aria-label="Stop or down"><b>X</b><span>Stop</span></button><button data-code="KeyC" aria-label="Move right"><b>C</b><span>Right</span></button>
 </div>
 <section id="multiplayer-room" role="dialog" aria-modal="true" aria-labelledby="room-title" hidden>
-<div class="room-sheet"><button id="room-close" class="small-button" type="button" aria-label="Close multiplayer lobby">Close</button><p class="selection-label">Play together</p><h2 id="room-title">Gather your crew</h2><p id="room-scenario"></p>
+<div class="room-sheet"><button id="room-close" class="small-button" type="button" aria-label="Close multiplayer lobby">Close</button><p class="selection-label">Play together</p><h2 id="room-title">Multiplayer</h2><p id="room-scenario"></p>
 <label class="room-label" for="room-name">Your name<input id="room-name" maxlength="24" autocomplete="nickname" placeholder="Clonk captain"></label>
-<div id="discovery-host" class="pair-panel" hidden><h3>Open a room</h3><label class="ready-label"><input id="room-public" type="checkbox" checked>Show in the public room list</label><p>Friends can also join with your room code or link.</p><button id="room-publish" class="small-button" type="button">Create online room</button></div>
-<div id="discovery-guest" class="pair-panel" hidden><h3>Find your crew</h3><label class="room-label" for="room-code-input">Room code<input id="room-code-input" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter room code"></label><button id="room-join-code" class="small-button" type="button">Join room</button><div class="room-list-heading"><h3>Open rooms</h3><button id="room-refresh" class="small-button" type="button">Refresh</button></div><p id="room-list-status" role="status"></p><ul id="room-list" aria-label="Open multiplayer rooms"></ul></div>
+<div id="room-mode" class="room-mode"><button id="room-host-choice" class="menu-button" type="button">Host a game</button><button id="room-join-choice" class="menu-button" type="button">Join a game</button></div>
+<button id="room-back" class="small-button" type="button" hidden>‹ Host or join</button>
+<div id="discovery-host" class="pair-panel" hidden>
+<label class="room-label" for="host-game">Game<select id="host-game"><option value="rage">Clonk Rage</option><option value="planet">Clonk Planet</option></select></label>
+<label class="room-label" for="host-scenario">Scenario<select id="host-scenario"></select></label>
+<button id="room-publish" class="menu-button" type="button">Create room</button>
+<details class="connection-settings"><summary>Room visibility</summary><label class="ready-label"><input id="room-public" type="checkbox" checked>Show in the public room list</label><p>Unlisted rooms can still be joined using their code or link.</p></details></div>
+<div id="discovery-guest" class="pair-panel" hidden><label class="room-label" for="room-code-input">Room code<input id="room-code-input" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter room code"></label><button id="room-join-code" class="small-button" type="button">Join room</button><div class="room-list-heading"><h3>Open rooms</h3><button id="room-refresh" class="small-button" type="button">Refresh</button></div><p id="room-list-status" role="status"></p><ul id="room-list" aria-label="Open multiplayer rooms"></ul></div>
 <div id="discovery-invite" class="pair-panel" hidden><h3>Invite your crew</h3><p>Room code: <strong id="room-code-display"></strong></p><label class="room-label" for="room-link">Invite link<input id="room-link" readonly></label><button id="room-copy-link" class="small-button" type="button">Copy link</button><p id="room-connection-kind"></p></div>
-<details id="room-manual" class="connection-settings"><summary>Advanced: manual invitations</summary><div id="host-invite-panel" class="pair-panel" hidden><h3>Invite a friend</h3><p>Create an invitation and send it to your friend. They will send a reply for you to paste below.</p><button id="room-create-invite" class="small-button" type="button">Create invitation</button><label class="room-label" for="invite-output">Your invitation<textarea id="invite-output" maxlength="60000" readonly rows="3" spellcheck="false"></textarea></label><button id="copy-invite" class="small-button" type="button">Copy invitation</button></div>
+<details id="room-manual" class="connection-settings"><summary>Advanced connection options</summary><div id="host-invite-panel" class="pair-panel" hidden><h3>Invite a friend</h3><p>Create an invitation and send it to your friend. They will send a reply for you to paste below.</p><button id="room-create-invite" class="small-button" type="button">Create invitation</button><label class="room-label" for="invite-output">Your invitation<textarea id="invite-output" maxlength="60000" readonly rows="3" spellcheck="false"></textarea></label><button id="copy-invite" class="small-button" type="button">Copy invitation</button></div>
 <div id="host-answer-panel" class="pair-panel" hidden><label class="room-label" for="answer-input">Your friend’s reply<textarea id="answer-input" maxlength="60000" rows="3" spellcheck="false" placeholder="Paste their reply here"></textarea></label><button id="room-add-guest" class="small-button" type="button">Connect friend</button></div>
 <div id="guest-pair-panel" class="pair-panel" hidden><h3>Join your friends</h3><p>Paste the invitation you received. Create a reply and send it back to the host to connect.</p><label class="room-label" for="invite-input">Invitation<textarea id="invite-input" maxlength="60000" rows="3" spellcheck="false" placeholder="Paste the invitation here"></textarea></label><button id="room-create-answer" class="small-button" type="button">Create reply</button><label class="room-label" for="answer-output">Your reply<textarea id="answer-output" maxlength="60000" readonly rows="3" spellcheck="false"></textarea></label><button id="copy-answer" class="small-button" type="button">Copy reply</button></div>
 <div id="room-connection-settings"><p>Manual invitations work without the lobby service. Advanced users can supply their own STUN or TURN settings.</p><label class="room-label" for="ice-servers">Connection servers (JSON)<textarea id="ice-servers" rows="3" maxlength="60000" spellcheck="false" placeholder="[]"></textarea></label></div>
 </details>
-<div class="room-crew"><h3>Your crew</h3><ul id="room-players" aria-label="Connected players"></ul><label class="ready-label" for="room-ready"><input id="room-ready" type="checkbox">I’m ready</label></div>
-<p id="room-status" role="status" aria-live="polite"></p><div class="room-actions"><button id="room-start" class="menu-button" type="button" disabled>Start together</button><button id="room-leave" class="small-button" type="button">Leave lobby</button></div>
+<div id="room-crew" class="room-crew" hidden><h3>Your crew</h3><ul id="room-players" aria-label="Connected players"></ul><label id="room-ready-label" class="ready-label" for="room-ready"><input id="room-ready" type="checkbox">I’m ready</label></div>
+<p id="room-status" role="status" aria-live="polite"></p><div id="room-actions" class="room-actions" hidden><button id="room-start" class="menu-button" type="button" disabled>Start together</button><button id="room-leave" class="small-button" type="button">Leave lobby</button></div>
 </div></section>
 <dialog id="leave-dialog" aria-labelledby="leave-title" aria-describedby="leave-description">
 <h2 id="leave-title">Leave current game?</h2><p id="leave-description"></p>
@@ -108,10 +124,10 @@
 </main>
 <script src="planet-storage.js?v=planet-1"></script>
 <script src="scenario-library.js?v=adaptive-touch-1"></script>
-<script src="multiplayer.js?v=planet-library-1"></script>
+<script src="multiplayer.js?v=launcher-1"></script>
 <script src="discovery-config.js?v=discovery-1"></script>
-<script src="discovery.js?v=discovery-1"></script>
-<script src="adaptive-touch.js?v=1"></script><script src="game.js?v=adaptive-touch-1"></script>
-<script src="gallery.js?v=planet-library-1"></script>
+<script src="discovery.js?v=launcher-1"></script>
+<script src="adaptive-touch.js?v=1"></script><script src="game.js?v=launcher-1"></script>
+<script src="gallery.js?v=launcher-1"></script>
 </body>
 </html>

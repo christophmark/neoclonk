@@ -22,7 +22,7 @@
  }
  function invoke(fn){return async()=>{const generation=revision;try{await fn();}catch(error){if(generation===revision&&error.name!=='AbortError')setStatus(error.message||String(error));}};}
  function inviteLink(code){const url=new URL(location.href);url.search='';url.hash='';url.searchParams.set('join','1');url.searchParams.set('room',code);return url.href;}
- function showSession(s){$('discovery-host').hidden=true;$('discovery-guest').hidden=true;$('discovery-invite').hidden=false;$('room-code-display').textContent=s.code;$('room-link').value=inviteLink(s.code);$('room-manual').open=false;$('room-manual').hidden=true;$('room-connection-kind').textContent='Trying a direct connection first. The relay is used only if needed.';}
+ function showSession(s){$('discovery-host').hidden=true;$('discovery-guest').hidden=true;$('discovery-invite').hidden=false;$('room-code-display').textContent=s.code;$('room-link').value=inviteLink(s.code);$('room-manual').open=false;$('room-manual').hidden=true;$('room-connection-kind').textContent='Connecting to your crew…';transport.render();}
  function makeSession(result,host,owner){
   const s={code:result.code,token:result.token,host,owner,room:result.room,slot:result.slot,rtcToken:result.rtcToken,peers:new Map(),controllers:new Set(),pollTimer:0,stopped:false,polling:false};
   active=s;showSession(s);return s;
@@ -34,7 +34,7 @@
   for(const id of ['room-publish','room-join-code','room-refresh'])$(id).disabled=false;
   $('room-manual').hidden=false;$('room-manual').open=false;$('discovery-host').hidden=!host;$('discovery-guest').hidden=host;$('discovery-invite').hidden=true;$('room-connection-kind').textContent='';$('room-code-display').textContent='';$('room-link').value='';$('room-list').replaceChildren();$('room-code-input').value='';
   if(!service){$('discovery-host').hidden=true;$('discovery-guest').hidden=true;$('room-manual').open=true;setStatus('Connect using an invitation and reply.');$('room-publish').disabled=true;$('room-join-code').disabled=true;$('room-refresh').disabled=true;return;}
-  if(host){setStatus('Create a room, then share its code or invite link.');return;}
+  if(host){setStatus('');return;}
   const code=new URLSearchParams(location.search).get('room');
   if(code&&!autoJoined){autoJoined=true;$('room-code-input').value=code;invoke(()=>join(code))();}else{setStatus('Choose an open room or enter a code from your friend.');invoke(()=>refresh(true))();}
  }
@@ -52,7 +52,7 @@
   const generation=revision;lobbyBusy=true;$('room-join-code').disabled=true;
   try{const result=await request('join',{code,name:transport.name(),...credentials()});
    if(generation!==revision||transport.getRoom()!==owner){request('leave',{code:result.code},{token:result.token,controllers:new Set()},{keepalive:true}).catch(()=>{});return;}
-   const s=makeSession(result,false,owner);owner.scenario=lib.get(result.room.scenario);if(!owner.scenario){leave();throw Error('This scenario is unavailable in your game version.');}$('room-scenario').textContent=owner.scenario.title;setStatus('Waiting for the host to connect…');schedule(s,0);
+   const s=makeSession(result,false,owner);owner.scenario=lib.get(result.room.scenario);if(!owner.scenario){leave();throw Error('This scenario is unavailable in your game version.');}$('room-scenario').textContent=owner.scenario.title;transport.render();setStatus('Waiting for the host to connect…');schedule(s,0);
   }finally{if(generation===revision){lobbyBusy=false;$('room-join-code').disabled=false;}}
  }
  async function refresh(force=false){

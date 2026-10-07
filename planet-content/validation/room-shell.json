@@ -10,11 +10,11 @@
       0,
       0,
       0,
-      67,
+      78,
+      1,
       0,
       0,
-      0,
-      18,
+      152,
       126,
       0,
       0,
@@ -22,7 +22,7 @@
       3,
       0,
       0,
-      52,
+      30,
       0,
       0,
       0,
@@ -38,10 +38,10 @@
       0,
       0,
       0,
-      26,
-      105,
-      177,
-      115
+      219,
+      175,
+      181,
+      61
     ],
     [
       0,
@@ -52,11 +52,11 @@
       0,
       0,
       0,
-      67,
+      78,
+      1,
       0,
       0,
-      0,
-      18,
+      152,
       126,
       0,
       0,
@@ -64,7 +64,7 @@
       3,
       0,
       0,
-      52,
+      30,
       0,
       0,
       0,
@@ -80,10 +80,10 @@
       0,
       0,
       0,
-      26,
-      105,
-      177,
-      115
+      219,
+      175,
+      181,
+      61
     ]
   ],
   "states": [
@@ -95,8 +95,8 @@
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 1941006618,
-      "randomCount": 32274,
+      "randomHold": 1035317211,
+      "randomCount": 32408,
       "landscape": {
         "width": 800,
         "height": 600
@@ -112,7 +112,7 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 278,
+            "y": 280,
             "action": 0,
             "energy": 50000
           },
@@ -120,7 +120,7 @@
             {
               "number": 85,
               "x": 20,
-              "y": 278,
+              "y": 280,
               "action": 0,
               "energy": 50000
             }
@@ -136,7 +136,7 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 289,
+            "y": 270,
             "action": 0,
             "energy": 50000
           },
@@ -144,7 +144,7 @@
             {
               "number": 89,
               "x": 759,
-              "y": 289,
+              "y": 270,
               "action": 0,
               "energy": 50000
             }
@@ -165,8 +165,8 @@
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 1941006618,
-      "randomCount": 32274,
+      "randomHold": 1035317211,
+      "randomCount": 32408,
       "landscape": {
         "width": 800,
         "height": 600
@@ -182,7 +182,7 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 278,
+            "y": 280,
             "action": 0,
             "energy": 50000
           },
@@ -190,7 +190,7 @@
             {
               "number": 85,
               "x": 20,
-              "y": 278,
+              "y": 280,
               "action": 0,
               "energy": 50000
             }
@@ -206,7 +206,7 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 289,
+            "y": 270,
             "action": 0,
             "energy": 50000
           },
@@ -214,7 +214,7 @@
             {
               "number": 89,
               "x": 759,
-              "y": 289,
+              "y": 270,
               "action": 0,
               "energy": 50000
             }
@@ -285,10 +285,10 @@
           "connected": true,
           "connection": "connected",
           "channel": "open",
-          "frame": 132
+          "frame": 131
         }
       ],
-      "frame": 133
+      "frame": 132
     },
     {
       "host": false,
@@ -317,7 +317,7 @@
           "frame": 0
         }
       ],
-      "frame": 132
+      "frame": 131
     }
   ],
   "native": [
@@ -325,12 +325,12 @@
       "engine": "planet-4.65",
       "ready": true,
       "running": true,
-      "frame": 133,
+      "frame": 132,
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 3909160497,
-      "randomCount": 32287,
+      "randomHold": 3081002526,
+      "randomCount": 32421,
       "landscape": {
         "width": 800,
         "height": 600
@@ -346,7 +346,7 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 278,
+            "y": 280,
             "action": 0,
             "energy": 50000
           },
@@ -354,7 +354,7 @@
             {
               "number": 85,
               "x": 20,
-              "y": 278,
+              "y": 280,
               "action": 0,
               "energy": 50000
             }
@@ -370,7 +370,7 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 289,
+            "y": 270,
             "action": 0,
             "energy": 50000
           },
@@ -378,7 +378,7 @@
             {
               "number": 89,
               "x": 759,
-              "y": 289,
+              "y": 270,
               "action": 0,
               "energy": 50000
             }
@@ -395,12 +395,12 @@
       "engine": "planet-4.65",
       "ready": true,
       "running": true,
-      "frame": 132,
+      "frame": 131,
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 3909160497,
-      "randomCount": 32287,
+      "randomHold": 2382492727,
+      "randomCount": 32420,
       "landscape": {
         "width": 800,
         "height": 600
@@ -416,7 +416,7 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 278,
+            "y": 280,
             "action": 0,
             "energy": 50000
           },
@@ -424,7 +424,7 @@
             {
               "number": 85,
               "x": 20,
-              "y": 278,
+              "y": 280,
               "action": 0,
               "energy": 50000
             }
@@ -440,7 +440,7 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 289,
+            "y": 270,
             "action": 0,
             "energy": 50000
           },
@@ -448,7 +448,7 @@
             {
               "number": 89,
               "x": 759,
-              "y": 289,
+              "y": 270,
               "action": 0,
               "energy": 50000
             }

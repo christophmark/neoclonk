@@ -14,7 +14,7 @@ Neoclonk runs **Clonk Rage 4.9.10.7 [330]** and **Clonk Planet 4.65** through se
 
 ## Playing
 
-- **133 official scenarios**: 80 from Rage and its Knights, Far Worlds, Fantasy and Western add-ons, plus 53 from Planet. Separate galleries identify each game. Rage tiles show gameplay captures; Planet tiles retain the original scenario artwork. Packs download as needed.
+- **133 official scenarios**: 80 from Rage and its Knights, Far Worlds, Fantasy and Western add-ons, plus 53 from Planet. Choose **Clonk Rage** or **Clonk Planet** on the NeoClonk start screen, then browse that game’s scenario galleries. Rage tiles show gameplay captures; Planet tiles retain the original scenario artwork. Packs download as needed.
 - **Solo exploration** is available through **Play solo** for multiplayer scenarios, including Jungle. Original rules and goals remain in place; some need opponents or finish immediately. Choose **Continue this round** after an early victory to keep exploring. **Host** starts the normal multiplayer lobby.
 - **Every mission is available immediately.** Puzzles, objectives and progress within each mission follow the original scripts.
 - **Classic controls**, with adaptive transparent touch buttons on mobile. The crew-selection row hides for a single crew member and returns for larger crews or open game menus. Extra action buttons follow the selected character’s original script descriptions in both Rage and Planet. Touch buttons sit above the game's action icons, and the camera accounts for the space they cover.
@@ -26,6 +26,8 @@ Neoclonk runs **Clonk Rage 4.9.10.7 [330]** and **Clonk Planet 4.65** through se
 Saved games and player files are stored in that browser's IndexedDB. They are not uploaded to the lobby or shared automatically between devices; clearing browser storage removes them.
 
 ## Multiplayer
+
+Open **Multiplayer lobby**, enter your name, and choose **Host a game** or **Join a game**. Hosts select the game and scenario, create a room, and share its code or link. Guests enter a code or choose an open room, then mark themselves ready. The host starts the round when everyone is ready.
 
 Each player joins from their own browser or device. Public rooms and private room codes are available through the lobby. The host's browser runs the room and must stay open.
 
@@ -123,6 +125,8 @@ Additional checks cover:
 - [Chromium ↔ WebKit multiplayer](web/public/rage/source/rtc-cross-browser.json), including player input, synchronized state, terrain agreement and shared pause.
 - [Direct and TURN-relayed multiplayer on the deployed service](web/public/rage/source/discovery-live.json).
 - Save persistence in [Chromium](web/public/rage/source/native-exit-persistence.json) and [WebKit](web/public/rage/source/native-exit-persistence-webkit.json), plus [touch access to native menus](web/public/rage/source/touch-menus.json).
+
+The launcher and simplified lobby are checked in [Chromium](web/public/rage/source/launcher-chromium.json) and [WebKit](web/public/rage/source/launcher-webkit.json), with [Rage multiplayer synchronization](web/public/rage/source/rtc-launcher.json) after setup.
 
 Planet checks cover official scenario startup and controls, mobile zoom and touch input, save/reload through the shared menu, and original control synchronization across two browser instances. These short checks do not prove completion of every goal or performance on every phone. See [Planet validation](planet-content/validation/README.md).
 

@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "Neoclonk",
-  "short_name": "Neoclonk",
+  "name": "NeoClonk",
+  "short_name": "NeoClonk",
   "description": "Play Clonk Rage in the browser.",
   "lang": "en",
   "start_url": "/",
@@ -12,22 +12,10 @@
   "theme_color": "#171812",
   "icons": [
     {
-      "src": "/icons/neoclonk-192.png",
-      "sizes": "192x192",
+      "src": "/rage/assets/NeoClonk-logo.png",
+      "sizes": "1254x1254",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "/icons/neoclonk-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/neoclonk-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ]
 }

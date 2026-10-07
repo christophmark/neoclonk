@@ -50,6 +50,9 @@ for relative,name in [
  ('rage-port/outputs/round-switch-chromium/report.json','round-switch-chromium.json'),
  ('rage-port/outputs/round-switch-webkit/report.json','round-switch-webkit.json'),
  ('rage-port/outputs/discovery-browser/report.json','discovery-browser.json'),
+ ('rage-port/outputs/launcher-chromium/report.json','launcher-chromium.json'),
+ ('rage-port/outputs/launcher-webkit/report.json','launcher-webkit.json'),
+ ('rage-port/outputs/rtc-launcher/report.json','rtc-launcher.json'),
  ('rage-port/outputs/touch-menus/report.json','touch-menus.json'),
  ('rage-port/outputs/exit/report.json','native-exit-persistence.json'),
  ('rage-port/outputs/exit-webkit/report.json','native-exit-persistence-webkit.json')]:

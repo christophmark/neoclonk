@@ -6,8 +6,8 @@ import {resolve,extname} from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('rage-port/shell'),out=resolve('rage-port/outputs/discovery-browser');await mkdir(out,{recursive:true});
 const calls=[],rooms=new Map();let roomSequence=1000,guestSequence=0,holdCreate=null;
-const scenario={id:'worlds.c4f/goldmine.c4s',title:'Gold Mine',minPlayers:1,maxPlayers:12};
-const catalog={catalogDigest:'fixture-catalog',scenarios:[scenario]};
+const scenario={id:'worlds.c4f/goldmine.c4s',title:'Gold Mine',categoryId:'worlds',minPlayers:1,maxPlayers:12};
+const catalog={catalogDigest:'fixture-catalog',scenarios:[scenario],categories:[{id:'worlds',title:'Worlds'}]};
 function api(body,token){const {action,code}=body;calls.push({action,code,generation:body.generation,kind:body.kind});let r=rooms.get(code),member=r?.hostToken===token?{host:true}:r?.guests.find(g=>g.token===token);
  if(action==='create'){const code=String(++roomSequence);r={room:{code,name:body.name,scenario:body.scenario,version:body.version,catalog:body.catalog,maxPlayers:body.maxPlayers,visibility:body.visibility,players:1,turnAvailable:true},hostToken:'host-'+code,guests:[]};rooms.set(code,r);return {code,token:r.hostToken,room:r.room};}
  if(action==='list')return {rooms:[...rooms.values()].filter(r=>r.room.visibility==='public'&&!r.started).map(r=>r.room)};
@@ -30,7 +30,7 @@ const server=createServer(async(req,res)=>{try{const url=new URL(req.url,'http:/
  }catch{res.writeHead(404).end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}`;
 const browser=await chromium.launch({headless:true,executablePath:'/opt/google/chrome/chrome',args:['--no-sandbox']});const pages=[],errors=[],report={};
 async function page({failDirect=false}={}){const p=await browser.newPage({viewport:{width:390,height:844}});pages.push(p);p.on('pageerror',e=>errors.push(String(e)));
- await p.route('**/scenario-library.js*',route=>route.fulfill({contentType:'text/javascript',body:`window.__scenarioLibrary={version:'fixture-1',catalog:${JSON.stringify(catalog)},get:id=>(${JSON.stringify(scenario)}),ready:Promise.resolve()};`}));
+ await p.route('**/scenario-library.js*',route=>route.fulfill({contentType:'text/javascript',body:`window.__scenarioLibrary={version:'fixture-1',catalog:${JSON.stringify(catalog)},get:id=>(${JSON.stringify(scenario)}),find:id=>id?(${JSON.stringify(scenario)}):null,isBlocked:()=>false,ready:Promise.resolve()};`}));
  await p.route('**/discovery-config.js*',route=>route.fulfill({contentType:'text/javascript',body:`window.__neoclonkDiscoveryConfig={serviceUrl:${JSON.stringify(base)},stunServers:[]};`}));
  await p.route('**/game.js*',route=>route.fulfill({contentType:'text/javascript',body:"window.__rageBrowser={getState:()=>({booted:false,phase:'playing'}),startScenario:async()=>{}};"}));
  await p.route('**/gallery.js*',route=>route.fulfill({contentType:'text/javascript',body:`window.__scenarioGallery={getSelected:()=>(${JSON.stringify(scenario)})};`}));
@@ -38,18 +38,18 @@ async function page({failDirect=false}={}){const p=await browser.newPage({viewpo
  await p.goto(base);return p;
 }
 async function host(p){await p.evaluate(id=>window.__neoclonkMultiplayer.host(id),scenario.id);await p.locator('#room-publish').click();await p.waitForFunction(()=>window.__neoclonkDiscovery.getState().code);return p.evaluate(()=>window.__neoclonkDiscovery.getState().code);}
-async function join(p,code){await p.locator('#join-room').click();await p.locator('#room-code-input').fill(code);await p.locator('#room-join-code').click();}
+async function join(p,code){await p.locator('#join-room').click();await p.locator('#room-join-choice').click();await p.locator('#room-code-input').fill(code);await p.locator('#room-join-code').click();}
 const waitConnected=(p,n)=>p.waitForFunction(count=>window.__neoclonkMultiplayer.getState()?.players.length===count,n,{timeout:65000});
 try{
  const h=await page(),a=await page(),b=await page();const code=await host(h);await Promise.all([join(a,code),join(b,code)]);await Promise.all([waitConnected(h,3),waitConnected(a,3),waitConnected(b,3)]);
  assert.equal(calls.filter(c=>c.action==='turn').length,0,'Direct connections never request relay credentials');assert.equal(calls.filter(c=>c.kind==='relay').length,0);
  report.concurrentDirect=await h.evaluate(()=>window.__neoclonkDiscovery.getState());assert.equal(report.concurrentDirect.connections.length,2);
- await h.screenshot({path:out+'/mobile-host.png'});for(const p of [h,a,b])await p.locator('#room-ready').check();await h.locator('#room-start').click();await h.waitForFunction(()=>window.__neoclonkDiscovery.getState().started);await a.waitForFunction(()=>window.__neoclonkDiscovery.getState().started);await new Promise(r=>setTimeout(r,100));const atStart=calls.filter(c=>c.action==='poll').length;await new Promise(r=>setTimeout(r,6000));assert.equal(calls.filter(c=>c.action==='poll').length,atStart,'No discovery polling during gameplay');report.gameplayPollingStopped=true;
+ await h.screenshot({path:out+'/mobile-host.png'});for(const p of [h,a,b])if(await p.locator('#room-ready').isVisible())await p.locator('#room-ready').check();await h.locator('#room-start').click();await h.waitForFunction(()=>window.__neoclonkDiscovery.getState().started);await a.waitForFunction(()=>window.__neoclonkDiscovery.getState().started);await new Promise(r=>setTimeout(r,100));const atStart=calls.filter(c=>c.action==='poll').length;await new Promise(r=>setTimeout(r,6000));assert.equal(calls.filter(c=>c.action==='poll').length,atStart,'No discovery polling during gameplay');report.gameplayPollingStopped=true;
  const fh=await page({failDirect:true}),fg=await page({failDirect:true}),fallbackCode=await host(fh);await join(fg,fallbackCode);await Promise.all([waitConnected(fh,2),waitConnected(fg,2)]);report.fallback=await fh.evaluate(()=>window.__neoclonkDiscovery.getState());assert.equal(report.fallback.connections[0].generation,1);assert.equal(calls.filter(c=>c.code===fallbackCode&&c.action==='turn').length,2,'Both peers receive TURN settings only after generation1');assert.equal(report.fallback.connections[0].kind,'direct','Fallback policy still allows direct route');
  await fh.locator('#room-leave').click();await fg.locator('#room-leave').click();const newCode=await host(fh);await new Promise(r=>setTimeout(r,1200));assert.equal((await fh.evaluate(()=>window.__neoclonkDiscovery.getState())).code,newCode,'Old callbacks cannot replace new session');assert.equal((await fh.evaluate(()=>window.__neoclonkMultiplayer.getState())).players.length,0);report.staleSessionSafe=true;
  // Cancel creation while its HTTP response is pending, then reopen immediately.
  const pendingPage=await page();let releaseCreate,calledCreate;const createCalled=new Promise(r=>calledCreate=r);const hold={promise:new Promise(r=>releaseCreate=r),called:calledCreate};holdCreate=hold;
- await pendingPage.evaluate(id=>window.__neoclonkMultiplayer.host(id),scenario.id);await pendingPage.locator('#room-publish').click();await createCalled;await pendingPage.locator('#room-leave').click();
+ await pendingPage.evaluate(id=>window.__neoclonkMultiplayer.host(id),scenario.id);await pendingPage.locator('#room-publish').click();await createCalled;await pendingPage.locator('#room-close').click();
  await pendingPage.evaluate(id=>window.__neoclonkMultiplayer.host(id),scenario.id);assert.equal(await pendingPage.locator('#room-publish').isEnabled(),true,'Reopened create button must be enabled before old request returns');releaseCreate();
  await pendingPage.waitForFunction(()=>!window.__neoclonkDiscovery.getState().active);await new Promise(r=>setTimeout(r,100));assert.equal(rooms.has(hold.code),false,'Cancelled create response cleans up its orphan room');report.pendingCreateCancelled=true;
  // Same slot, fresh rtcToken between polls: keep old channel alive to make the token check essential.

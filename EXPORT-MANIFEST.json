@@ -9,8 +9,8 @@
       "sha256": "cf43e104747363a11a58f1d9d836c7ab794182c86a29cd39320c886575040cd1"
     },
     "README.md": {
-      "bytes": 12554,
-      "sha256": "9ca38f2d1394caa4df73e05b566bf8930faa738d85da2b2200332ad7d13e2a7e"
+      "bytes": 13189,
+      "sha256": "f7134f5ebcb1fbcdbc7a6812cb50ee02eebaaa34867300b9ceb3f4b8b9551323"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5821,8 +5821,8 @@
       "sha256": "55e532a5d38fcecff206c136d1a73e51dda29d0676f1f93c50937a0b46041acb"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 12554,
-      "sha256": "9ca38f2d1394caa4df73e05b566bf8930faa738d85da2b2200332ad7d13e2a7e"
+      "bytes": 13189,
+      "sha256": "f7134f5ebcb1fbcdbc7a6812cb50ee02eebaaa34867300b9ceb3f4b8b9551323"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -6425,8 +6425,8 @@
       "sha256": "2981c9595821c722f8316e04ddf1220150ec22786c90a293f25109c20d5a0eba"
     },
     "planet-content/validation/room-shell.json": {
-      "bytes": 8660,
-      "sha256": "087016971bb4d6709fc4b76783cfa2ca32a9ea27d27bc678fd58e4cb51a359cb"
+      "bytes": 8662,
+      "sha256": "8678266614ed90b0d0a58cae8173477b1c09a15f30aae17ff15b92df99527640"
     },
     "planet-port/LICENSE.txt": {
       "bytes": 805,
@@ -8337,8 +8337,8 @@
       "sha256": "de2c58363193452b0c66bb103380b91d0686d088c45505b571d13cbf5d5808ff"
     },
     "rage-port/scripts/install-web.py": {
-      "bytes": 8112,
-      "sha256": "33f365f596a9d1957ed2fef2ecd21b59a9783fcbffcd90ed0e86a588f56b4f13"
+      "bytes": 8335,
+      "sha256": "10db9ce06051b6fafddb1c34d8f89c92d7787acb8384ec72c771b6473bc77a3e"
     },
     "rage-port/scripts/patch-emscripten.py": {
       "bytes": 8343,
@@ -8372,9 +8372,17 @@
       "bytes": 50893,
       "sha256": "e10c7da9275fd788c10a81c0b5a538f610c2f691766cb6ec3e9fd309d4bc02e5"
     },
+    "rage-port/shell/assets/NeoClonk-logo-prompt.txt": {
+      "bytes": 1070,
+      "sha256": "d7ac83ff61e56dae6602827d9c28facd86f5c3c89408d084e7b7c600869d43a8"
+    },
+    "rage-port/shell/assets/NeoClonk-logo.png": {
+      "bytes": 2075396,
+      "sha256": "c86a8c6100d57a655543de240341c8d4ac48a94b06916c20a032e27fb64081b3"
+    },
     "rage-port/shell/assets/README.md": {
-      "bytes": 2124,
-      "sha256": "b59e6a177c0167e5ce7225a7fddcc964cf7a31f01201a933b2c39b0075402fe9"
+      "bytes": 2486,
+      "sha256": "8eec8b1c7a725545356273f559fbdfce2a5b5ed572f46e8bf4823a132cd10205"
     },
     "rage-port/shell/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -8400,6 +8408,10 @@
       "bytes": 22466,
       "sha256": "07ea751fdc976762d19e29904ab7bb70686500297f1deecdae9941b40800fbc6"
     },
+    "rage-port/shell/assets/launcher.css": {
+      "bytes": 3499,
+      "sha256": "360206a0caccbd51f8f52cfe80d9d7ac30327881af78063731879d8c44298e83"
+    },
     "rage-port/shell/assets/manifest.json": {
       "bytes": 2307,
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
@@ -8409,24 +8421,24 @@
       "sha256": "f3db06e4f53c9184aca043ffc008922b5b888c0a11fef83e00b4c5c981bfc8f9"
     },
     "rage-port/shell/discovery.js": {
-      "bytes": 15115,
-      "sha256": "fa53adafb35402b4d0ab6ad4d58a9151fdf4b7e5c0ec00accfd3e0a7eb0c14ed"
+      "bytes": 15062,
+      "sha256": "b45a72db9da16507cace5d027aaf7982c1614fb3ed6a061c388fb503118a1325"
     },
     "rage-port/shell/gallery.js": {
-      "bytes": 11332,
-      "sha256": "781abe0f131e97498942c35a3b7ee73f21c376383d2775204beead8c1b396f45"
+      "bytes": 13437,
+      "sha256": "f1f8f7cc7dc764e0d6210e92ea0b687e575f57df6b51ab41974f975aa49b7be5"
     },
     "rage-port/shell/game.js": {
-      "bytes": 32274,
-      "sha256": "265de564ab744a3c9ac226aa37e96dfb95fee837c4b9bbbf2b0e02b2300db5b0"
+      "bytes": 32579,
+      "sha256": "402a42f880228c40da7e123036b86dec21ace2dc98f3fc8b80e45d14bf712a6d"
     },
     "rage-port/shell/index.html": {
-      "bytes": 35183,
-      "sha256": "438068e261993ffd7a270409d883571f7103bdff26d2bc1f4387ca36ac701dba"
+      "bytes": 36927,
+      "sha256": "d3ed8f8fd1d2d40bef2b7e654aebb2a0849fd574af098fc46d936a96bd28b674"
     },
     "rage-port/shell/multiplayer.js": {
-      "bytes": 24350,
-      "sha256": "d022767a8d2a33ca2e0cb4de4dd531931850e07e716fc14b445ea92378f1252a"
+      "bytes": 26665,
+      "sha256": "b33a4996b727fc6b5ed4b4e3f8d508a58b3bc99fefa301f74cb852d80740e32e"
     },
     "rage-port/shell/planet-storage.js": {
       "bytes": 1820,
@@ -14345,8 +14357,8 @@
       "sha256": "bc5b0ac7ddeec866c557b808f0089e39eb4f2614bf6a0e4759d63df88827afff"
     },
     "rage-port/tests/discovery-browser.mjs": {
-      "bytes": 11660,
-      "sha256": "177fe775b19949c1eded2ea6ae25fcc4ee8b9e7f28d67cd8f01668da8eb2b45b"
+      "bytes": 11880,
+      "sha256": "ce21102a72ff9d9adf7afe9a9496745a369f0a0a812cef8820a404dd26d976cd"
     },
     "rage-port/tests/discovery-relay.mjs": {
       "bytes": 8899,
@@ -14372,6 +14384,10 @@
       "bytes": 3112,
       "sha256": "d640bf564625245f25adb9553648fba506aa14d279748d1cfa3189f015189b32"
     },
+    "rage-port/tests/launcher.mjs": {
+      "bytes": 4332,
+      "sha256": "a2a159b4f2f3f4b7d237e2edce3609092e73237bf270767aebaaa1f2850b7aee"
+    },
     "rage-port/tests/mobile-audio-memory.mjs": {
       "bytes": 3888,
       "sha256": "0d6aadcfafc207aa7472e283e9f3541ac5b04cf07125fd4d1274fd38d1df3fb3"
@@ -14385,12 +14401,12 @@
       "sha256": "659f8a17163f7159c44b2ea17837d9e95068484b82040481a721ad7028aa8ad3"
     },
     "rage-port/tests/room-driver.mjs": {
-      "bytes": 5583,
-      "sha256": "780981f033a4a2ca3e42d986bb7f3a48f7d51f91567ff53661be48742854477d"
+      "bytes": 5681,
+      "sha256": "70b98c02b70ba88da4b3e9e82c424c8c67874d26aff540bd1f561535cfc22257"
     },
     "rage-port/tests/rtc-room.mjs": {
-      "bytes": 7237,
-      "sha256": "33de2103f000abdc26b7e5b7145e34cb257cc7aa96b5f6dbb1a2a5cb34c99f83"
+      "bytes": 7335,
+      "sha256": "9220321154b902745cb76f5213d3e384a5ed4ef40b6e36a8c4a46d6559da97a9"
     },
     "rage-port/tests/scenario-contact-sheet.py": {
       "bytes": 2570,
@@ -14429,8 +14445,8 @@
       "sha256": "e7e358bf320b99a55bce55e0b1c6c37f49e13d8493e6337081ee0fc1f892d0fd"
     },
     "tools/build-pages.py": {
-      "bytes": 6352,
-      "sha256": "a58e9401dcec2b46a16016c6ee133d2a6146b244ac2de37d0fd1ac6c851639e5"
+      "bytes": 6437,
+      "sha256": "90ee0930f5453ceb7874c12a469e10033755839d2cfdc6e713cdf6638ce31019"
     },
     "tools/import-content.mjs": {
       "bytes": 8903,
@@ -14453,8 +14469,8 @@
       "sha256": "e50804ec407d53cfc7fa23c2e1ec93de70c09b3a20f57daf37edeb0cc1d9c768"
     },
     "tools/test-pages.mjs": {
-      "bytes": 7485,
-      "sha256": "789782b2ad7de266b4751718e72a57ff5bff1526e2a233a94401ab64440a5f23"
+      "bytes": 8117,
+      "sha256": "09c2b5f6feb5884a52376eed15882bcf56bfda78c343313001fe32742ff8066b"
     },
     "web/app/chatgpt-auth.ts": {
       "bytes": 2550,
@@ -14469,12 +14485,12 @@
       "sha256": "921807d2da50637822aa3be2b2a23c6fb7cc1d84b265a3a19466e737b5921c5d"
     },
     "web/app/layout.tsx": {
-      "bytes": 1851,
-      "sha256": "2992c19a4d1a2592495bdbc0165bc59790e5918069487c9303b639393558e80a"
+      "bytes": 1818,
+      "sha256": "79dbd2ae675c812e1fc897d6a1e3a8eb52f35eeac3f37a7a14cf536dc0ec20ef"
     },
     "web/app/page.tsx": {
-      "bytes": 1212,
-      "sha256": "8e189cae62f113e8dc9ae57f1d8eaaf0b1eba05b5fbfcb62d3e4e62f7a70873d"
+      "bytes": 1305,
+      "sha256": "4dcc3dfe7c2417ada56625108bd4e34583d0cd200a5ffb8cd3e0b7f221b2c6fa"
     },
     "web/artwork/README.md": {
       "bytes": 933,
@@ -14537,8 +14553,8 @@
       "sha256": "120b12d087f370363454dea559eac028bcb375ea6d274d770f3f1724332b4d34"
     },
     "web/public/manifest.json": {
-      "bytes": 700,
-      "sha256": "249a0a373bd8e444c42ae227e21b99703dcfbaf25907a645f362f455d0906452"
+      "bytes": 437,
+      "sha256": "5aedd9b869c87c8114bf73c071e78e6ac9f091a6e3a623259e8ca50205a42fcb"
     },
     "web/public/planet/game.js": {
       "bytes": 10215,
@@ -14604,9 +14620,17 @@
       "bytes": 50893,
       "sha256": "e10c7da9275fd788c10a81c0b5a538f610c2f691766cb6ec3e9fd309d4bc02e5"
     },
+    "web/public/rage/assets/NeoClonk-logo-prompt.txt": {
+      "bytes": 1070,
+      "sha256": "d7ac83ff61e56dae6602827d9c28facd86f5c3c89408d084e7b7c600869d43a8"
+    },
+    "web/public/rage/assets/NeoClonk-logo.png": {
+      "bytes": 2075396,
+      "sha256": "c86a8c6100d57a655543de240341c8d4ac48a94b06916c20a032e27fb64081b3"
+    },
     "web/public/rage/assets/README.md": {
-      "bytes": 2124,
-      "sha256": "b59e6a177c0167e5ce7225a7fddcc964cf7a31f01201a933b2c39b0075402fe9"
+      "bytes": 2486,
+      "sha256": "8eec8b1c7a725545356273f559fbdfce2a5b5ed572f46e8bf4823a132cd10205"
     },
     "web/public/rage/assets/StartupBigButton.png": {
       "bytes": 19700,
@@ -14632,13 +14656,17 @@
       "bytes": 22466,
       "sha256": "07ea751fdc976762d19e29904ab7bb70686500297f1deecdae9941b40800fbc6"
     },
+    "web/public/rage/assets/launcher.css": {
+      "bytes": 3499,
+      "sha256": "360206a0caccbd51f8f52cfe80d9d7ac30327881af78063731879d8c44298e83"
+    },
     "web/public/rage/assets/manifest.json": {
       "bytes": 2307,
       "sha256": "5261eea4515a9c753259c198f824567f1789423917e5dad0552cb1f5abec33ea"
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1649,
-      "sha256": "d60e25651fe00f2884f4a86ebfb6b126706495e90b57319be94d839320de0567"
+      "sha256": "6118eda79d8e1ea5e316cf874a1a5e2b9dfb04ac7434e925e399034caf099e06"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -15533,20 +15561,20 @@
       "sha256": "f3db06e4f53c9184aca043ffc008922b5b888c0a11fef83e00b4c5c981bfc8f9"
     },
     "web/public/rage/discovery.js": {
-      "bytes": 15115,
-      "sha256": "fa53adafb35402b4d0ab6ad4d58a9151fdf4b7e5c0ec00accfd3e0a7eb0c14ed"
+      "bytes": 15062,
+      "sha256": "b45a72db9da16507cace5d027aaf7982c1614fb3ed6a061c388fb503118a1325"
     },
     "web/public/rage/gallery.js": {
-      "bytes": 11332,
-      "sha256": "781abe0f131e97498942c35a3b7ee73f21c376383d2775204beead8c1b396f45"
+      "bytes": 13437,
+      "sha256": "f1f8f7cc7dc764e0d6210e92ea0b687e575f57df6b51ab41974f975aa49b7be5"
     },
     "web/public/rage/game.js": {
-      "bytes": 32274,
-      "sha256": "265de564ab744a3c9ac226aa37e96dfb95fee837c4b9bbbf2b0e02b2300db5b0"
+      "bytes": 32579,
+      "sha256": "402a42f880228c40da7e123036b86dec21ace2dc98f3fc8b80e45d14bf712a6d"
     },
     "web/public/rage/index.html": {
-      "bytes": 35183,
-      "sha256": "438068e261993ffd7a270409d883571f7103bdff26d2bc1f4387ca36ac701dba"
+      "bytes": 36927,
+      "sha256": "d3ed8f8fd1d2d40bef2b7e654aebb2a0849fd574af098fc46d936a96bd28b674"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -15585,8 +15613,8 @@
       "sha256": "de4cbb87d2e0091407b8534f5b55818c14e17951376237b05469a2b16fcc3c91"
     },
     "web/public/rage/multiplayer.js": {
-      "bytes": 24350,
-      "sha256": "d022767a8d2a33ca2e0cb4de4dd531931850e07e716fc14b445ea92378f1252a"
+      "bytes": 26665,
+      "sha256": "b33a4996b727fc6b5ed4b4e3f8d508a58b3bc99fefa301f74cb852d80740e32e"
     },
     "web/public/rage/packs/Fantasy.c4d": {
       "bytes": 4133760,
@@ -15717,8 +15745,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 10863587,
-      "sha256": "27165854b5cc4695148bab3c696d67365d08435e42d83efae9aea262ff7c6b40"
+      "bytes": 12909363,
+      "sha256": "f288a567f749834dabfd0391e250ec9104ce90e5a320f97e3b4f76026d1bc9d9"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
@@ -15749,8 +15777,8 @@
       "sha256": "13b241721807837b5b673a5a6174508fc3485c3287983c2aae6825700a610128"
     },
     "web/public/rage/source/discovery-browser.json": {
-      "bytes": 6652,
-      "sha256": "5a6e68fae5cd510ff8056ada1f16520635f02047db9ce27b73d10bb5338a6a83"
+      "bytes": 6536,
+      "sha256": "94e077cc59f12bb209a78bed6225acd221eeba23478af7e7f221c5a4f030fbdc"
     },
     "web/public/rage/source/discovery-live.json": {
       "bytes": 1997,
@@ -15771,6 +15799,14 @@
     "web/public/rage/source/keyboard-layout-webkit.json": {
       "bytes": 800,
       "sha256": "28d5516187e09e7f27919011153bf4dc16e4c2f29282efbd11072d1df820ff10"
+    },
+    "web/public/rage/source/launcher-chromium.json": {
+      "bytes": 61,
+      "sha256": "61f83170667a7b753706620c1bf9f30b6b0e24b8673cc20142162d87b8ae40bb"
+    },
+    "web/public/rage/source/launcher-webkit.json": {
+      "bytes": 59,
+      "sha256": "a0c0dc127d72a8751754da0547c44dffe1ec15b321db06c6a5bc8c182af02e15"
     },
     "web/public/rage/source/native-exit-persistence-webkit.json": {
       "bytes": 2767,
@@ -15827,6 +15863,10 @@
     "web/public/rage/source/rtc-knights.json": {
       "bytes": 62408,
       "sha256": "60be2949cc1275d38540b5046402a9a1f6249111dba1be16b46454ec4d30895d"
+    },
+    "web/public/rage/source/rtc-launcher.json": {
+      "bytes": 52218,
+      "sha256": "656a5815f19b417f3a9c50ce5fcfc68e8208eb51583a719ba2909bb018978f91"
     },
     "web/public/rage/source/save-export-report.json": {
       "bytes": 693,

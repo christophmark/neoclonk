@@ -12,9 +12,9 @@ Original content: RedWolf Design / Matthes Bender, CC BY-NC 4.0 (<https://creati
 - Endeavour.ttf: the original menu/interface font from System.c4g.
 - UpperBoard.png and GUICaption.png are retained as original interface references.
 
-The game header remains rendered by the C++ engine. HTML adds only a Save button and a zoom slider inside its 64px browser header. A transparent hit area over the original engine-rendered logo opens the menu; it does not draw a duplicate logo or wooden bar. The original image bytes stay unchanged; CSS scales interface sprites for the responsive browser layout.
+The game header remains rendered by the C++ engine. HTML adds Save, Exit, and zoom buttons inside its 64px browser header. A transparent hit area over the original engine-rendered logo opens the menu; it does not draw a duplicate logo or wooden bar. The original image bytes stay unchanged; CSS scales interface sprites for the responsive browser layout.
 
-Desktop, portrait, and landscape startup layouts were checked with actual browser screenshots at 1280×900, 390×844, 844×390, and 568×320. Their menu bounds fit each viewport without horizontal overflow or initial-menu scrolling.
+Desktop, portrait, and landscape startup layouts were checked with actual browser screenshots at 1280×900, 390×844, 844×390, and 568×320. The launcher fits without horizontal overflow; shorter screens scroll vertically.
 
 ## Higher-resolution menu background
 
@@ -23,3 +23,7 @@ Desktop, portrait, and landscape startup layouts were checked with actual browse
 lighting. It is a modified derivative, unlike the byte-identical original UI
 assets above. Original artwork © RedWolf Design / Matthes Bender; CC BY-NC 4.0.
 The generated source is retained in `web/artwork/StartupMainMenuBG-HD.png`.
+
+## NeoClonk branding
+
+`NeoClonk-logo.png` is newly generated NeoClonk artwork, used by the launcher and app icon metadata. It is separate from the original game graphics. The built-in image-generation tool produced the transparent 1254×1254 PNG. See `NeoClonk-logo-prompt.txt` for the generation prompt. `launcher.css` styles the game chooser and simplified multiplayer setup.

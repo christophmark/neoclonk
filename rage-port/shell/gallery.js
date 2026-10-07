@@ -2,7 +2,7 @@
 (() => {
  const $=id=>document.getElementById(id),root=$('scenario-galleries');
  if(!root)return;
- let catalog=null,selected=null;
+ let catalog=null,selected=null,chosenGame=null;
  const tiles=new Map(),tracks=[];
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
  const idKey=id=>String(id||'').toLowerCase();
@@ -21,9 +21,25 @@
  }
  function setRovingFocus(track,button){for(const tile of track.querySelectorAll('.scenario-tile'))tile.tabIndex=tile===button?0:-1;}
  function reveal(button){button.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'nearest',inline:'nearest'});}
+ function chooseGame(engine,{remember=true,clear=true}={}){
+  if(![null,'rage','planet'].includes(engine))return;
+  chosenGame=engine;
+  $('game-picker').hidden=!!engine;$('game-library').hidden=!engine;
+  $('menu-layout').dataset.screen=engine?'scenarios':'games';
+  $('chosen-game-title').textContent=engine==='planet'?'Clonk Planet':'Clonk Rage';
+  if(clear){selected=null;$('scenario-panel').hidden=true;for(const button of tiles.values()){button.setAttribute('aria-pressed','false');button.querySelector('.tile-selected').hidden=true;}}
+  for(const element of document.querySelectorAll('[data-library-game]'))element.hidden=element.dataset.libraryGame!==engine;
+  if(catalog)$('catalog-summary').textContent=`${catalog.scenarios.filter(s=>(s.engine||'rage')===engine).length} original scenarios`;
+  if(remember){const url=new URL(location.href);for(const key of ['scenario','play','solo','host','join','room','lobby'])url.searchParams.delete(key);if(engine)url.searchParams.set('game',engine);else url.searchParams.delete('game');history.pushState({},'',url);$('cover').scrollTop=0;}
+  requestAnimationFrame(()=>tracks.forEach(updateArrows));
+ }
+ for(const button of document.querySelectorAll('[data-game]'))button.onclick=()=>chooseGame(button.dataset.game);
+ $('choose-game').onclick=()=>chooseGame(null);
+ window.addEventListener('popstate',()=>{const q=new URLSearchParams(location.search);chooseGame(['rage','planet'].includes(q.get('game'))?q.get('game'):null,{remember:false});if(q.get('scenario'))select(q.get('scenario'));});
  function select(id,{focus=false,notify=true}={}){
   if(!catalog||['loading','initializing'].includes(gameState().phase))return false;
   const scenario=catalog.scenarios.find(item=>idKey(item.id)===idKey(id));if(!scenario)return false;
+  chooseGame(scenario.engine||'rage',{remember:false,clear:false});
   selected=scenario;
   $('scenario-panel').hidden=false;
   for(const [key,button] of tiles){const active=key===idKey(id);button.setAttribute('aria-pressed',String(active));button.querySelector('.tile-selected').hidden=!active;}
@@ -62,9 +78,9 @@
   button.append(picture,caption,badge);button.addEventListener('click',()=>select(scenario.id));button.addEventListener('focus',()=>setRovingFocus(button.closest('.scenario-track'),button));item.append(button);tiles.set(idKey(scenario.id),button);return item;
  }
  function makeCategory(category,scenarios){
-  const section=document.createElement('section');section.className='scenario-category';section.id=`category-${category.id}`;
+  const section=document.createElement('section');section.className='scenario-category';section.dataset.libraryGame=category.engine||'rage';section.id=`category-${category.id}`;
   const heading=document.createElement('div');heading.className='category-heading';
-  const title=document.createElement('h3');title.id=`heading-${category.id}`;title.textContent=(category.engine==='planet'?'Clonk Planet · ':'')+category.title;section.setAttribute('aria-labelledby',title.id);
+  const title=document.createElement('h3');title.id=`heading-${category.id}`;title.textContent=category.title;section.setAttribute('aria-labelledby',title.id);
   const count=document.createElement('span');count.className='category-count';count.textContent=String(scenarios.length);count.setAttribute('aria-label',`${scenarios.length} scenarios`);
   const controls=document.createElement('div');controls.className='gallery-controls';
   const previous=document.createElement('button'),next=document.createElement('button');
@@ -84,7 +100,7 @@
   });
   new ResizeObserver(()=>updateArrows(record)).observe(track);
   section.append(heading,track);root.append(section);
-  const link=document.createElement('a');link.href=`#${section.id}`;link.textContent=(category.engine==='planet'?'Planet · ':'')+category.title;link.addEventListener('click',event=>{event.preventDefault();section.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});$('category-nav').append(link);
+  const link=document.createElement('a');link.href=`#${section.id}`;link.dataset.libraryGame=category.engine||'rage';link.textContent=category.title;link.addEventListener('click',event=>{event.preventDefault();section.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});$('category-nav').append(link);
   requestAnimationFrame(()=>updateArrows(record));
  }
  async function load(){
@@ -93,11 +109,17 @@
    if(!Array.isArray(data?.categories)||!Array.isArray(data?.scenarios))throw Error('Invalid scenario catalog');
    catalog={...data,scenarios:data.scenarios.filter(s=>typeof s.id==='string'&&typeof s.title==='string')};root.replaceChildren();$('category-nav').replaceChildren();
    for(const category of catalog.categories){const scenarios=catalog.scenarios.filter(s=>s.categoryId===category.id);if(scenarios.length)makeCategory(category,scenarios);}
-   $('catalog-summary').textContent=`${catalog.scenarios.length} original scenarios`;
+   for(const engine of ['rage','planet']){
+    const scenarios=catalog.scenarios.filter(s=>(s.engine||'rage')===engine);
+    $(engine+'-game-count').textContent=`${scenarios.length} scenarios`;
+    const preview=scenarios.find(s=>/goldmine/i.test(s.id))||scenarios.find(s=>s.screenshot||s.thumbnail);
+    if(preview)$(engine+'-game-art').src=preview.screenshot||preview.thumbnail;
+   }
+   const engine=new URLSearchParams(location.search).get('game');chooseGame(['rage','planet'].includes(engine)?engine:null,{remember:false});
    const requested=new URLSearchParams(location.search).get('scenario');
    if(requested)select(requested);root.setAttribute('aria-busy','false');window.dispatchEvent(new CustomEvent('scenario-catalog-ready',{detail:{catalog}}));return catalog;
   }catch(error){root.replaceChildren();const message=document.createElement('p');message.className='catalog-loading';message.textContent='The scenario library could not load. Reload to try again.';root.append(message);root.setAttribute('aria-busy','false');$('catalog-summary').textContent='';console.error('[gallery]',error);return null;}
  }
  window.addEventListener('community-imported',updateActions);
- window.__scenarioGallery={getSelected:()=>selected,select,updateActions,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();
+ window.__scenarioGallery={getSelected:()=>selected,getGame:()=>chosenGame,chooseGame,select,updateActions,getCatalog:()=>catalog,ready:null};window.__scenarioGallery.ready=load();
 })();

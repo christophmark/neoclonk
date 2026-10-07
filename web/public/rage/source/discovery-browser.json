@@ -64,10 +64,6 @@
       "code": "1001"
     },
     {
-      "action": "poll",
-      "code": "1001"
-    },
-    {
       "action": "join",
       "code": "1001"
     },
@@ -80,6 +76,10 @@
       "code": "1001"
     },
     {
+      "action": "poll",
+      "code": "1001"
+    },
+    {
       "action": "signal",
       "code": "1001",
       "generation": 0,
@@ -96,12 +96,6 @@
       "code": "1001"
     },
     {
-      "action": "signal",
-      "code": "1001",
-      "generation": 0,
-      "kind": "answer"
-    },
-    {
       "action": "poll",
       "code": "1001"
     },
@@ -112,31 +106,29 @@
       "kind": "answer"
     },
     {
-      "action": "poll",
-      "code": "1001"
-    },
-    {
-      "action": "connected",
-      "code": "1001"
-    },
-    {
-      "action": "connected",
-      "code": "1001"
-    },
-    {
-      "action": "connected",
-      "code": "1001"
-    },
-    {
-      "action": "connected",
-      "code": "1001"
+      "action": "signal",
+      "code": "1001",
+      "generation": 0,
+      "kind": "answer"
     },
     {
       "action": "poll",
       "code": "1001"
     },
     {
-      "action": "poll",
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
+      "code": "1001"
+    },
+    {
+      "action": "connected",
       "code": "1001"
     },
     {
@@ -364,11 +356,11 @@
       "code": "1003"
     },
     {
-      "action": "drop",
+      "action": "leave",
       "code": "1003"
     },
     {
-      "action": "leave",
+      "action": "drop",
       "code": "1003"
     },
     {

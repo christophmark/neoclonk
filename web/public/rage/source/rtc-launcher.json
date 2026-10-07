@@ -1,0 +1,2044 @@
+{
+  "scenario": "worlds.c4f/goldmine.c4s",
+  "hostEngine": "chromium",
+  "guestEngine": "chromium",
+  "errors": [],
+  "checkpoints": [
+    {
+      "stage": "started",
+      "player": 0,
+      "room": {
+        "host": true,
+        "started": true,
+        "players": [
+          {
+            "name": "Host",
+            "index": 0
+          },
+          {
+            "name": "Guest",
+            "index": 1
+          }
+        ],
+        "index": 0,
+        "error": null,
+        "paused": false,
+        "localPaused": false,
+        "engine": true,
+        "connections": [
+          {
+            "slot": 1,
+            "connected": true,
+            "connection": "connected",
+            "channel": "open",
+            "frame": 6
+          }
+        ],
+        "frame": 6
+      },
+      "state": {
+        "running": true,
+        "paused": false,
+        "frame": 7,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 1160279409,
+        "randomCount": 555,
+        "landscape": {
+          "width": 1600,
+          "height": 600,
+          "mapWidth": 160,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 58,
+          "temperature": 18,
+          "season": 37
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 422,
+            "effectivePixels": 422
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 423922,
+            "effectivePixels": 423922
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 14700,
+            "effectivePixels": 14700
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 4645,
+            "effectivePixels": 4645
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 5132,
+            "effectivePixels": 5132
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 25869,
+            "effectivePixels": 25869
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 4988,
+            "effectivePixels": 4988
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 217,
+            "effectivePixels": 217
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 932,
+            "effectivePixels": 932
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 7144,
+            "effectivePixels": 7144
+          }
+        ],
+        "goldObjects": 31,
+        "objectCount": 301,
+        "players": [
+          {
+            "number": 0,
+            "name": "Host",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 298,
+              "id": "CLNK",
+              "name": "Karfesch",
+              "x": 30,
+              "y": 274,
+              "fixedX": 1966080,
+              "fixedY": 17956864,
+              "vx": 0,
+              "vy": 65535,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 295,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 7,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": [
+                {
+                  "id": 4,
+                  "name": "Exit",
+                  "x": 0,
+                  "y": 0,
+                  "target": 0,
+                  "target2": 0,
+                  "data": 0,
+                  "finished": false,
+                  "failures": 0
+                }
+              ]
+            },
+            "crew": [
+              {
+                "number": 298,
+                "id": "CLNK",
+                "name": "Karfesch",
+                "x": 30,
+                "y": 274,
+                "fixedX": 1966080,
+                "fixedY": 17956864,
+                "vx": 0,
+                "vy": 65535,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 295,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 7,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": [
+                  {
+                    "id": 4,
+                    "name": "Exit",
+                    "x": 0,
+                    "y": 0,
+                    "target": 0,
+                    "target2": 0,
+                    "data": 0,
+                    "finished": false,
+                    "failures": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Guest",
+            "local": false,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": -1,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 302,
+              "id": "CLNK",
+              "name": "Iltu",
+              "x": 1569,
+              "y": 233,
+              "fixedX": 102825984,
+              "fixedY": 15269888,
+              "vx": 0,
+              "vy": 65535,
+              "owner": 1,
+              "controller": 1,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 299,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 7,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": [
+                {
+                  "id": 4,
+                  "name": "Exit",
+                  "x": 0,
+                  "y": 0,
+                  "target": 0,
+                  "target2": 0,
+                  "data": 0,
+                  "finished": false,
+                  "failures": 0
+                }
+              ]
+            },
+            "crew": [
+              {
+                "number": 302,
+                "id": "CLNK",
+                "name": "Iltu",
+                "x": 1569,
+                "y": 233,
+                "fixedX": 102825984,
+                "fixedY": 15269888,
+                "vx": 0,
+                "vy": 65535,
+                "owner": 1,
+                "controller": 1,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 299,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 7,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": [
+                  {
+                    "id": 4,
+                    "name": "Exit",
+                    "x": 0,
+                    "y": 0,
+                    "target": 0,
+                    "target2": 0,
+                    "data": 0,
+                    "finished": false,
+                    "failures": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 96,
+          "worldWidth": 640,
+          "worldHeight": 357,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 60,
+          "clonkScreenY": 420,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "stage": "started",
+      "player": 1,
+      "room": {
+        "host": false,
+        "started": true,
+        "players": [
+          {
+            "name": "Host",
+            "index": 0
+          },
+          {
+            "name": "Guest",
+            "index": 1
+          }
+        ],
+        "index": 1,
+        "error": null,
+        "paused": false,
+        "localPaused": false,
+        "engine": true,
+        "connections": [
+          {
+            "slot": 1,
+            "connected": true,
+            "connection": "connected",
+            "channel": "open",
+            "frame": 0
+          }
+        ],
+        "frame": 7
+      },
+      "state": {
+        "running": true,
+        "paused": false,
+        "frame": 8,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 2392131150,
+        "randomCount": 562,
+        "landscape": {
+          "width": 1600,
+          "height": 600,
+          "mapWidth": 160,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 58,
+          "temperature": 18,
+          "season": 37
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 422,
+            "effectivePixels": 422
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 423922,
+            "effectivePixels": 423922
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 14700,
+            "effectivePixels": 14700
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 4645,
+            "effectivePixels": 4645
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 5132,
+            "effectivePixels": 5132
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 25869,
+            "effectivePixels": 25869
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 4988,
+            "effectivePixels": 4988
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 217,
+            "effectivePixels": 217
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 932,
+            "effectivePixels": 932
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 7144,
+            "effectivePixels": 7144
+          }
+        ],
+        "goldObjects": 31,
+        "objectCount": 301,
+        "players": [
+          {
+            "number": 0,
+            "name": "Host",
+            "local": false,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": -1,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 298,
+              "id": "CLNK",
+              "name": "Karfesch",
+              "x": 30,
+              "y": 274,
+              "fixedX": 1966080,
+              "fixedY": 17956864,
+              "vx": 0,
+              "vy": 78642,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 295,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 8,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": [
+                {
+                  "id": 4,
+                  "name": "Exit",
+                  "x": 0,
+                  "y": 0,
+                  "target": 0,
+                  "target2": 0,
+                  "data": 0,
+                  "finished": false,
+                  "failures": 0
+                }
+              ]
+            },
+            "crew": [
+              {
+                "number": 298,
+                "id": "CLNK",
+                "name": "Karfesch",
+                "x": 30,
+                "y": 274,
+                "fixedX": 1966080,
+                "fixedY": 17956864,
+                "vx": 0,
+                "vy": 78642,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 295,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 8,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": [
+                  {
+                    "id": 4,
+                    "name": "Exit",
+                    "x": 0,
+                    "y": 0,
+                    "target": 0,
+                    "target2": 0,
+                    "data": 0,
+                    "finished": false,
+                    "failures": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Guest",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 0,
+            "menu": false,
+            "cursor": {
+              "number": 302,
+              "id": "CLNK",
+              "name": "Iltu",
+              "x": 1569,
+              "y": 233,
+              "fixedX": 102825984,
+              "fixedY": 15269888,
+              "vx": 0,
+              "vy": 78642,
+              "owner": 1,
+              "controller": 1,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 299,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 8,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": [
+                {
+                  "id": 4,
+                  "name": "Exit",
+                  "x": 0,
+                  "y": 0,
+                  "target": 0,
+                  "target2": 0,
+                  "data": 0,
+                  "finished": false,
+                  "failures": 0
+                }
+              ]
+            },
+            "crew": [
+              {
+                "number": 302,
+                "id": "CLNK",
+                "name": "Iltu",
+                "x": 1569,
+                "y": 233,
+                "fixedX": 102825984,
+                "fixedY": 15269888,
+                "vx": 0,
+                "vy": 78642,
+                "owner": 1,
+                "controller": 1,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 299,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 8,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": [
+                  {
+                    "id": 4,
+                    "name": "Exit",
+                    "x": 0,
+                    "y": 0,
+                    "target": 0,
+                    "target2": 0,
+                    "data": 0,
+                    "finished": false,
+                    "failures": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 896,
+          "height": 328,
+          "worldX": 1152,
+          "worldY": 151,
+          "worldWidth": 448,
+          "worldHeight": 164,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 834,
+          "clonkScreenY": 228,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "stage": "resumed",
+      "player": 0,
+      "room": {
+        "host": true,
+        "started": true,
+        "players": [
+          {
+            "name": "Host",
+            "index": 0
+          },
+          {
+            "name": "Guest",
+            "index": 1
+          }
+        ],
+        "index": 0,
+        "error": null,
+        "paused": false,
+        "localPaused": false,
+        "lastVerifiedFrame": 120,
+        "engine": true,
+        "connections": [
+          {
+            "slot": 1,
+            "connected": true,
+            "connection": "connected",
+            "channel": "open",
+            "frame": 132
+          }
+        ],
+        "frame": 133
+      },
+      "state": {
+        "running": true,
+        "paused": false,
+        "frame": 133,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 704490383,
+        "randomCount": 1657,
+        "landscape": {
+          "width": 1600,
+          "height": 600,
+          "mapWidth": 160,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 58,
+          "temperature": 21,
+          "season": 37
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 422,
+            "effectivePixels": 422
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 423922,
+            "effectivePixels": 423922
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 14700,
+            "effectivePixels": 14700
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 4645,
+            "effectivePixels": 4645
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 5132,
+            "effectivePixels": 5132
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 25869,
+            "effectivePixels": 25869
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 4988,
+            "effectivePixels": 4988
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 217,
+            "effectivePixels": 217
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 932,
+            "effectivePixels": 932
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 7144,
+            "effectivePixels": 7144
+          }
+        ],
+        "goldObjects": 31,
+        "objectCount": 301,
+        "players": [
+          {
+            "number": 0,
+            "name": "Host",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 64,
+            "menu": false,
+            "cursor": {
+              "number": 298,
+              "id": "CLNK",
+              "name": "Karfesch",
+              "x": 8,
+              "y": 289,
+              "fixedX": 65536,
+              "fixedY": 18939904,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 5,
+              "action": "Dig",
+              "commandDirection": 7,
+              "facing": 0,
+              "phase": 13,
+              "phaseDelay": 0,
+              "actionTime": 109,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 0,
+              "contents": [
+                74
+              ],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 298,
+                "id": "CLNK",
+                "name": "Karfesch",
+                "x": 8,
+                "y": 289,
+                "fixedX": 65536,
+                "fixedY": 18939904,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 5,
+                "action": "Dig",
+                "commandDirection": 7,
+                "facing": 0,
+                "phase": 13,
+                "phaseDelay": 0,
+                "actionTime": 109,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 0,
+                "contents": [
+                  74
+                ],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Guest",
+            "local": false,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": -1,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 68,
+            "menu": false,
+            "cursor": {
+              "number": 302,
+              "id": "CLNK",
+              "name": "Iltu",
+              "x": 1525,
+              "y": 253,
+              "fixedX": 99942400,
+              "fixedY": 16580608,
+              "vx": 0,
+              "vy": 0,
+              "owner": 1,
+              "controller": 1,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 30,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 302,
+                "id": "CLNK",
+                "name": "Iltu",
+                "x": 1525,
+                "y": 253,
+                "fixedX": 99942400,
+                "fixedY": 16580608,
+                "vx": 0,
+                "vy": 0,
+                "owner": 1,
+                "controller": 1,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 30,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 1280,
+          "height": 714,
+          "worldX": 0,
+          "worldY": 111,
+          "worldWidth": 640,
+          "worldHeight": 357,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 16,
+          "clonkScreenY": 420,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    {
+      "stage": "resumed",
+      "player": 1,
+      "room": {
+        "host": false,
+        "started": true,
+        "players": [
+          {
+            "name": "Host",
+            "index": 0
+          },
+          {
+            "name": "Guest",
+            "index": 1
+          }
+        ],
+        "index": 1,
+        "error": null,
+        "paused": false,
+        "localPaused": false,
+        "engine": true,
+        "connections": [
+          {
+            "slot": 1,
+            "connected": true,
+            "connection": "connected",
+            "channel": "open",
+            "frame": 0
+          }
+        ],
+        "frame": 142
+      },
+      "state": {
+        "running": true,
+        "paused": false,
+        "frame": 142,
+        "gameOver": false,
+        "evaluated": false,
+        "scenario": "Worlds.c4f/Goldmine.c4s",
+        "randomHold": 640660036,
+        "randomCount": 1728,
+        "landscape": {
+          "width": 1600,
+          "height": 600,
+          "mapWidth": 160,
+          "mapHeight": 60,
+          "mapZoom": 10
+        },
+        "weather": {
+          "wind": 58,
+          "temperature": 22,
+          "season": 37
+        },
+        "materials": [
+          {
+            "index": 0,
+            "name": "Acid",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 1,
+            "name": "Ashes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 2,
+            "name": "Coal",
+            "pixels": 422,
+            "effectivePixels": 422
+          },
+          {
+            "index": 3,
+            "name": "Crystal",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 4,
+            "name": "DuroLava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 5,
+            "name": "Earth",
+            "pixels": 423922,
+            "effectivePixels": 423922
+          },
+          {
+            "index": 6,
+            "name": "FlyAshes",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 7,
+            "name": "FlySand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 8,
+            "name": "Gold",
+            "pixels": 14700,
+            "effectivePixels": 14700
+          },
+          {
+            "index": 9,
+            "name": "Granite",
+            "pixels": 4645,
+            "effectivePixels": 4645
+          },
+          {
+            "index": 10,
+            "name": "Ice",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 11,
+            "name": "Lava",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 12,
+            "name": "Oil",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 13,
+            "name": "Ore",
+            "pixels": 5132,
+            "effectivePixels": 5132
+          },
+          {
+            "index": 14,
+            "name": "Rock",
+            "pixels": 25869,
+            "effectivePixels": 25869
+          },
+          {
+            "index": 15,
+            "name": "Sand",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 16,
+            "name": "Snow",
+            "pixels": 0,
+            "effectivePixels": 0
+          },
+          {
+            "index": 17,
+            "name": "Sulphur",
+            "pixels": 4988,
+            "effectivePixels": 4988
+          },
+          {
+            "index": 18,
+            "name": "Tunnel",
+            "pixels": 217,
+            "effectivePixels": 217
+          },
+          {
+            "index": 19,
+            "name": "Vehicle",
+            "pixels": 932,
+            "effectivePixels": 932
+          },
+          {
+            "index": 20,
+            "name": "Water",
+            "pixels": 7144,
+            "effectivePixels": 7144
+          }
+        ],
+        "goldObjects": 31,
+        "objectCount": 301,
+        "players": [
+          {
+            "number": 0,
+            "name": "Host",
+            "local": false,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": -1,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 64,
+            "menu": false,
+            "cursor": {
+              "number": 298,
+              "id": "CLNK",
+              "name": "Karfesch",
+              "x": 8,
+              "y": 289,
+              "fixedX": 294912,
+              "fixedY": 18939904,
+              "vx": 0,
+              "vy": 0,
+              "owner": 0,
+              "controller": 0,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 5,
+              "action": "Dig",
+              "commandDirection": 7,
+              "facing": 0,
+              "phase": 6,
+              "phaseDelay": 0,
+              "actionTime": 118,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 0,
+              "contents": [
+                74
+              ],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 298,
+                "id": "CLNK",
+                "name": "Karfesch",
+                "x": 8,
+                "y": 289,
+                "fixedX": 294912,
+                "fixedY": 18939904,
+                "vx": 0,
+                "vy": 0,
+                "owner": 0,
+                "controller": 0,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 5,
+                "action": "Dig",
+                "commandDirection": 7,
+                "facing": 0,
+                "phase": 6,
+                "phaseDelay": 0,
+                "actionTime": 118,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 0,
+                "contents": [
+                  74
+                ],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          },
+          {
+            "number": 1,
+            "name": "Guest",
+            "local": true,
+            "eliminated": false,
+            "controlStyle": 0,
+            "keyboardSet": 0,
+            "wealth": 50,
+            "lastCommand": 0,
+            "commandDelay": 0,
+            "pressedCommands": 68,
+            "menu": false,
+            "cursor": {
+              "number": 302,
+              "id": "CLNK",
+              "name": "Iltu",
+              "x": 1525,
+              "y": 253,
+              "fixedX": 99942400,
+              "fixedY": 16580608,
+              "vx": 0,
+              "vy": 0,
+              "owner": 1,
+              "controller": 1,
+              "energy": 50000,
+              "breath": 50000,
+              "construction": 100000,
+              "selected": true,
+              "inLiquid": false,
+              "contained": 0,
+              "procedure": 0,
+              "action": "Walk",
+              "commandDirection": 0,
+              "facing": 0,
+              "phase": 0,
+              "phaseDelay": 0,
+              "actionTime": 39,
+              "actionData": 0,
+              "contact": 0,
+              "attachment": 8,
+              "contents": [],
+              "menu": null,
+              "commands": []
+            },
+            "crew": [
+              {
+                "number": 302,
+                "id": "CLNK",
+                "name": "Iltu",
+                "x": 1525,
+                "y": 253,
+                "fixedX": 99942400,
+                "fixedY": 16580608,
+                "vx": 0,
+                "vy": 0,
+                "owner": 1,
+                "controller": 1,
+                "energy": 50000,
+                "breath": 50000,
+                "construction": 100000,
+                "selected": true,
+                "inLiquid": false,
+                "contained": 0,
+                "procedure": 0,
+                "action": "Walk",
+                "commandDirection": 0,
+                "facing": 0,
+                "phase": 0,
+                "phaseDelay": 0,
+                "actionTime": 39,
+                "actionData": 0,
+                "contact": 0,
+                "attachment": 8,
+                "contents": [],
+                "menu": null,
+                "commands": []
+              }
+            ]
+          }
+        ],
+        "mouse": {
+          "active": true,
+          "player": -1,
+          "screenX": 0,
+          "screenY": 0,
+          "worldX": 0,
+          "worldY": 0
+        },
+        "viewport": {
+          "x": 0,
+          "y": 64,
+          "width": 896,
+          "height": 328,
+          "worldX": 1152,
+          "worldY": 171,
+          "worldWidth": 448,
+          "worldHeight": 164,
+          "zoom": 2,
+          "requestedZoom": 2,
+          "minZoom": 0.25,
+          "headerHeight": 64,
+          "clonkScreenX": 746,
+          "clonkScreenY": 228,
+          "occlusion": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    }
+  ],
+  "capabilities": [
+    {
+      "peerConnection": true,
+      "secureContext": true
+    },
+    {
+      "peerConnection": true,
+      "secureContext": true
+    }
+  ],
+  "guestControl": {
+    "before": {
+      "number": 1,
+      "name": "Guest",
+      "local": true,
+      "eliminated": false,
+      "controlStyle": 0,
+      "keyboardSet": 0,
+      "wealth": 50,
+      "lastCommand": 0,
+      "commandDelay": 0,
+      "pressedCommands": 0,
+      "menu": false,
+      "cursor": {
+        "number": 302,
+        "id": "CLNK",
+        "name": "Iltu",
+        "x": 1569,
+        "y": 233,
+        "fixedX": 102825984,
+        "fixedY": 15269888,
+        "vx": 0,
+        "vy": 0,
+        "owner": 1,
+        "controller": 1,
+        "energy": 50000,
+        "breath": 50000,
+        "construction": 100000,
+        "selected": true,
+        "inLiquid": false,
+        "contained": 299,
+        "procedure": 0,
+        "action": "Walk",
+        "commandDirection": 0,
+        "facing": 0,
+        "phase": 0,
+        "phaseDelay": 0,
+        "actionTime": 10,
+        "actionData": 0,
+        "contact": 0,
+        "attachment": 8,
+        "contents": [],
+        "menu": null,
+        "commands": [
+          {
+            "id": 4,
+            "name": "Exit",
+            "x": 0,
+            "y": 0,
+            "target": 0,
+            "target2": 0,
+            "data": 0,
+            "finished": false,
+            "failures": 0
+          }
+        ]
+      },
+      "crew": [
+        {
+          "number": 302,
+          "id": "CLNK",
+          "name": "Iltu",
+          "x": 1569,
+          "y": 233,
+          "fixedX": 102825984,
+          "fixedY": 15269888,
+          "vx": 0,
+          "vy": 0,
+          "owner": 1,
+          "controller": 1,
+          "energy": 50000,
+          "breath": 50000,
+          "construction": 100000,
+          "selected": true,
+          "inLiquid": false,
+          "contained": 299,
+          "procedure": 0,
+          "action": "Walk",
+          "commandDirection": 0,
+          "facing": 0,
+          "phase": 0,
+          "phaseDelay": 0,
+          "actionTime": 10,
+          "actionData": 0,
+          "contact": 0,
+          "attachment": 8,
+          "contents": [],
+          "menu": null,
+          "commands": [
+            {
+              "id": 4,
+              "name": "Exit",
+              "x": 0,
+              "y": 0,
+              "target": 0,
+              "target2": 0,
+              "data": 0,
+              "finished": false,
+              "failures": 0
+            }
+          ]
+        }
+      ]
+    },
+    "after": {
+      "number": 1,
+      "name": "Guest",
+      "local": true,
+      "eliminated": false,
+      "controlStyle": 0,
+      "keyboardSet": 0,
+      "wealth": 50,
+      "lastCommand": 2,
+      "commandDelay": 3,
+      "pressedCommands": 4,
+      "menu": false,
+      "cursor": {
+        "number": 302,
+        "id": "CLNK",
+        "name": "Iltu",
+        "x": 1559,
+        "y": 248,
+        "fixedX": 102170624,
+        "fixedY": 16252928,
+        "vx": 0,
+        "vy": 0,
+        "owner": 1,
+        "controller": 1,
+        "energy": 50000,
+        "breath": 50000,
+        "construction": 100000,
+        "selected": true,
+        "inLiquid": false,
+        "contained": 0,
+        "procedure": 0,
+        "action": "Walk",
+        "commandDirection": 0,
+        "facing": 0,
+        "phase": 0,
+        "phaseDelay": 0,
+        "actionTime": 13,
+        "actionData": 0,
+        "contact": 0,
+        "attachment": 8,
+        "contents": [],
+        "menu": null,
+        "commands": []
+      },
+      "crew": [
+        {
+          "number": 302,
+          "id": "CLNK",
+          "name": "Iltu",
+          "x": 1559,
+          "y": 248,
+          "fixedX": 102170624,
+          "fixedY": 16252928,
+          "vx": 0,
+          "vy": 0,
+          "owner": 1,
+          "controller": 1,
+          "energy": 50000,
+          "breath": 50000,
+          "construction": 100000,
+          "selected": true,
+          "inLiquid": false,
+          "contained": 0,
+          "procedure": 0,
+          "action": "Walk",
+          "commandDirection": 0,
+          "facing": 0,
+          "phase": 0,
+          "phaseDelay": 0,
+          "actionTime": 13,
+          "actionData": 0,
+          "contact": 0,
+          "attachment": 8,
+          "contents": [],
+          "menu": null,
+          "commands": []
+        }
+      ]
+    }
+  },
+  "sync": [
+    {
+      "sync": [
+        122,
+        0,
+        122,
+        0,
+        0,
+        40,
+        6,
+        0,
+        0,
+        190,
+        172,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        173,
+        2,
+        174,
+        2,
+        97,
+        4,
+        0,
+        236,
+        203,
+        168,
+        130
+      ],
+      "terrain": 336922532
+    },
+    {
+      "sync": [
+        122,
+        0,
+        122,
+        0,
+        0,
+        40,
+        6,
+        0,
+        0,
+        190,
+        172,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        173,
+        2,
+        174,
+        2,
+        97,
+        4,
+        0,
+        236,
+        203,
+        168,
+        130
+      ],
+      "terrain": 336922532
+    }
+  ],
+  "pauseFrame": 122,
+  "passed": true,
+  "player0": {
+    "room": {
+      "host": true,
+      "started": true,
+      "players": [
+        {
+          "name": "Host",
+          "index": 0
+        },
+        {
+          "name": "Guest",
+          "index": 1
+        }
+      ],
+      "index": 0,
+      "error": null,
+      "paused": false,
+      "localPaused": false,
+      "lastVerifiedFrame": 120,
+      "engine": true,
+      "connections": [
+        {
+          "slot": 1,
+          "connected": true,
+          "connection": "connected",
+          "channel": "open",
+          "frame": 149
+        }
+      ],
+      "frame": 149
+    },
+    "shell": {
+      "phase": "playing",
+      "ready": true,
+      "error": null,
+      "persistence": "ready",
+      "lastSync": "2026-10-07T07:36:32.253Z",
+      "replay": false,
+      "lastStatus": "",
+      "scenarioId": "worlds.c4f/goldmine.c4s",
+      "multiplayer": true,
+      "booted": true,
+      "selectedScenarioId": "worlds.c4f/goldmine.c4s",
+      "zoom": 2,
+      "logs": [
+        "[engine] WARNING: using emscripten GL emulation. This is a collection of limited workarounds, do not expect it to work.",
+        "[09:34:46] No valid key file found.",
+        "[09:34:46] Command line: ",
+        "[09:34:46] \"/config:/data/home/browser.cfg\" \"/fullscreen\" \"/nosplash\" \"/data/session/Player1.c4p\" \"/data/session/Player2.c4p\" \"Worlds.c4f/Goldmine.c4s\" \"\"",
+        "[09:34:46] Clonk Rage ",
+        "[09:34:46] Version: 4.9.10.7 [330]  NONETWORK browser",
+        "[09:34:46] No valid key file found.",
+        "[09:34:47]   Using OpenGL...",
+        "[engine] WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports",
+        "[engine] TODO: glShadeModel",
+        "[09:34:53] Loading graphics...",
+        "[09:34:56] SDL_mixer Web Audio compatibility version is 1.2.12 (compiled with 1.2.12)",
+        "[09:34:56] Scenario: Worlds.c4f/Goldmine.c4s",
+        "[09:34:56] Scenario uses specified object definitions.",
+        "[09:34:56] Loading extras...",
+        "[09:35:01] Loading graphics...",
+        "[09:35:06] Loading object definitions:",
+        "[09:35:06] Objects.c4d...",
+        "[09:35:16]    345 definitions loaded.",
+        "[09:35:16] Goldmine.c4s...",
+        "[09:35:16]    0 definitions loaded.",
+        "[09:35:16] C4AulScriptEngine linked - 23988 lines, 0 warnings, 0 errors",
+        "[09:35:16] Texture table holds 48 entries.",
+        "[09:35:17] 21 textures loaded.",
+        "[09:35:17] 21 materials loaded.",
+        "[09:35:17] Creating landscape...",
+        "[09:35:19] Placing environment objects...",
+        "[09:35:20] Music: Sloping Off.ogg",
+        "[09:35:23] Game started.",
+        "[09:35:24] Player join: Host",
+        "[09:35:24] Player join: Guest"
+      ],
+      "canvas": {
+        "width": 1280,
+        "height": 800
+      }
+    },
+    "lobbyStatus": ""
+  },
+  "player1": {
+    "room": {
+      "host": false,
+      "started": true,
+      "players": [
+        {
+          "name": "Host",
+          "index": 0
+        },
+        {
+          "name": "Guest",
+          "index": 1
+        }
+      ],
+      "index": 1,
+      "error": null,
+      "paused": false,
+      "localPaused": false,
+      "engine": true,
+      "connections": [
+        {
+          "slot": 1,
+          "connected": true,
+          "connection": "connected",
+          "channel": "open",
+          "frame": 0
+        }
+      ],
+      "frame": 151
+    },
+    "shell": {
+      "phase": "playing",
+      "ready": true,
+      "error": null,
+      "persistence": "ready",
+      "lastSync": "2026-10-07T07:36:31.917Z",
+      "replay": false,
+      "lastStatus": "",
+      "scenarioId": "worlds.c4f/goldmine.c4s",
+      "multiplayer": true,
+      "selectedScenarioId": "worlds.c4f/goldmine.c4s",
+      "booted": true,
+      "zoom": 2,
+      "logs": [
+        "[engine] WARNING: using emscripten GL emulation. This is a collection of limited workarounds, do not expect it to work.",
+        "[09:34:46] No valid key file found.",
+        "[09:34:46] Command line: ",
+        "[09:34:46] \"/config:/data/home/browser.cfg\" \"/fullscreen\" \"/nosplash\" \"/data/session/Player1.c4p\" \"/data/session/Player2.c4p\" \"Worlds.c4f/Goldmine.c4s\" \"\"",
+        "[09:34:46] Clonk Rage ",
+        "[09:34:46] Version: 4.9.10.7 [330]  NONETWORK browser",
+        "[09:34:46] No valid key file found.",
+        "[09:34:46]   Using OpenGL...",
+        "[engine] WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports",
+        "[engine] TODO: glShadeModel",
+        "[09:34:53] Loading graphics...",
+        "[09:34:55] SDL_mixer Web Audio compatibility version is 1.2.12 (compiled with 1.2.12)",
+        "[09:34:55] Scenario: Worlds.c4f/Goldmine.c4s",
+        "[09:34:55] Scenario uses specified object definitions.",
+        "[09:34:55] Loading extras...",
+        "[09:35:01] Loading graphics...",
+        "[09:35:05] Loading object definitions:",
+        "[09:35:05] Objects.c4d...",
+        "[09:35:16]    345 definitions loaded.",
+        "[09:35:16] Goldmine.c4s...",
+        "[09:35:16]    0 definitions loaded.",
+        "[09:35:16] C4AulScriptEngine linked - 23988 lines, 0 warnings, 0 errors",
+        "[09:35:16] Texture table holds 48 entries.",
+        "[09:35:17] 21 textures loaded.",
+        "[09:35:17] 21 materials loaded.",
+        "[09:35:17] Creating landscape...",
+        "[09:35:19] Placing environment objects...",
+        "[09:35:20] Music: Sloping Off.ogg",
+        "[09:35:23] Game started.",
+        "[09:35:24] Player join: Host",
+        "[09:35:24] Player join: Guest"
+      ],
+      "canvas": {
+        "width": 896,
+        "height": 414
+      }
+    },
+    "lobbyStatus": ""
+  }
+}

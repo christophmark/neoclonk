@@ -4,10 +4,11 @@ export default async function Page({ searchParams }: {
 }) {
   const values = (await searchParams) ?? {};
   const query = new URLSearchParams();
-  query.set('v', 'planet-library-1');
-  for (const key of ['debug', 'touch', 'replay', 'play', 'solo', 'load', 'host', 'join']) {
+  query.set('v', 'launcher-1');
+  for (const key of ['debug', 'touch', 'replay', 'play', 'solo', 'load', 'host', 'join', 'lobby']) {
     if (values[key] === '1') query.set(key, '1');
   }
+  if (values.game === 'rage' || values.game === 'planet') query.set('game', values.game);
   const scenario = values.scenario;
   const room = values.room;
   if (typeof room === 'string' && /^[A-Z2-9]{8}$/i.test(room)) query.set('room', room.toUpperCase());

@@ -12,14 +12,14 @@ export async function generateMetadata(): Promise<Metadata> {
     applicationName: 'Neoclonk',
     appleWebApp: { capable: true, title: 'Neoclonk', statusBarStyle: 'black' },
     icons: {
-      icon: [{ url: '/rage/clonk.ico' }, { url: '/icons/neoclonk-192.png', type: 'image/png', sizes: '192x192' }],
-      apple: [{ url: '/apple-touch-icon.png?v=1', sizes: '180x180', type: 'image/png' }],
+      icon: [{ url: '/rage/assets/NeoClonk-logo.png', type: 'image/png', sizes: '1254x1254' }],
+      apple: [{ url: '/rage/assets/NeoClonk-logo.png', type: 'image/png' }],
     },
-    title: 'Neoclonk — Play Clonk Rage in the browser.',
-    description: 'Play Clonk Rage in the browser. 80 original scenarios with classic controls and multiplayer.',
+    title: 'NeoClonk — Clonk Rage & Clonk Planet',
+    description: 'Play Clonk Rage in the browser. 133 original Rage and Planet scenarios with classic controls and multiplayer.',
     metadataBase: new URL(origin),
-    openGraph: { title: 'Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.', type: 'website' },
-    twitter: { card: 'summary', title: 'Neoclonk — Play Clonk Rage in the browser.', description: 'Play Clonk Rage in the browser.' },
+    openGraph: { title: 'NeoClonk — Clonk Rage & Clonk Planet', description: 'Play Clonk Rage in the browser.', type: 'website' },
+    twitter: { card: 'summary', title: 'NeoClonk — Clonk Rage & Clonk Planet', description: 'Play Clonk Rage in the browser.' },
   };
 }
 export default function RootLayout({children}:{children:React.ReactNode}) { return <html lang="en"><head><link rel="manifest" href="/manifest.json?v=1" crossOrigin="use-credentials" /><meta name="apple-mobile-web-app-capable" content="yes" /></head><body>{children}</body></html>; }

@@ -26,21 +26,21 @@ HTML = '''<!doctype html>
 <meta name="apple-mobile-web-app-title" content="Neoclonk">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="rage/clonk.ico">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/neoclonk-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<title>Neoclonk — Play Clonk Rage in the browser.</title>
+<link rel="icon" type="image/png" sizes="1254x1254" href="rage/assets/NeoClonk-logo.png">
+<link rel="apple-touch-icon" href="rage/assets/NeoClonk-logo.png">
+<title>NeoClonk — Clonk Rage &amp; Clonk Planet</title>
 <style>:root{color-scheme:dark;background:#11120f}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}main{position:fixed;inset:0;height:100dvh}iframe{display:block;width:100%;height:100%;border:0}</style>
-<script src="pages-shell.js?v=planet-library-1" defer></script>
+<script src="pages-shell.js?v=launcher-1" defer></script>
 </head>
-<body><main><iframe id="game" title="Neoclonk — original Clonk Rage scenarios" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe><noscript>Enable JavaScript to play Neoclonk.</noscript></main></body>
+<body><main><iframe id="game" title="NeoClonk — Clonk Rage and Clonk Planet" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe><noscript>Enable JavaScript to play Neoclonk.</noscript></main></body>
 </html>
 '''
 SCRIPT = ''''use strict';
 (() => {
  const input=new URLSearchParams(location.search),query=new URLSearchParams();
- query.set('v','planet-library-1');
- for(const key of ['debug','touch','replay','play','solo','load','host','join'])if(input.get(key)==='1')query.set(key,'1');
+ query.set('v','launcher-1');
+ for(const key of ['debug','touch','replay','play','solo','load','host','join','lobby'])if(input.get(key)==='1')query.set(key,'1');
+ const selectedGame=input.get('game');if(['rage','planet'].includes(selectedGame))query.set('game',selectedGame);
  const scenario=input.get('scenario');
  if(scenario&&/^[a-z0-9_./-]+$/i.test(scenario)&&!scenario.split('/').includes('..'))query.set('scenario',scenario);
  const save=input.get('save');
@@ -104,8 +104,8 @@ def main():
     # the same app metadata, with paths relative to its /rage/ location.
     shell = out / 'rage/index.html'
     metadata = '''<link rel="manifest" href="../manifest.json">
-<link rel="icon" href="clonk.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="assets/NeoClonk-logo.png">
+<link rel="apple-touch-icon" href="assets/NeoClonk-logo.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Neoclonk">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
