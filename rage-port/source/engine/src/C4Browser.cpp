@@ -112,9 +112,10 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch()
   while(p && (!p->LocalControl || p->Eliminated))p=p->Next;
   if(!p){BrowserResult.Copy("null");return BrowserResult.getData();}
   C4Object *o=p->Cursor;
-  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"extras\":[",
+  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"digging\":%s,\"extras\":[",
     p->Number,o?o->Number:0,p->ActiveCrewCount(),
-    (p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false");
+    (p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false",
+    (o && o->GetProcedure()==DFA_DIG)?"true":"false");
   bool comma=false;
   if(o && o->Status && o->Def)for(int key=0;key<2;++key){
     bool started=false;

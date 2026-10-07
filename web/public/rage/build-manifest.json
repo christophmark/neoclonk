@@ -17,23 +17,23 @@
   },
   "clonk.js": {
     "bytes": 610590,
-    "sha256": "3e70e020c65a9d31a2ee92f12be5da77859d5d1babee496bc962097156639ca7"
+    "sha256": "0f287818f016a85c647caf0472cb56ca925a07d3f805cb89d6429180459fe333"
   },
   "touch-movement.js": {
-    "bytes": 3593,
-    "sha256": "89e019e003ab7e29b19d8b75c60723d776cd8144be7e3d3f1b0d35d7a40841f0"
+    "bytes": 3995,
+    "sha256": "b8aaea13d895f4a0c273d5803377add1da1c76b00e80c913612cfa70111a6b6f"
   },
   "gallery.js": {
     "bytes": 13642,
     "sha256": "8f1dd71fbdb72bf328f27f36559a83eefe4337a78b64b964c0646ceae17290c9"
   },
   "scenario-library.js": {
-    "bytes": 3113,
-    "sha256": "00d232a89331aad2ea6646b90e436ed55ddf718b05df9d18168c6f3406e0eb29"
+    "bytes": 3112,
+    "sha256": "5d88d5032e91ddc65fd0f9533d64476d41ca9025adc93227fa234471bb42e736"
   },
   "index.html": {
-    "bytes": 37031,
-    "sha256": "75dfd91d3936ea23171625e6426f961b7a44651abc7bd1f89eb1cfb4014172ef"
+    "bytes": 37030,
+    "sha256": "953a9c8dd7cf004e7d98b5547ff28da9c6b049bcc6a143072344db0b58738e61"
   },
   "planet-storage.js": {
     "bytes": 1820,
@@ -44,8 +44,8 @@
     "sha256": "d7d98e78ae1ea83862bee7f8fe60785e9c85d98b044932cc504e0b246568b2bd"
   },
   "clonk.wasm": {
-    "bytes": 12995895,
-    "sha256": "1d84f883b5362d9e6a13532a0372f7952a857fbebe8e29af5325d816b0f08fec"
+    "bytes": 12996207,
+    "sha256": "977356d5074f7334279926fd0ea435b6bcd1aa2c868f7fe4f4a8607446a6b123"
   },
   "clonk.ico": {
     "bytes": 22862,

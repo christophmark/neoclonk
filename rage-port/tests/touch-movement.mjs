@@ -21,6 +21,10 @@ try {
  await reset();await page.evaluate(()=>{send('KeyC','pointerdown');info.cursor=2;send('KeyC','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'Release must not stop a different selected crew member');
  await reset();await page.evaluate(()=>{send('KeyC','pointerdown');movement.releaseAll();send('KeyC','pointerup');});assert.equal((await events()).filter(([c,d])=>c==='KeyX'&&d).length,1,'Focus loss releases once');
  await reset();await page.evaluate(()=>{send('KeyC','pointerdown');send('KeyX','pointerdown',2);send('KeyX','pointerup',2);send('KeyC','pointerup');});assert.equal((await events()).filter(([c,d])=>c==='KeyX'&&d).length,1,'Manual Stop must not become a double Stop');
+ await reset();await page.evaluate(()=>{info.digging=true;send('KeyZ','pointerdown',1);send('KeyC','pointerdown',2);send('KeyC','pointerup',2);send('KeyZ','pointerup',1);});assert.deepEqual(await events(),[['KeyZ',true],['KeyC',true],['KeyC',false],['KeyZ',false]],'Digging must steer once per press without Stop or direction restoration');
+ await reset();await page.evaluate(()=>{send('KeyZ','pointerdown');info.digging=false;send('KeyZ','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'A steering gesture stays exempt when the action changes before release');
+ await reset();await page.evaluate(()=>{send('KeyC','pointerdown');info.digging=true;send('KeyC','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'Digging started during a hold must survive release');
+ await reset();await page.getByRole('switch',{name:'Hold to move'}).uncheck();await page.getByRole('switch',{name:'Hold to move'}).check();assert(!(await events()).some(([c])=>c==='KeyX'),'Changing mode must not stop active digging');
  assert.equal(await page.evaluate(()=>localStorage.getItem('neoclonk.touch.hold-movement')),'1');
  console.log(`PASS ${kind}: tap, hold, cancellation, opposing fingers, native menus, crew changes, focus loss and stored preference`);
 }finally{await browser.close();}

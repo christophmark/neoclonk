@@ -9,8 +9,8 @@
       "sha256": "cf43e104747363a11a58f1d9d836c7ab794182c86a29cd39320c886575040cd1"
     },
     "README.md": {
-      "bytes": 13618,
-      "sha256": "1c73cf26fc345000f47cc75df074c9ecbd3991c5d1d5f036acf2322d94a65ca5"
+      "bytes": 13709,
+      "sha256": "2054e58074f55279f243fcec2814fe06e286fa5e31278f399094ff073e7bc2a8"
     },
     "cr_source/BUILD.linux": {
       "bytes": 1087,
@@ -5821,8 +5821,8 @@
       "sha256": "55e532a5d38fcecff206c136d1a73e51dda29d0676f1f93c50937a0b46041acb"
     },
     "docs/GITHUB_README.md": {
-      "bytes": 13618,
-      "sha256": "1c73cf26fc345000f47cc75df074c9ecbd3991c5d1d5f036acf2322d94a65ca5"
+      "bytes": 13709,
+      "sha256": "2054e58074f55279f243fcec2814fe06e286fa5e31278f399094ff073e7bc2a8"
     },
     "docs/IMPLEMENTATION_STATUS.md": {
       "bytes": 5886,
@@ -6505,8 +6505,8 @@
       "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
     },
     "planet-port/patches/linux-to-browser.patch": {
-      "bytes": 966055,
-      "sha256": "f89fa22c77be5f4a8b7cf0a6234254b4889969351227d68404fa7efede1eebaf"
+      "bytes": 966172,
+      "sha256": "b9a675a5383e5aff7904e7c4186302c9fdf12c152507924a4c2f187821330211"
     },
     "planet-port/scripts/build.py": {
       "bytes": 2744,
@@ -6529,16 +6529,16 @@
       "sha256": "497e8a4a08042cf5b7ae2f87dbed88d109bb9f3aa6ed39940006edd40f15852e"
     },
     "planet-port/shell/game.js": {
-      "bytes": 9953,
-      "sha256": "7c7d6ec603602d3ceacc6bb37e2a3d906482b54590e61da4ded684bd318ab3f7"
+      "bytes": 9955,
+      "sha256": "8c6eecca67405be8e01839639c8d266ab87791ae3f0687406f3b5bbb8d3fa269"
     },
     "planet-port/shell/index.html": {
-      "bytes": 3856,
-      "sha256": "e6e68c11ca603cedd1f63cedb5f82a949a46d412ac2d600bf203d903863105e9"
+      "bytes": 3864,
+      "sha256": "e4e8b717e8df32bd10b3b2c3e8a1e53edc62c727bd126a84cc85d293e37bd282"
     },
     "planet-port/source-manifest.json": {
       "bytes": 65894,
-      "sha256": "4207a9403255ba894e6654ae9aa084243d28c4fed4f7527e00e51d4d65b9ffd8"
+      "sha256": "86701c44d9b90c0cc249a9ffe63e42ab06673beeb9c07ee0044d444f21affa79"
     },
     "planet-port/source/engine/inc/C4Application.h": {
       "bytes": 546,
@@ -7025,8 +7025,8 @@
       "sha256": "5bf910b192cc57349a74b761a7d8b77f0b7a55c5a12f324d9fe38314db90a295"
     },
     "planet-port/source/engine/src/C4Browser.cpp": {
-      "bytes": 6363,
-      "sha256": "544ba69d3927bccc97122116311d8927c158edb4cfbce76b118852160f7b2abb"
+      "bytes": 6480,
+      "sha256": "eb805844784850dc4f535ea63fd7a73d94b82e11b40ce690f628fac8b12281f9"
     },
     "planet-port/source/engine/src/C4BrowserNetwork.cpp": {
       "bytes": 6233,
@@ -8338,11 +8338,11 @@
     },
     "rage-port/patches/manifest.json": {
       "bytes": 12536,
-      "sha256": "a208fca247b9ee8d70d9ca65ec6d0f67bab71ae35c7a27607a236d103a6d4d89"
+      "sha256": "78878149e4136e85a1effcb7b02e34b4a35c12dc8fed50d2efe539ef05189248"
     },
     "rage-port/patches/original-to-browser.patch": {
-      "bytes": 106608,
-      "sha256": "50d5e04225c4cca506bbcba476a9d2f929c65b34d46e9ec963a3e649b8cf3e20"
+      "bytes": 106678,
+      "sha256": "c76196cc31a97f278b35c81ed9193227a3766eb72e204b0682b3888677281af3"
     },
     "rage-port/scripts/build.py": {
       "bytes": 6034,
@@ -8365,8 +8365,8 @@
       "sha256": "bf4a5e5dac59b84e7c34352ee6bf4ffc2109d0c85431f523192961ddeb5c2fc5"
     },
     "rage-port/shell/README.md": {
-      "bytes": 9298,
-      "sha256": "7c2bbac7a7e0b895edaee65c3e933a4e47be2cf49fe2e848d670482067af46c3"
+      "bytes": 9770,
+      "sha256": "40f583b6375e6dd6e054c4a83ecd123492f675d2c1328e59ca37c2b9268dd754"
     },
     "rage-port/shell/adaptive-touch.js": {
       "bytes": 2662,
@@ -8465,8 +8465,8 @@
       "sha256": "d7d98e78ae1ea83862bee7f8fe60785e9c85d98b044932cc504e0b246568b2bd"
     },
     "rage-port/shell/index.html": {
-      "bytes": 37031,
-      "sha256": "75dfd91d3936ea23171625e6426f961b7a44651abc7bd1f89eb1cfb4014172ef"
+      "bytes": 37030,
+      "sha256": "953a9c8dd7cf004e7d98b5547ff28da9c6b049bcc6a143072344db0b58738e61"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 26665,
@@ -8477,12 +8477,12 @@
       "sha256": "48e1d11f42222181197846f579fc078794a4a06542ba25d164afdd82d9010a6d"
     },
     "rage-port/shell/scenario-library.js": {
-      "bytes": 3113,
-      "sha256": "00d232a89331aad2ea6646b90e436ed55ddf718b05df9d18168c6f3406e0eb29"
+      "bytes": 3112,
+      "sha256": "5d88d5032e91ddc65fd0f9533d64476d41ca9025adc93227fa234471bb42e736"
     },
     "rage-port/shell/touch-movement.js": {
-      "bytes": 3593,
-      "sha256": "89e019e003ab7e29b19d8b75c60723d776cd8144be7e3d3f1b0d35d7a40841f0"
+      "bytes": 3995,
+      "sha256": "b8aaea13d895f4a0c273d5803377add1da1c76b00e80c913612cfa70111a6b6f"
     },
     "rage-port/source/BUILD.linux": {
       "bytes": 1087,
@@ -10233,8 +10233,8 @@
       "sha256": "00a7aacbadbaaf019089e2c5b3877a4bee5efbbc126a1a34f6ff54a635ca042c"
     },
     "rage-port/source/engine/src/C4Browser.cpp": {
-      "bytes": 21797,
-      "sha256": "87893bda65f004640d704457d627352afc70f7bef74987d6d04ded919a279b16"
+      "bytes": 21866,
+      "sha256": "b83fc77d8b74e9c64cfd11da320e43c337090ec23a10f1645759ba6fbf1f41e9"
     },
     "rage-port/source/engine/src/C4BrowserAudio.cpp": {
       "bytes": 5345,
@@ -14385,8 +14385,8 @@
       "sha256": "9763be56859d5582ca19939e5f24f12f9943a437a7bff90906797d38929fc675"
     },
     "rage-port/tests/browser-touch-movement.mjs": {
-      "bytes": 3474,
-      "sha256": "77fc857df82d3c2b74467d115ec55612a46bc3a786d1b260b0a2545bd510c73e"
+      "bytes": 5376,
+      "sha256": "35210bc523bbf21f8661bc02fbf855999ccc2bcc3ee57bdac4b24db7d3845376"
     },
     "rage-port/tests/browser-view.mjs": {
       "bytes": 8519,
@@ -14477,8 +14477,8 @@
       "sha256": "996e3b0065b88daf612b45a8a0669361fc1eec2b981b19878b84f109936df18f"
     },
     "rage-port/tests/touch-movement.mjs": {
-      "bytes": 3681,
-      "sha256": "12f959c8e081811043a1b450ebd449a4def030414ca6909250529426bf3ab4e5"
+      "bytes": 4712,
+      "sha256": "ea150f77f99441fb134a26710b66d73d63e24099213e21b3b48e022e84158943"
     },
     "rage-port/tests/tunnel-controls.mjs": {
       "bytes": 3238,
@@ -14605,12 +14605,12 @@
       "sha256": "5aedd9b869c87c8114bf73c071e78e6ac9f091a6e3a623259e8ca50205a42fcb"
     },
     "web/public/planet/game.js": {
-      "bytes": 9953,
-      "sha256": "7c7d6ec603602d3ceacc6bb37e2a3d906482b54590e61da4ded684bd318ab3f7"
+      "bytes": 9955,
+      "sha256": "8c6eecca67405be8e01839639c8d266ab87791ae3f0687406f3b5bbb8d3fa269"
     },
     "web/public/planet/index.html": {
-      "bytes": 3856,
-      "sha256": "e6e68c11ca603cedd1f63cedb5f82a949a46d412ac2d600bf203d903863105e9"
+      "bytes": 3864,
+      "sha256": "e4e8b717e8df32bd10b3b2c3e8a1e53edc62c727bd126a84cc85d293e37bd282"
     },
     "web/public/planet/licenses/DejaVu.txt": {
       "bytes": 3859,
@@ -14634,15 +14634,15 @@
     },
     "web/public/planet/planet.js": {
       "bytes": 401421,
-      "sha256": "9e9ebd07598a9eb104e97168c3dd01238778523067b11b8d29e173bd842963b2"
+      "sha256": "6fc45af07d5bbd1e5f25f7c571dc9287e6611aa8324cba55711a4aa366eb7cac"
     },
     "web/public/planet/planet.wasm": {
-      "bytes": 2079847,
-      "sha256": "4af13d3f6041e9d5f405cce6cfa7a7243d39232751fe4dd17a396e5bbb4e8fcf"
+      "bytes": 2080092,
+      "sha256": "5969967c9b83d66e16481563a12a4f243865ad150098ae0f629b281e4d2800e7"
     },
     "web/public/planet/source/planet-browser-sources.zip": {
-      "bytes": 1480369,
-      "sha256": "8c078436716dbef4b92f137d7ffdeedf18284f1a5600024b13e28f98d3f9ba54"
+      "bytes": 1480459,
+      "sha256": "27710422b90fcbe1de3d759a2818ed9fd4ecf9fbcd8c08eb6727c78fffa0df8d"
     },
     "web/public/rage/adaptive-touch.js": {
       "bytes": 2662,
@@ -14726,7 +14726,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1779,
-      "sha256": "982d31b1b68f72b7ce66fbcb172f785a34517d022c2090820bae1a0728ff9db8"
+      "sha256": "a8c59bfe5f6524a879a7ce1ca94aa1ad242ed588d934ff3a32c7bb85d03257b0"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -15610,11 +15610,11 @@
     },
     "web/public/rage/clonk.js": {
       "bytes": 610590,
-      "sha256": "3e70e020c65a9d31a2ee92f12be5da77859d5d1babee496bc962097156639ca7"
+      "sha256": "0f287818f016a85c647caf0472cb56ca925a07d3f805cb89d6429180459fe333"
     },
     "web/public/rage/clonk.wasm": {
-      "bytes": 12995895,
-      "sha256": "1d84f883b5362d9e6a13532a0372f7952a857fbebe8e29af5325d816b0f08fec"
+      "bytes": 12996207,
+      "sha256": "977356d5074f7334279926fd0ea435b6bcd1aa2c868f7fe4f4a8607446a6b123"
     },
     "web/public/rage/discovery-config.js": {
       "bytes": 275,
@@ -15633,8 +15633,8 @@
       "sha256": "d7d98e78ae1ea83862bee7f8fe60785e9c85d98b044932cc504e0b246568b2bd"
     },
     "web/public/rage/index.html": {
-      "bytes": 37031,
-      "sha256": "75dfd91d3936ea23171625e6426f961b7a44651abc7bd1f89eb1cfb4014172ef"
+      "bytes": 37030,
+      "sha256": "953a9c8dd7cf004e7d98b5547ff28da9c6b049bcc6a143072344db0b58738e61"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -15789,8 +15789,8 @@
       "sha256": "48e1d11f42222181197846f579fc078794a4a06542ba25d164afdd82d9010a6d"
     },
     "web/public/rage/scenario-library.js": {
-      "bytes": 3113,
-      "sha256": "00d232a89331aad2ea6646b90e436ed55ddf718b05df9d18168c6f3406e0eb29"
+      "bytes": 3112,
+      "sha256": "5d88d5032e91ddc65fd0f9533d64476d41ca9025adc93227fa234471bb42e736"
     },
     "web/public/rage/source/ORIGINAL_GAMEPLAY_AUDIT.md": {
       "bytes": 26534,
@@ -15805,8 +15805,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 13068571,
-      "sha256": "fdd2a55cf4f7de5720f5a5a6b5afa5f3482c57dd6059798626bbb38aab4866a4"
+      "bytes": 13069648,
+      "sha256": "bd65fd9870298f32860042f6fdd657b4697b6124c119b17253fd070c703eeab9"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
@@ -15881,8 +15881,8 @@
       "sha256": "38badb61d8c8c6e3792d9393dd8b4aa19e0e187e4170fd48eb4d54af0d5dcf63"
     },
     "web/public/rage/source/original-to-browser.patch": {
-      "bytes": 106608,
-      "sha256": "50d5e04225c4cca506bbcba476a9d2f929c65b34d46e9ec963a3e649b8cf3e20"
+      "bytes": 106678,
+      "sha256": "c76196cc31a97f278b35c81ed9193227a3766eb72e204b0682b3888677281af3"
     },
     "web/public/rage/source/original-warning-baseline/README.md": {
       "bytes": 1868,
@@ -15894,7 +15894,7 @@
     },
     "web/public/rage/source/patch-manifest.json": {
       "bytes": 12536,
-      "sha256": "a208fca247b9ee8d70d9ca65ec6d0f67bab71ae35c7a27607a236d103a6d4d89"
+      "sha256": "78878149e4136e85a1effcb7b02e34b4a35c12dc8fed50d2efe539ef05189248"
     },
     "web/public/rage/source/round-switch-chromium.json": {
       "bytes": 507,
@@ -15981,12 +15981,12 @@
       "sha256": "31be59dd6812a211dced8b388c7b3241acfc7f1900324b4ca71aa2f4dcd771c1"
     },
     "web/public/rage/source/touch-movement-chromium.json": {
-      "bytes": 6212,
-      "sha256": "123be759240a51d3736982578f4eab16e859028325b76173d0ae78aa918dac50"
+      "bytes": 10033,
+      "sha256": "03cfca35d1090561341ba766d3e182c7c55f123c63380dc7af3fe2298517e7e6"
     },
     "web/public/rage/source/touch-movement-webkit.json": {
-      "bytes": 6065,
-      "sha256": "dcb85e0685e67b94d30b89bca2b1e4729da69430deda53e951d3ca189ecf842a"
+      "bytes": 10031,
+      "sha256": "3c409464869706561ed5f8493a6af2db4848ccb277727664a48c8e96aa6ad4b0"
     },
     "web/public/rage/source/usability-chromium.json": {
       "bytes": 2025,
@@ -16001,8 +16001,8 @@
       "sha256": "48d0ff27d91ab234a4508020af63653be5c6763339fe6b15e93c866928b0d5cf"
     },
     "web/public/rage/touch-movement.js": {
-      "bytes": 3593,
-      "sha256": "89e019e003ab7e29b19d8b75c60723d776cd8144be7e3d3f1b0d35d7a40841f0"
+      "bytes": 3995,
+      "sha256": "b8aaea13d895f4a0c273d5803377add1da1c76b00e80c913612cfa70111a6b6f"
     },
     "web/public/scenarios.md": {
       "bytes": 4477,

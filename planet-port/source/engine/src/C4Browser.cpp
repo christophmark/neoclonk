@@ -20,7 +20,7 @@ static std::string JsonText(const char* value) {
 static void ObjectJson(std::ostringstream &s, C4Object *o) {
   if (!o) { s << "null"; return; }
   s << "{\"number\":" << o->Number << ",\"x\":" << o->x << ",\"y\":" << o->y
-    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy
+    << ",\"action\":" << o->Action.Act << ",\"commandDirection\":" << o->Action.ComDir << ",\"energy\":" << o->Energy
     << ",\"rank\":" << (o->Info ? o->Info->Rank : -1)
     << ",\"experience\":" << (o->Info ? o->Info->Experience : 0)
     << ",\"canScale\":" << (o->GetPhysical()->CanScale ? "true" : "false")
@@ -37,7 +37,7 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {
   C4Object *o=p->Cursor;int crew=0;
   for(C4ObjectLink *l=p->Crew.First;l;l=l->Next)if(l->Obj && l->Obj->Status)++crew;
   s<<"{\"player\":"<<p->Number<<",\"cursor\":"<<(o?o->Number:0)
-   <<",\"crewCount\":"<<crew<<",\"menu\":"<<((p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false")<<",\"extras\":[";
+   <<",\"crewCount\":"<<crew<<",\"menu\":"<<((p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false")<<",\"digging\":"<<((o && o->GetProcedure()==DFA_DIG)?"true":"false")<<",\"extras\":[";
   bool comma=false;
   if(o && o->Status && o->Def)for(int key=0;key<2;++key){
     bool started=false;

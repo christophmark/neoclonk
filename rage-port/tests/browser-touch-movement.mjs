@@ -4,7 +4,10 @@ const kind=process.env.BROWSER||'chromium',base=process.env.GAME_URL||'http://12
 const browser=kind==='webkit'?await webkit.launch({headless:true,env:{...process.env,LIBGL_ALWAYS_SOFTWARE:'1'}}):await chromium.launch({executablePath:'/opt/google/chrome/chrome',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const report={browser:kind,engines:[]};
 try {const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
 for(const engine of ['rage','planet']){
- const page=await context.newPage(),r={engine,errors:[]};report.engines.push(r);page.on('pageerror',e=>r.errors.push(String(e)));
+ const page=await context.newPage();
+ // Fix the startup clock so the original random landscape is reproducible.
+ await page.addInitScript(()=>{Date.now=()=>1770000000000;});
+ const r={engine,errors:[]};report.engines.push(r);page.on('pageerror',e=>r.errors.push(String(e)));
  await page.goto(base+(engine==='rage'?'/rage/index.html?scenario=worlds.c4f/goldmine.c4s&play=1&touch=1':'/planet/index.html?scenario=planet-official/easy.c4f/goldmine.c4s'));
  await page.waitForFunction(e=>e==='rage'?window.__rageBrowser?.getState().ready:window.__planetBrowser?.state().ready,engine,{timeout:90000});
  const call=(name,args=[])=>page.evaluate(({name,args})=>Module.ccall(name,'number',args.map(()=>'number'),args),{name:(engine==='rage'?'nc_browser_':'nc_planet_')+name,args});
@@ -17,5 +20,16 @@ for(const engine of ['rage','planet']){
  await page.mouse.down();await call('step',[12]);await page.mouse.up();r.tapReleased=await cursor();await call('step',[12]);r.tapLater=await cursor();assert.notEqual(r.tapLater.x,r.tapReleased.x,'Tap keeps moving after release');
  await mode.check();await call('step',[16]);
  const left=await page.locator('#touchpad [data-code=KeyZ]').boundingBox();await page.mouse.move(left.x+left.width/2,left.y+left.height/2);r.holdBefore=await cursor();await page.mouse.down();await call('step',[12]);r.holdDuring=await cursor();assert.notEqual(r.holdDuring.x,r.holdBefore.x,'Held direction moves the real crew');await page.mouse.up();await call('step',[10]);r.holdStopped=await cursor();await call('step',[15]);r.holdLater=await cursor();assert.equal(r.holdLater.x,r.holdStopped.x,'Hold release stops native horizontal movement');
+ // Steer the original digging procedure through real touch-pad taps. The
+ // release must not queue Stop, and each press changes the native dig angle.
+ const touch=()=>page.evaluate(()=>JSON.parse(Module.ccall('nc_browser_touch','string',[],[])));
+ // Walk beyond the hut foundation before testing a sustained earth tunnel.
+ const earth=await page.locator('#touchpad [data-code=KeyC]').boundingBox();await page.mouse.move(earth.x+earth.width/2,earth.y+earth.height/2);await page.mouse.down();await call('step',[55]);await page.mouse.up();await call('step',[12]);
+ await page.locator('#touchpad [data-code=KeyD]').tap();
+ for(let i=0;i<24&&!(await touch()).digging;i++)await call('step',[1]);
+ await call('step',[6]);r.digStarted=await touch();r.digBefore=await cursor();assert.equal(r.digStarted.digging,true,'Original crew starts digging');
+ await page.locator('#touchpad [data-code=KeyC]').tap();for(let i=0;i<8&&(await cursor()).commandDirection===r.digBefore.commandDirection;i++)await call('step',[1]);r.digRight=await cursor();assert.equal((await touch()).digging,true,'Right tap release preserves digging');assert.equal(r.digRight.commandDirection,r.digBefore.commandDirection-1,'Right steers original dig angle');
+ await page.locator('#touchpad [data-code=KeyZ]').tap();for(let i=0;i<8&&(await cursor()).commandDirection===r.digRight.commandDirection;i++)await call('step',[1]);r.digLeft=await cursor();assert.equal((await touch()).digging,true,'Left tap release preserves digging');assert.equal(r.digLeft.commandDirection,r.digRight.commandDirection+1,'Left steers original dig angle');
+ await page.locator('#touchpad [data-code=KeyX]').tap();await call('step',[3]);assert.equal((await touch()).digging,false,'Explicit Stop still ends digging');
  await page.screenshot({path:out+'/'+engine+'-portrait.png'});await page.setViewportSize({width:844,height:390});await page.waitForTimeout(200);const pad=await page.locator('#touchpad').boundingBox();assert(pad.y>=0&&pad.y+pad.height<=390);await page.screenshot({path:out+'/'+engine+'-landscape.png'});assert.deepEqual(r.errors,[]);await page.close();
 }report.passed=true;}catch(e){report.failure=String(e.stack||e);process.exitCode=1;}finally{await writeFile(out+'/report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));await browser.close();}
