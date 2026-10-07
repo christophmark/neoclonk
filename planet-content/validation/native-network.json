@@ -28,7 +28,11 @@
               "x": 32,
               "y": 290,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -36,7 +40,11 @@
                 "x": 32,
                 "y": 290,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           },
@@ -52,7 +60,11 @@
               "x": 735,
               "y": 278,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -60,7 +72,11 @@
                 "x": 735,
                 "y": 278,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           }
@@ -156,7 +172,11 @@
               "x": 32,
               "y": 290,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -164,7 +184,11 @@
                 "x": 32,
                 "y": 290,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           },
@@ -180,7 +204,11 @@
               "x": 735,
               "y": 278,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -188,7 +216,11 @@
                 "x": 735,
                 "y": 278,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14696,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           }
@@ -372,7 +404,11 @@
               "x": 134,
               "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -380,7 +416,11 @@
                 "x": 134,
                 "y": 289,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14698,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           },
@@ -393,18 +433,26 @@
             "lastCommand": 0,
             "cursor": {
               "number": 89,
-              "x": 743,
-              "y": 289,
+              "x": 674,
+              "y": 263,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
                 "number": 89,
-                "x": 743,
-                "y": 289,
+                "x": 674,
+                "y": 263,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14698,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           }
@@ -500,7 +548,11 @@
               "x": 134,
               "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
@@ -508,7 +560,11 @@
                 "x": 134,
                 "y": 289,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14698,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           },
@@ -521,18 +577,26 @@
             "lastCommand": 0,
             "cursor": {
               "number": 89,
-              "x": 743,
-              "y": 289,
+              "x": 674,
+              "y": 263,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             },
             "crew": [
               {
                 "number": 89,
-                "x": 743,
-                "y": 289,
+                "x": 674,
+                "y": 263,
                 "action": 0,
-                "energy": 50000
+                "energy": 80000,
+                "rank": 6,
+                "experience": 14698,
+                "canScale": true,
+                "canHangle": true
               }
             ]
           }
@@ -619,7 +683,7 @@
       127,
       0,
       0,
-      109,
+      40,
       3,
       0,
       0,
@@ -661,7 +725,7 @@
       127,
       0,
       0,
-      109,
+      40,
       3,
       0,
       0,
@@ -763,7 +827,11 @@
             "x": 134,
             "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14698,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
@@ -771,7 +839,11 @@
               "x": 134,
               "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -784,18 +856,26 @@
           "lastCommand": 0,
           "cursor": {
             "number": 89,
-            "x": 743,
-            "y": 289,
+            "x": 674,
+            "y": 263,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14698,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
-              "x": 743,
-              "y": 289,
+              "x": 674,
+              "y": 263,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }
@@ -891,7 +971,11 @@
             "x": 134,
             "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14698,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
@@ -899,7 +983,11 @@
               "x": 134,
               "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -912,18 +1000,26 @@
           "lastCommand": 0,
           "cursor": {
             "number": 89,
-            "x": 743,
-            "y": 289,
+            "x": 674,
+            "y": 263,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14698,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
-              "x": 743,
-              "y": 289,
+              "x": 674,
+              "y": 263,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14698,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }

@@ -10,19 +10,19 @@
       0,
       0,
       0,
-      78,
+      211,
       1,
       0,
       0,
-      152,
-      126,
+      49,
+      125,
       0,
       0,
       11,
       3,
       0,
       0,
-      30,
+      153,
       0,
       0,
       0,
@@ -38,10 +38,10 @@
       0,
       0,
       0,
-      219,
-      175,
-      181,
-      61
+      111,
+      202,
+      49,
+      87
     ],
     [
       0,
@@ -52,19 +52,19 @@
       0,
       0,
       0,
-      78,
+      211,
       1,
       0,
       0,
-      152,
-      126,
+      49,
+      125,
       0,
       0,
       11,
       3,
       0,
       0,
-      30,
+      153,
       0,
       0,
       0,
@@ -80,10 +80,10 @@
       0,
       0,
       0,
-      219,
-      175,
-      181,
-      61
+      111,
+      202,
+      49,
+      87
     ]
   ],
   "states": [
@@ -95,8 +95,8 @@
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 1035317211,
-      "randomCount": 32408,
+      "randomHold": 1462880879,
+      "randomCount": 32049,
       "landscape": {
         "width": 800,
         "height": 600
@@ -112,17 +112,25 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 280,
+            "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 85,
               "x": 20,
-              "y": 280,
+              "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -136,17 +144,25 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 270,
+            "y": 288,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
               "x": 759,
-              "y": 270,
+              "y": 288,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }
@@ -165,8 +181,8 @@
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 1035317211,
-      "randomCount": 32408,
+      "randomHold": 1462880879,
+      "randomCount": 32049,
       "landscape": {
         "width": 800,
         "height": 600
@@ -182,17 +198,25 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 280,
+            "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 85,
               "x": 20,
-              "y": 280,
+              "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -206,17 +230,25 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 270,
+            "y": 288,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
               "x": 759,
-              "y": 270,
+              "y": 288,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }
@@ -317,7 +349,7 @@
           "frame": 0
         }
       ],
-      "frame": 131
+      "frame": 132
     }
   ],
   "native": [
@@ -329,8 +361,8 @@
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 3081002526,
-      "randomCount": 32421,
+      "randomHold": 2015328219,
+      "randomCount": 32077,
       "landscape": {
         "width": 800,
         "height": 600
@@ -346,17 +378,25 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 280,
+            "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 85,
               "x": 20,
-              "y": 280,
+              "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -370,17 +410,25 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 270,
+            "y": 288,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
               "x": 759,
-              "y": 270,
+              "y": 288,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }
@@ -395,12 +443,12 @@
       "engine": "planet-4.65",
       "ready": true,
       "running": true,
-      "frame": 131,
+      "frame": 132,
       "paused": false,
       "gameOver": false,
       "scenario": "Easy.c4f/Goldmine.c4s",
-      "randomHold": 2382492727,
-      "randomCount": 32420,
+      "randomHold": 2015328219,
+      "randomCount": 32077,
       "landscape": {
         "width": 800,
         "height": 600
@@ -416,17 +464,25 @@
           "cursor": {
             "number": 85,
             "x": 20,
-            "y": 280,
+            "y": 289,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 85,
               "x": 20,
-              "y": 280,
+              "y": 289,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         },
@@ -440,17 +496,25 @@
           "cursor": {
             "number": 89,
             "x": 759,
-            "y": 270,
+            "y": 288,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           },
           "crew": [
             {
               "number": 89,
               "x": 759,
-              "y": 270,
+              "y": 288,
               "action": 0,
-              "energy": 50000
+              "energy": 80000,
+              "rank": 6,
+              "experience": 14696,
+              "canScale": true,
+              "canHangle": true
             }
           ]
         }

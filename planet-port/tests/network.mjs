@@ -11,6 +11,7 @@ try{
  report.initial=await Promise.all(pages.map(snapshot));for(let i=0;i<2;i++){assert.equal(report.initial[i].network.frame,0);assert.equal(report.initial[i].network.playersJoined,true);assert.equal(report.initial[i].state.players.filter(p=>p.local).length,1);assert.equal(report.initial[i].state.players.find(p=>p.local).number,i);}
  const bytes=async(p,suffix,args=[])=>p.evaluate(({suffix,args})=>{let ptr=Module.ccall('nc_browser_net_'+suffix,'number',args.map(()=>'number'),args),n=Module._nc_browser_net_size();return ptr&&n?Array.from(Module.HEAPU8.subarray(ptr,ptr+n)):null;},{suffix,args});
  const sync=()=>Promise.all(pages.map(p=>bytes(p,'sync')));
+ for(const peer of report.initial)for(const player of peer.state.players)for(const crew of player.crew){assert.equal(crew.rank,6);assert.equal(crew.experience,14696);assert.equal(crew.canScale,true);assert.equal(crew.canHangle,true);}
  report.initialSync=await sync();assert.deepEqual(...report.initialSync);
  for(let frame=0;frame<180;frame++){
   // Only one peer polls touch metadata; UI reads must not affect lockstep or RNG.

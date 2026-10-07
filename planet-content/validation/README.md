@@ -3,6 +3,7 @@
 Tests use unchanged original group files and the separately compiled Planet engine. They exercise startup, original control input and a short simulation interval, not full completion of each scenario objective.
 
 - `official-scenarios.json`: official scenario startup/control sweep.
+- New-crew checks in `mobile-webkit.json` and `native-network.json` confirm rank 6, 14,696 starting experience and the original climbing/ceiling-traversal physical flags. The mobile test also verifies these values survive save/reload; `room-shell.json` records rank-6 crew for both players in a real WebRTC match.
 - `mobile-webkit.json` and `mobile-chromium.json`: portrait viewport, zoom, touch movement, IndexedDB save, shared menu listing, reload and save again.
 - `native-network.json`: two independent engine instances, 180 ordered original control frames, inputs from both players, RNG and native synchronization equality while only one peer polls touch metadata, malformed/foreign control rejection.
 - `room-shell.json`: shared browser lobby, real WebRTC data channel, separate Planet runtimes, synchronization, shared pause/resume.

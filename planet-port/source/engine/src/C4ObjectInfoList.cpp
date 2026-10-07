@@ -115,6 +115,15 @@ C4ObjectInfo *C4ObjectInfoList::New(C4ID n_id, C4DefList *pDefs, const char *cpN
       return FALSE;
   // Default by type
   ((C4ObjectInfoCore *)pInfo)->Default(n_id, pDefs, cpNames);
+#if defined(__EMSCRIPTEN__) && defined(C4ENGINE)
+  // Browser profiles have no persistent trained crew. Give newly recruited
+  // Planet crew the first original rank with both Scale (4) and Hangle (6).
+  // Use normal promotion physicals; loaded crew and scenario overrides keep
+  // their saved values. No random calls: every multiplayer peer does this.
+  const int browserStartingRank = 6;
+  pInfo->Promote(browserStartingRank, Game.Rank);
+  pInfo->Experience = Game.Rank.Experience(browserStartingRank);
+#endif
   // Set birthday
   pInfo->Birthday = time(NULL);
   // Make valid names

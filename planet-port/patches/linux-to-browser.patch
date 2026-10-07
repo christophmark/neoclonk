@@ -125,7 +125,7 @@
  void C4Application::Quit() { PostQuitMessage(0); }
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,111 @@
+@@ -0,0 +1,115 @@
 +#include <C4Include.h>
 +#include <emscripten.h>
 +#include <sstream>
@@ -148,7 +148,11 @@
 +static void ObjectJson(std::ostringstream &s, C4Object *o) {
 +  if (!o) { s << "null"; return; }
 +  s << "{\"number\":" << o->Number << ",\"x\":" << o->x << ",\"y\":" << o->y
-+    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy << "}";
++    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy
++    << ",\"rank\":" << (o->Info ? o->Info->Rank : -1)
++    << ",\"experience\":" << (o->Info ? o->Info->Experience : 0)
++    << ",\"canScale\":" << (o->GetPhysical()->CanScale ? "true" : "false")
++    << ",\"canHangle\":" << (o->GetPhysical()->CanHangle ? "true" : "false") << "}";
 +}
 +extern "C" {
 +// Read the same compiled command metadata as the original action HUD. Never
@@ -18780,7 +18784,7 @@
 +void C4ObjectInfo::SetBirthday() { Birthday = time(NULL); }
 --- a/engine/src/C4ObjectInfoList.cpp
 +++ b/engine/src/C4ObjectInfoList.cpp
-@@ -1,176 +1,176 @@
+@@ -1,176 +1,185 @@
 -/* Copyright (C) 1998-2000  Matthes Bender  RedWolf Design */
 -
 -/* Dynamic list for crew member info */
@@ -19074,6 +19078,15 @@
 +      return FALSE;
 +  // Default by type
 +  ((C4ObjectInfoCore *)pInfo)->Default(n_id, pDefs, cpNames);
++#if defined(__EMSCRIPTEN__) && defined(C4ENGINE)
++  // Browser profiles have no persistent trained crew. Give newly recruited
++  // Planet crew the first original rank with both Scale (4) and Hangle (6).
++  // Use normal promotion physicals; loaded crew and scenario overrides keep
++  // their saved values. No random calls: every multiplayer peer does this.
++  const int browserStartingRank = 6;
++  pInfo->Promote(browserStartingRank, Game.Rank);
++  pInfo->Experience = Game.Rank.Experience(browserStartingRank);
++#endif
 +  // Set birthday
 +  pInfo->Birthday = time(NULL);
 +  // Make valid names

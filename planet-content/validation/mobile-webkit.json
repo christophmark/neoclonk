@@ -1,5 +1,6 @@
 {
   "checks": [
+    "New Planet crew have original rank 6 climbing and ceiling traversal",
     "Portrait viewport and zoom 8",
     "Real touch movement and stop",
     "UI writes Planet save to IndexedDB",
@@ -12,12 +13,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 16,
+    "frame": 6,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 2583578062,
-    "randomCount": 28359,
+    "randomHold": 4069770636,
+    "randomCount": 31902,
     "landscape": {
       "width": 800,
       "height": 600
@@ -31,19 +32,27 @@
         "wealth": 0,
         "lastCommand": 0,
         "cursor": {
-          "number": 79,
-          "x": 351,
-          "y": 290,
+          "number": 85,
+          "x": 476,
+          "y": 274,
           "action": 0,
-          "energy": 50000
+          "energy": 80000,
+          "rank": 6,
+          "experience": 14696,
+          "canScale": true,
+          "canHangle": true
         },
         "crew": [
           {
-            "number": 79,
-            "x": 351,
-            "y": 290,
+            "number": 85,
+            "x": 476,
+            "y": 274,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           }
         ]
       }
@@ -58,12 +67,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 16,
+    "frame": 6,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 2583578062,
-    "randomCount": 28359,
+    "randomHold": 4069770636,
+    "randomCount": 31902,
     "landscape": {
       "width": 800,
       "height": 600
@@ -77,19 +86,27 @@
         "wealth": 0,
         "lastCommand": 0,
         "cursor": {
-          "number": 79,
-          "x": 351,
-          "y": 290,
+          "number": 85,
+          "x": 476,
+          "y": 274,
           "action": 0,
-          "energy": 50000
+          "energy": 80000,
+          "rank": 6,
+          "experience": 14696,
+          "canScale": true,
+          "canHangle": true
         },
         "crew": [
           {
-            "number": 79,
-            "x": 351,
-            "y": 290,
+            "number": 85,
+            "x": 476,
+            "y": 274,
             "action": 0,
-            "energy": 50000
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           }
         ]
       }
@@ -110,12 +127,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 96,
+    "frame": 86,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 1833493609,
-    "randomCount": 28440,
+    "randomHold": 3456605084,
+    "randomCount": 32046,
     "landscape": {
       "width": 800,
       "height": 600
@@ -129,19 +146,27 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 79,
-          "x": 395,
-          "y": 300,
-          "action": 4,
-          "energy": 50000
+          "number": 85,
+          "x": 514,
+          "y": 289,
+          "action": 0,
+          "energy": 80000,
+          "rank": 6,
+          "experience": 14696,
+          "canScale": true,
+          "canHangle": true
         },
         "crew": [
           {
-            "number": 79,
-            "x": 395,
-            "y": 300,
-            "action": 4,
-            "energy": 50000
+            "number": 85,
+            "x": 514,
+            "y": 289,
+            "action": 0,
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           }
         ]
       }
@@ -156,12 +181,12 @@
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 96,
+    "frame": 86,
     "paused": true,
     "gameOver": false,
     "scenario": "Easy.c4f/Goldmine.c4s",
-    "randomHold": 1833493609,
-    "randomCount": 28440,
+    "randomHold": 3456605084,
+    "randomCount": 32046,
     "landscape": {
       "width": 800,
       "height": 600
@@ -175,19 +200,27 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 79,
-          "x": 395,
-          "y": 300,
-          "action": 4,
-          "energy": 50000
+          "number": 85,
+          "x": 514,
+          "y": 289,
+          "action": 0,
+          "energy": 80000,
+          "rank": 6,
+          "experience": 14696,
+          "canScale": true,
+          "canHangle": true
         },
         "crew": [
           {
-            "number": 79,
-            "x": 395,
-            "y": 300,
-            "action": 4,
-            "energy": 50000
+            "number": 85,
+            "x": 514,
+            "y": 289,
+            "action": 0,
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           }
         ]
       }
@@ -198,16 +231,16 @@
       "zoom": 2
     }
   },
-  "saveMenu": "Gold Mine · Clonk Planet · 10/6/26, 8:51 PM",
+  "saveMenu": "Gold Mine · Clonk Planet · 10/7/26, 11:41 AM",
   "loaded": {
     "engine": "planet-4.65",
     "ready": true,
     "running": true,
-    "frame": 96,
+    "frame": 86,
     "paused": true,
     "gameOver": false,
     "scenario": "/data/LoadedSave.c4s",
-    "randomHold": 2537395915,
+    "randomHold": 3208961618,
     "randomCount": 1009,
     "landscape": {
       "width": 800,
@@ -222,19 +255,27 @@
         "wealth": 0,
         "lastCommand": 4,
         "cursor": {
-          "number": 79,
-          "x": 395,
-          "y": 300,
-          "action": 4,
-          "energy": 50000
+          "number": 85,
+          "x": 514,
+          "y": 289,
+          "action": 0,
+          "energy": 80000,
+          "rank": 6,
+          "experience": 14696,
+          "canScale": true,
+          "canHangle": true
         },
         "crew": [
           {
-            "number": 79,
-            "x": 395,
-            "y": 300,
-            "action": 4,
-            "energy": 50000
+            "number": 85,
+            "x": 514,
+            "y": 289,
+            "action": 0,
+            "energy": 80000,
+            "rank": 6,
+            "experience": 14696,
+            "canScale": true,
+            "canHangle": true
           }
         ]
       }

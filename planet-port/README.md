@@ -21,6 +21,8 @@ The build creates `dist/planet.js`, `planet.wasm` and `planet.data`. The data pr
 
 ## Browser adaptations
 
+- Newly created crew start at rank 6 (14,696 experience), the first original rank that unlocks both climbing and ceiling traversal. `C4ObjectInfoList::New` calls the original promotion routine, including normal rank-based health. This applies equally to all multiplayer players and later recruits. Loaded crew records and scenario physical overrides are preserved.
+
 - Indexed surfaces are composed in CPU memory, with fast paths for ordinary sprite copies and fills. WebGL 2 presents the final pixels through a palette shader. This avoids GPU readback stalls and supports sprite strips larger than the device texture limit. Terrain and objects remain original engine data. Compilation/link errors fail initialization and are printed to the console.
 - Emscripten animation callbacks drive original 28 ms simulation and one-second timers. A suspended tab discards accumulated waiting time.
 - Original Windows CRT random sequence is explicitly reproduced using a 32-bit state and 15-bit result; host libc randomness is not substituted. The native fixture verifies the first ten seed-1 values and zero-range behavior.

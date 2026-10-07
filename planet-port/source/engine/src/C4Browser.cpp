@@ -20,7 +20,11 @@ static std::string JsonText(const char* value) {
 static void ObjectJson(std::ostringstream &s, C4Object *o) {
   if (!o) { s << "null"; return; }
   s << "{\"number\":" << o->Number << ",\"x\":" << o->x << ",\"y\":" << o->y
-    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy << "}";
+    << ",\"action\":" << o->Action.Act << ",\"energy\":" << o->Energy
+    << ",\"rank\":" << (o->Info ? o->Info->Rank : -1)
+    << ",\"experience\":" << (o->Info ? o->Info->Experience : 0)
+    << ",\"canScale\":" << (o->GetPhysical()->CanScale ? "true" : "false")
+    << ",\"canHangle\":" << (o->GetPhysical()->CanHangle ? "true" : "false") << "}";
 }
 extern "C" {
 // Read the same compiled command metadata as the original action HUD. Never

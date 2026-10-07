@@ -1,7 +1,7 @@
 'use strict';
 // Original scenario inventory and unchanged group files. Gameplay stays in C++.
 (() => {
- const version='adaptive-touch-1';
+ const version='planet-trained-crew-1';
  const url=path=>{const u=new URL(path,location.href);u.searchParams.set('v',version);return u.href;};
  let catalog,byId=new Map(),byPack=new Map();
  const ready=fetch(url('catalog/scenarios.json'),{credentials:'same-origin'}).then(async response=>{
