@@ -8437,8 +8437,8 @@
       "sha256": "07ea751fdc976762d19e29904ab7bb70686500297f1deecdae9941b40800fbc6"
     },
     "rage-port/shell/assets/launcher.css": {
-      "bytes": 5207,
-      "sha256": "f824faf4274fe6ed858a77ec25c0406ebf37fd1b05d09bbb6aa1d2a6d44298f2"
+      "bytes": 5667,
+      "sha256": "5efd79bc35f8a7feb84d1f45c3be6cec05bf9f5210c863860a9f2c6c3d1e1b04"
     },
     "rage-port/shell/assets/manifest.json": {
       "bytes": 2307,
@@ -8462,7 +8462,7 @@
     },
     "rage-port/shell/index.html": {
       "bytes": 36934,
-      "sha256": "89336beadf288cae8a61258b4e0556e837e658208d0509bde2d7b0246c4186ba"
+      "sha256": "925ed250c26a7baf2bfaa85c60388638b442c8f055a6f68a5408259c2548db0d"
     },
     "rage-port/shell/multiplayer.js": {
       "bytes": 26665,
@@ -14697,8 +14697,8 @@
       "sha256": "07ea751fdc976762d19e29904ab7bb70686500297f1deecdae9941b40800fbc6"
     },
     "web/public/rage/assets/launcher.css": {
-      "bytes": 5207,
-      "sha256": "f824faf4274fe6ed858a77ec25c0406ebf37fd1b05d09bbb6aa1d2a6d44298f2"
+      "bytes": 5667,
+      "sha256": "5efd79bc35f8a7feb84d1f45c3be6cec05bf9f5210c863860a9f2c6c3d1e1b04"
     },
     "web/public/rage/assets/manifest.json": {
       "bytes": 2307,
@@ -14706,7 +14706,7 @@
     },
     "web/public/rage/build-manifest.json": {
       "bytes": 1649,
-      "sha256": "bffab06d8b5a4d770aaafb05f29db11d860b3dba83352938cd09c7c36b66989f"
+      "sha256": "e1b6f52891bdbd771a084069bb146ab55b04fd4e9dc986182c4d7f43c3db6489"
     },
     "web/public/rage/catalog/README.md": {
       "bytes": 6192,
@@ -15614,7 +15614,7 @@
     },
     "web/public/rage/index.html": {
       "bytes": 36934,
-      "sha256": "89336beadf288cae8a61258b4e0556e837e658208d0509bde2d7b0246c4186ba"
+      "sha256": "925ed250c26a7baf2bfaa85c60388638b442c8f055a6f68a5408259c2548db0d"
     },
     "web/public/rage/licenses/Emscripten.txt": {
       "bytes": 5093,
@@ -15785,8 +15785,8 @@
       "sha256": "22b9b406e127aff8ec8ad697b359e7d575609eb71f22076dbef75ae654517725"
     },
     "web/public/rage/source/browser-port-sources.zip": {
-      "bytes": 13426691,
-      "sha256": "ea5a174ba675a333fabea91ae57fbea7c80580f8ac68098f368f41a3c513a9fe"
+      "bytes": 13426857,
+      "sha256": "4c134ad4a5ca9e3443123c51ab7f28493af4526f6a2472d5d61c6e68a0a48c89"
     },
     "web/public/rage/source/browser-view-report.json": {
       "bytes": 46594,
