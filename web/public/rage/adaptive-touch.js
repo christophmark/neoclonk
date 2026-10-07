@@ -4,7 +4,8 @@ window.NeoclonkTouch = {
  create({pad, read, enabled, bind, release, changed}) {
   const crew = ['KeyQ','KeyW','KeyE'].map(code=>pad.querySelector(`[data-code="${code}"]`));
   const row = document.createElement('div');
-  row.id = 'special-controls'; row.hidden = true; pad.prepend(row);
+  row.id = 'special-controls'; row.hidden = true;
+  const mode=pad.querySelector('#touch-movement-mode');if(mode)mode.after(row);else pad.prepend(row);
   const extras = [10,11].map((control,index)=>{
    const button=document.createElement('button'), glyph=document.createElement('b'), label=document.createElement('span');
    button.type='button'; button.dataset.code=index?'KeyF':'KeyV'; button.hidden=true;

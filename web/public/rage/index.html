@@ -32,7 +32,7 @@
 #solo-note{font-size:13px;line-height:1.4;color:#d8bd90;margin:10px 0}@media(max-width:760px){.menu-panel>#play-solo{grid-column:2;grid-row:3;font-size:16px;min-height:34px}.menu-panel>#new-game{grid-row:4}#solo-note{grid-column:1/-1;grid-row:5;font-size:12px;margin:4px 0}#scenario-story{grid-row:6}}
 </style>
 <link rel="stylesheet" href="assets/launcher.css?v=4">
-</head>
+<link rel="stylesheet" href="assets/touch-movement.css?v=1"></head>
 <body data-phase="menu">
 <main id="stage">
 <canvas id="canvas" width="960" height="720" tabindex="0" aria-label="Original Clonk Rage game"></canvas>
@@ -87,7 +87,7 @@
 <div id="touchpad" aria-label="Classic touch controls" hidden>
 <button data-code="KeyQ" aria-label="Previous Clonk"><b>Q</b><span>Previous</span></button><button data-code="KeyW" aria-label="Select or toggle Clonk"><b>W</b><span>Select</span></button><button data-code="KeyE" aria-label="Next Clonk"><b>E</b><span>Next</span></button>
 <button data-code="KeyA" aria-label="Throw"><b>A</b><span>Throw</span></button><button data-code="KeyS" aria-label="Up or jump"><b>S</b><span>Up / Jump</span></button><button data-code="KeyD" aria-label="Dig"><b>D</b><span>Dig</span></button>
-<button data-code="KeyZ" aria-label="Move left, Y or Z"><b>Y/Z</b><span>Left</span></button><button data-code="KeyX" aria-label="Stop or down"><b>X</b><span>Stop</span></button><button data-code="KeyC" aria-label="Move right"><b>C</b><span>Right</span></button>
+<button data-code="KeyZ" aria-label="Move left"><b>Z</b><span>Left</span></button><button data-code="KeyX" aria-label="Stop or down"><b>X</b><span>Stop</span></button><button data-code="KeyC" aria-label="Move right"><b>C</b><span>Right</span></button>
 </div>
 <section id="multiplayer-room" role="dialog" aria-modal="true" aria-labelledby="room-title" hidden>
 <div class="room-sheet"><button id="room-close" class="small-button" type="button" aria-label="Close multiplayer lobby">Close</button><p class="selection-label">Play together</p><h2 id="room-title">Multiplayer</h2><p id="room-scenario"></p>
@@ -127,7 +127,7 @@
 <script src="multiplayer.js?v=launcher-1"></script>
 <script src="discovery-config.js?v=discovery-1"></script>
 <script src="discovery.js?v=launcher-1"></script>
-<script src="adaptive-touch.js?v=1"></script><script src="game.js?v=launcher-1"></script>
+<script src="adaptive-touch.js?v=2"></script><script src="touch-movement.js?v=1"></script><script src="game.js?v=touch-hold-1"></script>
 <script src="gallery.js?v=game-cards-3"></script>
 </body>
 </html>

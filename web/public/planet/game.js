@@ -13,18 +13,15 @@
  function print(...args){const line=args.join(' ');log.push(line);if(log.length>300)log.shift();console.log('[Planet]',line);if(/Game (started|resumed)/i.test(line)){ready=true;$('cover').hidden=true;$('header').hidden=false;$('touchpad').hidden=!coarse.matches;canvas.focus();touch.refresh();resize();setTimeout(resize,100);if(session){$('save').disabled=true;$('save').title='Connected rounds cannot be saved.';setTimeout(()=>host.ready(Module),0);}}}
  function resize(){if(!ready)return;const r=$('world').getBoundingClientRect(),pad=$('touchpad').getBoundingClientRect();if(Module._nc_planet_view)call('view','number',Array(7).fill('number'),[Math.round(r.width),Math.round(r.height),zoom,$('touchpad').hidden?0:Math.round(pad.left-r.left),Math.round(pad.top-r.top),$('touchpad').hidden?0:Math.round(pad.width),Math.round(pad.height)]);$('zoom-out').disabled=zoom===steps[0];$('zoom-in').disabled=zoom===steps.at(-1);}
  function control(code,down){if(!ready||failed||!(code in keys)||down===pressed.has(code))return;down?pressed.add(code):pressed.delete(code);const player=state().players.find(p=>p.local&&!p.eliminated);if(player)call('control','number',Array(4).fill('number'),[player.number,keys[code],Number(down),0]);}
- function releaseAll(){for(const code of [...pressed])control(code,false);}
- const labels=[['Q','Previous','KeyQ'],['W','Select','KeyW'],['E','Next','KeyE'],['A','Throw','KeyA'],['S','Up / Jump','KeyS'],['D','Dig','KeyD'],['Y/Z','Left','KeyY'],['X','Stop','KeyX'],['C','Right','KeyC']];
- const touchHolds=new Map();
- function bindTouch(b){
-  b.onpointerdown=e=>{e.preventDefault();if(!ready)return;b.setPointerCapture(e.pointerId);touchHolds.set(e.pointerId,b.dataset.code);control(b.dataset.code,true);};
-  b.onpointerup=b.onpointercancel=b.onlostpointercapture=e=>{e.preventDefault();const code=touchHolds.get(e.pointerId);if(!code)return;touchHolds.delete(e.pointerId);if(![...touchHolds.values()].includes(code))control(code,false);};
-  b.oncontextmenu=e=>e.preventDefault();
- }
+ function releaseAll(){movement.releaseAll();for(const code of [...pressed])control(code,false);}
+ const labels=[['Q','Previous','KeyQ'],['W','Select','KeyW'],['E','Next','KeyE'],['A','Throw','KeyA'],['S','Up / Jump','KeyS'],['D','Dig','KeyD'],['Z','Left','KeyZ'],['X','Stop','KeyX'],['C','Right','KeyC']];
+ const readTouch=()=>Module._nc_browser_touch?JSON.parse(Module.ccall('nc_browser_touch','string',[],[])):null;
+ const movement=NeoclonkTouch.movement({pad:$('touchpad'),input:control,read:readTouch,enabled:()=>ready&&!failed,focus:()=>canvas.focus(),changed:resize});
+ const bindTouch=movement.bind;
  for(const [glyph,label,code]of labels){const b=document.createElement('button');b.type='button';b.dataset.code=code;b.setAttribute('aria-label',label);const big=document.createElement('b');big.textContent=glyph;b.append(big,document.createTextNode(label==='Previous'?'Prev':label));bindTouch(b);$('touchpad').append(b);}
  const touch=NeoclonkTouch.create({pad:$('touchpad'),enabled:()=>ready&&!failed&&!$('touchpad').hidden&&!$('leave').open,
-  read:()=>Module._nc_browser_touch?JSON.parse(Module.ccall('nc_browser_touch','string',[],[])):null,
-  bind:bindTouch,release:code=>control(code,false),changed:resize});
+  read:readTouch,
+  bind:bindTouch,release:movement.release,changed:resize});
  window.addEventListener('keydown',e=>{if($('leave').open||!ready)return;if(e.code in keys){e.preventDefault();e.stopImmediatePropagation();control(e.code,true);}else if(e.code==='Escape'){e.preventDefault();e.stopImmediatePropagation();requestLeave();}else if(e.code==='Pause'){e.preventDefault();e.stopImmediatePropagation();pause(!paused());}},true);
  window.addEventListener('keyup',e=>{if(e.code in keys){e.preventDefault();e.stopImmediatePropagation();control(e.code,false);}},true);
  window.addEventListener('blur',releaseAll);document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseAll();});canvas.oncontextmenu=e=>e.preventDefault();canvas.onpointerdown=()=>canvas.focus();

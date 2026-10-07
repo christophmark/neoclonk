@@ -89,3 +89,9 @@ The transport carries original native control packets through reliable ordered d
 ## Audio compatibility
 
 WAV effects and Vorbis music use Web Audio. There is no MIDI synthesizer in the browser adapter; original MIDI-only tracks are skipped and silent. Unsupported audio decoding is contained by the SDK adapter so gameplay and local saves continue to work. Original audio packs remain unchanged. See the root README for the cross-browser room report (Chromium host, WebKit guest), including shared controls, frame-120 synchronization, terrain agreement and pause.
+
+## Touch movement mode
+
+`touch-movement.js` adds a persisted Tap / Hold switch above the shared touch pad. Tap retains original continuous left/right movement. Hold sends the original Stop command on release of the last held direction; another held direction resumes instead. Pointer cancellation and focus loss release held inputs. Native menu navigation and crew ownership checks prevent a release from sending Stop into a menu or to a newly selected clonk. The switch only changes touch input, and every command follows the normal original control/network path. Hardware Y/Z aliases remain; the touch label is Z.
+
+Checks: `node rage-port/tests/touch-movement.mjs` and `node rage-port/tests/browser-touch-movement.mjs`; both accept `BROWSER=webkit`. The latter runs real Rage and Planet Gold Mine rounds, verifies continued movement in Tap and stopped movement in Hold, shared preference and portrait/landscape layout.

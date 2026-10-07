@@ -128,9 +128,9 @@
       },
       "pad": {
         "x": 240,
-        "y": 552.0625,
+        "y": 512.0625,
         "width": 140,
-        "height": 205.9375
+        "height": 245.9375
       },
       "state": {
         "running": true,
@@ -139,8 +139,8 @@
         "gameOver": false,
         "evaluated": false,
         "scenario": "Worlds.c4f/Goldmine.c4s",
-        "randomHold": 3166516653,
-        "randomCount": 669,
+        "randomHold": 1918395179,
+        "randomCount": 701,
         "landscape": {
           "width": 800,
           "height": 600,
@@ -149,9 +149,9 @@
           "mapZoom": 10
         },
         "weather": {
-          "wind": -61,
-          "temperature": 7,
-          "season": 19
+          "wind": -63,
+          "temperature": 3,
+          "season": 9
         },
         "materials": [
           {
@@ -169,8 +169,8 @@
           {
             "index": 2,
             "name": "Coal",
-            "pixels": 2683,
-            "effectivePixels": 2683
+            "pixels": 4306,
+            "effectivePixels": 4306
           },
           {
             "index": 3,
@@ -187,8 +187,8 @@
           {
             "index": 5,
             "name": "Earth",
-            "pixels": 210891,
-            "effectivePixels": 210891
+            "pixels": 208925,
+            "effectivePixels": 208925
           },
           {
             "index": 6,
@@ -205,14 +205,14 @@
           {
             "index": 8,
             "name": "Gold",
-            "pixels": 6379,
-            "effectivePixels": 6379
+            "pixels": 7083,
+            "effectivePixels": 7083
           },
           {
             "index": 9,
             "name": "Granite",
-            "pixels": 2369,
-            "effectivePixels": 2369
+            "pixels": 3074,
+            "effectivePixels": 3074
           },
           {
             "index": 10,
@@ -241,8 +241,8 @@
           {
             "index": 14,
             "name": "Rock",
-            "pixels": 18612,
-            "effectivePixels": 18612
+            "pixels": 14487,
+            "effectivePixels": 14487
           },
           {
             "index": 15,
@@ -259,14 +259,14 @@
           {
             "index": 17,
             "name": "Sulphur",
-            "pixels": 1456,
-            "effectivePixels": 1456
+            "pixels": 4646,
+            "effectivePixels": 4646
           },
           {
             "index": 18,
             "name": "Tunnel",
-            "pixels": 39,
-            "effectivePixels": 39
+            "pixels": 118,
+            "effectivePixels": 118
           },
           {
             "index": 19,
@@ -277,12 +277,12 @@
           {
             "index": 20,
             "name": "Water",
-            "pixels": 83,
-            "effectivePixels": 83
+            "pixels": 10001,
+            "effectivePixels": 10001
           }
         ],
-        "goldObjects": 18,
-        "objectCount": 152,
+        "goldObjects": 15,
+        "objectCount": 126,
         "players": [
           {
             "number": 0,
@@ -297,13 +297,13 @@
             "pressedCommands": 8,
             "menu": false,
             "cursor": {
-              "number": 153,
+              "number": 127,
               "id": "CLNK",
-              "name": "Lemy",
-              "x": 160,
-              "y": 274,
-              "fixedX": 10485760,
-              "fixedY": 17956864,
+              "name": "Zurbel",
+              "x": 491,
+              "y": 235,
+              "fixedX": 32178176,
+              "fixedY": 15400960,
               "vx": 0,
               "vy": 78642,
               "owner": 0,
@@ -313,11 +313,11 @@
               "construction": 100000,
               "selected": true,
               "inLiquid": false,
-              "contained": 150,
+              "contained": 124,
               "procedure": 0,
               "action": "Walk",
               "commandDirection": 0,
-              "facing": 0,
+              "facing": 1,
               "phase": 0,
               "phaseDelay": 0,
               "actionTime": 38,
@@ -355,13 +355,13 @@
             },
             "crew": [
               {
-                "number": 153,
+                "number": 127,
                 "id": "CLNK",
-                "name": "Lemy",
-                "x": 160,
-                "y": 274,
-                "fixedX": 10485760,
-                "fixedY": 17956864,
+                "name": "Zurbel",
+                "x": 491,
+                "y": 235,
+                "fixedX": 32178176,
+                "fixedY": 15400960,
                 "vx": 0,
                 "vy": 78642,
                 "owner": 0,
@@ -371,11 +371,11 @@
                 "construction": 100000,
                 "selected": true,
                 "inLiquid": false,
-                "contained": 150,
+                "contained": 124,
                 "procedure": 0,
                 "action": "Walk",
                 "commandDirection": 0,
-                "facing": 0,
+                "facing": 1,
                 "phase": 0,
                 "phaseDelay": 0,
                 "actionTime": 38,
@@ -427,21 +427,21 @@
           "y": 64,
           "width": 390,
           "height": 758,
-          "worldX": 63,
-          "worldY": 156,
+          "worldX": 435,
+          "worldY": 46,
           "worldWidth": 195,
           "worldHeight": 379,
           "zoom": 2,
           "requestedZoom": 2,
           "minZoom": 0.25,
           "headerHeight": 64,
-          "clonkScreenX": 194,
-          "clonkScreenY": 300,
+          "clonkScreenX": 112,
+          "clonkScreenY": 442,
           "occlusion": {
             "x": 240,
-            "y": 552,
+            "y": 512,
             "width": 140,
-            "height": 206
+            "height": 246
           }
         }
       }
@@ -587,9 +587,9 @@
       },
       "pad": {
         "x": 748,
-        "y": 142.40625,
+        "y": 103.40625,
         "width": 138,
-        "height": 185.59375
+        "height": 224.59375
       },
       "state": {
         "running": true,
@@ -598,8 +598,8 @@
         "gameOver": false,
         "evaluated": false,
         "scenario": "Worlds.c4f/Goldmine.c4s",
-        "randomHold": 321936088,
-        "randomCount": 762,
+        "randomHold": 1044559203,
+        "randomCount": 789,
         "landscape": {
           "width": 800,
           "height": 600,
@@ -608,9 +608,9 @@
           "mapZoom": 10
         },
         "weather": {
-          "wind": -61,
-          "temperature": 7,
-          "season": 19
+          "wind": -63,
+          "temperature": 3,
+          "season": 9
         },
         "materials": [
           {
@@ -628,8 +628,8 @@
           {
             "index": 2,
             "name": "Coal",
-            "pixels": 2683,
-            "effectivePixels": 2683
+            "pixels": 4306,
+            "effectivePixels": 4306
           },
           {
             "index": 3,
@@ -646,8 +646,8 @@
           {
             "index": 5,
             "name": "Earth",
-            "pixels": 210891,
-            "effectivePixels": 210891
+            "pixels": 208925,
+            "effectivePixels": 208925
           },
           {
             "index": 6,
@@ -664,14 +664,14 @@
           {
             "index": 8,
             "name": "Gold",
-            "pixels": 6379,
-            "effectivePixels": 6379
+            "pixels": 7083,
+            "effectivePixels": 7083
           },
           {
             "index": 9,
             "name": "Granite",
-            "pixels": 2369,
-            "effectivePixels": 2369
+            "pixels": 3074,
+            "effectivePixels": 3074
           },
           {
             "index": 10,
@@ -700,8 +700,8 @@
           {
             "index": 14,
             "name": "Rock",
-            "pixels": 18612,
-            "effectivePixels": 18612
+            "pixels": 14487,
+            "effectivePixels": 14487
           },
           {
             "index": 15,
@@ -718,14 +718,14 @@
           {
             "index": 17,
             "name": "Sulphur",
-            "pixels": 1456,
-            "effectivePixels": 1456
+            "pixels": 4646,
+            "effectivePixels": 4646
           },
           {
             "index": 18,
             "name": "Tunnel",
-            "pixels": 39,
-            "effectivePixels": 39
+            "pixels": 118,
+            "effectivePixels": 118
           },
           {
             "index": 19,
@@ -736,12 +736,12 @@
           {
             "index": 20,
             "name": "Water",
-            "pixels": 83,
-            "effectivePixels": 83
+            "pixels": 10001,
+            "effectivePixels": 10001
           }
         ],
-        "goldObjects": 18,
-        "objectCount": 153,
+        "goldObjects": 15,
+        "objectCount": 127,
         "players": [
           {
             "number": 0,
@@ -756,13 +756,13 @@
             "pressedCommands": 8,
             "menu": false,
             "cursor": {
-              "number": 153,
+              "number": 127,
               "id": "CLNK",
-              "name": "Lemy",
-              "x": 160,
-              "y": 274,
-              "fixedX": 10485760,
-              "fixedY": 17956864,
+              "name": "Zurbel",
+              "x": 491,
+              "y": 235,
+              "fixedX": 32178176,
+              "fixedY": 15400960,
               "vx": 0,
               "vy": 91749,
               "owner": 0,
@@ -772,11 +772,11 @@
               "construction": 100000,
               "selected": true,
               "inLiquid": false,
-              "contained": 150,
+              "contained": 124,
               "procedure": 0,
               "action": "Walk",
               "commandDirection": 0,
-              "facing": 0,
+              "facing": 1,
               "phase": 0,
               "phaseDelay": 0,
               "actionTime": 59,
@@ -814,13 +814,13 @@
             },
             "crew": [
               {
-                "number": 153,
+                "number": 127,
                 "id": "CLNK",
-                "name": "Lemy",
-                "x": 160,
-                "y": 274,
-                "fixedX": 10485760,
-                "fixedY": 17956864,
+                "name": "Zurbel",
+                "x": 491,
+                "y": 235,
+                "fixedX": 32178176,
+                "fixedY": 15400960,
                 "vx": 0,
                 "vy": 91749,
                 "owner": 0,
@@ -830,11 +830,11 @@
                 "construction": 100000,
                 "selected": true,
                 "inLiquid": false,
-                "contained": 150,
+                "contained": 124,
                 "procedure": 0,
                 "action": "Walk",
                 "commandDirection": 0,
-                "facing": 0,
+                "facing": 1,
                 "phase": 0,
                 "phaseDelay": 0,
                 "actionTime": 59,
@@ -886,21 +886,21 @@
           "y": 64,
           "width": 896,
           "height": 328,
-          "worldX": 0,
-          "worldY": 192,
+          "worldX": 308,
+          "worldY": 153,
           "worldWidth": 448,
           "worldHeight": 164,
           "zoom": 2,
           "requestedZoom": 2,
           "minZoom": 0.25,
           "headerHeight": 64,
-          "clonkScreenX": 320,
+          "clonkScreenX": 366,
           "clonkScreenY": 228,
           "occlusion": {
             "x": 748,
-            "y": 142,
+            "y": 103,
             "width": 138,
-            "height": 186
+            "height": 225
           }
         }
       }
@@ -922,7 +922,7 @@
   "errors": [],
   "initialTouch": {
     "player": 0,
-    "cursor": 153,
+    "cursor": 127,
     "crewCount": 1,
     "menu": false,
     "extras": [
@@ -939,7 +939,7 @@
   },
   "recruitedTouch": {
     "player": 0,
-    "cursor": 153,
+    "cursor": 127,
     "crewCount": 2,
     "menu": true,
     "extras": [

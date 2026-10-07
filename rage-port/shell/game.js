@@ -134,22 +134,19 @@
   down?hardwareLeft.add(id):hardwareLeft.delete(id);
   event.preventDefault();event.stopImmediatePropagation();
  },true);
- function releaseAll(){if(hardwareLeft.size){control(6,false);hardwareLeft.clear();}for(const code of [...pressed])key(code,false);pressed.clear();document.querySelectorAll('#touchpad .active').forEach(button=>button.classList.remove('active'));}
+ function releaseAll(){movement.releaseAll();if(hardwareLeft.size){control(6,false);hardwareLeft.clear();}for(const code of [...pressed])key(code,false);pressed.clear();document.querySelectorAll('#touchpad .active').forEach(button=>button.classList.remove('active'));}
  function tap(code){key(code,true);setTimeout(()=>key(code,false),50);}
- const touchHolds=new Map();
- function bindTouch(button){
-  button.addEventListener('pointerdown',event=>{event.preventDefault();if(!ready)return;canvas.focus();button.setPointerCapture(event.pointerId);touchHolds.set(event.pointerId,button.dataset.code);button.classList.add('active');key(button.dataset.code,true);});
-  const end=event=>{event.preventDefault();const code=touchHolds.get(event.pointerId);if(!code)return;touchHolds.delete(event.pointerId);if(![...touchHolds.values()].includes(code)){key(code,false);button.classList.remove('active');}};
-  button.addEventListener('pointerup',end);button.addEventListener('pointercancel',end);button.addEventListener('lostpointercapture',end);button.addEventListener('contextmenu',event=>event.preventDefault());
- }
+ const readTouch=()=>window.Module?._nc_browser_touch?JSON.parse(window.Module.ccall('nc_browser_touch','string',[],[])):null;
+ const movement=NeoclonkTouch.movement({pad:$('touchpad'),input:key,read:readTouch,enabled:()=>ready&&!failed&&!exited,focus:()=>canvas.focus(),changed:scheduleView});
+ const bindTouch=movement.bind;
  for(const button of document.querySelectorAll('#touchpad button'))bindTouch(button);
  const coarse=matchMedia('(pointer: coarse)');
  let touchWanted=coarse.matches||query.get('touch')==='1',menuWasPaused=false;
  function showTouch(show){touchWanted=show;$('touchpad').hidden=!ready||state.phase!=='playing'||!show;scheduleView();}
  coarse.addEventListener('change',()=>showTouch(coarse.matches||query.get('touch')==='1'));
  const touch=NeoclonkTouch.create({pad:$('touchpad'),enabled:()=>ready&&!failed&&!exited&&!window.__planetHost&&!$('touchpad').hidden,
-  read:()=>window.Module?._nc_browser_touch?JSON.parse(window.Module.ccall('nc_browser_touch','string',[],[])):null,
-  bind:bindTouch,release:code=>key(code,false),changed:scheduleView});
+  read:readTouch,
+  bind:bindTouch,release:movement.release,changed:scheduleView});
  showTouch(touchWanted);
  function openMenu(){if(!ready)return;releaseAll();const game=JSON.parse(window.Module.ccall('nc_browser_state','string',[],[]));menuWasPaused=game.paused;if(session)window.__neoclonkMultiplayer.setPaused(true);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[1]);phase('menu');cover.hidden=false;$('start').disabled=false;if(!window.__scenarioGallery?.getSelected())window.__scenarioGallery?.select(launchScenario.id);window.__scenarioGallery?.updateActions();showTouch(touchWanted);refreshSavedGames();$('start').focus();}
  function resumeGame(){if(!ready)return;if(session)window.__neoclonkMultiplayer.setPaused(false);else if(!menuWasPaused)window.Module.ccall('nc_browser_pause','number',['number'],[0]);phase('playing');cover.hidden=true;showTouch(touchWanted);canvas.focus();}
@@ -183,8 +180,8 @@
  if($('help-close'))$('help-close').onclick=closeHelp;
  window.addEventListener('keydown',event=>{if($('help')&&!$('help').hidden){if(event.key==='Escape'){event.preventDefault();closeHelp();}event.stopImmediatePropagation();return;}if(!cover.hidden){if(event.target===canvas)event.stopImmediatePropagation();return;}if(ready&&document.activeElement===canvas&&['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','Tab'].includes(event.code))event.preventDefault();},true);
  window.addEventListener('keyup',event=>{if((!cover.hidden&&event.target===canvas)||($('help')&&!$('help').hidden))event.stopImmediatePropagation();},true);
- window.addEventListener('blur',()=>{releaseAll();touchHolds.clear();});
- document.addEventListener('visibilitychange',()=>{if(document.hidden){releaseAll();touchHolds.clear();syncSaves();}});
+ window.addEventListener('blur',()=>{releaseAll();});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){releaseAll();syncSaves();}});
  window.addEventListener('pagehide',()=>syncSaves());
  canvas.addEventListener('pointerdown',()=>canvas.focus());canvas.addEventListener('contextmenu',event=>event.preventDefault());
  window.addEventListener('error',event=>{if(booted&&!failed)fail(event.message||'Unexpected engine error.');});
