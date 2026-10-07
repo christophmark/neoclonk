@@ -6,3 +6,28 @@
 @media(max-width:760px){.launcher-brand{gap:12px;margin-bottom:18px}.neoclonk-logo{width:110px;height:110px}.launcher-brand h1{font-size:42px}.launcher-brand p{font-size:14px;max-width:200px;line-height:1.35}.game-choices{gap:12px}.game-choice-caption{padding:10px 5px 7px}.game-choice strong{font-size:25px}.game-choice-caption>span{font-size:12px}#game-picker h2{font-size:26px;margin-bottom:12px}.game-library-heading{gap:12px}.game-library-heading h2{font-size:26px}.game-library-heading button{font-size:15px}.room-mode{gap:8px}.room-mode .menu-button{font-size:21px}#menu-layout[data-screen="scenarios"] .neoclonk-logo{width:60px;height:60px}#menu-layout[data-screen="scenarios"] .launcher-brand h1{font-size:34px}#menu-layout[data-screen="scenarios"] .launcher-brand p{font-size:12px}}
 @media(max-height:520px) and (orientation:landscape){.neoclonk-logo{width:80px;height:80px}.launcher-brand{margin-bottom:12px}.launcher-brand h1{font-size:40px}.game-choices{max-width:680px;margin:auto}.game-art{aspect-ratio:3/1}.game-choice strong{font-size:25px}}
 @media(prefers-reduced-motion:reduce){.game-choice{transition:none}}
+/* Keep the original metal corners at a fixed size; repeat the wood between
+   them instead of stretching the complete sprite across a wide button. */
+:is(#cover,#multiplayer-room,#help,#saved-dialog,#leave-dialog) :is(.small-button,.menu-button){
+ background:none;border:solid transparent;border-width:10px 14px;
+ border-image:url("StartupBigButton.png") 10 14 fill / 10px 14px / 0 round stretch;
+ min-height:44px;padding:4px 10px;line-height:1.2;
+ color:#fff1d3;text-shadow:1px 2px 1px #160b00;
+}
+:is(#cover,#multiplayer-room,#help,#saved-dialog,#leave-dialog) :is(.small-button,.menu-button):active:not(:disabled){
+ background:none;border-image-source:url("StartupBigButtonDown.png");
+}
+:is(#cover,#multiplayer-room,#help,#saved-dialog,#leave-dialog) :is(.small-button,.menu-button):hover:not(:disabled){color:#ffe094}
+:is(#cover,#multiplayer-room,#help,#saved-dialog,#leave-dialog) :is(.small-button,.menu-button):focus-visible{outline:2px solid #ffcf58;outline-offset:3px}
+.menu-top-actions{max-width:840px;margin-inline:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.menu-top-actions>button:is(#saves-open,#join-room,#help-open){min-height:56px;padding:4px 8px;font-size:21px;line-height:1.2}
+#saved-dialog #load-save{flex-basis:84px;height:auto}
+@media(max-width:760px){
+ .menu-top-actions{gap:8px}
+ .menu-top-actions>button:is(#saves-open,#join-room,#help-open){min-height:60px;padding:3px 2px;font-size:16px}
+ #scenario-panel .menu-button{padding:3px 4px}
+}
+@media(max-width:360px){
+ .menu-top-actions{grid-template-columns:1fr;max-width:280px;gap:8px}
+ .menu-top-actions>button:is(#saves-open,#join-room,#help-open){min-height:46px;font-size:18px;padding:2px 8px}
+}

@@ -27,3 +27,5 @@ The generated source is retained in `web/artwork/StartupMainMenuBG-HD.png`.
 ## NeoClonk branding
 
 `NeoClonk-logo.png` is newly generated NeoClonk artwork, used by the launcher and app icon metadata. It is separate from the original game graphics. The built-in image-generation tool produced the transparent 1254×1254 PNG. See `NeoClonk-logo-prompt.txt` for the generation prompt. `launcher.css` styles the game chooser and simplified multiplayer setup.
+
+Menu and lobby buttons use CSS border-image slicing of the original StartupBigButton sprites: fixed metal corners and repeating wood edges/fill. The top action row is capped at 840px; narrow phones stack the actions to keep labels legible. Pressed and keyboard-focus states are retained.
