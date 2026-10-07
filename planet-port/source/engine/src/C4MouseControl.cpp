@@ -3,6 +3,9 @@
 /* Mouse input */
 
 #include <C4Include.h>
+#ifdef __EMSCRIPTEN__
+extern bool BrowserTouchControlsVisible;
+#endif
 
 const int C4MC_Drag_None = 0, C4MC_Drag_Selecting = 1, C4MC_Drag_Moving = 2, C4MC_Drag_Menu = 3, C4MC_Drag_MenuScroll = 4, C4MC_Drag_Construct = 5,
 
@@ -215,6 +218,9 @@ void C4MouseControl::Move(int iButton, int iX, int iY, WORD wKeyFlags) {
 }
 
 void C4MouseControl::Draw(C4FacetEx &cgo) {
+#ifdef __EMSCRIPTEN__
+  if (BrowserTouchControlsVisible) return;
+#endif
   int iOffsetX, iOffsetY;
 
   // Hidden

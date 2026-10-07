@@ -4,6 +4,9 @@
 
 #include <C4Include.h>
 #ifdef __EMSCRIPTEN__
+extern bool BrowserTouchControlsVisible;
+#endif
+#ifdef __EMSCRIPTEN__
 #include <StdGL.h>
 #endif
 #include <C4MouseControl.h>
@@ -330,6 +333,9 @@ void C4MouseControl::Move(int32_t iButton, int32_t iX, int32_t iY, DWORD dwKeyFl
 
 void C4MouseControl::Draw(C4FacetEx &cgo)
 	{
+#ifdef __EMSCRIPTEN__
+  if (BrowserTouchControlsVisible) return;
+#endif
 	float positionScale=1.0f;
 #ifdef __EMSCRIPTEN__
 	if (Viewport) positionScale=Viewport->BrowserZoom;

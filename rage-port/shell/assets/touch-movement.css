@@ -8,3 +8,6 @@
 #touch-movement-mode input:focus-visible+.movement-switch{outline:2px solid #ffdf88;outline-offset:3px}
 #touch-movement-mode[data-mode=tap]>span:first-child,#touch-movement-mode[data-mode=hold]>span:last-child{color:#ffe49c;font-weight:bold}
 @media(prefers-reduced-motion:reduce){#touch-movement-mode .movement-switch::after{transition:none}}
+
+/* The original engine also suppresses its rendered mouse pointer. */
+body:has(#touchpad:not([hidden])) canvas{cursor:none!important}

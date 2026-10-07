@@ -226,11 +226,13 @@
  		try
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,383 @@
+@@ -0,0 +1,386 @@
 +/* Browser inspection and automation boundary for the original Clonk Rage engine.
 +   Scheduling and input only: this file does not implement gameplay or mutate
 +   terrain, object positions, inventories, materials, scripts, or objectives. */
 +#include <C4Include.h>
++// Presentation only; updated with the browser touch-pad occlusion.
++bool BrowserTouchControlsVisible = false;
 +#include <C4Game.h>
 +#include <C4Object.h>
 +#include <C4ObjectCom.h>
@@ -328,6 +330,7 @@
 +  Game.GraphicsSystem.RecalculateViewports();
 +  C4Rect occlusion(ox,oy,ow,oh);
 +  BrowserRequestedZoom=zoom;
++  BrowserTouchControlsVisible = ow>0 && oh>0;
 +  for(C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();view;view=view->GetNext())
 +    view->SetBrowserView(static_cast<float>(zoom),occlusion);
 +  return 1;
@@ -1252,7 +1255,27 @@
  			}
 --- a/engine/src/C4Gui.cpp
 +++ b/engine/src/C4Gui.cpp
-@@ -964,7 +964,7 @@
+@@ -3,6 +3,9 @@
+ // all generic classes that do not fit into other C4Gui*-files
+ 
+ #include <C4Include.h>
++#ifdef __EMSCRIPTEN__
++extern bool BrowserTouchControlsVisible;
++#endif
+ #include <C4Gui.h>
+ 
+ #ifndef BIG_C4INCLUDE
+@@ -436,6 +439,9 @@
+ 
+ void CMouse::Draw(C4FacetEx &cgo, bool fDrawToolTip)
+ 	{
++#ifdef __EMSCRIPTEN__
++  if (BrowserTouchControlsVisible) return;
++#endif
+ 	// only if owned
+ 	if (!fActive) return;
+ 	// dbg: some cursor...
+@@ -964,7 +970,7 @@
  				if (pDlg->IsFullscreenDialog())
  					if (fIncludeFading || !pDlg->IsFading())
  						return pDlg;
@@ -1404,17 +1427,20 @@
  	// the item must be selectable
 --- a/engine/src/C4MouseControl.cpp
 +++ b/engine/src/C4MouseControl.cpp
-@@ -3,6 +3,9 @@
+@@ -3,6 +3,12 @@
  /* Mouse input */
  
  #include <C4Include.h>
++#ifdef __EMSCRIPTEN__
++extern bool BrowserTouchControlsVisible;
++#endif
 +#ifdef __EMSCRIPTEN__
 +#include <StdGL.h>
 +#endif
  #include <C4MouseControl.h>
  
  #ifndef BIG_C4INCLUDE
-@@ -204,6 +207,9 @@
+@@ -204,6 +210,9 @@
  	// get view position
  	C4Rect rcViewport = Viewport->GetOutputRect();
  	fctViewport.Set(NULL, rcViewport.x, rcViewport.y, rcViewport.Wdt, rcViewport.Hgt);
@@ -1424,7 +1450,7 @@
  	ViewX=Viewport->ViewX; ViewY=Viewport->ViewY; 
  	// First time viewport attachment: center mouse
  #ifdef _WIN32
-@@ -243,7 +249,10 @@
+@@ -243,7 +252,10 @@
  		{
  		if (iButton != C4MC_Button_Wheel)	
  			{
@@ -1436,7 +1462,7 @@
  			}
  		UpdateTargetRegion();
  		UpdateScrolling();
-@@ -256,7 +265,10 @@
+@@ -256,7 +268,10 @@
  	if (iButton != C4MC_Button_Wheel)	
  		{
  		// Position
@@ -1448,10 +1474,13 @@
  		// Control state
  		ControlDown=false; if (dwKeyFlags & MK_CONTROL) ControlDown=true;
  		ShiftDown=false; if (dwKeyFlags & MK_SHIFT) ShiftDown=true;
-@@ -318,13 +330,28 @@
+@@ -318,13 +333,31 @@
  
  void C4MouseControl::Draw(C4FacetEx &cgo)
  	{
++#ifdef __EMSCRIPTEN__
++  if (BrowserTouchControlsVisible) return;
++#endif
 +	float positionScale=1.0f;
 +#ifdef __EMSCRIPTEN__
 +	if (Viewport) positionScale=Viewport->BrowserZoom;
@@ -1477,7 +1506,7 @@
  
  	// Draw control
  	switch (Drag)
-@@ -388,8 +415,8 @@
+@@ -388,8 +421,8 @@
  			// Point
  			if ((ShowPointX!=-1) && (ShowPointY!=-1))
  				GfxR->fctMouseCursor.Draw( cgo.Surface,
@@ -1488,7 +1517,7 @@
  																	 C4MC_Cursor_Point );
  			// Add mark
  			if (fAddMark)
-@@ -404,8 +431,8 @@
+@@ -404,8 +437,8 @@
  			Application.DDraw->DrawFrame( cgo.Surface, 
  															cgo.X+VpX,
  															cgo.Y+VpY,
@@ -1499,7 +1528,7 @@
  															CRed );
  			break;
  		//------------------------------------------------------------------------------------------
-@@ -1245,7 +1272,11 @@
+@@ -1245,7 +1278,11 @@
  	// Target object: context menu
  	if (TargetObject)
  		{

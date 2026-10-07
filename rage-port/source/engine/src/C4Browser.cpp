@@ -2,6 +2,8 @@
    Scheduling and input only: this file does not implement gameplay or mutate
    terrain, object positions, inventories, materials, scripts, or objectives. */
 #include <C4Include.h>
+// Presentation only; updated with the browser touch-pad occlusion.
+bool BrowserTouchControlsVisible = false;
 #include <C4Game.h>
 #include <C4Object.h>
 #include <C4ObjectCom.h>
@@ -99,6 +101,7 @@ EMSCRIPTEN_KEEPALIVE int nc_browser_view(int width,int height,double zoom,int ox
   Game.GraphicsSystem.RecalculateViewports();
   C4Rect occlusion(ox,oy,ow,oh);
   BrowserRequestedZoom=zoom;
+  BrowserTouchControlsVisible = ow>0 && oh>0;
   for(C4Viewport *view=Game.GraphicsSystem.GetFirstViewport();view;view=view->GetNext())
     view->SetBrowserView(static_cast<float>(zoom),occlusion);
   return 1;

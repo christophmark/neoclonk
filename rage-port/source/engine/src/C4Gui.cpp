@@ -3,6 +3,9 @@
 // all generic classes that do not fit into other C4Gui*-files
 
 #include <C4Include.h>
+#ifdef __EMSCRIPTEN__
+extern bool BrowserTouchControlsVisible;
+#endif
 #include <C4Gui.h>
 
 #ifndef BIG_C4INCLUDE
@@ -436,6 +439,9 @@ void CMouse::Input(int32_t iButton, int32_t iX, int32_t iY, DWORD dwKeyParam)
 
 void CMouse::Draw(C4FacetEx &cgo, bool fDrawToolTip)
 	{
+#ifdef __EMSCRIPTEN__
+  if (BrowserTouchControlsVisible) return;
+#endif
 	// only if owned
 	if (!fActive) return;
 	// dbg: some cursor...

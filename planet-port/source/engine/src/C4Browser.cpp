@@ -1,4 +1,6 @@
 #include <C4Include.h>
+// Presentation only; updated with the browser touch-pad occlusion.
+bool BrowserTouchControlsVisible = false;
 #include <emscripten.h>
 #include <sstream>
 #include <string>
@@ -101,6 +103,7 @@ EMSCRIPTEN_KEEPALIVE int nc_planet_exit() { Game.Halt=TRUE;PlanetReady=false;ems
 EMSCRIPTEN_KEEPALIVE int nc_planet_view(int width,int height,double zoom,int tx,int ty,int tw,int th) {
   if(width<100||height<100||width>4096||height>4096||!std::isfinite(zoom)||zoom<0.25||zoom>8)return -1;
   PlanetBrowserZoom=zoom;
+  BrowserTouchControlsVisible = tw>0 && th>0;
   PlanetTouchX=int(tx/zoom);PlanetTouchY=int(ty/zoom);PlanetTouchW=int(tw/zoom);PlanetTouchH=int(th/zoom);
   return PlanetResizeRender(width,height,BoundBy(int(width/zoom),1,4096),BoundBy(int(height/zoom),1,4096));
 }

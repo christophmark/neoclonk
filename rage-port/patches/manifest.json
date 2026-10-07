@@ -67,7 +67,7 @@
   {
     "path": "engine/src/C4Browser.cpp",
     "originalSha256": null,
-    "portedSha256": "b83fc77d8b74e9c64cfd11da320e43c337090ec23a10f1645759ba6fbf1f41e9"
+    "portedSha256": "f7e5da35b475780852a75f84048974d5964e4114437c67450080ffff2b340640"
   },
   {
     "path": "engine/src/C4BrowserAudio.cpp",
@@ -122,7 +122,7 @@
   {
     "path": "engine/src/C4Gui.cpp",
     "originalSha256": "b7b51003f3815c3071e1fc4e365f3746e0ca74e74cc2b3aedb5002e76048166f",
-    "portedSha256": "f5d71168dba0954b7575cbe95dbd919b060ca55f99dddf8ed66370952e049ff9"
+    "portedSha256": "b315012a30194d90385d5d2dbac9cf15e257df108509343cef3309175c077463"
   },
   {
     "path": "engine/src/C4GuiDialogs.cpp",
@@ -147,7 +147,7 @@
   {
     "path": "engine/src/C4MouseControl.cpp",
     "originalSha256": "c677cdfd4917733eebabea77c67b9f605c12294190a55e21e8cb11c224f37b99",
-    "portedSha256": "103bf2513104c34c722299b11b3ea6a961ea493af59514d1a3665ffc1ffcc28b"
+    "portedSha256": "2ced7dce64fd7b5f661f60c072b8ed0819d43b0c9e61dc40d372ec0af8d39ed6"
   },
   {
     "path": "engine/src/C4MusicFile.cpp",

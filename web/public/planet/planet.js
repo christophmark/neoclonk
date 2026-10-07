@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp3mkgi5dy.js
+// include: /tmp/tmpn2u3avkv.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,14 +217,14 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
 
   })();
 
-// end include: /tmp/tmp3mkgi5dy.js
-// include: /tmp/tmpzfzo0btd.js
+// end include: /tmp/tmpn2u3avkv.js
+// include: /tmp/tmp5s5kg8pm.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpzfzo0btd.js
+  // end include: /tmp/tmp5s5kg8pm.js
 // include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
 // Legacy Planet logs contain Windows-1252; Emscripten's default UTF-8 decoder
 // warns on umlauts. Decode only the console presentation boundary, never scripts.
@@ -246,13 +246,13 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
   Module['stderr'] = sink(true);
 })();
 // end include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
-// include: /tmp/tmp0cgs6hnv.js
+// include: /tmp/tmp6bpma30h.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp0cgs6hnv.js
+  // end include: /tmp/tmp6bpma30h.js
 
 
 // Sometimes an existing Module object exists with properties
