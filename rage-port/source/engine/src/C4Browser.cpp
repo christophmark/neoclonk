@@ -4,6 +4,7 @@
 #include <C4Include.h>
 // Presentation only; updated with the browser touch-pad occlusion.
 bool BrowserTouchControlsVisible = false;
+bool BrowserGestureCameraHeld = false;
 #include <C4Game.h>
 #include <C4Object.h>
 #include <C4ObjectCom.h>
@@ -90,6 +91,8 @@ int MaterialCount(int material, bool effective)
 }
 
 extern "C" {
+// Local presentation only: keep a held touch target stationary on screen.
+EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 
 // Presentation only: browser dimensions and touch occlusion are CSS pixels.
 // Simulation coordinates, materials and object state are never changed here.
@@ -115,10 +118,16 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch()
   while(p && (!p->LocalControl || p->Eliminated))p=p->Next;
   if(!p){BrowserResult.Copy("null");return BrowserResult.getData();}
   C4Object *o=p->Cursor;
-  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"digging\":%s,\"extras\":[",
+  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"digging\":%s",
     p->Number,o?o->Number:0,p->ActiveCrewCount(),
     (p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false",
     (o && o->GetProcedure()==DFA_DIG)?"true":"false");
+  C4Viewport *view=Game.GraphicsSystem.GetViewport(p->Number);
+  BrowserResult.AppendFormat(",\"frame\":%d,\"paused\":%s,\"commandDirection\":%d,\"procedure\":%d,\"aimValid\":%s,\"aimX\":%.6f,\"aimY\":%.6f,\"extras\":[",
+    Game.FrameCounter,Game.IsPaused()?"true":"false",o?o->Action.ComDir:0,o?o->GetProcedure():-1,
+    (o && !o->Contained && view)?"true":"false",
+    (o && view)?double(view->BrowserScreenX(o->x))/Max(Config.Graphics.ResX,1):0.0,
+    (o && view)?double(view->BrowserScreenY(o->y))/Max(Config.Graphics.ResY,1):0.0);
   bool comma=false;
   if(o && o->Status && o->Def)for(int key=0;key<2;++key){
     bool started=false;

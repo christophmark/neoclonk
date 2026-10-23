@@ -20,7 +20,7 @@ window.NeoclonkTouch = {
   function refresh() {
    if(document.hidden||!enabled())return;
    const info=read(); if(!info)return;
-   const next=JSON.stringify(info); if(next===signature)return;
+   const next=JSON.stringify([info.player,info.cursor,info.crewCount,info.menu,info.extras]); if(next===signature)return;
    signature=next;
    const nextOwner=`${info.player}:${info.cursor}`;
    // A held action must not carry over when the selected crew member changes.

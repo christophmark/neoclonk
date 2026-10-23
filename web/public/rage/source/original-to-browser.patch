@@ -226,13 +226,14 @@
  		try
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,386 @@
+@@ -0,0 +1,395 @@
 +/* Browser inspection and automation boundary for the original Clonk Rage engine.
 +   Scheduling and input only: this file does not implement gameplay or mutate
 +   terrain, object positions, inventories, materials, scripts, or objectives. */
 +#include <C4Include.h>
 +// Presentation only; updated with the browser touch-pad occlusion.
 +bool BrowserTouchControlsVisible = false;
++bool BrowserGestureCameraHeld = false;
 +#include <C4Game.h>
 +#include <C4Object.h>
 +#include <C4ObjectCom.h>
@@ -319,6 +320,8 @@
 +}
 +
 +extern "C" {
++// Local presentation only: keep a held touch target stationary on screen.
++EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 +
 +// Presentation only: browser dimensions and touch occlusion are CSS pixels.
 +// Simulation coordinates, materials and object state are never changed here.
@@ -344,10 +347,16 @@
 +  while(p && (!p->LocalControl || p->Eliminated))p=p->Next;
 +  if(!p){BrowserResult.Copy("null");return BrowserResult.getData();}
 +  C4Object *o=p->Cursor;
-+  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"digging\":%s,\"extras\":[",
++  BrowserResult.Format("{\"player\":%d,\"cursor\":%d,\"crewCount\":%d,\"menu\":%s,\"digging\":%s",
 +    p->Number,o?o->Number:0,p->ActiveCrewCount(),
 +    (p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false",
 +    (o && o->GetProcedure()==DFA_DIG)?"true":"false");
++  C4Viewport *view=Game.GraphicsSystem.GetViewport(p->Number);
++  BrowserResult.AppendFormat(",\"frame\":%d,\"paused\":%s,\"commandDirection\":%d,\"procedure\":%d,\"aimValid\":%s,\"aimX\":%.6f,\"aimY\":%.6f,\"extras\":[",
++    Game.FrameCounter,Game.IsPaused()?"true":"false",o?o->Action.ComDir:0,o?o->GetProcedure():-1,
++    (o && !o->Contained && view)?"true":"false",
++    (o && view)?double(view->BrowserScreenX(o->x))/Max(Config.Graphics.ResX,1):0.0,
++    (o && view)?double(view->BrowserScreenY(o->y))/Max(Config.Graphics.ResY,1):0.0);
 +  bool comma=false;
 +  if(o && o->Status && o->Def)for(int key=0;key<2;++key){
 +    bool started=false;
@@ -1829,7 +1838,17 @@
  	float fLogoZoom = 0.75f;
 --- a/engine/src/C4Viewport.cpp
 +++ b/engine/src/C4Viewport.cpp
-@@ -973,7 +973,11 @@
+@@ -3,6 +3,9 @@
+ /* A viewport to each player */
+ 
+ #include <C4Include.h>
++#ifdef __EMSCRIPTEN__
++extern bool BrowserGestureCameraHeld, BrowserTouchControlsVisible;
++#endif
+ #include <C4Viewport.h>
+ 
+ #ifndef BIG_C4INCLUDE
+@@ -973,7 +976,11 @@
  			lpDDraw->ActivateBlitModulation(0xafffffff);
  			}
  		// draw menu
@@ -1841,7 +1860,7 @@
  		// reset modulation for dragging
  		if (fDragging) lpDDraw->DeactivateBlitModulation();
  		}
-@@ -981,7 +985,11 @@
+@@ -981,7 +988,11 @@
  	if (pPlr && pPlr->Menu.IsActive())
  		{
  		if (ResetMenuPositions) pPlr->Menu.ResetLocation();
@@ -1853,7 +1872,7 @@
  		}
  	// Fullscreen menu
  	if (FullScreen.pMenu && FullScreen.pMenu->IsActive())
-@@ -1007,6 +1015,17 @@
+@@ -1007,6 +1018,17 @@
  #ifdef USE_CONSOLE
  	// No drawing in console mode
  	return;
@@ -1871,7 +1890,7 @@
  #endif
  
  	// landscape mod by FoW
-@@ -1073,12 +1092,21 @@
+@@ -1073,12 +1095,21 @@
  	lpDDraw->SetClrModMapEnabled(false);
  
  	// now restore complete cgo range for overlay drawing
@@ -1893,11 +1912,12 @@
  
  	// draw custom GUI objects
  	Game.ForeObjects.DrawIfCategory(cgo, Player, C4D_Parallax, false);
-@@ -1150,6 +1178,33 @@
+@@ -1150,6 +1181,34 @@
  
  void C4Viewport::AdjustPosition()
  	{
 +#ifdef __EMSCRIPTEN__
++	if (BrowserGestureCameraHeld && BrowserTouchControlsVisible && PlayerLock && ValidPlr(Player)) return;
 +	if (PlayerLock && ValidPlr(Player)) {
 +		C4Player *player=Game.Players.Get(Player);
 +		int safeW=ViewWdt, safeH=ViewHgt;
@@ -1927,7 +1947,7 @@
  	int32_t ViewportScrollBorder = fIsNoOwnerViewport ? 0 : C4ViewportScrollBorder;
  	// View position
  	if (PlayerLock && ValidPlr(Player))
-@@ -1228,6 +1283,13 @@
+@@ -1228,6 +1287,13 @@
  
  void C4Viewport::UpdateViewPosition()
  	{
@@ -1941,7 +1961,7 @@
  	int32_t ViewportScrollBorder = Application.isFullScreen ? C4ViewportScrollBorder : 0;
  	// no-owner viewports should not scroll outside viewing area
  	if(fIsNoOwnerViewport)
-@@ -1258,8 +1320,24 @@
+@@ -1258,8 +1324,24 @@
  	BorderBottom = Max<int32_t>(ViewHgt - GBackHgt + ViewY, 0);
  	}
  

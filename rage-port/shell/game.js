@@ -137,7 +137,7 @@
  function releaseAll(){movement.releaseAll();if(hardwareLeft.size){control(6,false);hardwareLeft.clear();}for(const code of [...pressed])key(code,false);pressed.clear();document.querySelectorAll('#touchpad .active').forEach(button=>button.classList.remove('active'));}
  function tap(code){key(code,true);setTimeout(()=>key(code,false),50);}
  const readTouch=()=>window.Module?._nc_browser_touch?JSON.parse(window.Module.ccall('nc_browser_touch','string',[],[])):null;
- const movement=NeoclonkTouch.movement({pad:$('touchpad'),input:key,read:readTouch,enabled:()=>ready&&!failed&&!exited,focus:()=>canvas.focus(),changed:scheduleView});
+ const movement=NeoclonkTouch.movement({pad:$('touchpad'),canvas,camera:held=>{if(ready&&window.Module?._nc_browser_gesture)Module.ccall('nc_browser_gesture','number',['number'],[Number(held)]);},input:key,read:readTouch,enabled:()=>ready&&!failed&&!exited,focus:()=>canvas.focus(),changed:scheduleView});
  const bindTouch=movement.bind;
  for(const button of document.querySelectorAll('#touchpad button'))bindTouch(button);
  const coarse=matchMedia('(pointer: coarse)');

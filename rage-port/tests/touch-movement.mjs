@@ -13,7 +13,7 @@ try {
  });
  const events=()=>page.evaluate(()=>events);const reset=()=>page.evaluate(()=>events=[]);
  await page.evaluate(()=>{send('KeyC','pointerdown');send('KeyC','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'Tap release must not stop');
- await page.getByRole('switch',{name:'Hold to move'}).check();await reset();
+ await page.getByRole('radio',{name:'Hold',exact:true}).check();await reset();
  await page.evaluate(()=>{send('KeyC','pointerdown');send('KeyC','pointerup');send('KeyC','lostpointercapture');});assert.equal((await events()).filter(([c,d])=>c==='KeyX'&&d).length,1,'Exactly one stop on release');
  await reset();await page.evaluate(()=>{send('KeyZ','pointerdown',1);send('KeyC','pointerdown',2);send('KeyC','pointerup',2);});assert.deepEqual((await events()).at(-1),['KeyZ',true]);assert(!(await events()).some(([c])=>c==='KeyX'));await page.evaluate(()=>send('KeyZ','pointercancel',1));assert.deepEqual((await events()).slice(-2),[['KeyX',true],['KeyX',false]]);
  await reset();await page.evaluate(()=>{send('KeyC','pointerdown',1);send('KeyC','pointerdown',2);send('KeyC','pointerup',2);send('KeyC','pointerup',1);});assert.equal((await events()).filter(([c,d])=>c==='KeyC'&&d).length,1,'Two fingers on the same direction must not create double-tap commands');
@@ -24,7 +24,7 @@ try {
  await reset();await page.evaluate(()=>{info.digging=true;send('KeyZ','pointerdown',1);send('KeyC','pointerdown',2);send('KeyC','pointerup',2);send('KeyZ','pointerup',1);});assert.deepEqual(await events(),[['KeyZ',true],['KeyC',true],['KeyC',false],['KeyZ',false]],'Digging must steer once per press without Stop or direction restoration');
  await reset();await page.evaluate(()=>{send('KeyZ','pointerdown');info.digging=false;send('KeyZ','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'A steering gesture stays exempt when the action changes before release');
  await reset();await page.evaluate(()=>{send('KeyC','pointerdown');info.digging=true;send('KeyC','pointerup');});assert(!(await events()).some(([c])=>c==='KeyX'),'Digging started during a hold must survive release');
- await reset();await page.getByRole('switch',{name:'Hold to move'}).uncheck();await page.getByRole('switch',{name:'Hold to move'}).check();assert(!(await events()).some(([c])=>c==='KeyX'),'Changing mode must not stop active digging');
- assert.equal(await page.evaluate(()=>localStorage.getItem('neoclonk.touch.hold-movement')),'1');
+ await reset();await page.getByRole('radio',{name:'Tap',exact:true}).check();await page.getByRole('radio',{name:'Hold',exact:true}).check();assert(!(await events()).some(([c])=>c==='KeyX'),'Changing mode must not stop active digging');
+ assert.equal(await page.evaluate(()=>localStorage.getItem('neoclonk.touch.movement-mode')),'hold');
  console.log(`PASS ${kind}: tap, hold, cancellation, opposing fingers, native menus, crew changes, focus loss and stored preference`);
 }finally{await browser.close();}

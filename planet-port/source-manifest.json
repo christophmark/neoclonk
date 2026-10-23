@@ -731,7 +731,7 @@
     {
       "path": "engine/src/C4Browser.cpp",
       "upstreamSha256": null,
-      "browserSha256": "dfc5c3688fcae4224f8b9ea8d94c5f9aa03d0da2c00cce15221354cca6e41804",
+      "browserSha256": "60531508784443e91776ecfffd24c0c9aba96cbf336f3d443534a0db703e3c79",
       "modified": true
     },
     {
@@ -1157,7 +1157,7 @@
     {
       "path": "engine/src/C4Viewport.cpp",
       "upstreamSha256": "6170934fdbb77e58a68ba2af2582aba01bed18e0e09c4cfebb636308681b8f81",
-      "browserSha256": "437f87434cbf8300694ff0ad5a8104a6b04f2bfa2ccbb5263a57e20cdfe18b4b",
+      "browserSha256": "08ff1fdea5a7bef14444c98d52a6c40b71a46ea6694026c00f67489908d87128",
       "modified": true
     },
     {

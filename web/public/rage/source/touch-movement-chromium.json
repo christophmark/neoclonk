@@ -202,6 +202,12 @@
         "crewCount": 1,
         "menu": false,
         "digging": true,
+        "frame": 226,
+        "paused": true,
+        "commandDirection": 4,
+        "aimValid": true,
+        "aimX": 0.85641,
+        "aimY": 0.369668,
         "extras": [
           {
             "control": 11,
@@ -392,6 +398,12 @@
         "crewCount": 1,
         "menu": false,
         "digging": true,
+        "frame": 228,
+        "paused": true,
+        "commandDirection": 4,
+        "aimValid": true,
+        "aimX": 0.594872,
+        "aimY": 0.315657,
         "extras": [
           {
             "control": 11,

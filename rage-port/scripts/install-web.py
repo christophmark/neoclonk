@@ -56,6 +56,8 @@ for relative,name in [
  ('rage-port/outputs/touch-menus/report.json','touch-menus.json'),
  ('rage-port/outputs/touch-movement-chromium/report.json','touch-movement-chromium.json'),
  ('rage-port/outputs/touch-movement-webkit/report.json','touch-movement-webkit.json'),
+ ('rage-port/outputs/touch-swipe-chromium/report.json','touch-swipe-chromium.json'),
+ ('rage-port/outputs/touch-swipe-webkit/report.json','touch-swipe-webkit.json'),
  ('rage-port/outputs/exit/report.json','native-exit-persistence.json'),
  ('rage-port/outputs/exit-webkit/report.json','native-exit-persistence-webkit.json')]:
  report=root/relative

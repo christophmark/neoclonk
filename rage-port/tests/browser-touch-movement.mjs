@@ -13,8 +13,8 @@ for(const engine of ['rage','planet']){
  const call=(name,args=[])=>page.evaluate(({name,args})=>Module.ccall(name,'number',args.map(()=>'number'),args),{name:(engine==='rage'?'nc_browser_':'nc_planet_')+name,args});
  const state=()=>page.evaluate(()=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])));const cursor=async()=>(await state()).players.find(p=>p.local).cursor;
  await call('pause',[1]);await call('step',[65]);
- const mode=page.getByRole('switch',{name:'Hold to move'});assert.equal(await mode.isChecked(),engine==='planet','Preference is shared between engines');
- if(await mode.isChecked())await mode.uncheck();
+ const mode=page.getByRole('radio',{name:'Hold',exact:true});assert.equal(await mode.isChecked(),engine==='planet','Preference is shared between engines');
+ if(await mode.isChecked())await page.getByRole('radio',{name:'Tap',exact:true}).check();
  assert.equal(await page.locator('#touchpad [data-code=KeyZ] b').textContent(),'Z');
  const point=await page.locator('#touchpad [data-code=KeyC]').boundingBox();await page.mouse.move(point.x+point.width/2,point.y+point.height/2);
  await page.mouse.down();await call('step',[12]);await page.mouse.up();r.tapReleased=await cursor();await call('step',[12]);r.tapLater=await cursor();assert.notEqual(r.tapLater.x,r.tapReleased.x,'Tap keeps moving after release');

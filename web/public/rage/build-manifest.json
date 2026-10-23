@@ -8,44 +8,48 @@
     "sha256": "f4e0f2d6927e6f645e1b08b466a7d9735c041e653572397cc9e4a5472cef4e0e"
   },
   "adaptive-touch.js": {
-    "bytes": 2662,
-    "sha256": "2e7aad46bd989ff8cb75632929c777e2d0921b5e68193e19c5bc2c13097ba540"
+    "bytes": 2720,
+    "sha256": "754d6c31efeac319c67614ce949836476dab4e1490233c2dcabe4834f1cc4f83"
   },
   "multiplayer.js": {
     "bytes": 26665,
     "sha256": "b33a4996b727fc6b5ed4b4e3f8d508a58b3bc99fefa301f74cb852d80740e32e"
   },
   "clonk.js": {
-    "bytes": 610590,
-    "sha256": "87e13a55693425b210b84a249e1b53a2effa3510af980d880179b030ddcae64a"
+    "bytes": 610694,
+    "sha256": "ef70e4774d4d52999466e9807f48a7a5b2f95639de0b8d4b2373b98f3b2eb81b"
   },
   "touch-movement.js": {
-    "bytes": 3995,
-    "sha256": "b8aaea13d895f4a0c273d5803377add1da1c76b00e80c913612cfa70111a6b6f"
+    "bytes": 4643,
+    "sha256": "6c11f38b1cd7262850dacc276e0907d3f19cb16ad0c4269753f44e3cf01e8519"
   },
   "gallery.js": {
     "bytes": 13642,
     "sha256": "8f1dd71fbdb72bf328f27f36559a83eefe4337a78b64b964c0646ceae17290c9"
   },
   "scenario-library.js": {
-    "bytes": 3106,
-    "sha256": "7e5f935f8acd8de04f61c49a22ad218dd9664e0d837148a0e3dcf00ef95d2ceb"
+    "bytes": 3105,
+    "sha256": "ae3623682d0a04df088861b4826bb9c2ac45c19a8866c04642d7182c389b92c8"
   },
   "index.html": {
-    "bytes": 37024,
-    "sha256": "944419c63bae0caf295d5105fcf09dba663de2c203f1f6fce12caebf4b959cb5"
+    "bytes": 37617,
+    "sha256": "137e260cbf1fdbf144984f5980470ee4231540b10996d46ba7deb8d5296957b4"
   },
   "planet-storage.js": {
     "bytes": 1820,
     "sha256": "48e1d11f42222181197846f579fc078794a4a06542ba25d164afdd82d9010a6d"
   },
+  "touch-swipe.js": {
+    "bytes": 7657,
+    "sha256": "3e09b064b7aaedb5126866e9326f45534e2ff77898b76bd307f7e5252fb30467"
+  },
   "game.js": {
-    "bytes": 32019,
-    "sha256": "d7d98e78ae1ea83862bee7f8fe60785e9c85d98b044932cc504e0b246568b2bd"
+    "bytes": 32157,
+    "sha256": "1f612921f2ecdba467cb9897c24c350c63228531a8ad352da16e0555fb12f64b"
   },
   "clonk.wasm": {
-    "bytes": 12996283,
-    "sha256": "54056596c86ec9702ca3b73602eb3f7d200419e0b56a59867cf600f2b185445f"
+    "bytes": 12997553,
+    "sha256": "534d6133cc1274cdbb0806f598064b3ff9532f98ed4ed1d27006216cdabf66a0"
   },
   "clonk.ico": {
     "bytes": 22862,

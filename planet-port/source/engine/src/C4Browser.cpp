@@ -1,6 +1,7 @@
 #include <C4Include.h>
 // Presentation only; updated with the browser touch-pad occlusion.
 bool BrowserTouchControlsVisible = false;
+bool BrowserGestureCameraHeld = false;
 #include <emscripten.h>
 #include <sstream>
 #include <string>
@@ -29,6 +30,8 @@ static void ObjectJson(std::ostringstream &s, C4Object *o) {
     << ",\"canHangle\":" << (o->GetPhysical()->CanHangle ? "true" : "false") << "}";
 }
 extern "C" {
+// Local presentation only: keep a held touch target stationary on screen.
+EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 // Read the same compiled command metadata as the original action HUD. Never
 // call scenario scripts here: UI polling must not change the simulation or RNG.
 EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {
@@ -39,7 +42,13 @@ EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {
   C4Object *o=p->Cursor;int crew=0;
   for(C4ObjectLink *l=p->Crew.First;l;l=l->Next)if(l->Obj && l->Obj->Status)++crew;
   s<<"{\"player\":"<<p->Number<<",\"cursor\":"<<(o?o->Number:0)
-   <<",\"crewCount\":"<<crew<<",\"menu\":"<<((p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false")<<",\"digging\":"<<((o && o->GetProcedure()==DFA_DIG)?"true":"false")<<",\"extras\":[";
+   <<",\"crewCount\":"<<crew<<",\"menu\":"<<((p->Menu.IsActive() || (o && o->Menu && o->Menu->IsActive()))?"true":"false")<<",\"digging\":"<<((o && o->GetProcedure()==DFA_DIG)?"true":"false");
+  C4Viewport *view=Game.GraphicsSystem.GetViewport(p->Number);
+  s<<",\"frame\":"<<Game.FrameCounter<<",\"paused\":"<<(Game.Halt?"true":"false")
+   <<",\"commandDirection\":"<<(o?o->Action.ComDir:0)<<",\"procedure\":"<<(o?o->GetProcedure():-1)
+   <<",\"aimValid\":"<<((o && !o->Contained && view)?"true":"false")
+   <<",\"aimX\":"<<((o && view)?double(view->DrawX+o->x-view->ViewX)/Max(Config.Graphics.ResX,1):0.0)
+   <<",\"aimY\":"<<((o && view)?double(view->DrawY+o->y-view->ViewY)/Max(Config.Graphics.ResY,1):0.0)<<",\"extras\":[";
   bool comma=false;
   if(o && o->Status && o->Def)for(int key=0;key<2;++key){
     bool started=false;
