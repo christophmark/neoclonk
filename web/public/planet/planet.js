@@ -35,7 +35,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp3n1my5s5.js
+// include: /tmp/tmpubykcwa0.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -217,14 +217,14 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
 
   })();
 
-// end include: /tmp/tmp3n1my5s5.js
-// include: /tmp/tmp3rcxp37h.js
+// end include: /tmp/tmpubykcwa0.js
+// include: /tmp/tmp3ntffnzv.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmp3rcxp37h.js
+  // end include: /tmp/tmp3ntffnzv.js
 // include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
 // Legacy Planet logs contain Windows-1252; Emscripten's default UTF-8 decoder
 // warns on umlauts. Decode only the console presentation boundary, never scripts.
@@ -246,13 +246,13 @@ Module['FS_createPath']("/data", "Browser.c4p", true, true);
   Module['stderr'] = sink(true);
 })();
 // end include: /home/user/projects/neoclonk/planet-port/adapters/stdio.js
-// include: /tmp/tmpnii1tk6l.js
+// include: /tmp/tmpkeeac76w.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpnii1tk6l.js
+  // end include: /tmp/tmpkeeac76w.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -10064,7 +10064,6 @@ var wasmImports = {
 var wasmExports;
 createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors', 0);
-var _nc_browser_gesture = Module['_nc_browser_gesture'] = createExportWrapper('nc_browser_gesture', 1);
 var _nc_browser_touch = Module['_nc_browser_touch'] = createExportWrapper('nc_browser_touch', 0);
 var _nc_browser_state = Module['_nc_browser_state'] = createExportWrapper('nc_browser_state', 0);
 var _nc_browser_control = Module['_nc_browser_control'] = createExportWrapper('nc_browser_control', 4);

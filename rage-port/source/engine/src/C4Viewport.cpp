@@ -3,9 +3,6 @@
 /* A viewport to each player */
 
 #include <C4Include.h>
-#ifdef __EMSCRIPTEN__
-extern bool BrowserGestureCameraHeld, BrowserTouchControlsVisible;
-#endif
 #include <C4Viewport.h>
 
 #ifndef BIG_C4INCLUDE
@@ -1182,7 +1179,6 @@ void C4Viewport::Execute()
 void C4Viewport::AdjustPosition()
 	{
 #ifdef __EMSCRIPTEN__
-	if (BrowserGestureCameraHeld && BrowserTouchControlsVisible && PlayerLock && ValidPlr(Player)) return;
 	if (PlayerLock && ValidPlr(Player)) {
 		C4Player *player=Game.Players.Get(Player);
 		int safeW=ViewWdt, safeH=ViewHgt;

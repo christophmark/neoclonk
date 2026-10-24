@@ -28,7 +28,16 @@ for(const engine of (process.env.ENGINE?[process.env.ENGINE]:['rage','planet']))
  };
  const position=async()=>{const i=await info(),c=await page.locator('canvas').boundingBox();return{x:c.x+i.aimX*c.width,y:c.y+i.aimY*c.height,canvas:c};};
  let p=await position();r.start=await crew();r.screenStart=p;
- const walkTarget=p.x+95;await send('down',walkTarget,p.canvas.y+220);await page.waitForFunction(x=>{const i=JSON.parse(Module.ccall('nc_browser_touch','string',[],[])),r=document.querySelector('canvas').getBoundingClientRect();return i&&Math.abs(r.left+i.aimX*r.width-x)<=34&&i.commandDirection===0;},walkTarget,{timeout:6000});await page.waitForTimeout(250);r.rightArrival=await info();r.right=await crew();assert(r.right.x>r.start.x+10,'Holding right moves the original clonk');
+ // The original camera must follow during a held touch, including after
+ // leaving Planet's left landscape boundary. Track world-space camera offset.
+ const zoom=(await state()).viewport.zoom;
+ const cameraStart=r.start.x-p.x/zoom;
+ await send('down',p.canvas.x+p.canvas.width-35,p.canvas.y+220);
+ await page.waitForFunction(target=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).players.find(p=>p.local).cursor.x>target,r.start.x+(engine==='planet'?70:40),{timeout:6000});
+ await page.waitForFunction(start=>{const s=JSON.parse(Module.ccall('nc_browser_state','string',[],[])),t=JSON.parse(Module.ccall('nc_browser_touch','string',[],[])),c=document.querySelector('canvas').getBoundingClientRect();return s.players.find(p=>p.local).cursor.x-(c.x+t.aimX*c.width)/s.viewport.zoom-start>12;},cameraStart,{timeout:3000});
+ p=await position();r.right=await crew();r.cameraDelta=r.right.x-p.x/zoom-cameraStart;assert(r.cameraDelta>10,'Camera follows while the finger stays down');
+ // Moving the held finger onto the rendered clonk still stops movement.
+ await send('move',p.x,p.canvas.y+220);await page.waitForFunction(()=>JSON.parse(Module.ccall('nc_browser_touch','string',[],[])).commandDirection===0,null,{timeout:2000});await page.waitForTimeout(250);r.rightArrival=await info();r.right=await crew();
  p=await position();await send('move',Math.max(20,p.x-95),p.canvas.y+220);await page.waitForFunction(x=>JSON.parse(Module.ccall('nc_browser_state','string',[],[])).players.find(p=>p.local).cursor.x<x,r.right.x,{timeout:5000});r.left=await crew();assert(r.left.x<r.right.x,'Crossing the clonk reverses movement while held');
  await send('up');await page.waitForTimeout(220);r.released=await crew();assert.equal((await info()).commandDirection,0,'Release stops movement');
  // Another sustained right hold clears the original hut foundation before digging.

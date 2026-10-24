@@ -16,40 +16,40 @@
     "sha256": "b33a4996b727fc6b5ed4b4e3f8d508a58b3bc99fefa301f74cb852d80740e32e"
   },
   "clonk.js": {
-    "bytes": 610694,
-    "sha256": "ef70e4774d4d52999466e9807f48a7a5b2f95639de0b8d4b2373b98f3b2eb81b"
+    "bytes": 610590,
+    "sha256": "d01a6bbcf4aba16e7ac3cc0daadb42562886743796d41a57bf02f53e75a3eb8e"
   },
   "touch-movement.js": {
-    "bytes": 4643,
-    "sha256": "6c11f38b1cd7262850dacc276e0907d3f19cb16ad0c4269753f44e3cf01e8519"
+    "bytes": 4622,
+    "sha256": "ef9f257355ebc67eaceb0720631b6b6baf02af4c98c74b00ec9aa19a85b806f6"
   },
   "gallery.js": {
     "bytes": 13642,
     "sha256": "8f1dd71fbdb72bf328f27f36559a83eefe4337a78b64b964c0646ceae17290c9"
   },
   "scenario-library.js": {
-    "bytes": 3105,
-    "sha256": "ae3623682d0a04df088861b4826bb9c2ac45c19a8866c04642d7182c389b92c8"
+    "bytes": 3106,
+    "sha256": "ac8afb76ffde4ee40a48736ca3cb83a1919780adcf8ae5c67daf7fd746b4cd1b"
   },
   "index.html": {
-    "bytes": 37617,
-    "sha256": "137e260cbf1fdbf144984f5980470ee4231540b10996d46ba7deb8d5296957b4"
+    "bytes": 37625,
+    "sha256": "480978a405f3ac2249b35327d741f7d5f3b39640869bf58c76cf9b15db765d13"
   },
   "planet-storage.js": {
     "bytes": 1820,
     "sha256": "48e1d11f42222181197846f579fc078794a4a06542ba25d164afdd82d9010a6d"
   },
   "touch-swipe.js": {
-    "bytes": 7657,
-    "sha256": "3e09b064b7aaedb5126866e9326f45534e2ff77898b76bd307f7e5252fb30467"
+    "bytes": 7602,
+    "sha256": "8c905627c5374bf1324153d8c761ced038ea20db4060ee37b4e4f43b92a925eb"
   },
   "game.js": {
-    "bytes": 32157,
-    "sha256": "1f612921f2ecdba467cb9897c24c350c63228531a8ad352da16e0555fb12f64b"
+    "bytes": 32026,
+    "sha256": "74c92fdfae1677fe778ad0e3e13da12b11ce3014ae42fffd6de8a4fba263e569"
   },
   "clonk.wasm": {
-    "bytes": 12997553,
-    "sha256": "534d6133cc1274cdbb0806f598064b3ff9532f98ed4ed1d27006216cdabf66a0"
+    "bytes": 12997446,
+    "sha256": "3fc60b9e680b5b38bc2b4687e0af0b2bc8be82e62df70737f22c6199bf58997d"
   },
   "clonk.ico": {
     "bytes": 22862,

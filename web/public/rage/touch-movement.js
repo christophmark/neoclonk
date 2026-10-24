@@ -1,6 +1,6 @@
 /* Touch-only movement policy. All inputs use the original synchronized controls. */
 'use strict';
-NeoclonkTouch.movement = function({pad,canvas,input,read,enabled,focus=()=>{},camera=()=>{},changed=()=>{}}) {
+NeoclonkTouch.movement = function({pad,canvas,input,read,enabled,focus=()=>{},changed=()=>{}}) {
  const storageKey='neoclonk.touch.movement-mode';
  let mode='tap';try{const saved=localStorage.getItem(storageKey);mode=['tap','hold','swipe'].includes(saved)?saved:localStorage.getItem('neoclonk.touch.hold-movement')==='1'?'hold':'tap';}catch{}
  let hold=mode!=='tap';
@@ -11,7 +11,7 @@ NeoclonkTouch.movement = function({pad,canvas,input,read,enabled,focus=()=>{},ca
   text.textContent=value[0].toUpperCase()+value.slice(1);label.append(radio,text);bar.append(label);return radio;
  });
  const hint=document.createElement('p');hint.id='swipe-help';hint.textContent='Hold to move · ↑ jump · ↓ throw · Tap, then hold to dig.';hint.hidden=mode!=='swipe';bar.setAttribute('aria-describedby','swipe-help');pad.prepend(bar);bar.after(hint);
- const gestures=canvas?NeoclonkTouch.swipe({canvas,pad,input,read,enabled:()=>enabled()&&mode==='swipe',focus,camera}):null;
+ const gestures=canvas?NeoclonkTouch.swipe({canvas,pad,input,read,enabled:()=>enabled()&&mode==='swipe',focus}):null;
  const pointers=new Map();let current=null;
  const horizontal=code=>code==='KeyZ'||code==='KeyY'||code==='KeyC';
  const snapshot=()=>enabled()?read():null;

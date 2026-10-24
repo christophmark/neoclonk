@@ -1,7 +1,4 @@
 #include <C4Include.h>
-#ifdef __EMSCRIPTEN__
-extern bool BrowserGestureCameraHeld, BrowserTouchControlsVisible;
-#endif
 extern int PlanetTouchX,PlanetTouchY,PlanetTouchW,PlanetTouchH;
 
 LRESULT APIENTRY ViewportWinProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { return 0; }
@@ -331,7 +328,7 @@ void C4Viewport::AdjustPosition() {
   ViewHgt = BoundBy(ViewHgt, 0, 4096);
 
   // View position
-  if (PlayerLock && ValidPlr(Player) && !(BrowserGestureCameraHeld && BrowserTouchControlsVisible)) {
+  if (PlayerLock && ValidPlr(Player)) {
     int iScrollRange = Min(ViewWdt / 10, ViewHgt / 10);
     if (Game.Players.Get(Player)->ViewMode == C4PVM_Scrolling || FirstFrame)
       iScrollRange = 0;

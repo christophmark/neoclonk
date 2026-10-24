@@ -1,7 +1,6 @@
 #include <C4Include.h>
 // Presentation only; updated with the browser touch-pad occlusion.
 bool BrowserTouchControlsVisible = false;
-bool BrowserGestureCameraHeld = false;
 #include <emscripten.h>
 #include <sstream>
 #include <string>
@@ -30,8 +29,6 @@ static void ObjectJson(std::ostringstream &s, C4Object *o) {
     << ",\"canHangle\":" << (o->GetPhysical()->CanHangle ? "true" : "false") << "}";
 }
 extern "C" {
-// Local presentation only: keep a held touch target stationary on screen.
-EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 // Read the same compiled command metadata as the original action HUD. Never
 // call scenario scripts here: UI polling must not change the simulation or RNG.
 EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {

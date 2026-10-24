@@ -4,7 +4,6 @@
 #include <C4Include.h>
 // Presentation only; updated with the browser touch-pad occlusion.
 bool BrowserTouchControlsVisible = false;
-bool BrowserGestureCameraHeld = false;
 #include <C4Game.h>
 #include <C4Object.h>
 #include <C4ObjectCom.h>
@@ -91,8 +90,6 @@ int MaterialCount(int material, bool effective)
 }
 
 extern "C" {
-// Local presentation only: keep a held touch target stationary on screen.
-EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 
 // Presentation only: browser dimensions and touch occlusion are CSS pixels.
 // Simulation coordinates, materials and object state are never changed here.

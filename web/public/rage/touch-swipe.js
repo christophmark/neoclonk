@@ -1,7 +1,7 @@
 /* Touch gestures translate into the original synchronized control slots only.
    Aim coordinates come from each engine's actual viewport, including zoom. */
 'use strict';
-NeoclonkTouch.swipe=function({canvas,pad,input,read,enabled,focus=()=>{},camera=()=>{}}){
+NeoclonkTouch.swipe=function({canvas,pad,input,read,enabled,focus=()=>{}}){
  const HOLD=130,DOUBLE=300,DEAD=18,STEER=280;
  let gesture=null,lastTap=null,timer=0;
  const pulse=code=>{input(code,true);input(code,false);};
@@ -13,7 +13,7 @@ NeoclonkTouch.swipe=function({canvas,pad,input,read,enabled,focus=()=>{},camera=
  const vector=(g,info)=>{const r=canvas.getBoundingClientRect();return {x:g.x-r.left-info.aimX*r.width,y:g.y-r.top-info.aimY*r.height};};
  function stop(g,info){if(g?.started&&owner(info)===g.owner){if(!g.stopped)pulse('KeyX');g.stopped=true;return true;}return false;}
  function cancel(sendStop=true){
-  const g=gesture;gesture=null;lastTap=null;clearTimeout(timer);timer=0;camera(false);
+  const g=gesture;gesture=null;lastTap=null;clearTimeout(timer);timer=0;
   if(!g)return false;
   const stopped=sendStop&&stop(g,read());
   if(canvas.hasPointerCapture(g.id))canvas.releasePointerCapture(g.id);
@@ -91,7 +91,7 @@ NeoclonkTouch.swipe=function({canvas,pad,input,read,enabled,focus=()=>{},camera=
    // clears queued Jump/Throw commands before they can execute on the next tick.
    if(info.digging||info.commandDirection||(g.started&&!g.stopped))pulse('KeyX');
    pulse(dy<0?'KeyS':'KeyA');g.flick=true;g.started=true;g.stopped=true;lastTap=null;
-   clearTimeout(timer);timer=0;camera(false);
+   clearTimeout(timer);timer=0;
   }
  }
  const consume=event=>{event.preventDefault();event.stopImmediatePropagation();};
@@ -104,7 +104,7 @@ NeoclonkTouch.swipe=function({canvas,pad,input,read,enabled,focus=()=>{},camera=
   const now=eventTime(event),who=owner(info),second=lastTap&&lastTap.owner===who&&now-lastTap.time<=DOUBLE&&Math.hypot(event.clientX-lastTap.x,event.clientY-lastTap.y)<=44;
   lastTap=null;
   gesture={id:event.pointerId,owner:who,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,down:now,travel:0,second:!!second,started:false,dig:false,direction:0,lastSteer:-Infinity,lastSteerFrame:-Infinity,pending:null,samples:[{x:event.clientX,y:event.clientY,time:now}]};
-  camera(true);canvas.setPointerCapture(event.pointerId);timer=setTimeout(tick,HOLD);
+  canvas.setPointerCapture(event.pointerId);timer=setTimeout(tick,HOLD);
  },true);
  canvas.addEventListener('pointermove',event=>{if(!gesture||event.pointerId!==gesture.id)return;consume(event);sample(gesture,event);},true);
  canvas.addEventListener('pointerup',event=>{

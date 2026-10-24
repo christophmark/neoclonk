@@ -125,11 +125,10 @@
  void C4Application::Quit() { PostQuitMessage(0); }
 --- /dev/null
 +++ b/engine/src/C4Browser.cpp
-@@ -0,0 +1,127 @@
+@@ -0,0 +1,124 @@
 +#include <C4Include.h>
 +// Presentation only; updated with the browser touch-pad occlusion.
 +bool BrowserTouchControlsVisible = false;
-+bool BrowserGestureCameraHeld = false;
 +#include <emscripten.h>
 +#include <sstream>
 +#include <string>
@@ -158,8 +157,6 @@
 +    << ",\"canHangle\":" << (o->GetPhysical()->CanHangle ? "true" : "false") << "}";
 +}
 +extern "C" {
-+// Local presentation only: keep a held touch target stationary on screen.
-+EMSCRIPTEN_KEEPALIVE int nc_browser_gesture(int held) { BrowserGestureCameraHeld=held!=0; return 1; }
 +// Read the same compiled command metadata as the original action HUD. Never
 +// call scenario scripts here: UI polling must not change the simulation or RNG.
 +EMSCRIPTEN_KEEPALIVE const char *nc_browser_touch() {
@@ -24401,7 +24398,7 @@
 +void C4Video::Draw() {}
 --- a/engine/src/C4Viewport.cpp
 +++ b/engine/src/C4Viewport.cpp
-@@ -1,385 +1,399 @@
+@@ -1,385 +1,396 @@
 -#include <C4Include.h>
 -
 -LRESULT APIENTRY ViewportWinProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { return 0; }
@@ -24788,9 +24785,6 @@
 -  return TRUE;
 -}
 +#include <C4Include.h>
-+#ifdef __EMSCRIPTEN__
-+extern bool BrowserGestureCameraHeld, BrowserTouchControlsVisible;
-+#endif
 +extern int PlanetTouchX,PlanetTouchY,PlanetTouchW,PlanetTouchH;
 +
 +LRESULT APIENTRY ViewportWinProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { return 0; }
@@ -25120,7 +25114,7 @@
 +  ViewHgt = BoundBy(ViewHgt, 0, 4096);
 +
 +  // View position
-+  if (PlayerLock && ValidPlr(Player) && !(BrowserGestureCameraHeld && BrowserTouchControlsVisible)) {
++  if (PlayerLock && ValidPlr(Player)) {
 +    int iScrollRange = Min(ViewWdt / 10, ViewHgt / 10);
 +    if (Game.Players.Get(Player)->ViewMode == C4PVM_Scrolling || FirstFrame)
 +      iScrollRange = 0;
