@@ -1,6 +1,6 @@
 # Project Neoclonk
 
-**Play Clonk Rage in the browser.**
+**Play Clonk in the browser.**
 
 > Unofficial, noncommercial browser adaptation of [Clonk Rage and Clonk Planet](https://www.clonk.de/) © RedWolf Design / Matthes Bender and contributors. Original content: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); engine: [ISC](cr_source/licenses/clonk_source_license.txt). Browser code and presentation are modified. “Clonk” is a registered trademark of Matthes Bender; no endorsement is implied. Provided **as-is, without warranties**, to the extent permitted by law. See [licenses and attribution](#licenses-and-attribution) before redistributing.
 
