@@ -12,8 +12,8 @@
     "sha256": "754d6c31efeac319c67614ce949836476dab4e1490233c2dcabe4834f1cc4f83"
   },
   "multiplayer.js": {
-    "bytes": 26665,
-    "sha256": "b33a4996b727fc6b5ed4b4e3f8d508a58b3bc99fefa301f74cb852d80740e32e"
+    "bytes": 27019,
+    "sha256": "15c2cb9ae56edb39c9400969375af256dedd9d645d32bce5b615d16e8bd59fa3"
   },
   "clonk.js": {
     "bytes": 610590,
@@ -24,16 +24,16 @@
     "sha256": "ef9f257355ebc67eaceb0720631b6b6baf02af4c98c74b00ec9aa19a85b806f6"
   },
   "gallery.js": {
-    "bytes": 13642,
-    "sha256": "8f1dd71fbdb72bf328f27f36559a83eefe4337a78b64b964c0646ceae17290c9"
+    "bytes": 13991,
+    "sha256": "8af74b631c7a8a39b35122460419e8fdc7cdc357cd04a53bdb472b437e30c585"
   },
   "scenario-library.js": {
     "bytes": 3106,
     "sha256": "ac8afb76ffde4ee40a48736ca3cb83a1919780adcf8ae5c67daf7fd746b4cd1b"
   },
   "index.html": {
-    "bytes": 37625,
-    "sha256": "480978a405f3ac2249b35327d741f7d5f3b39640869bf58c76cf9b15db765d13"
+    "bytes": 37917,
+    "sha256": "0b08d935f61f1a091089a72ac05c12ad677e80cbceace415dda5cafe1cc6ac29"
   },
   "planet-storage.js": {
     "bytes": 1820,
@@ -56,7 +56,7 @@
     "sha256": "e610c04265f387bcde14fd7c5885cb55841fcf50fad96d2e06723daa82237441"
   },
   "discovery.js": {
-    "bytes": 15062,
-    "sha256": "b45a72db9da16507cace5d027aaf7982c1614fb3ed6a061c388fb503118a1325"
+    "bytes": 15121,
+    "sha256": "95a04f5de6e4062d56c1504d24024cdefc575e8f6ad31ca11cb022b576adfc08"
   }
 }

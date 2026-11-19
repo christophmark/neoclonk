@@ -1,6 +1,7 @@
 'use strict';
 // Temporary room discovery and signaling only. Original game packets never use this API.
 (() => {
+ if(document.body.dataset.multiplayer==='disabled')return;
  const $=id=>document.getElementById(id),transport=window.__neoclonkRoomTransport,lib=window.__scenarioLibrary;
  const config=window.__neoclonkDiscoveryConfig||{},service=String(config.serviceUrl||'').replace(/\/$/,'');
  const directServers=(config.stunServers||[]).map(s=>({urls:[s.urls].flat().filter(u=>/^stuns?:/i.test(u))})).filter(s=>s.urls.length);

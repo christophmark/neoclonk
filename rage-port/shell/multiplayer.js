@@ -3,6 +3,8 @@
 // Discovery exchanges connection descriptions; game traffic stays on WebRTC.
 (() => {
  const $=id=>document.getElementById(id),lib=window.__scenarioLibrary;
+ const unavailable=document.body.dataset.multiplayer==='disabled';
+ for(const id of ['join-room','host-room','room-host-choice','room-join-choice','room-join-code'])if(unavailable){$(id).disabled=true;$(id).classList.add('multiplayer-unavailable');$(id).title='Multiplayer is temporarily unavailable.';}
  const protocol='neoclonk-rtc-1',maxPlayers=12,chunkSize=12000,maxFrame=1048576;
  let room=null,engine=false,timer=0,lastBuild=0,lastAck=-1,lastActivity=0,priorFocus=null,sequence=0;
  const pendingFrames=new Map();
@@ -91,6 +93,7 @@
   if(room?.host)room.scenario=lib.get($('host-scenario').value);
  }
  async function chooser(){
+  if(unavailable)return;
   await lib.ready;
   if(window.__rageBrowser?.getState().booted){await window.__rageBrowser.restart({lobby:'1'});return;}
   disconnect();$('room-title').textContent='Multiplayer';$('room-name').disabled=false;
@@ -98,6 +101,7 @@
   $('room-mode').hidden=false;status('');show();
  }
  async function open(host,id){
+  if(unavailable)return;
   await lib.ready;
   if(window.__rageBrowser?.getState().booted){await window.__rageBrowser.restart(host?{scenario:id,host:'1'}:{join:'1'});return;}
   disconnect();if(!window.RTCPeerConnection)throw Error('This browser does not support direct multiplayer connections.');

@@ -30,10 +30,11 @@
 #game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 80px);width:64px}#leave-dialog{width:min(520px,calc(100% - 28px));max-height:90dvh;overflow:auto;padding:24px;background:#2b1a0e;color:#f5e6c9;border:2px solid #a57940;box-shadow:inset 0 0 0 3px #1b0d04,0 12px 50px #000c}#leave-dialog::backdrop{background:#0d0704da}#leave-title{font-size:27px;font-weight:normal;color:#ffdf9c;margin:0 0 14px}#leave-description{font-size:18px;line-height:1.4}#leave-error{color:#ffd49a;line-height:1.4}#leave-error:empty{display:none}.leave-actions{display:flex;flex-wrap:wrap;gap:10px}.leave-actions button{min-height:44px}@media(max-width:760px){#game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 70px);width:54px;font-size:15px}}
 @media(max-width:360px){#game-save{width:44px;padding:3px;font-size:14px}#game-exit{left:calc(max(8px,env(safe-area-inset-left)) + 48px);width:44px;padding:3px;font-size:14px}}
 #solo-note{font-size:13px;line-height:1.4;color:#d8bd90;margin:10px 0}@media(max-width:760px){.menu-panel>#play-solo{grid-column:2;grid-row:3;font-size:16px;min-height:34px}.menu-panel>#new-game{grid-row:4}#solo-note{grid-column:1/-1;grid-row:5;font-size:12px;margin:4px 0}#scenario-story{grid-row:6}}
+button.multiplayer-unavailable:disabled{filter:grayscale(1) brightness(.65);cursor:not-allowed;opacity:.7}
 </style>
 <link rel="stylesheet" href="assets/launcher.css?v=4">
 <link rel="stylesheet" href="assets/touch-movement.css?v=3"></head>
-<body data-phase="menu">
+<body data-phase="menu" data-multiplayer="disabled">
 <main id="stage">
 <canvas id="canvas" width="960" height="720" tabindex="0" aria-label="Original Clonk Rage game"></canvas>
 <div id="game-header" aria-label="Game controls" hidden>
@@ -49,7 +50,7 @@
 <div class="launcher-brand"><img class="neoclonk-logo" src="assets/NeoClonk-logo.png" width="1254" height="1254" alt="NeoClonk emblem"><div><h1>NeoClonk</h1><p>Clonk Rage &amp; Clonk Planet in your browser</p></div></div>
 <nav class="menu-top-actions" aria-label="Main menu">
 <button id="saves-open" class="small-button" type="button" aria-haspopup="dialog">Load saved game</button>
-<button id="join-room" class="small-button" type="button">Multiplayer lobby</button>
+<button id="join-room" disabled title="Multiplayer is temporarily unavailable." class="multiplayer-unavailable small-button" type="button">Multiplayer lobby</button>
 <button id="help-open" class="small-button" type="button">Help</button>
 </nav>
 </header>
@@ -68,7 +69,7 @@
 <dl id="scenario-details" class="scenario-details"><div><dt>Players</dt><dd id="scenario-players">1–4</dd></div><div><dt>Requires</dt><dd id="scenario-requirements">Clonk Rage</dd></div></dl>
 <button id="start" class="menu-button" type="button">Play</button>
 <button id="new-game" class="menu-button secondary" type="button" hidden>New Gold Mine</button>
-<button id="host-room" class="menu-button secondary" type="button">Host</button>
+<button id="host-room" disabled title="Multiplayer is temporarily unavailable." class="multiplayer-unavailable menu-button secondary" type="button">Host</button>
 <button id="play-solo" class="menu-button secondary" type="button" aria-describedby="solo-note" hidden>Play solo</button>
 <p id="solo-note" hidden>Original multiplayer goals may need opponents or finish immediately. Choose “Continue this round” to keep exploring.</p>
 <details id="scenario-story" class="scenario-story"><summary>Scenario details</summary><p id="scenario-full-description"></p></details>
@@ -124,10 +125,10 @@
 </main>
 <script src="planet-storage.js?v=planet-1"></script>
 <script src="scenario-library.js?v=touch-follow-1"></script>
-<script src="multiplayer.js?v=launcher-1"></script>
+<script src="multiplayer.js?v=offline-1"></script>
 <script src="discovery-config.js?v=discovery-1"></script>
-<script src="discovery.js?v=launcher-1"></script>
+<script src="discovery.js?v=offline-1"></script>
 <script src="adaptive-touch.js?v=3"></script><script src="touch-swipe.js?v=2"></script><script src="touch-movement.js?v=4"></script><script src="game.js?v=touch-follow-1"></script>
-<script src="gallery.js?v=game-cards-3"></script>
+<script src="gallery.js?v=offline-1"></script>
 </body>
 </html>

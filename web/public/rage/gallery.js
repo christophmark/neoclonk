@@ -58,11 +58,13 @@
   if(!selected)return;
   const state=gameState(),solo=(Number(selected.minPlayers)||1)<=1,same=state.ready&&state.scenarioId===selected.id;
   const blocked=window.__scenarioLibrary.isBlocked(selected)||selected.engine==='openclonk',needsImport=window.NeoclonkCommunity&&!window.NeoclonkCommunity.available(selected);
+  const multiplayerUnavailable=document.body.dataset.multiplayer==='disabled';
   const primary=same?'Resume game':solo?'Play':'Host';
-  $('start').hidden=false;$('start').disabled=blocked||needsImport||['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
+  $('start').hidden=false;$('start').disabled=(multiplayerUnavailable&&primary==='Host')||blocked||needsImport||['loading','initializing'].includes(state.phase);$('start').textContent=primary;$('start').setAttribute('aria-label',`${primary}: ${selected.title}`);
+  $('start').classList.toggle('multiplayer-unavailable',multiplayerUnavailable&&primary==='Host');$('start').title=multiplayerUnavailable&&primary==='Host'?'Multiplayer is temporarily unavailable.':'';
   $('new-game').hidden=!state.ready;$('new-game').textContent=same?'Restart scenario':'Resume current game';$('new-game').setAttribute('aria-label',same?`Restart ${selected.title}`:'Resume current game');
   $('play-solo').hidden=blocked||solo||(same&&!state.multiplayer);$('play-solo').disabled=needsImport||['loading','initializing'].includes(state.phase);$('play-solo').setAttribute('aria-label',`Play ${selected.title} solo`);$('solo-note').hidden=solo;
-  $('host-room').disabled=needsImport||['loading','initializing'].includes(state.phase);$('host-room').hidden=blocked||(!solo&&!same)||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);if(needsImport)$('scenario-requirements').textContent='Import your community collection below to play on this device.';
+  $('host-room').disabled=multiplayerUnavailable||needsImport||['loading','initializing'].includes(state.phase);$('host-room').hidden=blocked||(!solo&&!same)||(Number(selected.maxPlayers)||1)<2;$('host-room').setAttribute('aria-label',`Host ${selected.title} with friends`);if(needsImport)$('scenario-requirements').textContent='Import your community collection below to play on this device.';
  }
  function updateArrows(record){const {track,previous,next}=record;previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-2;}
  function makeTile(scenario,index){
